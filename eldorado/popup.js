@@ -89,32 +89,7 @@ function readyjQueryinit(){
     }
 
 
-  // $(document).mouseleave(function(e) {
-
-  //     if(localStorage.getItem("reloadkey") !== "1") {
-  //       localStorage.setItem("reloadkey", "1"); 
-  //         console.log('localStorage is true');
-
-  //         if ($(".ex-rodal").length < 1) {
-  //           // условие - есть ли этот товар в корзине
-  //           // var productName = $(".product-name h1").text();
-  //           // var productNameCard = $(".cart .good-code").text();
-  //           // for (var i=0; i<$(".cart .good-code").length; i++) {
-  //           //     if (productName == $(".cart .good-code").eq(i).text()) {
-  //           //         console.log('true');
-
-  //                   show_ms();
-
-  //           //     } else {
-  //           //         console.log('false');
-  //           //     }
-  //           // }
-  //         }
-
-  //     }
-
-  // });
-    $(document).mouseleave(function(e) {
+  $(document).mouseleave(function(e) {
 
       if(localStorage.getItem("reloadkey") !== "1") {
         localStorage.setItem("reloadkey", "1"); 
@@ -123,21 +98,13 @@ function readyjQueryinit(){
           if ($(".ex-rodal").length < 1) {
             // условие - есть ли этот товар в корзине
             var productName = $(".product-name h1").text();
-            var productNameCard = $(".cart .good-code").text();
-            for (var i=0; i<$(".cart .good-code").length; i++) {
-                if (productName == $(".cart .good-code").eq(i).text()) {
-                    console.log('находимся на странице товара который есть в корзине');
-      
-                    // Покажем всплывающее окно
-                    // show_ms();
+            var productNameCard = $(".cart .cart-goods-information .title").text();
 
-                } else {
-                    console.log('true');
-
-                    // Покажем всплывающее окно
-                    show_ms();
-                    
-                }
+            if(productName == productNameCard) {
+              console.log('1111')
+            } else {
+              console.log('2222')
+              show_ms();
             }
 
           }
@@ -145,6 +112,7 @@ function readyjQueryinit(){
       }
 
   });
+
 
 
   $(document).on("click", ".ex-rodal .ex-rodal-close", function() {
@@ -320,6 +288,3 @@ function readyjQueryinit(){
   styles    += "</style>";
   jQuery('body').append(styles);
 }
-
-// });
-// }
