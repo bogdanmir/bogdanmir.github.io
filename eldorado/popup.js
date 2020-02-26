@@ -27,6 +27,7 @@ if (!window.jQuery) {
 function readyjQueryinit(){
     $(".options-list__item.grid__cell.grid.enabled-item").click();
     $(".rodal").css({"opacity":"0", "z-index":"-1"});
+    $(".page-container").removeClass('blurred');
   
     $(document).on("click", ".rodal .rodal-close", function(event) {
         $(".options-list__item.grid__cell.grid.enabled-item").click();
@@ -51,19 +52,15 @@ function readyjQueryinit(){
             $outhtml +=   '<div class="rodal-dialog cart-modal-container">';
             $outhtml +=   '<span class="ex-rodal-close"></span>';
             $outhtml +=   '<h5 class="ex-title">Эти товары почти Ваши! Остался всего один шаг.</h5>';
-
             $outhtml +=   '<div class="cart">'
             $outhtml +=     '<div class="ex-alert">На складе осталось всего несколько единиц товаров из Вашей корзины!</div>';
-
             $outhtml +=     '<div class="ex-card-item">'+ cartItems +'</div>';
-
             $outhtml +=     '<span class="ex-information-row"> Мы не можем гарантировать Вам наличие товара, если вы покинете сайт не завершив покупку! </span>';
             $outhtml +=     '<div class="ex-submit-buttons">';
             $outhtml +=         '<a class="continue-button" href="/checkout/">Купить в рассрочку/кредит</a>';
             $outhtml +=         '<a class="continue-button" href="/checkout/">Завершить заказ</a>';
             $outhtml +=     '</div>'
             $outhtml +=   '</div>'
-
             $outhtml += '</div>';
 
             $('body').append($outhtml);
@@ -92,38 +89,55 @@ function readyjQueryinit(){
     }
 
 
-    $(document).mouseleave(function(e) {
+  $(document).mouseleave(function(e) {
 
-        if(localStorage.getItem("reloadkey") !== "1") {
-           localStorage.setItem("reloadkey", "1"); 
-             console.log('localStorage is true');
-        }
+      if(localStorage.getItem("reloadkey") !== "1") {
+        localStorage.setItem("reloadkey", "1"); 
+          console.log('localStorage is true');
 
-        if ($(".ex-rodal").length < 1) {
-          // условие - есть ли этот товар в корзине
-          var productName = $(".product-name h1").text();
-          var productNameCard = $(".cart .good-code").text();
-          for (var i=0; i<$(".cart .good-code").length; i++) {
-              if (productName == $(".cart .good-code").eq(i).text()) {
-                  console.log('true');
+          if ($(".ex-rodal").length < 1) {
+            // условие - есть ли этот товар в корзине
+            // var productName = $(".product-name h1").text();
+            // var productNameCard = $(".cart .good-code").text();
+            // for (var i=0; i<$(".cart .good-code").length; i++) {
+            //     if (productName == $(".cart .good-code").eq(i).text()) {
+            //         console.log('true');
 
-                  show_ms();
+                    show_ms();
 
-              } else {
-                  console.log('false');
-              }
+            //     } else {
+            //         console.log('false');
+            //     }
+            // }
           }
-        }
-    });
- 
-    $(document).on("click", ".ex-rodal .ex-rodal-close", function() {
-        $(".ex-rodal").removeClass('show');
-        $(".page-container").removeClass('blurred');
-    });
-    $(document).on("click", ".rodal-mask", function() {
-        $(".ex-rodal").removeClass('show');
-        $(".page-container").removeClass('blurred');
-    });
+
+      }
+
+  });
+
+
+  $(document).on("click", ".ex-rodal .ex-rodal-close", function() {
+      $(".ex-rodal").removeClass('show');
+      $(".page-container").removeClass('blurred');
+  });
+  $(document).on("click", ".rodal-mask", function() {
+      $(".ex-rodal").removeClass('show');
+      $(".page-container").removeClass('blurred');
+  });
+
+
+
+
+  // var d = new Date()
+  // var time = d.getHours()
+  // if (time >= 8 && time < 17) {
+  //   console.log('time >= 8 && time < 17')
+  // } else {
+  //   console.log('рабочий день закончен')
+  // }
+
+
+
 
 
   var styles = "<style>";
@@ -275,3 +289,6 @@ function readyjQueryinit(){
   styles    += "</style>";
   jQuery('body').append(styles);
 }
+
+// });
+// }
