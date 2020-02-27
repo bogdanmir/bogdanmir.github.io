@@ -104,6 +104,8 @@ function readyjQueryinit(){
             var productName = $(".product-name h1").text();
             var productNameCard = $(".cart .cart-goods-information .title").text();
 
+            $(".page-container").removeClass('blurred');
+            
             if(productName == productNameCard) {
               console.log('1111')
             } else {
