@@ -83,7 +83,8 @@ function readyjQueryinit(){
               var price = $(this).find('.number').html();
               $(this).append('<div class="price-item"><span>'+price+'</span>грн.</div>');
             });
-            $(document).on("click", ".ab_checkout", function() {
+            $(document).on("click", ".ab_checkout", function(event) {
+              event.preventDefault()
               $(".rodal:not(.ex-rodal) .cart-modal-container .continue-button").click()
             })
 
