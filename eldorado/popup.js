@@ -57,8 +57,8 @@ function readyjQueryinit(){
             $outhtml +=     '<div class="ex-card-item">'+ cartItems +'</div>';
             $outhtml +=     '<span class="ex-information-row"> Мы не можем гарантировать Вам наличие товара, если вы покинете сайт не завершив покупку! </span>';
             $outhtml +=     '<div class="ex-submit-buttons">';
-            $outhtml +=         '<a class="continue-button" href="/checkout/">Купить в рассрочку/кредит</a>';
-            $outhtml +=         '<a class="continue-button" href="/checkout/">Завершить заказ</a>';
+            $outhtml +=         '<a class="ab_checkout continue-button" href="/checkout/">Купить в рассрочку/кредит</a>';
+            $outhtml +=         '<a class="ab_checkout continue-button" href="/checkout/">Завершить заказ</a>';
             $outhtml +=     '</div>'
             $outhtml +=   '</div>'
             $outhtml += '</div>';
@@ -83,6 +83,10 @@ function readyjQueryinit(){
               var price = $(this).find('.number').html();
               $(this).append('<div class="price-item"><span>'+price+'</span>грн.</div>');
             });
+            $(document).on("click", ".ab_checkout", function() {
+              $(".rodal:not(.ex-rodal) .cart-modal-container .continue-button").click()
+            })
+
         } else {
             console.log('нет товаров в корзине!')
         }
@@ -154,6 +158,17 @@ function readyjQueryinit(){
     }
     .ex-rodal .rodal-dialog.cart-modal-container {
       max-width: 800px;
+      left: 50%;
+      transform: translate(-50%); 
+    }
+    .ex-rodal .cart .goods-tile-container .good-container .image-place img {
+      max-width: 150px;
+    }
+    .ex-rodal .cart .goods-tile-container .good-container .image-place {
+      padding: 0 20px 0 0;
+    }
+    .ex-rodal .cart .goods-tile-container .good-container .cart-goods-information .title-promo-block {
+      padding-bottom: 25px;
     }
     .ex-rodal .ex-title {
       font-size: 24px;
