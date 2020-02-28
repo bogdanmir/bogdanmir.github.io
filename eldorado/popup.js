@@ -111,18 +111,18 @@ function readyjQueryinit() {
 
     $(".options-list__item.grid__cell.grid.enabled-item").click();
     $(".rodal").css({"opacity":"0", "z-index":"-1"});
-    $(".page-container").removeClass('blur');
+    $(".page-container").removeClass('blurred');
   
     $(document).on("click", ".rodal .rodal-close", function(event) {
         $(".options-list__item.grid__cell.grid.enabled-item").click();
-        $(".rodal").css({"opacity":"0", "z-index":"-1"});
-        $(".page-container").removeClass('blur');
+        $(".rodal").css({"display":"none"});
+        $(".page-container").removeClass('blurred');
     });
 
-    $(document).on("click", ".page-container.blur.product-page", function() {
+    $(document).on("click", ".page-container.blurred.product-page", function() {
         $(".options-list__item.grid__cell.grid.enabled-item").click();
-        $(".rodal").css({"opacity":"0", "z-index":"-1"});
-        $(".page-container").removeClass('blur');
+        $(".rodal").css({"display":"none"});
+        $(".page-container").removeClass('blurred');
     });
     $(document).on("click", ".product-buy-container .buy-button", function() {
         console.log(payload["product-view"]);
@@ -134,7 +134,8 @@ function readyjQueryinit() {
             var $outhtml  = '<div class="ex-rodal rodal show"> <div class="rodal-mask"></div> <div class="rodal-dialog cart-modal-container"> <span class="ex-rodal-close"></span> <h5 class="ex-title">Эти товары почти Ваши! Остался всего один шаг.</h5> <div class="cart"> <div class="ex-alert">На складе осталось всего несколько единиц товаров из Вашей корзины!</div> <div class="ex-card-item">'+ cartItems +'</div> <span class="ex-information-row"> Мы не можем гарантировать Вам наличие товара, если вы покинете сайт не завершив покупку! </span> <div class="ex-submit-buttons"> <a class="ab_checkout continue-button" href="/checkout/">Купить в рассрочку/кредит</a> <a class="ab_checkout continue-button" href="/checkout/">Завершить заказ</a> </div> </div> </div>';
             $('body').append($outhtml);
             if($("body").find('.ex-rodal.rodal.show').length > 0){
-                $(".page-container").addClass('blur');
+                $(".page-container").addClass('blurred');
+                console.log('blurred');
             }
             $(".ex-rodal .count-value").each(function() {
               $(this).prepend('х ');
@@ -156,9 +157,9 @@ function readyjQueryinit() {
     }
 
 
-$(".page-container").removeClass('blur');
+$(".page-container").removeClass('blurred');
 $(document).mouseleave(function (e) {
-    $(".page-container").removeClass('blur');
+    $(".page-container").removeClass('blurred');
     var display_product = check_to_display_popup();
     if ($("body").find(".ex-rodal").length >0) {
       $("body").find(".ex-rodal").remove();
@@ -176,11 +177,11 @@ setInterval(function(){
 
   $(document).on("click", ".ex-rodal .ex-rodal-close", function() {
       $(".ex-rodal").removeClass('show');
-      $(".page-container").removeClass('blur');
+      $(".page-container").removeClass('blurred');
   });
   $(document).on("click", ".rodal-mask", function() {
       $(".ex-rodal").removeClass('show');
-      $(".page-container").removeClass('blur');
+      $(".page-container").removeClass('blurred');
   });
 
 
@@ -200,17 +201,6 @@ setInterval(function(){
 
   var styles = "<style>";
   styles += `
-    .blur {
-      -webkit-transition: -webkit-filter .50s;
-      -webkit-filter: blur(15px);
-      -webkit-filter: blur(15px);
-      -moz-filter: blur(15px);
-      -ms-filter: blur(15px);
-      -o-filter: blur(15px);    
-      filter: url("data:image/svg+xml;utf8,<svg height='0' xmlns='http://www.w3.org/2000/svg'><filter id='svgBlur' x='-5%' y='-5%' width='110%' height='110%'><feGaussianBlur in='SourceGraphic' stdDeviation='5'/></filter></svg>#svgBlur");
-      filter: progid: DXImageTransform.Microsoft.Blur(PixelRadius = '15');
-      filter: blur(15px);
-    }
     .rodal.hidden {
         display: none;
     }
