@@ -66,14 +66,17 @@ function readyjQueryinit() {
         var ipd = localStorage.getItem('ipd');
         var products_list = getlsItem("pic");
         var can_return = true;
-        if(typeof products_list === 'object' && ipd != 'y') {
-            localStorage.setItem('ipd', 'y');
+        if(typeof products_list === 'object') {
             $.each(products_list, function (ind, el) {
                 if (el == location.pathname) {
                     can_return = false;
                 }
             })
         }
+        if(ipd == 'y'){
+            can_return = false;
+        }
+        localStorage.setItem('ipd', 'y');
         return can_return;
     }
     $(document).on("click", ".product-buy-container .buy-button", function () {
@@ -105,12 +108,6 @@ function readyjQueryinit() {
             var val = $(this).closest('article.tile-container').find('.good-description .title a').attr('href');
             setlsItem(val,'pic');
         }
-        // if(typeof payload != 'undefined'){
-        //     if(typeof payload["product-view"] != 'undefined'){
-        //         var val = location.pathname;
-        //         setlsItem(payload["product-view"].id,val,'pic');
-        //     }
-        // }
     });
 
     $(".options-list__item.grid__cell.grid.enabled-item").click();
@@ -134,51 +131,24 @@ function readyjQueryinit() {
 
     function show_ms(){
         if ($('.options-list__item.enabled-item').length) {
-
             var cartItems = $(".rodal .cart").html();
-
-            var $outhtml;
-            $outhtml  = '<div class="ex-rodal rodal">';
-            $outhtml +=   '<div class="rodal-mask"></div>';
-            $outhtml +=   '<div class="rodal-dialog cart-modal-container">';
-            $outhtml +=   '<span class="ex-rodal-close"></span>';
-            $outhtml +=   '<h5 class="ex-title">Эти товары почти Ваши! Остался всего один шаг.</h5>';
-            $outhtml +=   '<div class="cart">'
-            $outhtml +=     '<div class="ex-alert">На складе осталось всего несколько единиц товаров из Вашей корзины!</div>';
-            $outhtml +=     '<div class="ex-card-item">'+ cartItems +'</div>';
-            $outhtml +=     '<span class="ex-information-row"> Мы не можем гарантировать Вам наличие товара, если вы покинете сайт не завершив покупку! </span>';
-            $outhtml +=     '<div class="ex-submit-buttons">';
-            $outhtml +=         '<a class="ab_checkout continue-button" href="/checkout/">Купить в рассрочку/кредит</a>';
-            $outhtml +=         '<a class="ab_checkout continue-button" href="/checkout/">Завершить заказ</a>';
-            $outhtml +=     '</div>'
-            $outhtml +=   '</div>'
-            $outhtml += '</div>';
-
+            var $outhtml  = '<div class="ex-rodal rodal show"> <div class="rodal-mask"></div> <div class="rodal-dialog cart-modal-container"> <span class="ex-rodal-close"></span> <h5 class="ex-title">Эти товары почти Ваши! Остался всего один шаг.</h5> <div class="cart"> <div class="ex-alert">На складе осталось всего несколько единиц товаров из Вашей корзины!</div> <div class="ex-card-item">'+ cartItems +'</div> <span class="ex-information-row"> Мы не можем гарантировать Вам наличие товара, если вы покинете сайт не завершив покупку! </span> <div class="ex-submit-buttons"> <a class="ab_checkout continue-button" href="/checkout/">Купить в рассрочку/кредит</a> <a class="ab_checkout continue-button" href="/checkout/">Завершить заказ</a> </div> </div> </div>';
             $('body').append($outhtml);
-
-            $(".ex-rodal").addClass('show');
             $(".page-container").addClass('blurred');
-
-            
-
             $(".ex-rodal .count-value").each(function() {
               $(this).prepend('х ');
             });
-
-            $('.ex-rodal .goods-main-info-block .price').each(function () {
+            $('body').find(".ex-rodal .goods-main-info-block .price").each(function () {
               var oldPrice = $(this).find('.old-price span').html();
               if($(this).find('.old-price span').length > 0) {
                 $(this).append('<div class="ex-old-price"><span>'+oldPrice+'</span> грн.</div>');
               }
-
               var price = $(this).find('.number').html();
               $(this).append('<div class="price-item"><span>'+price+'</span>грн.</div>');
             });
             $(document).on("click", ".ab_checkout", function(event) {
-              // event.preventDefault()
-              $(".rodal:not(.ex-rodal) .cart-modal-container .continue-button").click();
+              $("body").find(".rodal:not(.ex-rodal) .cart-modal-container .continue-button").click();
             })
-
         } else {
             console.log('нет товаров в корзине!')
         }
@@ -186,19 +156,17 @@ function readyjQueryinit() {
 
 
 // $(".page-container").removeClass('blurred');
-  $(document).mouseleave(function(e) {
-          var display_product = check_to_display_popup();
-          if ($(".ex-rodal").length < 1) {
-            $(".page-container").removeClass('blurred');
-            if(display_product == true) {
-                show_ms();
-            }
+$(document).mouseleave(function (e) {
+    var display_product = check_to_display_popup();
+        if ($("body").find(".ex-rodal").length >0) {
+            $("body").find(".ex-rodal").remove();
+        }
+        $(".page-container").removeClass('blurred');
+        if (display_product == true) {
+            show_ms();
+        }
 
-          }
-
-      // }
-
-  });
+});
 
 
 
