@@ -1,30 +1,39 @@
+try{
+    hj('trigger', 'exit-intent-popup');
+}catch (e) {}
 function initjQuery(callback) {
-  var script = document.createElement( "script" )
-  script.type = "text/javascript";
-  if(script.readyState) {
-  script.onreadystatechange = function() {
-    if ( script.readyState === "loaded" || script.readyState === "complete" ) {
-      script.onreadystatechange = null;
-      callback();
+    var script = document.createElement( "script" )
+    script.type = "text/javascript";
+    if(script.readyState) {
+        script.onreadystatechange = function() {
+            if ( script.readyState === "loaded" || script.readyState === "complete" ) {
+                script.onreadystatechange = null;
+                callback();
+            }
+        };
+    } else {
+        script.onload = function() {
+            callback();
+        };
     }
-  };
-  } else {
-  script.onload = function() {
-    callback();
-  };
-  }
-  script.src = '//code.jquery.com/jquery-3.3.1.min.js';
-  document.getElementsByTagName( "head" )[0].appendChild( script );
+    script.src = '//code.jquery.com/jquery-3.3.1.min.js';
+    document.getElementsByTagName( "head" )[0].appendChild( script );
 }
 if (!window.jQuery) {
-  initjQuery(function() {
-    readyjQueryinit();
-  });
+    initjQuery(function() {
+        readyjQueryinit();
+    });
 }else{
-  readyjQueryinit();
+    readyjQueryinit();
 }
 
 function readyjQueryinit() {
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+        'event': 'autoEvent',
+        'eventCategory': 'Exp - Exit-Intent Popup',
+        'eventAction': 'Exp activated'
+    });
     function getlsItem(name) {
         var to_return = localStorage.getItem(name);
         if(to_return !== null){
@@ -111,93 +120,127 @@ function readyjQueryinit() {
 
     $(".options-list__item.grid__cell.grid.enabled-item").click();
     $(".rodal").css({"opacity":"0", "z-index":"-1"});
-    $(".page-container").removeClass('blurred');
-  
+    $(".rodal-dialog.cart-modal-container .rodal-close").click();
+
     $(document).on("click", ".rodal .rodal-close", function(event) {
         $(".options-list__item.grid__cell.grid.enabled-item").click();
         $(".rodal").css({"opacity":"0", "z-index":"-1"});
-        $(".page-container").removeClass('blurred');
+        $(".rodal-dialog.cart-modal-container .rodal-close").click();
     });
 
-    $(document).on("click", ".page-container.blurred.product-page", function() {
-        $(".options-list__item.grid__cell.grid.enabled-item").click();
-        $(".rodal").css({"opacity":"0", "z-index":"-1"});
-        $(".page-container").removeClass('blurred');
-    });
-    $(document).on("click", ".product-buy-container .buy-button", function() {
-        console.log(payload["product-view"]);
-    });
+    // $(document).on("click", ".page-container.blurred.product-page", function() {
+    //     $(".options-list__item.grid__cell.grid.enabled-item").click();
+    //     $(".rodal").css({"opacity":"0", "z-index":"-1"});
+    //     $(".rodal-dialog.cart-modal-container .rodal-close").click();
+    // });
+    // $(document).on("click", ".product-buy-container .buy-button", function() {
+    //     console.log(payload["product-view"]);
+    // });
 
+    $(document).on("click", ".ab_checkout", function(event) {
+        $("body").find(".rodal:not(.ex-rodal) .cart-modal-container .continue-button").click();
+    })
+    $(document).on("click", ".end-ord", function(event) {
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+            'event': 'autoEvent',
+            'eventCategory': 'Exp - Exit-Intent Popup',
+            'eventAction': 'click',
+            'eventLabel': 'Complete order'
+        });
+    })
+    $(document).on("click", ".ex-rodal.rodal.show .rodal-mask", function(event) {
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+            'event': 'autoEvent',
+            'eventCategory': 'Exp - Exit-Intent Popup',
+            'eventAction': 'click',
+            'eventLabel': 'Background to close'
+        });
+    });
+    $(document).on("click", ".end-cred", function(event) {
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+            'event': 'autoEvent',
+            'eventCategory': 'Exp - Exit-Intent Popup',
+            'eventAction': 'click',
+            'eventLabel': 'Buy on credit'
+        });
+    })
     function show_ms(){
-        if ($('.options-list__item.enabled-item').length) {
-            var cartItems = $(".rodal .cart").html();
-            var $outhtml  = '<div class="ex-rodal rodal show"> <div class="rodal-mask"></div> <div class="rodal-dialog cart-modal-container"> <span class="ex-rodal-close"></span> <h5 class="ex-title">Эти товары почти Ваши! Остался всего один шаг.</h5> <div class="cart"> <div class="ex-alert">На складе осталось всего несколько единиц товаров из Вашей корзины!</div> <div class="ex-card-item">'+ cartItems +'</div> <span class="ex-information-row"> Мы не можем гарантировать Вам наличие товара, если вы покинете сайт не завершив покупку! </span> <div class="ex-submit-buttons"> <a class="ab_checkout continue-button" href="/checkout/">Купить в рассрочку/кредит</a> <a class="ab_checkout continue-button" href="/checkout/">Завершить заказ</a> </div> </div> </div>';
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+            'event': 'autoEvent',
+            'eventCategory': 'Exp - Exit-Intent Popup',
+            'eventAction': 'Popup loaded'
+        });
+        if ($('.options-list__item.enabled-item').length && $('.rodal-dialog.cart-modal-container').length == 0) {
+            var cartItems = $('body').find(".rodal .cart").html();
+            var $outhtml  = '<div class="ex-rodal rodal show"> <div class="rodal-mask"></div> <div class="rodal-dialog cart-modal-container"> <span class="ex-rodal-close"></span> <h5 class="ex-title">Эти товары почти Ваши! Остался всего один шаг.</h5> <div class="cart"> <div class="ex-alert">На складе осталось всего несколько единиц товаров из Вашей корзины!</div> <div class="ex-card-item">'+ cartItems +'</div> <span class="ex-information-row"> Мы не можем гарантировать Вам наличие товара, если вы покинете сайт не завершив покупку! </span> <div class="ex-submit-buttons"> <a class="ab_checkout continue-button end-cred" href="/checkout/">Купить в рассрочку/кредит</a> <a class="ab_checkout continue-button end-ord" href="/checkout/">Завершить заказ</a> </div> </div> </div>';
             $('body').append($outhtml);
             if($("body").find('.ex-rodal.rodal.show').length > 0){
-                $(".page-container").addClass('blurred');
+                $(".options-list__item.grid__cell.grid.enabled-item").click();
+                $(".rodal-dialog.cart-modal-container").closest('.rodal').css({"opacity":"0", "z-index":"-1"});
                 console.log('blurred');
             }
             $(".ex-rodal .count-value").each(function() {
-              $(this).prepend('х ');
+                $(this).prepend('х ');
             });
             $('body').find(".ex-rodal .goods-main-info-block .price").each(function () {
-              var oldPrice = $(this).find('.old-price span').html();
-              if($(this).find('.old-price span').length > 0) {
-                $(this).append('<div class="ex-old-price"><span>'+oldPrice+'</span> грн.</div>');
-              }
-              var price = $(this).find('.number').html();
-              $(this).append('<div class="price-item"><span>'+price+'</span>грн.</div>');
+                var oldPrice = $(this).find('.old-price span').html();
+                if($(this).find('.old-price span').length > 0) {
+                    $(this).append('<div class="ex-old-price"><span>'+oldPrice+'</span> грн.</div>');
+                }
+                var price = $(this).find('.number').html();
+                $(this).append('<div class="price-item"><span>'+price+'</span>грн.</div>');
             });
-            $(document).on("click", ".ab_checkout", function(event) {
-              $("body").find(".rodal:not(.ex-rodal) .cart-modal-container .continue-button").click();
-            })
+            localStorage.setItem('ipd', 'y');
         } else {
             console.log('нет товаров в корзине!')
         }
     }
 
 
-$(".page-container").removeClass('blurred');
-$(document).mouseleave(function (e) {
-    $(".page-container").removeClass('blurred');
-    var display_product = check_to_display_popup();
-    if ($("body").find(".ex-rodal").length >0) {
-        $("body").find(".ex-rodal").remove();
-    }
-    if (display_product == true) {
-        localStorage.setItem('ipd', 'y');
-        show_ms();
-    }
-});
+// $(".page-container").removeClass('blurred');
+    $(document).mouseleave(function (e) {
+        var display_product = check_to_display_popup();
+        if (display_product == true) {
+            // $(".page-container").removeClass('blurred');
+            if ($("body").find(".ex-rodal").length >0) {
+                $("body").find(".ex-rodal").remove();
+            }
+            show_ms();
+        }
+    });
 
 
 
-  $(document).on("click", ".ex-rodal .ex-rodal-close", function() {
-      $(".ex-rodal").removeClass('show');
-      $(".page-container").removeClass('blurred');
-  });
-  $(document).on("click", ".rodal-mask", function() {
-      $(".ex-rodal").removeClass('show');
-      $(".page-container").removeClass('blurred');
-  });
-
-
-
-
-  // var d = new Date()
-  // var time = d.getHours()
-  // if (time >= 8 && time < 17) {
-  //   console.log('time >= 8 && time < 17')
-  // } else {
-  //   console.log('рабочий день закончен')
-  // }
+    $(document).on("click", ".ex-rodal .ex-rodal-close", function() {
+        $(".ex-rodal").removeClass('show');
+        $(".rodal-dialog.cart-modal-container .rodal-close").click();
+    });
+    $(document).on("click", ".rodal-mask", function() {
+        $(".ex-rodal").removeClass('show');
+        $(".rodal-dialog.cart-modal-container .rodal-close").click();
+    });
 
 
 
 
+    // var d = new Date()
+    // var time = d.getHours()
+    // if (time >= 8 && time < 17) {
+    //   console.log('time >= 8 && time < 17')
+    // } else {
+    //   console.log('рабочий день закончен')
+    // }
 
-  var styles = "<style>";
-  styles += `
+
+
+
+
+    var styles = "<style>";
+    styles += `
     .rodal.hidden {
         display: none;
     }
@@ -353,6 +396,6 @@ $(document).mouseleave(function (e) {
       width: calc(100% - 175px);
     }
   `;
-  styles    += "</style>";
-  jQuery('body').append(styles);
+    styles    += "</style>";
+    jQuery('body').append(styles);
 }
