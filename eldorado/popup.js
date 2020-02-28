@@ -66,7 +66,7 @@ function readyjQueryinit(){
             $('body').append($outhtml);
 
             $(".ex-rodal").addClass('show');
-            // $(".page-container").addClass('blurred');
+            $(".page-container").addClass('blurred');
 
             
 
