@@ -76,7 +76,6 @@ function readyjQueryinit() {
         if(ipd == 'y'){
             can_return = false;
         }
-        localStorage.setItem('ipd', 'y');
         return can_return;
     }
     $(document).on("click", ".product-buy-container .buy-button", function () {
@@ -157,15 +156,15 @@ function readyjQueryinit() {
 
 // $(".page-container").removeClass('blurred');
 $(document).mouseleave(function (e) {
+    $(".page-container").removeClass('blurred');
     var display_product = check_to_display_popup();
-        if ($("body").find(".ex-rodal").length >0) {
-            $("body").find(".ex-rodal").remove();
-        }
-        $(".page-container").removeClass('blurred');
-        if (display_product == true) {
-            show_ms();
-        }
-
+    if ($("body").find(".ex-rodal").length >0) {
+        $("body").find(".ex-rodal").remove();
+    }
+    if (display_product == true) {
+        localStorage.setItem('ipd', 'y');
+        show_ms();
+    }
 });
 
 
