@@ -186,11 +186,9 @@ function readyjQueryinit() {
 
             setInterval(function(){
               if( $('html').find(".rodal .cart").length > 0 && $('html').find(".ex-rodal.rodal.show").length >0){
-                  
-                 $('html').find(".ex-card-item").html(cartItems);
-                 console.log('111')
+                $('html').find(".ex-card-item").html(cartItems);
               }
-            },100);
+            },500);
 
             $(".ex-rodal .count-value").each(function() {
                 $(this).prepend('х ');
