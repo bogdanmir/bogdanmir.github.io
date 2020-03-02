@@ -180,24 +180,29 @@ function readyjQueryinit() {
             if($("body").find('.ex-rodal.rodal.show').length > 0){
                 console.log('blurred');
             }
+            var cartItems = $('body').find(".rodal .cart").html();
+            var $outhtml  = '<div class="ex-rodal rodal show"> <div class="rodal-mask"></div> <div class="rodal-dialog cart-modal-container"> <span class="ex-rodal-close"></span> <h5 class="ex-title">Эти товары почти Ваши! Остался всего один шаг.</h5> <div class="cart"> <div class="ex-alert">На складе осталось всего несколько единиц товаров из Вашей корзины!</div> <div class="ex-card-item">'+ cartItems +'</div> <span class="ex-information-row"> Мы не можем гарантировать Вам наличие товара, если вы покинете сайт не завершив покупку! </span> <div class="ex-submit-buttons"> <a class="ab_checkout continue-button end-cred" href="/checkout/">Купить в рассрочку/кредит</a> <a class="ab_checkout continue-button end-ord" href="/checkout/">Завершить заказ</a> </div> </div> </div>';
+            $('body').append($outhtml);
 
-            setTimeout(function(){
-              var cartItems = $('body').find(".rodal .cart").html();
-              var $outhtml  = '<div class="ex-rodal rodal show"> <div class="rodal-mask"></div> <div class="rodal-dialog cart-modal-container"> <span class="ex-rodal-close"></span> <h5 class="ex-title">Эти товары почти Ваши! Остался всего один шаг.</h5> <div class="cart"> <div class="ex-alert">На складе осталось всего несколько единиц товаров из Вашей корзины!</div> <div class="ex-card-item">'+ cartItems +'</div> <span class="ex-information-row"> Мы не можем гарантировать Вам наличие товара, если вы покинете сайт не завершив покупку! </span> <div class="ex-submit-buttons"> <a class="ab_checkout continue-button end-cred" href="/checkout/">Купить в рассрочку/кредит</a> <a class="ab_checkout continue-button end-ord" href="/checkout/">Завершить заказ</a> </div> </div> </div>';
-              $('body').append($outhtml);
-             
-              $(".ex-rodal .count-value").each(function() {
-                  $(this).prepend('х ');
-              });
-              $('body').find(".ex-rodal .goods-main-info-block .price").each(function () {
-                  var oldPrice = $(this).find('.old-price span').html();
-                  if($(this).find('.old-price span').length > 0) {
-                      $(this).append('<div class="ex-old-price"><span>'+oldPrice+'</span> грн.</div>');
-                  }
-                  var price = $(this).find('.number').html();
-                  $(this).append('<div class="price-item"><span>'+price+'</span>грн.</div>');
-              });
-            }, 500);
+            setInterval(function(){
+              if( $('html').find(".rodal .cart").length > 0 && $('html').find(".ex-rodal.rodal.show").length >0){
+                  
+                 $('html').find(".ex-card-item").html(cartItems);
+                 console.log('111')
+              }
+            },100);
+
+            $(".ex-rodal .count-value").each(function() {
+                $(this).prepend('х ');
+            });
+            $('body').find(".ex-rodal .goods-main-info-block .price").each(function () {
+                var oldPrice = $(this).find('.old-price span').html();
+                if($(this).find('.old-price span').length > 0) {
+                    $(this).append('<div class="ex-old-price"><span>'+oldPrice+'</span> грн.</div>');
+                }
+                var price = $(this).find('.number').html();
+                $(this).append('<div class="price-item"><span>'+price+'</span>грн.</div>');
+            });
 
             localStorage.setItem('ipd', 'y');
         } else {
