@@ -32,8 +32,8 @@ function readyjQueryinit() {
     
       setInterval(function() {
         // jQuery(function($) {
-        var imgsplaces = jQuery('html').find(".ex-rodal .cart .good-container .image-place").length;
-        if( $('html').find(".rodal .cart").length > 0 && $('html').find(".ex-rodal.rodal.show").length > 0 && $('html').find(".rodal .cart .good-container .image-place img").length < imgsplaces ) {
+        var imgsplaces = jQuery('html').find(".ex-rodal .cart .good-container .image-place img").length; 
+        if( $('html').find(".rodal .cart").length > 0 && $('html').find(".ex-rodal.rodal.show").length > 0 && jQuery(".rodal-dialog.cart-modal-container").closest('.rodal:not(.ex-rodal)').find(".image-place img").length > imgsplaces ) {
           var cartItems = $('body').find(".rodal .cart").html();
           $('html').find(".ex-card-item").html(cartItems);
 
