@@ -28,6 +28,30 @@ if (!window.jQuery) {
 }
 
 function readyjQueryinit() {
+  jQuery(function($) {
+    
+      setInterval(function() {
+        // jQuery(function($) {
+        var imgsplaces = jQuery('html').find(".ex-rodal .cart .good-container .image-place").length;
+        if( $('html').find(".rodal .cart").length > 0 && $('html').find(".ex-rodal.rodal.show").length > 0 && $('html').find(".rodal .cart .good-container .image-place img").length < imgsplaces ) {
+          var cartItems = $('body').find(".rodal .cart").html();
+          $('html').find(".ex-card-item").html(cartItems);
+
+          $(".ex-rodal .count-value").each(function() {
+            $(this).prepend('х ');
+          });
+          $('body').find(".ex-rodal .goods-main-info-block .price").each(function () {
+              var oldPrice = $(this).find('.old-price span').html();
+              if($(this).find('.old-price span').length > 0) {
+                  $(this).append('<div class="ex-old-price"><span>'+oldPrice+'</span> грн.</div>');
+              }
+              var price = $(this).find('.number').html();
+              $(this).append('<div class="price-item"><span>'+price+'</span>грн.</div>');
+          });
+        }
+        // });
+      },500);
+  
     window.dataLayer = window.dataLayer || [];
     dataLayer.push({
         'event': 'autoEvent',
@@ -197,24 +221,6 @@ function readyjQueryinit() {
             });
 
 
-            setInterval(function() {
-              if( $('html').find(".rodal .cart").length > 0 && $('html').find(".ex-rodal.rodal.show").length > 0 && $('html').find(".ex-rodal .cart .good-container .image-place img").length < 1 ) {
-                var cartItems = $('body').find(".rodal .cart").html();
-                $('html').find(".ex-card-item").html(cartItems);
-
-                $(".ex-rodal .count-value").each(function() {
-                  $(this).prepend('х ');
-                });
-                $('body').find(".ex-rodal .goods-main-info-block .price").each(function () {
-                    var oldPrice = $(this).find('.old-price span').html();
-                    if($(this).find('.old-price span').length > 0) {
-                        $(this).append('<div class="ex-old-price"><span>'+oldPrice+'</span> грн.</div>');
-                    }
-                    var price = $(this).find('.number').html();
-                    $(this).append('<div class="price-item"><span>'+price+'</span>грн.</div>');
-                });
-              }
-            },500);
 
             
 
@@ -421,5 +427,6 @@ function readyjQueryinit() {
     }
   `;
     styles    += "</style>";
-    jQuery('body').append(styles);
+    $('body').append(styles);
+    });
 }
