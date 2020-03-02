@@ -178,14 +178,15 @@ function readyjQueryinit() {
             $(".options-list__item.grid__cell.grid.enabled-item").click();
             $(".rodal-dialog.cart-modal-container").closest('.rodal').css({"opacity":"0", "z-index":"-1"});
             if($("body").find('.ex-rodal.rodal.show').length > 0){
-                console.log('blurred');
+              console.log('blurred');
             }
             var cartItems = $('body').find(".rodal .cart").html();
             var $outhtml  = '<div class="ex-rodal rodal show"> <div class="rodal-mask"></div> <div class="rodal-dialog cart-modal-container"> <span class="ex-rodal-close"></span> <h5 class="ex-title">Эти товары почти Ваши! Остался всего один шаг.</h5> <div class="cart"> <div class="ex-alert">На складе осталось всего несколько единиц товаров из Вашей корзины!</div> <div class="ex-card-item">'+ cartItems +'</div> <span class="ex-information-row"> Мы не можем гарантировать Вам наличие товара, если вы покинете сайт не завершив покупку! </span> <div class="ex-submit-buttons"> <a class="ab_checkout continue-button end-cred" href="/checkout/">Купить в рассрочку/кредит</a> <a class="ab_checkout continue-button end-ord" href="/checkout/">Завершить заказ</a> </div> </div> </div>';
             $('body').append($outhtml);
 
-            setInterval(function(){
-              if( $('html').find(".rodal .cart").length > 0 && $('html').find(".ex-rodal.rodal.show").length >0){
+            setInterval(function() {
+              if( $('html').find(".rodal .cart").length > 0 && $('html').find(".ex-rodal.rodal.show").length >0) {
+                var cartItems = $('body').find(".rodal .cart").html();
                 $('html').find(".ex-card-item").html(cartItems);
               }
             },500);
