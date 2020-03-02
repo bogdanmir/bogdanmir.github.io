@@ -175,9 +175,9 @@ function readyjQueryinit() {
             'eventAction': 'Popup loaded'
         });
         if ($('.options-list__item.enabled-item').length && $('.rodal-dialog.cart-modal-container').length == 0) {
+            $(".options-list__item.grid__cell.grid.enabled-item").click();
+            $(".rodal-dialog.cart-modal-container").closest('.rodal').css({"opacity":"0", "z-index":"-1"});
             if($("body").find('.ex-rodal.rodal.show').length > 0){
-                $(".options-list__item.grid__cell.grid.enabled-item").click();
-                $(".rodal-dialog.cart-modal-container").closest('.rodal').css({"opacity":"0", "z-index":"-1"});
                 console.log('blurred');
             }
             var cartItems = $('body').find(".rodal .cart").html();
