@@ -1,153 +1,246 @@
+try{
+    hj('trigger', 'exit-intent-popup');
+}catch (e) {}
 function initjQuery(callback) {
-  var script = document.createElement( "script" )
-  script.type = "text/javascript";
-  if(script.readyState) {
-  script.onreadystatechange = function() {
-    if ( script.readyState === "loaded" || script.readyState === "complete" ) {
-      script.onreadystatechange = null;
-      callback();
+    var script = document.createElement( "script" )
+    script.type = "text/javascript";
+    if(script.readyState) {
+        script.onreadystatechange = function() {
+            if ( script.readyState === "loaded" || script.readyState === "complete" ) {
+                script.onreadystatechange = null;
+                callback();
+            }
+        };
+    } else {
+        script.onload = function() {
+            callback();
+        };
     }
-  };
-  } else {
-  script.onload = function() {
-    callback();
-  };
-  }
-  script.src = '//code.jquery.com/jquery-3.3.1.min.js';
-  document.getElementsByTagName( "head" )[0].appendChild( script );
+    script.src = '//code.jquery.com/jquery-3.3.1.min.js';
+    document.getElementsByTagName( "head" )[0].appendChild( script );
 }
 if (!window.jQuery) {
-  initjQuery(function() {
-    readyjQueryinit();
-  });
+    initjQuery(function() {
+        readyjQueryinit();
+    });
 }else{
-  readyjQueryinit();
+    readyjQueryinit();
 }
 
-function readyjQueryinit(){
+function readyjQueryinit() {
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+        'event': 'autoEvent',
+        'eventCategory': 'Exp - Exit-Intent Popup',
+        'eventAction': 'Exp activated'
+    });
+    function getlsItem(name) {
+        var to_return = localStorage.getItem(name);
+        if(to_return !== null){
+            return JSON.parse(to_return);
+        }
+        return new Object();
+    }
+    function getRandomIntName(obj) {
+        var max = 1000000;
+        var tr =  Math.floor(Math.random() * Math.floor(max));
+        var new_name = 'p-'+tr;
+        if(typeof obj['p-'+tr] == "undefined") {
+            return new_name;
+        }
+        else{
+            return getRandomIntName(obj);
+        }
+    }
+    function setlsItem(value,saveto) {
+        var arr = new Object();
+        var to_return = localStorage.getItem(saveto);
+        if(to_return !== null){
+            arr = JSON.parse(to_return);
+        }
+        var name = getRandomIntName(arr);
+        var can_set = true;
+        $.each(arr, function (ind, el) {
+            if (el == value) {
+                can_set = false;
+            }
+        })
+        if(can_set) {
+            arr[name] = value;
+            var save_val = JSON.stringify(arr);
+            localStorage.setItem(saveto, save_val);
+        }
+    }
+    function check_to_display_popup(){
+        var ipd = localStorage.getItem('ipd');
+        var products_list = getlsItem("pic");
+        var can_return = true;
+        if(typeof products_list === 'object') {
+            $.each(products_list, function (ind, el) {
+                if (el == location.pathname) {
+                    can_return = false;
+                }
+            })
+        }
+        if(ipd == 'y'){
+            can_return = false;
+        }
+        return can_return;
+    }
+    $(document).on("click", ".product-buy-container .buy-button", function () {
+        if(typeof payload != 'undefined'){
+            if(typeof payload["product-view"] != 'undefined'){
+                var val = location.pathname;
+                setlsItem(val,'pic');
+            }
+        }
+    });
+    $(document).on("click", ".product-buy-container .to-cart-button", function () {
+        if(typeof payload != 'undefined'){
+            if(typeof payload["product-view"] != 'undefined'){
+                var val = location.pathname;
+                setlsItem(val,'pic');
+            }
+        }
+    });
+    $(document).on("click", ".goods-item-content .to-cart-button", function () {
+        if(typeof payload != 'undefined'){
+            if(typeof payload["product-view"] != 'undefined'){
+                var val = location.pathname;
+                setlsItem(val,'pic');
+            }
+        }
+    });
+    $(document).on("click", ".goods-item-content .buy-button", function () {
+        if($(this).closest('article.tile-container').find('.good-description .title a').length > 0){
+            var val = $(this).closest('article.tile-container').find('.good-description .title a').attr('href');
+            setlsItem(val,'pic');
+        }
+    });
+
     $(".options-list__item.grid__cell.grid.enabled-item").click();
     $(".rodal").css({"opacity":"0", "z-index":"-1"});
-    $(".page-container").removeClass('blurred');
-  
+    $(".rodal-dialog.cart-modal-container .rodal-close").click();
+
     $(document).on("click", ".rodal .rodal-close", function(event) {
         $(".options-list__item.grid__cell.grid.enabled-item").click();
         $(".rodal").css({"opacity":"0", "z-index":"-1"});
-        $(".page-container").removeClass('blurred');
+        $(".rodal-dialog.cart-modal-container .rodal-close").click();
     });
 
-    $(document).on("click", ".page-container.blurred.product-page", function() {
-        $(".options-list__item.grid__cell.grid.enabled-item").click();
-        $(".rodal").css({"opacity":"0", "z-index":"-1"});
-        $(".page-container").removeClass('blurred');
-    });
+    // $(document).on("click", ".page-container.blurred.product-page", function() {
+    //     $(".options-list__item.grid__cell.grid.enabled-item").click();
+    //     $(".rodal").css({"opacity":"0", "z-index":"-1"});
+    //     $(".rodal-dialog.cart-modal-container .rodal-close").click();
+    // });
+    // $(document).on("click", ".product-buy-container .buy-button", function() {
+    //     console.log(payload["product-view"]);
+    // });
 
+    $(document).on("click", ".ab_checkout", function(event) {
+        $("body").find(".rodal:not(.ex-rodal) .cart-modal-container .continue-button").click();
+    })
+    $(document).on("click", ".end-ord", function(event) {
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+            'event': 'autoEvent',
+            'eventCategory': 'Exp - Exit-Intent Popup',
+            'eventAction': 'click',
+            'eventLabel': 'Complete order'
+        });
+    })
+    $(document).on("click", ".ex-rodal.rodal.show .rodal-mask", function(event) {
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+            'event': 'autoEvent',
+            'eventCategory': 'Exp - Exit-Intent Popup',
+            'eventAction': 'click',
+            'eventLabel': 'Background to close'
+        });
+    });
+    $(document).on("click", ".end-cred", function(event) {
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+            'event': 'autoEvent',
+            'eventCategory': 'Exp - Exit-Intent Popup',
+            'eventAction': 'click',
+            'eventLabel': 'Buy on credit'
+        });
+    })
     function show_ms(){
-        if ($('.options-list__item.enabled-item').length) {
-
-            var cartItems = $(".rodal .cart").html();
-
-            var $outhtml;
-            $outhtml  = '<div class="ex-rodal rodal">';
-            $outhtml +=   '<div class="rodal-mask"></div>';
-            $outhtml +=   '<div class="rodal-dialog cart-modal-container">';
-            $outhtml +=   '<span class="ex-rodal-close"></span>';
-            $outhtml +=   '<h5 class="ex-title">Эти товары почти Ваши! Остался всего один шаг.</h5>';
-            $outhtml +=   '<div class="cart">'
-            $outhtml +=     '<div class="ex-alert">На складе осталось всего несколько единиц товаров из Вашей корзины!</div>';
-            $outhtml +=     '<div class="ex-card-item">'+ cartItems +'</div>';
-            $outhtml +=     '<span class="ex-information-row"> Мы не можем гарантировать Вам наличие товара, если вы покинете сайт не завершив покупку! </span>';
-            $outhtml +=     '<div class="ex-submit-buttons">';
-            $outhtml +=         '<a class="ab_checkout continue-button" href="/checkout/">Купить в рассрочку/кредит</a>';
-            $outhtml +=         '<a class="ab_checkout continue-button" href="/checkout/">Завершить заказ</a>';
-            $outhtml +=     '</div>'
-            $outhtml +=   '</div>'
-            $outhtml += '</div>';
-
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+            'event': 'autoEvent',
+            'eventCategory': 'Exp - Exit-Intent Popup',
+            'eventAction': 'Popup loaded'
+        });
+        if ($('.options-list__item.enabled-item').length && $('.rodal-dialog.cart-modal-container').length == 0) {
+            var cartItems = $('body').find(".rodal .cart").html();
+            var $outhtml  = '<div class="ex-rodal rodal show"> <div class="rodal-mask"></div> <div class="rodal-dialog cart-modal-container"> <span class="ex-rodal-close"></span> <h5 class="ex-title">Эти товары почти Ваши! Остался всего один шаг.</h5> <div class="cart"> <div class="ex-alert">На складе осталось всего несколько единиц товаров из Вашей корзины!</div> <div class="ex-card-item">'+ cartItems +'</div> <span class="ex-information-row"> Мы не можем гарантировать Вам наличие товара, если вы покинете сайт не завершив покупку! </span> <div class="ex-submit-buttons"> <a class="ab_checkout continue-button end-cred" href="/checkout/">Купить в рассрочку/кредит</a> <a class="ab_checkout continue-button end-ord" href="/checkout/">Завершить заказ</a> </div> </div> </div>';
             $('body').append($outhtml);
-
-            $(".ex-rodal").addClass('show');
-            $(".page-container").addClass('blurred');
-
-            
-
+            if($("body").find('.ex-rodal.rodal.show').length > 0){
+                $(".options-list__item.grid__cell.grid.enabled-item").click();
+                $(".rodal-dialog.cart-modal-container").closest('.rodal').css({"opacity":"0", "z-index":"-1"});
+                console.log('blurred');
+            }
             $(".ex-rodal .count-value").each(function() {
-              $(this).prepend('х ');
+                $(this).prepend('х ');
             });
-
-            $('.ex-rodal .goods-main-info-block .price').each(function () {
-              var oldPrice = $(this).find('.old-price span').html();
-              if($(this).find('.old-price span').length > 0) {
-                $(this).append('<div class="ex-old-price"><span>'+oldPrice+'</span> грн.</div>');
-              }
-
-              var price = $(this).find('.number').html();
-              $(this).append('<div class="price-item"><span>'+price+'</span>грн.</div>');
+            $('body').find(".ex-rodal .goods-main-info-block .price").each(function () {
+                var oldPrice = $(this).find('.old-price span').html();
+                if($(this).find('.old-price span').length > 0) {
+                    $(this).append('<div class="ex-old-price"><span>'+oldPrice+'</span> грн.</div>');
+                }
+                var price = $(this).find('.number').html();
+                $(this).append('<div class="price-item"><span>'+price+'</span>грн.</div>');
             });
-            $(document).on("click", ".ab_checkout", function(event) {
-              event.preventDefault()
-              $(".rodal:not(.ex-rodal) .cart-modal-container .continue-button").click()
-            })
-
+            localStorage.setItem('ipd', 'y');
         } else {
             console.log('нет товаров в корзине!')
         }
     }
 
 
-  $(document).mouseleave(function(e) {
-
-      if(localStorage.getItem("reloadkey") !== "1") {
-        localStorage.setItem("reloadkey", "1"); 
-          console.log('localStorage is true');
-
-          if ($(".ex-rodal").length < 1) {
-            // условие - есть ли этот товар в корзине
-            var productName = $(".product-name h1").text();
-            var productNameCard = $(".cart .cart-goods-information .title").text();
-
-            $(".page-container").removeClass('blurred');
-            
-            if(productName == productNameCard) {
-              console.log('1111')
-            } else {
-              console.log('2222')
-              show_ms();
+// $(".page-container").removeClass('blurred');
+    $(document).mouseleave(function (e) {
+        var display_product = check_to_display_popup();
+        if (display_product == true) {
+            // $(".page-container").removeClass('blurred');
+            if ($("body").find(".ex-rodal").length >0) {
+                $("body").find(".ex-rodal").remove();
             }
-
-          }
-
-      }
-
-  });
+            show_ms();
+        }
+    });
 
 
 
-  $(document).on("click", ".ex-rodal .ex-rodal-close", function() {
-      $(".ex-rodal").removeClass('show');
-      $(".page-container").removeClass('blurred');
-  });
-  $(document).on("click", ".rodal-mask", function() {
-      $(".ex-rodal").removeClass('show');
-      $(".page-container").removeClass('blurred');
-  });
+    $(document).on("click", ".ex-rodal .ex-rodal-close", function() {
+        $(".ex-rodal").removeClass('show');
+        $(".rodal-dialog.cart-modal-container .rodal-close").click();
+    });
+    $(document).on("click", ".rodal-mask", function() {
+        $(".ex-rodal").removeClass('show');
+        $(".rodal-dialog.cart-modal-container .rodal-close").click();
+    });
 
 
 
 
-  // var d = new Date()
-  // var time = d.getHours()
-  // if (time >= 8 && time < 17) {
-  //   console.log('time >= 8 && time < 17')
-  // } else {
-  //   console.log('рабочий день закончен')
-  // }
+    // var d = new Date()
+    // var time = d.getHours()
+    // if (time >= 8 && time < 17) {
+    //   console.log('time >= 8 && time < 17')
+    // } else {
+    //   console.log('рабочий день закончен')
+    // }
 
 
 
 
 
-  var styles = "<style>";
-  styles += `
+    var styles = "<style>";
+    styles += `
     .rodal.hidden {
         display: none;
     }
@@ -303,6 +396,6 @@ function readyjQueryinit(){
       width: calc(100% - 175px);
     }
   `;
-  styles    += "</style>";
-  jQuery('body').append(styles);
+    styles    += "</style>";
+    jQuery('body').append(styles);
 }
