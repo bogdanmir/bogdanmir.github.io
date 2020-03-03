@@ -205,7 +205,11 @@ function readyjQueryinit() {
               console.log('blurred');
             }
             var cartItems = $('body').find(".rodal .cart").html();
-            var $outhtml  = '<div class="ex-rodal rodal show"> <div class="rodal-mask"></div> <div class="rodal-dialog cart-modal-container"> <span class="ex-rodal-close"></span> <h5 class="ex-title">Эти товары почти Ваши! Остался всего один шаг.</h5> <div class="cart"> <div class="ex-alert">На складе осталось всего несколько единиц товаров из Вашей корзины!</div> <div class="ex-card-item">'+ cartItems +'</div> <span class="ex-information-row"> Мы не можем гарантировать Вам наличие товара, если вы покинете сайт не завершив покупку! </span> <div class="ex-submit-buttons"> <a class="ab_checkout continue-button end-cred" href="/checkout/">Купить в рассрочку/кредит</a> <a class="ab_checkout continue-button end-ord" href="/checkout/">Завершить заказ</a> </div> </div> </div>';
+            if($('.cart .goods-tile-container').length > 1) {
+              var $outhtml  = '<div class="ex-rodal rodal show"> <div class="rodal-mask"></div> <div class="rodal-dialog cart-modal-container"> <span class="ex-rodal-close"></span> <h5 class="ex-title"> Эти товары почти Ваши! Остался всего один шаг. </h5> <div class="cart"> <div class="ex-alert"> На складе осталось всего несколько единиц товаров из Вашей корзины! </div> <div class="ex-card-item">'+ cartItems +'</div> <span class="ex-information-row"> Мы не можем гарантировать Вам наличие товара, если вы не завершите покупку. </span> <div class="ex-submit-buttons"> <a class="ab_checkout continue-button end-cred" href="/checkout/">Купить в рассрочку/кредит</a> <a class="ab_checkout continue-button end-ord" href="/checkout/">Завершить заказ</a> </div> </div> </div>';
+            } else {
+              var $outhtml  = '<div class="ex-rodal rodal show"> <div class="rodal-mask"></div> <div class="rodal-dialog cart-modal-container"> <span class="ex-rodal-close"></span> <h5 class="ex-title"> Этот товар почти Ваш! Остался всего один шаг. </h5> <div class="cart"> <div class="ex-alert"> На складе осталось всего несколько единиц товара из вашей корзины </div> <div class="ex-card-item">'+ cartItems +'</div> <span class="ex-information-row"> Мы не можем гарантировать Вам наличие товара, если вы не завершите покупку. </span> <div class="ex-submit-buttons"> <a class="ab_checkout continue-button end-cred" href="/checkout/">Купить в рассрочку/кредит</a> <a class="ab_checkout continue-button end-ord" href="/checkout/">Завершить заказ</a> </div> </div> </div>';
+            }
             $('body').append($outhtml);
 
             $(".ex-rodal .count-value").each(function() {
@@ -219,10 +223,6 @@ function readyjQueryinit() {
                 var price = $(this).find('.number').html();
                 $(this).append('<div class="price-item"><span>'+price+'</span>грн.</div>');
             });
-
-
-
-            
 
             localStorage.setItem('ipd', 'y');
         } else {
@@ -243,8 +243,6 @@ function readyjQueryinit() {
         }
     });
 
-
-
     $(document).on("click", ".ex-rodal .ex-rodal-close", function() {
         $(".ex-rodal").removeClass('show');
         $(".rodal-dialog.cart-modal-container .rodal-close").click();
@@ -255,8 +253,6 @@ function readyjQueryinit() {
     });
 
 
-
-
     // var d = new Date()
     // var time = d.getHours()
     // if (time >= 8 && time < 17) {
@@ -264,10 +260,6 @@ function readyjQueryinit() {
     // } else {
     //   console.log('рабочий день закончен')
     // }
-
-
-
-
 
     var styles = "<style>";
     styles += `
