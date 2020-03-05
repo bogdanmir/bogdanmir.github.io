@@ -109,7 +109,7 @@ function readyjQueryinit() {
         }
         return can_return;
     }
-    $(document).on("click", ".product-buy-container .buy-button", function () {
+    $(document).on("click", ".product-information-part .buy-button", function () {
         if(typeof payload != 'undefined'){
             if(typeof payload["product-view"] != 'undefined'){
                 var val = location.pathname;
