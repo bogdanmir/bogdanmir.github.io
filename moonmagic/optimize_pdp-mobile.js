@@ -573,6 +573,9 @@ function readyjQueryinit() {
   });
 
   $('#design-materials-gemstones').on('click', ".add-design", function () {
+    setTimeout(function () {
+      $('html').removeClass("disable-scroll");
+    }, 1000);
     window.dataLayer = window.dataLayer || [];
     dataLayer.push({
       'event': 'event-to-ga',
