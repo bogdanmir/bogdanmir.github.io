@@ -143,6 +143,18 @@ function readyjQueryinit() {
             }
         }
     });
+
+
+    $(document).on("click", ".credit-basket-modal .credit-suggestions-list .buy-button", function () {
+        if(typeof payload != 'undefined'){
+            if(typeof payload["product-view"] != 'undefined'){
+                var val = location.pathname;
+                setlsItem(val,'pic');
+            }
+        }
+    });
+    
+
     $(document).on("click", ".goods-item-content .buy-button", function () {
         if($(this).closest('article.tile-container').find('.good-description .title a').length > 0){
             var val = $(this).closest('article.tile-container').find('.good-description .title a').attr('href');
