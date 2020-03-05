@@ -153,7 +153,7 @@ function readyjQueryinit() {
             }
         }
     });
-    
+
 
     $(document).on("click", ".goods-item-content .buy-button", function () {
         if($(this).closest('article.tile-container').find('.good-description .title a').length > 0){
@@ -300,14 +300,13 @@ function readyjQueryinit() {
         }
 
 
-        if ((display_product == true) && (document.location.href == "https://eldorado.ua/checkout/")) {
+        if ((display_product == true) && (document.location.href.indexOf("eldorado.ua/checkout/") > -1)) {
           console.log('true')
           if ($("body").find(".ex-rodal").length >0) {
               $("body").find(".ex-rodal").remove();
           }
           show_ms_checkout();
         }
-
 
     });
 
