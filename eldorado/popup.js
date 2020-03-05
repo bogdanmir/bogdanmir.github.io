@@ -117,6 +117,16 @@ function readyjQueryinit() {
             }
         }
     });
+
+    $(document).on("click", ".tile-container .goods-item .buy-button", function () {
+        if(typeof payload != 'undefined'){
+            if(typeof payload["product-view"] != 'undefined'){
+                var val = location.pathname;
+                setlsItem(val,'pic');
+            }
+        }
+    });
+
     $(document).on("click", ".product-buy-container .to-cart-button", function () {
         if(typeof payload != 'undefined'){
             if(typeof payload["product-view"] != 'undefined'){
@@ -204,9 +214,9 @@ function readyjQueryinit() {
             }
             var cartItems = $('body').find(".rodal .cart").html();
             if($('.cart .goods-tile-container').length > 1) {
-              var $outhtml  = '<div class="ex-rodal rodal show"> <div class="rodal-mask"></div> <div class="rodal-dialog cart-modal-container"> <span class="ex-rodal-close"></span> <h5 class="ex-title"> Эти товары почти Ваши! Остался всего один шаг. </h5> <div class="cart"> <div class="ex-alert"> На складе осталось всего несколько единиц товаров из Вашей корзины! </div> <div class="ex-card-item">'+ cartItems +'</div> <span class="ex-information-row"> Мы не можем гарантировать наличие товара, если Вы не завершите покупку. </span> <div class="ex-submit-buttons"> <a class="ab_checkout continue-button end-cred" href="/checkout/">Купить в рассрочку/кредит</a> <a class="ab_checkout continue-button end-ord" href="/checkout/">Завершить заказ</a> </div> </div> </div>';
+              var $outhtml  = '<div class="ex-rodal rodal show"> <div class="rodal-mask"></div> <div class="rodal-dialog cart-modal-container"> <span class="ex-rodal-close"></span> <h5 class="ex-title"> Эти товары почти Ваши! Остался всего один шаг. </h5> <div class="cart"> <div class="ex-alert"> На складе осталось всего несколько единиц товаров из Вашей корзины! </div> <div class="ex-card-item">'+ cartItems +'</div> <span class="ex-information-row"> Мы не можем гарантировать наличие товара, если Вы не завершите покупку! </span> <div class="ex-submit-buttons"> <a class="ab_checkout continue-button end-cred" href="/checkout/">Купить в рассрочку/кредит</a> <a class="ab_checkout continue-button end-ord" href="/checkout/">Завершить заказ</a> </div> </div> </div>';
             } else {
-              var $outhtml  = '<div class="ex-rodal rodal show"> <div class="rodal-mask"></div> <div class="rodal-dialog cart-modal-container"> <span class="ex-rodal-close"></span> <h5 class="ex-title"> Этот товар почти Ваш! Остался всего один шаг. </h5> <div class="cart"> <div class="ex-alert"> На складе осталось всего несколько единиц товара из Вашей корзины! </div> <div class="ex-card-item">'+ cartItems +'</div> <span class="ex-information-row"> Мы не можем гарантировать наличие товара, если Вы не завершите покупку. </span> <div class="ex-submit-buttons"> <a class="ab_checkout continue-button end-cred" href="/checkout/">Купить в рассрочку/кредит</a> <a class="ab_checkout continue-button end-ord" href="/checkout/">Завершить заказ</a> </div> </div> </div>';
+              var $outhtml  = '<div class="ex-rodal rodal show"> <div class="rodal-mask"></div> <div class="rodal-dialog cart-modal-container"> <span class="ex-rodal-close"></span> <h5 class="ex-title"> Этот товар почти Ваш! Остался всего один шаг. </h5> <div class="cart"> <div class="ex-alert"> На складе осталось всего несколько единиц товара из Вашей корзины! </div> <div class="ex-card-item">'+ cartItems +'</div> <span class="ex-information-row"> Мы не можем гарантировать наличие товара, если Вы не завершите покупку! </span> <div class="ex-submit-buttons"> <a class="ab_checkout continue-button end-cred" href="/checkout/">Купить в рассрочку/кредит</a> <a class="ab_checkout continue-button end-ord" href="/checkout/">Завершить заказ</a> </div> </div> </div>';
             }
             $('body').append($outhtml);
 
@@ -227,12 +237,6 @@ function readyjQueryinit() {
             console.log('нет товаров в корзине!')
         }
     }
-
-
-
-
-
-
 
 
     function show_ms_checkout(){
@@ -247,9 +251,9 @@ function readyjQueryinit() {
             var cartItems = $('body').find(".cart.checkout-cart-block-container .cart-goods").html();
 
             if($('.cart.checkout-cart-block-container .cart-goods .good-card-container').length > 1) {
-              var $outhtml  = '<div class="ex-rodal rodal show"> <div class="rodal-mask"></div> <div class="rodal-dialog cart-modal-container"> <span class="ex-rodal-close"></span> <h5 class="ex-title"> Эти товары почти Ваши! Остался всего один шаг. </h5> <div class="cart"> <div class="ex-alert"> На складе осталось всего несколько единиц товаров из Вашей корзины! </div> <div class="ex-card-item">'+ cartItems +'</div> <span class="ex-information-row"> Мы не можем гарантировать наличие товара, если Вы не завершите покупку. </span> <div class="ex-submit-buttons"> <a class="ab_checkout continue-button end-cred" href="/checkout/">Купить в рассрочку/кредит</a> <a class="ab_checkout continue-button end-ord" href="/checkout/">Завершить заказ</a> </div> </div> </div>';
+              var $outhtml  = '<div class="ex-rodal rodal show"> <div class="rodal-mask"></div> <div class="rodal-dialog cart-modal-container"> <span class="ex-rodal-close"></span> <h5 class="ex-title"> Эти товары почти Ваши! Остался всего один шаг. </h5> <div class="cart"> <div class="ex-alert"> На складе осталось всего несколько единиц товаров из Вашей корзины! </div> <div class="ex-card-item">'+ cartItems +'</div> <span class="ex-information-row"> Мы не можем гарантировать наличие товара, если Вы не завершите покупку! </span> <div class="ex-submit-buttons"> <a class="ab_checkout continue-button end-cred" href="/checkout/">Купить в рассрочку/кредит</a> <a class="ab_checkout continue-button end-ord" href="/checkout/">Завершить заказ</a> </div> </div> </div>';
             } else {
-              var $outhtml  = '<div class="checkout-rodal ex-rodal rodal show"> <div class="rodal-mask"></div> <div class="rodal-dialog cart-modal-container"> <span class="ex-rodal-close"></span> <h5 class="ex-title"> Этот товар почти Ваш! Остался всего один шаг. </h5> <div class="cart"> <div class="ex-alert"> На складе осталось всего несколько единиц товара из Вашей корзины! </div> <div class="ex-card-item">'+ cartItems +'</div> <span class="ex-information-row"> Мы не можем гарантировать наличие товара, если Вы не завершите покупку. </span> <div class="ex-submit-buttons"> <a class="ab_checkout continue-button end-cred" href="/checkout/">Купить в рассрочку/кредит</a> <a class="ab_checkout continue-button end-ord" href="/checkout/">Завершить заказ</a> </div> </div> </div>';
+              var $outhtml  = '<div class="checkout-rodal ex-rodal rodal show"> <div class="rodal-mask"></div> <div class="rodal-dialog cart-modal-container"> <span class="ex-rodal-close"></span> <h5 class="ex-title"> Этот товар почти Ваш! Остался всего один шаг. </h5> <div class="cart"> <div class="ex-alert"> На складе осталось всего несколько единиц товара из Вашей корзины! </div> <div class="ex-card-item">'+ cartItems +'</div> <span class="ex-information-row"> Мы не можем гарантировать наличие товара, если Вы не завершите покупку! </span> <div class="ex-submit-buttons"> <a class="ab_checkout continue-button end-cred" href="/checkout/">Купить в рассрочку/кредит</a> <a class="ab_checkout continue-button end-ord" href="/checkout/">Завершить заказ</a> </div> </div> </div>';
             }
             $('body').append($outhtml);
 
@@ -270,9 +274,6 @@ function readyjQueryinit() {
             console.log('нет товаров в корзине!')
         }
     }
-
-
-
 
 
 // $(".page-container").removeClass('blurred');
