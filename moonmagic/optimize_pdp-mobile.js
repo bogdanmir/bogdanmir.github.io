@@ -534,11 +534,9 @@ function readyjQueryinit() {
       });
     }
 
-    $('.product__form--main .button--add-to-cart, #overlay, #cartPopup, #design-materials-gemstones .add-design').on('click', function () {
-      setTimeout(function () {
-        cartCounts();
-      }, 1000);
-    });
+    setInterval(function () {
+      cartCounts();
+    }, 1000);
 
     let notify = $('.product__form--main .klaviyo-bis-trigger');
     if(notify.css('display') === 'inline-block'){
@@ -623,6 +621,7 @@ function readyjQueryinit() {
     }
   });
 
+
   $('.cart-popup__content .cart-popup__list').on('click', '.cart-popup__item-remove', function () {
     let text = $(this).parents('.cart-popup__item').find('.cart-popup__item-size .cart-popup__item-size-val').text();
     let nameProduct = $(this).parents('.cart-popup__item').find('.cart-popup__item-title a').text();
@@ -640,4 +639,10 @@ function readyjQueryinit() {
   setTimeout(function () {
     $("#design-materials-gemstones").slideDown(500);
   }, 1500);
+
+  setInterval(function () {
+    if ($('#cartPopup').css('display') === 'none'){
+      $('html').removeClass('disable-scroll');
+    }
+  }, 1000);
 }
