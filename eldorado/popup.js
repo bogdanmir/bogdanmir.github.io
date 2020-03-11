@@ -159,6 +159,8 @@ function readyjQueryinit() {
         if($(this).closest('article.tile-container').find('.good-description .title a').length > 0){
             var val = $(this).closest('article.tile-container').find('.good-description .title a').attr('href');
             setlsItem(val,'pic');
+            val = location.pathname;
+            setlsItem(val,'pic');
         }
     });
 
