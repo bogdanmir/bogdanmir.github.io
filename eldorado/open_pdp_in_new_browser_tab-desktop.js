@@ -37,7 +37,13 @@ function readyjQueryinit(){
       'eventAction': 'Exp activated'
     });
 
-    $('html').find(".tile-container .goods-item .goods-item-content .image-place").each(function() {
+
+
+    // $('html').find(".tile-container .goods-item .goods-item-content .image-place").each(function() {
+    // $(window).on("click", ".tile-container .goods-item .image-place", function() {
+    $(document).on("click", ".tile-container .goods-item .image-place", function() {
+
+      console.log('click on image');
 
       window.dataLayer = window.dataLayer || [];
         dataLayer.push({
@@ -47,15 +53,17 @@ function readyjQueryinit(){
       });
 
       var href = $(this).find('a').attr('href');
-      $(this).on("click", function(){
+      // $(this).on("click", function(){
         window.open(href, '_blank');
 
-        console.log('click on image');
-      });
+        
+      // });
     });
 
 
-    $('html').find(".tile-container .goods-item .goods-item-content .good-description .title").each(function() {
+    // $('html').find(".tile-container .goods-item .goods-item-content .good-description .title").each(function() {
+    $(document).on("click", ".tile-container .goods-item .goods-item-content .good-description .title", function() {
+
 
       window.dataLayer = window.dataLayer || [];
         dataLayer.push({
@@ -65,15 +73,16 @@ function readyjQueryinit(){
       });
 
       var href1 = $(this).find('a').attr('href');
-      $(this).on("click", function(){
+      // $(this).on("click", function(){
         window.open(href1, '_blank');
 
         console.log('click on title');
-      });
+      // });
     });
 
 
-    $('html').find(".tile-container .goods-item .goods-item-content .tile-goods-rating .left-part").each(function() {
+    // $('html').find(".tile-container .goods-item .goods-item-content .tile-goods-rating .left-part").each(function() {
+    $(document).on("click", ".tile-container .goods-item .goods-item-content .tile-goods-rating .left-part", function() {
 
       window.dataLayer = window.dataLayer || [];
         dataLayer.push({
@@ -83,15 +92,16 @@ function readyjQueryinit(){
       });
 
       var href2 = $(this).find('a').attr('href');
-      $(this).on("click", function(){
+      // $(this).on("click", function(){
         window.open(href2, '_blank');
 
         console.log('click on left-part');
-      });
+      // });
     });
 
 
-    $('html').find(".tile-container .goods-item .goods-item-content .tile-goods-rating .right-part").each(function() {
+    // $('html').find(".tile-container .goods-item .goods-item-content .tile-goods-rating .right-part").each(function() {
+    $(document).on("click", ".tile-container .goods-item .goods-item-content .tile-goods-rating .right-part", function() {
 
       window.dataLayer = window.dataLayer || [];
         dataLayer.push({
@@ -101,15 +111,16 @@ function readyjQueryinit(){
       });
 
       var href3 = $(this).find('a').attr('href');
-      $(this).on("click", function(){
+      // $(this).on("click", function(){
         window.open(href3, '_blank');
 
         console.log('click on right-part');
-      });
+      // });
     });
 
 
-    $('html').find(".tile-container .goods-item .goods-item-content .goods-delivery-methods ul li").each(function() {
+    // $('html').find(".tile-container .goods-item .goods-item-content .goods-delivery-methods ul li").each(function() {
+    $(document).on("click", ".tile-container .goods-item .goods-item-content .goods-delivery-methods ul li", function() {
 
       window.dataLayer = window.dataLayer || [];
         dataLayer.push({
@@ -119,12 +130,12 @@ function readyjQueryinit(){
       });
 
       var href4 = $(this).find('a').attr('href');
-      $(this).on("click", function(){
+      // $(this).on("click", function(){
         window.open(href4, '_blank');
 
         console.log('click on delivery-methods')
-      });
-    }); 
+      // });
+    });
 
     var styles = "<style>";
     styles += `
@@ -145,9 +156,9 @@ function readyjQueryinit(){
       .tile-container .goods-item a {
         pointer-events: none;
       }
-  `;
-  styles    += "</style>";
-  $('body').after(styles);
+    `;
+    styles    += "</style>";
+    $('body').after(styles);
 
   })
 }
