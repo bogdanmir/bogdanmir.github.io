@@ -47,6 +47,8 @@ function readyjQueryinit(){
       var href = $(this).find('a').attr('href');
       $(this).on("click", function(){
         window.open(href, '_blank');
+
+        console.log('click on image');
       });
     });
 
@@ -63,6 +65,8 @@ function readyjQueryinit(){
       var href1 = $(this).find('a').attr('href');
       $(this).on("click", function(){
         window.open(href1, '_blank');
+
+        console.log('click on title');
       });
     });
 
@@ -79,6 +83,8 @@ function readyjQueryinit(){
       var href2 = $(this).find('a').attr('href');
       $(this).on("click", function(){
         window.open(href2, '_blank');
+
+        console.log('click on left-part');
       });
     });
 
@@ -95,6 +101,8 @@ function readyjQueryinit(){
       var href3 = $(this).find('a').attr('href');
       $(this).on("click", function(){
         window.open(href3, '_blank');
+
+        console.log('click on right-part');
       });
     });
 
@@ -111,6 +119,8 @@ function readyjQueryinit(){
       var href4 = $(this).find('a').attr('href');
       $(this).on("click", function(){
         window.open(href4, '_blank');
+
+        console.log('click on delivery-methods')
       });
     }); 
 
