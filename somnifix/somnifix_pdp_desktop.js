@@ -296,9 +296,13 @@ function readyjQueryinit() {
 			width: calc(33.33% - 15px);
 			margin-right: 7.5px;
 			margin-left: 7.5px;
+			min-height: 132px;
+			display: flex;
+			align-items: center;
 		}
 		.section.is-width-standard .product_section .swatch label.on-variant-label {
 			padding: 9px 9px;
+			width: 100%;
 		}
 		.section.is-width-standard .product_section .swatch_options input:checked+.swatch-element {
 			background: #F1F7FC;
