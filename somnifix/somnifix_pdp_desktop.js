@@ -36,8 +36,8 @@ function readyjQueryinit() {
 		'eventCategory': 'Exp - Optimize PDP UX',
 		'eventAction': 'loaded'
 	});
-	$(document).on("click", ".product_section .swatch .swatch-element:nth-child(1)", function () {
-		console.log('QUANTITY - 1 PACK');
+	$(document).on("click", ".product_section .swatch_options .swatch .swatch-element:nth-child(1)", function () {
+		console.log('QUANTITY - 1');
 		window.dataLayer = window.dataLayer || [];
 		dataLayer.push({
 			'event': 'event-to-ga',
@@ -46,8 +46,8 @@ function readyjQueryinit() {
 			'eventLabel': 'QUANTITY - 1 PACK'
 		});
 	});
-	$(document).on("click", ".product_section .swatch .swatch-element:nth-child(2)", function () {
-		console.log('QUANTITY - 3 PACK');
+	$(document).on("click", ".product_section .swatch_options .swatch .swatch-element:nth-child(2)", function () {
+		console.log('QUANTITY - 2');
 		window.dataLayer = window.dataLayer || [];
 		dataLayer.push({
 			'event': 'event-to-ga',
@@ -56,8 +56,8 @@ function readyjQueryinit() {
 			'eventLabel': 'QUANTITY - 3 PACK'
 		});
 	});
-	$(document).on("click", ".product_section .swatch .swatch-element:nth-child(3)", function () {
-		console.log('QUANTITY - Subscribe');
+	$(document).on("click", ".product_section .swatch_options .swatch .swatch-element:nth-child(3)", function () {
+		console.log('QUANTITY - 3');
 		window.dataLayer = window.dataLayer || [];
 		dataLayer.push({
 			'event': 'event-to-ga',
@@ -164,8 +164,10 @@ function readyjQueryinit() {
 		}
 		.product_section .product__images .made_in{
 			position: absolute;
-			top: 65px;
+			top: 63px;
 			right: 0;
+			font-weight: 500;
+    		font-size: 12px;
 		}
 		.product_section .product__images .made_in:before{
 			content: '';
