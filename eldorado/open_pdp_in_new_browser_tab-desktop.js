@@ -38,106 +38,115 @@ function readyjQueryinit(){
     });
 
 
-setTimeout(function(){
-    // $('html').find(".tile-container .goods-item .goods-item-content .image-place").each(function() {
-    // $(window).on("click", ".tile-container .goods-item .image-place", function() {
-    $(document).on("click", ".tile-container .goods-item .image-place", function() {
+    setTimeout(function(){
+        // $('html').find(".tile-container .goods-item .goods-item-content .image-place").each(function() {
+        // $(window).on("click", ".tile-container .goods-item .image-place", function() {
+        $(document).on("click", ".tile-container .goods-item .image-place", function() {
 
-      console.log('click on image');
+          console.log('click on image');
 
-      window.dataLayer = window.dataLayer || [];
-        dataLayer.push({
-        'event': 'autoEvent',
-        'eventCategory': 'Exp - Open PDP in new tab',
-        'eventAction': 'Open PDP'
-      });
+          window.dataLayer = window.dataLayer || [];
+            dataLayer.push({
+            'event': 'autoEvent',
+            'eventCategory': 'Exp - Open PDP in new tab',
+            'eventAction': 'Open PDP'
+          });
 
-      var href = $(this).find('a').attr('href');
-      // $(this).on("click", function(){
-        window.open(href, '_blank');
-
-        
-      // });
-    });
+          var href = $(this).find('a').attr('href');
+          // $(this).on("click", function(){
+            window.open(href, '_blank');
+          // });
+        });
 
 
-    // $('html').find(".tile-container .goods-item .goods-item-content .good-description .title").each(function() {
-    $(document).on("click", ".tile-container .goods-item .goods-item-content .good-description .title", function() {
+        // $('html').find(".tile-container .goods-item .goods-item-content .good-description .title").each(function() {
+        $(document).on("click", ".tile-container .goods-item .goods-item-content .good-description .title", function() {
+
+          window.dataLayer = window.dataLayer || [];
+            dataLayer.push({
+            'event': 'autoEvent',
+            'eventCategory': 'Exp - Open PDP in new tab',
+            'eventAction': 'Open PDP'
+          });
+
+          var href1 = $(this).find('a').attr('href');
+          // $(this).on("click", function(){
+            window.open(href1, '_blank');
+            console.log('click on title');
+          // });
+        });
 
 
-      window.dataLayer = window.dataLayer || [];
-        dataLayer.push({
-        'event': 'autoEvent',
-        'eventCategory': 'Exp - Open PDP in new tab',
-        'eventAction': 'Open PDP'
-      });
+        // $('html').find(".tile-container .goods-item .goods-item-content .tile-goods-rating .left-part").each(function() {
+        $(document).on("click", ".tile-container .goods-item .goods-item-content .tile-goods-rating .left-part", function() {
 
-      var href1 = $(this).find('a').attr('href');
-      // $(this).on("click", function(){
-        window.open(href1, '_blank');
+          window.dataLayer = window.dataLayer || [];
+            dataLayer.push({
+            'event': 'autoEvent',
+            'eventCategory': 'Exp - Open PDP in new tab',
+            'eventAction': 'Open PDP'
+          });
 
-        console.log('click on title');
-      // });
-    });
-
-
-    // $('html').find(".tile-container .goods-item .goods-item-content .tile-goods-rating .left-part").each(function() {
-    $(document).on("click", ".tile-container .goods-item .goods-item-content .tile-goods-rating .left-part", function() {
-
-      window.dataLayer = window.dataLayer || [];
-        dataLayer.push({
-        'event': 'autoEvent',
-        'eventCategory': 'Exp - Open PDP in new tab',
-        'eventAction': 'Open PDP'
-      });
-
-      var href2 = $(this).find('a').attr('href');
-      // $(this).on("click", function(){
-        window.open(href2, '_blank');
-
-        console.log('click on left-part');
-      // });
-    });
+          var href2 = $(this).find('a').attr('href');
+          // $(this).on("click", function(){
+            window.open(href2, '_blank');
+            console.log('click on left-part');
+          // });
+        });
 
 
-    // $('html').find(".tile-container .goods-item .goods-item-content .tile-goods-rating .right-part").each(function() {
-    $(document).on("click", ".tile-container .goods-item .goods-item-content .tile-goods-rating .right-part", function() {
+        // $('html').find(".tile-container .goods-item .goods-item-content .tile-goods-rating .right-part").each(function() {
+        $(document).on("click", ".tile-container .goods-item .goods-item-content .tile-goods-rating .right-part", function() {
 
-      window.dataLayer = window.dataLayer || [];
-        dataLayer.push({
-        'event': 'autoEvent',
-        'eventCategory': 'Exp - Open PDP in new tab',
-        'eventAction': 'Open PDP'
-      });
+          window.dataLayer = window.dataLayer || [];
+            dataLayer.push({
+            'event': 'autoEvent',
+            'eventCategory': 'Exp - Open PDP in new tab',
+            'eventAction': 'Open PDP'
+          });
 
-      var href3 = $(this).find('a').attr('href');
-      // $(this).on("click", function(){
-        window.open(href3, '_blank');
+          var href3 = $(this).find('a').attr('href');
+          // $(this).on("click", function(){
+            window.open(href3, '_blank');
+            console.log('click on right-part');
+          // });
+        });
 
-        console.log('click on right-part');
-      // });
-    });
+
+        // $('html').find(".tile-container .goods-item .goods-item-content .goods-delivery-methods ul li").each(function() {
+        $(document).on("click", ".tile-container .goods-item .goods-item-content .goods-delivery-methods ul li", function() {
+
+          window.dataLayer = window.dataLayer || [];
+            dataLayer.push({
+            'event': 'autoEvent',
+            'eventCategory': 'Exp - Open PDP in new tab',
+            'eventAction': 'Open PDP'
+          });
+
+          var href4 = $(this).find('a').attr('href');
+          // $(this).on("click", function(){
+            window.open(href4, '_blank');
+            console.log('click on delivery-methods')
+          // });
+        });
 
 
-    // $('html').find(".tile-container .goods-item .goods-item-content .goods-delivery-methods ul li").each(function() {
-    $(document).on("click", ".tile-container .goods-item .goods-item-content .goods-delivery-methods ul li", function() {
 
-      window.dataLayer = window.dataLayer || [];
-        dataLayer.push({
-        'event': 'autoEvent',
-        'eventCategory': 'Exp - Open PDP in new tab',
-        'eventAction': 'Open PDP'
-      });
+        $(document).on("click", ".slick-slide .current-set-container .current-set .secondary-products .secondary-set-tile .image-place", function() {
+          var href5 = $(this).find('a').attr('href');
+          window.open(href5, '_blank');
+          console.log('click on secondary-products image')
+        });
 
-      var href4 = $(this).find('a').attr('href');
-      // $(this).on("click", function(){
-        window.open(href4, '_blank');
+        $(document).on("click", ".slick-slide .current-set-container .current-set .secondary-products .secondary-set-tile .product-description-information", function() {
+          var href6 = $(this).find('a').attr('href');
+          window.open(href6, '_blank');
+          console.log('click on secondary-products title')
+        });
 
-        console.log('click on delivery-methods')
-      // });
-    });
 
-}, 500);
+    }, 500);
+
 
     var styles = "<style>";
     styles += `
