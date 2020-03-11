@@ -38,7 +38,7 @@ function readyjQueryinit(){
     });
 
 
-
+setTimeout(function(){
     // $('html').find(".tile-container .goods-item .goods-item-content .image-place").each(function() {
     // $(window).on("click", ".tile-container .goods-item .image-place", function() {
     $(document).on("click", ".tile-container .goods-item .image-place", function() {
@@ -136,6 +136,8 @@ function readyjQueryinit(){
         console.log('click on delivery-methods')
       // });
     });
+
+}, 500);
 
     var styles = "<style>";
     styles += `
