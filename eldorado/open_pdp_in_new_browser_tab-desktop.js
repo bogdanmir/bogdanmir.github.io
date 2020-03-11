@@ -154,14 +154,18 @@ function readyjQueryinit(){
       .tile-container .goods-item .goods-item-content .good-description .title,
       .tile-container .goods-item .goods-item-content .tile-goods-rating .left-part,
       .tile-container .goods-item .goods-item-content .tile-goods-rating .right-part,
-      .tile-container .goods-item .goods-item-content .goods-delivery-methods ul li {
+      .tile-container .goods-item .goods-item-content .goods-delivery-methods ul li,
+      .slick-slide .current-set-container .current-set .secondary-products .secondary-set-tile .image-place,
+      .slick-slide .current-set-container .current-set .secondary-products .secondary-set-tile .product-description-information {
         cursor: pointer;
       }
       .tile-container .goods-item .goods-item-content .image-place a,
       .tile-container .goods-item .goods-item-content .good-description .title a,
       .tile-container .goods-item .goods-item-content .tile-goods-rating .left-part a,
       .tile-container .goods-item .goods-item-content .tile-goods-rating .right-part a,
-      .tile-container .goods-item .goods-item-content .goods-delivery-methods ul li a {
+      .tile-container .goods-item .goods-item-content .goods-delivery-methods ul li a,
+      .slick-slide .current-set-container .current-set .secondary-products .secondary-set-tile .image-place a,
+      .slick-slide .current-set-container .current-set .secondary-products .secondary-set-tile .product-description-information a {
         pointer-events: none;
       }
       .tile-container .goods-item a {
