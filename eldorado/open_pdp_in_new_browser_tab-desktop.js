@@ -28,6 +28,8 @@ if (!window.jQuery) {
 function readyjQueryinit(){
   $(window).ready(function(){
 
+    console.log('open_pdp_in_new_tab');
+
     window.dataLayer = window.dataLayer || [];
       dataLayer.push({
       'event': 'autoEvent',
