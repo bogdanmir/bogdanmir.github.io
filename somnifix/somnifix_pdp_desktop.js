@@ -168,6 +168,7 @@ function readyjQueryinit() {
 			right: 0;
 			font-weight: 500;
     		font-size: 12px;
+    		color: #1E415F;
 		}
 		.section.is-width-standard .product_section .product__images .made_in:before{
 			content: '';
