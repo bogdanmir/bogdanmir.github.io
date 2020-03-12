@@ -245,6 +245,22 @@ function readyjQueryinit() {
 				display: none;
 			}
 		}
+		@media only screen and (max-width: 375px){
+			.on-card-dwrapper .swatch label.on-variant-label .on-icon {
+				margin-right: 3px;
+				margin-left: 0;
+			}
+			.on-card-dwrapper .product_section .swatch label.on-variant-label .on-title {
+				font-size: 14px;
+			}
+			.on-card-dwrapper .swatch .top-label,
+			.on-card-dwrapper .swatch .best-label {
+				right: 5px;
+			}
+			.on-card-dwrapper .swatch .save-label {
+				right: 5px;
+			}
+		}
 	`;
 	styles    += "</style>";
 	$('body').append(styles);
