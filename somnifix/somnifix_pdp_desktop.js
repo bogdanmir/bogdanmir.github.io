@@ -336,6 +336,13 @@ function readyjQueryinit() {
 				margin-right: -5px;
 			}
 		}
+		@media only screen and (max-width: 1050px){
+			.section.is-width-standard .product_section .swatch .swatch-element {
+				min-height: 50px;
+				width: 100%;
+				margin-bottom: 10px;
+			}
+		}
 	`;
 	styles    += "</style>";
 	$('body').append(styles);
