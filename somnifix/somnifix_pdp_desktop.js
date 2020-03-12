@@ -225,15 +225,18 @@ function readyjQueryinit() {
 		.section.is-width-standard .swatch .save-label {
 			display: block;
 			color: #fff;
-			background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTkiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCA1OSAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTYuMjY2NjcgMC44QzYuOTU5MDUgMC4yODA3MTEgNy44MDExOSAwIDguNjY2NjcgMEg1NC4zMzMzQzU2LjU0MjUgMCA1OC4zMzMzIDEuNzkwODYgNTguMzMzMyA0VjExQzU4LjMzMzMgMTMuMjA5MSA1Ni41NDI1IDE1IDU0LjMzMzMgMTVIOC42NjY2N0M3LjgwMTE5IDE1IDYuOTU5MDUgMTQuNzE5MyA2LjI2NjY3IDE0LjJMMS42IDEwLjdDLTAuNTMzMzMzIDkuMSAtMC41MzMzMzMgNS45IDEuNiA0LjNMNi4yNjY2NyAwLjhaIiBmaWxsPSIjNDA5MEQxIi8+Cjwvc3ZnPgo=");
-			width: 58px;
-			height: 15px;
+			background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjIiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCA2MiAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTkuMjY2NTkgMC44QzkuOTU4OTcgMC4yODA3MTEgMTAuODAxMSAwIDExLjY2NjYgMEg1Ny4zMzMzQzU5LjU0MjQgMCA2MS4zMzMzIDEuNzkwODYgNjEuMzMzMyA0VjExQzYxLjMzMzMgMTMuMjA5MSA1OS41NDI0IDE1IDU3LjMzMzMgMTVIMTEuNjY2NkMxMC44MDExIDE1IDkuOTU4OTcgMTQuNzE5MyA5LjI2NjU5IDE0LjJMNC41OTk5MiAxMC43QzIuNDY2NTkgOS4xIDIuNDY2NTkgNS45IDQuNTk5OTIgNC4zTDkuMjY2NTkgMC44WiIgZmlsbD0iIzQwOTBEMSIvPgo8Y2lyY2xlIGN4PSI5LjgzMzI1IiBjeT0iNy41IiByPSIxLjUiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=");
+			width: 69px;
+			height: 17px;
 			font-size: 10px;
 			line-height: 12px;
 			display: flex;
 			align-items: center;
-			justify-content: center;
 			margin: 0 auto 9px;
+			background-size: cover;
+			background-repeat: no-repeat;
+			padding-left: 18px;
+			padding-right: 7px;
 		}
 		.section.is-width-standard .swatch .old-price-label {
 			display: block;
