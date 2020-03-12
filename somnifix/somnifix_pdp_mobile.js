@@ -37,7 +37,6 @@ function readyjQueryinit() {
 		'eventAction': 'loaded'
 	});
 	$(document).on("click", ".on-card-dwrapper .product_section .swatch_options .swatch .1-pack-swatch", function () {
-		console.log('QUANTITY - 1');
 		window.dataLayer = window.dataLayer || [];
 		dataLayer.push({
 			'event': 'event-to-ga',
@@ -47,7 +46,6 @@ function readyjQueryinit() {
 		});
 	});
 	$(document).on("click", ".on-card-dwrapper .product_section .swatch_options .swatch .3-pack-swatch", function () {
-		console.log('QUANTITY - 2');
 		window.dataLayer = window.dataLayer || [];
 		dataLayer.push({
 			'event': 'event-to-ga',
@@ -57,7 +55,6 @@ function readyjQueryinit() {
 		});
 	});
 	$(document).on("click", ".on-card-dwrapper .product_section .swatch_options .swatch .3-pack-auto-ship-swatch", function () {
-		console.log('QUANTITY - 3');
 		window.dataLayer = window.dataLayer || [];
 		dataLayer.push({
 			'event': 'event-to-ga',
@@ -67,7 +64,6 @@ function readyjQueryinit() {
 		});
 	});
 	$(document).on("click", ".on-card-dwrapper .on-qty-wrapper .on-qty-plus", function () {
-		console.log('QUANTITY +1');
 		window.dataLayer = window.dataLayer || [];
 			dataLayer.push({
 			'event': 'event-to-ga',
@@ -77,7 +73,6 @@ function readyjQueryinit() {
 		});
 	});
 	$(document).on("click", ".on-card-dwrapper .on-qty-wrapper .on-qty-minus", function () {
-		console.log('QUANTITY -1');
 		window.dataLayer = window.dataLayer || [];
 		dataLayer.push({
 			'event': 'event-to-ga',
@@ -87,7 +82,6 @@ function readyjQueryinit() {
 		});
 	});
 	$(document).on("click", ".on-card-dwrapper .on-payment-wrapper .on-item-1", function () {
-		console.log('Apple Pay');
 		window.dataLayer = window.dataLayer || [];
 			dataLayer.push({
 			'event': 'event-to-ga',
@@ -97,7 +91,6 @@ function readyjQueryinit() {
 		});
 	});
 	$(document).on("click", ".on-card-dwrapper .on-payment-wrapper .on-item-3", function () {
-		console.log('PayPal');
 		window.dataLayer = window.dataLayer || [];
 		dataLayer.push({
 			'event': 'event-to-ga',
@@ -107,7 +100,6 @@ function readyjQueryinit() {
 		});
 	});
 	$(document).on("click", ".on-card-dwrapper .on-payment-wrapper .on-item-2", function () {
-		console.log('Google Pay');
 		window.dataLayer = window.dataLayer || [];
 		dataLayer.push({
 			'event': 'event-to-ga',
@@ -117,7 +109,6 @@ function readyjQueryinit() {
 		});
 	});
 	$(document).on("click", ".on-card-dwrapper .on-payment-wrapper .on-item-4", function () {
-		console.log('Amazon Pay');
 		window.dataLayer = window.dataLayer || [];
 		dataLayer.push({
 			'event': 'event-to-ga',
@@ -127,7 +118,6 @@ function readyjQueryinit() {
 		});
 	});
 	$(document).on("click", ".on-card-dwrapper .on-pack-wrapper .on-select", function () {
-		console.log('Country drop-down');
 		window.dataLayer = window.dataLayer || [];
 		dataLayer.push({
 			'event': 'event-to-ga',
@@ -137,7 +127,6 @@ function readyjQueryinit() {
 		});
 	});
 	$(document).on("click", ".on-card-dwrapper .purchase-details .purchase-details__spb--false .button--add-to-cart", function () {
-		console.log('button-add-to-cart');
 		window.dataLayer = window.dataLayer || [];
 		dataLayer.push({
 			'event': 'event-to-ga',
