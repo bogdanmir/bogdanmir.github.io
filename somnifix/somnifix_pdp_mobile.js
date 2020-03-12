@@ -244,6 +244,10 @@ function readyjQueryinit() {
 			.on-card-dwrapper .on-subscribe-wrapper {
 				display: none;
 			}
+			.on-card-dwrapper .product_section .swatch_options input:checked+.swatch-element label.on-variant-label[data-index="2"],
+			.on-card-dwrapper .product_section .swatch_options input:checked+.swatch-element label.on-variant-label[data-index="3"] {
+				padding: 9px 9px 0px;
+			}
 		}
 		@media only screen and (max-width: 375px){
 			.on-card-dwrapper .swatch label.on-variant-label .on-icon {
@@ -253,6 +257,21 @@ function readyjQueryinit() {
 			.on-card-dwrapper .product_section .swatch label.on-variant-label .on-title {
 				font-size: 14px;
 			}
+			.on-card-dwrapper .swatch .top-label,
+			.on-card-dwrapper .swatch .best-label {
+				right: 10px;
+			}
+			.on-card-dwrapper .swatch .save-label {
+				right: 10px;
+			}
+			.on-card-dwrapper .product_section .swatch_options input:checked+.swatch-element .price-border {
+				margin-left: 48px;
+			}
+			.on-card-dwrapper .swatch .old-price-label {
+				margin-left: 50px;
+			}
+		}
+		@media only screen and (max-width: 345px){
 			.on-card-dwrapper .swatch .top-label,
 			.on-card-dwrapper .swatch .best-label {
 				right: 5px;
