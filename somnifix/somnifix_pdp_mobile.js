@@ -30,6 +30,123 @@ if (!window.jQuery) {
 function readyjQueryinit() {
 	jQuery(function($) {
 
+	window.dataLayer = window.dataLayer || [];
+		dataLayer.push({
+		'event': 'event-to-ga',
+		'eventCategory': 'Exp - Optimize PDP UX',
+		'eventAction': 'loaded'
+	});
+	$(document).on("click", ".on-card-dwrapper .product_section .swatch_options .swatch .1-pack-swatch", function () {
+		console.log('QUANTITY - 1');
+		window.dataLayer = window.dataLayer || [];
+		dataLayer.push({
+			'event': 'event-to-ga',
+			'eventCategory': 'PDP',
+			'eventAction': 'click',
+			'eventLabel': 'QUANTITY - 1 PACK'
+		});
+	});
+	$(document).on("click", ".on-card-dwrapper .product_section .swatch_options .swatch .3-pack-swatch", function () {
+		console.log('QUANTITY - 2');
+		window.dataLayer = window.dataLayer || [];
+		dataLayer.push({
+			'event': 'event-to-ga',
+			'eventCategory': 'PDP',
+			'eventAction': 'click',
+			'eventLabel': 'QUANTITY - 3 PACK'
+		});
+	});
+	$(document).on("click", ".on-card-dwrapper .product_section .swatch_options .swatch .3-pack-auto-ship-swatch", function () {
+		console.log('QUANTITY - 3');
+		window.dataLayer = window.dataLayer || [];
+		dataLayer.push({
+			'event': 'event-to-ga',
+			'eventCategory': 'PDP',
+			'eventAction': 'click',
+			'eventLabel': 'QUANTITY - 3 PACK auto-ship'
+		});
+	});
+	$(document).on("click", ".on-card-dwrapper .on-qty-wrapper .on-qty-plus", function () {
+		console.log('QUANTITY +1');
+		window.dataLayer = window.dataLayer || [];
+			dataLayer.push({
+			'event': 'event-to-ga',
+			'eventCategory': 'PDP',
+			'eventAction': 'click',
+			'eventLabel': 'QUANTITY +1'
+		});
+	});
+	$(document).on("click", ".on-card-dwrapper .on-qty-wrapper .on-qty-minus", function () {
+		console.log('QUANTITY -1');
+		window.dataLayer = window.dataLayer || [];
+		dataLayer.push({
+			'event': 'event-to-ga',
+			'eventCategory': 'PDP',
+			'eventAction': 'click',
+			'eventLabel': 'QUANTITY -1'
+		});
+	});
+	$(document).on("click", ".on-card-dwrapper .on-payment-wrapper .on-item-1", function () {
+		console.log('Apple Pay');
+		window.dataLayer = window.dataLayer || [];
+			dataLayer.push({
+			'event': 'event-to-ga',
+			'eventCategory': 'PDP',
+			'eventAction': 'click',
+			'eventLabel': 'Payment method - https://cdn.shopify.com/s/files/1/2572/8006/files/Group_259.png?v=1576496655'
+		});
+	});
+	$(document).on("click", ".on-card-dwrapper .on-payment-wrapper .on-item-3", function () {
+		console.log('PayPal');
+		window.dataLayer = window.dataLayer || [];
+		dataLayer.push({
+			'event': 'event-to-ga',
+			'eventCategory': 'PDP',
+			'eventAction': 'click',
+			'eventLabel': 'Payment method - https://cdn.shopify.com/s/files/1/2572/8006/files/Group_258.png?v=1576496694'
+		});
+	});
+	$(document).on("click", ".on-card-dwrapper .on-payment-wrapper .on-item-2", function () {
+		console.log('Google Pay');
+		window.dataLayer = window.dataLayer || [];
+		dataLayer.push({
+			'event': 'event-to-ga',
+			'eventCategory': 'PDP',
+			'eventAction': 'click',
+			'eventLabel': 'Payment method - https://cdn.shopify.com/s/files/1/2572/8006/files/Group_260.png?v=1576496678'
+		});
+	});
+	$(document).on("click", ".on-card-dwrapper .on-payment-wrapper .on-item-4", function () {
+		console.log('Amazon Pay');
+		window.dataLayer = window.dataLayer || [];
+		dataLayer.push({
+			'event': 'event-to-ga',
+			'eventCategory': 'PDP',
+			'eventAction': 'click',
+			'eventLabel': 'Payment method - https://cdn.shopify.com/s/files/1/2572/8006/files/Group_257.png?v=1576496708'
+		});
+	});
+	$(document).on("click", ".on-card-dwrapper .on-pack-wrapper .on-select", function () {
+		console.log('Country drop-down');
+		window.dataLayer = window.dataLayer || [];
+		dataLayer.push({
+			'event': 'event-to-ga',
+			'eventCategory': 'PDP',
+			'eventAction': 'click',
+			'eventLabel': 'Country drop-down'
+		});
+	});
+	$(document).on("click", ".on-card-dwrapper .purchase-details .purchase-details__spb--false .button--add-to-cart", function () {
+		console.log('button-add-to-cart');
+		window.dataLayer = window.dataLayer || [];
+		dataLayer.push({
+			'event': 'event-to-ga',
+			'eventCategory': 'PDP',
+			'eventAction': 'click',
+			'eventLabel': 'Payment method - Pay with card'
+		});
+	});
+
 	$('.on-card-dwrapper .product_section .product__images').append('<span class="made_in">Made in USA</span>');
     $('.on-card-dwrapper .product_section .shopify-product-form .button--add-to-cart .text').text('checkout');
 
