@@ -31,7 +31,6 @@ function readyjQueryinit() {
   jQuery(function($) {
     
       setInterval(function() {
-        // jQuery(function($) {
         var imgsplaces = jQuery('html').find(".ex-rodal .cart .good-container .image-place img").length; 
         if( $('html').find(".rodal .cart").length > 0 && $('html').find(".ex-rodal.rodal.show").length > 0 && jQuery(".rodal-dialog.cart-modal-container").closest('.rodal:not(.ex-rodal)').find(".image-place img").length > imgsplaces ) {
           var cartItems = $('body').find(".rodal .cart").html();
@@ -49,7 +48,6 @@ function readyjQueryinit() {
               $(this).append('<div class="price-item"><span>'+price+'</span>грн.</div>');
           });
         }
-        // });
       },500);
   
     window.dataLayer = window.dataLayer || [];
@@ -111,7 +109,7 @@ function readyjQueryinit() {
         }
         return can_return;
     }
-    $(document).on("click", ".product-buy-container .buy-button", function () {
+    $(document).on("click", ".product-information-part .buy-button", function () {
         if(typeof payload != 'undefined'){
             if(typeof payload["product-view"] != 'undefined'){
                 var val = location.pathname;
@@ -119,6 +117,16 @@ function readyjQueryinit() {
             }
         }
     });
+
+    $(document).on("click", ".tile-container .goods-item .buy-button", function () {
+        if(typeof payload != 'undefined'){
+            if(typeof payload["product-view"] != 'undefined'){
+                var val = location.pathname;
+                setlsItem(val,'pic');
+            }
+        }
+    });
+
     $(document).on("click", ".product-buy-container .to-cart-button", function () {
         if(typeof payload != 'undefined'){
             if(typeof payload["product-view"] != 'undefined'){
@@ -135,9 +143,23 @@ function readyjQueryinit() {
             }
         }
     });
+
+
+    $(document).on("click", ".credit-basket-modal .credit-suggestions-list .buy-button", function () {
+        if(typeof payload != 'undefined'){
+            if(typeof payload["product-view"] != 'undefined'){
+                var val = location.pathname;
+                setlsItem(val,'pic');
+            }
+        }
+    });
+
+
     $(document).on("click", ".goods-item-content .buy-button", function () {
         if($(this).closest('article.tile-container').find('.good-description .title a').length > 0){
             var val = $(this).closest('article.tile-container').find('.good-description .title a').attr('href');
+            setlsItem(val,'pic');
+            val = location.pathname;
             setlsItem(val,'pic');
         }
     });
@@ -206,9 +228,46 @@ function readyjQueryinit() {
             }
             var cartItems = $('body').find(".rodal .cart").html();
             if($('.cart .goods-tile-container').length > 1) {
-              var $outhtml  = '<div class="ex-rodal rodal show"> <div class="rodal-mask"></div> <div class="rodal-dialog cart-modal-container"> <span class="ex-rodal-close"></span> <h5 class="ex-title"> Эти товары почти Ваши! Остался всего один шаг. </h5> <div class="cart"> <div class="ex-alert"> На складе осталось всего несколько единиц товаров из Вашей корзины! </div> <div class="ex-card-item">'+ cartItems +'</div> <span class="ex-information-row"> Мы не можем гарантировать Вам наличие товара, если вы не завершите покупку. </span> <div class="ex-submit-buttons"> <a class="ab_checkout continue-button end-cred" href="/checkout/">Купить в рассрочку/кредит</a> <a class="ab_checkout continue-button end-ord" href="/checkout/">Завершить заказ</a> </div> </div> </div>';
+              var $outhtml  = '<div class="ex-rodal rodal show"> <div class="rodal-mask"></div> <div class="rodal-dialog cart-modal-container"> <span class="ex-rodal-close"></span> <h5 class="ex-title"> Эти товары почти Ваши! Остался всего один шаг. </h5> <div class="cart"> <div class="ex-alert"> На складе осталось всего несколько единиц товаров из Вашей корзины! </div> <div class="ex-card-item">'+ cartItems +'</div> <span class="ex-information-row"> Мы не можем гарантировать наличие товара, если Вы не завершите покупку! </span> <div class="ex-submit-buttons"> <a class="ab_checkout continue-button end-cred" href="/checkout/">Купить в рассрочку/кредит</a> <a class="ab_checkout continue-button end-ord" href="/checkout/">Завершить заказ</a> </div> </div> </div>';
             } else {
-              var $outhtml  = '<div class="ex-rodal rodal show"> <div class="rodal-mask"></div> <div class="rodal-dialog cart-modal-container"> <span class="ex-rodal-close"></span> <h5 class="ex-title"> Этот товар почти Ваш! Остался всего один шаг. </h5> <div class="cart"> <div class="ex-alert"> На складе осталось всего несколько единиц товара из вашей корзины </div> <div class="ex-card-item">'+ cartItems +'</div> <span class="ex-information-row"> Мы не можем гарантировать Вам наличие товара, если вы не завершите покупку. </span> <div class="ex-submit-buttons"> <a class="ab_checkout continue-button end-cred" href="/checkout/">Купить в рассрочку/кредит</a> <a class="ab_checkout continue-button end-ord" href="/checkout/">Завершить заказ</a> </div> </div> </div>';
+              var $outhtml  = '<div class="ex-rodal rodal show"> <div class="rodal-mask"></div> <div class="rodal-dialog cart-modal-container"> <span class="ex-rodal-close"></span> <h5 class="ex-title"> Этот товар почти Ваш! Остался всего один шаг. </h5> <div class="cart"> <div class="ex-alert"> На складе осталось всего несколько единиц товара из Вашей корзины! </div> <div class="ex-card-item">'+ cartItems +'</div> <span class="ex-information-row"> Мы не можем гарантировать наличие товара, если Вы не завершите покупку! </span> <div class="ex-submit-buttons"> <a class="ab_checkout continue-button end-cred" href="/checkout/">Купить в рассрочку/кредит</a> <a class="ab_checkout continue-button end-ord" href="/checkout/">Завершить заказ</a> </div> </div> </div>';
+            }
+            $('body').append($outhtml);
+
+            $(".ex-rodal .count-value").each(function() {
+                $(this).prepend('х ');
+            });
+            $('body').find(".ex-rodal .goods-main-info-block .price").each(function () {
+                var oldPrice = $(this).find('.old-price span').html();
+                if($(this).find('.old-price span').length > 0) {
+                    $(this).append('<div class="ex-old-price"><span>'+oldPrice+'</span> грн.</div>');
+                }
+                var price = $(this).find('.number').html();
+                $(this).append('<div class="price-item"><span>'+price+'</span>грн.</div>');
+            });
+
+            localStorage.setItem('ipd', 'y');
+        } else {
+            console.log('нет товаров в корзине!')
+        }
+    }
+
+
+    function show_ms_checkout(){
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+            'event': 'autoEvent',
+            'eventCategory': 'Exp - Exit-Intent Popup',
+            'eventAction': 'Popup loaded'
+        });
+        if ($('.checkout-container .cart .good-card-container .good-card').length) {
+            
+            var cartItems = $('body').find(".cart.checkout-cart-block-container .cart-goods").html();
+
+            if($('.cart.checkout-cart-block-container .cart-goods .good-card-container').length > 1) {
+              var $outhtml  = '<div class="ex-rodal rodal show"> <div class="rodal-mask"></div> <div class="rodal-dialog cart-modal-container"> <span class="ex-rodal-close"></span> <h5 class="ex-title"> Эти товары почти Ваши! Остался всего один шаг. </h5> <div class="cart"> <div class="ex-alert"> На складе осталось всего несколько единиц товаров из Вашей корзины! </div> <div class="ex-card-item">'+ cartItems +'</div> <span class="ex-information-row"> Мы не можем гарантировать наличие товара, если Вы не завершите покупку! </span> <div class="ex-submit-buttons"> <a class="ab_checkout continue-button end-cred" href="/checkout/">Купить в рассрочку/кредит</a> <a class="ab_checkout continue-button end-ord" href="/checkout/">Завершить заказ</a> </div> </div> </div>';
+            } else {
+              var $outhtml  = '<div class="checkout-rodal ex-rodal rodal show"> <div class="rodal-mask"></div> <div class="rodal-dialog cart-modal-container"> <span class="ex-rodal-close"></span> <h5 class="ex-title"> Этот товар почти Ваш! Остался всего один шаг. </h5> <div class="cart"> <div class="ex-alert"> На складе осталось всего несколько единиц товара из Вашей корзины! </div> <div class="ex-card-item">'+ cartItems +'</div> <span class="ex-information-row"> Мы не можем гарантировать наличие товара, если Вы не завершите покупку! </span> <div class="ex-submit-buttons"> <a class="ab_checkout continue-button end-cred" href="/checkout/">Купить в рассрочку/кредит</a> <a class="ab_checkout continue-button end-ord" href="/checkout/">Завершить заказ</a> </div> </div> </div>';
             }
             $('body').append($outhtml);
 
@@ -241,6 +300,16 @@ function readyjQueryinit() {
             }
             show_ms();
         }
+
+
+        if ((display_product == true) && (document.location.href.indexOf("eldorado.ua/checkout/") > -1)) {
+          console.log('true')
+          if ($("body").find(".ex-rodal").length >0) {
+              $("body").find(".ex-rodal").remove();
+          }
+          show_ms_checkout();
+        }
+
     });
 
     $(document).on("click", ".ex-rodal .ex-rodal-close", function() {
@@ -417,6 +486,42 @@ function readyjQueryinit() {
     .ex-rodal .cart .goods-tile-container .good-container .cart-goods-information {
       width: calc(100% - 175px);
     }
+
+    .checkout-rodal .ex-card-item{
+      padding: 20px 0;
+    }
+    .checkout-rodal .checkout-product-image {
+      display: flex;
+    }
+    .checkout-rodal .good-image .image-place {
+      padding-right: 55px;
+    }
+    .checkout-rodal .checkout-product-image .price #checkout-quantity {
+      display: none;
+    }
+    .checkout-rodal .good-information {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding-top: 10px;
+    }
+    .checkout-rodal .good-information .product-title {
+      max-width: 420px;
+      color: #474A4B;
+      font-size: 16px;
+    }
+    .checkout-rodal .good-card {
+      position: relative;
+    }
+    .checkout-rodal .good-actions {
+      position: absolute;
+      top: 6px;
+      right: 100px;
+    }
+    .checkout-rodal .good-actions .delete-text {
+      display: none;
+    }
+
   `;
     styles    += "</style>";
     $('body').append(styles);
