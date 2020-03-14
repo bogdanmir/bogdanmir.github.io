@@ -104,6 +104,8 @@ function readyjQueryinit() {
 				padding-bottom: 30px;
 				width: 442px;
 				min-height: 380px;
+				margin-right: -16px;
+				padding-right: 16px;
 			}
 			.modal_signup_image .signup-user_modal .modal_word_active {
 				color: #9fbe3b;
@@ -140,6 +142,9 @@ function readyjQueryinit() {
 				object-fit: cover;
 				height: calc(100% + 27px);
 				max-height: calc(100% + 27px);
+			}
+			.modal_signup_image .signup-user__back {
+				left: -420px;
 			}
 			@media screen and (min-width: 541px) {
 				.modal_signup_image .modal__body_signup .signup-user_modal .signup-user__right {
