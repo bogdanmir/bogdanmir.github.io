@@ -25,6 +25,18 @@ if (!window.jQuery) {
 }
 function readyjQueryinit(){
 	jQuery(function($) {
-		
+		$('body').find('#plan_popup').css('display', 'block');
+		var new_text = "Choose your plan";
+		var link_to = 'https://goally.co/products/goallyplan';
+		$('body').on('click', 'a[href="/products/goally"]', function(event) {
+			location.href = link_to;
+			return false;
+		});
+		$('a[href="/products/goally"]').each(function(index, el) {
+			var old_text = $(el).html();
+			if(old_text == 'Get Goally'){
+				$(el).html(new_text);
+			}
+		});
 	});
 }
