@@ -57,7 +57,7 @@ function readyjQueryinit() {
 		$('body').on('mousedown', '.modal_signup_image+.modal-overlay', function(){
 			myStopFunction();
 			if($('.modal_signup.modal_signup_image').length > 0) {
-				// $('.modal_signup_image .modal__close-round').click();
+				$('.modal_signup_image .modal__close-round').click();
 				// $('html').find('.modal_signup.modal_signup_image').remove();
 				$('html').find('.signup_modal_boxtitle').remove();
 				$('html').find(".modal_signup_image .signup-user_modal .signup-user__left .view-file-box__image").remove();
