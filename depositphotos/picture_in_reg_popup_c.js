@@ -48,7 +48,7 @@ function readyjQueryinit() {
 			}
 		}
 
-		var localValue = localStorage.setItem('popup_active', false);
+		// var localValue = localStorage.setItem('popup_active', false);
 
 		$('body').on('click','.price-table-classic__download', function(){
 			myStopFunction();
@@ -58,9 +58,9 @@ function readyjQueryinit() {
 			// var localValue = localStorage.getItem('popup_active');
 			// console.log(localValue);
 
-			if(localStorage.getItem('popup_active') == "true"){
+			if (localStorage.getItem('popup_active') == "true") {
 				console.log('1')
-				} else {
+			} else {
 				console.log('2')
 			}
 
@@ -73,7 +73,7 @@ function readyjQueryinit() {
 			localStorage.setItem('popup_active', true);
 			// var localValue = localStorage.getItem('popup_active');
 			// console.log(localValue);
-			if(localStorage.getItem('popup_active') == "true"){
+			if (localStorage.getItem('popup_active') == "true") {
 				console.log('1')
 			} else {
 				console.log('2')
@@ -100,7 +100,7 @@ function readyjQueryinit() {
 			}
 		})
 
-		if(localStorage.getItem('popup_active') == "true"){
+		if (localStorage.getItem('popup_active') == "true") {
 			console.log('1')
 			//log out user
 			$('.content').find('.plans').closest('.subscribe__wrapper').prepend('<div class="progress_line"><span class="digit">70%</span></div>');
