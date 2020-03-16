@@ -51,12 +51,22 @@ function readyjQueryinit() {
 		$('body').on('click','.price-table-classic__download', function(){
 			myStopFunction();
 			window.interval = setInterval(myTimer);
+
+
+			localStorage.setItem('myKey', 'popup_active');
+			var localValue = localStorage.getItem('popup_active');
+			// console.log(localValue); 
 		})
 
 		$('body').on('mousedown', '.view-file-box__action-item.button-download', function(){
 			myStopFunction();
 			window.interval = setInterval(myTimer);
+
+			localStorage.setItem('myKey', 'popup_active');
+			// var localValue = localStorage.getItem('popup_active');
+			// console.log(localValue); 
 		})
+
 		$('body').on('mousedown', '.modal_signup_image+.modal-overlay', function(){
 			myStopFunction();
 			if($('.modal_signup.modal_signup_image').length > 0) {
@@ -66,7 +76,6 @@ function readyjQueryinit() {
 				$('.modal_signup').removeClass('modal_signup_image');
 			}
 		})
-
 		$('body').on('mousedown', '.modal_signup_image .modal__close-round', function(){
 			myStopFunction();
 			if($('.modal_signup.modal_signup_image').length > 0) {
@@ -77,17 +86,26 @@ function readyjQueryinit() {
 			}
 		})
 
-		//log out user
-		$('.content').find('.plans').closest('.subscribe__wrapper').prepend('<div class="progress_line"><span class="digit">70%</span></div>');
-		//log in user
-		// $('.content').find('.subscribe__plans-box').closest('.subscribe').prepend('<div class="progress_line"><span class="digit">70%</span></div>');
-		setInterval(function() {
-			if($('.subscribe__plans-box').length > 0 && $('.progress_line').length < 1 ) {
-				$('.content').find('.subscribe__plans-box').closest('.subscribe').prepend('<div class="progress_line"><span class="digit">70%</span></div>');
-			}
-		},100);
+		
 
-		$('.billing-custom .billing-custom__wrap').prepend('<div class="progress_line_wrap"><div class="progress_line"><span class="digit">90%</span></div></div>');
+
+
+		var localValue = localStorage.getItem('popup_active');
+		if(localValue !== null){
+			//log out user
+			$('.content').find('.plans').closest('.subscribe__wrapper').prepend('<div class="progress_line"><span class="digit">70%</span></div>');
+			//log in user
+			// $('.content').find('.subscribe__plans-box').closest('.subscribe').prepend('<div class="progress_line"><span class="digit">70%</span></div>');
+			setInterval(function() {
+				if($('.subscribe__plans-box').length > 0 && $('.progress_line').length < 1 ) {
+					$('.content').find('.subscribe__plans-box').closest('.subscribe').prepend('<div class="progress_line"><span class="digit">70%</span></div>');
+				}
+			},100);
+
+			$('.billing-custom .billing-custom__wrap').prepend('<div class="progress_line_wrap"><div class="progress_line"><span class="digit">90%</span></div></div>');
+		}
+
+
 
 
 		var styles = "<style>";
