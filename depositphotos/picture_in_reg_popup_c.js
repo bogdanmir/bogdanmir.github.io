@@ -48,23 +48,37 @@ function readyjQueryinit() {
 			}
 		}
 
+		var localValue = localStorage.setItem('popup_active', false);
+
 		$('body').on('click','.price-table-classic__download', function(){
 			myStopFunction();
 			window.interval = setInterval(myTimer);
 
+			localStorage.setItem('popup_active', true);
+			// var localValue = localStorage.getItem('popup_active');
+			// console.log(localValue);
 
-			localStorage.setItem('myKey', 'popup_active');
-			var localValue = localStorage.getItem('popup_active');
-			// console.log(localValue); 
+			if(localStorage.getItem('popup_active') == "true"){
+				console.log('1')
+				} else {
+				console.log('2')
+			}
+
 		})
 
 		$('body').on('mousedown', '.view-file-box__action-item.button-download', function(){
 			myStopFunction();
 			window.interval = setInterval(myTimer);
 
-			localStorage.setItem('myKey', 'popup_active');
+			localStorage.setItem('popup_active', true);
 			// var localValue = localStorage.getItem('popup_active');
-			// console.log(localValue); 
+			// console.log(localValue);
+			if(localStorage.getItem('popup_active') == "true"){
+				console.log('1')
+			} else {
+				console.log('2')
+			}
+
 		})
 
 		$('body').on('mousedown', '.modal_signup_image+.modal-overlay', function(){
@@ -86,12 +100,8 @@ function readyjQueryinit() {
 			}
 		})
 
-		
-
-
-
-		var localValue = localStorage.getItem('popup_active');
-		if(localValue !== null){
+		if(localStorage.getItem('popup_active') == "true"){
+			console.log('1')
 			//log out user
 			$('.content').find('.plans').closest('.subscribe__wrapper').prepend('<div class="progress_line"><span class="digit">70%</span></div>');
 			//log in user
@@ -103,9 +113,9 @@ function readyjQueryinit() {
 			},100);
 
 			$('.billing-custom .billing-custom__wrap').prepend('<div class="progress_line_wrap"><div class="progress_line"><span class="digit">90%</span></div></div>');
+		} else {
+			console.log('2')
 		}
-
-
 
 
 		var styles = "<style>";
