@@ -61,7 +61,6 @@ function readyjQueryinit() {
 			myStopFunction();
 			if($('.modal_signup.modal_signup_image').length > 0) {
 				$('.modal_signup_image .modal__close-round').click();
-				// $('html').find('.modal_signup.modal_signup_image').remove();
 				$('html').find('.signup_modal_boxtitle').remove();
 				$('html').find(".modal_signup_image .signup-user_modal .signup-user__left .view-file-box__image").remove();
 				$('.modal_signup').removeClass('modal_signup_image');
@@ -72,12 +71,19 @@ function readyjQueryinit() {
 			myStopFunction();
 			if($('.modal_signup.modal_signup_image').length > 0) {
 				$('.modal_signup_image .modal__close-round').click();
-				// $('html').find('.modal_signup.modal_signup_image').remove();
 				$('html').find('.signup_modal_boxtitle').remove();
 				$('html').find(".modal_signup_image .signup-user_modal .signup-user__left .view-file-box__image").remove();
 				$('.modal_signup').removeClass('modal_signup_image');
 			}
 		})
+
+		//log out user
+		$('.subscribe .subscribe__wrapper').prepend('<div class="progress_line"><span class="digit">70%</span></div>');
+		//log in user
+		$('.subscribe.subscribe_mixed').prepend('<div class="progress_line"><span class="digit">70%</span></div>');
+
+		$('.billing-custom .billing-custom__wrap').prepend('<div class="progress_line_wrap"><div class="progress_line"><span class="digit">90%</span></div></div>');
+
 
 		var styles = "<style>";
 		styles += `
@@ -116,6 +122,25 @@ function readyjQueryinit() {
 			.progress_line .digit {
 				margin-left: 30px;
 			}
+			.subscribe .subscribe__wrapper .progress_line{
+				margin: 25px auto 0;
+			}
+			.subscribe.subscribe_mixed .progress_line {
+				margin: 75px auto 0;
+				z-index: 2;
+			}
+			.subscribe .subscribe__wrapper .progress_line:before,
+			.subscribe.subscribe_mixed .progress_line:before {
+				width: 70%;
+			}
+			.subscribe .subscribe__wrapper .progress_line .digit,
+			.subscribe.subscribe_mixed .progress_line .digit {
+				margin-left: calc(70% + 14px);
+			}
+			.subscribe.subscribe_fresh .subscribe__wrapper .subscribe__title-box,
+			.subscribe.subscribe_mixed .subscribe__title-box{
+				margin-top: 12px;
+			}
 			.modal_signup_image .signup_modal_title {
 				font-weight: bold;
 				font-size: 32px;
@@ -131,7 +156,6 @@ function readyjQueryinit() {
 				margin-right: -16px;
 				padding-right: 16px;
 			}
-
 			.modal_signup_image .modal__body_signup .signup-user_modal .signup-user__right {
 				padding-top: 168px;
 			}
@@ -140,7 +164,6 @@ function readyjQueryinit() {
 			.modal_signup_image .signup-user_modal .signup-user__advantages {
 				display: none;
 			}
-
 			.modal_signup_image .img_wrapp {
 				border-radius: 16px;
 				position: relative;
@@ -162,6 +185,25 @@ function readyjQueryinit() {
 			.modal_signup_image .signup-user__back {
 				left: -420px;
 			}
+			.billing-custom .billing-custom__wrap {
+				position: relative;
+				padding-top: 110px;
+			}
+			.billing-custom .billing-custom__wrap .progress_line_wrap {
+				position: absolute;
+				top: 43px;
+				left: 0;
+				width: 100%;
+			}
+			.billing-custom .billing-custom__wrap .progress_line {
+				
+			}
+			.billing-custom .billing-custom__wrap .progress_line:before {
+				width: calc(90% - 10px);
+			}
+			.billing-custom .billing-custom__wrap .progress_line .digit {
+				margin-left: calc(90% + 3px);
+			}
 			@media screen and (min-width: 541px) {
 				.modal_signup_image .modal__body_signup .signup-user_modal .signup-user__right {
 					padding-left: 50px;
@@ -170,6 +212,11 @@ function readyjQueryinit() {
 			@media screen and (min-width: 991px) {
 				.modal_signup_image .modal__body_signup .signup-user_modal {
 					width: 895px;
+				}
+			}
+			@media screen and (max-width: 1199px) {
+				.subscribe .subscribe__wrapper .progress_line {
+					margin: 45px auto 0;
 				}
 			}
 		`;
