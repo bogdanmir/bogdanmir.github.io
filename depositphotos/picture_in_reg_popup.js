@@ -34,7 +34,7 @@ function readyjQueryinit() {
 			}
 			if($('.modal_signup.modal_signup_image').length > 0 && $('html').find('.signup_modal_boxtitle').length < 1) {
 				$('.modal_signup').addClass('modal_signup_image');
-				$('.modal_signup_image .signup-user_modal').append('<div class="signup_modal_boxtitle"><span class="signup_modal_title">Download this image...and 9 more for <span class="modal_word_active">FREE</span></span>   <p class="trial_text">in 7 days FREE Trial!</p></div>');
+				$('.modal_signup_image .signup-user_modal').append('<div class="signup_modal_boxtitle"><span class="signup_modal_title">Create an account to save your image</span></div>');
 				
 				$('.modal_signup_image .signup-user__left').append('<div class="img_wrapp"></div>');
 
@@ -99,7 +99,7 @@ function readyjQueryinit() {
 			}
 			.modal_signup_image .modal__body_signup .signup-user_modal .signup-user__left {
 				background: #fff;
-				padding-top: 148px;
+				padding-top: 120px;
 				padding-left: 30px;
 				padding-bottom: 30px;
 				width: 442px;
@@ -107,17 +107,10 @@ function readyjQueryinit() {
 				margin-right: -16px;
 				padding-right: 16px;
 			}
-			.modal_signup_image .signup-user_modal .modal_word_active {
-				color: #9fbe3b;
-			}
-			.modal_signup_image .signup-user_modal .trial_text {
-				display: block;
-				color: #3C3C3C;
-				font-size: 26px;
-				margin: 9px 0;
-			}
+
+
 			.modal_signup_image .modal__body_signup .signup-user_modal .signup-user__right {
-				padding-top: 168px;
+				padding-top: 140px;
 			}
 			.modal_signup_image .signup-user_modal .signup-user__title,
 			.modal_signup_image .signup-user_modal .signup-user__right .signup-user__sub-title,
