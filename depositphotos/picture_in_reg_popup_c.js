@@ -80,7 +80,12 @@ function readyjQueryinit() {
 		//log out user
 		$('.content').find('.plans').closest('.subscribe__wrapper').prepend('<div class="progress_line"><span class="digit">70%</span></div>');
 		//log in user
-		$('.content').find('.subscribe__plans-box').closest('.subscribe').prepend('<div class="progress_line"><span class="digit">70%</span></div>');
+		// $('.content').find('.subscribe__plans-box').closest('.subscribe').prepend('<div class="progress_line"><span class="digit">70%</span></div>');
+		setInterval(function() {
+			if($('.subscribe__plans-box').length > 0 && $('.progress_line').length < 1 ) {
+				$('.content').find('.subscribe__plans-box').closest('.subscribe').prepend('<div class="progress_line"><span class="digit">70%</span></div>');
+			}
+		},100);
 
 		$('.billing-custom .billing-custom__wrap').prepend('<div class="progress_line_wrap"><div class="progress_line"><span class="digit">90%</span></div></div>');
 
