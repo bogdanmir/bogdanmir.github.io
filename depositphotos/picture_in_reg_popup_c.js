@@ -78,9 +78,9 @@ function readyjQueryinit() {
 		})
 
 		//log out user
-		$('.subscribe .subscribe__wrapper').prepend('<div class="progress_line"><span class="digit">70%</span></div>');
+		$('.subscribe .subscribe__wrapper .subscribe__title-box').prepend('<div class="progress_line"><span class="digit">70%</span></div>');
 		//log in user
-		$('.subscribe.subscribe_mixed').prepend('<div class="progress_line"><span class="digit">70%</span></div>');
+		$('.subscribe.subscribe_mixed .subscribe__title-box').prepend('<div class="progress_line"><span class="digit">70%</span></div>');
 
 		$('.billing-custom .billing-custom__wrap').prepend('<div class="progress_line_wrap"><div class="progress_line"><span class="digit">90%</span></div></div>');
 
