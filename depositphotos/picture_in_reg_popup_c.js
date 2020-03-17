@@ -111,14 +111,11 @@ function readyjQueryinit() {
 			setInterval(function() {
 				if($('.subscribe__plans-box').length > 0 && $('.progress_line').length < 1 ) {
 					// $('.subscribe__plans-box').closest('.subscribe').find('.subscribe__header').prepend('<div class="progress_line"><span class="digit">70%</span></div>');
-
 					$('.subscribe__plans-box').closest('.progress_wrap').find('.content').prepend('<div class="progress_line"><span class="digit">70%</span></div>');
-
-					// $('.progress_wrap .content').prepend('<div class="progress_line"><span class="digit">70%</span></div>');
 				}
 			},0);
 
-			$('.billing-custom .billing-custom__wrap').prepend('<div class="progress_line_wrap"><div class="progress_line"><span class="digit">90%</span></div></div>');
+			$('body').find('.billing-custom .billing-custom__wrap').closest('.content').prepend('<div class="progress_line_wrap"><div class="progress_line"><span class="digit">90%</span></div></div>');
 		} else {
 			$('body').removeClass('progress_wrap');
 			console.log('2')
@@ -235,19 +232,19 @@ function readyjQueryinit() {
 				position: relative;
 				padding-top: 110px;
 			}
-			.progress_wrap .billing-custom .billing-custom__wrap .progress_line_wrap {
+			.progress_wrap .progress_line_wrap {
 				position: absolute;
-				top: 43px;
+				top: 82px;
 				left: 0;
 				width: 100%;
 			}
-			.progress_wrap .billing-custom .billing-custom__wrap .progress_line {
-				
+			.progress_wrap .progress_line_wrap .progress_line {
+				position: relative;
 			}
-			.progress_wrap .billing-custom .billing-custom__wrap .progress_line:before {
+			.progress_wrap .progress_line_wrap .progress_line:before {
 				width: calc(90% - 10px);
 			}
-			.progress_wrap .billing-custom .billing-custom__wrap .progress_line .digit {
+			.progress_wrap .progress_line_wrap .progress_line .digit {
 				margin-left: calc(90% + 3px);
 			}
 			@media screen and (min-width: 541px) {
