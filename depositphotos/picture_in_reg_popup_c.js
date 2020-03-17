@@ -102,8 +102,7 @@ function readyjQueryinit() {
 
 		if (localStorage.getItem('popup_active') == "true") {
 			console.log('1')
-			$('body').find('.subscribe__wrapper').addClass('progress_wrap');
-			$('body').find('.subscribe_mixed').addClass('progress_wrap');
+			$('body').addClass('progress_wrap');
 			//log out user
 			$('.content').find('.plans').closest('.subscribe__wrapper').prepend('<div class="progress_line"><span class="digit">70%</span></div>');
 
@@ -115,12 +114,9 @@ function readyjQueryinit() {
 				}
 			},0);
 
-			$('body').find('.billing-custom').addClass('progress_wrap');
 			$('.billing-custom .billing-custom__wrap').prepend('<div class="progress_line_wrap"><div class="progress_line"><span class="digit">90%</span></div></div>');
 		} else {
-			$('body').find('.subscribe__wrapper').removeClass('progress_wrap');
-			$('body').find('.subscribe_mixed').removeClass('progress_wrap');
-			$('body').find('.billing-custom').removeClass('progress_wrap');
+			$('body').removeClass('progress_wrap');
 			console.log('2')
 		}
 
@@ -162,23 +158,23 @@ function readyjQueryinit() {
 			.progress_line .digit {
 				margin-left: 30px;
 			}
-			.subscribe .subscribe__wrapper .progress_line {
+			.progress_wrap .subscribe .subscribe__wrapper .progress_line {
 				margin: 25px auto 0;
 			}
-			.subscribe.subscribe_mixed .progress_line {
+			.progress_wrap .subscribe.subscribe_mixed .progress_line {
 				margin: 75px auto 0;
 				z-index: 2;
 			}
-			.subscribe .subscribe__wrapper .progress_line:before,
-			.subscribe.subscribe_mixed .progress_line:before {
+			.progress_wrap .subscribe .subscribe__wrapper .progress_line:before,
+			.progress_wrap .subscribe.subscribe_mixed .progress_line:before {
 				width: 70%;
 			}
-			.subscribe .subscribe__wrapper .progress_line .digit,
-			.subscribe.subscribe_mixed .progress_line .digit {
+			.progress_wrap .subscribe .subscribe__wrapper .progress_line .digit,
+			.progress_wrap .subscribe.subscribe_mixed .progress_line .digit {
 				margin-left: calc(70% + 14px);
 			}
-			.progress_wrap.subscribe.subscribe_fresh .subscribe__wrapper .subscribe__title-box,
-			.progress_wrap.subscribe.subscribe_mixed .subscribe__title-box{
+			.progress_wrap .subscribe.subscribe_fresh .subscribe__wrapper .subscribe__title-box,
+			.progress_wrap .subscribe.subscribe_mixed .subscribe__title-box {
 				margin-top: 12px;
 			}
 			.modal_signup_image .signup_modal_title {
@@ -225,23 +221,23 @@ function readyjQueryinit() {
 			.modal_signup_image .signup-user__back {
 				left: -420px;
 			}
-			.progress_wrap.billing-custom .billing-custom__wrap {
+			.progress_wrap .billing-custom .billing-custom__wrap {
 				position: relative;
 				padding-top: 110px;
 			}
-			.progress_wrap.billing-custom .billing-custom__wrap .progress_line_wrap {
+			.progress_wrap .billing-custom .billing-custom__wrap .progress_line_wrap {
 				position: absolute;
 				top: 43px;
 				left: 0;
 				width: 100%;
 			}
-			.progress_wrap.billing-custom .billing-custom__wrap .progress_line {
+			.progress_wrap .billing-custom .billing-custom__wrap .progress_line {
 				
 			}
-			.progress_wrap.billing-custom .billing-custom__wrap .progress_line:before {
+			.progress_wrap .billing-custom .billing-custom__wrap .progress_line:before {
 				width: calc(90% - 10px);
 			}
-			.progress_wrap.billing-custom .billing-custom__wrap .progress_line .digit {
+			.progress_wrap .billing-custom .billing-custom__wrap .progress_line .digit {
 				margin-left: calc(90% + 3px);
 			}
 			@media screen and (min-width: 541px) {
@@ -255,7 +251,7 @@ function readyjQueryinit() {
 				}
 			}
 			@media screen and (max-width: 1199px) {
-				.subscribe .subscribe__wrapper .progress_line {
+				.progress_wrap .subscribe .subscribe__wrapper .progress_line {
 					margin: 45px auto 0;
 				}
 			}
