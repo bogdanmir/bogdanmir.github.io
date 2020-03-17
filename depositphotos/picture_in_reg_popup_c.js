@@ -104,13 +104,17 @@ function readyjQueryinit() {
 			console.log('1')
 			$('body').addClass('progress_wrap');
 			//log out user
-			$('.content').find('.plans').closest('.subscribe__wrapper').prepend('<div class="progress_line"><span class="digit">70%</span></div>');
+			$('body').find('.plans').closest('.subscribe__wrapper').prepend('<div class="progress_line"><span class="digit">70%</span></div>');
 
 			//log in user
 			// $('.content').find('.subscribe__plans-box').closest('.subscribe').prepend('<div class="progress_line"><span class="digit">70%</span></div>');
 			setInterval(function() {
 				if($('.subscribe__plans-box').length > 0 && $('.progress_line').length < 1 ) {
-					$('.subscribe__plans-box').closest('.subscribe').find('.subscribe__header').prepend('<div class="progress_line"><span class="digit">70%</span></div>');
+					// $('.subscribe__plans-box').closest('.subscribe').find('.subscribe__header').prepend('<div class="progress_line"><span class="digit">70%</span></div>');
+
+					$('.subscribe__plans-box').closest('.progress_wrap').find('.content').prepend('<div class="progress_line"><span class="digit">70%</span></div>');
+
+					// $('.progress_wrap .content').prepend('<div class="progress_line"><span class="digit">70%</span></div>');
 				}
 			},0);
 
@@ -161,21 +165,27 @@ function readyjQueryinit() {
 			.progress_wrap .subscribe .subscribe__wrapper .progress_line {
 				margin: 25px auto 0;
 			}
-			.progress_wrap .subscribe.subscribe_mixed .progress_line {
-				margin: 75px auto 0;
+			.progress_wrap .progress_line {
+				margin: 0 auto;
+
+				position: absolute;
+				width: 630px;
+				left: 0;
+				right: 0;
+				top: 75px;
 				z-index: 2;
 			}
-			.progress_wrap .subscribe .subscribe__wrapper .progress_line:before,
-			.progress_wrap .subscribe.subscribe_mixed .progress_line:before {
+			.progress_wrap .progress_line:before {
 				width: 70%;
 			}
-			.progress_wrap .subscribe .subscribe__wrapper .progress_line .digit,
-			.progress_wrap .subscribe.subscribe_mixed .progress_line .digit {
+			.progress_wrap .progress_line .digit {
 				margin-left: calc(70% + 14px);
 			}
-			.progress_wrap .subscribe.subscribe_fresh .subscribe__wrapper .subscribe__title-box,
-			.progress_wrap .subscribe.subscribe_mixed .subscribe__title-box {
+			.progress_wrap .subscribe.subscribe_fresh .subscribe__wrapper .subscribe__title-box {
 				margin-top: 12px;
+			}
+			.progress_wrap .subscribe.subscribe_mixed .subscribe__title-box {
+				margin-top: 112px;
 			}
 			.modal_signup_image .signup_modal_title {
 				font-weight: bold;
