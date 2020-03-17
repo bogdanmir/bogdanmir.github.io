@@ -38,11 +38,15 @@ function readyjQueryinit() {
 				
 				$('.modal_signup_image .signup-user__left').append('<div class="img_wrapp"></div>');
 
-				var videoPlaceholder = $('html').find('.view-file-box__video._video-placeholder  .view-file-box__video-poster');
-				videoPlaceholder.clone().appendTo(".modal_signup_image .signup-user_modal .signup-user__left .img_wrapp");
-
-				var img = $('html').find('.view-file-box__image-box .view-file-box__image');
-				img.clone().appendTo(".modal_signup_image .signup-user_modal .signup-user__left .img_wrapp");
+				if($('.wrapper_file-view .file-view-page_video').length > 0) {
+					var videoPlaceholder = $('html').find('.view-file-box__video._video-placeholder .view-file-box__video-poster');
+					videoPlaceholder.clone().appendTo(".modal_signup_image .signup-user_modal .signup-user__left .img_wrapp");
+				}
+				
+				if($('.wrapper_file-view .view-file-box__image-box .view-file-box__image').length > 0) {
+					var img = $('html').find('.view-file-box__image-box .view-file-box__image');
+					img.clone().appendTo(".modal_signup_image .signup-user_modal .signup-user__left .img_wrapp");
+				}
 			}
 		}
 		function myStopFunction() {
