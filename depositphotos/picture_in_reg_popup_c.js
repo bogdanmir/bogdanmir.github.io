@@ -104,7 +104,8 @@ function readyjQueryinit() {
 			console.log('1')
 			$('body').addClass('progress_wrap');
 			//log out user
-			$('body').find('.plans').closest('.subscribe__wrapper').prepend('<div class="progress_line"><span class="digit">70%</span></div>');
+			// $('body').find('.plans').closest('.subscribe__wrapper').prepend('<div class="progress_line_logout"><div class="progress_line"><span class="digit">70%</span></div></div>');
+			$('.subscribe__wrapper .plans').closest('.progress_wrap').find('.content').prepend('<div class="progress_line_logout"><div class="progress_line"><span class="digit">70%</span></div></div>');
 
 			//log in user
 			// $('.content').find('.subscribe__plans-box').closest('.subscribe').prepend('<div class="progress_line"><span class="digit">70%</span></div>');
@@ -179,7 +180,7 @@ function readyjQueryinit() {
 				margin-left: calc(70% + 14px);
 			}
 			.progress_wrap .subscribe.subscribe_fresh .subscribe__wrapper .subscribe__title-box {
-				margin-top: 12px;
+				margin-top: 65px;
 			}
 			.progress_wrap .subscribe.subscribe_mixed .subscribe__title-box {
 				margin-top: 112px;
