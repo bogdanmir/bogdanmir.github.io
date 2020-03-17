@@ -48,22 +48,16 @@ function readyjQueryinit() {
 			}
 		}
 
-		// var localValue = localStorage.setItem('popup_active', false);
-
 		$('body').on('click','.price-table-classic__download', function(){
 			myStopFunction();
 			window.interval = setInterval(myTimer, 1);
 
 			localStorage.setItem('popup_active', true);
-			// var localValue = localStorage.getItem('popup_active');
-			// console.log(localValue);
-
 			if (localStorage.getItem('popup_active') == "true") {
 				console.log('1')
 			} else {
 				console.log('2')
 			}
-
 		})
 
 		$('body').on('mousedown', '.view-file-box__action-item.button-download', function(){
@@ -71,8 +65,6 @@ function readyjQueryinit() {
 			window.interval = setInterval(myTimer, 1);
 
 			localStorage.setItem('popup_active', true);
-			// var localValue = localStorage.getItem('popup_active');
-			// console.log(localValue);
 			if (localStorage.getItem('popup_active') == "true") {
 				console.log('1')
 			} else {
@@ -104,19 +96,24 @@ function readyjQueryinit() {
 			console.log('1')
 			$('body').addClass('progress_wrap');
 			//log out user
-			// $('body').find('.plans').closest('.subscribe__wrapper').prepend('<div class="progress_line_logout"><div class="progress_line"><span class="digit">70%</span></div></div>');
-			$('.subscribe__wrapper .plans').closest('.progress_wrap').find('.content').prepend('<div class="progress_line_logout"><div class="progress_line"><span class="digit">70%</span></div></div>');
+			setInterval(function() {
+				if($('.subscribe__wrapper .plans').length > 0 && $('.progress_line').length < 1 ) {
+					$('.subscribe__wrapper .plans').closest('.progress_wrap').find('.content').prepend('<div class="progress_line_logout"><div class="progress_line"><span class="digit">70%</span></div></div>');
+				}
+			},0);
 
 			//log in user
-			// $('.content').find('.subscribe__plans-box').closest('.subscribe').prepend('<div class="progress_line"><span class="digit">70%</span></div>');
 			setInterval(function() {
 				if($('.subscribe__plans-box').length > 0 && $('.progress_line').length < 1 ) {
-					// $('.subscribe__plans-box').closest('.subscribe').find('.subscribe__header').prepend('<div class="progress_line"><span class="digit">70%</span></div>');
 					$('.subscribe__plans-box').closest('.progress_wrap').find('.content').prepend('<div class="progress_line"><span class="digit">70%</span></div>');
 				}
 			},0);
 
-			$('body').find('.billing-custom .billing-custom__wrap').closest('.content').prepend('<div class="progress_line_wrap"><div class="progress_line"><span class="digit">90%</span></div></div>');
+			setInterval(function() {
+				if($('.billing-custom .billing-custom__wrap').length > 0 && $('.progress_line').length < 1 ) {
+					$('body').find('.billing-custom .billing-custom__wrap').closest('.content').prepend('<div class="progress_line_wrap"><div class="progress_line"><span class="digit">90%</span></div></div>');
+				}
+			},0);
 		} else {
 			$('body').removeClass('progress_wrap');
 			console.log('2')
@@ -222,6 +219,7 @@ function readyjQueryinit() {
 				position: absolute;
 				top: 0;
 				left: 0;
+				right: 0;
 				object-fit: cover;
 				height: calc(100% + 27px);
 				max-height: calc(100% + 27px);
