@@ -52,7 +52,7 @@ function readyjQueryinit() {
 
 		$('body').on('click','.price-table-classic__download', function(){
 			myStopFunction();
-			window.interval = setInterval(myTimer);
+			window.interval = setInterval(myTimer, 1);
 
 			localStorage.setItem('popup_active', true);
 			// var localValue = localStorage.getItem('popup_active');
@@ -68,7 +68,7 @@ function readyjQueryinit() {
 
 		$('body').on('mousedown', '.view-file-box__action-item.button-download', function(){
 			myStopFunction();
-			window.interval = setInterval(myTimer);
+			window.interval = setInterval(myTimer, 1);
 
 			localStorage.setItem('popup_active', true);
 			// var localValue = localStorage.getItem('popup_active');
