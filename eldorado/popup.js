@@ -288,23 +288,24 @@ function readyjQueryinit() {
         }
     }
 
-    $(document).mouseleave(function (e) {
-        var display_product = check_to_display_popup();
-        if (display_product == true) {
-            if ($("body").find(".ex-rodal").length >0) {
-                $("body").find(".ex-rodal").remove();
+    document.addEventListener("mouseleave", function( event ) {
+        if (event.toElement == null) {
+            var display_product = check_to_display_popup();
+            if (display_product == true) {
+                if ($("body").find(".ex-rodal").length >0) {
+                    $("body").find(".ex-rodal").remove();
+                }
+                show_ms();
             }
-            show_ms();
-        }
 
-        if ((display_product == true) && (document.location.href.indexOf("eldorado.ua/checkout/") > -1)) {
-          console.log('true')
-          if ($("body").find(".ex-rodal").length >0) {
-              $("body").find(".ex-rodal").remove();
-          }
-          show_ms_checkout();
+            if ((display_product == true) && (document.location.href.indexOf("eldorado.ua/checkout/") > -1)) {
+              console.log('true')
+              if ($("body").find(".ex-rodal").length >0) {
+                  $("body").find(".ex-rodal").remove();
+              }
+              show_ms_checkout();
+            }
         }
-
     });
 
     $(document).on("click", ".ex-rodal .ex-rodal-close", function() {
