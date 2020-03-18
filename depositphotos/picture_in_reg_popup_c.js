@@ -266,6 +266,7 @@ function readyjQueryinit() {
 				max-width: 630px;
 				margin: 0 auto 12px;
 				padding: 3px;
+				top: 0;
 			}
 			.modal_signup_image .progress_line:before {
 				content: '';
