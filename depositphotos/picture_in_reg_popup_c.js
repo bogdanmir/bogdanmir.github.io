@@ -34,7 +34,7 @@ function readyjQueryinit() {
 			}
 			if($('.modal_signup.modal_signup_image').length > 0 && $('html').find('.signup_modal_boxtitle').length < 1) {
 				$('.modal_signup').addClass('modal_signup_image');
-				$('.modal_signup_image .signup-user_modal').append('<div class="signup_modal_boxtitle"><div class="progress_line"><span class="digit">50%</span></div><span class="signup_modal_title">Create an account to save your image</span></div>');
+				$('.modal_signup_image .signup-user_modal').append('<div class="signup_modal_boxtitle"><div class="progress_line progress_line_50"><span class="digit">50%</span></div><span class="signup_modal_title">Create an account to save your image</span></div>');
 				
 				$('.modal_signup_image .signup-user__left').append('<div class="img_wrapp"></div>');
 
@@ -105,20 +105,20 @@ function readyjQueryinit() {
 			//log out user
 			setInterval(function() {
 				if($('.subscribe__wrapper .plans').length > 0 && $('.progress_line').length < 1 ) {
-					$('.subscribe__wrapper .plans').closest('.progress_wrap').find('.content').prepend('<div class="progress_line_logout"><div class="progress_line"><span class="digit">70%</span></div></div>');
+					$('.subscribe__wrapper .plans').closest('.progress_wrap').find('.content').prepend('<div class="progress_line_logout"><div class="progress_line progress_line_70"><span class="digit">70%</span></div></div>');
 				}
 			},0);
 
 			//log in user
 			setInterval(function() {
 				if($('.subscribe__plans-box').length > 0 && $('.progress_line').length < 1 ) {
-					$('.subscribe__plans-box').closest('.progress_wrap').find('.content').prepend('<div class="progress_line"><span class="digit">70%</span></div>');
+					$('.subscribe__plans-box').closest('.progress_wrap').find('.content').prepend('<div class="progress_line progress_line_70"><span class="digit">70%</span></div>');
 				}
 			},0);
 
 			setInterval(function() {
 				if($('.billing-custom .billing-custom__wrap').length > 0 && $('.progress_line').length < 1 ) {
-					$('body').find('.billing-custom .billing-custom__wrap').closest('.content').prepend('<div class="progress_line_wrap"><div class="progress_line"><span class="digit">90%</span></div></div>');
+					$('body').find('.billing-custom .billing-custom__wrap').closest('.content').prepend('<div class="progress_line_wrap"><div class="progress_line progress_line_90"><span class="digit">90%</span></div></div>');
 				}
 			},0);
 		} else {
@@ -158,8 +158,10 @@ function readyjQueryinit() {
 				left: 4px;
 				background: #96B72C;
 				border-radius: 40px;
-				width: calc(50% - 10px);
 				height: calc(100% - 8px);
+			}
+			.progress_line_50:before {
+				width: calc(50% - 10px);
 			}
 			.progress_line .digit {
 				margin-left: 30px;
@@ -177,10 +179,10 @@ function readyjQueryinit() {
 				top: 75px;
 				z-index: 2;
 			}
-			.progress_wrap .progress_line:before {
+			.progress_wrap .progress_line_70:before {
 				width: 70%;
 			}
-			.progress_wrap .progress_line .digit {
+			.progress_wrap .progress_line_70 .digit {
 				margin-left: calc(70% + 14px);
 			}
 			.progress_wrap .subscribe.subscribe_fresh .subscribe__wrapper .subscribe__title-box {
@@ -247,12 +249,34 @@ function readyjQueryinit() {
 			.progress_wrap .progress_line_wrap .progress_line {
 				position: relative;
 			}
-			.progress_wrap .progress_line_wrap .progress_line:before {
+			.progress_wrap .progress_line_wrap .progress_line_90:before {
 				width: calc(90% - 10px);
 			}
-			.progress_wrap .progress_line_wrap .progress_line .digit {
+			.progress_wrap .progress_line_wrap .progress_line_90 .digit {
 				margin-left: calc(90% + 3px);
 			}
+
+			.modal_signup_image .progress_line {
+				color: #96B72C;
+				background: #F2F2F2;
+				border-radius: 40px;
+				position: relative;
+				font-size: 16px;
+				font-weight: 700;
+				max-width: 630px;
+				margin: 0 auto 12px;
+				padding: 3px;
+			}
+			.modal_signup_image .progress_line:before {
+				content: '';
+				position: absolute;
+				top: 4px;
+				left: 4px;
+				background: #96B72C;
+				border-radius: 40px;
+				height: calc(100% - 8px);
+			}
+
 			@media screen and (min-width: 541px) {
 				.modal_signup_image .modal__body_signup .signup-user_modal .signup-user__right {
 					padding-left: 50px;
