@@ -43,8 +43,13 @@ function readyjQueryinit() {
 					videoPlaceholder.clone().appendTo(".modal_signup_image .signup-user_modal .signup-user__left .img_wrapp");
 				}
 				
-				if($('.wrapper_file-view .view-file-box__image-box .view-file-box__image').length > 0 && $('.modal-container .file-view_bg-black .file-view__thumb .view-file-box__image-box_label .view-file-box__image').length > 0) {
+				if( $('.wrapper_file-view .view-file-box__image-box .view-file-box__image').length > 0 ) {
 					var img = $('html').find('.view-file-box__image-box .view-file-box__image');
+					img.clone().appendTo(".modal_signup_image .signup-user_modal .signup-user__left .img_wrapp");
+				}
+
+				if( $('.modal-container .file-view_bg-black .file-view__thumb .view-file-box__image-box_label .view-file-box__image').length > 0 ) {
+					var img = $('html').find('.modal-container .file-view_bg-black .file-view__thumb .view-file-box__image-box_label .view-file-box__image');
 					img.clone().appendTo(".modal_signup_image .signup-user_modal .signup-user__left .img_wrapp");
 				}
 			}
