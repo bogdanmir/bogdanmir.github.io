@@ -1,8 +1,3 @@
-try {
-    hj('trigger', 'open_create_task_form');
-}
-catch(e) {}
-
 function initjQuery(callback) {
 	var script = document.createElement( "script" )
 	script.type = "text/javascript";
@@ -31,7 +26,6 @@ if (!window.jQuery) {
 function readyjQueryinit(){
   $(window).ready(function(){
 
-
 	function proPrice(){
 		var resTooltip = Number(Number(document.getElementById('data_response_obj').dataset.cost) + Number(document.getElementById('data_response_obj').dataset.cost * 0.2));
 		return resTooltip;
@@ -47,6 +41,13 @@ function readyjQueryinit(){
 		return resTooltip1;
 	}
 	function createBlock(){
+
+		try {
+		    hj('trigger', 'open_create_task_form');
+		}
+		catch(e) {}
+	  	ga('send', 'event', 'Exp - Add pro plan to the form', 'activated', {nonInteraction: true});
+
 		console.log('createBlock111')
 		if(!document.querySelector('.kb_bth_wrapper')){
 				console.log('createBlock')
@@ -155,11 +156,10 @@ function readyjQueryinit(){
 			if(document.getElementById('cost')){
 				console.log(document.getElementById('cost'));
 				clearInterval(inputPresent)
-				document.getElementById('cost').addEventListener('input', function(){
+				document.getElementById('cost').addEventListener('focus', function(){
 	              ga('send', 'event', 'Exp - Add pro plan to the form', 'click','Price field')
-					countCashback();	
+					countCashback();
 				})
-				
 			}
 		})
 	}
@@ -198,8 +198,15 @@ function readyjQueryinit(){
 		}
 	})
 
-
-
+	document.getElementsByName('isCostDiscussed')[0].addEventListener('click', function(){
+		ga('send', 'event', 'Exp - Add pro plan to the form', 'click','Цена обсуждается')
+	})
+	document.getElementsByName('payment')[0].addEventListener('click', function(){
+		ga('send', 'event', 'Exp - Add pro plan to the form', 'click','Оплата наличными')
+	})
+	document.getElementsByName('payment')[1].addEventListener('click', function(){
+		ga('send', 'event', 'Exp - Add pro plan to the form', 'click','Оплата через сайт')
+	})
 
 var styles = "<style>";
 styles += `
