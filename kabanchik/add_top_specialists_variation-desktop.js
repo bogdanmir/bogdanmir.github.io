@@ -307,10 +307,10 @@ jQuery('body').append(styles);
 							updatePrice()
 							countCashback()
 							dynamicCashback()
-	                        document.getElementsByName('isCostDiscussed')[0].addEventListener('click', function(){ga('send', 'event', 'Exp - Add pro plan to the form', 'click','Цена обсуждается')})
+	                        // document.getElementsByName('isCostDiscussed')[0].addEventListener('click', function(){ga('send', 'event', 'Exp - Add pro plan to the form', 'click','Цена обсуждается')})
 							console.log('The ' + mutation.attributeName + ' attribute was modified.');
-	                        document.getElementsByName('payment')[0].addEventListener('click', function(){ga('send', 'event', 'Exp - Add pro plan to the form', 'click','Оплата наличными')})
-	                        document.getElementsByName('payment')[1].addEventListener('click', function(){ga('send', 'event', 'Exp - Add pro plan to the form', 'click','Оплата через сайт')})
+	                        // document.getElementsByName('payment')[0].addEventListener('click', function(){ga('send', 'event', 'Exp - Add pro plan to the form', 'click','Оплата наличными')})
+	                        // document.getElementsByName('payment')[1].addEventListener('click', function(){ga('send', 'event', 'Exp - Add pro plan to the form', 'click','Оплата через сайт')})
 						}
 					}
 				}
@@ -328,15 +328,21 @@ jQuery('body').append(styles);
 	})
 
 	$(document).on('click', '[name="isCostDiscussed"]', function(event) {
-		ga('send', 'event', 'Exp - Add pro plan to the form', 'click','Цена обсуждается');
+		try{
+			ga('send', 'event', 'Exp - Add pro plan to the form', 'click','Цена обсуждается');
+		}catch(e){}
 		console.log('Цена обсуждается');
 	});
 	$(document).on('click', '[name="payment"]:eq(0)', function(event) {
-		ga('send', 'event', 'Exp - Add pro plan to the form', 'click','Оплата наличными');
+		try{
+			ga('send', 'event', 'Exp - Add pro plan to the form', 'click','Оплата наличными');
+		}catch(e){}
 		console.log('Оплата наличными');
 	});
 	$(document).on('click', '[name="payment"]:eq(1)', function(event) {
-		ga('send', 'event', 'Exp - Add pro plan to the form', 'click','Оплата через сайт');
+		try {
+			ga('send', 'event', 'Exp - Add pro plan to the form', 'click','Оплата через сайт');
+		}catch(e){}
 		console.log('Оплата через сайт');
 	});
 
