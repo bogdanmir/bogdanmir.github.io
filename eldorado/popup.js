@@ -144,7 +144,6 @@ function readyjQueryinit() {
         }
     });
 
-
     $(document).on("click", ".credit-basket-modal .credit-suggestions-list .buy-button", function () {
         if(typeof payload != 'undefined'){
             if(typeof payload["product-view"] != 'undefined'){
@@ -153,7 +152,6 @@ function readyjQueryinit() {
             }
         }
     });
-
 
     $(document).on("click", ".goods-item-content .buy-button", function () {
         if($(this).closest('article.tile-container').find('.good-description .title a').length > 0){
@@ -174,15 +172,6 @@ function readyjQueryinit() {
         $(".rodal-dialog.cart-modal-container .rodal-close").click();
     });
 
-    // $(document).on("click", ".page-container.blurred.product-page", function() {
-    //     $(".options-list__item.grid__cell.grid.enabled-item").click();
-    //     $(".rodal").css({"opacity":"0", "z-index":"-1"});
-    //     $(".rodal-dialog.cart-modal-container .rodal-close").click();
-    // });
-    // $(document).on("click", ".product-buy-container .buy-button", function() {
-    //     console.log(payload["product-view"]);
-    // });
-
     $(document).on("click", ".ab_checkout", function(event) {
         $("body").find(".rodal:not(.ex-rodal) .cart-modal-container .continue-button").click();
     })
@@ -194,7 +183,16 @@ function readyjQueryinit() {
             'eventAction': 'click',
             'eventLabel': 'Complete order'
         });
-    })
+    });
+    $(document).on("click", ".ex-rodal.rodal .ex-rodal-close", function(event) {
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+            'event': 'autoEvent',
+            'eventCategory': 'Exp - Exit-Intent Popup',
+            'eventAction': 'click',
+            'eventLabel': 'X to close'
+        });
+    });
     $(document).on("click", ".ex-rodal.rodal.show .rodal-mask", function(event) {
         window.dataLayer = window.dataLayer || [];
         dataLayer.push({
@@ -214,12 +212,6 @@ function readyjQueryinit() {
         });
     })
     function show_ms(){
-        window.dataLayer = window.dataLayer || [];
-        dataLayer.push({
-            'event': 'autoEvent',
-            'eventCategory': 'Exp - Exit-Intent Popup',
-            'eventAction': 'Popup loaded'
-        });
         if ($('.options-list__item.enabled-item').length && $('.rodal-dialog.cart-modal-container').length == 0) {
             $(".options-list__item.grid__cell.grid.enabled-item").click();
             $(".rodal-dialog.cart-modal-container").closest('.rodal').css({"opacity":"0", "z-index":"-1"});
@@ -234,6 +226,13 @@ function readyjQueryinit() {
             }
             $('body').append($outhtml);
 
+            window.dataLayer = window.dataLayer || [];
+            dataLayer.push({
+                'event': 'autoEvent',
+                'eventCategory': 'Exp - Exit-Intent Popup',
+                'eventAction': 'Popup loaded'
+            });
+
             $(".ex-rodal .count-value").each(function() {
                 $(this).prepend('х ');
             });
@@ -252,14 +251,7 @@ function readyjQueryinit() {
         }
     }
 
-
     function show_ms_checkout(){
-        window.dataLayer = window.dataLayer || [];
-        dataLayer.push({
-            'event': 'autoEvent',
-            'eventCategory': 'Exp - Exit-Intent Popup',
-            'eventAction': 'Popup loaded'
-        });
         if ($('.checkout-container .cart .good-card-container .good-card').length) {
             
             var cartItems = $('body').find(".cart.checkout-cart-block-container .cart-goods").html();
@@ -271,6 +263,13 @@ function readyjQueryinit() {
             }
             $('body').append($outhtml);
 
+            window.dataLayer = window.dataLayer || [];
+            dataLayer.push({
+                'event': 'autoEvent',
+                'eventCategory': 'Exp - Exit-Intent Popup',
+                'eventAction': 'Popup loaded'
+            });
+
             $(".ex-rodal .count-value").each(function() {
                 $(this).prepend('х ');
             });
@@ -285,31 +284,28 @@ function readyjQueryinit() {
 
             localStorage.setItem('ipd', 'y');
         } else {
-            console.log('нет товаров в корзине!')
+            console.log('cart is empty')
         }
     }
 
-
-// $(".page-container").removeClass('blurred');
-    $(document).mouseleave(function (e) {
-        var display_product = check_to_display_popup();
-        if (display_product == true) {
-            // $(".page-container").removeClass('blurred');
-            if ($("body").find(".ex-rodal").length >0) {
-                $("body").find(".ex-rodal").remove();
+    document.addEventListener("mouseleave", function( event ) {
+        if (event.toElement == null) {
+            var display_product = check_to_display_popup();
+            if (display_product == true) {
+                if ($("body").find(".ex-rodal").length >0) {
+                    $("body").find(".ex-rodal").remove();
+                }
+                show_ms();
             }
-            show_ms();
+
+            if ((display_product == true) && (document.location.href.indexOf("eldorado.ua/checkout/") > -1)) {
+              console.log('true')
+              if ($("body").find(".ex-rodal").length >0) {
+                  $("body").find(".ex-rodal").remove();
+              }
+              show_ms_checkout();
+            }
         }
-
-
-        if ((display_product == true) && (document.location.href.indexOf("eldorado.ua/checkout/") > -1)) {
-          console.log('true')
-          if ($("body").find(".ex-rodal").length >0) {
-              $("body").find(".ex-rodal").remove();
-          }
-          show_ms_checkout();
-        }
-
     });
 
     $(document).on("click", ".ex-rodal .ex-rodal-close", function() {
@@ -320,15 +316,6 @@ function readyjQueryinit() {
         $(".ex-rodal").removeClass('show');
         $(".rodal-dialog.cart-modal-container .rodal-close").click();
     });
-
-
-    // var d = new Date()
-    // var time = d.getHours()
-    // if (time >= 8 && time < 17) {
-    //   console.log('time >= 8 && time < 17')
-    // } else {
-    //   console.log('рабочий день закончен')
-    // }
 
     var styles = "<style>";
     styles += `

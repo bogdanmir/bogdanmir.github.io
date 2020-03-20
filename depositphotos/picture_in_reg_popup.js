@@ -34,9 +34,12 @@ function readyjQueryinit() {
 			}
 			if($('.modal_signup.modal_signup_image').length > 0 && $('html').find('.signup_modal_boxtitle').length < 1) {
 				$('.modal_signup').addClass('modal_signup_image');
-				$('.modal_signup_image .signup-user_modal').append('<div class="signup_modal_boxtitle"><span class="signup_modal_title">Download this image...and 9 more for <span class="modal_word_active">FREE</span></span>   <p class="trial_text">in 7 days FREE Trial!</p></div>');
+				$('.modal_signup_image .signup-user_modal').append('<div class="signup_modal_boxtitle"><span class="signup_modal_title">Create an account to save your image</span></div>');
+				
+				$('.modal_signup_image .signup-user__left').append('<div class="img_wrapp"></div>');
+
 				var img = $('html').find('.view-file-box__image-box .view-file-box__image');
-				img.clone().appendTo(".modal_signup_image .signup-user_modal .signup-user__left");
+				img.clone().appendTo(".modal_signup_image .signup-user_modal .signup-user__left .img_wrapp");
 			} 
 		}
 		function myStopFunction() {
@@ -57,7 +60,7 @@ function readyjQueryinit() {
 		$('body').on('mousedown', '.modal_signup_image+.modal-overlay', function(){
 			myStopFunction();
 			if($('.modal_signup.modal_signup_image').length > 0) {
-				// $('.modal_signup_image .modal__close-round').click();
+				$('.modal_signup_image .modal__close-round').click();
 				// $('html').find('.modal_signup.modal_signup_image').remove();
 				$('html').find('.signup_modal_boxtitle').remove();
 				$('html').find(".modal_signup_image .signup-user_modal .signup-user__left .view-file-box__image").remove();
@@ -96,32 +99,45 @@ function readyjQueryinit() {
 			}
 			.modal_signup_image .modal__body_signup .signup-user_modal .signup-user__left {
 				background: #fff;
-				padding-top: 148px;
+				padding-top: 120px;
 				padding-left: 30px;
 				padding-bottom: 30px;
 				width: 442px;
 				min-height: 380px;
+				margin-right: -16px;
+				padding-right: 16px;
 			}
-			.modal_signup_image .signup-user_modal .signup-user__left .view-file-box__image {
-				border-radius: 16px;
-				cursor: auto;
-			}
-			.modal_signup_image .signup-user_modal .modal_word_active {
-				color: #9fbe3b;
-			}
-			.modal_signup_image .signup-user_modal .trial_text {
-				display: block;
-				color: #3C3C3C;
-				font-size: 26px;
-				margin: 9px 0;
-			}
+
+
 			.modal_signup_image .modal__body_signup .signup-user_modal .signup-user__right {
-				padding-top: 168px;
+				padding-top: 140px;
 			}
 			.modal_signup_image .signup-user_modal .signup-user__title,
 			.modal_signup_image .signup-user_modal .signup-user__right .signup-user__sub-title,
 			.modal_signup_image .signup-user_modal .signup-user__advantages {
 				display: none;
+			}
+
+			.modal_signup_image .img_wrapp {
+				border-radius: 16px;
+				position: relative;
+				height: 100%;
+				width: 100%;
+				overflow: hidden;
+			}
+			.modal_signup_image .signup-user_modal .signup-user__left .view-file-box__image {
+				border-radius: 16px;
+				cursor: auto;
+
+				position: absolute;
+				top: 0;
+				left: 0;
+				object-fit: cover;
+				height: calc(100% + 27px);
+				max-height: calc(100% + 27px);
+			}
+			.modal_signup_image .signup-user__back {
+				left: -420px;
 			}
 			@media screen and (min-width: 541px) {
 				.modal_signup_image .modal__body_signup .signup-user_modal .signup-user__right {
