@@ -25,7 +25,134 @@ if (!window.jQuery) {
 }
 function readyjQueryinit(){
   $(window).ready(function(){
+var styles = "<style>";
+styles += `
+.kb-estimated-cost{
+	width: 500px!important;
+	max-width: 500px!important;
+	padding: 20px 25px 22px!important;
+	background-color: #F1F4E8 !important;
+		margin-right: auto !important;
+	display: flex !important;
+	flex-direction: column;
+	margin-left: auto !important;
+}
+.kb-task-create-payment__estimated-cost{
+	margin-right: 75px!important;
+	display: block !important;
+	margin-left: auto !important;
+	max-width: 500px;
 
+}
+.kb-estimated-cost__currency{
+	margin-right: 70px;
+}
+.kb-task-create-payment__item.kb-task-create-payment__item_type_cost-description{
+	margin-top: 20px!important;
+	padding-left: 0!important;
+	font-size: 13px!important;
+	line-height: 19px!important;
+	color: rgba(0,0,0, 0.6)!important;
+	order: 2;
+}
+.kb_bonus_type {
+	color: #808080;
+}
+.kb_bonus_type.active {
+		background-color: #F1F4E8;
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+		color: #000;
+}
+.kb_cash-text{
+font-size: 13px;
+color: #959595;
+margin-top: 10px;
+}
+.kb_right_col {
+	width: 54%;
+	background-image: url("https://res.cloudinary.com/dbbrpie5a/image/upload/v1573754063/kabanchik/star_ch6t62.svg");
+	background-position: left 9px;
+	background-size: 16px;
+	padding-left: 29px;
+	background-repeat: no-repeat;
+}
+.kb_left_col {
+	width: 46%;
+	background-image: url("https://res.cloudinary.com/dbbrpie5a/image/upload/v1573754063/kabanchik/star_ch6t62.svg");
+	background-position: left 9px;
+	background-size: 16px;
+	padding-left: 29px;
+	background-repeat: no-repeat;
+}
+.kb_bonus_type:hover {
+	text-decoration: none;
+}
+.standart_right_col {
+	display: none;
+}
+.kb-estimated-cost__label {
+order: 0;	
+}
+#price-checkbox-wrapper {
+	order: 1;
+}
+.kb-text.kb-text_mt_10 {
+	order: 2;
+}
+#cash-text {
+	order: 3;
+}
+.kb-task-create__note.custom_data_info {
+	display: none;
+}
+.kb_bonus_wrapper {
+	order: 3;
+}
+
+.kb_right_col {
+	display: none;
+}
+.kb_right_col {
+	display: block;
+}
+.kb-task-create-payment__section {
+	display: flex;	
+}
+.kb-task-create-payment__estimated-cost .kb-task-create-payment__attributes.translate{
+	display: flex;
+	max-width: 500px;
+	align-items: center;
+	width: 100%;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.kb-task-create-payment__estimated-cost .kb-task-create-payment__attributes.translate .kb-task-create-payment__radio-holder+.kb-task-create-payment__radio-holder{
+	margin-top: 0;
+}
+.kb-task-create__note{
+	line-height: normal;
+}
+.kb-estimated-cost>div:nth-child(2){
+	display: flex;
+	display: flex;
+    align-items: center;
+}
+.kb-estimated-cost>div:nth-child(2) .kb-text.kb-text_mt_10{
+	margin-top: 0!important;
+}
+.kb-estimated-cost>div:nth-child(1){
+	order: 0;
+}
+.kb-estimated-cost>div:nth-child(2){
+	order: 1;
+}
+.kb-estimated-cost>div:nth-child(3){
+	display: none;
+}
+`;
+styles    += "</style>";
+jQuery('body').append(styles);
 	function proPrice(){
 		var resTooltip = Number(Number(document.getElementById('data_response_obj').dataset.cost) + Number(document.getElementById('data_response_obj').dataset.cost * 0.2));
 		return resTooltip;
@@ -200,144 +327,18 @@ function readyjQueryinit(){
 		}
 	})
 
-	document.getElementsByName('isCostDiscussed')[0].addEventListener('click', function(){
-		ga('send', 'event', 'Exp - Add pro plan to the form', 'click','Цена обсуждается')
-	})
-	document.getElementsByName('payment')[0].addEventListener('click', function(){
-		ga('send', 'event', 'Exp - Add pro plan to the form', 'click','Оплата наличными')
-	})
-	document.getElementsByName('payment')[1].addEventListener('click', function(){
-		ga('send', 'event', 'Exp - Add pro plan to the form', 'click','Оплата через сайт')
-	})
-
-var styles = "<style>";
-styles += `
-.kb-estimated-cost{
-	width: 500px!important;
-	max-width: 500px!important;
-	padding: 20px 25px 22px!important;
-	background-color: #F1F4E8 !important;
-		margin-right: auto !important;
-	display: flex !important;
-	flex-direction: column;
-	margin-left: auto !important;
-}
-.kb-task-create-payment__estimated-cost{
-	margin-right: 75px!important;
-	display: block !important;
-	margin-left: auto !important;
-	max-width: 500px;
-
-}
-.kb-estimated-cost__currency{
-	margin-right: 70px;
-}
-.kb-task-create-payment__item.kb-task-create-payment__item_type_cost-description{
-	margin-top: 20px!important;
-	padding-left: 0!important;
-	font-size: 13px!important;
-	line-height: 19px!important;
-	color: rgba(0,0,0, 0.6)!important;
-	order: 2;
-}
-.kb_bonus_type {
-	color: #808080;
-}
-.kb_bonus_type.active {
-		background-color: #F1F4E8;
-		border-top-left-radius: 10px;
-		border-top-right-radius: 10px;
-		color: #000;
-}
-.kb_cash-text{
-font-size: 13px;
-color: #959595;
-margin-top: 10px;
-}
-.kb_right_col {
-	width: 54%;
-	background-image: url("https://res.cloudinary.com/dbbrpie5a/image/upload/v1573754063/kabanchik/star_ch6t62.svg");
-	background-position: left 9px;
-	background-size: 16px;
-	padding-left: 29px;
-	background-repeat: no-repeat;
-}
-.kb_left_col {
-	width: 46%;
-	background-image: url("https://res.cloudinary.com/dbbrpie5a/image/upload/v1573754063/kabanchik/star_ch6t62.svg");
-	background-position: left 9px;
-	background-size: 16px;
-	padding-left: 29px;
-	background-repeat: no-repeat;
-}
-.kb_bonus_type:hover {
-	text-decoration: none;
-}
-.standart_right_col {
-	display: none;
-}
-.kb-estimated-cost__label {
-order: 0;	
-}
-#price-checkbox-wrapper {
-	order: 1;
-}
-.kb-text.kb-text_mt_10 {
-	order: 2;
-}
-#cash-text {
-	order: 3;
-}
-.kb-task-create__note.custom_data_info {
-	display: none;
-}
-.kb_bonus_wrapper {
-	order: 3;
-}
-
-.kb_right_col {
-	display: none;
-}
-.kb_right_col {
-	display: block;
-}
-.kb-task-create-payment__section {
-	display: flex;	
-}
-.kb-task-create-payment__estimated-cost .kb-task-create-payment__attributes.translate{
-	display: flex;
-	max-width: 500px;
-	align-items: center;
-	width: 100%;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-.kb-task-create-payment__estimated-cost .kb-task-create-payment__attributes.translate .kb-task-create-payment__radio-holder+.kb-task-create-payment__radio-holder{
-	margin-top: 0;
-}
-.kb-task-create__note{
-	line-height: normal;
-}
-.kb-estimated-cost>div:nth-child(2){
-	display: flex;
-	display: flex;
-    align-items: center;
-}
-.kb-estimated-cost>div:nth-child(2) .kb-text.kb-text_mt_10{
-	margin-top: 0!important;
-}
-.kb-estimated-cost>div:nth-child(1){
-	order: 0;
-}
-.kb-estimated-cost>div:nth-child(2){
-	order: 1;
-}
-.kb-estimated-cost>div:nth-child(3){
-	display: none;
-}
-`;
-styles    += "</style>";
-jQuery('body').append(styles);
+	$(document).on('click', '[name="isCostDiscussed"]', function(event) {
+		ga('send', 'event', 'Exp - Add pro plan to the form', 'click','Цена обсуждается');
+		console.log('Цена обсуждается');
+	});
+	$(document).on('click', '[name="payment"]:eq(0)', function(event) {
+		ga('send', 'event', 'Exp - Add pro plan to the form', 'click','Оплата наличными');
+		console.log('Оплата наличными');
+	});
+	$(document).on('click', '[name="payment"]:eq(1)', function(event) {
+		ga('send', 'event', 'Exp - Add pro plan to the form', 'click','Оплата через сайт');
+		console.log('Оплата через сайт');
+	});
 
 	});
 }
