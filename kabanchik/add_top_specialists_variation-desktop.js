@@ -156,9 +156,11 @@ function readyjQueryinit(){
 			if(document.getElementById('cost')){
 				console.log(document.getElementById('cost'));
 				clearInterval(inputPresent)
-				document.getElementById('cost').addEventListener('focus', function(){
-	              ga('send', 'event', 'Exp - Add pro plan to the form', 'click','Price field')
+				document.getElementById('cost').addEventListener('input', function(){
 					countCashback();
+				})
+				document.getElementById('cost').addEventListener('focus', function(){
+	            	ga('send', 'event', 'Exp - Add pro plan to the form', 'click','Price field')
 				})
 			}
 		})
