@@ -174,18 +174,31 @@ function readyjQueryinit() {
 
 
 
-		//add to favorites
+		//add to favorites PDP
 		$('body').on('mousedown', '.view-file-box__action-item.button-add-to-favorites', function(){
 			myStopFunction();
 			window.interval = setInterval(myTimerFavorites, 1);
 		})
-		//add to cart
+		//add to favorites listing
+		$('body').on('mousedown', '.file-container__actions-item.button-add-to-favorites', function(){
+			myStopFunction();
+			window.interval = setInterval(myTimerFavorites, 1);
+		})
+		//add to cart PDP
 		$('body').on('mousedown', '.view-file-box__action-item.button-add-to-cart', function(){
 			if (!$(this).hasClass("active")) {
 				myStopFunction();
 				window.interval = setInterval(myTimerAddCart, 1);
 			}
 		})
+		//add to cart listing
+		$('body').on('mousedown', '.file-container__actions-item.button-add-to-cart', function(){
+			if (!$(this).hasClass("active")) {
+				myStopFunction();
+				window.interval = setInterval(myTimerAddCart, 1);
+			}
+		})
+
 
 		$('body').on('mousedown', '.modal-container_file-zoom .modal__zoom-caption-button ._download', function(){
 			myStopFunction();

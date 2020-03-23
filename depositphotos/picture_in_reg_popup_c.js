@@ -176,6 +176,13 @@ function readyjQueryinit() {
 				
 			}
 		})
+		//add to favorites listing
+		$('body').on('mousedown', '.file-container__actions-item.button-add-to-favorites', function(){
+			myStopFunction();
+			window.interval = setInterval(myTimerFavorites, 1);
+
+			localStorage.setItem('popup_active', true);
+		})
 		//add to cart
 		$('body').on('mousedown', '.view-file-box__action-item.button-add-to-cart', function(){
 			if (!$(this).hasClass("active")) {
@@ -188,6 +195,15 @@ function readyjQueryinit() {
 				} else {
 					
 				}
+			}
+		})
+		//add to cart listing
+		$('body').on('mousedown', '.file-container__actions-item.button-add-to-cart', function(){
+			if (!$(this).hasClass("active")) {
+				myStopFunction();
+				window.interval = setInterval(myTimerAddCart, 1);
+
+				localStorage.setItem('popup_active', true);
 			}
 		})
 
