@@ -27,6 +27,11 @@ if (!window.jQuery) {
 function readyjQueryinit() {
 	jQuery(function($) {
 
+		try {
+			hj('trigger', 'exp-picture_in_reg_popup');
+		}
+		catch(e) {}
+
 		window.interval = null;
 		function myTimer() {
 			if($('html').find('.signup_modal_boxtitle').length < 1) {
