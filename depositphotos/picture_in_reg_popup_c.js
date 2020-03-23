@@ -417,6 +417,10 @@ function readyjQueryinit() {
 					height: 380px;
 				}
 
+				.progress_line_70 + .content-container .subscribe_mixed .subscribe__label {
+					padding-top: 20px;
+				}
+
 				@media screen and (min-width: 541px) {
 					.modal_signup_image .modal__body_signup .signup-user_modal .signup-user__right {
 						padding-left: 50px;
