@@ -112,30 +112,18 @@ function readyjQueryinit() {
 			}
 		})
 
-
-		$('body').on('mousedown', '.modal-container .view-file-box__action-item.button-add-to-favorites', function(){
+		$('body').on('mousedown', '.view-file-box__action-item.button-add-to-favorites', function(){
 			myStopFunction();
 			window.interval = setInterval(myTimer, 1);
 
 			localStorage.setItem('popup_active', true);
-			if (localStorage.getItem('popup_active') == "true") {
-				
-			} else {
-				
-			}
 		})
-
-		$('body').on('mousedown', '.modal-container .view-file-box__action-item.button-add-to-cart', function(){
+		$('body').on('mousedown', '.view-file-box__action-item.button-add-to-cart', function(){
 			if (!$(this).hasClass("active")) {
 				myStopFunction();
 				window.interval = setInterval(myTimer, 1);
 
 				localStorage.setItem('popup_active', true);
-				if (localStorage.getItem('popup_active') == "true") {
-					
-				} else {
-					
-				}
 			}
 		})
 
@@ -144,14 +132,7 @@ function readyjQueryinit() {
 			window.interval = setInterval(myTimer, 1);
 
 			localStorage.setItem('popup_active', true);
-			if (localStorage.getItem('popup_active') == "true") {
-				
-			} else {
-				
-			}
 		})
-
-
 
 		$('body').on('mousedown', '.modal_signup_image+.modal-overlay', function(){
 			myStopFunction();
