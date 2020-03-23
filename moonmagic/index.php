@@ -44,24 +44,36 @@ foreach ($filedata as $data) {
 	$arrayout[$index][] = $data;
 }
 $out_array_js = array();
-foreach ($arrayout as $cnt => $array) {
-	foreach ($array as $key => $dt) {
-		$to           = $dt['to'];
-		preg_match('/https:\/\/www.dropbox.com\/.*&preview=/', $to, $output_array);
-		if(!empty($output_array)){
-			$to = str_replace($output_array[0], '/'.$counter.'/', $to);
-			$dt['to'] = $to;
-		}
-		// $arrayout[$cnt][$key] = $dt;
-		$arrayout[$cnt][$key] = $dt;
+// foreach ($arrayout as $cnt => $array) {
+// 	foreach ($array as $key => $dt) {
+// 		$to           = $dt['to'];
+// 		preg_match('/https:\/\/www.dropbox.com\/.*&preview=/', $to, $output_array);
+// 		if(!empty($output_array)){
+// 			$to = str_replace($output_array[0], '/'.$counter.'/', $to);
+// 			$dt['to'] = $to;
+// 		}
+// 		// $arrayout[$cnt][$key] = $dt;
+// 		$arrayout[$cnt][$key] = $dt;
+// 	}
+// 	$counter++;
+// }
+ob_start();
+echo '<body>';
+foreach ($arrayout as $key => $value) {
+	echo '<div>';
+	echo $key.'<br>';
+	echo $counter.'<br>';
+	foreach ($value as $val) {
+		echo '<a href="'.$val['to'].'" target="_blank">'.$val['to'].'</a>'.'<br>';
 	}
+	echo '</div>'.'<br>';
 	$counter++;
 }
-ob_start();
-echo json_encode($arrayout);
+echo '</body>';
+// var_dump($arrayout);
 $file_content = ob_get_contents();
 ob_end_clean();
-$file = fopen('outscaner.json', 'w+');
+$file = fopen('outscaner.html', 'w+');
 fwrite($file, $file_content);
 fclose($file);
 ?>
