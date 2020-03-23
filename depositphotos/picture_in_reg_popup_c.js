@@ -27,8 +27,6 @@ if (!window.jQuery) {
 function readyjQueryinit() {
 	jQuery(function($) {
 
-		if ($('.header .not-auth-box').length > 0) {
-
 			try {
 				hj('trigger', 'exp-picture_in_reg_popup');
 			}
@@ -105,79 +103,62 @@ function readyjQueryinit() {
 				}
 			}
 
-			$('body').on('click','.price-table-classic__download', function(){
-				myStopFunction();
-				window.interval = setInterval(myTimer, 1);
 
-				localStorage.setItem('popup_active', true);
-				if (localStorage.getItem('popup_active') == "true") {
-					console.log('1')
-				} else {
-					console.log('2')
-				}
-			})
+			if ($('.header .not-auth-box').length > 0) {
 
-			$('body').on('mousedown', '.view-file-box__action-item.button-download', function(){
-				myStopFunction();
-				window.interval = setInterval(myTimer, 1);
-
-				localStorage.setItem('popup_active', true);
-				if (localStorage.getItem('popup_active') == "true") {
-					console.log('1')
-				} else {
-					console.log('2')
-				}
-			})
-
-			// category modal
-			$('body').on('mousedown','.modal-container .price-table-classic__download', function(){
-				myStopFunction();
-				window.interval = setInterval(myTimer, 1);
-
-				localStorage.setItem('popup_active', true);
-				if (localStorage.getItem('popup_active') == "true") {
-					console.log('1')
-				} else {
-					console.log('2')
-				}
-			})
-
-			$('body').on('mousedown', '.modal-container .view-file-box__action-item.button-download', function(){
-				myStopFunction();
-				window.interval = setInterval(myTimer, 1);
-
-				localStorage.setItem('popup_active', true);
-				if (localStorage.getItem('popup_active') == "true") {
-					console.log('1')
-				} else {
-					console.log('2')
-				}
-			})
-
-			//add to favorites
-			$('body').on('mousedown', '.view-file-box__action-item.button-add-to-favorites', function(){
-				myStopFunction();
-				window.interval = setInterval(myTimerBtn, 1, {'item':$(this)});
-
-				localStorage.setItem('popup_active', true);
-				if (localStorage.getItem('popup_active') == "true") {
-					
-				} else {
-					
-				}
-			})
-			//add to favorites listing
-			$('body').on('mousedown', '.file-container__actions-item.button-add-to-favorites', function(){
-				myStopFunction();
-				window.interval = setInterval(myTimerBtn, 1, {'item':$(this)});
-
-				localStorage.setItem('popup_active', true);
-			})
-			//add to cart
-			$('body').on('mousedown', '.view-file-box__action-item.button-add-to-cart', function(){
-				if (!$(this).hasClass("active")) {
+				$('body').on('click','.price-table-classic__download', function(){
 					myStopFunction();
-					window.interval = setInterval(myTimerBtn, 1,{'item': $(this),'title': 'Register to add this image to cart'});
+					window.interval = setInterval(myTimer, 1);
+
+					localStorage.setItem('popup_active', true);
+					if (localStorage.getItem('popup_active') == "true") {
+						console.log('1')
+					} else {
+						console.log('2')
+					}
+				})
+
+				$('body').on('mousedown', '.view-file-box__action-item.button-download', function(){
+					myStopFunction();
+					window.interval = setInterval(myTimer, 1);
+
+					localStorage.setItem('popup_active', true);
+					if (localStorage.getItem('popup_active') == "true") {
+						console.log('1')
+					} else {
+						console.log('2')
+					}
+				})
+
+				// category modal
+				$('body').on('mousedown','.modal-container .price-table-classic__download', function(){
+					myStopFunction();
+					window.interval = setInterval(myTimer, 1);
+
+					localStorage.setItem('popup_active', true);
+					if (localStorage.getItem('popup_active') == "true") {
+						console.log('1')
+					} else {
+						console.log('2')
+					}
+				})
+
+				$('body').on('mousedown', '.modal-container .view-file-box__action-item.button-download', function(){
+					myStopFunction();
+					window.interval = setInterval(myTimer, 1);
+
+					localStorage.setItem('popup_active', true);
+					if (localStorage.getItem('popup_active') == "true") {
+						console.log('1')
+					} else {
+						console.log('2')
+					}
+				})
+
+				//add to favorites
+				$('body').on('mousedown', '.view-file-box__action-item.button-add-to-favorites', function(){
+					myStopFunction();
+					window.interval = setInterval(myTimerBtn, 1, {'item':$(this)});
 
 					localStorage.setItem('popup_active', true);
 					if (localStorage.getItem('popup_active') == "true") {
@@ -185,48 +166,73 @@ function readyjQueryinit() {
 					} else {
 						
 					}
-				}
-			})
-			//add to cart listing
-			$('body').on('mousedown', '.file-container__actions-item.button-add-to-cart', function(){
-				if (!$(this).hasClass("active")) {
+				})
+				//add to favorites listing
+				$('body').on('mousedown', '.file-container__actions-item.button-add-to-favorites', function(){
 					myStopFunction();
-					window.interval = setInterval(myTimerBtn, 1,{'item': $(this),'title': 'Register to add this image to cart'});
+					window.interval = setInterval(myTimerBtn, 1, {'item':$(this)});
 
 					localStorage.setItem('popup_active', true);
-				}
-			})
+				})
+				//add to cart
+				$('body').on('mousedown', '.view-file-box__action-item.button-add-to-cart', function(){
+					if (!$(this).hasClass("active")) {
+						myStopFunction();
+						window.interval = setInterval(myTimerBtn, 1,{'item': $(this),'title': 'Register to add this image to cart'});
 
-			$('body').on('mousedown', '.modal-container_file-zoom .modal__zoom-caption-button ._download', function(){
-				myStopFunction();
-				window.interval = setInterval(myTimer, 1);
+						localStorage.setItem('popup_active', true);
+						if (localStorage.getItem('popup_active') == "true") {
+							
+						} else {
+							
+						}
+					}
+				})
+				//add to cart listing
+				$('body').on('mousedown', '.file-container__actions-item.button-add-to-cart', function(){
+					if (!$(this).hasClass("active")) {
+						myStopFunction();
+						window.interval = setInterval(myTimerBtn, 1,{'item': $(this),'title': 'Register to add this image to cart'});
 
-				localStorage.setItem('popup_active', true);
-				if (localStorage.getItem('popup_active') == "true") {
-					
-				} else {
-					
-				}
-			})
+						localStorage.setItem('popup_active', true);
+					}
+				})
 
-			$('body').on('mousedown', '.modal_signup_image+.modal-overlay', function(){
-				myStopFunction();
-				if($('.modal_signup.modal_signup_image').length > 0) {
-					$('.modal_signup_image .modal__close-round').click();
-					$('html').find('.signup_modal_boxtitle').remove();
-					$('html').find(".modal_signup_image .signup-user_modal .signup-user__left .view-file-box__image").remove();
-					$('.modal_signup').removeClass('modal_signup_image');
-				}
-			})
-			$('body').on('mousedown', '.modal_signup_image .modal__close-round', function(){
-				myStopFunction();
-				if($('.modal_signup.modal_signup_image').length > 0) {
-					$('.modal_signup_image .modal__close-round').click();
-					$('html').find('.signup_modal_boxtitle').remove();
-					$('html').find(".modal_signup_image .signup-user_modal .signup-user__left .view-file-box__image").remove();
-					$('.modal_signup').removeClass('modal_signup_image');
-				}
-			})
+				$('body').on('mousedown', '.modal-container_file-zoom .modal__zoom-caption-button ._download', function(){
+					myStopFunction();
+					window.interval = setInterval(myTimer, 1);
+
+					localStorage.setItem('popup_active', true);
+					if (localStorage.getItem('popup_active') == "true") {
+						
+					} else {
+						
+					}
+				})
+
+				$('body').on('mousedown', '.modal_signup_image+.modal-overlay', function(){
+					myStopFunction();
+					if($('.modal_signup.modal_signup_image').length > 0) {
+						$('.modal_signup_image .modal__close-round').click();
+						$('html').find('.signup_modal_boxtitle').remove();
+						$('html').find(".modal_signup_image .signup-user_modal .signup-user__left .view-file-box__image").remove();
+						$('.modal_signup').removeClass('modal_signup_image');
+					}
+				})
+				$('body').on('mousedown', '.modal_signup_image .modal__close-round', function(){
+					myStopFunction();
+					if($('.modal_signup.modal_signup_image').length > 0) {
+						$('.modal_signup_image .modal__close-round').click();
+						$('html').find('.signup_modal_boxtitle').remove();
+						$('html').find(".modal_signup_image .signup-user_modal .signup-user__left .view-file-box__image").remove();
+						$('.modal_signup').removeClass('modal_signup_image');
+					}
+				})
+
+			} else {
+				console.log('user is logged')
+			}
+
 
 			if (localStorage.getItem('popup_active') == "true") {
 				console.log('1')
@@ -430,9 +436,7 @@ function readyjQueryinit() {
 			styles    += "</style>";
 			$('body').append(styles);
 
-		} else {
-			console.log('user is logged')
-		}
 		
+
 	});
 }
