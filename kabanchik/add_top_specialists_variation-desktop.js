@@ -150,6 +150,11 @@ order: 0;
 .kb-estimated-cost>div:nth-child(3){
 	display: none;
 }
+
+
+.kb_d_none {
+	display: none;
+}
 `;
 styles    += "</style>";
 jQuery('body').append(styles);
@@ -185,7 +190,7 @@ jQuery('body').append(styles);
 				</div>`);
 			document.querySelector('.kb-estimated-cost').insertAdjacentHTML('beforeend', `			
 				<div class="kb_bonus_wrapper" style="display:flex; margin-top:28px;">
-					<div class="kb_left_col">
+					<div class="kb_left_col kb_d_none">
 					<div class="kb_cash-text">5% от бюджета задания после его закрытия и написания отзыва об исполнителе будут начислены на ваш баланс.
 				     </div>
 					</div>
