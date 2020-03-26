@@ -40,6 +40,12 @@ function readyjQueryinit() {
 						hj('trigger', 'exp-picture_in_reg_popup');
 					}
 					catch(e) {}
+					window.dataLayer = window.dataLayer || [];
+					window.dataLayer.push({
+					 'event': 'gaEv',
+					 'eventCategory': 'Exp - reg popup',
+					 'eventAction': 'activated'
+					});
 
 					$('.modal_signup').addClass('modal_signup_image');
 					$('.modal_signup_image .signup-user_modal').append('<div class="signup_modal_boxtitle"><span class="signup_modal_title">Create an account to save your image</span></div>');
@@ -73,6 +79,12 @@ function readyjQueryinit() {
 						hj('trigger', 'exp-picture_in_reg_popup');
 					}
 					catch(e) {}
+					window.dataLayer = window.dataLayer || [];
+					window.dataLayer.push({
+					 'event': 'gaEv',
+					 'eventCategory': 'Exp - reg popup',
+					 'eventAction': 'activated'
+					});
 
 					$('.modal_signup').addClass('modal_signup_image');
 					var title = typeof element.title != 'undefined' ? element.title : 'Register to add this image to favorites';
