@@ -29,17 +29,18 @@ function readyjQueryinit() {
 
 		if ($('.header .not-auth-box').length > 0) {
 
-			try {
-				hj('trigger', 'exp-picture_in_reg_popup');
-			}
-			catch(e) {}
-
 			window.interval = null;
 			function myTimer() {
 				if($('html').find('.signup_modal_boxtitle').length < 1) {
 					$('.modal_signup').addClass('modal_signup_image');
 				}
 				if($('.modal_signup.modal_signup_image').length > 0 && $('html').find('.signup_modal_boxtitle').length < 1) {
+
+					try {
+						hj('trigger', 'exp-picture_in_reg_popup');
+					}
+					catch(e) {}
+
 					$('.modal_signup').addClass('modal_signup_image');
 					$('.modal_signup_image .signup-user_modal').append('<div class="signup_modal_boxtitle"><span class="signup_modal_title">Create an account to save your image</span></div>');
 					
@@ -67,6 +68,12 @@ function readyjQueryinit() {
 					$('.modal_signup').addClass('modal_signup_image');
 				}
 				if($('.modal_signup.modal_signup_image').length > 0 && $('html').find('.signup_modal_boxtitle').length < 1) {
+
+					try {
+						hj('trigger', 'exp-picture_in_reg_popup');
+					}
+					catch(e) {}
+
 					$('.modal_signup').addClass('modal_signup_image');
 					var title = typeof element.title != 'undefined' ? element.title : 'Register to add this image to favorites';
 					$('.modal_signup_image .signup-user_modal').append('<div class="signup_modal_boxtitle"><span class="signup_modal_title">'+title+'</span></div>');
