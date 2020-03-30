@@ -55,7 +55,7 @@ function readyjQueryinit() {
 		}
 
 
-			var imgPlan = $('.subscribe__header .images-fan__item').html();
+			var imgPlan = $('.subscribe__title-box .images-fan__item').html();
 
 
 			$outhtml  = '<div class="modal-container">';
