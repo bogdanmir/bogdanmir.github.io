@@ -31,17 +31,23 @@ function readyjQueryinit() {
 		var displayseconds;
 		var initializeTimer = 15 // enter in minutes
 		var minutesToSeconds = initializeTimer*60;
-
-		var startCountDownTimer = setInterval(function(){
-			minutesToSeconds = minutesToSeconds-1;
-			var timer = getTime();
-			$(".title_counter .counter").html(timer[0]+"."+timer[1]);
-			if (minutesToSeconds == 0) {
-				clearInterval(startCountDownTimer);
-				console.log("completed");
-			}
-		},1000)
-
+		var minutesToSeconds_start = initializeTimer*60;
+		document.addEventListener("mouseleave", function( event ) {
+			var startCountDownTimer = setInterval(function(){
+				minutesToSeconds = minutesToSeconds-1;
+				var timer = getTime();
+				var stroke_dasharray = $(".title_counter .modal_progressbar svg [stroke-dasharray]").attr('stroke-dasharray');
+				var count_p = minutesToSeconds*100 / minutesToSeconds_start;
+				$(".title_counter .modal_progressbar svg [stroke-dasharray]").attr('stroke-dashoffset',Math.floor(stroke_dasharray - (stroke_dasharray/100*count_p)));
+				$(".title_counter .counter").html(timer[0]+"."+timer[1]);
+				if (minutesToSeconds == 0) {
+					clearInterval(startCountDownTimer);
+					$('.modal-container').remove();
+					$('._overlay.modal-overlay').remove();
+					console.log("completed");
+				}
+			},1000)
+		});
 		function getTime(){
 			displayminutes = Math.floor(minutesToSeconds/60);
 			displayseconds = minutesToSeconds - (displayminutes*60);
@@ -73,7 +79,7 @@ function readyjQueryinit() {
 			$outhtml +=							'<h3 class="signup_modal_title">One-time offer!</h3>'
 
 			$outhtml +=							'<div class="modal_progressbar">'
-			$outhtml +=								'<div class="counter"> 15.00 </div>'
+			$outhtml +=								'<svg width="54" height="54" viewBox="0 0 54 54"><circle cx="27" cy="27" r="25" fill="none" stroke="#eeeeee" stroke-width="4"></circle><circle cx="27" cy="27" r="25" fill="none" stroke="#e74c3c" stroke-width="4" stroke-dasharray="157.56" stroke-dashoffset="0"></circle></svg><div class="counter"> 15.00 </div>'
 			$outhtml +=							'</div>'
 
 			$outhtml +=						'</div>'
@@ -102,6 +108,27 @@ function readyjQueryinit() {
 
 		var styles = "<style>";
 		styles += `
+			.modal_progressbar svg{
+				position: absolute;
+			}
+			.modal_progressbar{
+			    min-width: 54px;
+			    min-height: 54px;
+			    position: relative;
+			    display: -webkit-box;
+			    display: -webkit-flex;
+			    display: -ms-flexbox;
+			    display: flex;
+			    -webkit-box-pack: center;
+			    -webkit-justify-content: center;
+			    -ms-flex-pack: center;
+			    justify-content: center;
+			    -webkit-box-align: center;
+			    -webkit-align-items: center;
+			    -ms-flex-align: center;
+			    align-items: center;
+			    margin-left: 17px;
+			}
 			.modal_offer {
 				font-family: Arial,Helvetica,sans-serif;
 			}
