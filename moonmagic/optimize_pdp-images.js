@@ -6,9 +6,10 @@ var images_url = 'https://master.d1b4uiycaor7je.amplifyapp.com/moonmagic/images'
 // 	window.images_replaced = false;
 // 	location_path = location.origin+location.pathname+location.search;
 // });
+console.log('%c Test come! ','color:#fff;background:green;');
 setInterval(function(){
 	location_path = location.origin+location.pathname+location.search;
-	console.log('interval');
+	
 	 // && window.images_replaced == false
 	if(typeof images[location_path] != 'undefined'){
 		var variant_imgs = images[location_path];
