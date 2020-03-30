@@ -7,7 +7,10 @@ window.addEventListener('hashchange', function(){
 	location_path = location.origin+location.pathname+location.search;
 });
 setInterval(function(){
-	if(typeof images[location_path] != 'undefined' && window.images_replaced == false){
+	// console.log('interval');
+	 // && window.images_replaced == false
+	if(typeof images[location_path] != 'undefined'){
+		// console.log('Run images')
 		var variant_imgs = images[location_path];
 		if(variant_imgs.length > 0){
 			variant_imgs.forEach(function(elm,ind){
@@ -19,8 +22,10 @@ setInterval(function(){
 				var to   = elm.to;
 				if(document.querySelectorAll('[src*='+from+']').length > 0){
 					document.querySelectorAll('[src*='+from+']').forEach(function(el,ind){
-						el.setAttribute('srcset','');if(to != ''){
-							el.setAttribute('src',images_url+to);
+						el.setAttribute('srcset','');
+						if(to != ''){
+							to = images_url+to;
+							el.setAttribute('src',to);
 						}else{
 							el.remove();
 						}
