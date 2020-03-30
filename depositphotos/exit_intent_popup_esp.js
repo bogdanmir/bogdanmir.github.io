@@ -32,7 +32,7 @@ function readyjQueryinit() {
 		var initializeTimer = 15 // enter in minutes
 		var minutesToSeconds = initializeTimer*60;
 		var minutesToSeconds_start = initializeTimer*60;
-		document.addEventListener("mouseleave", function( event ) {
+		// document.addEventListener("mouseleave", function( event ) {
 			var startCountDownTimer = setInterval(function(){
 				minutesToSeconds = minutesToSeconds-1;
 				var timer = getTime();
@@ -42,12 +42,12 @@ function readyjQueryinit() {
 				$(".title_counter .counter").html(timer[0]+"."+timer[1]);
 				if (minutesToSeconds == 0) {
 					clearInterval(startCountDownTimer);
-					$('.modal-container').remove();
-					$('._overlay.modal-overlay').remove();
+					$('.modal_offer_container').remove();
+					$('.modal_offer_overlay').remove();
 					console.log("completed");
 				}
 			},1000)
-		});
+		// });
 		function getTime(){
 			displayminutes = Math.floor(minutesToSeconds/60);
 			displayseconds = minutesToSeconds - (displayminutes*60);
@@ -60,48 +60,52 @@ function readyjQueryinit() {
 			return [displayminutes, displayseconds];
 		}
 
+		var imgPlan = $('.subscribe__title-box .images-fan__item').html();
 
+		$outhtml  = '<div class="modal-container modal_offer_container">';
+		$outhtml += 	'<div class="modal modal_with-poster modal_offer">';
+		$outhtml += 		'<div class="modal__dialog">';
+		$outhtml += 			'<div class="modal__header _drag-handler"><i class="modal__close-round icon icon-close-cross icon-round-hover _close"></i></div>';
+		$outhtml += 			'<div class="modal__body _body modal__body_signup">';
+		$outhtml +=					'<div class="signup-user signup-user_modal">';							
+		$outhtml +=						'<div class="title_counter">'
+		$outhtml +=							'<h3 class="signup_modal_title">Oferta limitada!</h3>'
+		$outhtml +=							'<div class="modal_progressbar">'
+		$outhtml +=								'<svg width="54" height="54" viewBox="0 0 54 54"><circle cx="27" cy="27" r="25" fill="none" stroke="#eeeeee" stroke-width="4"></circle><circle cx="27" cy="27" r="25" fill="none" stroke="#e74c3c" stroke-width="4" stroke-dasharray="157.56" stroke-dashoffset="0"></circle></svg><div class="counter"> 15.00 </div>'
+		$outhtml +=							'</div>'
+		$outhtml +=						'</div>'
+		$outhtml +=						'<div class="body_counter">'
+		$outhtml +=							'<div class="modal_img">' +imgPlan+ '</div>'
+		$outhtml +=							'<div class="modal_describe"> <p>Descarga esta imagen</p> <p>y 9 más <span class="modal_describe_color">GRATIS</span></p></div>'
+		$outhtml +=						'</div>';
+		$outhtml +=						'<div class="btn_counter"><a href="https://depositphotos.com/subscribe/trial.html?id=10&product=membership" class="modal_btn button-red">Descargar gratis</a></div>'
+		$outhtml +=						'<p class="modal_bottom_describe"> Prueba gratuita de 7 días </p>'
+		$outhtml +=					'</div>';
+		$outhtml +=				'</div>';
+		$outhtml += 		'</div>';
+		$outhtml += 	'</div>';
+		$outhtml += 	'<div class="_overlay modal-overlay modal_offer_overlay"></div>';
+		$outhtml += '</div>';
 
+		localStorage.setItem('modal_offer_active', false);
+		document.addEventListener("mouseleave", function( event ) {
+			if($('.modal_offer_container').length < 1 && localStorage.getItem('modal_offer_active') == "false") {
+				localStorage.setItem('modal_offer_active', true);
+				console.log('333')
+				$('html').append($outhtml);		
+			} else {
+				console.log('444')
+			}
+		});
 
-			var imgPlan = $('.subscribe__title-box .images-fan__item').html();
-
-			$outhtml  = '<div class="modal-container">';
-
-			$outhtml += 	'<div class="modal modal_with-poster modal_offer">';
-			$outhtml += 		'<div class="modal__dialog">';
-			$outhtml += 			'<div class="modal__header _drag-handler"><i class="modal__close-round icon icon-close-cross icon-round-hover _close"></i></div>';
-			$outhtml += 			'<div class="modal__body _body modal__body_signup">';
-
-			$outhtml +=					'<div class="signup-user signup-user_modal">';
-												
-			$outhtml +=						'<div class="title_counter">'
-			$outhtml +=							'<h3 class="signup_modal_title">One-time offer!</h3>'
-
-			$outhtml +=							'<div class="modal_progressbar">'
-			$outhtml +=								'<svg width="54" height="54" viewBox="0 0 54 54"><circle cx="27" cy="27" r="25" fill="none" stroke="#eeeeee" stroke-width="4"></circle><circle cx="27" cy="27" r="25" fill="none" stroke="#e74c3c" stroke-width="4" stroke-dasharray="157.56" stroke-dashoffset="0"></circle></svg><div class="counter"> 15.00 </div>'
-			$outhtml +=							'</div>'
-
-			$outhtml +=						'</div>'
-
-			$outhtml +=						'<div class="body_counter">'
-			$outhtml +=							'<div class="modal_img">' +imgPlan+ '</div>'
-			$outhtml +=							'<div class="modal_describe"> <p>Download this image and</p> <p>9 more for <span class="modal_describe_color">FREE</span></p></div>'
-			$outhtml +=						'</div>';
-
-			$outhtml +=						'<div class="btn_counter"><a href="" class="modal_btn button-red">Download this image for FREE</a></div>'
-			$outhtml +=						'<p class="modal_bottom_describe"> in 7 days FREE Trial </p>'
-
-			$outhtml +=					'</div>';
-
-			$outhtml +=				'</div>';
-			$outhtml += 		'</div>';
-			$outhtml += 	'</div>';
-
-			$outhtml += 	'<div class="_overlay modal-overlay"></div>';
-			$outhtml += '</div>';
-			$('html').append($outhtml);
-
-
+		$(document).on('click','.modal_offer .modal__close-round', function(){
+			console.log('111')
+			$(this).closest('.modal_offer_container').remove();
+		});
+		$(document).on('click','.modal_offer_overlay', function(){
+			console.log('222')
+			$('.modal_offer_container').remove();
+		});
 
 		var styles = "<style>";
 		styles += `
@@ -109,7 +113,7 @@ function readyjQueryinit() {
 				position: absolute;
 				transform: rotate(-90deg);
 			}
-			.modal_progressbar{
+			.modal_progressbar {
 			    min-width: 54px;
 			    min-height: 54px;
 			    position: relative;
@@ -125,16 +129,18 @@ function readyjQueryinit() {
 			    -webkit-align-items: center;
 			    -ms-flex-align: center;
 			    align-items: center;
-			    margin-left: 17px;
+				margin-left: 10px;
 			}
 			.modal_offer {
 				font-family: Arial,Helvetica,sans-serif;
 			}
 			.modal_offer .modal__dialog {
 				border-radius: 16px;
+				min-width: 490px;
 			}
 			.modal_offer .modal__body {
-				padding: 40px 50px 50px;
+				padding: 45px 62px 55px;
+				width: 100%;
 			}
 			.modal_offer .title_counter {
 				display: flex;
@@ -142,16 +148,22 @@ function readyjQueryinit() {
 				justify-content: center;
 				margin: 0;
 			}
+			.modal_offer .counter {
+				font-weight: 700;
+				font-size: 16px;
+			}
 			.modal_offer .signup_modal_title {
 				color: #3C3C3C;
 				font-size: 32px;
 				font-weight: 700;
+				line-height: 1;
 				margin: 0;
+				max-width: 240px;
 			}
 			.modal_offer .body_counter {
 				display: flex;
 				align-items: center;
-				margin: 35px 0 0;
+				margin: 28px 0 0;
 			}
 			.modal_offer .modal_describe {
 				font-size: 22px;
@@ -183,6 +195,8 @@ function readyjQueryinit() {
 			.modal_offer .images-fan__img {
 				box-shadow: none;
 				border-radius: 6px;
+				width: 63px;
+				height: 63px;
 			}
 			.modal_offer .modal_bottom_describe {
 				text-align: center;
