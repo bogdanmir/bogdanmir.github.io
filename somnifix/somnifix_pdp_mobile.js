@@ -137,20 +137,29 @@ function readyjQueryinit() {
 	});
 
 	$('.on-card-dwrapper .product_section .product__images').append('<span class="made_in">Made in USA</span>');
-    $('.on-card-dwrapper .product_section .shopify-product-form .button--add-to-cart .text').text('checkout');
+	$('.on-card-dwrapper .product_section .shopify-product-form .button--add-to-cart .text').text('checkout');
 
 	$('.on-card-dwrapper .swatch .1-pack-swatch label.on-variant-label .on-title').text('4-week pack');
+	$('.on-card-dwrapper .swatch .1-pack-swatch label.on-variant-label .crossed-out').text('$19.97');
 
 	$('.on-card-dwrapper .swatch .3-pack-swatch label.on-variant-label').prepend('<span class="top-label">TOP-SELLER</span>');
 	$('.on-card-dwrapper .swatch .3-pack-swatch label.on-variant-label .on-title').text('12-week pack');
+	$('.on-card-dwrapper .swatch .3-pack-swatch label.on-variant-label .crossed-out').text('$55.97');
+
 	$('.on-card-dwrapper .swatch .3-pack-swatch label.on-variant-label').append('<span class="save-label">Save 7%</span>');
 	$('.on-card-dwrapper .swatch .3-pack-swatch label.on-variant-label').append('<span class="price-border"></span><span class="old-price-label">$59.91</span>');
 	$('.on-card-dwrapper .swatch .3-pack-swatch label.on-variant-label').append('<span class="new-price-label">$55.97</span>');
+
 	$('.on-card-dwrapper .swatch .3-pack-swatch label.on-variant-label').append('<span class="weeks-label">per 12 weeks</span>');
 
 	$('.on-card-dwrapper .swatch .3-pack-auto-ship-swatch label.on-variant-label').prepend('<span class="best-label">best deal</span>');
 	$('.on-card-dwrapper .swatch .3-pack-auto-ship-swatch label.on-variant-label .on-title').text('Subscribe');
+	$('.on-card-dwrapper .swatch .3-pack-auto-ship-swatch label.on-variant-label .crossed-out').text('$49.97');
+
 	$('.on-card-dwrapper .swatch .3-pack-auto-ship-swatch label.on-variant-label').append('<span class="save-label">Save 17%</span>');
+
+	$('.on-card-dwrapper .swatch .3-pack-auto-ship-swatch label.on-variant-label').append('<span class="delivered-label">Delivered every 12 weeks</span>');
+
 	$('.on-card-dwrapper .swatch .3-pack-auto-ship-swatch label.on-variant-label').append('<span class="price-border"></span><span class="old-price-label">$59.91</span>');
 	$('.on-card-dwrapper .swatch .3-pack-auto-ship-swatch label.on-variant-label').append('<span class="new-price-label">$49.97</span>');
 	$('.on-card-dwrapper .swatch .3-pack-auto-ship-swatch label.on-variant-label').append('<span class="weeks-label">every 12 week</span>');
@@ -203,15 +212,15 @@ function readyjQueryinit() {
 			.on-card-dwrapper .swatch label.on-variant-label .on-icon {
 				display: inline-block;
 				text-align: center;
-				margin-right: 11px;
+				margin-right: 3px;
 				margin-left: 5px;
 				min-width: 40px;
 			}
 			.on-card-dwrapper .product_section .swatch label.on-variant-label .on-title {
 				color: #1E415F;
 				font-weight: 900;
-				font-size: 16px;
-				line-height: 19px;
+				font-size: 13px;
+				line-height: 16px;
 				text-transform: none;
 				margin: 6px 0 10px;
 				display: inline-block;
@@ -229,7 +238,7 @@ function readyjQueryinit() {
 				display: block;
 				position: absolute;
 				top: 13px;
-				right: 17px;
+				right: 10px;
 			}
 			.on-card-dwrapper .swatch .top-label:before {
 				content: '';
@@ -257,7 +266,7 @@ function readyjQueryinit() {
 				padding-right: 7px;
 				position: absolute;
 				top: 34px;
-				right: 17px;
+				right: 10px;
 			}
 			.on-card-dwrapper .swatch .old-price-label {
 				line-height: 1;
@@ -296,7 +305,7 @@ function readyjQueryinit() {
 				display: block;
 				position: absolute;
 				top: 13px;
-				right: 17px;
+				right: 10px;
 			}
 			.on-card-dwrapper .swatch .best-label:before {
 				content: '';
@@ -318,7 +327,7 @@ function readyjQueryinit() {
 				margin: 0 0 10px;
 			}
 			.on-card-dwrapper .product_section .swatch label.on-variant-label {
-				padding: 9px 9px;
+				padding: 9px 9px 9px 2px;
 				text-align: left;
 			}
 			.on-card-dwrapper .product_section .swatch_options input:checked+.swatch-element {
@@ -335,7 +344,8 @@ function readyjQueryinit() {
 			.on-card-dwrapper .product_section .swatch_options input:checked+.swatch-element .price-border {
 				border-top: 1px solid #E0E0E0;
 				margin-top: 8px;
-				margin-left: 57px;
+				// margin-left: 57px;
+				margin-left: 45px;
 				display: block;
 			}
 			.on-card-dwrapper .purchase-details .purchase-details__spb--false .button--add-to-cart {
@@ -352,16 +362,41 @@ function readyjQueryinit() {
 			}
 			.on-card-dwrapper .product_section .swatch_options input:checked+.swatch-element label.on-variant-label[data-index="2"],
 			.on-card-dwrapper .product_section .swatch_options input:checked+.swatch-element label.on-variant-label[data-index="3"] {
-				padding: 9px 9px 0px;
+				padding: 9px 9px 0px 2px;
+			}
+
+
+			.on-card-dwrapper .product_section .swatch .swatch-element .crossed-out {
+				display: inline-block;
+				position: relative;
+				color: #1E4670;
+				font-weight: 500;
+				font-size: 14px;
+				padding-left: 11px;
+			}
+			.on-card-dwrapper .product_section .swatch .swatch-element .delivered-label {
+				display: block;
+				color: #1E415F;
+				font-size: 10px;
+				line-height: 12px;
+				text-transform: none;
+				padding-left: 53px;
+				margin-top: -11px;
+			}
+			.on-card-dwrapper .product_section .swatch .swatch-element[data-value="1 Pack"] .crossed-out {
+				padding-left: 11px;
+			}
+			.on-card-dwrapper .product_section .swatch .swatch-element[data-value="3 Pack"] .crossed-out {
+				padding-left: 2px;
+			}
+			.on-card-dwrapper .product_section .swatch .swatch-element[data-value="3 Pack Auto-Ship"] .crossed-out {
+				padding-left: 11px;
 			}
 		}
 		@media only screen and (max-width: 375px){
 			.on-card-dwrapper .swatch label.on-variant-label .on-icon {
 				margin-right: 3px;
 				margin-left: 0;
-			}
-			.on-card-dwrapper .product_section .swatch label.on-variant-label .on-title {
-				font-size: 14px;
 			}
 			.on-card-dwrapper .swatch .top-label,
 			.on-card-dwrapper .swatch .best-label {
@@ -371,13 +406,20 @@ function readyjQueryinit() {
 				right: 10px;
 			}
 			.on-card-dwrapper .product_section .swatch_options input:checked+.swatch-element .price-border {
-				margin-left: 48px;
+				// margin-left: 48px;
+				margin-left: 45px;
 			}
 			.on-card-dwrapper .swatch .old-price-label {
 				margin-left: 50px;
 			}
+			.on-card-dwrapper .product_section .swatch .swatch-element .delivered-label {
+				padding-left: 47px;
+			}
 		}
 		@media only screen and (max-width: 345px){
+			.on-card-dwrapper .product_section .swatch label.on-variant-label .on-title {
+				font-size: 12px;
+			}
 			.on-card-dwrapper .swatch .top-label,
 			.on-card-dwrapper .swatch .best-label {
 				right: 5px;
@@ -385,6 +427,27 @@ function readyjQueryinit() {
 			.on-card-dwrapper .swatch .save-label {
 				right: 5px;
 			}
+
+			
+			.on-card-dwrapper .swatch .3-pack-swatch label.on-variant-label .on-icon {
+				margin-right: 0;
+				min-width: 35px;
+				padding-left: 5px;
+			}
+			.on-card-dwrapper .swatch .3-pack-auto-ship-swatch label.on-variant-label .on-icon {
+				margin-right: 0;
+				min-width: 35px;
+				padding-left: 5px;
+			}
+			
+			.on-card-dwrapper .product_section .shopify-product-form {
+				padding: 18px 10px;
+			}
+			.on-card-dwrapper .product_section .swatch .swatch-element[data-value="3 Pack"] .on-icon,
+			.on-card-dwrapper .product_section .swatch .swatch-element[data-value="3 Pack Auto-Ship"] .on-icon {
+				margin-right: 0;
+			}
+
 		}
 	`;
 	styles    += "</style>";
