@@ -89,21 +89,21 @@ function readyjQueryinit() {
 
 		localStorage.setItem('modal_offer_active', false);
 		document.addEventListener("mouseleave", function( event ) {
-			if($('.modal_offer_container').length < 1 && localStorage.getItem('modal_offer_active') == "false") {
+			if( window.location.href.indexOf("/subscribe/image.html") > -1 && $('.modal_offer_container').length < 1 && localStorage.getItem('modal_offer_active') == "false") {
 				localStorage.setItem('modal_offer_active', true);
-				console.log('333')
+				console.log('3')
 				$('html').append($outhtml);		
 			} else {
-				console.log('444')
+				console.log('4')
 			}
 		});
 
 		$(document).on('click','.modal_offer .modal__close-round', function(){
-			console.log('111')
+			console.log('1')
 			$(this).closest('.modal_offer_container').remove();
 		});
 		$(document).on('click','.modal_offer_overlay', function(){
-			console.log('222')
+			console.log('2')
 			$('.modal_offer_container').remove();
 		});
 
