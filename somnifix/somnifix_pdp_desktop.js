@@ -337,6 +337,11 @@ function readyjQueryinit() {
 		.section.is-width-standard .product_section .shopify-product-form .on-pack-wrapper {
 			margin-bottom: 15px;
 		}
+
+		.product_section .product__information.one-half {
+		    opacity: 1 !important;
+		}
+
 		@media only screen and (max-width: 1244px){
 			.section.is-width-standard .product_section .swatch label.on-variant-label .on-title {
 				font-size: 14px;
