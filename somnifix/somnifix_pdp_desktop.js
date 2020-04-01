@@ -298,12 +298,13 @@ function readyjQueryinit() {
 			background: #FFFFFF;
 			border: 1px solid #C4C4C4;
 			border-radius: 10px;
-			width: calc(33.33% - 15px);
-			margin-right: 7.5px;
-			margin-left: 7.5px;
+			width: calc(33.33% - 16px);
+			margin-right: 8px;
+			margin-left: 8px;
 			min-height: 132px;
 			display: flex;
 			align-items: center;
+			padding: 1px;
 		}
 		.section.is-width-standard .product_section .swatch label.on-variant-label {
 			padding: 9px 9px;
@@ -325,7 +326,10 @@ function readyjQueryinit() {
 			display: none;
 		}
 		.section.is-width-standard .product_section .shopify-product-form .on-route-wrapper .route-div {
-			display: flex !important;
+			display: none !important;
+		}
+		.section.is-width-standard .product_section .shopify-product-form .on-pack-wrapper {
+			margin-bottom: 15px;
 		}
 		@media only screen and (max-width: 1244px){
 			.section.is-width-standard .product_section .swatch label.on-variant-label .on-title {
