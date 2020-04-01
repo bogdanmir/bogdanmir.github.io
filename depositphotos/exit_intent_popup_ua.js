@@ -86,8 +86,10 @@ function readyjQueryinit() {
 		$outhtml += 	'</div>';
 		$outhtml += 	'<div class="_overlay modal-overlay modal_offer_overlay"></div>';
 		$outhtml += '</div>';
-
-		localStorage.setItem('modal_offer_active', false);
+		var check_modal_offer = localStorage.getItem('modal_offer_active');
+		if(check_modal_offer == null){
+			localStorage.setItem('modal_offer_active', false);
+		}
 		document.addEventListener("mouseleave", function( event ) {
 			if( window.location.href.indexOf("/subscribe/image.html") > -1 && $('.modal_offer_container').length < 1 && localStorage.getItem('modal_offer_active') == "false") {
 				localStorage.setItem('modal_offer_active', true);
