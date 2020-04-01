@@ -159,6 +159,12 @@ function readyjQueryinit() {
 	$('.section.is-width-standard .swatch .3-pack-auto-ship-swatch label.on-variant-label').append('<span class="new-price-label">$49.97</span>');
 	$('.section.is-width-standard .swatch .3-pack-auto-ship-swatch label.on-variant-label').append('<span class="weeks-label">every 12 weeks</span>');
 
+
+
+	var description_form = $('.section.is-width-standard .product_section .product__information.one-half').find('.description.content');
+	$('.section.is-width-standard .product_section .product__information.one-half').append(description_form);
+
+
 	var styles = "<style>";
 	styles += `
 		.section.is-width-standard .product_section .product__images {
@@ -210,7 +216,7 @@ function readyjQueryinit() {
 			font-weight: 900;
 			font-size: 9px;
 			line-height: 15px;
-			width: 76px;
+			width: 86px;
 			margin: 0 auto;
 			display: block;
 			position: relative;
@@ -222,13 +228,13 @@ function readyjQueryinit() {
 			background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOSIgaGVpZ2h0PSI5IiB2aWV3Qm94PSIwIDAgOSA5IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNNC41IDBMNS43NDA0MyAyLjc5MjY5TDguNzc5NzUgMy4xMDk0Mkw2LjUwNzA2IDUuMTUyMTNMNy4xNDUwMyA4LjE0MDU4TDQuNSA2LjYxMDM1TDEuODU0OTcgOC4xNDA1OEwyLjQ5Mjk0IDUuMTUyMTNMMC4yMjAyNDYgMy4xMDk0MkwzLjI1OTU3IDIuNzkyNjlMNC41IDBaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K");
 			height: 9px;
 			width: 9px;
-			margin-right: 7px;
+			margin-right: 5px;
 		}
 		.section.is-width-standard .swatch .save-label {
 			display: block;
 			color: #fff;
 			background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjIiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCA2MiAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTkuMjY2NTkgMC44QzkuOTU4OTcgMC4yODA3MTEgMTAuODAxMSAwIDExLjY2NjYgMEg1Ny4zMzMzQzU5LjU0MjQgMCA2MS4zMzMzIDEuNzkwODYgNjEuMzMzMyA0VjExQzYxLjMzMzMgMTMuMjA5MSA1OS41NDI0IDE1IDU3LjMzMzMgMTVIMTEuNjY2NkMxMC44MDExIDE1IDkuOTU4OTcgMTQuNzE5MyA5LjI2NjU5IDE0LjJMNC41OTk5MiAxMC43QzIuNDY2NTkgOS4xIDIuNDY2NTkgNS45IDQuNTk5OTIgNC4zTDkuMjY2NTkgMC44WiIgZmlsbD0iIzQwOTBEMSIvPgo8Y2lyY2xlIGN4PSI5LjgzMzI1IiBjeT0iNy41IiByPSIxLjUiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=");
-			width: 69px;
+			width: 72px;
 			height: 17px;
 			font-size: 10px;
 			line-height: 12px;
@@ -275,7 +281,7 @@ function readyjQueryinit() {
 			font-weight: 900;
 			font-size: 9px;
 			line-height: 15px;
-			width: 76px;
+			width: 86px;
 			margin: 0 auto;
 			display: block;
 			position: relative;
@@ -287,7 +293,7 @@ function readyjQueryinit() {
 			background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNiIgaGVpZ2h0PSI4IiB2aWV3Qm94PSIwIDAgNiA4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNNS45NjIzMyA1LjU5NjU3QzUuNzE4MzQgNi45NDI0OSA0LjU3Mjk0IDcuNzU5NjYgNC4wMzA3NCA4QzQuNTg0MjQgNi45MzU2MiA0LjQ3MTI3IDYuMDc3MjUgMy44NzI1OSA1LjQ1OTIzQzMuMzkzNjUgNC45NjQ4MSAzLjQwOTQ2IDQuMjE1NTUgMy40NzcyNCAzLjkwMjcyQzIuMjc5ODcgNC44MTgzMSAyLjE0NDMzIDUuODgyNjkgMi40NjA2MSA2Ljc5ODI4QzIuMDE3ODEgNi42NzkyNiAxLjg1NDQgNi4yNjggMS44MjgwNCA2LjA3NzI1QzEuMTcyODkgNi41NjkzOSAxLjcwMzc5IDggMS43MDM3OSA4Qy0xLjQzNjQ2IDYuMDQyOTIgMC42MTkzODUgMy4xMTMwMiAxLjE3Mjg5IDIuNDcyMUMxLjEwOTYzIDMuMjMyMDUgMS4zOTUwNCAzLjUzNjQ4IDEuNTQ1NjUgMy41OTM3MUMxLjMwODQ0IDIuMjIwMzEgMi42MDc0NiAwLjU4MzY5MSAzLjc5MzUyIDBDMy4xOTcxIDEuMzY0MjMgMy43NzA5MyAyLjMwODA2IDQuMTMyNCAyLjYwOTQ0QzQuMzM5NDkgMi44MTE2NCA0LjczNzg2IDMuNDE5NzQgNC42NzQ2IDQuMjM0NjJDNS4wMjcwMyAzLjQ4MzgzIDQuODIxNDUgMi41NDA3NyA0LjY3NDYgMi4xNjMwOUM1LjIwNTUxIDIuNzQ2NzggNi4yMDYzMiA0LjI1MDY0IDUuOTYyMzMgNS41OTY1N1oiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=");
 			height: 8px;
 			width: 6px;
-			margin-right: 7px;
+			margin-right: 5px;
 		}
 		.section.is-width-standard .product_section .swatch_options .swatch {
 			align-items: flex-start;
