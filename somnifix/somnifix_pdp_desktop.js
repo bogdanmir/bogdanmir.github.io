@@ -161,9 +161,9 @@ function readyjQueryinit() {
 
 
 
-	var description_form = $('.section.is-width-standard .product_section .product__information.one-half .description.content');
-	$('.section.is-width-standard .product_section .product__information.one-half').appendTo(description_form);
-	
+	var description_form = $('.section.is-width-standard .product_section .product__information.one-half').find('.description.content');
+	$('.section.is-width-standard .product_section .product__information.one-half').append(description_form);
+
 
 	var styles = "<style>";
 	styles += `
