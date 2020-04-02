@@ -130,8 +130,11 @@ function readyjQueryinit() {
 
 
 		if( localStorage.getItem('modal_offer_active') == "true" ) {
+			console.log('modal_offer_active == true')
 			getTimeLabelPdp();
 			getTimeLabelListing();
+		} else {
+			console.log('modal_offer_active == false')
 		}
 
 
