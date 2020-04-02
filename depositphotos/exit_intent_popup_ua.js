@@ -29,7 +29,7 @@ function readyjQueryinit() {
 
 		var displayminutes;
 		var displayseconds;
-		var initializeTimer = 1 // enter in minutes
+		var initializeTimer = 2 // enter in minutes
 		var minutesToSeconds = initializeTimer*60;
 		var minutesToSeconds_start = initializeTimer*60;
 		// document.addEventListener("mouseleave", function( event ) {
@@ -117,16 +117,22 @@ function readyjQueryinit() {
 			console.log('1')
 			$(this).closest('.modal_offer_container').remove();
 			getTimeLabelPlans();
-			getTimeLabelPdp();
-			getTimeLabelListing();
+			// getTimeLabelPdp();
+			// getTimeLabelListing();
 		});
 		$(document).on('click','.modal_offer_overlay', function(){
 			console.log('2')
 			$('.modal_offer_container').remove();
 			getTimeLabelPlans();
+			// getTimeLabelPdp();
+			// getTimeLabelListing();
+		});
+
+
+		if( localStorage.getItem('modal_offer_active') == "true" ) {
 			getTimeLabelPdp();
 			getTimeLabelListing();
-		});
+		}
 
 
 
