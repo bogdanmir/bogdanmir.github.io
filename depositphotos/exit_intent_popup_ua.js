@@ -29,7 +29,7 @@ function readyjQueryinit() {
 
 		var displayminutes;
 		var displayseconds;
-		var initializeTimer = 15 // enter in minutes
+		var initializeTimer = 1 // enter in minutes
 		var minutesToSeconds = initializeTimer*60;
 		var minutesToSeconds_start = initializeTimer*60;
 		// document.addEventListener("mouseleave", function( event ) {
@@ -45,6 +45,19 @@ function readyjQueryinit() {
 					$('.modal_offer_container').remove();
 					$('.modal_offer_overlay').remove();
 					console.log("completed");
+
+					if( window.location.href.indexOf("/subscribe/image.html") > -1 ) {
+						$('.subscribe__label .timer-poster_subscribe').remove();
+						$('.subscribe__label .holiday-poster_subscribe').removeClass('hide-offer');
+					}
+
+
+					if( $('body').find('.file-view-page_image-huge').length > 0 ) {
+						$('.wrapper .notification-bar.notification-bar__link').removeClass('notification-bar_timer');
+						$('.notification-bar__content_timer').remove();
+					}
+
+
 				}
 			},1000)
 		// });
@@ -103,11 +116,74 @@ function readyjQueryinit() {
 		$(document).on('click','.modal_offer .modal__close-round', function(){
 			console.log('1')
 			$(this).closest('.modal_offer_container').remove();
+			getTimeLabelPlans();
+			getTimeLabelPdp();
+			getTimeLabelListing();
 		});
 		$(document).on('click','.modal_offer_overlay', function(){
 			console.log('2')
 			$('.modal_offer_container').remove();
+			getTimeLabelPlans();
+			getTimeLabelPdp();
+			getTimeLabelListing();
 		});
+
+
+
+$labelOuthtml = `<div class="timer-poster_subscribe">
+					<div class="title_counter">
+						<div class="modal_progressbar">
+							<svg width="54" height="54" viewBox="0 0 54 54"><circle cx="27" cy="27" r="25" fill="none" stroke="#eeeeee" stroke-width="4"></circle><circle cx="27" cy="27" r="25" fill="none" stroke="#e74c3c" stroke-width="4" stroke-dasharray="157.56" stroke-dashoffset="0"></circle></svg><div class="counter"> 15.00 </div>
+						</div>
+						<div>
+							<h3 class="signup_modal_title">Ограниченное предложение!</h3>
+							<div class="body_counter">Скачайте 10 изображений <span class="timer_describe_color">БЕСПЛАТНО</span></div>
+						</div>
+					</div>
+					<div class="btn_counter">
+						<a href="https://depositphotos.com/subscribe/trial.html?id=4&product=membership" class="timer_btn button-red">
+						Скачать 10 изображений БЕСПЛАТНО
+						<svg width="9" height="13" viewBox="0 0 9 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M1.74512 0.0444336L8.20068 6.5L1.74512 12.9556L0.215332 11.4194L5.13477 6.5L0.215332 1.58057L1.74512 0.0444336Z" fill="white"/>
+						</svg>
+						</a>
+					</div>
+				</div>`
+			
+		
+
+		function getTimeLabelPlans(){
+			if( window.location.href.indexOf("/subscribe/image.html") > -1 ) {
+				$('.subscribe__label .holiday-poster_subscribe').addClass('hide-offer');
+
+				$('.subscribe__label._label').append($labelOuthtml);
+
+			}
+		}
+
+		function getTimeLabelPdp(){
+			if( $('body').find('.file-view-page_image-huge').length > 0 ) {
+				$('.wrapper .notification-bar.notification-bar__link').addClass('notification-bar_timer');
+				$('.notification-bar_timer').append(`
+					<div class="notification-bar__content_timer">
+						` + $labelOuthtml + `
+					</div>
+				`)
+			}
+		}
+
+		function getTimeLabelListing(){
+			if( $('body').find('.search-box__result').length > 0 ) {
+				$('.wrapper .notification-bar.notification-bar__link').addClass('notification-bar_timer');
+				$('.notification-bar_timer').append(`
+					<div class="notification-bar__content_timer">
+						` + $labelOuthtml + `
+					</div>
+				`)
+			}
+		}
+		
+
 
 		var styles = "<style>";
 		styles += `
@@ -203,7 +279,74 @@ function readyjQueryinit() {
 				color: #000000;
 				margin: 20px 0 0;
 			}
-			
+
+
+			.timer-poster_subscribe {
+				background: #F7EEEF;
+				position: relative;
+				height: 80px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				max-width: 1100px;
+				margin: 100px auto 0;
+			}
+			.subscribe_fresh .timer-poster_subscribe {
+				margin: 60px auto 36px;
+			}
+			.timer-poster_subscribe .title_counter {
+				display: flex;
+			}
+			.timer-poster_subscribe .modal_progressbar {
+				background: #fff;
+				border-radius: 50%;
+				margin-right: 19px;
+			}
+			.timer-poster_subscribe .signup_modal_title {
+				color: #3C3C3C;
+				font-size: 26px;
+				margin: 0;
+			}
+			.timer-poster_subscribe .body_counter {
+				color: #3C3C3C;
+				font-size: 15px;
+			}
+			.timer-poster_subscribe .body_counter .timer_describe_color {
+				color:#9fbe3b;
+			}
+			.timer-poster_subscribe .btn_counter {
+				margin-left: 19px;
+			}
+			.timer-poster_subscribe .timer_btn {
+				color: #FFFFFF;
+				font-size: 15px;
+				font-weight: 700;
+				border-radius: 60px;
+				text-align: center;
+				padding: 14px 20px;
+				text-decoration: none;
+				display: block;
+			}
+			.timer-poster_subscribe .timer_btn svg {
+				margin-left: 10px;
+			}
+			.hide-offer {
+				display: none;
+			}
+
+
+
+
+			.notification-bar_timer {
+				background: #F7EEEF !important;
+			}
+			.notification-bar_timer .notification-bar__content {
+				display: none;
+			}
+			.notification-bar_timer .timer-poster_subscribe {
+				margin: 0 auto;
+			}
+
 		`;
 		styles    += "</style>";
 		$('body').append(styles);
