@@ -117,15 +117,11 @@ function readyjQueryinit() {
 			console.log('1')
 			$(this).closest('.modal_offer_container').remove();
 			getTimeLabelPlans();
-			// getTimeLabelPdp();
-			// getTimeLabelListing();
 		});
 		$(document).on('click','.modal_offer_overlay', function(){
 			console.log('2')
 			$('.modal_offer_container').remove();
 			getTimeLabelPlans();
-			// getTimeLabelPdp();
-			// getTimeLabelListing();
 		});
 
 
@@ -151,25 +147,25 @@ function readyjQueryinit() {
 								</div>
 							</div>`;
 
-		var	$labelOuthtml_2 = `<div class="notification-bar__content_timer"><div class="timer-poster_subscribe">
-						<div class="title_counter">
-							<div class="modal_progressbar">
-								<svg width="54" height="54" viewBox="0 0 54 54"><circle cx="27" cy="27" r="25" fill="none" stroke="#eeeeee" stroke-width="4"></circle><circle cx="27" cy="27" r="25" fill="none" stroke="#e74c3c" stroke-width="4" stroke-dasharray="157.56" stroke-dashoffset="0"></circle></svg><div class="counter"> 15.00 </div>
-							</div>
-							<div>
-								<h3 class="signup_modal_title">Ограниченное предложение!</h3>
-								<div class="body_counter">Скачайте 10 изображений <span class="timer_describe_color">БЕСПЛАТНО</span></div>
-							</div>
-						</div>
-						<div class="btn_counter">
-							<a href="https://depositphotos.com/subscribe/trial.html?id=4&product=membership" class="timer_btn button-red">
-							Скачать 10 изображений БЕСПЛАТНО
-							<svg width="9" height="13" viewBox="0 0 9 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M1.74512 0.0444336L8.20068 6.5L1.74512 12.9556L0.215332 11.4194L5.13477 6.5L0.215332 1.58057L1.74512 0.0444336Z" fill="white"/>
-							</svg>
-							</a>
-						</div>
-					</div></div>`;
+		// var	$labelOuthtml_2 = `<div class="notification-bar__content_timer"><div class="timer-poster_subscribe">
+		// 				<div class="title_counter">
+		// 					<div class="modal_progressbar">
+		// 						<svg width="54" height="54" viewBox="0 0 54 54"><circle cx="27" cy="27" r="25" fill="none" stroke="#eeeeee" stroke-width="4"></circle><circle cx="27" cy="27" r="25" fill="none" stroke="#e74c3c" stroke-width="4" stroke-dasharray="157.56" stroke-dashoffset="0"></circle></svg><div class="counter"> 15.00 </div>
+		// 					</div>
+		// 					<div>
+		// 						<h3 class="signup_modal_title">Ограниченное предложение!</h3>
+		// 						<div class="body_counter">Скачайте 10 изображений <span class="timer_describe_color">БЕСПЛАТНО</span></div>
+		// 					</div>
+		// 				</div>
+		// 				<div class="btn_counter">
+		// 					<a href="https://depositphotos.com/subscribe/trial.html?id=4&product=membership" class="timer_btn button-red">
+		// 					Скачать 10 изображений БЕСПЛАТНО
+		// 					<svg width="9" height="13" viewBox="0 0 9 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+		// 						<path d="M1.74512 0.0444336L8.20068 6.5L1.74512 12.9556L0.215332 11.4194L5.13477 6.5L0.215332 1.58057L1.74512 0.0444336Z" fill="white"/>
+		// 					</svg>
+		// 					</a>
+		// 				</div>
+		// 			</div></div>`;
 			
 		
 
@@ -182,25 +178,36 @@ function readyjQueryinit() {
 			}
 		}
 
-		function getTimeLabelPdp(){
-			if( $('body').find('.file-view-page_image-huge').length > 0 ) {
-				$('.wrapper .notification-bar.notification-bar__link').addClass('notification-bar_timer');
-				$('.notification-bar_timer').append($labelOuthtml_2);
-			}
-		}
+		// function getTimeLabelPdp(){
+		// 	if( $('body').find('.file-view-page_image-huge').length > 0 ) {
+		// 		$('.wrapper .notification-bar.notification-bar__link').addClass('notification-bar_timer');
+		// 		$('.notification-bar_timer').append('<div class="notification-bar__content_timer"><div class="timer-poster_subscribe"><div class="title_counter"><div class="modal_progressbar"><svg width="54" height="54" viewBox="0 0 54 54"><circle cx="27" cy="27" r="25" fill="none" stroke="#eeeeee" stroke-width="4"></circle><circle cx="27" cy="27" r="25" fill="none" stroke="#e74c3c" stroke-width="4" stroke-dasharray="157.56" stroke-dashoffset="0"></circle></svg><div class="counter"> 15.00 </div></div><div><h3 class="signup_modal_title">Ограниченное предложение!</h3><div class="body_counter">Скачайте 10 изображений <span class="timer_describe_color">БЕСПЛАТНО</span></div></div></div><div class="btn_counter"><a href="https://depositphotos.com/subscribe/trial.html?id=4&product=membership" class="timer_btn button-red">Скачать 10 изображений БЕСПЛАТНО<svg width="9" height="13" viewBox="0 0 9 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.74512 0.0444336L8.20068 6.5L1.74512 12.9556L0.215332 11.4194L5.13477 6.5L0.215332 1.58057L1.74512 0.0444336Z" fill="white"/></svg></a></div></div></div>');
+		// 	}
+		// }
 
-		function getTimeLabelListing(){
-			if( $('body').find('.search-box__result').length > 0 ) {
-				$('.wrapper .notification-bar.notification-bar__link').addClass('notification-bar_timer');
-				$('.notification-bar_timer').append($labelOuthtml_2);
-			}
-		}
+		// function getTimeLabelListing(){
+		// 	if( $('body').find('.search-box__result').length > 0 ) {
+		// 		$('.wrapper .notification-bar.notification-bar__link').addClass('notification-bar_timer');
+		// 		$('.notification-bar_timer').append('<div class="notification-bar__content_timer"><div class="timer-poster_subscribe"><div class="title_counter"><div class="modal_progressbar"><svg width="54" height="54" viewBox="0 0 54 54"><circle cx="27" cy="27" r="25" fill="none" stroke="#eeeeee" stroke-width="4"></circle><circle cx="27" cy="27" r="25" fill="none" stroke="#e74c3c" stroke-width="4" stroke-dasharray="157.56" stroke-dashoffset="0"></circle></svg><div class="counter"> 15.00 </div></div><div><h3 class="signup_modal_title">Ограниченное предложение!</h3><div class="body_counter">Скачайте 10 изображений <span class="timer_describe_color">БЕСПЛАТНО</span></div></div></div><div class="btn_counter"><a href="https://depositphotos.com/subscribe/trial.html?id=4&product=membership" class="timer_btn button-red">Скачать 10 изображений БЕСПЛАТНО<svg width="9" height="13" viewBox="0 0 9 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.74512 0.0444336L8.20068 6.5L1.74512 12.9556L0.215332 11.4194L5.13477 6.5L0.215332 1.58057L1.74512 0.0444336Z" fill="white"/></svg></a></div></div></div>');
+		// 	}
+		// }
 		
 
 		if( localStorage.getItem('modal_offer_active') == "true" ) {
 			console.log('modal_offer_active == true')
-			getTimeLabelPdp();
-			getTimeLabelListing();
+			// getTimeLabelPdp();
+			if( $('body').find('.file-view-page_image-huge').length > 0 ) {
+				console.log('modal_offer_active == true ->>>>>  getTimeLabelPdp')
+				$('.wrapper .notification-bar.notification-bar__link').addClass('notification-bar_timer');
+				$('.notification-bar_timer').append('<div class="notification-bar__content_timer"><div class="timer-poster_subscribe"><div class="title_counter"><div class="modal_progressbar"><svg width="54" height="54" viewBox="0 0 54 54"><circle cx="27" cy="27" r="25" fill="none" stroke="#eeeeee" stroke-width="4"></circle><circle cx="27" cy="27" r="25" fill="none" stroke="#e74c3c" stroke-width="4" stroke-dasharray="157.56" stroke-dashoffset="0"></circle></svg><div class="counter"> 15.00 </div></div><div><h3 class="signup_modal_title">Ограниченное предложение!</h3><div class="body_counter">Скачайте 10 изображений <span class="timer_describe_color">БЕСПЛАТНО</span></div></div></div><div class="btn_counter"><a href="https://depositphotos.com/subscribe/trial.html?id=4&product=membership" class="timer_btn button-red">Скачать 10 изображений БЕСПЛАТНО<svg width="9" height="13" viewBox="0 0 9 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.74512 0.0444336L8.20068 6.5L1.74512 12.9556L0.215332 11.4194L5.13477 6.5L0.215332 1.58057L1.74512 0.0444336Z" fill="white"/></svg></a></div></div></div>');
+			}
+
+			// getTimeLabelListing();
+			if( $('body').find('.search-box__result').length > 0 ) {
+				console.log('modal_offer_active == true ->>>>>  getTimeLabelListing')
+				$('.wrapper .notification-bar.notification-bar__link').addClass('notification-bar_timer');
+				$('.notification-bar_timer').append('<div class="notification-bar__content_timer"><div class="timer-poster_subscribe"><div class="title_counter"><div class="modal_progressbar"><svg width="54" height="54" viewBox="0 0 54 54"><circle cx="27" cy="27" r="25" fill="none" stroke="#eeeeee" stroke-width="4"></circle><circle cx="27" cy="27" r="25" fill="none" stroke="#e74c3c" stroke-width="4" stroke-dasharray="157.56" stroke-dashoffset="0"></circle></svg><div class="counter"> 15.00 </div></div><div><h3 class="signup_modal_title">Ограниченное предложение!</h3><div class="body_counter">Скачайте 10 изображений <span class="timer_describe_color">БЕСПЛАТНО</span></div></div></div><div class="btn_counter"><a href="https://depositphotos.com/subscribe/trial.html?id=4&product=membership" class="timer_btn button-red">Скачать 10 изображений БЕСПЛАТНО<svg width="9" height="13" viewBox="0 0 9 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.74512 0.0444336L8.20068 6.5L1.74512 12.9556L0.215332 11.4194L5.13477 6.5L0.215332 1.58057L1.74512 0.0444336Z" fill="white"/></svg></a></div></div></div>');
+			}
 		} else {
 			console.log('modal_offer_active == false')
 		}
