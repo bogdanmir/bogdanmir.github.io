@@ -91,7 +91,6 @@ function readyjQueryinit() {
 					$('body').removeClass('hide-offer_holiday-poster');
 				}
 
-
 				if( $('body').find('.file-view-page_image-huge').length > 0 ) {
 					$('.wrapper .notification-bar.notification-bar__link').removeClass('notification-bar_timer');
 					$('.notification-bar__content_timer').remove();
