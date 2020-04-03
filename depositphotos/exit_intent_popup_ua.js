@@ -85,7 +85,9 @@ function readyjQueryinit() {
 
 				if( window.location.href.indexOf("/subscribe/image.html") > -1 ) {
 					$('.subscribe__label .timer-poster_subscribe').remove();
-					$('.subscribe__label .holiday-poster_subscribe').removeClass('hide-offer');
+					// $('.subscribe__label .holiday-poster_subscribe').removeClass('hide-offer');
+
+					$('body').removeClass('hide-offer_holiday-poster');
 				}
 
 
@@ -224,19 +226,20 @@ function readyjQueryinit() {
 		function getTimeLabelPlans(){
 			if( window.location.href.indexOf("/subscribe/image.html") > -1 ) {
 
-				$('.subscribe__label .holiday-poster_subscribe').addClass('hide-offer');
-				$('.subscribe__label._label').append($labelOuthtml);
+				// $('.subscribe__label .holiday-poster_subscribe').addClass('hide-offer');
+				// $('.subscribe__label._label').append($labelOuthtml);
 
 
-				setInterval(function() {
+				// setInterval(function() {
 					if( $('html').find(".timer-poster_subscribe").length < 1) {
 						console.log('setInterval-11111')
 
-						$('.subscribe__label .holiday-poster_subscribe').addClass('hide-offer');
+						$('body').addClass('hide-offer_holiday-poster');
+						// $('.subscribe__label .holiday-poster_subscribe').addClass('hide-offer');
 						$('.subscribe__label._label').append($labelOuthtml);
 
 					}
-				 },500);
+				 // },500);
 
 			}
 		}
@@ -470,6 +473,11 @@ function readyjQueryinit() {
 			}
 			.notification-bar_timer .timer-poster_subscribe {
 				margin: 0 auto;
+			}
+
+
+			.hide-offer_holiday-poster .subscribe__label .holiday-poster_subscribe {
+				display: none !important;
 			}
 
 
