@@ -87,7 +87,7 @@ function readyjQueryinit() {
 					// $('.subscribe__label .timer-poster_subscribe').remove();
 					// $('.subscribe__label .holiday-poster_subscribe').removeClass('hide-offer');
 
-					$('subscribe.subscribe_mixed .timer-poster_subscribe').remove();
+					$('.subscribe.subscribe_mixed .timer-poster_subscribe').remove();
 					$('body').removeClass('hide-offer_holiday-poster');
 				}
 
@@ -239,7 +239,7 @@ function readyjQueryinit() {
 						// $('.subscribe__label .holiday-poster_subscribe').addClass('hide-offer');
 						// $('.subscribe__label._label').append($labelOuthtml);
 
-						$('subscribe.subscribe_mixed').prepend($labelOuthtml);
+						$('.subscribe.subscribe_mixed').prepend($labelOuthtml);
 
 					}
 				 // },500);
