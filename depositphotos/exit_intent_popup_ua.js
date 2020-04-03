@@ -227,12 +227,13 @@ function readyjQueryinit() {
 				setInterval(function() {
 					if( $('html').find(".timer-poster_subscribe").length < 1) {
 						console.log('setInterval-11111')
+
+						$('.subscribe__label .holiday-poster_subscribe').addClass('hide-offer');
+						$('.subscribe__label._label').append($labelOuthtml);
+
 					}
 				 },500);
 
-				$('.subscribe__label .holiday-poster_subscribe').addClass('hide-offer');
-				$('.subscribe__label._label').append($labelOuthtml);
-			
 			}
 		}
 		
