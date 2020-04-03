@@ -27,259 +27,184 @@ if (!window.jQuery) {
 function readyjQueryinit() {
 	jQuery(function($) {
 
-		// var displayminutes;
-		// var displayseconds;
-		// var initializeTimer = 2 // enter in minutes
-		// var minutesToSeconds = initializeTimer*60;
-		// var minutesToSeconds_start = initializeTimer*60;
-		// 	var startCountDownTimer = setInterval(function(){
-		// 		minutesToSeconds = minutesToSeconds-1;
-		// 		var timer = getTime();
-		// 		var stroke_dasharray = $(".title_counter .modal_progressbar svg [stroke-dasharray]").attr('stroke-dasharray');
-		// 		var count_p = minutesToSeconds*100 / minutesToSeconds_start;
-		// 		$(".title_counter .modal_progressbar svg [stroke-dasharray]").attr('stroke-dashoffset',Math.floor(stroke_dasharray - (stroke_dasharray/100*count_p)));
-		// 		$(".title_counter .counter").html(timer[0]+"."+timer[1]);
-		// 		if (minutesToSeconds == 0) {
-		// 			clearInterval(startCountDownTimer);
-		// 			$('.modal_offer_container').remove();
-		// 			$('.modal_offer_overlay').remove();
-		// 			console.log("completed");
-
-		// 			if( window.location.href.indexOf("/subscribe/image.html") > -1 ) {
-		// 				$('.subscribe__label .timer-poster_subscribe').remove();
-		// 				$('.subscribe__label .holiday-poster_subscribe').removeClass('hide-offer');
-		// 			}
-
-
-		// 			if( $('body').find('.file-view-page_image-huge').length > 0 ) {
-		// 				$('.wrapper .notification-bar.notification-bar__link').removeClass('notification-bar_timer');
-		// 				$('.notification-bar__content_timer').remove();
-		// 			}
-
-
-		// 		}
-		// 	},1000)
-		// function getTime(){
-		// 	displayminutes = Math.floor(minutesToSeconds/60);
-		// 	displayseconds = minutesToSeconds - (displayminutes*60);
-		// 	if (displayseconds < 10) {   
-		// 		displayseconds ="0"+displayseconds;
-		// 	}
-		// 	if (displayminutes < 10) {   
-		// 		displayminutes = "0"+displayminutes;
-		// 	}
-		// 	return [displayminutes, displayseconds];
-		// }
-
-
-		// 
-
-
-		function CountdownTimer(elm, tl, corrdate,date_start,minutes) {
-		    this.initialize.apply(this, arguments);
-		}
-		CountdownTimer.prototype = {
-		    initialize: function(elm, tl, corrdate,date_start,minutes) {
-		        this.elem = elm;
-		        this.tl = tl;
-		        this.date_start = date_start;
-		        this.minutes = minutes;
-		        // this.mes = mes;
-		        this.corrdate = corrdate;
-		    },
-		    countDown: function() {
-		        var timer = '';
-		        var today = new Date(this.corrdate);
-		        today.setSeconds(today.getSeconds() + 1);
-		        this.corrdate = today;
-		        var min = Math.floor(((this.tl - today) % (24 * 60 * 60 * 1000)) / (60 * 1000)) % 60;
-		        var sec = Math.floor(((this.tl - today) % (24 * 60 * 60 * 1000)) / 1000) % 60 % 60;
-		        var me = this;
-		        var date_start = this.date_start;
-		        var minutes = this.minutes;
-		  //       if($(".title_counter .modal_progressbar svg [stroke-dasharray]").length > 0){
-				// 	var stroke_dasharray = $(".title_counter .modal_progressbar svg [stroke-dasharray]").attr('stroke-dasharray');
-				// 	var count_p = (stroke_dasharray * 100) / ((Math.floor(((this.tl - today) % (24 * 60 * 60 * 1000)) / (60 * 1000)) % 60 * -1 ) * 60);
-				// 	$(".title_counter .modal_progressbar svg [stroke-dasharray]").attr('stroke-dashoffset',Math.floor(count_p));
-				// }
-				console.log(this.tl - today);
-		        if ((this.tl - today) > 0) {
-		            timer += this.addZero(min) + '.' + this.addZero(sec);
-		            $(this.elem).html(timer);
-		            tid = setTimeout(function() {
-		                me.countDown(this.corrdate);
-		            }, 1000);
-		            return tid;
-		        } else {
-		            localStorage.setItem('ct_out','true');
-		            return;
-		        }
-		    },
-		    addZero: function(num) {
-		        return ('0' + num).slice(-2);
-		    }
-		}
-		function Counterinit(){
-			if(window.counter_startted_already){
-				return;
-			}
-			if(!window.counter_startted_already){
-				window.counter_startted_already = true;
-			}
-		  var ct_started = localStorage.getItem('ct_started');
-		  var ct_out     = localStorage.getItem('ct_out');
-		  var counter_start = localStorage.getItem('counter_start');
-		  if (ct_out == null && ct_started == 'true') {
-		    if (counter_start == null) {
-		        counter_start = new Date();
-		        localStorage.setItem('counter_start', counter_start);
-		    } else {
-		        counter_start = new Date(counter_start);
-		    }
-		    var date_start = counter_start;
-		    var minutes = 15;
-		    var date_finish = new Date(date_start.getTime() + minutes * 60000);
-		    var currentdate = date_start.getUTCFullYear();
-		    currentdate += "/";
-		    currentdate += date_start.getMonth() < 10 ? '0' + date_start.getMonth() : date_start.getMonth();
-		    currentdate += "/";
-		    currentdate += date_start.getUTCDate() < 10 ? '0' + date_start.getUTCDate() : date_start.getUTCDate();
-		    currentdate += " ";
-		    currentdate += date_start.getHours() < 10 ? '0' + date_start.getHours() : date_start.getHours();
-		    currentdate += ":";
-		    currentdate += date_start.getMinutes() < 10 ? '0' + date_start.getMinutes() : date_start.getMinutes();
-		    currentdate += ":";
-		    currentdate += date_start.getSeconds() < 10 ? '0' + date_start.getSeconds() : date_start.getSeconds();
-		    var finishdate = date_finish.getUTCFullYear();
-		    finishdate += "/";
-		    finishdate += date_finish.getMonth() < 10 ? '0' + date_finish.getMonth() : date_finish.getMonth();
-		    finishdate += "/";
-		    finishdate += date_finish.getUTCDate() < 10 ? '0' + date_finish.getUTCDate() : date_finish.getUTCDate();
-		    finishdate += " ";
-		    finishdate += date_finish.getHours() < 10 ? '0' + date_finish.getHours() : date_finish.getHours();
-		    finishdate += ":";
-		    finishdate += date_finish.getMinutes() < 10 ? '0' + date_finish.getMinutes() : date_finish.getMinutes();
-		    finishdate += ":";
-		    finishdate += date_finish.getSeconds() < 10 ? '0' + date_finish.getSeconds() : date_finish.getSeconds();
-		    var date = finishdate;
-		    var currentdate = currentdate;
-		    var tl = new Date(date);
-		    var timer = new CountdownTimer('.countdownTest', tl, currentdate,date_start,minutes);
-		    var interval = timer.countDown();
-		    console.log(interval);
-		  }
-		}
+	function CountdownTimer(elm, start_date, finish_date) {
+	    this.initialize.apply(this, arguments);
+	}
+	CountdownTimer.prototype = {
+	    initialize: function(elm, start_date, finish_date) {
+	        this.elem = $(elm);
+	        this.finish_date = finish_date;
+	        // this.mes = mes;
+	        this.start_date = start_date;
+	    },
+	    countDown: function() {
+	        var timer = '';
+	        var today = new Date();
+	        today.setSeconds(today.getSeconds() + 1);
+	        this.start_date = today;
+	        var day = Math.floor((this.finish_date - this.start_date) / (24 * 60 * 60 * 1000));
+	        var hour = Math.floor(((this.finish_date - this.start_date) % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
+	        var min = Math.floor(((this.finish_date - this.start_date) % (24 * 60 * 60 * 1000)) / (60 * 1000)) % 60;
+	        var sec = Math.floor(((this.finish_date - this.start_date) % (24 * 60 * 60 * 1000)) / 1000) % 60 % 60;
+	        var me = this;
+	        	var counter = min*60;
+	        	var seccounter = sec+counter;
+			    console.log('seccounter');
+			    console.log(seccounter);
+			    // console.log('finish_date');
+			    // console.log(this.finish_date);
+			    // console.log('finish_date');
+			    // console.log('this.start_date');
+			    // console.log(this.start_date);
+			    // console.log('this.start_date');
+			    // console.log('calc');
+			    // console.log(this.finish_date - this.start_date);
+	        if ((this.finish_date - this.start_date) > 0) {
+	            if($(".title_counter .modal_progressbar svg [stroke-dasharray]").length > 0){
+					// var count_p = 15*60*100 / seccounter;
+					var count_p = 1*60*100 / seccounter;
+					console.log('count_p');
+					console.log(count_p);
+	              var stroke_dasharray = $(".title_counter .modal_progressbar svg [stroke-dasharray]").attr('stroke-dasharray');
+					$(".title_counter .modal_progressbar svg [stroke-dasharray]").attr('stroke-dashoffset',Math.floor(stroke_dasharray - (stroke_dasharray*100/count_p)));
+	              // var count_p = (stroke_dasharray * 100) / ((Math.floor(((this.finish_date - this.start_date) % (24 * 60 * 60 * 1000)) / (60 * 1000)) % 60 * -1 ) * 60);
+	              // $(".title_counter .modal_progressbar svg [stroke-dasharray]").attr('stroke-dashoffset',Math.floor(count_p));
+	            }
+	            timer += this.addZero(min) + '.' + this.addZero(sec);
+	            this.elem.html(timer);
+	            tid = setTimeout(function() {
+	                me.countDown(this.start_date);
+	            }, 1000);
+	        } else {
+	            // localStorage.setItem('ct_out','true');
+	            return;
+	        }
+	    },
+	    addZero: function(num) {
+	        return ('0' + num).slice(-2);
+	    }
+	}
+	function Counterinit(){
+	  var ct_started = localStorage.getItem('ct_started');
+	  var ct_out     = localStorage.getItem('ct_out');
+	  var counter_start = localStorage.getItem('counter_start');
+	  if (ct_out == null && ct_started == 'true') {
+	    if (counter_start == null) {
+	        counter_start = new Date().getTime();
+	        localStorage.setItem('counter_start', counter_start);
+	    }
+	    counter_start = new Date(Number(counter_start));
+	    var date_start = counter_start;
+	    // var minutes = 15;
+	    var minutes = 1;
+	    // var date_finish = new Date(counter_start.getTime() + (15 * 60000));
+	    var date_finish = new Date(counter_start.getTime() + (1 * 60000));
+	    var timer = new CountdownTimer('.countdownTest',date_start, date_finish);
+	    timer.countDown();
+	  }
+	}
 		// Counterinit();
 
 
+	var imgPlan = $('.subscribe__title-box .images-fan__item').html();
 
-
-
-		var imgPlan = $('.subscribe__title-box .images-fan__item').html();
-
-		$outhtml  = '<div class="modal-container modal_offer_container">';
-		$outhtml += 	'<div class="modal modal_with-poster modal_offer">';
-		$outhtml += 		'<div class="modal__dialog">';
-		$outhtml += 			'<div class="modal__header _drag-handler"><i class="modal__close-round icon icon-close-cross icon-round-hover _close"></i></div>';
-		$outhtml += 			'<div class="modal__body _body modal__body_signup">';
-		$outhtml +=					'<div class="signup-user signup-user_modal">';							
-		$outhtml +=						'<div class="title_counter">'
-		$outhtml +=							'<h3 class="signup_modal_title">Ограниченное предложение!</h3>'
-		$outhtml +=							'<div class="modal_progressbar">'
-		$outhtml +=								'<svg width="54" height="54" viewBox="0 0 54 54"><circle cx="27" cy="27" r="25" fill="none" stroke="#eeeeee" stroke-width="4"></circle><circle cx="27" cy="27" r="25" fill="none" stroke="#e74c3c" stroke-width="4" stroke-dasharray="157.56" stroke-dashoffset="0"></circle></svg><div class="counter countdownTest"> 15.00 </div>'
-		$outhtml +=							'</div>'
-		$outhtml +=						'</div>'
-		$outhtml +=						'<div class="body_counter">'
-		$outhtml +=							'<div class="modal_img">' +imgPlan+ '</div>'
-		$outhtml +=							'<div class="modal_describe"> <p>Скачайте это изображение</p> <p>+ 9 других <span class="modal_describe_color">БЕСПЛАТНО</span></p></div>'
-		$outhtml +=						'</div>';
-		$outhtml +=						'<div class="btn_counter"><a href="https://depositphotos.com/subscribe/trial.html?id=4&product=membership" class="modal_btn button-red">Скачать бесплатно</a></div>'
-		$outhtml +=						'<p class="modal_bottom_describe"> в течение 7-дневного пробного периода </p>'
-		$outhtml +=					'</div>';
-		$outhtml +=				'</div>';
-		$outhtml += 		'</div>';
-		$outhtml += 	'</div>';
-		$outhtml += 	'<div class="_overlay modal-overlay modal_offer_overlay"></div>';
-		$outhtml += '</div>';
-		var check_modal_offer = localStorage.getItem('modal_offer_active');
-		if(check_modal_offer == null){
-			localStorage.setItem('modal_offer_active', false);
-		}
-		document.addEventListener("mouseleave", function( event ) {
-			if( window.location.href.indexOf("/subscribe/image.html") > -1 && $('.modal_offer_container').length < 1 && localStorage.getItem('modal_offer_active') == "false") {
-				localStorage.setItem('modal_offer_active', true);
-				console.log('3')
-				$('html').append($outhtml);
-				var ct_started = localStorage.getItem('ct_started');
-				if(ct_started != 'true'){
-					localStorage.setItem('ct_started','true');
-					Counterinit();
-				}
-			} else {
-				console.log('4')
-			}
-		});
-		function display_counnter(){
+	$outhtml  = '<div class="modal-container modal_offer_container">';
+	$outhtml += 	'<div class="modal modal_with-poster modal_offer">';
+	$outhtml += 		'<div class="modal__dialog">';
+	$outhtml += 			'<div class="modal__header _drag-handler"><i class="modal__close-round icon icon-close-cross icon-round-hover _close"></i></div>';
+	$outhtml += 			'<div class="modal__body _body modal__body_signup">';
+	$outhtml +=					'<div class="signup-user signup-user_modal">';							
+	$outhtml +=						'<div class="title_counter">'
+	$outhtml +=							'<h3 class="signup_modal_title">Ограниченное предложение!</h3>'
+	$outhtml +=							'<div class="modal_progressbar">'
+	$outhtml +=								'<svg width="54" height="54" viewBox="0 0 54 54"><circle cx="27" cy="27" r="25" fill="none" stroke="#eeeeee" stroke-width="4"></circle><circle cx="27" cy="27" r="25" fill="none" stroke="#e74c3c" stroke-width="4" stroke-dasharray="157.56" stroke-dashoffset="0"></circle></svg><div class="counter countdownTest"> 15.00 </div>'
+	$outhtml +=							'</div>'
+	$outhtml +=						'</div>'
+	$outhtml +=						'<div class="body_counter">'
+	$outhtml +=							'<div class="modal_img">' +imgPlan+ '</div>'
+	$outhtml +=							'<div class="modal_describe"> <p>Скачайте это изображение</p> <p>+ 9 других <span class="modal_describe_color">БЕСПЛАТНО</span></p></div>'
+	$outhtml +=						'</div>';
+	$outhtml +=						'<div class="btn_counter"><a href="https://depositphotos.com/subscribe/trial.html?id=4&product=membership" class="modal_btn button-red">Скачать бесплатно</a></div>'
+	$outhtml +=						'<p class="modal_bottom_describe"> в течение 7-дневного пробного периода </p>'
+	$outhtml +=					'</div>';
+	$outhtml +=				'</div>';
+	$outhtml += 		'</div>';
+	$outhtml += 	'</div>';
+	$outhtml += 	'<div class="_overlay modal-overlay modal_offer_overlay"></div>';
+	$outhtml += '</div>';
+	var check_modal_offer = localStorage.getItem('modal_offer_active');
+	if(check_modal_offer == null){
+		localStorage.setItem('modal_offer_active', false);
+	}
+	document.addEventListener("mouseleave", function( event ) {
+		if( window.location.href.indexOf("/subscribe/image.html") > -1 && $('.modal_offer_container').length < 1 && localStorage.getItem('modal_offer_active') == "false") {
+			localStorage.setItem('modal_offer_active', true);
+			console.log('3')
+			$('html').append($outhtml);
 			var ct_started = localStorage.getItem('ct_started');
-		  	var ct_out     = localStorage.getItem('ct_out');
-			if(ct_started == 'true' && ct_out != 'true'){
+			if(ct_started != 'true'){
 				localStorage.setItem('ct_started','true');
 				Counterinit();
 			}
+		} else {
+			console.log('4')
 		}
-
-		$(document).on('click','.modal_offer .modal__close-round', function(){
-			console.log('1')
-			$(this).closest('.modal_offer_container').remove();
-			getTimeLabelPlans();
-
+	});
+	function display_counnter(){
+		var ct_started = localStorage.getItem('ct_started');
+	  	var ct_out     = localStorage.getItem('ct_out');
+		if(ct_started == 'true' && ct_out != 'true'){
 			localStorage.setItem('ct_started','true');
-			display_counnter();
-		});
-		$(document).on('click','.modal_offer_overlay', function(){
-			console.log('2')
-			$('.modal_offer_container').remove();
-			getTimeLabelPlans();
+			Counterinit();
+		}
+	}
 
-			localStorage.setItem('ct_started','true');
-			display_counnter();
-		});
+	$(document).on('click','.modal_offer .modal__close-round', function(){
+		console.log('1')
+		$(this).closest('.modal_offer_container').remove();
+		getTimeLabelPlans();
+
+		localStorage.setItem('ct_started','true');
+		display_counnter();
+	});
+	$(document).on('click','.modal_offer_overlay', function(){
+		console.log('2')
+		$('.modal_offer_container').remove();
+		getTimeLabelPlans();
+
+		localStorage.setItem('ct_started','true');
+		display_counnter();
+	});
 
 
-
-
-		var	$labelOuthtml = `<div class="timer-poster_subscribe">
-								<div class="title_counter">
-									<div class="modal_progressbar">
-										<svg width="54" height="54" viewBox="0 0 54 54"><circle cx="27" cy="27" r="25" fill="none" stroke="#eeeeee" stroke-width="4"></circle><circle cx="27" cy="27" r="25" fill="none" stroke="#e74c3c" stroke-width="4" stroke-dasharray="157.56" stroke-dashoffset="0"></circle></svg><div class="counter countdownTest"> 15.00 </div>
-									</div>
-									<div>
-										<h3 class="signup_modal_title">Ограниченное предложение!</h3>
-										<div class="body_counter">Скачайте 10 изображений <span class="timer_describe_color">БЕСПЛАТНО</span></div>
-									</div>
+	var	$labelOuthtml = `<div class="timer-poster_subscribe">
+							<div class="title_counter">
+								<div class="modal_progressbar">
+									<svg width="54" height="54" viewBox="0 0 54 54"><circle cx="27" cy="27" r="25" fill="none" stroke="#eeeeee" stroke-width="4"></circle><circle cx="27" cy="27" r="25" fill="none" stroke="#e74c3c" stroke-width="4" stroke-dasharray="157.56" stroke-dashoffset="0"></circle></svg><div class="counter countdownTest"> 15.00 </div>
 								</div>
-								<div class="btn_counter">
-									<a href="https://depositphotos.com/subscribe/trial.html?id=4&product=membership" class="timer_btn button-red">
-									Скачать 10 изображений БЕСПЛАТНО
-									<svg width="9" height="13" viewBox="0 0 9 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M1.74512 0.0444336L8.20068 6.5L1.74512 12.9556L0.215332 11.4194L5.13477 6.5L0.215332 1.58057L1.74512 0.0444336Z" fill="white"/>
-									</svg>
-									</a>
+								<div>
+									<h3 class="signup_modal_title">Ограниченное предложение!</h3>
+									<div class="body_counter">Скачайте 10 изображений <span class="timer_describe_color">БЕСПЛАТНО</span></div>
 								</div>
-							</div>`;
+							</div>
+							<div class="btn_counter">
+								<a href="https://depositphotos.com/subscribe/trial.html?id=4&product=membership" class="timer_btn button-red">
+								Скачать 10 изображений БЕСПЛАТНО
+								<svg width="9" height="13" viewBox="0 0 9 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M1.74512 0.0444336L8.20068 6.5L1.74512 12.9556L0.215332 11.4194L5.13477 6.5L0.215332 1.58057L1.74512 0.0444336Z" fill="white"/>
+								</svg>
+								</a>
+							</div>
+						</div>`;
 			
 		
 
 		function getTimeLabelPlans(){
 			if( window.location.href.indexOf("/subscribe/image.html") > -1 ) {
 
-				setInterval(function() {
-					if( $('html').find(".timer-poster_subscribe") < 1){
-						$('.subscribe__label .holiday-poster_subscribe').addClass('hide-offer');
-						$('.subscribe__label._label').append($labelOuthtml);
-					}
-				},10);
-
+				$('.subscribe__label .holiday-poster_subscribe').addClass('hide-offer');
+				$('.subscribe__label._label').append($labelOuthtml);
+			
 			}
 		}
 		
@@ -296,12 +221,6 @@ function readyjQueryinit() {
 
 
 
-		if( ct_started == 'true' && ct_out == null ){
-		// if( ct_started == 'true' && modal_offer_active == "true" ){
-			console.log('ct_out == null')
-			getTimeLabelPlans();
-			display_counnter();
-		}
 
 		if( modal_offer_active == "true" && ct_started == "true") {
 			console.log('modal_offer_active == true')
@@ -323,16 +242,35 @@ function readyjQueryinit() {
 			console.log('modal_offer_active == false')
 		}
 
+		if( ct_started == 'true' && ct_out == null ){
+		// if( ct_started == 'true' && modal_offer_active == "true" ){
+			console.log('ct_out == null')
+			getTimeLabelPlans();
+			display_counnter();
+		} else {
+			console.log('счетчик СТОП!!!')
+			$('.modal_offer_container').remove();
+			$('.modal_offer_overlay').remove();
+			console.log("completed");
 
 
+			if( window.location.href.indexOf("/subscribe/image.html") > -1 ) {
+				$('.subscribe__label .timer-poster_subscribe').remove();
+				$('.subscribe__label .holiday-poster_subscribe').removeClass('hide-offer');
+			}
 
 
+			if( $('body').find('.file-view-page_image-huge').length > 0 ) {
+				$('.wrapper .notification-bar.notification-bar__link').removeClass('notification-bar_timer');
+				$('.notification-bar__content_timer').remove();
+			}
 
+			if($('body').find('.search-box__result').length > 0 ){
+				$('.wrapper .notification-bar.notification-bar__link').removeClass('notification-bar_timer');
+				$('.notification-bar__content_timer').remove();
+			}
 
-
-
-
-
+		}
 
 
 
