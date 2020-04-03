@@ -77,6 +77,29 @@ function readyjQueryinit() {
 	            }, 1000);
 	        } else {
 	            // localStorage.setItem('ct_out','true');
+
+	            console.log('счетчик СТОП!!!')
+				$('.modal_offer_container').remove();
+				$('.modal_offer_overlay').remove();
+				console.log("completed");
+
+
+				if( window.location.href.indexOf("/subscribe/image.html") > -1 ) {
+					$('.subscribe__label .timer-poster_subscribe').remove();
+					$('.subscribe__label .holiday-poster_subscribe').removeClass('hide-offer');
+				}
+
+
+				if( $('body').find('.file-view-page_image-huge').length > 0 ) {
+					$('.wrapper .notification-bar.notification-bar__link').removeClass('notification-bar_timer');
+					$('.notification-bar__content_timer').remove();
+				}
+
+				if($('body').find('.search-box__result').length > 0 ){
+					$('.wrapper .notification-bar.notification-bar__link').removeClass('notification-bar_timer');
+					$('.notification-bar__content_timer').remove();
+				}
+			
 	            return;
 	        }
 	    },
@@ -248,27 +271,6 @@ function readyjQueryinit() {
 			getTimeLabelPlans();
 			display_counnter();
 		} else {
-			console.log('счетчик СТОП!!!')
-			$('.modal_offer_container').remove();
-			$('.modal_offer_overlay').remove();
-			console.log("completed");
-
-
-			if( window.location.href.indexOf("/subscribe/image.html") > -1 ) {
-				$('.subscribe__label .timer-poster_subscribe').remove();
-				$('.subscribe__label .holiday-poster_subscribe').removeClass('hide-offer');
-			}
-
-
-			if( $('body').find('.file-view-page_image-huge').length > 0 ) {
-				$('.wrapper .notification-bar.notification-bar__link').removeClass('notification-bar_timer');
-				$('.notification-bar__content_timer').remove();
-			}
-
-			if($('body').find('.search-box__result').length > 0 ){
-				$('.wrapper .notification-bar.notification-bar__link').removeClass('notification-bar_timer');
-				$('.notification-bar__content_timer').remove();
-			}
 
 		}
 
