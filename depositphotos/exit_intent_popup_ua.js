@@ -81,7 +81,6 @@ function readyjQueryinit() {
 		CountdownTimer.prototype = {
 		    initialize: function(elm, tl, corrdate,date_start,minutes) {
 		        this.elem = elm;
-		        // this.elem = $(elm);
 		        this.tl = tl;
 		        this.date_start = date_start;
 		        this.minutes = minutes;
@@ -273,9 +272,13 @@ function readyjQueryinit() {
 
 		function getTimeLabelPlans(){
 			if( window.location.href.indexOf("/subscribe/image.html") > -1 ) {
-				$('.subscribe__label .holiday-poster_subscribe').addClass('hide-offer');
 
-				$('.subscribe__label._label').append($labelOuthtml);
+				setInterval(function() {
+					if( $('html').find(".timer-poster_subscribe") < 1){
+						$('.subscribe__label .holiday-poster_subscribe').addClass('hide-offer');
+						$('.subscribe__label._label').append($labelOuthtml);
+					}
+				},10);
 
 			}
 		}
