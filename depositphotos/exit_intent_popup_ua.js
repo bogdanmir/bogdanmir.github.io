@@ -110,12 +110,17 @@ function readyjQueryinit() {
 				if( $('body').find('.file-view-page_image-huge').length > 0 ) {
 					// $('.wrapper .notification-bar.notification-bar__link').removeClass('notification-bar_timer');
 
+					//stop interval
+					myStopFunction();
 					$('body').removeClass('notification-bar_timer');
 					$('.notification-bar__content_timer').remove();
 				}
 
 				if($('body').find('.search-box__result').length > 0 ){
 					// $('.wrapper .notification-bar.notification-bar__link').removeClass('notification-bar_timer');
+					
+					//stop interval
+					myStopFunction();
 					$('body').removeClass('notification-bar_timer');
 					$('.notification-bar__content_timer').remove();
 				}
@@ -278,11 +283,24 @@ function getTimeLabelPlans_Reload(){
 
 			$('body').addClass('hide-offer_holiday-poster');
 			$('.subscribe.subscribe_mixed').prepend($labelOuthtml);
-
 			display_counnter();
 		}
 	}
 }
+
+function getTimeLabelPdpListing_Reload(){
+	// if( $('body').find('.file-view-page_image-huge').length > 0 ) {
+		if( $('html').find(".timer-poster_subscribe").length < 1) {
+			console.log('setInterval-222')
+
+			$('body').addClass('notification-bar_timer');
+			$('.wrapper').append('<div class="notification-bar__content_timer">' + $labelOuthtml + '</div>');
+			display_counnter();
+		}
+
+	// }
+}
+
 function myStopFunction() {
 	if(typeof window.interval){
 		clearInterval(window.interval);
@@ -304,47 +322,50 @@ function myStopFunction() {
 			console.log('modal_offer_active == true')
 			// getTimeLabelPdp();
 			if( $('body').find('.file-view-page_image-huge').length > 0 ) {
-				console.log('->>> баннер на PDP добавлен');
+				// console.log('->>> баннер на PDP добавлен');
 
-				// setInterval(function() {
-					if( $('html').find(".timer-poster_subscribe").length < 1) {
-						console.log('setInterval-222')
+				// // setInterval(function() {
+				// 	if( $('html').find(".timer-poster_subscribe").length < 1) {
+				// 		console.log('setInterval-222')
 
-						$('body').addClass('notification-bar_timer');
+				// 		$('body').addClass('notification-bar_timer');
 
-						// $('.wrapper .notification-bar.notification-bar__link').addClass('notification-bar_timer');
-						// $('.notification-bar_timer').append('<div class="notification-bar__content_timer"><div class="timer-poster_subscribe"><div class="title_counter"><div class="modal_progressbar"><svg width="54" height="54" viewBox="0 0 54 54"><circle cx="27" cy="27" r="25" fill="none" stroke="#eeeeee" stroke-width="4"></circle><circle cx="27" cy="27" r="25" fill="none" stroke="#e74c3c" stroke-width="4" stroke-dasharray="157.56" stroke-dashoffset="0"></circle></svg><div class="counter countdownTest"> 15.00 </div></div><div><h3 class="signup_modal_title">Ограниченное предложение!</h3><div class="body_counter">Скачайте 10 изображений <span class="timer_describe_color">БЕСПЛАТНО</span></div></div></div><div class="btn_counter"><a href="https://depositphotos.com/subscribe/trial.html?id=4&product=membership" class="timer_btn button-red">Скачать 10 изображений БЕСПЛАТНО<svg width="9" height="13" viewBox="0 0 9 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.74512 0.0444336L8.20068 6.5L1.74512 12.9556L0.215332 11.4194L5.13477 6.5L0.215332 1.58057L1.74512 0.0444336Z" fill="white"/></svg></a></div></div></div>');
-					
+				// 		// $('.wrapper .notification-bar.notification-bar__link').addClass('notification-bar_timer');
+				// 		// $('.notification-bar_timer').append('<div class="notification-bar__content_timer">' + $labelOuthtml + '</div>');
 
-						// $('.notification-bar_timer').append('<div class="notification-bar__content_timer">' + $labelOuthtml + '</div>');
-						$('.wrapper').append('<div class="notification-bar__content_timer">' + $labelOuthtml + '</div>');
+				// 		$('.wrapper').append('<div class="notification-bar__content_timer">' + $labelOuthtml + '</div>');
 
-					}
-				// },10);
+				// 	}
+				// },10);	
 
-				
+				myStopFunction();
+				window.interval = setInterval(getTimeLabelPdpListing_Reload);
 			}
+
+
 
 			// getTimeLabelListing();
 			if( $('body').find('.search-box__result').length > 0 ) {
 
 				console.log(' ->>> баннер на листинге добавлен')
 
-				setInterval(function() {
+				// setInterval(function() {
 					if( $('html').find(".timer-poster_subscribe").length < 1) {
 						console.log('setInterval-33333')
 
-						$('body').addClass('notification-bar_timer');
-
 						// $('.wrapper .notification-bar.notification-bar__link').addClass('notification-bar_timer');
-
 						// $('.notification-bar_timer').append('<div class="notification-bar__content_timer"><div class="timer-poster_subscribe"><div class="title_counter"><div class="modal_progressbar"><svg width="54" height="54" viewBox="0 0 54 54"><circle cx="27" cy="27" r="25" fill="none" stroke="#eeeeee" stroke-width="4"></circle><circle cx="27" cy="27" r="25" fill="none" stroke="#e74c3c" stroke-width="4" stroke-dasharray="157.56" stroke-dashoffset="0"></circle></svg><div class="counter countdownTest"> 15.00 </div></div><div><h3 class="signup_modal_title">Ограниченное предложение!</h3><div class="body_counter">Скачайте 10 изображений <span class="timer_describe_color">БЕСПЛАТНО</span></div></div></div><div class="btn_counter"><a href="https://depositphotos.com/subscribe/trial.html?id=4&product=membership" class="timer_btn button-red">Скачать 10 изображений БЕСПЛАТНО<svg width="9" height="13" viewBox="0 0 9 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.74512 0.0444336L8.20068 6.5L1.74512 12.9556L0.215332 11.4194L5.13477 6.5L0.215332 1.58057L1.74512 0.0444336Z" fill="white"/></svg></a></div></div></div>');
-
 						// $('.notification-bar_timer').find('.wrapper').append('<div class="notification-bar__content_timer">' + $labelOuthtml + '</div>');
-						$('.wrapper').append('<div class="notification-bar__content_timer">' + $labelOuthtml + '</div>');
+						
 
+						// $('body').addClass('notification-bar_timer');
+						// $('.wrapper').append('<div class="notification-bar__content_timer">' + $labelOuthtml + '</div>');
+
+
+						myStopFunction();
+						window.interval = setInterval(getTimeLabelPdpListing_Reload);
 					}
-				},10);
+				// },10);
 
 
 				
@@ -355,16 +376,12 @@ function myStopFunction() {
 
 		if( ct_started == 'true' && ct_out == null && counter_finish != 'true'){
 		// if( modal_offer_active == "true" && ct_out == null){
-			// console.log('ct_out == null')
 			// getTimeLabelPlans();
 			
 
 			// put in onload
 			myStopFunction();
 			window.interval = setInterval(getTimeLabelPlans_Reload);
-
-			// display_counnter();
-
 		} else {
 
 		}
