@@ -62,7 +62,7 @@ function readyjQueryinit() {
 	        if ((this.finish_date - this.start_date) > 0) {
 	            if($(".title_counter .modal_progressbar svg [stroke-dasharray]").length > 0){
 					// var count_p = 15*60*100 / seccounter;
-					var count_p = 2*60*100 / seccounter;
+					var count_p = 5*60*100 / seccounter;
 					console.log('count_p');
 					console.log(count_p);
 	            	var stroke_dasharray = $(".title_counter .modal_progressbar svg [stroke-dasharray]").attr('stroke-dasharray');
@@ -144,9 +144,9 @@ function readyjQueryinit() {
 	    counter_start = new Date(Number(counter_start));
 	    var date_start = counter_start;
 	    // var minutes = 15;
-	    var minutes = 2;
+	    var minutes = 5;
 	    // var date_finish = new Date(counter_start.getTime() + (15 * 60000));
-	    var date_finish = new Date(counter_start.getTime() + (2 * 60000));
+	    var date_finish = new Date(counter_start.getTime() + (5 * 60000));
 	    var timer = new CountdownTimer('.countdownTest',date_start, date_finish);
 	    timer.countDown();
 	  }
@@ -318,11 +318,11 @@ function myStopFunction() {
 
 
 
-		if( modal_offer_active == "true" && ct_started == "true") {
-			console.log('modal_offer_active == true')
+		if( modal_offer_active == "true" && ct_started == "true" && counter_finish != 'true') {
+			console.log('modal_offer_active on PDP == true')
 			// getTimeLabelPdp();
 			if( $('body').find('.file-view-page_image-huge').length > 0 ) {
-				// console.log('->>> баннер на PDP добавлен');
+				console.log('->>> баннер на PDP добавлен');
 
 				// // setInterval(function() {
 				// 	if( $('html').find(".timer-poster_subscribe").length < 1) {
@@ -336,8 +336,9 @@ function myStopFunction() {
 				// 		$('.wrapper').append('<div class="notification-bar__content_timer">' + $labelOuthtml + '</div>');
 
 				// 	}
-				// },10);	
+				// },10);
 
+				// put in onload
 				myStopFunction();
 				window.interval = setInterval(getTimeLabelPdpListing_Reload);
 			}
@@ -361,7 +362,7 @@ function myStopFunction() {
 						// $('body').addClass('notification-bar_timer');
 						// $('.wrapper').append('<div class="notification-bar__content_timer">' + $labelOuthtml + '</div>');
 
-
+						// put in onload
 						myStopFunction();
 						window.interval = setInterval(getTimeLabelPdpListing_Reload);
 					}
