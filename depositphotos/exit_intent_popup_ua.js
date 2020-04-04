@@ -70,8 +70,11 @@ function readyjQueryinit() {
 	              // var count_p = (stroke_dasharray * 100) / ((Math.floor(((this.finish_date - this.start_date) % (24 * 60 * 60 * 1000)) / (60 * 1000)) % 60 * -1 ) * 60);
 	              // $(".title_counter .modal_progressbar svg [stroke-dasharray]").attr('stroke-dashoffset',Math.floor(count_p));
 	            }
-	            timer += this.addZero(min) + '.' + this.addZero(sec);
-	            this.elem.html(timer);
+	            if($('.countdownTest').length > 0) {
+	            	console.log('countdownTest > 0')
+	            }
+	        	timer += this.addZero(min) + '.' + this.addZero(sec);
+	        	this.elem.html(timer);
 
 	            // this.elem.html(timer);
 
@@ -345,21 +348,13 @@ function myStopFunction() {
 		// if( modal_offer_active == "true" && ct_out == null){
 			console.log('ct_out == null')
 			getTimeLabelPlans();
-			display_counnter();
+			
 
-			// вставить при загрузке страницы
+			// put in onload
 			myStopFunction();
 			window.interval = setInterval(getTimeLabelPlans_Reload);
 
-			// localStorage.setItem('counter_finish','true');
-
-			// 
-			// var counter_finish = localStorage.getItem('counter_finish');
-			// 	localStorage.setItem('counter_finish','true');
-			// 
-			// if( counter_finish == 'true' ){
-			// 	myStopFunction();
-			// }
+			display_counnter();
 
 		} else {
 
