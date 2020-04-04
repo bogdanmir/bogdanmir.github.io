@@ -32,7 +32,7 @@ function readyjQueryinit() {
 	}
 	CountdownTimer.prototype = {
 	    initialize: function(elm, start_date, finish_date) {
-	        this.elem = $(elm);
+	        this.elem = $(document).find(elm);
 	        this.finish_date = finish_date;
 	        // this.mes = mes;
 	        this.start_date = start_date;
