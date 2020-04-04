@@ -62,7 +62,7 @@ function readyjQueryinit() {
 	        if ((this.finish_date - this.start_date) > 0) {
 	            if($(".title_counter .modal_progressbar svg [stroke-dasharray]").length > 0){
 					// var count_p = 15*60*100 / seccounter;
-					var count_p = 1*60*100 / seccounter;
+					var count_p = 2*60*100 / seccounter;
 					console.log('count_p');
 					console.log(count_p);
 	              var stroke_dasharray = $(".title_counter .modal_progressbar svg [stroke-dasharray]").attr('stroke-dasharray');
@@ -86,6 +86,9 @@ function readyjQueryinit() {
 				if( window.location.href.indexOf("/subscribe/image.html") > -1 ) {
 					// $('.subscribe__label .timer-poster_subscribe').remove();
 					// $('.subscribe__label .holiday-poster_subscribe').removeClass('hide-offer');
+					
+					//stop interval
+					myStopFunction();
 
 					$('.subscribe.subscribe_mixed .timer-poster_subscribe').remove();
 					$('body').removeClass('hide-offer_holiday-poster');
@@ -101,9 +104,9 @@ function readyjQueryinit() {
 					$('.notification-bar__content_timer').remove();
 				}
 
-	            return;
-	        }
-	    },
+				return;
+			}
+		},
 	    addZero: function(num) {
 	        return ('0' + num).slice(-2);
 	    }
@@ -120,9 +123,9 @@ function readyjQueryinit() {
 	    counter_start = new Date(Number(counter_start));
 	    var date_start = counter_start;
 	    // var minutes = 15;
-	    var minutes = 1;
+	    var minutes = 2;
 	    // var date_finish = new Date(counter_start.getTime() + (15 * 60000));
-	    var date_finish = new Date(counter_start.getTime() + (1 * 60000));
+	    var date_finish = new Date(counter_start.getTime() + (2 * 60000));
 	    var timer = new CountdownTimer('.countdownTest',date_start, date_finish);
 	    timer.countDown();
 	  }
@@ -245,6 +248,30 @@ function readyjQueryinit() {
 
 			}
 		}
+
+
+
+
+
+
+window.interval = null;
+function getTimeLabelPlans_Reload(){
+	if( $('html').find(".timer-poster_subscribe").length < 1) {
+		console.log('------------ getTimeLabelPlans_Reload ------')
+
+		$('body').addClass('hide-offer_holiday-poster');
+		$('.subscribe.subscribe_mixed').prepend($labelOuthtml);
+	}
+}
+function myStopFunction() {
+	if(typeof window.interval){
+		clearInterval(window.interval);
+	}
+}
+
+
+
+
 		
 		var ct_started         = localStorage.getItem('ct_started');
 		var modal_offer_active = localStorage.getItem('modal_offer_active');
@@ -266,7 +293,7 @@ function readyjQueryinit() {
 			if( $('body').find('.file-view-page_image-huge').length > 0 ) {
 				console.log('modal_offer_active == true ->>>>>  getTimeLabelPdp');
 
-				setInterval(function() {
+				// setInterval(function() {
 					if( $('html').find(".timer-poster_subscribe").length < 1) {
 						console.log('setInterval-22222')
 
@@ -276,7 +303,7 @@ function readyjQueryinit() {
 						$('.notification-bar_timer').append('<div class="notification-bar__content_timer">' + $labelOuthtml + '</div>');
 
 					}
-				},10);
+				// },10);
 
 				
 			}
@@ -304,10 +331,14 @@ function readyjQueryinit() {
 		}
 
 		if( ct_started == 'true' && ct_out == null ){
-		// if( ct_started == 'true' && modal_offer_active == "true" ){
+		// if( modal_offer_active == "true" && ct_out == null){
 			console.log('ct_out == null')
 			getTimeLabelPlans();
 			display_counnter();
+
+			// вставить при загрузке страницы
+			myStopFunction();
+			window.interval = setInterval(getTimeLabelPlans_Reload);
 		} else {
 
 		}
