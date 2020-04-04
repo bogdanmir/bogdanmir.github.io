@@ -87,7 +87,7 @@ function readyjQueryinit() {
 					});
 
 					$('.modal_signup').addClass('modal_signup_image');
-					var title = typeof element.title != 'undefined' ? element.title : 'Register to add this image to favorites';
+					var title = typeof element.title != 'undefined' ? element.title : 'Registre-se para adicionar esta imagem aos favoritos';
 					$('.modal_signup_image .signup-user_modal').append('<div class="signup_modal_boxtitle"><span class="signup_modal_title">'+title+'</span></div>');
 					
 					$('.modal_signup_image .signup-user__left').append('<div class="img_wrapp"></div>');
@@ -194,14 +194,14 @@ function readyjQueryinit() {
 			$('body').on('mousedown', '.view-file-box__action-item.button-add-to-cart', function(){
 				if (!$(this).hasClass("active")) {
 					myStopFunction();
-					window.interval = setInterval(myTimerBtn, 1,{'item': $(this),'title': 'Register to add this image to cart'});
+					window.interval = setInterval(myTimerBtn, 1,{'item': $(this),'title': 'Registre-se para adicionar esta imagem ao carrinho'});
 				}
 			})
 			//add to cart listing
 			$('body').on('mousedown', '.file-container__actions-item.button-add-to-cart', function(){
 				if (!$(this).hasClass("active")) {
 					myStopFunction();
-					window.interval = setInterval(myTimerBtn, 1,{'item': $(this),'title': 'Register to add this image to cart'});
+					window.interval = setInterval(myTimerBtn, 1,{'item': $(this),'title': 'Registre-se para adicionar esta imagem ao carrinho'});
 				}
 			})
 
