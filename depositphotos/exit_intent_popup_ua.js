@@ -65,13 +65,16 @@ function readyjQueryinit() {
 					var count_p = 2*60*100 / seccounter;
 					console.log('count_p');
 					console.log(count_p);
-	              var stroke_dasharray = $(".title_counter .modal_progressbar svg [stroke-dasharray]").attr('stroke-dasharray');
+	            	var stroke_dasharray = $(".title_counter .modal_progressbar svg [stroke-dasharray]").attr('stroke-dasharray');
 					$(".title_counter .modal_progressbar svg [stroke-dasharray]").attr('stroke-dashoffset',Math.floor(stroke_dasharray - (stroke_dasharray*100/count_p)));
 	              // var count_p = (stroke_dasharray * 100) / ((Math.floor(((this.finish_date - this.start_date) % (24 * 60 * 60 * 1000)) / (60 * 1000)) % 60 * -1 ) * 60);
 	              // $(".title_counter .modal_progressbar svg [stroke-dasharray]").attr('stroke-dashoffset',Math.floor(count_p));
 	            }
 	            timer += this.addZero(min) + '.' + this.addZero(sec);
 	            this.elem.html(timer);
+
+	            // this.elem.html(timer);
+
 	            tid = setTimeout(function() {
 	                me.countDown(this.start_date);
 	            }, 1000);
@@ -81,6 +84,12 @@ function readyjQueryinit() {
 				$('.modal_offer_container').remove();
 				$('.modal_offer_overlay').remove();
 				console.log("completed");
+
+
+			// 
+				// var counter_finish = localStorage.getItem('counter_finish');
+				localStorage.setItem('counter_finish','true');
+			// 
 
 
 				if( window.location.href.indexOf("/subscribe/image.html") > -1 ) {
@@ -256,11 +265,13 @@ function readyjQueryinit() {
 
 window.interval = null;
 function getTimeLabelPlans_Reload(){
-	if( $('html').find(".timer-poster_subscribe").length < 1) {
-		console.log('------------ getTimeLabelPlans_Reload ------')
+	if( window.location.href.indexOf("/subscribe/image.html") > -1 ) {
+		if( $('html').find(".timer-poster_subscribe").length < 1) {
+			console.log('------- getTimeLabelPlans_Reload ------')
 
-		$('body').addClass('hide-offer_holiday-poster');
-		$('.subscribe.subscribe_mixed').prepend($labelOuthtml);
+			$('body').addClass('hide-offer_holiday-poster');
+			$('.subscribe.subscribe_mixed').prepend($labelOuthtml);
+		}
 	}
 }
 function myStopFunction() {
@@ -277,7 +288,7 @@ function myStopFunction() {
 		var modal_offer_active = localStorage.getItem('modal_offer_active');
 		var ct_out     		   = localStorage.getItem('ct_out');
 
-
+		var counter_finish     = localStorage.getItem('counter_finish');
 
 		// var ct_out = localStorage.getItem('modal_offer_active');
 		// if(ct_out == null){
@@ -330,7 +341,7 @@ function myStopFunction() {
 			console.log('modal_offer_active == false')
 		}
 
-		if( ct_started == 'true' && ct_out == null ){
+		if( ct_started == 'true' && ct_out == null && counter_finish != 'true'){
 		// if( modal_offer_active == "true" && ct_out == null){
 			console.log('ct_out == null')
 			getTimeLabelPlans();
@@ -339,6 +350,17 @@ function myStopFunction() {
 			// вставить при загрузке страницы
 			myStopFunction();
 			window.interval = setInterval(getTimeLabelPlans_Reload);
+
+			// localStorage.setItem('counter_finish','true');
+
+			// 
+			// var counter_finish = localStorage.getItem('counter_finish');
+			// 	localStorage.setItem('counter_finish','true');
+			// 
+			// if( counter_finish == 'true' ){
+			// 	myStopFunction();
+			// }
+
 		} else {
 
 		}
