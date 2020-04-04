@@ -47,10 +47,10 @@ function readyjQueryinit() {
 	        var min = Math.floor(((this.finish_date - this.start_date) % (24 * 60 * 60 * 1000)) / (60 * 1000)) % 60;
 			var sec = Math.floor(((this.finish_date - this.start_date) % (24 * 60 * 60 * 1000)) / 1000) % 60 % 60;
 			var me = this;
-				var counter = min*60;
-				var seccounter = sec+counter;
-				console.log('seccounter');
-				console.log(seccounter);
+			var counter = min*60;
+			var seccounter = sec+counter;
+			console.log('seccounter');
+			console.log(seccounter);
 				// console.log('finish_date');
 				// console.log(this.finish_date);
 			    // console.log('finish_date');
@@ -70,14 +70,14 @@ function readyjQueryinit() {
 	              // var count_p = (stroke_dasharray * 100) / ((Math.floor(((this.finish_date - this.start_date) % (24 * 60 * 60 * 1000)) / (60 * 1000)) % 60 * -1 ) * 60);
 	              // $(".title_counter .modal_progressbar svg [stroke-dasharray]").attr('stroke-dashoffset',Math.floor(count_p));
 	            }
-	            if($('.countdownTest').length > 0) {
-	            	console.log('countdownTest > 0')
+	            // if($('.countdownTest').length > 0) {
+	            // 	console.log('countdownTest > 0')
 
-	            }
+	            // }
 	        	timer += this.addZero(min) + '.' + this.addZero(sec);
 	        	this.elem.html(timer);
 
-	            $(document).find(this.elem).html(timer);
+				$(document).find(this.elem).html(timer);
 
 	            tid = setTimeout(function() {
 	                me.countDown(this.start_date);
@@ -275,6 +275,8 @@ function getTimeLabelPlans_Reload(){
 
 			$('body').addClass('hide-offer_holiday-poster');
 			$('.subscribe.subscribe_mixed').prepend($labelOuthtml);
+
+			display_counnter();
 		}
 	}
 }
@@ -347,15 +349,15 @@ function myStopFunction() {
 
 		if( ct_started == 'true' && ct_out == null && counter_finish != 'true'){
 		// if( modal_offer_active == "true" && ct_out == null){
-			console.log('ct_out == null')
-			getTimeLabelPlans();
+			// console.log('ct_out == null')
+			// getTimeLabelPlans();
 			
 
 			// put in onload
 			myStopFunction();
 			window.interval = setInterval(getTimeLabelPlans_Reload);
 
-			display_counnter();
+			// display_counnter();
 
 		} else {
 
