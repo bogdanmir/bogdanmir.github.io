@@ -49,8 +49,8 @@ function readyjQueryinit() {
 			var me = this;
 			var counter = min*60;
 			var seccounter = sec+counter;
-			console.log('seccounter');
-			console.log(seccounter);
+			// console.log('seccounter');
+			// console.log(seccounter);
 				// console.log('finish_date');
 				// console.log(this.finish_date);
 			    // console.log('finish_date');
@@ -61,19 +61,15 @@ function readyjQueryinit() {
 			    // console.log(this.finish_date - this.start_date);
 	        if ((this.finish_date - this.start_date) > 0) {
 	            if($(".title_counter .modal_progressbar svg [stroke-dasharray]").length > 0){
-					// var count_p = 15*60*100 / seccounter;
-					var count_p = 5*60*100 / seccounter;
-					console.log('count_p');
-					console.log(count_p);
+					var count_p = 15*60*100 / seccounter;
+					// var count_p = 5*60*100 / seccounter;
+					// console.log('count_p');
+					// console.log(count_p);
 	            	var stroke_dasharray = $(".title_counter .modal_progressbar svg [stroke-dasharray]").attr('stroke-dasharray');
 					$(".title_counter .modal_progressbar svg [stroke-dasharray]").attr('stroke-dashoffset',Math.floor(stroke_dasharray - (stroke_dasharray*100/count_p)));
 	              // var count_p = (stroke_dasharray * 100) / ((Math.floor(((this.finish_date - this.start_date) % (24 * 60 * 60 * 1000)) / (60 * 1000)) % 60 * -1 ) * 60);
 	              // $(".title_counter .modal_progressbar svg [stroke-dasharray]").attr('stroke-dashoffset',Math.floor(count_p));
 	            }
-	            // if($('.countdownTest').length > 0) {
-	            // 	console.log('countdownTest > 0')
-
-	            // }
 	        	timer += this.addZero(min) + '.' + this.addZero(sec);
 	        	this.elem.html(timer);
 
@@ -89,17 +85,12 @@ function readyjQueryinit() {
 				$('.modal_offer_overlay').remove();
 				console.log("completed");
 
-
 			// 
 				// var counter_finish = localStorage.getItem('counter_finish');
 				localStorage.setItem('counter_finish','true');
 			// 
 
-
 				if( window.location.href.indexOf("/subscribe/image.html") > -1 ) {
-					// $('.subscribe__label .timer-poster_subscribe').remove();
-					// $('.subscribe__label .holiday-poster_subscribe').removeClass('hide-offer');
-					
 					//stop interval
 					myStopFunction();
 
@@ -108,7 +99,6 @@ function readyjQueryinit() {
 				}
 
 				if( $('body').find('.file-view-page_image-huge').length > 0 ) {
-					// $('.wrapper .notification-bar.notification-bar__link').removeClass('notification-bar_timer');
 
 					//stop interval
 					myStopFunction();
@@ -117,7 +107,6 @@ function readyjQueryinit() {
 				}
 
 				if($('body').find('.search-box__result').length > 0 ){
-					// $('.wrapper .notification-bar.notification-bar__link').removeClass('notification-bar_timer');
 					
 					//stop interval
 					myStopFunction();
@@ -143,10 +132,10 @@ function readyjQueryinit() {
 	    }
 	    counter_start = new Date(Number(counter_start));
 	    var date_start = counter_start;
-	    // var minutes = 15;
-	    var minutes = 5;
-	    // var date_finish = new Date(counter_start.getTime() + (15 * 60000));
-	    var date_finish = new Date(counter_start.getTime() + (5 * 60000));
+	    var minutes = 15;
+	    // var minutes = 5;
+	    var date_finish = new Date(counter_start.getTime() + (15 * 60000));
+	    // var date_finish = new Date(counter_start.getTime() + (5 * 60000));
 	    var timer = new CountdownTimer('.countdownTest',date_start, date_finish);
 	    timer.countDown();
 	  }
@@ -224,7 +213,6 @@ function readyjQueryinit() {
 		display_counnter();
 	});
 
-
 	var	$labelOuthtml = `<div class="timer-poster_subscribe">
 							<div class="title_counter">
 								<div class="modal_progressbar">
@@ -244,162 +232,85 @@ function readyjQueryinit() {
 								</a>
 							</div>
 						</div>`;
-			
-		
 
 		function getTimeLabelPlans(){
 			if( window.location.href.indexOf("/subscribe/image.html") > -1 ) {
-
-				// $('.subscribe__label .holiday-poster_subscribe').addClass('hide-offer');
-				// $('.subscribe__label._label').append($labelOuthtml);
-
-
-				// setInterval(function() {
-					if( $('html').find(".timer-poster_subscribe").length < 1) {
-						console.log('setInterval-11111')
-
-						$('body').addClass('hide-offer_holiday-poster');
-						// $('.subscribe__label .holiday-poster_subscribe').addClass('hide-offer');
-						// $('.subscribe__label._label').append($labelOuthtml);
-
-						$('.subscribe.subscribe_mixed').prepend($labelOuthtml);
-
-					}
-				 // },500);
-
+				if( $('html').find(".timer-poster_subscribe").length < 1) {
+					$('body').addClass('hide-offer_holiday-poster');
+					$('.subscribe.subscribe_mixed').prepend($labelOuthtml);
+				}
 			}
 		}
 
-
-
-
-
-
-window.interval = null;
-function getTimeLabelPlans_Reload(){
-	if( window.location.href.indexOf("/subscribe/image.html") > -1 ) {
-		if( $('html').find(".timer-poster_subscribe").length < 1) {
-			console.log('------- getTimeLabelPlans_Reload ------')
-
-			$('body').addClass('hide-offer_holiday-poster');
-			$('.subscribe.subscribe_mixed').prepend($labelOuthtml);
-			display_counnter();
-		}
-	}
-}
-
-window.interval2 = null;
-window.interval3 = null;
-function getTimeLabelPdpListing_Reload(){
-	// if( $('body').find('.file-view-page_image-huge').length > 0 ) {
-		if( $('html').find(".timer-poster_subscribe").length < 1) {
-			console.log('setInterval-222')
-
-			$('body').addClass('notification-bar_timer');
-			$('.wrapper').append('<div class="notification-bar__content_timer">' + $labelOuthtml + '</div>');
-			display_counnter();
+		window.interval = null;
+		function getTimeLabelPlans_Reload(){
+			if( window.location.href.indexOf("/subscribe/image.html") > -1 ) {
+				if( $('html').find(".timer-poster_subscribe").length < 1) {
+					$('body').addClass('hide-offer_holiday-poster');
+					$('.subscribe.subscribe_mixed').prepend($labelOuthtml);
+					display_counnter();
+				}
+			}
 		}
 
-	// }
-}
+		window.interval2 = null;
+		window.interval3 = null;
+		function getTimeLabelPdpListing_Reload(){
+			if( $('html').find(".timer-poster_subscribe").length < 1) {
+				$('body').addClass('notification-bar_timer');
+				$('.wrapper').append('<div class="notification-bar__content_timer">' + $labelOuthtml + '</div>');
+				display_counnter();
+			}
+		}
 
-function myStopFunction() {
-	if(typeof window.interval){
-		clearInterval(window.interval);
-	}
-}
-function myStopFunction2() {
-	if(typeof window.interval2){
-		clearInterval(window.interval2);
-	}
-}
-function myStopFunction3() {
-	if(typeof window.interval3){
-		clearInterval(window.interval3);
-	}
-}
-
+		function myStopFunction() {
+			if(typeof window.interval){
+				clearInterval(window.interval);
+			}
+		}
+		function myStopFunction2() {
+			if(typeof window.interval2){
+				clearInterval(window.interval2);
+			}
+		}
+		function myStopFunction3() {
+			if(typeof window.interval3){
+				clearInterval(window.interval3);
+			}
+		}
 		
 		var ct_started         = localStorage.getItem('ct_started');
 		var modal_offer_active = localStorage.getItem('modal_offer_active');
 		var ct_out     		   = localStorage.getItem('ct_out');
-
 		var counter_finish     = localStorage.getItem('counter_finish');
-
-
-
 
 		if( modal_offer_active == "true" && ct_started == "true" && counter_finish != 'true') {
 			console.log('modal_offer_active on PDP == true')
-			// getTimeLabelPdp();
+
 			if( $('body').find('.file-view-page_image-huge').length > 0 ) {
-				console.log('->>> баннер на PDP добавлен');
-
-				// // setInterval(function() {
-				// 	if( $('html').find(".timer-poster_subscribe").length < 1) {
-				// 		console.log('setInterval-222')
-
-				// 		$('body').addClass('notification-bar_timer');
-
-				// 		// $('.wrapper .notification-bar.notification-bar__link').addClass('notification-bar_timer');
-				// 		// $('.notification-bar_timer').append('<div class="notification-bar__content_timer">' + $labelOuthtml + '</div>');
-
-				// 		$('.wrapper').append('<div class="notification-bar__content_timer">' + $labelOuthtml + '</div>');
-
-				// 	}
-				// },10);
-
+				console.log('->>> add banner on PDP');
 				// put in onload
 				myStopFunction2();
 				window.interval2 = setInterval(getTimeLabelPdpListing_Reload);
 			}
 
-
-
-			// getTimeLabelListing();
 			if( $('body').find('.search-box__result').length > 0 ) {
-
-				console.log(' ->>> баннер на листинге добавлен')
-
-				// setInterval(function() {
-					if( $('html').find(".timer-poster_subscribe").length < 1) {
-						console.log('setInterval-33333')
-
-						// $('.wrapper .notification-bar.notification-bar__link').addClass('notification-bar_timer');
-						// $('.notification-bar_timer').append('<div class="notification-bar__content_timer"><div class="timer-poster_subscribe"><div class="title_counter"><div class="modal_progressbar"><svg width="54" height="54" viewBox="0 0 54 54"><circle cx="27" cy="27" r="25" fill="none" stroke="#eeeeee" stroke-width="4"></circle><circle cx="27" cy="27" r="25" fill="none" stroke="#e74c3c" stroke-width="4" stroke-dasharray="157.56" stroke-dashoffset="0"></circle></svg><div class="counter countdownTest"> 15.00 </div></div><div><h3 class="signup_modal_title">Ограниченное предложение!</h3><div class="body_counter">Скачайте 10 изображений <span class="timer_describe_color">БЕСПЛАТНО</span></div></div></div><div class="btn_counter"><a href="https://depositphotos.com/subscribe/trial.html?id=4&product=membership" class="timer_btn button-red">Скачать 10 изображений БЕСПЛАТНО<svg width="9" height="13" viewBox="0 0 9 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.74512 0.0444336L8.20068 6.5L1.74512 12.9556L0.215332 11.4194L5.13477 6.5L0.215332 1.58057L1.74512 0.0444336Z" fill="white"/></svg></a></div></div></div>');
-						// $('.notification-bar_timer').find('.wrapper').append('<div class="notification-bar__content_timer">' + $labelOuthtml + '</div>');
-						
-
-						// $('body').addClass('notification-bar_timer');
-						// $('.wrapper').append('<div class="notification-bar__content_timer">' + $labelOuthtml + '</div>');
-
-						// put in onload
-						myStopFunction3();
-						window.interval3 = setInterval(getTimeLabelPdpListing_Reload);
-					}
-				// },10);
-
-
-				
+				console.log(' ->>> add banner on Listing')
+				if( $('html').find(".timer-poster_subscribe").length < 1) {
+					// put in onload
+					myStopFunction3();
+					window.interval3 = setInterval(getTimeLabelPdpListing_Reload);
+				}
 			}
 		} else {
 			console.log('modal_offer_active == false')
 		}
 
 		if( ct_started == 'true' && ct_out == null && counter_finish != 'true'){
-		// if( modal_offer_active == "true" && ct_out == null){
-			// getTimeLabelPlans();
-			
-
 			// put in onload
 			myStopFunction();
 			window.interval = setInterval(getTimeLabelPlans_Reload);
-		} else {
-
 		}
-
-
-
 
 		var styles = "<style>";
 		styles += `
