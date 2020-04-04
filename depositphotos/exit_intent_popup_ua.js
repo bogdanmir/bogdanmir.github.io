@@ -108,12 +108,15 @@ function readyjQueryinit() {
 				}
 
 				if( $('body').find('.file-view-page_image-huge').length > 0 ) {
-					$('.wrapper .notification-bar.notification-bar__link').removeClass('notification-bar_timer');
+					// $('.wrapper .notification-bar.notification-bar__link').removeClass('notification-bar_timer');
+
+					$('body').removeClass('notification-bar_timer');
 					$('.notification-bar__content_timer').remove();
 				}
 
 				if($('body').find('.search-box__result').length > 0 ){
-					$('.wrapper .notification-bar.notification-bar__link').removeClass('notification-bar_timer');
+					// $('.wrapper .notification-bar.notification-bar__link').removeClass('notification-bar_timer');
+					$('body').removeClass('notification-bar_timer');
 					$('.notification-bar__content_timer').remove();
 				}
 
@@ -287,19 +290,12 @@ function myStopFunction() {
 }
 
 
-
-
 		
 		var ct_started         = localStorage.getItem('ct_started');
 		var modal_offer_active = localStorage.getItem('modal_offer_active');
 		var ct_out     		   = localStorage.getItem('ct_out');
 
 		var counter_finish     = localStorage.getItem('counter_finish');
-
-		// var ct_out = localStorage.getItem('modal_offer_active');
-		// if(ct_out == null){
-		// 	localStorage.setItem('ct_out', false);
-		// }
 
 
 
@@ -308,16 +304,19 @@ function myStopFunction() {
 			console.log('modal_offer_active == true')
 			// getTimeLabelPdp();
 			if( $('body').find('.file-view-page_image-huge').length > 0 ) {
-				console.log('modal_offer_active == true ->>>>>  getTimeLabelPdp');
+				console.log('->>> баннер на PDP добавлен');
 
 				// setInterval(function() {
 					if( $('html').find(".timer-poster_subscribe").length < 1) {
-						console.log('setInterval-22222')
+						console.log('setInterval-222')
 
-						$('.wrapper .notification-bar.notification-bar__link').addClass('notification-bar_timer');
+						$('body').addClass('notification-bar_timer');
+
+						// $('.wrapper .notification-bar.notification-bar__link').addClass('notification-bar_timer');
 						// $('.notification-bar_timer').append('<div class="notification-bar__content_timer"><div class="timer-poster_subscribe"><div class="title_counter"><div class="modal_progressbar"><svg width="54" height="54" viewBox="0 0 54 54"><circle cx="27" cy="27" r="25" fill="none" stroke="#eeeeee" stroke-width="4"></circle><circle cx="27" cy="27" r="25" fill="none" stroke="#e74c3c" stroke-width="4" stroke-dasharray="157.56" stroke-dashoffset="0"></circle></svg><div class="counter countdownTest"> 15.00 </div></div><div><h3 class="signup_modal_title">Ограниченное предложение!</h3><div class="body_counter">Скачайте 10 изображений <span class="timer_describe_color">БЕСПЛАТНО</span></div></div></div><div class="btn_counter"><a href="https://depositphotos.com/subscribe/trial.html?id=4&product=membership" class="timer_btn button-red">Скачать 10 изображений БЕСПЛАТНО<svg width="9" height="13" viewBox="0 0 9 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.74512 0.0444336L8.20068 6.5L1.74512 12.9556L0.215332 11.4194L5.13477 6.5L0.215332 1.58057L1.74512 0.0444336Z" fill="white"/></svg></a></div></div></div>');
 
-						$('.notification-bar_timer').append('<div class="notification-bar__content_timer">' + $labelOuthtml + '</div>');
+						// $('.notification-bar_timer').append('<div class="notification-bar__content_timer">' + $labelOuthtml + '</div>');
+						$('.notification-bar_timer').find('.wrapper').append('<div class="notification-bar__content_timer">' + $labelOuthtml + '</div>');
 
 					}
 				// },10);
@@ -327,15 +326,20 @@ function myStopFunction() {
 
 			// getTimeLabelListing();
 			if( $('body').find('.search-box__result').length > 0 ) {
-				console.log('modal_offer_active == true ->>>>>  getTimeLabelListing')
+
+				console.log(' ->>> баннер на листинге добавлен')
 
 				setInterval(function() {
 					if( $('html').find(".timer-poster_subscribe").length < 1) {
 						console.log('setInterval-33333')
 
-						$('.wrapper .notification-bar.notification-bar__link').addClass('notification-bar_timer');
+						$('body').addClass('notification-bar_timer');
+
+						// $('.wrapper .notification-bar.notification-bar__link').addClass('notification-bar_timer');
+
 						// $('.notification-bar_timer').append('<div class="notification-bar__content_timer"><div class="timer-poster_subscribe"><div class="title_counter"><div class="modal_progressbar"><svg width="54" height="54" viewBox="0 0 54 54"><circle cx="27" cy="27" r="25" fill="none" stroke="#eeeeee" stroke-width="4"></circle><circle cx="27" cy="27" r="25" fill="none" stroke="#e74c3c" stroke-width="4" stroke-dasharray="157.56" stroke-dashoffset="0"></circle></svg><div class="counter countdownTest"> 15.00 </div></div><div><h3 class="signup_modal_title">Ограниченное предложение!</h3><div class="body_counter">Скачайте 10 изображений <span class="timer_describe_color">БЕСПЛАТНО</span></div></div></div><div class="btn_counter"><a href="https://depositphotos.com/subscribe/trial.html?id=4&product=membership" class="timer_btn button-red">Скачать 10 изображений БЕСПЛАТНО<svg width="9" height="13" viewBox="0 0 9 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.74512 0.0444336L8.20068 6.5L1.74512 12.9556L0.215332 11.4194L5.13477 6.5L0.215332 1.58057L1.74512 0.0444336Z" fill="white"/></svg></a></div></div></div>');
-						$('.notification-bar_timer').append('<div class="notification-bar__content_timer">' + $labelOuthtml + '</div>');
+
+						$('.notification-bar_timer').find('.wrapper').append('<div class="notification-bar__content_timer">' + $labelOuthtml + '</div>');
 
 					}
 				},10);
@@ -484,6 +488,9 @@ function myStopFunction() {
 				border-radius: 50%;
 				margin-right: 19px;
 			}
+			.timer-poster_subscribe .modal_progressbar .counter {
+				font-weight: 700;
+			}
 			.timer-poster_subscribe .signup_modal_title {
 				color: #3C3C3C;
 				font-size: 26px;
@@ -519,12 +526,17 @@ function myStopFunction() {
 
 
 
-			.notification-bar_timer {
+			// .notification-bar_timer {
+			// 	background: #F7EEEF !important;
+			// }
+			
+
+			.notification-bar__content_timer {
 				background: #F7EEEF !important;
 			}
-			.notification-bar_timer .notification-bar__content {
-				display: none;
-			}
+			// .notification-bar_timer .notification-bar__content {
+			// 	display: none;
+			// }
 			.notification-bar_timer .timer-poster_subscribe {
 				margin: 0 auto;
 			}
