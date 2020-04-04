@@ -32,7 +32,7 @@ function readyjQueryinit() {
 	}
 	CountdownTimer.prototype = {
 	    initialize: function(elm, start_date, finish_date) {
-	        this.elem = $(document).find(elm);
+	        this.elem = $(elm);
 	        this.finish_date = finish_date;
 	        // this.mes = mes;
 	        this.start_date = start_date;
@@ -45,14 +45,14 @@ function readyjQueryinit() {
 	        var day = Math.floor((this.finish_date - this.start_date) / (24 * 60 * 60 * 1000));
 	        var hour = Math.floor(((this.finish_date - this.start_date) % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
 	        var min = Math.floor(((this.finish_date - this.start_date) % (24 * 60 * 60 * 1000)) / (60 * 1000)) % 60;
-	        var sec = Math.floor(((this.finish_date - this.start_date) % (24 * 60 * 60 * 1000)) / 1000) % 60 % 60;
-	        var me = this;
-	        	var counter = min*60;
-	        	var seccounter = sec+counter;
-			    console.log('seccounter');
-			    console.log(seccounter);
-			    // console.log('finish_date');
-			    // console.log(this.finish_date);
+			var sec = Math.floor(((this.finish_date - this.start_date) % (24 * 60 * 60 * 1000)) / 1000) % 60 % 60;
+			var me = this;
+				var counter = min*60;
+				var seccounter = sec+counter;
+				console.log('seccounter');
+				console.log(seccounter);
+				// console.log('finish_date');
+				// console.log(this.finish_date);
 			    // console.log('finish_date');
 			    // console.log('this.start_date');
 			    // console.log(this.start_date);
@@ -72,11 +72,12 @@ function readyjQueryinit() {
 	            }
 	            if($('.countdownTest').length > 0) {
 	            	console.log('countdownTest > 0')
+
 	            }
 	        	timer += this.addZero(min) + '.' + this.addZero(sec);
 	        	this.elem.html(timer);
 
-	            // this.elem.html(timer);
+	            $(document).find(this.elem).html(timer);
 
 	            tid = setTimeout(function() {
 	                me.countDown(this.start_date);
