@@ -288,6 +288,8 @@ function getTimeLabelPlans_Reload(){
 	}
 }
 
+window.interval2 = null;
+window.interval3 = null;
 function getTimeLabelPdpListing_Reload(){
 	// if( $('body').find('.file-view-page_image-huge').length > 0 ) {
 		if( $('html').find(".timer-poster_subscribe").length < 1) {
@@ -306,7 +308,16 @@ function myStopFunction() {
 		clearInterval(window.interval);
 	}
 }
-
+function myStopFunction2() {
+	if(typeof window.interval2){
+		clearInterval(window.interval2);
+	}
+}
+function myStopFunction3() {
+	if(typeof window.interval3){
+		clearInterval(window.interval3);
+	}
+}
 
 		
 		var ct_started         = localStorage.getItem('ct_started');
@@ -339,8 +350,8 @@ function myStopFunction() {
 				// },10);
 
 				// put in onload
-				myStopFunction();
-				window.interval = setInterval(getTimeLabelPdpListing_Reload);
+				myStopFunction2();
+				window.interval2 = setInterval(getTimeLabelPdpListing_Reload);
 			}
 
 
@@ -363,8 +374,8 @@ function myStopFunction() {
 						// $('.wrapper').append('<div class="notification-bar__content_timer">' + $labelOuthtml + '</div>');
 
 						// put in onload
-						myStopFunction();
-						window.interval = setInterval(getTimeLabelPdpListing_Reload);
+						myStopFunction3();
+						window.interval3 = setInterval(getTimeLabelPdpListing_Reload);
 					}
 				// },10);
 
