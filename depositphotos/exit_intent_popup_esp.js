@@ -311,6 +311,7 @@ function readyjQueryinit() {
 			    -webkit-align-items: center;
 			    -ms-flex-align: center;
 			    align-items: center;
+			    margin-left: 10px;
 			}
 			.modal_offer {
 				font-family: Arial,Helvetica,sans-serif;
