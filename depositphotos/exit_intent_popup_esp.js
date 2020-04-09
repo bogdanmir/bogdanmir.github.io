@@ -138,7 +138,7 @@ function readyjQueryinit() {
 	$outhtml +=							'<div class="modal_img">' +imgPlan+ '</div>'
 	$outhtml +=							'<div class="modal_describe"> <p>Descarga esta imagen</p> <p>y 9 más <span class="modal_describe_color">GRATIS</span></p></div>'
 	$outhtml +=						'</div>';
-	$outhtml +=						'<div class="btn_counter"><a href="https://depositphotos.com/subscribe/trial.html?id=4&product=membership" class="modal_btn button-red">Descargar gratis</a></div>'
+	$outhtml +=						'<div class="btn_counter"><a href="https://depositphotos.com/subscribe/trial.html?id=10&product=membership" class="modal_btn button-red">Descargar gratis</a></div>'
 	$outhtml +=						'<p class="modal_bottom_describe"> Prueba gratuita de 7 días </p>'
 	$outhtml +=					'</div>';
 	$outhtml +=				'</div>';
@@ -201,7 +201,7 @@ function readyjQueryinit() {
 								</div>
 							</div>
 							<div class="btn_counter">
-								<a href="https://depositphotos.com/subscribe/trial.html?id=4&product=membership" class="timer_btn button-red">
+								<a href="https://depositphotos.com/subscribe/trial.html?id=10&product=membership" class="timer_btn button-red">
 								Descarga 10 imágenes GRATIS
 								<svg width="9" height="13" viewBox="0 0 9 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path d="M1.74512 0.0444336L8.20068 6.5L1.74512 12.9556L0.215332 11.4194L5.13477 6.5L0.215332 1.58057L1.74512 0.0444336Z" fill="white"/>
