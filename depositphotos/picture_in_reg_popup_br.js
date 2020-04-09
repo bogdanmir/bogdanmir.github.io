@@ -125,14 +125,14 @@ function readyjQueryinit() {
 			}
 
 			$('body').on('click','.price-table-classic__download', function(){
-				if($('html').find('.file-view__left .view-file-box_video .video-playing').length < 1){
+				if($('html').find('.file-view__left .view-file-box_video').length < 1){
 					myStopFunction();
 					window.interval = setInterval(myTimer);
 				}
 			})
 
 			$('body').on('mousedown', '.view-file-box__action-item.button-download', function(){
-				if($('html').find('.file-view__left .view-file-box_video .video-playing').length < 1){
+				if($('html').find('.file-view__left .view-file-box_video').length < 1){
 					myStopFunction();
 					window.interval = setInterval(myTimer);
 				}
@@ -178,7 +178,7 @@ function readyjQueryinit() {
 
 			//add to favorites PDP
 			$('body').on('mousedown', '.view-file-box__action-item.button-add-to-favorites', function(){
-				if($('html').find('.file-view__left .view-file-box_video .video-playing').length < 1){
+				if($('html').find('.file-view__left .view-file-box_video').length < 1){
 					myStopFunction();
 					window.interval = setInterval(myTimerBtn, 1, {'item':$(this)});
 				}
@@ -193,7 +193,7 @@ function readyjQueryinit() {
 
 			//add to cart PDP
 			$('body').on('mousedown', '.view-file-box__action-item.button-add-to-cart', function(){
-				if($('html').find('.file-view__left .view-file-box_video .video-playing').length < 1){
+				if($('html').find('.file-view__left .view-file-box_video').length < 1){
 					if (!$(this).hasClass("active")) {
 						myStopFunction();
 						window.interval = setInterval(myTimerBtn, 1,{'item': $(this),'title': 'Cadastre-se para adicionar esta imagem ao carrinho'});
@@ -268,6 +268,7 @@ function readyjQueryinit() {
 					position: absolute;
 					top: 0;
 					left: 0;
+					right: 0;
 					// object-fit: cover;
 					// height: calc(100% + 27px);
 					// max-height: calc(100% + 27px);
