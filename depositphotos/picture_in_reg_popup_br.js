@@ -268,9 +268,9 @@ function readyjQueryinit() {
 					position: absolute;
 					top: 0;
 					left: 0;
-					object-fit: cover;
-					height: calc(100% + 27px);
-					max-height: calc(100% + 27px);
+					// object-fit: cover;
+					// height: calc(100% + 27px);
+					// max-height: calc(100% + 27px);
 				}
 				.modal_signup_image .signup-user__back {
 					left: -420px;
