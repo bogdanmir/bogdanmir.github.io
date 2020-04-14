@@ -1,0 +1,123 @@
+.site-header__main{
+	*,
+	*:after,
+	*:before{
+		box-sizing: border-box;
+	}
+	.btn-js-Sort{
+		order: 2;
+	}
+	.btn-js-Filter{
+		order: 1;
+	}
+	.tags-bar-wraper{
+		overflow: auto;
+	}
+	.tags-bar {
+		list-style:none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		-ms-flex-align: center;
+		align-items: center;
+		padding: 14px 10px;
+		transition: all 0.3s ease-in;
+		.tag-item{
+			padding-right:3px;
+			padding-left:3px;
+			transition: all 0.3s ease-in;
+		}
+		.tag-element{
+			white-space: nowrap;
+			transition: all 0.3s ease-in;
+			padding: 5px;
+			background: #EBEBEB;
+			font-weight: 500;
+			font-size: 10px;
+			line-height: 12px;
+			text-transform: uppercase;
+			border-radius: 12px;
+			padding: 12px 6px;
+			display: inline-block;
+		}
+	}
+	&.header__main__scrolling .tags-bar .tag-element{
+		padding: 6px 7px;
+	}
+	.filter-bar__options {
+		position: static;
+	}
+}
+.collection-mobile__container-js{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0,0,0,0.5);
+	z-index: 99999999;
+	display: none;
+	.collection-filter-list-wrapper {
+		.collection-filter-list{
+			.collection-filter-group{
+				display: none;
+			}
+		}
+		&.active{
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			.collection-filter-list{
+				top: auto !important;
+				bottom: 0;
+				padding: 0;
+				max-height: 50vh;
+				display: flex;
+				position: absolute;
+				bottom: 0;
+				z-index: 9999999999999;
+				margin: 0;
+				opacity: 1;
+				visibility: visible;
+				left: 0;
+				right: 0;
+				height: 50vh;
+				background: #ffffff;
+				.collection-filter-group{
+					display: block;
+				}
+			}
+		}
+	}
+	&.active{
+		display: block;
+		.filter-bar__form.filter-bar__toggle{
+			background: #ffffff;
+		}
+		.active{
+			&.collection-mobile__sort,
+			&.collection-mobile__filter{
+				top: auto !important;
+				background: rgba(0,0,0,0.5);
+				bottom: 0;
+				padding: 0;
+				max-height: 50vh;
+				display: flex;
+				position: absolute;
+				bottom: 0;
+				z-index: 9999999999999;
+				margin: 0;
+				opacity: 1;
+				visibility: visible;
+				.filter-bar__form.filter-bar__toggle{
+					flex: 0 0 100%;
+					max-width: 100%;
+				}
+			}
+		}
+	}
+}
