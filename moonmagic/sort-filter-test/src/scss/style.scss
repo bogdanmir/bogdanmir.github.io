@@ -51,154 +51,6 @@
 	}
 }
 .collection-mobile__container {
-	// position: fixed;
-	// top: 0;
-	// left: 0;
-	// right: 0;
-	// bottom: 0;
-	// background: rgba(0,0,0,0.5);
-	// z-index: 99999;
-	// display: none;
-
-
-
-	// .collection-filter-list-wrapper {
-	// 	.collection-filter-list {
-	// 		.collection-filter-group {
-	// 			display: none;
-	// 			padding: 0 12px;
-	// 			overflow-y: auto;
-	// 			max-height: calc(56vh - 56px - 48px);
-	// 		}
-	// 		.collection-filter-item {
-	// 			padding: 18px 28px 14px;
-	// 			border-top: 1px solid #E5E5E5;
-	// 			label {
-	// 				color: #000;
-	// 				font-weight: 500;
-	// 				font-size: 14px;
-	// 				line-height: 1.5;
-	// 				text-decoration: none;
-	// 			}
-	// 			&:hover {
-	// 				.collection-filter-checkbox {
-	// 					border: 6px solid #000;
-	// 					transform: scaleX(1) scaleY(1);
-	// 				}
-	// 			}
-	// 			.collection-filter-checkbox {
-	// 				&:checked {
-	// 					border: 6px solid #000;
-	// 					transform: scaleX(1) scaleY(1);
-	// 					// & + label {
-	// 					// 	text-decoration: none;
-	// 					// }
-	// 				}
-	// 			}
-	// 		}
-	// 		.collection-filter-checkbox {
-	// 			background: #FFF;
-	// 			border: 1px solid #000;
-	// 			height: 20px;
-	// 			width: 20px;
-	// 		}
-	// 	}
-	// 	.close-js-menu {
-	// 		display: none;
-	// 	}
-	// 	&.active {
-	// 		position: fixed;
-	// 		top: 0;
-	// 		bottom: 0;
-	// 		left: 0;
-	// 		right: 0;
-	// 		// button.filter-apply {
-	// 		// 	display: block;
-	// 		// 	position: static;
-
-	// 		// 	margin: 0;
-	// 		// 	background: #22425C;
-	// 		// 	border: 0;
-	// 		// 	color: #fff;
-	// 		// 	font-size: 14px;
-	// 		// 	line-height: 48px;
-	// 		// 	width: 100%;
-	// 		// }
-	// 		// .filter-bar__form-lists {
-	// 			// .collection-filter-title {
-	// 			// 	i {
-	// 			// 		display: none;
-	// 			// 	}
-	// 			// }
-	// 		// }
-	// 		.collection-filter-list{
-	// 			top: auto !important;
-	// 			bottom: 0;
-	// 			padding: 0;
-	// 			max-height: 56vh;
-	// 			display: flex;
-	// 			position: absolute;
-	// 			bottom: 0;
-	// 			z-index: 99999;
-	// 			margin: 0;
-	// 			opacity: 1;
-	// 			visibility: visible;
-	// 			left: 0;
-	// 			right: 0;
-	// 			height: 56vh;
-	// 			background: #ffffff;
-	// 			border-top-left-radius: 16px;
-	// 			border-top-right-radius: 16px;
-	// 			.collection-filter-group{
-	// 				display: block;
-	// 			}
-	// 			.collection-filter-title {
-	// 				font-size: 14px;
-	// 				line-height: 1.4;
-	// 				.fa-angle-down {
-	// 					font-size: 30px;
-	// 					transform: rotate(90deg);
-	// 					position: absolute;
-	// 					top: 13px;
-	// 					left: 18px;
-	// 				}
-	// 			}
-	// 		}
-	// 		.filter-title-wrapper {
-	// 			display: flex;
-	// 			justify-content: space-between;
-	// 			padding: 18px 15px 18px 60px;
-	// 			border: 0;
-	// 		}
-	// 		.close-js-menu {
-	// 			display: block;
-	// 			position: relative;
-	// 			width: 20px;
-	// 			height: 20px;
-	// 			&:before, 
-	// 			&:after {
-	// 				content: '';
-	// 				position: absolute;
-	// 				left: 8px;
-	// 				height: 100%;
-	// 				width: 2px;
-	// 				background-color: #000;
-	// 			}
-	// 			&:before {
-	// 				transform: rotate(45deg);
-	// 			}
-	// 			&:after {
-	// 				transform: rotate(-45deg);
-	// 			}
-	// 		}
-	// 	}
-	// 	// .btn_clone-wrapper {
-	// 	// 	position: absolute;
-	// 	// 	width: 100%;
-	// 	// 	left: 0;
-	// 	// 	bottom: 0;
-	// 	// }
-	// }
 	&.active{
 		display: block;
 		.filter-bar__form.filter-bar__toggle{
@@ -287,10 +139,12 @@
 		padding: 0 12px;
 		overflow-y: auto;
 		// height: calc(56vh - 55px - 48px);
-
 		
 		&.filter-open {
 			top: -55px;
+			height: calc( 56vh - 55px );
+			z-index: 9;
+			overflow: hidden;
 		}
 		.collection-filter-list {
 			margin: 0;
@@ -298,10 +152,18 @@
 			&:first-child {
 				border-top: 1px solid #e8e8e8;
 			}
+
+			.collection-filter-group {
+				position: relative;
+				height: calc( 56vh - 55px - 48px);
+				overflow-y: auto !important;
+			}
+
 			&.open {
 				position: absolute;
 				top: 0;
 				left: 0;
+				bottom: 0;
 				background: #fff;
 				padding: 0 14px;
 				z-index: 1;
@@ -373,12 +235,12 @@
 	}
 }
 
-// .collection-mobile__container .filter-bar__form--header
 .collection-mobile__filter, 
 .collection-mobile__sort {
 	&.active {
 		padding: 0;
-		height: 56vh;
+		// height: 56vh;
+		height: auto;
 		top: auto !important;
 		bottom: 0;
 		border-top-left-radius: 16px;
@@ -500,6 +362,9 @@
 			width: 13px;
 			height: 7px;
 			background-repeat: no-repeat;
+			@media screen and (max-width: 370px) {
+				right: 35px;
+			}
 		}
 	}
 	#collectionMobileButtonFilter {
@@ -515,6 +380,9 @@
 			width: 13px;
 			height: 7px;
 			background-repeat: no-repeat;
+			@media screen and (max-width: 370px) {
+				right: 28px;
+			}
 		}
 		&:after {
 			content: '';
@@ -586,4 +454,8 @@
 			}
 		}
 	}	
+}
+
+.filter-bar {
+	border: 0;
 }
