@@ -452,6 +452,9 @@ function readyjQueryinit() {
 			.hide-offer_holiday-poster .subscribe__label .holiday-poster_subscribe {
 				display: none !important;
 			}
+			.notification-bar_timer .notification-bar.notification-bar_visible {
+				display: none;
+			}
 			@media screen and (min-width: 1681px) {
 				.timer-poster_subscribe {
 					margin: 30px auto 0;
