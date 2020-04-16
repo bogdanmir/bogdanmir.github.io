@@ -107,6 +107,7 @@
  			}
  		}
  	})
+ 	
  // 	clone.find('[id="collectionMobileButtonSort"]').addClass('btn-js-Sort');
  // 	clone.find('[id="collectionMobileButtonFilter"]').addClass('btn-js-Filter');
  // 	clone.find('[id]').attr('id','');
