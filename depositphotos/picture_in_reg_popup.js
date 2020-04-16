@@ -238,8 +238,6 @@ function readyjQueryinit() {
 					margin-right: -16px;
 					padding-right: 16px;
 				}
-
-
 				.modal_signup_image .modal__body_signup .signup-user_modal .signup-user__right {
 					padding-top: 140px;
 				}
@@ -248,7 +246,6 @@ function readyjQueryinit() {
 				.modal_signup_image .signup-user_modal .signup-user__advantages {
 					display: none;
 				}
-
 				.modal_signup_image .img_wrapp {
 					border-radius: 16px;
 					position: relative;
@@ -259,7 +256,6 @@ function readyjQueryinit() {
 				.modal_signup_image .signup-user_modal .signup-user__left .view-file-box__image {
 					border-radius: 16px;
 					cursor: auto;
-
 					position: absolute;
 					top: 0;
 					left: 0;
@@ -270,11 +266,9 @@ function readyjQueryinit() {
 				.modal_signup_image .signup-user__back {
 					left: -420px;
 				}
-
 				.modal_signup_image .img_wrapp .file-container__image {
 					height: 380px;
 				}
-
 				@media screen and (min-width: 541px) {
 					.modal_signup_image .modal__body_signup .signup-user_modal .signup-user__right {
 						padding-left: 50px;
