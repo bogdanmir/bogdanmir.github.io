@@ -14,7 +14,7 @@ function initjQuery(callback) {
 	};
   }
   // script.src = '//code.jquery.com/jquery.min.js';
-  
+
   script.src = '//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js';
   document.getElementsByTagName( "head" )[0].appendChild( script );
 }
@@ -152,10 +152,27 @@ function readyjQueryinit() {
 	if(check_modal_offer == null){
 		localStorage.setItem('modal_offer_active', false);
 	}
+
+	$(document).on('mouseout',function(event){
+		if(typeof event.relatedTarget == null && navigator.userAgent.toLowerCase().search('Macintosh') > -1 && navigator.userAgent.toLowerCase().search('Firefox') == -1){
+			if( window.location.href.indexOf("/subscribe/image.html") > -1 && $('.modal_offer_container').length < 1 && localStorage.getItem('modal_offer_active') == "false") {
+				localStorage.setItem('modal_offer_active', true);
+				console.log('3')
+				$('html').append($outhtml);
+				var ct_started = localStorage.getItem('ct_started');
+				if(ct_started != 'true'){
+					localStorage.setItem('ct_started','true');
+					Counterinit();
+				}
+			} else {
+				console.log('4')
+			}
+		}
+	});
 	document.addEventListener("mouseleave", function( event ) {
 		if( window.location.href.indexOf("/subscribe/image.html") > -1 && $('.modal_offer_container').length < 1 && localStorage.getItem('modal_offer_active') == "false") {
 			localStorage.setItem('modal_offer_active', true);
-			// console.log('3')
+			console.log('3')
 			$('html').append($outhtml);
 			var ct_started = localStorage.getItem('ct_started');
 			if(ct_started != 'true'){
@@ -163,7 +180,7 @@ function readyjQueryinit() {
 				Counterinit();
 			}
 		} else {
-			// console.log('4')
+			console.log('4')
 		}
 	});
 	function display_counnter(){
