@@ -153,8 +153,42 @@ function readyjQueryinit() {
 		localStorage.setItem('modal_offer_active', false);
 	}
 
-	$(document).on('mouseout',function(event){
-		if(typeof event.relatedTarget == null && navigator.userAgent.toLowerCase().search('Macintosh') > -1 && navigator.userAgent.toLowerCase().search('Firefox') == -1){
+	// $(document).on('mouseout',function(event){
+	// 	if(typeof event.relatedTarget == null && navigator.userAgent.toLowerCase().search('Macintosh') > -1 && navigator.userAgent.toLowerCase().search('Firefox') == 0){
+	// 		console.log('Safari test')
+	// 		if( window.location.href.indexOf("/subscribe/image.html") > -1 && $('.modal_offer_container').length < 1 && localStorage.getItem('modal_offer_active') == "false") {
+	// 			localStorage.setItem('modal_offer_active', true);
+	// 			console.log('3')
+	// 			$('html').append($outhtml);
+	// 			var ct_started = localStorage.getItem('ct_started');
+	// 			if(ct_started != 'true'){
+	// 				localStorage.setItem('ct_started','true');
+	// 				Counterinit();
+	// 			}
+	// 		} else {
+	// 			console.log('4')
+	// 		}
+	// 	} else {
+	// 		console.log('Not Safari test')
+	// 	}
+	// });
+	// document.addEventListener("mouseleave", function( event ) {
+	// 	if( window.location.href.indexOf("/subscribe/image.html") > -1 && $('.modal_offer_container').length < 1 && localStorage.getItem('modal_offer_active') == "false") {
+	// 		localStorage.setItem('modal_offer_active', true);
+	// 		console.log('3')
+	// 		$('html').append($outhtml);
+	// 		var ct_started = localStorage.getItem('ct_started');
+	// 		if(ct_started != 'true'){
+	// 			localStorage.setItem('ct_started','true');
+	// 			Counterinit();
+	// 		}
+	// 	} else {
+	// 		console.log('4')
+	// 	}
+	// });
+
+	$(window).mouseleave(function(event) {
+		if (event.toElement == null) {
 			if( window.location.href.indexOf("/subscribe/image.html") > -1 && $('.modal_offer_container').length < 1 && localStorage.getItem('modal_offer_active') == "false") {
 				localStorage.setItem('modal_offer_active', true);
 				console.log('3')
@@ -168,21 +202,8 @@ function readyjQueryinit() {
 				console.log('4')
 			}
 		}
-	});
-	document.addEventListener("mouseleave", function( event ) {
-		if( window.location.href.indexOf("/subscribe/image.html") > -1 && $('.modal_offer_container').length < 1 && localStorage.getItem('modal_offer_active') == "false") {
-			localStorage.setItem('modal_offer_active', true);
-			console.log('3')
-			$('html').append($outhtml);
-			var ct_started = localStorage.getItem('ct_started');
-			if(ct_started != 'true'){
-				localStorage.setItem('ct_started','true');
-				Counterinit();
-			}
-		} else {
-			console.log('4')
-		}
-	});
+	})
+
 	function display_counnter(){
 		var ct_started = localStorage.getItem('ct_started');
 	  	var ct_out     = localStorage.getItem('ct_out');
