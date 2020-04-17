@@ -159,7 +159,7 @@
  			dataLayer.push({
  				'event': 'event-to-ga',
  				'eventCategory': 'Exp - New filters on product listing',
- 				'eventAction': 'click on Filter by',
+ 				'eventAction': 'click on filter by',
  				'eventLabel': 'Clear all'
  			});
  			event_log();
@@ -175,7 +175,7 @@
  		dataLayer.push({
  			'event': 'event-to-ga',
  			'eventCategory': 'Exp - New filters on product listing',
- 			'eventAction': 'click on Filter by',
+ 			'eventAction': 'click on filter by',
  			'eventLabel': title.toLowerCase()
  		});
  		event_log();
@@ -215,7 +215,7 @@
 	 		dataLayer.push({
 	 			'event': 'event-to-ga',
 	 			'eventCategory': 'Exp - New filters on product listing',
-	 			'eventAction': 'click on Sort by',
+	 			'eventAction': 'click on sort by',
 	 			'eventLabel': title.toLowerCase()
 	 		});
  		}
@@ -231,7 +231,7 @@
  		dataLayer.push({
  			'event': 'event-to-ga',
  			'eventCategory': 'Exp - New filters on product listing',
- 			'eventAction': 'click on Sort by',
+ 			'eventAction': 'click on sort by',
  			'eventLabel': 'CTA'
  		});
  		event_log();
@@ -245,7 +245,7 @@
  			dataLayer.push({
  				'event': 'event-to-ga',
  				'eventCategory': 'Exp - New filters on product listing',
- 				'eventAction': 'click on Filter by',
+ 				'eventAction': 'click on filter by',
  				'eventLabel': 'CTA'
  			});
  			event_log();
