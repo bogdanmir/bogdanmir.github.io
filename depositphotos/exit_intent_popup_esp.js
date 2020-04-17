@@ -13,7 +13,8 @@ function initjQuery(callback) {
 		callback();
 	};
   }
-  script.src = '//code.jquery.com/jquery.min.js';
+  // script.src = '//code.jquery.com/jquery.min.js';
+  script.src = '//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js';
   document.getElementsByTagName( "head" )[0].appendChild( script );
 }
 if (!window.jQuery) {
