@@ -2,13 +2,28 @@
  	try{
  		hj('trigger', 'new_filters');
  	}catch(e){}
+ 	function event_log(){
+ 		console.log(window.dataLayer[window.dataLayer.length - 1]);
+ 	}
+ 	$('body').on('click', '.collection-mobile__container .collection-filter-list.open .collection-filter-group .collection-filter-item', function(event) {
+ 		var title = $(this).closest('.collection-filter-list.open').find('.collection-filter-title').text();
+ 		var label = $(this).find('label').text();
+ 		window.dataLayer = window.dataLayer || [];
+ 		dataLayer.push({
+ 			'event': 'event-to-ga',
+ 			'eventCategory': 'Exp - New filters on product listing',
+ 			'eventAction': 'click on '+title,
+ 			'eventLabel': label
+ 		});
+ 		event_log();
+ 	});
  	window.dataLayer = window.dataLayer || [];
  	dataLayer.push({
  		'event': 'event-to-ga',
  		'eventCategory': 'Exp - New filters on product listing',
  		'eventAction': 'loaded'
  	});
- 	console.log(window.dataLayer[window.dataLayer.length - 1]);
+ 	event_log();
  	var tags = [
  	{
  		'type' : 'filter',
@@ -56,15 +71,6 @@
  			$('.collection-mobile__container-js [style]').attr('style','');
  		}
  	}
- 	function rewrite_btn_filter(){
- 		// var btn_clone = $('#collection-mobile__filter .filter-bar__form-buttons .filter-apply').clone();
- 		// btn_clone.attr('id','');
- 		// if($('.collection-mobile__container-js .btn_clone-wrapper').length > 0){
- 		// 	$('.collection-mobile__container-js .btn_clone-wrapper').remove();
- 		// }
- 		// $('.collection-mobile__container-js .collection-filter-list-wrapper .collection-filter-list').append('<div class="btn_clone-wrapper"></div>');
- 		// $('.collection-mobile__container-js .collection-filter-list-wrapper .collection-filter-list .btn_clone-wrapper').append(btn_clone);
- 	}
  	$('.site-header__main.bar.bar-fixed-on.bar-on').append('<div class="tags-bar-wraper"><ul class="tags-bar"></ul></div>');
  	$('.filter-bar__options').appendTo('.site-header__main.bar.bar-fixed-on.bar-on');
  	$('.filter-bar__options').find('.collection-mobile__container').appendTo('body');
@@ -78,6 +84,14 @@
  	$('body').find('.filter-bar__form--header .mobile-close-filter').html('<span>Filters</span> <a href="#" class="mobile-close-icon"><i class="close"></i></a>');
  	$('body').find('.filter-bar__form--header .mobile-close-filter').removeClass('mobile-close-filter').addClass('mobile-close-filter-head');
  	$('body').on('click','.apply-triger-filter',function(index, el) {
+ 		var title = $('body').find('.collection-mobile__container .filter-bar__form-lists .collection-filter-list.open .collection-filter-title').text();
+ 		window.dataLayer = window.dataLayer || [];
+ 		dataLayer.push({
+ 			'event': 'event-to-ga',
+ 			'eventCategory': 'Exp - New filters on product listing',
+ 			'eventAction': 'click on '+title,
+ 			'eventLabel': 'show'
+ 		});
  		if(!$(this).hasClass('disabled')){
  			$('body').find('.collection-mobile__container #mobile-filter-apply').click();
  		}
@@ -139,6 +153,18 @@
  			}
  		}
  	})
+ 	$('body').on('click', '#mobile-filter-clear', function(event) {
+ 			if($(this).hasClass('active-filer')){
+ 				window.dataLayer = window.dataLayer || [];
+ 				dataLayer.push({
+ 					'event': 'event-to-ga',
+ 					'eventCategory': 'Exp - New filters on product listing',
+ 					'eventAction': 'click on Filter by',
+ 					'eventLabel': 'Clear all'
+ 				});
+ 				event_log();
+ 			}
+ 	});
  	$('body').on('click', '.collection-mobile__container .filter-bar__form-lists .collection-filter-title', function(event) {
  		$('body').find('.collection-mobile__container .filter-bar__form-lists').addClass('filter-open');
  	});
@@ -179,7 +205,7 @@
  			'eventAction': 'click on Sort by',
  			'eventLabel': title
  		});
- 		console.log(window.dataLayer[window.dataLayer.length - 1]);
+ 		event_log();
  		$('body').removeClass('mobFilterOpen');
  	});
  	$('body').on('click', '#collection-mobile__sort .mobile-close-filter', function(event) {
@@ -193,23 +219,23 @@
  			'eventAction': 'click on Sort by',
  			'eventLabel': 'CTA'
  		});
- 		console.log(window.dataLayer[window.dataLayer.length - 1]);
+ 		event_log();
  		$('body').addClass('mobFilterOpen');
  		event.preventDefault();
  	});
  	$('body').on('click', '#collectionMobileButtonFilter', function(event) {
- 		window.dataLayer = window.dataLayer || [];
- 		dataLayer.push({
- 			'event': 'event-to-ga',
- 			'eventCategory': 'Exp - New filters on product listing',
- 			'eventAction': 'click on Filter by',
- 			'eventLabel': 'CTA'
- 		});
- 		console.log(window.dataLayer[window.dataLayer.length - 1]);
+ 		var click_trake_disable = $(this).data('click_trake_disable');
+ 		if(!click_trake_disable){
+ 			window.dataLayer = window.dataLayer || [];
+ 			dataLayer.push({
+ 				'event': 'event-to-ga',
+ 				'eventCategory': 'Exp - New filters on product listing',
+ 				'eventAction': 'click on Filter by',
+ 				'eventLabel': 'CTA'
+ 			});
+ 			event_log();
+ 		}
  		event.preventDefault();
- 	});
- 	$('body').on('click', '.collection-filter-list.open .collection-filter-group .collection-filter-item', function(event) {
- 		
  	});
  	$('body').on('click', '.tags-bar .tag-element', function(event) {
  		var title = $(this).html();
@@ -220,10 +246,11 @@
  			'eventAction': 'click on '+title,
  			'eventLabel': 'CTA tags'
  		});
- 		console.log(window.dataLayer[window.dataLayer.length - 1]);
+ 		event_log();
  		var type = $(this).attr('data-type');
  		if(type == 'filter'){
  			var group = $(this).attr('data-group-elements');
+ 			$('body').find('.filter-bar__options #collectionMobileButtonFilter').data('click_trake_disable',true);
  			$('body').find('.filter-bar__options #collectionMobileButtonFilter').click();
  			$('body').find('.collection-mobile__container .filter-bar__form-lists .collection-filter-list').removeClass('open');
  			$('body').find('.collection-mobile__container .filter-bar__form-lists').removeClass('filter-open');
@@ -245,6 +272,7 @@
  			var group = $(this).attr('data-group-elements');
  			console.log(group);
  			$('body').find('.collection-sort-item[data-sort="'+group+'"]').click();
+ 			console.log('group click');
  		}
  		event.preventDefault();
  	}); 
