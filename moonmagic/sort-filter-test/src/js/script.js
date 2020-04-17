@@ -113,6 +113,11 @@
  				$('body').find('.collection-mobile__container .apply-triger-filter').html(html);
  			}
  		}
+ 		if($('.filter-bar__form.filter-bar__toggle input:checked').length > 0){
+ 			$('body').find('#mobile-filter-clear').addClass('active-filer');
+ 		}else{
+ 			$('body').find('#mobile-filter-clear').removeClass('active-filer');
+ 		}
  	})
  	$.each(tags,function(ind,el){
  		if(el.type == 'filter'){
@@ -151,10 +156,10 @@
  		$('body').find('.collection-mobile__container .collection-mobile__filter').removeClass('active');
  		return false;
  	});
- 	$('body').on('click', '.collection-mobile__container .collection-filter-list.open .collection-filter-title', function(event) {
- 		console.log('Hello');
- 		return false;
- 	});
+ 	// $('body').on('click', '.collection-mobile__container .collection-filter-list.open .collection-filter-title', function(event) {
+ 	// 	console.log('Hello');
+ 	// 	return false;
+ 	// });
  	$('body').on('click', '.mobile-btn-back-filter', function(event) {
  		$('body').find('.collection-mobile__container .filter-bar__form-lists .collection-filter-list').removeClass('open');
  		$('body').find('.collection-mobile__container .filter-bar__form-lists').removeClass('filter-open');
@@ -175,6 +180,10 @@
  			'eventLabel': title
  		});
  		console.log(window.dataLayer[window.dataLayer.length - 1]);
+ 		$('body').removeClass('mobFilterOpen');
+ 	});
+ 	$('body').on('click', '#collection-mobile__sort .mobile-close-filter', function(event) {
+ 		$('body').removeClass('mobFilterOpen');
  	});
  	$('body').on('click', '#collectionMobileButtonSort', function(event) {
  		window.dataLayer = window.dataLayer || [];
@@ -185,6 +194,8 @@
  			'eventLabel': 'CTA'
  		});
  		console.log(window.dataLayer[window.dataLayer.length - 1]);
+ 		$('body').addClass('mobFilterOpen');
+ 		event.preventDefault();
  	});
  	$('body').on('click', '#collectionMobileButtonFilter', function(event) {
  		window.dataLayer = window.dataLayer || [];
@@ -195,6 +206,7 @@
  			'eventLabel': 'CTA'
  		});
  		console.log(window.dataLayer[window.dataLayer.length - 1]);
+ 		event.preventDefault();
  	});
  	$('body').on('click', '.collection-filter-list.open .collection-filter-group .collection-filter-item', function(event) {
  		
