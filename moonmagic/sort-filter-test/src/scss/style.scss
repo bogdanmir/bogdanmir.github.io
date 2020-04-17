@@ -98,19 +98,19 @@
 		padding: 18px 20px;
 		i {
 			float: right;
-		    font-size: 14px;
-		    line-height: 11px;
-		    position: relative;
-		    top: -10px;
-		    right: 20px;
+			font-size: 14px;
+			line-height: 11px;
+			position: relative;
+			top: -10px;
+			right: 20px;
 			&:before,
 			&:after {
 				content: "";
-			    position: absolute;
-			    top: 15px;
-			    left: 3px;
-			    height: 2px;
-			    border-radius: 2px;
+				position: absolute;
+				top: 15px;
+				left: 3px;
+				height: 2px;
+				border-radius: 2px;
 				width: 20px;
 				background-color: #000;
 			}
@@ -253,6 +253,16 @@
 	.site-header {
 		z-index: 980 !important;
 	}
+	main#MainContent {
+		position: relative;
+		z-index: 1;
+	}
+	.swiper-slide{
+		&,
+		& *{
+			z-index: 9 !important;
+		}
+	}
 	.collection-mobile__container {
 		// position: fixed;
 		// top: 0;
@@ -275,19 +285,19 @@
 		}
 	}
 	.apply-triger-filter {
-			margin: 0;
-			background: #22425C;
-			border: 0;
-			color: #fff;
-			font-size: 14px;
-			text-transform: uppercase;
-			line-height: 48px;
-			text-align: center;
-			position: absolute;
-			left: 0;
-			bottom: 0;
-			width: 100%;
-			display: none;
+		margin: 0;
+		background: #22425C;
+		border: 0;
+		color: #fff;
+		font-size: 14px;
+		text-transform: uppercase;
+		line-height: 48px;
+		text-align: center;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		display: none;
 		&.show-btn {
 			display: block;
 			&.disabled {
@@ -308,10 +318,10 @@
 
 .mobile-close-filter-head {
 	font-size: 14px;
-    font-weight: 600;
-    line-height: 1.4;
-    padding: 18px 20px;
-    text-transform: uppercase;
+	font-weight: 600;
+	line-height: 1.4;
+	padding: 18px 20px;
+	text-transform: uppercase;
 }
 .mobile-close-icon {
 	width: 20px;
@@ -320,7 +330,7 @@
 	float: right;
 	position: relative;
 	z-index: 99;
-    margin-top: 4px;
+	margin-top: 4px;
 }
 
 
@@ -330,8 +340,8 @@
 	width: 20px;
 	height: 20px;
 	position: absolute;
-    top: 17px;
-    right: 16px;
+	top: 17px;
+	right: 16px;
 	&:before, 
 	&:after {
 		content: '';
@@ -402,12 +412,12 @@
 	&.active {
 		&+.collection-mobile__container-bg {
 			position: fixed;
-		    top: 0;
-		    left: 0;
-		    right: 0;
-		    bottom: 0;
-		    background: rgba(0,0,0,.5);
-		    z-index: 999;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: rgba(0,0,0,.5);
+			z-index: 999;
 		}
 	}
 }
@@ -416,12 +426,12 @@
 		&+.collection-mobile__filter {
 			&+.collection-mobile__container-bg {
 				position: fixed;
-			    top: 0;
-			    left: 0;
-			    right: 0;
-			    bottom: 0;
-			    background: rgba(0,0,0,.5);
-			    z-index: 999;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background: rgba(0,0,0,.5);
+				z-index: 999;
 			}
 		}		
 	}
@@ -461,3 +471,4 @@
 .filter-bar {
 	border: 0;
 }
+
