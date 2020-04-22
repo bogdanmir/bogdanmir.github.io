@@ -237,7 +237,6 @@ function readyjQueryinit() {
 								</div>
 								<div>
 									<h3 class="signup_modal_title">Oferta limitada!</h3>
-									<div class="body_counter">Descarga 10 imágenes <span class="timer_describe_color">GRATIS</span></div>
 								</div>
 							</div>
 							<div class="btn_counter">
@@ -442,6 +441,7 @@ function readyjQueryinit() {
 			}
 			.timer-poster_subscribe .title_counter {
 				display: flex;
+				align-items: center;
 			}
 			.timer-poster_subscribe .modal_progressbar {
 				background: #fff;
