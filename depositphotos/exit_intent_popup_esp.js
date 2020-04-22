@@ -141,7 +141,7 @@ function readyjQueryinit() {
 	$outhtml +=							'<div class="modal_describe"> <p>Descarga esta imagen</p> <p>y 9 más <span class="modal_describe_color">GRATIS</span></p></div>'
 	$outhtml +=						'</div>';
 	$outhtml +=						'<div class="btn_counter"><a href="https://depositphotos.com/subscribe/trial.html?id=10&product=membership" class="modal_btn button-red">Descargar gratis</a></div>'
-	$outhtml +=						'<p class="modal_bottom_describe"> Prueba gratuita de 7 días </p>'
+	$outhtml +=						'<p class="modal_bottom_describe"> Prueba de 7 días </p>'
 	$outhtml +=					'</div>';
 	$outhtml +=				'</div>';
 	$outhtml += 		'</div>';
