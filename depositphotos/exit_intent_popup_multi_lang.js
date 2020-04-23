@@ -377,14 +377,17 @@ function readyjQueryinit() {
 
 				if( window.location.href.indexOf("ua.depositphotos.com") > -1) {
 					$('.wrapper').append('<div class="notification-bar__content_timer">' + $labelOuthtmlUa + '</div>');
+					console.log('labelOuthtmlUa')
 				}
 
 				if( window.location.href.indexOf("sp.depositphotos.com") > -1 || window.location.href.indexOf("mx.depositphotos.com") > -1) {
 					$('.wrapper').append('<div class="notification-bar__content_timer">' + $labelOuthtmlSp + '</div>');
+					console.log('labelOuthtmlSp')
 				}
 
 				if( window.location.href.indexOf("ru.depositphotos.com") > -1) {
 					$('.wrapper').append('<div class="notification-bar__content_timer">' + $labelOuthtmlRu + '</div>');
+					console.log('labelOuthtmlRu')
 				}
 
 
