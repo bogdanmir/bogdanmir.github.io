@@ -27,6 +27,14 @@ if (!window.jQuery) {
 function readyjQueryinit() {
 	jQuery(function($) {
 
+	window.dataLayer = window.dataLayer || [];
+	window.dataLayer.push({
+	 'event': 'gaEv',
+	 'eventCategory': 'Exp - exit-intent popup',
+	 'eventAction': 'loaded',
+	 'eventLabel': ''
+	});
+
 	function CountdownTimer(elm, start_date, finish_date) {
 	    this.initialize.apply(this, arguments);
 	}
@@ -205,6 +213,19 @@ function readyjQueryinit() {
 	$(window).mouseleave(function(event) {
 		if (event.toElement == null) {
 			if( (window.location.href.indexOf("/subscribe/image.html") > -1 || window.location.href.indexOf("/subscribe.html") > -1) && $('.modal_offer_container').length < 1 && localStorage.getItem('modal_offer_active') == "false") {
+				
+				try {
+					hj('trigger', 'exit-intent-pop-up');
+				}
+				catch(e) {}
+				window.dataLayer = window.dataLayer || [];
+				window.dataLayer.push({
+				 'event': 'gaEv',
+				 'eventCategory': 'Exp - exit-intent popup',
+				 'eventAction': 'activated',
+				 'eventLabel': ''
+				});
+
 				localStorage.setItem('modal_offer_active', true);
 				// console.log('3')
 				// $('html').append($outhtml);
@@ -251,6 +272,14 @@ function readyjQueryinit() {
 
 		localStorage.setItem('ct_started','true');
 		display_counnter();
+
+		window.dataLayer = window.dataLayer || [];
+		window.dataLayer.push({
+		 'event': 'gaEv',
+		 'eventCategory': 'Exp - exit-intent popup',
+		 'eventAction': 'Click X to close popup',
+		 'eventLabel': ''
+		});
 	});
 	$(document).on('click','.modal_offer_overlay', function(){
 		// console.log('2')
@@ -259,7 +288,27 @@ function readyjQueryinit() {
 
 		localStorage.setItem('ct_started','true');
 		display_counnter();
+
+		window.dataLayer = window.dataLayer || [];
+		window.dataLayer.push({
+		 'event': 'gaEv',
+		 'eventCategory': 'Exp - exit-intent popup',
+		 'eventAction': 'Click on background to close popup',
+		 'eventLabel': ''
+		});
 	});
+
+
+	$(document).on('click','.modal_offer .modal_btn', function(){
+		window.dataLayer = window.dataLayer || [];
+		window.dataLayer.push({
+		 'event': 'gaEv',
+		 'eventCategory': 'Exp - exit-intent popup',
+		 'eventAction': 'Click on Download this image',
+		 'eventLabel': ''
+		});
+	});
+
 
 	var	$labelOuthtmlUa = `<div class="timer-poster_subscribe">
 							<div class="title_counter">
