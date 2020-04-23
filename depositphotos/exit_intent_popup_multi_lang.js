@@ -71,7 +71,7 @@ function readyjQueryinit() {
 
 				localStorage.setItem('counter_finish','true');
 			 
-				if( window.location.href.indexOf("/subscribe/image.html") > -1 ) {
+				if( window.location.href.indexOf("/subscribe/image.html") > -1 ||  window.location.href.indexOf("/subscribe.html") > -1) {
 					//stop interval
 					myStopFunction();
 
@@ -204,29 +204,24 @@ function readyjQueryinit() {
 
 	$(window).mouseleave(function(event) {
 		if (event.toElement == null) {
-			if( window.location.href.indexOf("/subscribe/image.html") > -1 && $('.modal_offer_container').length < 1 && localStorage.getItem('modal_offer_active') == "false") {
+			if( (window.location.href.indexOf("/subscribe/image.html") > -1 || window.location.href.indexOf("/subscribe.html") > -1) && $('.modal_offer_container').length < 1 && localStorage.getItem('modal_offer_active') == "false") {
 				localStorage.setItem('modal_offer_active', true);
 				console.log('3')
 				// $('html').append($outhtml);
 
 				if( window.location.href.indexOf("ua.depositphotos.com") > -1) {
 					$('html').append($outhtmlUa);
-
-					console.log('outhtmlUa')
+					console.log('outhtmlUkraine')
 				}
 
 				if( window.location.href.indexOf("sp.depositphotos.com") > -1 || window.location.href.indexOf("mx.depositphotos.com") > -1) {
 					$('html').append($outhtmlSp);
-
-					console.log('outhtmlSp')
-
+					console.log('outhtmlSpain')
 				}
 
 				if( window.location.href.indexOf("ru.depositphotos.com") > -1) {
 					$('html').append($outhtmlRu);
-
 					console.log('outhtmlRu')
-
 				}
 
 				var ct_started = localStorage.getItem('ct_started');
@@ -325,7 +320,7 @@ function readyjQueryinit() {
 					</div>`;
 
 		function getTimeLabelPlans(){
-			if( window.location.href.indexOf("/subscribe/image.html") > -1 ) {
+			if( window.location.href.indexOf("/subscribe/image.html") > -1 || window.location.href.indexOf("/subscribe.html") > -1) {
 				if( $('html').find(".timer-poster_subscribe").length < 1) {
 					$('body').addClass('hide-offer_holiday-poster');
 					// $('.subscribe.subscribe_mixed').prepend($labelOuthtml);
@@ -350,7 +345,7 @@ function readyjQueryinit() {
 
 		window.interval = null;
 		function getTimeLabelPlans_Reload(){
-			if( window.location.href.indexOf("/subscribe/image.html") > -1 ) {
+			if( window.location.href.indexOf("/subscribe/image.html") > -1 || window.location.href.indexOf("/subscribe.html") > -1) {
 				if( $('html').find(".timer-poster_subscribe").length < 1) {
 					$('body').addClass('hide-offer_holiday-poster');
 					// $('.subscribe.subscribe_mixed').prepend($labelOuthtml);
