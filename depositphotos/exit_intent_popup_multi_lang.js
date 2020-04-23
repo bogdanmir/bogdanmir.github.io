@@ -206,7 +206,7 @@ function readyjQueryinit() {
 		if (event.toElement == null) {
 			if( (window.location.href.indexOf("/subscribe/image.html") > -1 || window.location.href.indexOf("/subscribe.html") > -1) && $('.modal_offer_container').length < 1 && localStorage.getItem('modal_offer_active') == "false") {
 				localStorage.setItem('modal_offer_active', true);
-				console.log('3')
+				// console.log('3')
 				// $('html').append($outhtml);
 
 				if( window.location.href.indexOf("ua.depositphotos.com") > -1) {
@@ -230,7 +230,7 @@ function readyjQueryinit() {
 					Counterinit();
 				}
 			} else {
-				console.log('4')
+				// console.log('4')
 			}
 		}
 	})
@@ -306,7 +306,6 @@ function readyjQueryinit() {
 							</div>
 							<div>
 								<h3 class="signup_modal_title">Ограниченное предложение!</h3>
-								<div class="body_counter">Скачайте 10 изображений <span class="timer_describe_color">БЕСПЛАТНО</span></div>
 							</div>
 						</div>
 						<div class="btn_counter">
@@ -420,14 +419,14 @@ function readyjQueryinit() {
 			console.log('modal_offer_active on PDP == true')
 
 			if( $('body').find('.file-view-page_image-huge').length > 0 ) {
-				console.log('->>> add banner on PDP');
+				console.log('add banner on PDP');
 				// put in onload
 				myStopFunction2();
 				window.interval2 = setInterval(getTimeLabelPdpListing_Reload);
 			}
 
 			if( $('body').find('.search-box__result').length > 0 ) {
-				console.log(' ->>> add banner on Listing')
+				console.log('add banner on Listing')
 				if( $('html').find(".timer-poster_subscribe").length < 1) {
 					// put in onload
 					myStopFunction3();
