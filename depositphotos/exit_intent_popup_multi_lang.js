@@ -467,7 +467,7 @@ function readyjQueryinit() {
 		if( modal_offer_active == "true" && ct_started == "true" && counter_finish != 'true') {
 			console.log('modal_offer_active on PDP == true')
 
-			if( $('body').find('.file-view-page_image-huge').length > 0 ) {
+			if( $('body').find('.file-view-page_image-huge').length > 0 || $('body').find('.file-view-page-upgrade_image').length > 0 ) {
 				console.log('add banner on PDP');
 				// put in onload
 				myStopFunction2();
