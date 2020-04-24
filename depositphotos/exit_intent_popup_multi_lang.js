@@ -27,14 +27,6 @@ if (!window.jQuery) {
 function readyjQueryinit() {
 	jQuery(function($) {
 
-	window.dataLayer = window.dataLayer || [];
-	window.dataLayer.push({
-	 'event': 'gaEv',
-	 'eventCategory': 'Exp - exit-intent popup',
-	 'eventAction': 'loaded',
-	 'eventLabel': ''
-	});
-
 	function CountdownTimer(elm, start_date, finish_date) {
 	    this.initialize.apply(this, arguments);
 	}
