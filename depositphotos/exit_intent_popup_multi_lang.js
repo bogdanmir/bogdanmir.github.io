@@ -301,6 +301,15 @@ function readyjQueryinit() {
 		});
 	});
 
+	$(document).on('click','.timer-poster_subscribe .timer_btn', function(){
+		window.dataLayer = window.dataLayer || [];
+		window.dataLayer.push({
+		 'event': 'gaEv',
+		 'eventCategory': 'Exp - exit-intent popup',
+		 'eventAction': 'Click on Banner Button',
+		 'eventLabel': ''
+		});
+	});
 
 	var	$labelOuthtmlUa = `<div class="timer-poster_subscribe">
 							<div class="title_counter">
