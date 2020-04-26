@@ -5,6 +5,11 @@
  	function event_log(){
  		console.log(window.dataLayer[window.dataLayer.length - 1]);
  	}
+ 	$(window).on('hashchange', function() {
+ 		if(location.hash == ""){
+ 			location.href = location.href.replace(new RegExp('#','g'),'');
+ 		}
+ 	});
  	$('body').on('click', '.collection-mobile__container .collection-filter-list.open .collection-filter-group .collection-filter-item', function(event) {
  		var title = $(this).closest('.collection-filter-list.open').find('.collection-filter-title').text();
  		var label = $(this).find('label').text();
