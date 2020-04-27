@@ -97,6 +97,12 @@
  			'eventAction': 'click on '+(title.toLowerCase()),
  			'eventLabel': 'show'
  		});
+	 	$('body').find('.collection-mobile__container .filter-bar__form-lists .collection-filter-list').removeClass('open');
+	 	$('body').find('.collection-mobile__container .filter-bar__form-lists .collection-filter-group').css({
+	 		'max-height' : '0px',
+	 		'overflow'   : 'hidden',
+	 		'transition' : '',
+	 	});
  		if(!$(this).hasClass('disabled')){
  			$('body').find('.collection-mobile__container #mobile-filter-apply').click();
  		}
@@ -310,4 +316,3 @@
  	});
  	is_res();
  }
-
