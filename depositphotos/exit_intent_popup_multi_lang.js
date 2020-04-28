@@ -55,7 +55,7 @@ function readyjQueryinit() {
 	            	var stroke_dasharray = $(".title_counter .modal_progressbar svg [stroke-dasharray]").attr('stroke-dasharray');
 					$(".title_counter .modal_progressbar svg [stroke-dasharray]").attr('stroke-dashoffset',Math.floor(stroke_dasharray - (stroke_dasharray*100/count_p)));
 	            }
-	        	timer += this.addZero(min) + '.' + this.addZero(sec);
+	        	timer += this.addZero(min) + ':' + this.addZero(sec);
 	        	this.elem.html(timer);
 
 				$(document).find(this.elem).html(timer);
@@ -131,7 +131,7 @@ function readyjQueryinit() {
 	$outhtmlUa +=						'<div class="title_counter">'
 	$outhtmlUa +=							'<h3 class="signup_modal_title">Разова акція!</h3>'
 	$outhtmlUa +=							'<div class="modal_progressbar">'
-	$outhtmlUa +=								'<svg width="54" height="54" viewBox="0 0 54 54"><circle cx="27" cy="27" r="25" fill="none" stroke="#eeeeee" stroke-width="4"></circle><circle cx="27" cy="27" r="25" fill="none" stroke="#e74c3c" stroke-width="4" stroke-dasharray="157.56" stroke-dashoffset="0"></circle></svg><div class="counter countdownTest"> 15.00 </div>'
+	$outhtmlUa +=								'<svg width="54" height="54" viewBox="0 0 54 54"><circle cx="27" cy="27" r="25" fill="none" stroke="#eeeeee" stroke-width="4"></circle><circle cx="27" cy="27" r="25" fill="none" stroke="#e74c3c" stroke-width="4" stroke-dasharray="157.56" stroke-dashoffset="0"></circle></svg><div class="counter countdownTest"> 15:00 </div>'
 	$outhtmlUa +=							'</div>'
 	$outhtmlUa +=						'</div>'
 	$outhtmlUa +=						'<div class="body_counter">'
@@ -156,7 +156,7 @@ function readyjQueryinit() {
 	$outhtmlSp +=						'<div class="title_counter">'
 	$outhtmlSp +=							'<h3 class="signup_modal_title">Oferta limitada!</h3>'
 	$outhtmlSp +=							'<div class="modal_progressbar">'
-	$outhtmlSp +=								'<svg width="54" height="54" viewBox="0 0 54 54"><circle cx="27" cy="27" r="25" fill="none" stroke="#eeeeee" stroke-width="4"></circle><circle cx="27" cy="27" r="25" fill="none" stroke="#e74c3c" stroke-width="4" stroke-dasharray="157.56" stroke-dashoffset="0"></circle></svg><div class="counter countdownTest"> 15.00 </div>'
+	$outhtmlSp +=								'<svg width="54" height="54" viewBox="0 0 54 54"><circle cx="27" cy="27" r="25" fill="none" stroke="#eeeeee" stroke-width="4"></circle><circle cx="27" cy="27" r="25" fill="none" stroke="#e74c3c" stroke-width="4" stroke-dasharray="157.56" stroke-dashoffset="0"></circle></svg><div class="counter countdownTest"> 15:00 </div>'
 	$outhtmlSp +=							'</div>'
 	$outhtmlSp +=						'</div>'
 	$outhtmlSp +=						'<div class="body_counter">'
@@ -181,7 +181,7 @@ function readyjQueryinit() {
 	$outhtmlRu +=						'<div class="title_counter">'
 	$outhtmlRu +=							'<h3 class="signup_modal_title">Ограниченное предложение!</h3>'
 	$outhtmlRu +=							'<div class="modal_progressbar">'
-	$outhtmlRu +=								'<svg width="54" height="54" viewBox="0 0 54 54"><circle cx="27" cy="27" r="25" fill="none" stroke="#eeeeee" stroke-width="4"></circle><circle cx="27" cy="27" r="25" fill="none" stroke="#e74c3c" stroke-width="4" stroke-dasharray="157.56" stroke-dashoffset="0"></circle></svg><div class="counter countdownTest"> 15.00 </div>'
+	$outhtmlRu +=								'<svg width="54" height="54" viewBox="0 0 54 54"><circle cx="27" cy="27" r="25" fill="none" stroke="#eeeeee" stroke-width="4"></circle><circle cx="27" cy="27" r="25" fill="none" stroke="#e74c3c" stroke-width="4" stroke-dasharray="157.56" stroke-dashoffset="0"></circle></svg><div class="counter countdownTest"> 15:00 </div>'
 	$outhtmlRu +=							'</div>'
 	$outhtmlRu +=						'</div>'
 	$outhtmlRu +=						'<div class="body_counter">'
@@ -314,7 +314,7 @@ function readyjQueryinit() {
 	var	$labelOuthtmlUa = `<div class="timer-poster_subscribe">
 							<div class="title_counter">
 								<div class="modal_progressbar">
-									<svg width="54" height="54" viewBox="0 0 54 54"><circle cx="27" cy="27" r="25" fill="none" stroke="#eeeeee" stroke-width="4"></circle><circle cx="27" cy="27" r="25" fill="none" stroke="#e74c3c" stroke-width="4" stroke-dasharray="157.56" stroke-dashoffset="0"></circle></svg><div class="counter countdownTest"> 15.00 </div>
+									<svg width="54" height="54" viewBox="0 0 54 54"><circle cx="27" cy="27" r="25" fill="none" stroke="#eeeeee" stroke-width="4"></circle><circle cx="27" cy="27" r="25" fill="none" stroke="#e74c3c" stroke-width="4" stroke-dasharray="157.56" stroke-dashoffset="0"></circle></svg><div class="counter countdownTest"> 15:00 </div>
 								</div>
 								<div>
 									<h3 class="signup_modal_title">Разова акція!</h3>
@@ -333,7 +333,7 @@ function readyjQueryinit() {
 	var	$labelOuthtmlSp = `<div class="timer-poster_subscribe">
 							<div class="title_counter">
 								<div class="modal_progressbar">
-									<svg width="54" height="54" viewBox="0 0 54 54"><circle cx="27" cy="27" r="25" fill="none" stroke="#eeeeee" stroke-width="4"></circle><circle cx="27" cy="27" r="25" fill="none" stroke="#e74c3c" stroke-width="4" stroke-dasharray="157.56" stroke-dashoffset="0"></circle></svg><div class="counter countdownTest"> 15.00 </div>
+									<svg width="54" height="54" viewBox="0 0 54 54"><circle cx="27" cy="27" r="25" fill="none" stroke="#eeeeee" stroke-width="4"></circle><circle cx="27" cy="27" r="25" fill="none" stroke="#e74c3c" stroke-width="4" stroke-dasharray="157.56" stroke-dashoffset="0"></circle></svg><div class="counter countdownTest"> 15:00 </div>
 								</div>
 								<div>
 									<h3 class="signup_modal_title">Oferta limitada!</h3>
@@ -352,7 +352,7 @@ function readyjQueryinit() {
 	var	$labelOuthtmlRu = `<div class="timer-poster_subscribe">
 						<div class="title_counter">
 							<div class="modal_progressbar">
-								<svg width="54" height="54" viewBox="0 0 54 54"><circle cx="27" cy="27" r="25" fill="none" stroke="#eeeeee" stroke-width="4"></circle><circle cx="27" cy="27" r="25" fill="none" stroke="#e74c3c" stroke-width="4" stroke-dasharray="157.56" stroke-dashoffset="0"></circle></svg><div class="counter countdownTest"> 15.00 </div>
+								<svg width="54" height="54" viewBox="0 0 54 54"><circle cx="27" cy="27" r="25" fill="none" stroke="#eeeeee" stroke-width="4"></circle><circle cx="27" cy="27" r="25" fill="none" stroke="#e74c3c" stroke-width="4" stroke-dasharray="157.56" stroke-dashoffset="0"></circle></svg><div class="counter countdownTest"> 15:00 </div>
 							</div>
 							<div>
 								<h3 class="signup_modal_title">Ограниченное предложение!</h3>
