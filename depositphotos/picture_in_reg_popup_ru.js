@@ -61,6 +61,11 @@ function readyjQueryinit() {
 						var img = $('html').find('.view-file-box__image-box .view-file-box__image');
 						img.clone().appendTo(".modal_signup_image .signup-user_modal .signup-user__left .img_wrapp");
 					}
+					// new PDP page
+					if( $('.file-thumb-wrap .file-thumb_image .file-thumb__image').length > 0  ) {
+						var img = $('html').find('.file-thumb-wrap .file-thumb_image .file-thumb__image');
+						img.clone().appendTo(".modal_signup_image .signup-user_modal .signup-user__left .img_wrapp");
+					}
 
 					if( $('.modal-container .file-view_bg-black .file-view__thumb .view-file-box__image-box_label .view-file-box__image').length > 0 ) {
 						var imgCategory = $('html').find('.modal-container .file-view_bg-black .file-view__thumb .view-file-box__image-box_label .view-file-box__image');
@@ -100,6 +105,9 @@ function readyjQueryinit() {
 					if(element.closest('[data-id]').find('.view-file-box__image').length > 0){
 						file      = element.closest('[data-id]').find('.view-file-box__image');
 					}
+					if(element.closest('[data-id]').find('.file-thumb__image').length > 0){
+						file      = element.closest('[data-id]').find('.file-thumb__image');
+					}
 					if(element.closest('[data-id]').find('.file-container__image').length > 0){
 						file      = element.closest('[data-id]').find('.file-container__image');
 					}
@@ -131,7 +139,24 @@ function readyjQueryinit() {
 				}
 			})
 
+			// new PDP page
+			$('body').on('click','.price-table-upgrade__download-box', function(){
+				if($('html').find('.file-view__left .view-file-box_video').length < 1){
+					myStopFunction();
+					window.interval = setInterval(myTimer);
+				}
+			})
+			// END new PDP page
+
 			$('body').on('mousedown', '.view-file-box__action-item.button-download', function(){
+				if($('html').find('.file-view__left .view-file-box_video').length < 1){
+					myStopFunction();
+					window.interval = setInterval(myTimer);
+				}
+			})
+
+			// new PDP page
+			$('body').on('mousedown', '.file-view-upgrade__thumb-box .button-download', function(){
 				if($('html').find('.file-view__left .view-file-box_video').length < 1){
 					myStopFunction();
 					window.interval = setInterval(myTimer);
@@ -167,10 +192,6 @@ function readyjQueryinit() {
 					myStopFunction();
 					window.interval = setInterval(myTimer, 1);
 				}
-
-				// if (localStorage.getItem('popup_active') == "true") {
-				// 	
-				// }
 			})
 
 			$('body').on('mousedown', '.modal-container .view-file-box__action-item.button-download', function(){
@@ -178,10 +199,6 @@ function readyjQueryinit() {
 					myStopFunction();
 					window.interval = setInterval(myTimer, 1);
 				}
-
-				// if (localStorage.getItem('popup_active') == "true") {
-				//
-				// }
 			})
 
 			//add to favorites PDP
@@ -191,6 +208,15 @@ function readyjQueryinit() {
 					window.interval = setInterval(myTimerBtn, 1, {'item':$(this)});
 				}
 			})
+
+			// new PDP page
+			$('body').on('mousedown', '.file-view-upgrade__content-box .button-add-to-favorites', function(){
+				if($('html').find('.file-view__left .view-file-box_video').length < 1){
+					myStopFunction();
+					window.interval = setInterval(myTimerBtn, 1, {'item':$(this)});
+				}
+			})
+
 			//add to favorites listing
 			$('body').on('mousedown', '.file-container__actions-item.button-add-to-favorites', function(){
 				if($('html').find('.file-container .file-container__video-details').length < 1){
@@ -208,6 +234,16 @@ function readyjQueryinit() {
 					}
 				}
 			})
+
+			$('body').on('mousedown', '.file-view-upgrade__thumb-box .button-add-to-cart', function(){
+				if($('html').find('.file-view__left .view-file-box_video').length < 1){
+					if (!$(this).hasClass("active")) {
+						myStopFunction();
+						window.interval = setInterval(myTimerBtn, 1,{'item': $(this),'title': 'Зарегистрируйтесь, чтобы добавить это изображение в корзину'});
+					}
+				}
+			})
+
 			//add to cart listing
 			$('body').on('mousedown', '.file-container__actions-item.button-add-to-cart', function(){
 				if($('html').find('.file-container .file-container__video-details').length < 1){
@@ -251,8 +287,6 @@ function readyjQueryinit() {
 					margin-right: -16px;
 					padding-right: 16px;
 				}
-
-
 				.modal_signup_image .modal__body_signup .signup-user_modal .signup-user__right {
 					padding-top: 140px;
 				}
@@ -261,7 +295,6 @@ function readyjQueryinit() {
 				.modal_signup_image .signup-user_modal .signup-user__advantages {
 					display: none;
 				}
-
 				.modal_signup_image .img_wrapp {
 					border-radius: 16px;
 					position: relative;
@@ -272,14 +305,10 @@ function readyjQueryinit() {
 				.modal_signup_image .signup-user_modal .signup-user__left .view-file-box__image {
 					border-radius: 16px;
 					cursor: auto;
-
 					position: absolute;
 					top: 0;
 					left: 0;
 					right: 0;
-					// object-fit: cover;
-					// height: calc(100% + 27px);
-					// max-height: calc(100% + 27px);
 				}
 				.modal_signup_image .signup-user__back {
 					left: -420px;
