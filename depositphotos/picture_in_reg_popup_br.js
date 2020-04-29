@@ -142,7 +142,7 @@ function readyjQueryinit() {
 
 			// new PDP page
 			$('body').on('click','.price-table-upgrade__download-box', function(){
-				if($('html').find('.file-view__left .view-file-box_video').length < 1){
+				if($('html').find('.file-view-upgrade__thumb-box .file-thumb_video').length < 1){
 					myStopFunction();
 					window.interval = setInterval(myTimer);
 				}
@@ -158,7 +158,7 @@ function readyjQueryinit() {
 
 			// new PDP page
 			$('body').on('mousedown', '.file-view-upgrade__thumb-box .button-download', function(){
-				if($('html').find('.file-view__left .view-file-box_video').length < 1){
+				if($('html').find('.file-view-upgrade__thumb-box .file-thumb_video').length < 1){
 					myStopFunction();
 					window.interval = setInterval(myTimer);
 				}
@@ -213,7 +213,7 @@ function readyjQueryinit() {
 
 			// new PDP page
 			$('body').on('mousedown', '.file-view-upgrade__content-box .button-add-to-favorites', function(){
-				if($('html').find('.file-view__left .view-file-box_video').length < 1){
+				if($('html').find('.file-view-upgrade__thumb-box .file-thumb_video').length < 1){
 					myStopFunction();
 					window.interval = setInterval(myTimerBtn, 1, {'item':$(this)});
 				}
@@ -237,7 +237,7 @@ function readyjQueryinit() {
 			})
 
 			$('body').on('mousedown', '.file-view-upgrade__thumb-box .button-add-to-cart', function(){
-				if($('html').find('.file-view__left .view-file-box_video').length < 1){
+				if($('html').find('.file-view-upgrade__thumb-box .file-thumb_video').length < 1){
 					if (!$(this).hasClass("active")) {
 						myStopFunction();
 						window.interval = setInterval(myTimerBtn, 1,{'item': $(this),'title': 'Cadastre-se para adicionar esta imagem ao carrinho'});
