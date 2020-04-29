@@ -57,10 +57,16 @@ function readyjQueryinit() {
 						videoPlaceholder.clone().appendTo(".modal_signup_image .signup-user_modal .signup-user__left .img_wrapp");
 					}
 					
-					if( $('.wrapper_file-view .view-file-box__image-box .view-file-box__image').length > 0 ) {
+					if( $('.wrapper_file-view .view-file-box__image-box .view-file-box__image').length > 0  ) {
 						var img = $('html').find('.view-file-box__image-box .view-file-box__image');
 						img.clone().appendTo(".modal_signup_image .signup-user_modal .signup-user__left .img_wrapp");
 					}
+					// new PDP page
+					if( $('.file-thumb-wrap .file-thumb_image .file-thumb__image').length > 0  ) {
+						var img = $('html').find('.file-thumb-wrap .file-thumb_image .file-thumb__image');
+						img.clone().appendTo(".modal_signup_image .signup-user_modal .signup-user__left .img_wrapp");
+					}
+					//
 
 					if( $('.modal-container .file-view_bg-black .file-view__thumb .view-file-box__image-box_label .view-file-box__image').length > 0 ) {
 						var imgCategory = $('html').find('.modal-container .file-view_bg-black .file-view__thumb .view-file-box__image-box_label .view-file-box__image');
@@ -128,6 +134,17 @@ function readyjQueryinit() {
 				myStopFunction();
 				window.interval = setInterval(myTimer);
 			})
+
+
+
+			// new PDP page
+			$('body').on('click','.price-table-upgrade__download-box', function(){
+				myStopFunction();
+				window.interval = setInterval(myTimer);
+			})
+			// END new PDP page
+
+
 
 			$('body').on('mousedown', '.view-file-box__action-item.button-download', function(){
 				myStopFunction();
