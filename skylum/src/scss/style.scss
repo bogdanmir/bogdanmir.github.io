@@ -1,8 +1,9 @@
 .wrapper {
 	header.header {
-		background-color: rgba(0,0,0,.9);
+		background-color: rgba(0,0,0,.9) !important;
 		padding: 17px 0;
 		height: auto;
+		position: relative;
 		.header__wrap {
 			text-align: center;
 			justify-content: center;
@@ -40,6 +41,13 @@
 		}
 	}
 }
+
+.sk-uikit-v2 {
+	.after-head__head {
+		padding-top: 0;
+	}
+}
+
 .after-head__head {
 	.tone-mapping__slider-wrap {
 		& + .row {
@@ -47,6 +55,19 @@
 			padding: 28px 65px 33px 65px;
 			@media (max-width: 1279px) {
 				padding: 28px 30px 20px;
+			}
+			& > div {
+				&:first-child {
+					margin-left: 0;
+				}
+				&:nth-child(2) {
+					@media (min-width: 1280px) {
+						margin-left: 8.33333%;
+					}
+					@media (min-width: 1800px) {
+					    margin-left: 16.66667%;
+					}
+				}
 			}
 		}
 	}
