@@ -12,6 +12,9 @@ $('.after-head__platforms.sk-text_type_neutral').after('<div class="text-holder_
 $('.after-head__head .after-head__buy-wrap .au-buy-btn').text('Add to your Luminar 4 order');
 $('.after-head__head .sk-subtitle.after-head__subtitle').appendTo('.after-head__head>.container>.row>.offset-xl-2');
 $('.after-head__head .after-head__buy-wrap .sk-text_size_small.after-head__btn-subtitle').appendTo('.after-head__head>.container>.row>.offset-xl-2');
+$('.after-head__head .after-head__awards img').attr({
+	src: 'https://media.macphun.com/img/uploads/uploads/aurora/home-2019/au-awards.png?size=1x'
+});
 
 $('.tone-mapping_slide').each(function() {
 	$(this).find('.tone-mapping_slide-front .create-hdr').click();
