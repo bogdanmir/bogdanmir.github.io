@@ -1,8 +1,8 @@
 $('.header .header__wrap').html ('<h2 class="sk-h2">Thank you for the purchase! Download link is sent to your e-mail</h2>');
 
-$('.after-head__figure.preload').detach().appendTo('.tone-mapping');
+$('.after-head__figure.preload').appendTo('.tone-mapping');
 
-$('.tone-mapping__slider-wrap').detach().prependTo('.after-head__head .container');
+$('.tone-mapping__slider-wrap').prependTo('.after-head__head .container');
 $('.tone-mapping__slider-wrap').prepend('<div class="slide-text-holder"><h3 class="slide-title">It’s hard to capture a perfect light sometimes, right?</h3><p>Create a perfect image from a few too dark or too bright photos with high dynamic range editing (HDR) in a few clicks!</p></div>')
 
 $('.after-head__platforms.sk-text_type_neutral').after('<div class="text-holder_platforms"><span class="txt-digit txt-line-through">99$</span> only <span class="txt-digit-bg">69$</span> together with Luminar 4</div>');
@@ -10,7 +10,6 @@ $('.after-head__platforms.sk-text_type_neutral').after('<div class="text-holder_
 $('.after-head__head .after-head__buy-wrap .au-buy-btn').text('Add to your Luminar 4 order');
 $('.after-head__head .sk-subtitle.after-head__subtitle').appendTo('.after-head__head>.container>.row>.offset-xl-2');
 $('.after-head__head .after-head__buy-wrap .sk-text_size_small.after-head__btn-subtitle').appendTo('.after-head__head>.container>.row>.offset-xl-2');
-
 
 $('.tone-mapping_slide').each(function() {
 
