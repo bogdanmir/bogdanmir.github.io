@@ -1,6 +1,6 @@
 $('.header .header__wrap').html ('<h2 class="sk-h2">Thank you for the purchase! Download link is sent to your e-mail</h2>');
 
-$('.tone-mapping__slider-wrap').prependTo('.after-head__head .container');
+$('body').find('.tone-mapping__slider-wrap').prependTo('.after-head__head .container');
 
 $('.tone-mapping__slider-wrap').prepend('<div class="slide-text-holder"><h3 class="slide-title">It’s hard to capture a perfect light sometimes, right?</h3><p>Create a perfect image from a few too dark or too bright photos with high dynamic range editing (HDR) in a few clicks!</p></div>')
 
@@ -20,7 +20,7 @@ $('.tone-mapping_slide').each(function() {
 	$(this).find('.tone-mapping_slide-front .img-wrap').append(imgResult);
 });
 
-$('.after-head__figure.preload').appendTo('.tone-mapping.sk-section');
+$('body').find('.after-head__figure.preload').appendTo('.tone-mapping.sk-section');
 
 if (window.matchMedia('(min-width: 1800px)').matches){
 	$('.tone-mapping__slider .slick-track').css('left', '-1560px');
