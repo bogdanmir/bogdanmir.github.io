@@ -2,8 +2,8 @@ $('.header .header__wrap').html ('<h2 class="sk-h2">Thank you for the purchase! 
 
 $('body').find('.tone-mapping__slider-wrap').prependTo('.after-head__head .container');
 
-$('body').find('.after-head__figure.preload').appendTo('.tone-mapping.sk-section');
-console.log($('body').find('.after-head__figure.preload').length);
+$('body').find('.after-head__figure').appendTo('.tone-mapping.sk-section');
+console.log($('body').find('.after-head__figure').length);
 
 $('.tone-mapping__slider-wrap').prepend('<div class="slide-text-holder"><h3 class="slide-title">It’s hard to capture a perfect light sometimes, right?</h3><p>Create a perfect image from a few too dark or too bright photos with high dynamic range editing (HDR) in a few clicks!</p></div>')
 
