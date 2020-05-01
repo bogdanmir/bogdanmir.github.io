@@ -10,8 +10,9 @@ $('.tone-mapping__slider-wrap').prepend('<div class="slide-text-holder"><h3 clas
 $('.after-head__platforms.sk-text_type_neutral').after('<div class="text-holder_platforms"><span class="txt-digit txt-line-through">99$</span> only <span class="txt-digit-bg">69$</span> together with Luminar 4</div>');
 
 $('.after-head__head .after-head__buy-wrap .au-buy-btn').text('Add to your Luminar 4 order');
-$('.after-head__head .sk-subtitle.after-head__subtitle').appendTo('.after-head__head>.container>.row>.offset-xl-2');
-$('.after-head__head .after-head__buy-wrap .sk-text_size_small.after-head__btn-subtitle').appendTo('.after-head__head>.container>.row>.offset-xl-2');
+$('.after-head__head .sk-subtitle.after-head__subtitle').appendTo('.after-head__head>.container>.row>div:nth-child(2)');
+
+$('.after-head__head .after-head__buy-wrap .sk-text_size_small.after-head__btn-subtitle').appendTo('.after-head__head>.container>.row>div:nth-child(2)');
 $('.after-head__head .after-head__awards img').attr({
 	src: 'https://media.macphun.com/img/uploads/uploads/aurora/home-2019/au-awards.png?size=1x'
 });
