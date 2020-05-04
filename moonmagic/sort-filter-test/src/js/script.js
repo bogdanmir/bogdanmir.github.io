@@ -89,6 +89,9 @@
  	$('body').find('.filter-bar__form--header .mobile-close-filter').html('<span>Filters</span> <a href="#" class="mobile-close-icon"><i class="close"></i></a>');
  	$('body').find('.filter-bar__form--header .mobile-close-filter').removeClass('mobile-close-filter').addClass('mobile-close-filter-head');
  	$('body').on('click','.apply-triger-filter',function() {
+
+ 		$('body').find('.collection-mobile__container .filter-bar__form-lists').removeClass('filter-open');
+ 		
  		var title = $('body').find('.collection-mobile__container .filter-bar__form-lists .collection-filter-list.open .collection-filter-title').text();
  		window.dataLayer = window.dataLayer || [];
  		dataLayer.push({
@@ -97,7 +100,6 @@
  			'eventAction': 'click on '+(title.toLowerCase()),
  			'eventLabel': 'show'
  		});
-
 	 	$('body').find('.collection-mobile__container .filter-bar__form-lists .collection-filter-list').removeClass('open');
 	 	$('body').find('.collection-mobile__container .filter-bar__form-lists .collection-filter-group').css({
 	 		'max-height' : '0px',
@@ -251,15 +253,10 @@
  		event.preventDefault();
  	});
  	$('body').on('click', '#collectionMobileButtonFilter', function(event) {
+
+ 		console.log('%c Is click','background:blue;color:#ffffff;');
+
  		var click_track_disable = $(this).data('click_track_disable');
- 		console.log('%c Is click','background:green;color:#ffffff;');
- 		console.log($('body').find('.collection-mobile__container .filter-bar__form-lists .collection-filter-list'));
-	 	$('body').find('.collection-mobile__container .filter-bar__form-lists .collection-filter-list').removeClass('open');
-	 	$('body').find('.collection-mobile__container .filter-bar__form-lists .collection-filter-group').css({
-	 		'max-height' : '0px',
-	 		'overflow'   : 'hidden',
-	 		'transition' : '',
-	 	});
  		if(!click_track_disable){
  			window.dataLayer = window.dataLayer || [];
  			dataLayer.push({
