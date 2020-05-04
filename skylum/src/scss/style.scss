@@ -65,7 +65,8 @@
 				}
 				&:nth-child(2) {
 					@media (min-width: 1280px) {
-						margin-left: 8.33333%;
+						// margin-left: 8.33333%;
+						margin-left: 2%;
 					}
 					@media (min-width: 1800px) {
 					    margin-left: 16.66667%;
@@ -104,9 +105,9 @@
 		line-height: 150%;
 		font-family: "Graphik LCG",Helvetica,Arial,sans-serif;
 		margin: 0 0 10px;
-		@media (max-width: 1799px) {
-			font-size: 18px;
-			margin: 10px 0 10px;
+		@media (max-width: 1279px) {
+			// font-size: 18px;
+			// margin: 10px 0 10px;
 		}
 	}
 	.after-head__video-btn {
@@ -121,30 +122,48 @@
 		color: #8E9294;
 		font-size: 13px;
 		font-weight: 300;
+		@media (min-width: 1280px) {
+			text-align: left;
+		}
 	}
 	.after-head__buy-wrap {
 		padding-top: 13px;
-		@media (max-width: 1799px) {
+		@media (max-width: 1279px) {
 			flex-wrap: wrap;
 		}
 	}
 	.after-head__btn-wrap {
 		margin: 0; 
-		@media (max-width: 1799px) {
+		// @media (max-width: 1799px) {
+		// 	width: 100%;
+		// }
+		@media (max-width: 1279px) {
 			width: 100%;
 		}
 	}
 	.after-head__buy-btn {
-		@media (max-width: 1799px) {
+		// @media (max-width: 1799px) {
+		// 	width: 100%;
+		// }
+		@media (max-width: 1279px) {
 			width: 100%;
 		}
-		@media (min-width: 1800px) {
-			padding: 14px 11px;
+		// @media (min-width: 1800px) {
+		// 	padding: 14px 10px;
+		// }
+		@media (min-width: 1280px) {
+			padding: 14px 10px;
 		}
 	}
 	.after-head__video-btn {
 		margin-left: 10px;
-		@media (max-width: 1799px) {
+		// @media (max-width: 1799px) {
+		// 	width: 100%;
+		// 	align-items: center;
+		// 	text-align: center;
+		// 	margin-left: 0;
+		// }
+		@media (max-width: 1279px) {
 			width: 100%;
 			align-items: center;
 			text-align: center;
