@@ -97,7 +97,7 @@
  			'eventAction': 'click on '+(title.toLowerCase()),
  			'eventLabel': 'show'
  		});
- 		
+
 	 	$('body').find('.collection-mobile__container .filter-bar__form-lists .collection-filter-list').removeClass('open');
 	 	$('body').find('.collection-mobile__container .filter-bar__form-lists .collection-filter-group').css({
 	 		'max-height' : '0px',
@@ -252,6 +252,8 @@
  	});
  	$('body').on('click', '#collectionMobileButtonFilter', function(event) {
  		var click_track_disable = $(this).data('click_track_disable');
+ 		console.log('%c Is click','background:green;color:#ffffff;');
+ 		console.log($('body').find('.collection-mobile__container .filter-bar__form-lists .collection-filter-list'));
 	 	$('body').find('.collection-mobile__container .filter-bar__form-lists .collection-filter-list').removeClass('open');
 	 	$('body').find('.collection-mobile__container .filter-bar__form-lists .collection-filter-group').css({
 	 		'max-height' : '0px',
