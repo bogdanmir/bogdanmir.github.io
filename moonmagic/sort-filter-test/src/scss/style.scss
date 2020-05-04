@@ -324,6 +324,7 @@
 			display: block;
 			&.disabled {
 				background: rgba(34, 66, 92, 0.5);
+				pointer-events: none;
 			}
 		}
 	}
