@@ -1,11 +1,11 @@
-$('.header .header__wrap').html ('<h2 class="sk-h2">Thank you for the purchase! Download link is sent to your e-mail</h2>');
+$('.header .header__wrap').html ('<h2 class="sk-h2">Thank you for your purchase! The link to download is sent to your email.</h2>');
 
 $('body').find('.tone-mapping__slider-wrap').prependTo('.after-head__head .container');
 
 $('body').find('.after-head__figure').appendTo('.tone-mapping.sk-section');
 console.log($('body').find('.after-head__figure').length);
 
-$('.tone-mapping__slider-wrap').prepend('<div class="slide-text-holder"><h3 class="slide-title">It’s hard to capture a perfect light sometimes, right?</h3><p>Create a perfect image from a few too dark or too bright photos with high dynamic range editing (HDR) in a few clicks!</p></div>')
+$('.tone-mapping__slider-wrap').prepend('<div class="slide-text-holder"><h3 class="slide-title">It’s hard to capture a perfect light sometimes, right?</h3><p>Create a perfect light for your image with world’s most advanced high dynamic range editing (HDR) in a few clicks.</p></div>')
 
 $('.after-head__platforms.sk-text_type_neutral').after('<div class="text-holder_platforms"><span class="txt-digit txt-line-through">99$</span> only <span class="txt-digit-bg">69$</span> together with Luminar 4</div>');
 
