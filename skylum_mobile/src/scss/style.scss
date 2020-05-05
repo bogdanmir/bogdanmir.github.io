@@ -1,0 +1,141 @@
+.wrapper {
+	header.header {
+		background-color: rgba(0,0,0,.9) !important;
+		padding: 10px 0 2px;
+		height: auto;
+		position: relative;
+		.header__wrap {
+			text-align: center;
+			justify-content: center;
+			flex-wrap: wrap;
+			.sk-h2 {
+				color: #fff;
+				font-size: 22px;
+				font-weight: 700;
+				line-height: 1;
+			}
+			.sk-text {
+				font-size: 16px;
+				color: #fff;
+				line-height: 1;
+				margin-bottom: 7px;
+				font-family: "Graphik LCG",Helvetica,Arial,sans-serif;
+			}
+		}
+	}
+}
+.slide-text-holder {
+	color: #000;
+	.slide-title {
+		font-size: 22px;
+		font-weight: 700;
+		max-width: 360px;
+		margin-bottom: 20px;
+		font-family: "Graphik LCG",Helvetica,Arial,sans-serif;
+	}
+}
+.tone-mapping__slider-wrap {
+	flex-wrap: wrap;
+	& + .row {
+		padding: 19px 65px 33px 65px;
+		margin-top: 11px;
+		position: relative;
+		&:after {
+			content: '';
+			background: rgba(0, 0, 0, 0.26);
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			height: 100%;
+			width: 100vw;
+			z-index: 1;
+			@media (min-width: 576px){
+				left: calc((100vw - 520px) / -2);
+			}
+		}
+		& > div {
+			position: relative;
+			z-index: 2;
+		}
+		.after-head__title {
+			color: #fff;
+			font-size: 24px;
+		}
+	}
+	.tone-mapping__slider {
+		.slick-dots {
+			display: none !important;
+		}
+	}
+	.arrows-wrap {
+		display: none;
+	}
+}
+.sk-uikit-v2 {
+	.after-head__platforms {
+		color: #fff;
+		font-size: 16px;
+		margin: 5px 0 0;
+	}
+	.after-head {
+		padding-top: 22px;
+	}
+	.after-head__head {
+		padding-bottom: 0;
+		.after-head__video-btn {
+			g, svg {
+				opacity: 1;
+			}
+		}
+	}
+	.after-head__btn-subtitle {
+		color: #D9E1E4;
+		font-weight: 300;
+		font-size: 14px;
+	}
+	.after-head__already-have {
+		color: #D9E1E4;
+		font-size: 18px;
+		padding-top: 5px;
+		.sk-link {
+			color: #D9E1E4;
+			font-size: 18px;
+		}
+	}
+	.after-head__buy-wrap {
+		padding-top: 10px;
+	}
+	.after-head__buy-btn,
+	.after-head__video-btn {
+		font-size: 18px;
+	}
+}
+.tone-mapping_slide {
+	height: 285px;
+	.tone-mapping_slide-front {
+		.sk-h4 {
+			color: #fff;
+			font-weight: 500;
+			font-size: 16px;
+			font-family: "Graphik LCG",Helvetica,Arial,sans-serif;
+		}
+		.sk-btn {
+			display: inline-block;
+			font-size: 18px;
+			font-weight: 500;
+			width: auto;
+		}
+	}
+}
+.after-head__head {
+	.after-head__awards {
+		img {
+			filter: brightness(0) invert(1);
+		}
+	}
+}
+.tone-mapping {
+	padding: 50px 0 65px;
+}
