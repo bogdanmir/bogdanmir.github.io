@@ -113,7 +113,7 @@
 	}
 }
 .tone-mapping_slide {
-	height: 285px;
+	height: 240px;
 	.tone-mapping_slide-front {
 		.sk-h4 {
 			color: #fff;
@@ -127,6 +127,12 @@
 			font-weight: 500;
 			width: auto;
 		}
+		.img-wrap {
+			figure {
+				border: 1px solid rgba(255, 255, 255, 0.2);
+				height: 70px;
+			}
+		}
 	}
 }
 .after-head__head {
@@ -137,5 +143,5 @@
 	}
 }
 .tone-mapping {
-	padding: 50px 0 65px;
+	padding: 21px 0 65px;
 }
