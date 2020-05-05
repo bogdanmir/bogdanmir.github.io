@@ -36,3 +36,9 @@ if (window.matchMedia("(min-width: 960px) and (max-width: 1279px)").matches) {
 	$('.tone-mapping__slider .slick-track').css('left', '-900px');
 	console.log('(min-width: 960px) and (max-width: 1279px)')
 }
+
+if (navigator.appVersion.indexOf("Chrome/") != -1) {
+	$('body').addClass('chrome_variant')
+} else {
+	$('body').removeClass('chrome_variant')
+}
