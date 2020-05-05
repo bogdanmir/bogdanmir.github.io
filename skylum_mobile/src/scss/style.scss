@@ -40,6 +40,10 @@
 		padding: 19px 65px 33px 65px;
 		margin-top: 11px;
 		position: relative;
+		overflow: hidden;
+		@media (max-width: 575px) {
+			padding: 19px 10px 33px;
+		}
 		&:after {
 			content: '';
 			background: rgba(0, 0, 0, 0.26);
@@ -53,6 +57,9 @@
 			z-index: 1;
 			@media (min-width: 576px){
 				left: calc((100vw - 520px) / -2);
+			}
+			@media (max-width: 575px) {
+				left: 0;
 			}
 		}
 		& > div {
@@ -110,11 +117,17 @@
 	.after-head__buy-btn,
 	.after-head__video-btn {
 		font-size: 18px;
+		max-width: 265px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 }
 .tone-mapping_slide {
 	height: 240px;
 	.tone-mapping_slide-front {
+		@media (max-width: 575px) {
+			padding: 20px 0 0;
+		}
 		.sk-h4 {
 			color: #fff;
 			font-weight: 500;
