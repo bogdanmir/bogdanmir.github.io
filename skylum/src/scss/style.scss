@@ -66,13 +66,12 @@
 				&:nth-child(2) {
 					@media (min-width: 1280px) {
 						// margin-left: 8.33333%;
-						// margin-left: 2%;
 							margin-left: 0;
 							width: 50%;
 							max-width: 50%;
 					}
 					@media (min-width: 1800px) {
-					    margin-left: 16.66667%;
+					    margin-left: 12.66667%;
 					}
 				}
 			}
