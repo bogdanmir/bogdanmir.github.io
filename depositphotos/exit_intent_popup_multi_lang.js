@@ -204,8 +204,8 @@ function readyjQueryinit() {
 
 	$(window).mouseleave(function(event) {
 		if (event.toElement == null) {
-			if( (window.location.href.indexOf("/subscribe/image.html") > -1 || window.location.href.indexOf("/subscribe.html") > -1) && $('.modal_offer_container').length < 1 && localStorage.getItem('modal_offer_active') == "false") {
-				
+			if( (window.location.href.indexOf("/subscribe/image.html") > -1 || window.location.href.indexOf("/subscribe.html") > -1) && $('.modal_offer_container').length < 1 && localStorage.getItem('modal_offer_active') == "false" && $('.subscribe__header .images-fan__item').length > 0 ) {
+				console.log('plans have images')
 				try {
 					hj('trigger', 'exit-intent-pop-up');
 				}
@@ -244,6 +244,7 @@ function readyjQueryinit() {
 				}
 			} else {
 				// console.log('4')
+				console.log('plans without images')
 			}
 		}
 	})
