@@ -24,6 +24,10 @@ $('.tone-mapping_slide').each(function() {
 	$(this).find('.tone-mapping_slide-front .img-wrap').append(imgResult);
 });
 
+$('body').find('.aurora-buy-sec .aurora-buy-sec__btns .au-buy-btn').attr({
+	href: 'https://aurora.onfastspring.com/aurora-hdr-bundle-discount'
+});
+
 if (window.matchMedia('(min-width: 1800px)').matches){
 	$('.tone-mapping__slider .slick-track').css('left', '-1560px');
 	console.log('min-width: 1800px')
