@@ -1,4 +1,4 @@
-console.log('%cTest come',"background:red;color: #ffffff");
+console.log('%cTest come',"background:green;color: #ffffff");
 function abjql(callback) {
 	var script = document.createElement( "script" )
 	script.type = "text/javascript";
