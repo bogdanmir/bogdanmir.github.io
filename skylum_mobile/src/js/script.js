@@ -13,3 +13,4 @@ $('.after-head__head .after-head__awards img').attr({
 $('body').find('.aurora-buy-sec .aurora-buy-sec__btns .au-buy-btn').attr({
 	href: 'https://aurora.onfastspring.com/aurora-hdr-bundle-discount'
 });
+$('body').find('.aurora-buy-sec .aurora-buy-sec__btns .au-buy-btn').attr('data-fsc-item-path', 'aurora-hdr-bundle-discount');
