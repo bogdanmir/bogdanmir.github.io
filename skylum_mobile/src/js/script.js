@@ -9,3 +9,7 @@ $('.tone-mapping_slide .tone-mapping_slide-front .sk-btn').text('See how HDR wor
 $('.after-head__head .after-head__awards img').attr({
 	src: 'https://media.macphun.com/img/uploads/uploads/aurora/home-2019/au-awards.png?size=1x'
 });
+
+$('body').find('.aurora-buy-sec .aurora-buy-sec__btns .au-buy-btn').attr({
+	href: 'https://aurora.onfastspring.com/aurora-hdr-bundle-discount'
+});
