@@ -10,8 +10,6 @@ $('.after-head__head .after-head__awards img').attr({
 	src: 'https://media.macphun.com/img/uploads/uploads/aurora/home-2019/au-awards.png?size=1x'
 });
 
-// $('body').find('.aurora-buy-sec .aurora-buy-sec__btns .au-buy-btn').attr({
-// 	href: 'https://aurora.onfastspring.com/aurora-hdr-bundle-discount'
-// });
-// $('body').find('.aurora-buy-sec .aurora-buy-sec__btns .au-buy-btn').attr('data-fsc-item-path', 'aurora-hdr-bundle-discount');
 $('body').find('.aurora-buy-sec .aurora-buy-sec__btns').append('<a class="new-btn sk-btn sk-btn-large sk-btn_type_primary-2 after-head__buy-btn au-buy-btn paddle_sk_button" href="https://aurora.onfastspring.com/aurora-hdr-bundle-discount" data-fsc-item-path="aurora-hdr-bundle-discount">Buy Now</a>');
+
+$('body').find('.tone-mapping_slide-result .tone-mapping_slide-result-btns').append('<a class="new-btn sk-btn sk-btn-large sk-btn_type_primary-2 au-buy-btn" href="https://aurora.onfastspring.com/aurora-hdr-bundle-discount" data-fsc-item-path="aurora-hdr-bundle-discount">Buy Now</a>');
