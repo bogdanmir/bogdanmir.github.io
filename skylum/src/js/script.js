@@ -24,10 +24,12 @@ $('.tone-mapping_slide').each(function() {
 	$(this).find('.tone-mapping_slide-front .img-wrap').append(imgResult);
 });
 
-$('body').find('.aurora-buy-sec .aurora-buy-sec__btns .au-buy-btn').attr({
-	href: 'https://aurora.onfastspring.com/aurora-hdr-bundle-discount'
-});
-$('body').find('.aurora-buy-sec .aurora-buy-sec__btns .au-buy-btn').attr('data-fsc-item-path', 'aurora-hdr-bundle-discount');
+// $('body').find('.aurora-buy-sec .aurora-buy-sec__btns .au-buy-btn').attr({
+// 	href: 'https://aurora.onfastspring.com/aurora-hdr-bundle-discount'
+// });
+// $('body').find('.aurora-buy-sec .aurora-buy-sec__btns .au-buy-btn').attr('data-fsc-item-path', 'aurora-hdr-bundle-discount');
+
+$('body').find('.aurora-buy-sec .aurora-buy-sec__btns').append('<a class="new-btn sk-btn sk-btn-large sk-btn_type_primary-2 after-head__buy-btn au-buy-btn paddle_sk_button" href="https://aurora.onfastspring.com/aurora-hdr-bundle-discount" data-fsc-item-path="aurora-hdr-bundle-discount">Buy Now</a>');
 
 if (window.matchMedia('(min-width: 1800px)').matches){
 	$('.tone-mapping__slider .slick-track').css('left', '-1560px');
