@@ -3,6 +3,7 @@
 		justify-content: flex-start;
 		text-align: left;
 		.common-hero__title {
+			font-size: 53px;
 			@media (max-width: 1999px) {
 				font-size: 40px;
 			}
@@ -12,6 +13,12 @@
 		}
 		.sk-subtitle {
 			display: none;
+		}
+		.common-hero__content-text {
+			font-size: 24px;
+			@media (max-width: 1999px) {
+				font-size: 18px;
+			}
 		}
 	}
 	.common-hero__video-in {
