@@ -1,0 +1,25 @@
+.wrap-content {
+	.common-hero {
+		justify-content: flex-start;
+		text-align: left;
+		.common-hero__title {
+			@media (max-width: 1999px) {
+				font-size: 40px;
+			}
+			br {
+				display: none;
+			}
+		}
+		.sk-subtitle {
+			display: none;
+		}
+	}
+	.common-hero__video-in {
+		top: 406px;
+	}
+	.hero-bg {
+		& > .sk-section_bg_dark {
+			display: none;
+		}
+	}
+}
