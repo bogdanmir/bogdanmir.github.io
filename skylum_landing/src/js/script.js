@@ -134,7 +134,8 @@ var items      = "";
 var items_dots = '';
 var outhtmlTopNav  = '<div class="sticky_nav_wrap"><div class="slide-wraper-js"><span class="prev-slide"></span><div class="slide-wraper-wrap-js"><ul class="sticky_nav_container"></ul></div><span class="next-slide"></span></div><a href="/l/luminar-checkout" class="sk-btn sk-btn_type_primary-2 by-btn-js">Buy Now</a></div>';
 $('.wrapper').append('<ul class="sticky_dot_wrap"></ul>');
-$('body').find('.header').append(outhtmlTopNav);
+// $('body').find('.header').append(outhtmlTopNav);
+$('body').find('.header').after(outhtmlTopNav);
 $.each(list_items_sections,function(ind,el){
   if(el.popular == true){
     items    +=    '<li data-gosection="'+el.item+'">'+el.name+'</li>';
@@ -142,7 +143,7 @@ $.each(list_items_sections,function(ind,el){
   items_dots +=    '<li data-gosection="'+el.item+'"></li>';
 })
 $('.wrapper').find('.sticky_dot_wrap').append(items_dots);
-$('body').find('.header ul.sticky_nav_container').append(items);
+$('body').find('ul.sticky_nav_container').append(items);
 $('body').on('click', '[data-gosection]', function(event) {
   var gosection = $(this).attr('data-gosection');
   $('[data-gosection]').removeClass();
@@ -162,7 +163,7 @@ function scroll_activation(){
 }
 scroll_activation();
 $(window).scroll(function(event) {
-  if($('html,body').scrollTop() > 100){
+  if($('html,body').scrollTop() > 60){
     $('body').find('.sticky_nav_wrap').addClass('sticky-scroll');
   }else{
     $('body').find('.sticky_nav_wrap').removeClass('sticky-scroll');
@@ -272,6 +273,7 @@ $('.slide-wraper-js .prev-slide').click(function(){
   return false;
 })
 $('.slide-wraper-js .next-slide').click(function(){
+	$('.slide-wraper-js .prev-slide').addClass('visible');
   var list = $(this).closest('.slide-wraper-js').find('.sticky_nav_container');
   var currentpos = typeof list.data('curent_pos') != 'undefined' ? list.data('curent_pos') : 0;
   if(currentpos < list.find('li').length - 1){
