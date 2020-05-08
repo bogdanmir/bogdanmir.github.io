@@ -113,7 +113,7 @@
 	}
 	.mouse_wheel {
 		background: #FFF;
-		 display: block;
+		display: block;
 		border-radius: 50%;
 		margin: 0 auto;
 		position: relative;
@@ -143,6 +143,12 @@
 	background-color: #000;
 	position: relative;
 	height:50px;
+	&.sticky-scroll {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
 	.next-slide, .prev-slide {
 		width: 125px;
 		height: 50px;
@@ -255,4 +261,24 @@
 			}
 		}
 	}
+}
+.sticky_dot_wrap {
+	position: fixed;
+	right: 25px;
+	top: 20%;
+	z-index: 9;
+	li {
+		border-radius: 50%;
+		border: 1px solid #fff;
+		display: block;
+		margin: 0 0 20px;
+		height: 13px;
+		width: 13px;
+		&.active {
+			background-color: #fff;
+		}
+	}
+}
+.fix-menu.sk-grid.preload.active{
+	display: none;
 }
