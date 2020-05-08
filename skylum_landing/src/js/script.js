@@ -23,6 +23,10 @@ $('body').find('.common-hero').append('<div class="mouse_down"><span class="mous
 
 var list_items_sections = [
 {
+  'item' : 'common-hero',
+  'popular' : false
+},
+{
   'name' : 'Embed objects',
   'item' : 'augmented-sky-hero',
   'popular' : true
@@ -128,7 +132,7 @@ var list_items_sections = [
 // top navigation
 var items      = "";
 var items_dots = '';
-var outhtmlTopNav  = '<div class="sticky_nav_wrap"><ul class="sticky_nav_container"></ul><a href="/l/luminar-checkout" class="sk-btn_type_primary-2 by-btn-js">Buy Now</a></div>';
+var outhtmlTopNav  = '<div class="sticky_nav_wrap"><ul class="sticky_nav_container"></ul><a href="/l/luminar-checkout" class="sk-btn sk-btn_type_primary-2 by-btn-js">Buy Now</a></div>';
 $('.wrapper').append('<ul class="sticky_dot_wrap"></ul>');
 $('body').find('.header').append(outhtmlTopNav);
 $.each(list_items_sections,function(ind,el){
