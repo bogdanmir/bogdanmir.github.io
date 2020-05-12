@@ -40,41 +40,97 @@ var list_items_sections = [
 },
 {
   'name' : 'Replace sky',
+  'name_de' : 'Himmel ersetzen',
+  'name_ko' : '스카이 변환',
+  'name_ja' : '',
+  'name_fr' : '',
+  'name_nl' : '',
+  'name_it' : '',
+  'name_es' : '',
   'item' : 'sky-hero',
   'popular' : true
 },
 {
   'name' : 'Tune portraits and skin',
+  'name_de' : 'Porträts und Haut ausgleichen',
+  'name_ko' : '포트레이트 및 피부 조정',
+  'name_ja' : '',
+  'name_fr' : '',
+  'name_nl' : '',
+  'name_it' : '',
+  'name_es' : '',
   'item' : 'portrait-hero',
   'popular' : true
 },
 {
   'name' : 'Add sunrays',
+  'name_de' : 'Sonnenstrahlen hinzufügen',
+  'name_ko' : '햇빛 추가',
+  'name_ja' : '',
+  'name_fr' : '',
+  'name_nl' : '',
+  'name_it' : '',
+  'name_es' : '',
   'item' : 'tools-sunrays',
   'popular' : true
 },
 {
   'name' : 'AI Accent',
+  'name_de' : 'AI Accent',
+  'name_ko' : 'AI 강조',
+  'name_ja' : '',
+  'name_fr' : '',
+  'name_nl' : '',
+  'name_it' : '',
+  'name_es' : '',
   'item' : 'tools-ai-enhance',
   'popular' : true
 },
 {
   'name' : 'AI Sky Enhancer',
+  'name_de' : 'AI Sky Enhancer',
+  'name_ko' : 'AI 스카이 인핸서',
+  'name_ja' : '',
+  'name_fr' : '',
+  'name_nl' : '',
+  'name_it' : '',
+  'name_es' : '',
   'item' : 'tools-ai-enhance',
   'popular' : true
 },
 {
   'name' : 'AI Structure',
+  'name_de' : 'AI Structure',
+  'name_ko' : 'AI 구조',
+  'name_ja' : '',
+  'name_fr' : '',
+  'name_nl' : '',
+  'name_it' : '',
+  'name_es' : '',
   'item' : 'structure-hero',
   'popular' : true
 },
 {
   'name' : 'Smart Contrast',
+  'name_de' : 'Intelligenter Kontrast',
+  'name_ko' : '스마트 대조',
+  'name_ja' : '',
+  'name_fr' : '',
+  'name_nl' : '',
+  'name_it' : '',
+  'name_es' : '',
   'item' : 'tools-smart-contrast',
   'popular' : true
 },
 {
   'name' : 'Erase objects',
+  'name_de' : 'Objekte löschen',
+  'name_ko' : '객체 제거',
+  'name_ja' : '',
+  'name_fr' : '',
+  'name_nl' : '',
+  'name_it' : '',
+  'name_es' : '',
   'item' : 'erase-technology',
   'popular' : true
 },
@@ -88,21 +144,49 @@ var list_items_sections = [
 },
 {
   'name' : 'Instant Filters',
+  'name_de' : 'Sofortfilter',
+  'name_ko' : '즉각 필터',
+  'name_ja' : '',
+  'name_fr' : '',
+  'name_nl' : '',
+  'name_it' : '',
+  'name_es' : '',
   'item' : 'tools-looks',
   'popular' : true
 },
 {
   'name' : 'Landscape Enhancer',
+  'name_de' : 'Landscape Enhancer',
+  'name_ko' : '조경 인핸서',
+  'name_ja' : '',
+  'name_fr' : '',
+  'name_nl' : '',
+  'name_it' : '',
+  'name_es' : '',
   'item' : 'tools-landscapes',
   'popular' : true
 },
 {
   'name' : 'Creative tools',
+  'name_de' : 'Kreative Tools',
+  'name_ko' : '크리에이티브 도구',
+  'name_ja' : '',
+  'name_fr' : '',
+  'name_nl' : '',
+  'name_it' : '',
+  'name_es' : '',
   'item' : 'tools-creative',
   'popular' : true
 },
 {
   'name' : 'Remove noise',
+  'name_de' : 'Rauschen entfernen',
+  'name_ko' : '노이즈 제거',
+  'name_ja' : '',
+  'name_fr' : '',
+  'name_nl' : '',
+  'name_it' : '',
+  'name_es' : '',
   'item' : 'tools-denoise',
   'popular' : true
 },
@@ -149,6 +233,9 @@ $.each(list_items_sections,function(ind,el){
   }
   if(el.popular == true && $('body.de').length > 0 ){
     items    +=    '<li data-gosection="'+el.item+'">'+el.name_de+'</li>';
+  }
+  if(el.popular == true && $('body.ko').length > 0 ){
+    items    +=    '<li data-gosection="'+el.item+'">'+el.name_ko+'</li>';
   }
   items_dots +=    '<li data-gosection="'+el.item+'"></li>';
 })
