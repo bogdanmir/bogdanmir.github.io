@@ -14,7 +14,7 @@
 		@media (max-height: 800px) {
 			padding-top: 92px;
 		}
-		@media (max-height: 1080px) {
+		@media (max-height: 900px) {
 			padding-top: 84px;
 		}
 		.row {
@@ -47,7 +47,7 @@
 			max-width: 450px;
 			padding: 0 0 48px;
 			line-height: 1.3;
-			@media (max-height: 1080px) {
+			@media (max-height: 900px) {
 				padding: 0 0 28px;
 			}
 		}
@@ -88,7 +88,7 @@
 			display: inline-block;
 			max-height: 31px;
 			margin-bottom: 38px;
-			@media (max-height: 1080px) {
+			@media (max-height: 900px) {
 				margin-bottom: 20px;
 			}
 			+ .plugins__logo {
@@ -126,7 +126,7 @@
 }
 .mouse_down {
 	position: absolute;
-	bottom: 0;
+	bottom: 25px;
 	left: 0;
 	right: 0;
 	margin: auto;
