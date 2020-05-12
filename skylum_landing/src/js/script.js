@@ -10,10 +10,37 @@ outhtmlLogo  += '<figure class="plugins__logo"><img src="https://media.macphun.c
 outhtmlLogo  += ' <figure class="plugins__logo"> <img src="https://media.macphun.com/img/uploads/uploads/skylum/svg/lightroom.svg" data-preload-src="https://media.macphun.com/img/uploads/uploads/skylum/svg/lightroom.svg" data-preload-retina-src="https://media.macphun.com/img/uploads/uploads/skylum/svg/lightroom.svg" alt=""></figure>';
 
 
-$('body').find('.common-hero .row:nth-child(2)').append('<div class="col-md-6"><p class="common-hero__content-text">Standalone application for Mac & PC with full RAW support. And Plugin for Adobe Photoshop, Lightroom & Apple products</p> '+ outhtmlLogo +'</div>');
+// $('body').find('.common-hero .row:nth-child(2)').append('<div class="col-md-6"><p class="common-hero__content-text">Standalone application for Mac & PC with full RAW support. And Plugin for Adobe Photoshop, Lightroom & Apple products</p> '+ outhtmlLogo +'</div>');
 
 
-$('body').find('.common-hero .common-hero__content-wrap').append("<p class='common-hero__subtitle'><b>Luminar 4's</b> revolutionary tools and AI technologies give superpowers for creative <b>photo editing.</b></p>");
+// $('body').find('.common-hero .common-hero__content-wrap').append("<p class='common-hero__subtitle'><b>Luminar 4's</b> revolutionary tools and AI technologies give superpowers for creative <b>photo editing.</b></p>");
+$('body').find('.common-hero .sk-subtitle').appendTo(".common-hero__content-wrap");
+
+if( $('body.en').length > 0 ){
+  	$('body').find('.common-hero .row:nth-child(2)').append('<div class="col-md-6"><p class="common-hero__content-text">Standalone application for Mac & PC with full RAW support. And Plugin for Adobe Photoshop, Lightroom & Apple products</p> '+ outhtmlLogo +'</div>');
+}
+if( $('body.de').length > 0 ){
+	$('body').find('.common-hero .row:nth-child(2)').append('<div class="col-md-6"><p class="common-hero__content-text">Standalone Anwendung für Mac & PC mit voller RAW-Unterstützung. Und Plugin für Adobe Photoshop, Lightroom und Apple-Produkte</p> '+ outhtmlLogo +'</div>');
+}
+if( $('body.ko').length > 0 ){
+	$('body').find('.common-hero .row:nth-child(2)').append('<div class="col-md-6"><p class="common-hero__content-text">RAW 풀 지원이 가능한 Mac 및 PC 전용 독립형 애플리케이션. Adobe Photoshop, Lightroom, Apple 제품을 위한 플러그인</p> '+ outhtmlLogo +'</div>');
+}
+if( $('body.jp').length > 0 ){
+	$('body').find('.common-hero .row:nth-child(2)').append('<div class="col-md-6"><p class="common-hero__content-text">MacやPCへのスタンドアロン写真編集ソフト。完全RAW ファイル対応. フォトショップ、ライトルームやApple製品にプラグイン対応</p> '+ outhtmlLogo +'</div>');
+}
+if( $('body.fr').length > 0 ){
+	$('body').find('.common-hero .row:nth-child(2)').append('<div class="col-md-6"><p class="common-hero__content-text">Application autonome pour Mac et PC avec prise en charge du format RAW complète. Et plug-in pour Adobe Photoshop, Lightroom et les produits Apple</p> '+ outhtmlLogo +'</div>');
+}
+if( $('body.nl').length > 0 ){
+	$('body').find('.common-hero .row:nth-child(2)').append('<div class="col-md-6"><p class="common-hero__content-text">Standalone applicatie voor Mac & PC met volledige RAW-ondersteuning. En plugin voor Adobe Photoshop, Lightroom en Apple producten</p> '+ outhtmlLogo +'</div>');
+}
+if( $('body.it').length > 0 ){
+	$('body').find('.common-hero .row:nth-child(2)').append('<div class="col-md-6"><p class="common-hero__content-text">Applicazione autonoma per Mac e PC con supporto RAW completo. E plugin per Adobe Photoshop, Lightroom e prodotti Apple</p> '+ outhtmlLogo +'</div>');
+}
+if( $('body.es').length > 0 ){
+	$('body').find('.common-hero .row:nth-child(2)').append('<div class="col-md-6"><p class="common-hero__content-text">Aplicación para Mac y PC con full soporte RAW. Agrega extensión para Adobe Photoshop, Lightroom y productos Apple</p> '+ outhtmlLogo +'</div>');
+}
+
 
 
 $('body').find('.common-hero .common-hero__btns-wrap + .common-hero__upgrade').detach().appendTo( ".common-hero .row:nth-child(2) > div:nth-child(2)" );
@@ -268,10 +295,17 @@ $('body').on('click', '[data-gosection]', function(event) {
 });
 function scroll_activation(){
   $.each(list_items_sections,function(index, el) {
-    if($('html,body').scrollTop() > $('[data-analytics-block='+el.item+']').offset().top - 200){
-      $('[data-gosection]').removeClass();
-      $('[data-gosection="'+el.item+'"]').addClass('active');
-    }
+
+
+    var analytics_block = $('[data-analytics-block='+el.item+']');
+	if (analytics_block.length > 0) {
+	    if($('html,body').scrollTop() > analytics_block.offset().top - 200){
+	      $('[data-gosection]').removeClass();
+	      $('[data-gosection="'+el.item+'"]').addClass('active');
+	    }
+	}
+
+
   });
 }
 scroll_activation();
