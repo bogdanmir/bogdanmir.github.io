@@ -29,7 +29,7 @@ if (!window.jQuery) {
 	});
 } 
 function abjqlr($){
-	@@include('js/script.js')
 	var style = '@@include("css/style.css")';
 	$('body').append('<style>'+style+'</style>');
+	@@include('js/script.js')
 }
