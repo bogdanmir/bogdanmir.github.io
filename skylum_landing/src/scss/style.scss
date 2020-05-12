@@ -119,7 +119,7 @@
 			}
 		}
 		.outhtml_logo {
-			+ .common-hero__upgrade {
+			& + .common-hero__upgrade {
 				font-weight: 300;
 				@media (max-width: 1450px) {
 					padding-left: calc(100% - 500px);
