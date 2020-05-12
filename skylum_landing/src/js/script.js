@@ -237,6 +237,22 @@ $.each(list_items_sections,function(ind,el){
   if(el.popular == true && $('body.ko').length > 0 ){
     items    +=    '<li data-gosection="'+el.item+'">'+el.name_ko+'</li>';
   }
+  if(el.popular == true && $('body.jp').length > 0 ){
+    items    +=    '<li data-gosection="'+el.item+'">'+el.name_ja+'</li>';
+  }
+  if(el.popular == true && $('body.fr').length > 0 ){
+    items    +=    '<li data-gosection="'+el.item+'">'+el.name_fr+'</li>';
+  }
+  if(el.popular == true && $('body.nl').length > 0 ){
+    items    +=    '<li data-gosection="'+el.item+'">'+el.name_nl+'</li>';
+  }
+  if(el.popular == true && $('body.it').length > 0 ){
+    items    +=    '<li data-gosection="'+el.item+'">'+el.name_it+'</li>';
+  }
+  if(el.popular == true && $('body.es').length > 0 ){
+    items    +=    '<li data-gosection="'+el.item+'">'+el.name_es+'</li>';
+  }
+
   items_dots +=    '<li data-gosection="'+el.item+'"></li>';
 })
 $('.wrapper').find('.sticky_dot_wrap').append(items_dots);
