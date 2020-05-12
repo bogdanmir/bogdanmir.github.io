@@ -117,6 +117,8 @@
 				max-width: 31px;
 				max-height: 31px;
 			}
+		}
+		.outhtml_logo {
 			+ .common-hero__upgrade {
 				font-weight: 300;
 				@media (max-width: 1450px) {
@@ -391,6 +393,9 @@
 		height: 10px;
 		width: 10px;
 		pointer-events: none;
+		@media (max-width: 1899px) {
+			margin: 0 0 16px;
+		}
 		@media (max-width: 1399px) {
 			margin: 0 0 10px;
 		}
