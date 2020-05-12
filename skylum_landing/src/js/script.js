@@ -17,28 +17,28 @@ outhtmlLogo  += ' <figure class="plugins__logo"> <img src="https://media.macphun
 $('body').find('.common-hero .sk-subtitle').appendTo(".common-hero__content-wrap");
 
 if( $('body.en').length > 0 ){
-  	$('body').find('.common-hero .row:nth-child(2)').append('<div class="col-md-6"><p class="common-hero__content-text">Standalone application for Mac & PC with full RAW support. And Plugin for Adobe Photoshop, Lightroom & Apple products</p> '+ outhtmlLogo +'</div>');
+  	$('body').find('.common-hero .row:nth-child(2)').append('<div class="col-md-6"><p class="common-hero__content-text">Standalone application for Mac & PC with full RAW support. And Plugin for Adobe Photoshop, Lightroom & Apple products</p> <div class="outhtml_logo">'+ outhtmlLogo +'</div></div>');
 }
 if( $('body.de').length > 0 ){
-	$('body').find('.common-hero .row:nth-child(2)').append('<div class="col-md-6"><p class="common-hero__content-text">Standalone Anwendung für Mac & PC mit voller RAW-Unterstützung. Und Plugin für Adobe Photoshop, Lightroom und Apple-Produkte</p> '+ outhtmlLogo +'</div>');
+	$('body').find('.common-hero .row:nth-child(2)').append('<div class="col-md-6"><p class="common-hero__content-text">Standalone Anwendung für Mac & PC mit voller RAW-Unterstützung. Und Plugin für Adobe Photoshop, Lightroom und Apple-Produkte</p> <div class="outhtml_logo">'+ outhtmlLogo +'</div></div>');
 }
 if( $('body.ko').length > 0 ){
-	$('body').find('.common-hero .row:nth-child(2)').append('<div class="col-md-6"><p class="common-hero__content-text">RAW 풀 지원이 가능한 Mac 및 PC 전용 독립형 애플리케이션. Adobe Photoshop, Lightroom, Apple 제품을 위한 플러그인</p> '+ outhtmlLogo +'</div>');
+	$('body').find('.common-hero .row:nth-child(2)').append('<div class="col-md-6"><p class="common-hero__content-text">RAW 풀 지원이 가능한 Mac 및 PC 전용 독립형 애플리케이션. Adobe Photoshop, Lightroom, Apple 제품을 위한 플러그인</p> <div class="outhtml_logo">'+ outhtmlLogo +'</div></div>');
 }
 if( $('body.jp').length > 0 ){
-	$('body').find('.common-hero .row:nth-child(2)').append('<div class="col-md-6"><p class="common-hero__content-text">MacやPCへのスタンドアロン写真編集ソフト。完全RAW ファイル対応. フォトショップ、ライトルームやApple製品にプラグイン対応</p> '+ outhtmlLogo +'</div>');
+	$('body').find('.common-hero .row:nth-child(2)').append('<div class="col-md-6"><p class="common-hero__content-text">MacやPCへのスタンドアロン写真編集ソフト。完全RAW ファイル対応. フォトショップ、ライトルームやApple製品にプラグイン対応</p> <div class="outhtml_logo">'+ outhtmlLogo +'</div></div>');
 }
 if( $('body.fr').length > 0 ){
-	$('body').find('.common-hero .row:nth-child(2)').append('<div class="col-md-6"><p class="common-hero__content-text">Application autonome pour Mac et PC avec prise en charge du format RAW complète. Et plug-in pour Adobe Photoshop, Lightroom et les produits Apple</p> '+ outhtmlLogo +'</div>');
+	$('body').find('.common-hero .row:nth-child(2)').append('<div class="col-md-6"><p class="common-hero__content-text">Application autonome pour Mac et PC avec prise en charge du format RAW complète. Et plug-in pour Adobe Photoshop, Lightroom et les produits Apple</p> <div class="outhtml_logo">'+ outhtmlLogo +'</div></div>');
 }
 if( $('body.nl').length > 0 ){
-	$('body').find('.common-hero .row:nth-child(2)').append('<div class="col-md-6"><p class="common-hero__content-text">Standalone applicatie voor Mac & PC met volledige RAW-ondersteuning. En plugin voor Adobe Photoshop, Lightroom en Apple producten</p> '+ outhtmlLogo +'</div>');
+	$('body').find('.common-hero .row:nth-child(2)').append('<div class="col-md-6"><p class="common-hero__content-text">Standalone applicatie voor Mac & PC met volledige RAW-ondersteuning. En plugin voor Adobe Photoshop, Lightroom en Apple producten</p> <div class="outhtml_logo">'+ outhtmlLogo +'</div></div>');
 }
 if( $('body.it').length > 0 ){
-	$('body').find('.common-hero .row:nth-child(2)').append('<div class="col-md-6"><p class="common-hero__content-text">Applicazione autonoma per Mac e PC con supporto RAW completo. E plugin per Adobe Photoshop, Lightroom e prodotti Apple</p> '+ outhtmlLogo +'</div>');
+	$('body').find('.common-hero .row:nth-child(2)').append('<div class="col-md-6"><p class="common-hero__content-text">Applicazione autonoma per Mac e PC con supporto RAW completo. E plugin per Adobe Photoshop, Lightroom e prodotti Apple</p> <div class="outhtml_logo">'+ outhtmlLogo +'</div></div>');
 }
 if( $('body.es').length > 0 ){
-	$('body').find('.common-hero .row:nth-child(2)').append('<div class="col-md-6"><p class="common-hero__content-text">Aplicación para Mac y PC con full soporte RAW. Agrega extensión para Adobe Photoshop, Lightroom y productos Apple</p> '+ outhtmlLogo +'</div>');
+	$('body').find('.common-hero .row:nth-child(2)').append('<div class="col-md-6"><p class="common-hero__content-text">Aplicación para Mac y PC con full soporte RAW. Agrega extensión para Adobe Photoshop, Lightroom y productos Apple</p> <div class="outhtml_logo">'+ outhtmlLogo +'</div></div>');
 }
 
 
