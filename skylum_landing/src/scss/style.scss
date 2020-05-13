@@ -152,7 +152,9 @@
 }
 .mouse_down {
 	position: absolute;
-	bottom: 25px;
+	top: calc(100vh - 110px - 47px - 23px);
+    bottom: auto;
+	// bottom: 25px;
 	left: 0;
 	right: 0;
 	margin: auto;
@@ -167,10 +169,10 @@
 		width: 26px;
 	}
 	@media (max-width: 1400px) {
-		bottom: 50px;
+		// bottom: 50px;
 	}
 	@media (max-width: 1300px) {
-		bottom: 65px;
+		// bottom: 65px;
 	}
 	.mouse_wheel {
 		background: #FFF;
@@ -430,6 +432,15 @@
 	}
 	.sticky_nav_container {
 		z-index: 9;
+	}
+}
+.btn-info-label__wr {
+	.info-label-tooltip {
+		@media (max-width: 1400px) {
+			min-width: 350px;
+			font-size: 14px;
+			padding: 15px;
+		}
 	}
 }
 
