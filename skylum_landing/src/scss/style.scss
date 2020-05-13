@@ -418,7 +418,7 @@
 
 .slide-wraper-js {
 	display: flex;
-
+	overflow: hidden;
 	// width: calc(100% - 140px);
 	.slide-wraper-wrap-js {
 		position: relative;
@@ -426,7 +426,7 @@
     	overflow: hidden;
     	height: 50px;
     	&.scroller{
-    		// flex: 0 0 calc( 100% - 100px);
+    		flex: 0 0 calc( 100% - 100px);
     		width: calc( 100% - 100px);
     	}
 	}
@@ -436,10 +436,13 @@
 }
 .btn-info-label__wr {
 	.info-label-tooltip {
-		@media (max-width: 1400px) {
+		@media (max-width: 1550px) {
 			min-width: 350px;
-			font-size: 14px;
+			font-size: 16px;
 			padding: 15px;
+		}
+		@media (max-width: 1400px) {
+			font-size: 14px;
 		}
 	}
 }
