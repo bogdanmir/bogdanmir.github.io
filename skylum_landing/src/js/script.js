@@ -468,3 +468,26 @@ $(window).resize(function(event) {
 setTimeout(function(){
   $(window).resize();
 },10);
+
+
+
+// Check if Navigator is Internet Explorer
+// if(navigator.userAgent.indexOf('MSIE')!==-1
+// || navigator.appVersion.indexOf('Trident/') > -1){
+
+//     // Scroll event check
+//     $(window).scroll(function (event) {
+//         var scroll = $(window).scrollTop();
+
+//         // Activate sticky for IE if scrolltop is more than 20px
+
+//         // if($('html,body').scrollTop() > 60){
+//         if ( scroll > 60) {
+//             $('.sticky-top').addClass( "sticky-top-ie" );
+//         }else{
+//             $('.sticky-top').removeClass( "sticky-top-ie" );        
+//         }
+
+//     });
+
+// }
