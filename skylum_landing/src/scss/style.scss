@@ -458,6 +458,9 @@
 			left: 0;
 		}
 	}
+	.sticky_nav_container {
+		width: 1882px;
+	}
 }
 // IE10+
  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
@@ -468,5 +471,8 @@
 			top: 0;
 			left: 0;
 		}
+	}
+	.sticky_nav_container {
+		width: 1882px;
 	}
  }
