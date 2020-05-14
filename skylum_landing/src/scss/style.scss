@@ -392,8 +392,14 @@
 .sticky_dot_wrap {
 	position: fixed;
 	right: 20px;
-	top: 25%;
+	top: calc(110px + ((100vh - 110px - 690px) / 2));
 	z-index: 9;
+	@media (max-width: 1899px) {
+		top: calc(110px + ((100vh - 110px - 598px) / 2));
+	}
+	@media (max-width: 1399px) {
+	    top: calc(110px + ((100vh - 110px - 460px) / 2));
+	}
 	li {
 		border-radius: 50%;
 		border: 1px solid #fff;
