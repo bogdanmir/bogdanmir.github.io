@@ -293,6 +293,9 @@
 			height: 50px;
 			position: absolute;
 			top: 0;
+			
+			opacity: 0;
+			z-index: -9;
 		}
 	}
 	.next-slide {
