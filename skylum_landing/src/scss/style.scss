@@ -246,13 +246,13 @@
 				width: calc(100% - 220px);
 			}
 		}
-		& + .sticky_dot_wrap {
-			top: calc(110px + ((100vh - 50px - 690px) / 2));
+		& ~ .sticky_dot_wrap {
+			top: calc(50px + ((100vh - 50px - 690px) / 2));
 			@media (max-width: 1899px) {
-				top: calc(110px + ((100vh - 50px - 598px) / 2));
+				top: calc(50px + ((100vh - 50px - 598px) / 2));
 			}
 			@media (max-width: 1399px) {
-			    top: calc(110px + ((100vh - 50px - 460px) / 2));
+			    top: calc(50px + ((100vh - 50px - 460px) / 2));
 			}
 		}
 	}
