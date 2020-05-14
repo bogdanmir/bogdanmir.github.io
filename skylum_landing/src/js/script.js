@@ -15,32 +15,21 @@ outhtmlLogo  += ' <figure class="plugins__logo"> <img src="https://media.macphun
 
 // $('body').find('.common-hero .common-hero__content-wrap').append("<p class='common-hero__subtitle'><b>Luminar 4's</b> revolutionary tools and AI technologies give superpowers for creative <b>photo editing.</b></p>");
 $('body').find('.common-hero .sk-subtitle').appendTo(".common-hero__content-wrap");
-
-if( $('body.en').length > 0 ){
-  	$('body').find('.common-hero .row:nth-child(2)').append('<div class="col-md-6"><p class="common-hero__content-text">Standalone application for Mac & PC with full RAW support. And Plugin for Adobe Photoshop, Lightroom & Apple products</p> <div class="outhtml_logo">'+ outhtmlLogo +'</div></div>');
+var langs_body = {
+	'en': 'Standalone application for Mac & PC with full RAW support. And Plugin for Adobe Photoshop, Lightroom & Apple products',
+	'de': 'Standalone Anwendung für Mac & PC mit voller RAW-Unterstützung. Und Plugin für Adobe Photoshop, Lightroom und Apple-Produkte',
+	'ko': 'RAW 풀 지원이 가능한 Mac 및 PC 전용 독립형 애플리케이션. Adobe Photoshop, Lightroom, Apple 제품을 위한 플러그인',
+	'jp': 'MacやPCへのスタンドアロン写真編集ソフト。完全RAW ファイル対応. フォトショップ、ライトルームやApple製品にプラグイン対応',
+	'fr': 'Application autonome pour Mac et PC avec prise en charge du format RAW complète. Et plug-in pour Adobe Photoshop, Lightroom et les produits Apple',
+	'nl': 'Standalone applicatie voor Mac & PC met volledige RAW-ondersteuning. En plugin voor Adobe Photoshop, Lightroom en Apple producten',
+	'it': 'Applicazione autonoma per Mac e PC con supporto RAW completo. E plugin per Adobe Photoshop, Lightroom e prodotti Apple',
+	'es': 'Aplicación para Mac y PC con full soporte RAW. Agrega extensión para Adobe Photoshop, Lightroom y productos Apple',
 }
-if( $('body.de').length > 0 ){
-	$('body').find('.common-hero .row:nth-child(2)').append('<div class="col-md-6"><p class="common-hero__content-text">Standalone Anwendung für Mac & PC mit voller RAW-Unterstützung. Und Plugin für Adobe Photoshop, Lightroom und Apple-Produkte</p> <div class="outhtml_logo">'+ outhtmlLogo +'</div></div>');
-}
-if( $('body.ko').length > 0 ){
-	$('body').find('.common-hero .row:nth-child(2)').append('<div class="col-md-6"><p class="common-hero__content-text">RAW 풀 지원이 가능한 Mac 및 PC 전용 독립형 애플리케이션. Adobe Photoshop, Lightroom, Apple 제품을 위한 플러그인</p> <div class="outhtml_logo">'+ outhtmlLogo +'</div></div>');
-}
-if( $('body.jp').length > 0 ){
-	$('body').find('.common-hero .row:nth-child(2)').append('<div class="col-md-6"><p class="common-hero__content-text">MacやPCへのスタンドアロン写真編集ソフト。完全RAW ファイル対応. フォトショップ、ライトルームやApple製品にプラグイン対応</p> <div class="outhtml_logo">'+ outhtmlLogo +'</div></div>');
-}
-if( $('body.fr').length > 0 ){
-	$('body').find('.common-hero .row:nth-child(2)').append('<div class="col-md-6"><p class="common-hero__content-text">Application autonome pour Mac et PC avec prise en charge du format RAW complète. Et plug-in pour Adobe Photoshop, Lightroom et les produits Apple</p> <div class="outhtml_logo">'+ outhtmlLogo +'</div></div>');
-}
-if( $('body.nl').length > 0 ){
-	$('body').find('.common-hero .row:nth-child(2)').append('<div class="col-md-6"><p class="common-hero__content-text">Standalone applicatie voor Mac & PC met volledige RAW-ondersteuning. En plugin voor Adobe Photoshop, Lightroom en Apple producten</p> <div class="outhtml_logo">'+ outhtmlLogo +'</div></div>');
-}
-if( $('body.it').length > 0 ){
-	$('body').find('.common-hero .row:nth-child(2)').append('<div class="col-md-6"><p class="common-hero__content-text">Applicazione autonoma per Mac e PC con supporto RAW completo. E plugin per Adobe Photoshop, Lightroom e prodotti Apple</p> <div class="outhtml_logo">'+ outhtmlLogo +'</div></div>');
-}
-if( $('body.es').length > 0 ){
-	$('body').find('.common-hero .row:nth-child(2)').append('<div class="col-md-6"><p class="common-hero__content-text">Aplicación para Mac y PC con full soporte RAW. Agrega extensión para Adobe Photoshop, Lightroom y productos Apple</p> <div class="outhtml_logo">'+ outhtmlLogo +'</div></div>');
-}
-
+$.each(langs_body,function(index, el) {
+	if( $('body.'+index).length > 0 ){
+		$('body').find('.common-hero .row:nth-child(2)').append('<div class="col-md-6"><p class="common-hero__content-text">'+el+'</p> <div class="outhtml_logo">'+ outhtmlLogo +'</div></div>');
+	}
+});
 
 $('body').find('.common-hero .common-hero__btns-wrap + .common-hero__upgrade').detach().appendTo( ".common-hero .row:nth-child(2) > div:nth-child(2)" );
 
@@ -121,7 +110,7 @@ var list_items_sections = [
   'name_nl' : 'AI Lucht Verbeteraar',
   'name_it' : 'Miglioramento cielo IA',
   'name_es' : 'AI Sky Enhancement',
-  'item' : 'tools-ai-enhance',
+  'item' : 'tools-ai-enhance_second',
   'popular' : true
 },
 {
@@ -254,31 +243,21 @@ $('.wrapper').append('<ul class="sticky_dot_wrap"></ul>');
 // $('body').find('.header').append(outhtmlTopNav);
 $('body').find('.header').after(outhtmlTopNav);
 $.each(list_items_sections,function(ind,el){
-  if(el.popular == true && $('body.en').length > 0 ){
-    items    +=    '<li data-gosection="'+el.item+'">'+el.name+'</li>';
-  }
-  if(el.popular == true && $('body.de').length > 0 ){
-    items    +=    '<li data-gosection="'+el.item+'">'+el.name_de+'</li>';
-  }
-  if(el.popular == true && $('body.ko').length > 0 ){
-    items    +=    '<li data-gosection="'+el.item+'">'+el.name_ko+'</li>';
-  }
-  if(el.popular == true && $('body.jp').length > 0 ){
-    items    +=    '<li data-gosection="'+el.item+'">'+el.name_ja+'</li>';
-  }
-  if(el.popular == true && $('body.fr').length > 0 ){
-    items    +=    '<li data-gosection="'+el.item+'">'+el.name_fr+'</li>';
-  }
-  if(el.popular == true && $('body.nl').length > 0 ){
-    items    +=    '<li data-gosection="'+el.item+'">'+el.name_nl+'</li>';
-  }
-  if(el.popular == true && $('body.it').length > 0 ){
-    items    +=    '<li data-gosection="'+el.item+'">'+el.name_it+'</li>';
-  }
-  if(el.popular == true && $('body.es').length > 0 ){
-    items    +=    '<li data-gosection="'+el.item+'">'+el.name_es+'</li>';
-  }
-
+	var ob_keys = {
+		'en': 'name',
+		'de': 'name_de',
+		'ko': 'name_ko',
+		'jp': 'name_ja',
+		'fr': 'name_fr',
+		'nl': 'name_nl',
+		'it': 'name_it',
+		'es': 'name_es',
+	}
+    $.each(ob_keys, function(inx, item) {
+        if (el.popular == true && $('body.'+inx).length > 0) {
+            items += '<li data-gosection="' + el.item + '">' + el[item] + '</li>';
+        }
+	});
   items_dots +=    '<li data-gosection="'+el.item+'"></li>';
 })
 $('.wrapper').find('.sticky_dot_wrap').append(items_dots);
@@ -471,23 +450,25 @@ setTimeout(function(){
 
 
 
-// Check if Navigator is Internet Explorer
-// if(navigator.userAgent.indexOf('MSIE')!==-1
-// || navigator.appVersion.indexOf('Trident/') > -1){
+$('body').find('.tools-ai-enhance').append('<div class="tools-ai-enhance_second" data-analytics-block="tools-ai-enhance_second"></div>');
 
-//     // Scroll event check
-//     $(window).scroll(function (event) {
-//         var scroll = $(window).scrollTop();
-
-//         // Activate sticky for IE if scrolltop is more than 20px
-
-//         // if($('html,body').scrollTop() > 60){
-//         if ( scroll > 60) {
-//             $('.sticky-top').addClass( "sticky-top-ie" );
-//         }else{
-//             $('.sticky-top').removeClass( "sticky-top-ie" );        
-//         }
-
-//     });
-
+// function scroll_items(){
+// 	var analytics_block2 = $('[data-analytics-block="tools-ai-enhance"]');
+// 	if (analytics_block2.length > 0) {
+// 	    if($('html,body').scrollTop() > analytics_block2.offset().top - 200 && $('.sticky_nav_wrap li[data-gosection="tools-ai-enhance"].hidden_active').length < 1){
+// 	      $('.sticky_nav_wrap li[data-gosection="tools-ai-enhance"]').eq(1).addClass('hidden_active');
+// 			setTimeout(function(){
+// 				$('.sticky_nav_wrap li[data-gosection="tools-ai-enhance"]').eq(0).addClass('hidden_active')
+// 				$('.sticky_nav_wrap li[data-gosection="tools-ai-enhance"]').eq(1).removeClass('hidden_active')
+// 			},2000);
+// 	    } else {
+// 	    	$('.sticky_nav_wrap li[data-gosection="tools-ai-enhance"]').eq(0).removeClass('hidden_active')
+// 			$('.sticky_nav_wrap li[data-gosection="tools-ai-enhance"]').eq(1).removeClass('hidden_active')
+// 	    }
+// 	}
 // }
+//  scroll_items();
+
+// $(window).scroll(function(event) {
+// 	scroll_items();
+// })

@@ -400,6 +400,16 @@
 					opacity: 1;	
 				}
 			}
+			&.active {
+				&.hidden_active {
+
+					color: #8e9294;
+					&:after {
+						opacity: 0;
+					}
+
+				}
+			}
 		}
 	}
 }
@@ -468,6 +478,12 @@
 	}
 }
 
+.tools-ai-enhance_second {
+	height: 60vh;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
 
 @media screen and (min-width:0\0) and (min-resolution: +72dpi) {
    // IE9+ CSS
