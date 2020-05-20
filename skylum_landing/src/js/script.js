@@ -33,7 +33,7 @@ $.each(langs_body,function(index, el) {
 
 $('body').find('.common-hero .common-hero__btns-wrap + .common-hero__upgrade').detach().appendTo( ".common-hero .row:nth-child(2) > div:nth-child(2)" );
 
-$('body').find('.common-hero').append('<div class="mouse_down"><span class="mouse_wheel"></span></div>');
+$('body').find('.common-hero').append('<div class="mouse_down"><span class="mouse_wheel_1 arrow"><span></span><span></span><span></span></span></div>');
 
 
 var list_items_sections = [
