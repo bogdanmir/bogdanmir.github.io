@@ -42,18 +42,6 @@ var list_items_sections = [
   'popular' : false
 },
 {
-  'name' : 'Embed objects',
-  'name_de' : 'Objekte einbetten',
-  'name_ko' : '내장형 객체',
-  'name_ja' : 'オブジェクトを追加',
-  'name_fr' : 'Intégrer des objets',
-  'name_nl' : 'Embedden van objecten',
-  'name_it' : 'Incorpora oggetti',
-  'name_es' : 'Objetos incorporados',
-  'item' : 'augmented-sky-hero',
-  'popular' : true
-},
-{
   'name' : 'Replace sky',
   'name_de' : 'Himmel ersetzen',
   'name_ko' : '스카이 변환',
@@ -75,6 +63,18 @@ var list_items_sections = [
   'name_it' : 'Affina ritratti e pelle',
   'name_es' : 'Mejora retratos y piel',
   'item' : 'portrait-hero',
+  'popular' : true
+},
+{
+  'name' : 'Embed objects',
+  'name_de' : 'Objekte einbetten',
+  'name_ko' : '내장형 객체',
+  'name_ja' : 'オブジェクトを追加',
+  'name_fr' : 'Intégrer des objets',
+  'name_nl' : 'Embedden van objecten',
+  'name_it' : 'Incorpora oggetti',
+  'name_es' : 'Objetos incorporados',
+  'item' : 'augmented-sky-hero',
   'popular' : true
 },
 {
