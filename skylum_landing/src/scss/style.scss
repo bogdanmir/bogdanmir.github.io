@@ -211,8 +211,8 @@
     display: block;
     width: 10px;
     height: 10px;
-    border-bottom: 5px solid #fff;
-    border-right: 5px solid #fff;
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
     transform: rotate(45deg);
     margin: -10px;
     animation: animate 2s infinite;
@@ -251,7 +251,7 @@
     position: sticky;
     top: 0;
     left: 0;
-    z-index: 10;
+    z-index: 11;
 	.by-btn-js {
 		display: none;
 		font-size: 13px;
