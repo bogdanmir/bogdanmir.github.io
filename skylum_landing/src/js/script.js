@@ -1,3 +1,8 @@
+try {
+  hj('trigger', 'motivate_scroll');
+}
+catch(e) {}
+
 $('body').find('.common-hero .info-label-wr').detach().insertAfter( ".header .header__wrap .header__menu" );
 
 $('body').find('.common-hero .common-hero__content-wrap').detach().prependTo('.common-hero .row:nth-child(2) > div');
