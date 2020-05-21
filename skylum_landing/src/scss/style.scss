@@ -482,11 +482,12 @@
 				width: calc(100% - 64px);
 				opacity: 0;
 			}
-			@media (min-width: 2000px) {
+			
+			@media (min-width: 1080px) {
 				font-size: 17px;
 			}
-			@media (min-width: 1080px) {
-				font-size: 13px;
+			@media (min-width: 2000px) {
+				font-size: 18px;
 			}
 			&:hover,
 			&.active {
