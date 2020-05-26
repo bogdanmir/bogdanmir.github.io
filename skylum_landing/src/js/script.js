@@ -285,9 +285,16 @@
 
 
 try {
-    hj('trigger', 'motivate_scroll');
+  hj('trigger', 'motivate_scroll');
 }
 catch(e) {}
+
+window.dataLayer = window.dataLayer || [];
+dataLayer.push({
+  'event': 'UA_event',
+  'eventCategory': 'Exp - Motivate scroll',
+  'eventAction': 'loaded'
+});
 
 function is_ie() {
     var sAgent = window.navigator.userAgent;
@@ -305,6 +312,14 @@ function is_ie() {
 }
 
 $('body').on('click', '[data-gosection]', function(event) {
+
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+      'event': 'UA_event',
+      'eventCategory': 'Exp - Motivate scroll',
+      'eventAction': 'Clicked Sticky Navigation'
+    });
+
     var gosection = $(this).attr('data-gosection');
     $('[data-gosection]').removeClass();
     $('[data-gosection="'+gosection+'"]').addClass('active');
@@ -315,6 +330,15 @@ $('body').on('click', '[data-gosection]', function(event) {
 });
 
 
+//by-btn in sticky menu 
+$('body').on('click', '.sticky_nav_wrap .by-btn-js', function(event) {
+  window.dataLayer = window.dataLayer || [];
+  dataLayer.push({
+    'event': 'UA_event',
+    'eventCategory': 'Exp - Motivate scroll',
+    'eventAction': 'Clicked Sticky Buy Now'
+  });
+});
 
 
 // Slider
