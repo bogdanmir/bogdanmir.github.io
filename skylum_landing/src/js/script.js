@@ -319,6 +319,7 @@ $('body').on('click', '[data-gosection]', function(event) {
       'eventCategory': 'Exp - Motivate scroll',
       'eventAction': 'Clicked Sticky Navigation'
     });
+    console.log('Clicked Sticky Navigation')
 
     var gosection = $(this).attr('data-gosection');
     $('[data-gosection]').removeClass();
@@ -338,6 +339,7 @@ $('body').on('click', '.sticky_nav_wrap .by-btn-js', function(event) {
     'eventCategory': 'Exp - Motivate scroll',
     'eventAction': 'Clicked Sticky Buy Now'
   });
+  console.log('Clicked Sticky Buy Now')
 });
 
 
