@@ -1,0 +1,196 @@
+.exit_popup_container {
+	position: fixed;
+	background: #fff;
+	z-index: 99999;
+	top: 120px;
+	left: 0;
+	right: 0;
+	max-width: 351px;
+	border-radius: 16px;
+	overflow: hidden;
+	margin: auto;
+}
+.exit_popup_overlay {
+	position: absolute;
+	z-index: 99998;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,.65);
+	transition: all ease .4s;
+}
+.exit_popup {
+	text-align: center;
+	.modal__body {
+		padding: 32px 0 18px;
+	}
+	.modal_title {
+		font-weight: 600;
+		font-size: 18px;
+		text-transform: uppercase;
+		color: #2F2F2F;
+		font-family: inherit;
+		padding: 0 18px 8px;
+		letter-spacing: 0.7px;
+	}
+	.modal_subtitle {
+		font-weight: 600;
+		font-size: 13px;
+		text-transform: uppercase;
+		color: #2F2F2F;
+		padding: 0 18px;
+		letter-spacing: 0;
+	}
+	.modal_slider_wrap {
+		margin: 20px 0 15px;
+	}
+	.modal_slider {
+		.swiper-pagination-bullet  {
+			height: 5px;
+			width: 5px;
+			margin: 0 5px;
+		}
+		.swiper-pagination-bullet-active {
+			background: #5C5C5C;
+		}
+		.swiper-slide {
+			padding-top: 70px;
+			& > a {
+				display: block;
+				max-width: 100px;
+				margin: 0 auto;
+			}
+		}
+		.slide_title {
+			color: #2F2F2F;
+			font-size: 10px;
+			letter-spacing: 0.055em;
+			text-transform: uppercase;
+			font-weight: 700;
+			margin-bottom: 5px;
+		}
+		.slide_size {
+			color: #5C5C5C;
+			font-size: 12px;
+			margin-bottom: 5px;
+			letter-spacing: 0;
+		}
+		.slide_price {
+			color: #2F2F2F;
+			font-size: 14px;
+			letter-spacing: 0;
+		}
+	}
+	.slider_tooltip_box {
+		position: relative;
+		margin: 0 0 15px;
+		padding: 10px 10px 11px;
+		background-color: #f8f8f8;
+		color: #2f2f2f;
+		text-align: center;
+		border: 1px solid #000;
+		font-weight: 600;
+		font-size: 12px;
+		opacity: 0;
+		transition: opacity 0.25s;
+		position: absolute;
+		left: -45px;
+		top: 0;
+		width: 260px;
+		&:after, 
+		&:before {
+			content: '';
+			margin-left: -13px;
+			position: absolute;
+			left: 50%;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 0px 10px 10px;
+			transform: rotate(180deg);
+		}
+		&:before {
+			bottom: -10px;
+			border-color: transparent transparent #000;
+		}
+		&:after {
+			bottom: -9px;
+			border-color: transparent transparent #f8f8f8;
+		}
+	}
+	.swiper-slide-active {
+		.slider_tooltip_box {
+			opacity: 1;
+		}
+	}
+	.modal_content {
+		border: 2px solid #FCBEC0;
+		position: relative;
+		margin: 0 18px;
+		&:after {
+			content: '';
+			background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFUSURBVHgB7VTRcYJAEN2DFGAJZwNACbGC0IF2oKkg2gFUEFNBkgpMOjg6oIPQAJC3ujh4g3CiM/74Zm64XfbeW3aXI3rg3lA0ElEU6bqu37F9xsqVUq/GmC87zqPxiIWcsReD6MQOeiIH8MFWtoR9gmw3QRBoZL6UsElZliy6vVigqqoERHFjY78GufI8bw2xOZOz3/f93D7rVCIQzrt8+IoCWyP2B+yfUQJnUAhxijUD+aIryEkAZUhtH2csTd0LdTXYWUBqnQpZM5IJerOEfyfrLwxDniR9kgiNhPUftJFnWTZtDOcxxSNGxpoOX8SNNSCa4d0CQm+wtYTr9lk1RMxlQElWJKNoYYt3G95wmRpyCB95e3uAQ58882fIGZz9Dv3I8fztChhqsqZh9MZc8x844WYCaPwK5ZzyavudpsgFcm0Utr9XgK8BNO9lIOabHrgG/9ETkAckdD4VAAAAAElFTkSuQmCC");
+			background-repeat: no-repeat;
+			background-color: #fff;
+			position: absolute;
+			top: -14px;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			height: 28px;
+			width: 30px;
+		}
+		p {
+			font-weight: 600;
+			font-size: 13px;
+			line-height: 1.4;
+			letter-spacing: 0.5px;
+			color: #2F2F2F;
+			padding: 13px 0;
+		}
+	}
+
+	.modal_btn {
+		background: #FCBEC0;
+		text-transform: uppercase;
+		color: #2F2F2F;
+		font-weight: 600;
+		font-size: 14px;
+		padding: 19px 0;								
+		display: block;
+		width: 100%;
+	}
+}
+.modal_close {
+	cursor: pointer;
+	position: absolute;
+	right: 24px;
+	top: 20px;
+	width: 15px;
+	height: 15px;
+	&:before, 
+	&:after {
+		position: absolute;
+		left: 7px;
+		content: '';
+		background-color: #b3b3b3;
+		transition: all ease .25s;
+		height: 20px;
+		width: 1px;
+	}
+	&:before {
+		transform: rotate(45deg);
+	}
+	&:after {
+		transform: rotate(-45deg);
+	}
+	&:hover {
+		&:before, 
+		&:after {
+			background-color: #000;
+		}
+	}
+}
