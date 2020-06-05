@@ -34,9 +34,9 @@ $exit_popup +=                  '<div class="swiper-container modal_slider">';
                                 // <!-- Additional required wrapper -->
 $exit_popup +=                  '<div class="swiper-wrapper">';
                                 // <!-- Slides -->
-$.each(window.slide_items,function(ind,el){
-    $exit_popup +='<div class="swiper-slide">'+ el.img +'<p class="slide_title">'+ el.title +'</p> <p class="slide_size">'+ el.size +'</p><p class="slide_price">'+ el.price +'</p></div>';
-})
+    $.each(window.slide_items,function(ind,el){
+        $exit_popup +='<div class="swiper-slide">'+ el.img +'<p class="slide_title">'+ el.title +'</p> <p class="slide_size">'+ el.size +'</p><p class="slide_price">'+ el.price +'</p></div>';
+    })
 $exit_popup +=                  '</div>';
 $exit_popup +=                  '<div class="swiper-pagination-modal"></div>';
 $exit_popup +=              '</div>';
@@ -59,17 +59,22 @@ $('body').on('click', '.modal_close', function() {
     $('body').find('.exit_popup_overlay').remove();
 });
 
-var mySwiper = new window.Swiper('.modal_slider', {
-    speed: 400,
-    spaceBetween: 15,
-    slidesPerView: 2,
-    centeredSlides: true,
-    loop: true,
-    pagination: {
-        el: '.swiper-pagination-modal',
-        type: 'bullets',
-        clickable: true
-    }
-});
 
+if( $('.cart-popup .cart-popup__list .cart-popup__item').length > 1 ){
+    var mySwiper = new window.Swiper('.modal_slider', {
+        speed: 400,
+        spaceBetween: 15,
+        slidesPerView: 2,
+        centeredSlides: true,
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination-modal',
+            type: 'bullets',
+            clickable: true
+        }
+    });
+} else {
+    console.log('one item in card')
+}
 $('body').find('.swiper-slide').prepend("<div class='slider_tooltip_box'>This is a popular choice,<br> we may run out of stock soon</div>");
+

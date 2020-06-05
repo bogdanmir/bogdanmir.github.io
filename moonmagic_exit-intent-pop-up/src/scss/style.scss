@@ -48,6 +48,18 @@
 		margin: 20px 0 15px;
 	}
 	.modal_slider {
+		&.swiper-container-initialized {
+			.slider_tooltip_box {
+				opacity: 0;
+				left: -45px;
+				right: auto;
+			}
+			.swiper-slide-active {
+				.slider_tooltip_box {
+					opacity: 1;
+				}
+			}
+		}
 		.swiper-pagination-bullet  {
 			height: 5px;
 			width: 5px;
@@ -85,7 +97,6 @@
 		}
 	}
 	.slider_tooltip_box {
-		position: relative;
 		margin: 0 0 15px;
 		padding: 10px 10px 11px;
 		background-color: #f8f8f8;
@@ -94,10 +105,11 @@
 		border: 1px solid #000;
 		font-weight: 600;
 		font-size: 12px;
-		opacity: 0;
 		transition: opacity 0.25s;
 		position: absolute;
-		left: -45px;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
 		top: 0;
 		width: 260px;
 		&:after, 
@@ -119,11 +131,6 @@
 		&:after {
 			bottom: -9px;
 			border-color: transparent transparent #f8f8f8;
-		}
-	}
-	.swiper-slide-active {
-		.slider_tooltip_box {
-			opacity: 1;
 		}
 	}
 	.modal_content {
