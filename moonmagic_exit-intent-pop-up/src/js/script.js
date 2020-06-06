@@ -76,8 +76,17 @@ if( $('.cart-popup .cart-popup__list .cart-popup__item').length > 1 ){
     console.log('one item in card')
 }
 window.already_display_popup = 0;
+window.dont_triger_popup     = 0;
+
+setInterval(function() {
+    if($('.cart-popup').hasClass('cart-popup--active') || window.slide_items.length < 1){
+        window.dont_triger_popup = 1;
+    }else{
+        window.dont_triger_popup = 0;
+    }
+});
 window.show_popup = function(){
-    if(window.already_display_popup === 0){
+    if(window.already_display_popup === 0 && window.dont_triger_popup == 0){
         $('.exit_popup_container').addClass('active');
         $('.exit_popup_overlay').addClass('active');
     }
@@ -95,18 +104,4 @@ setInterval(function() {
     }
     old_scroll = scrollTop;
 });
-var regex = /moonmagic\.com/g;
-var str = document.referrer;
-var is_need_block_history = regex.exec(str) == null;
-window.onpopstate = function(event) {
-    if(is_need_block_history && window.already_display_popup === 0){
-        var state = event.state;
-        window.show_popup();
-        history.pushState({page: 4}, "Wait a minute", "?test=true");
-    }
-}
-if(is_need_block_history){
-    history.pushState({page: 1}, "Wait a minute", "?test=true");
-    history.pushState({page: 2}, "Wait a minute", "?test=true");
-}
 $('body').find('.swiper-slide').prepend("<div class='slider_tooltip_box'>This is a popular choice,<br> we may run out of stock soon</div>");

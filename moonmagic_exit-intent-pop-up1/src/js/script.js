@@ -75,26 +75,23 @@ if( $('.cart-popup .cart-popup__list .cart-popup__item').length > 1 ){
 } else {
     console.log('one item in card')
 }
+
 window.already_display_popup = 0;
+window.dont_triger_popup     = 0;
+setInterval(function() {
+    if($('.cart-popup').hasClass('cart-popup--active') || window.slide_items.length < 1){
+        window.dont_triger_popup = 1;
+    }else{
+        window.dont_triger_popup = 0;
+    }
+});
 window.show_popup = function(){
-    if(window.already_display_popup === 0){
+    if(window.already_display_popup === 0 && window.dont_triger_popup == 0){
         $('.exit_popup_container').addClass('active');
         $('.exit_popup_overlay').addClass('active');
     }
     window.already_display_popup = 1;
 }
-var old_scroll,scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-$(window).scroll(function(e){
-    scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-});
-setInterval(function() {
-    if(old_scroll-50 > scrollTop){
-        if(typeof window.show_popup != 'undefined'){
-            window.show_popup();
-        }
-    }
-    old_scroll = scrollTop;
-});
 var regex = /moonmagic\.com/g;
 var str = document.referrer;
 var is_need_block_history = regex.exec(str) == null;
