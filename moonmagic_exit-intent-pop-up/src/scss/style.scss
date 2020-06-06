@@ -10,6 +10,14 @@
 	overflow: hidden;
 	margin: auto;
 }
+.exit_popup_container,
+.exit_popup_overlay{
+	display: none;
+}
+.exit_popup_overlay.active,
+.exit_popup_container.active{
+	display: block;
+}
 .exit_popup_overlay {
 	position: absolute;
 	z-index: 99998;
