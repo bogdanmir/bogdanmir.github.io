@@ -110,4 +110,3 @@ if(is_need_block_history){
     history.pushState({page: 2}, "Wait a minute", "?test=true");
 }
 $('body').find('.swiper-slide').prepend("<div class='slider_tooltip_box'>This is a popular choice,<br> we may run out of stock soon</div>");
-
