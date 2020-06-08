@@ -4,12 +4,13 @@ if( $('.cart-popup .cart-popup__list .cart-popup__item').length > 1 ){
 } else {
     var item_content = "We can’t guarantee its availability<br> if you don't complete the purchase now";
 }
+
+window.slide_items = new Array();
 if(typeof window.Swiper == 'undefined'){
     var o=document.createElement("script");o.type="text/javascript",o.readyState?o.onreadystatechange=function(){"loaded"!==o.readyState&&"complete"!==o.readyState||(o.onreadystatechange=null,e())}:o.onload=function(){render_popup()},o.src="//cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.2/js/swiper.min.js",document.getElementsByTagName("head")[0].appendChild(o)
 }else{
     render_popup();
 }
-window.slide_items = new Array();
 function render_popup(){
     console.log('render_popup Run');
     if($('.cart-popup .cart-popup__list .cart-popup__item').length > 0){
