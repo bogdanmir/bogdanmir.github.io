@@ -52,7 +52,6 @@ function render_popup(){
     }
     console.log('slide items');
     console.log(window.slide_items);
-    console.log(window.slide_items.length);
     $('body').find('.exit_popup_container').remove();
     $('body').find('.exit_popup_overlay').remove();
     $exit_popup  = '<div class="exit_popup_container">';
@@ -68,7 +67,7 @@ function render_popup(){
     $exit_popup +=                  '<div class="swiper-wrapper">';
     // <!-- Slides -->
     $.each(window.slide_items,function(ind,el){
-        $exit_popup +='<div class="swiper-slide">'+ el.img +'<p class="slide_title">'+ el.title +'</p> <p class="slide_size">'+ (el.size != null ? el.size : '') +'</p><p class="slide_price">'+ el.price +'</p></div>';
+        $exit_popup +='<div class="swiper-slide"><div class="slider_tooltip_box">This is a popular choice,<br> we may run out of stock soon</div>'+ el.img +'<p class="slide_title">'+ el.title +'</p> <p class="slide_size">'+ (el.size != null ? el.size : '') +'</p><p class="slide_price">'+ el.price +'</p></div>';
     })
     $exit_popup +=                  '</div>';
     $exit_popup +=                  '<div class="swiper-pagination-modal"></div>';
@@ -84,8 +83,9 @@ function render_popup(){
     if( window.slide_items.length > 0 ){
         $('body').append($exit_popup);
         $('body').append('<div class="exit_popup_overlay"></div>');
+        // $('body').find('.modal_slider .swiper-slide').prepend("<div class='slider_tooltip_box'>This is a popular choice,<br> we may run out of stock soon</div>");
     }
-    if( window.slide_items.length > 0 ){
+    if( window.slide_items.length > 1 ){
         var mySwiper = new window.Swiper('.modal_slider', {
             speed: 400,
             spaceBetween: 15,
