@@ -1,3 +1,8 @@
+//added style for checkout page
+if (window.location.href.indexOf("checkouts") > -1) {
+    console.log('added style')
+    $('head').append('<link type="text/css" rel="stylesheet" href="https://cdn.shopify.com/s/files/1/1289/9833/t/123/assets/app.css" />');
+}
 
 if( $('.cart-popup .cart-popup__list .cart-popup__item').length > 1 ){
     var item_content = "We can’t guarantee the availability<br> of all products in you cart<br> if you don’t complete the purchase now";
@@ -135,4 +140,4 @@ setInterval(function() {
     }
     old_scroll = scrollTop;
 });
-$('body').find('.swiper-slide').prepend("<div class='slider_tooltip_box'>This is a popular choice,<br> we may run out of stock soon</div>");
+$('body').find('.modal_slider .swiper-slide').prepend("<div class='slider_tooltip_box'>This is a popular choice,<br> we may run out of stock soon</div>");
