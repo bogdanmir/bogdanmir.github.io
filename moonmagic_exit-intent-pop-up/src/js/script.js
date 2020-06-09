@@ -3,7 +3,7 @@ if (window.location.href.indexOf("checkouts") > -1) {
     console.log('added style')
     $('head').append('<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700&display=swap" rel="stylesheet"><link type="text/css" rel="stylesheet" href="https://swiperjs.com/package/css/swiper.min.css" />');
 }
-
+alert('test Run');
 window.slide_items = new Array();
 if(typeof window.Swiper == 'undefined'){
     var o=document.createElement("script");o.type="text/javascript",o.readyState?o.onreadystatechange=function(){"loaded"!==o.readyState&&"complete"!==o.readyState||(o.onreadystatechange=null,e())}:o.onload=function(){render_popup()},o.src="//cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.2/js/swiper.min.js",document.getElementsByTagName("head")[0].appendChild(o)
@@ -11,7 +11,7 @@ if(typeof window.Swiper == 'undefined'){
     render_popup();
 }
 function render_popup(){
-    console.log('render_popup Run');
+    alert('render_popup Run');
     if($('.cart-popup .cart-popup__list .cart-popup__item').length > 0){
         window.slide_items = new Array();
         $('.cart-popup .cart-popup__list .cart-popup__item').each(function() {
