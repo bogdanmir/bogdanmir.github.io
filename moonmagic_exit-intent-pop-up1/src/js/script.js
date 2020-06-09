@@ -125,18 +125,20 @@ window.show_popup = function(){
             if(typeof window.popup_swiper != 'undefined'){
                 window.popup_swiper.destroy();
             }
-            window.popup_swiper = new window.Swiper('.modal_slider', {
-                speed: 400,
-                spaceBetween: 15,
-                slidesPerView: 2,
-                centeredSlides: true,
-                loop: false,
-                pagination: {
-                    el: '.swiper-pagination-modal',
-                    type: 'bullets',
-                    clickable: true
-                }
-            });
+            setTimeout(function() {
+                window.popup_swiper = new window.Swiper('.modal_slider', {
+                    speed: 400,
+                    spaceBetween: 15,
+                    slidesPerView: 2,
+                    centeredSlides: true,
+                    loop: false,
+                    pagination: {
+                        el: '.swiper-pagination-modal',
+                        type: 'bullets',
+                        clickable: true
+                    }
+                });
+            },10);
         } else {
             console.log('one item in card')
         }

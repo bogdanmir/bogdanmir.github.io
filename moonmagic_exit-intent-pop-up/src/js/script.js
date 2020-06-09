@@ -87,22 +87,7 @@ if( window.slide_items.length > 1 ){
         $('body').append('<div class="exit_popup_overlay"></div>');
         // $('body').find('.modal_slider .swiper-slide').prepend("<div class='slider_tooltip_box'>This is a popular choice,<br> we may run out of stock soon</div>");
     }
-    if( window.slide_items.length > 1 ){
-        // var mySwiper = new window.Swiper('.modal_slider', {
-        //     speed: 400,
-        //     spaceBetween: 15,
-        //     slidesPerView: 2,
-        //     centeredSlides: true,
-        //     loop: false,
-        //     pagination: {
-        //         el: '.swiper-pagination-modal',
-        //         type: 'bullets',
-        //         clickable: true
-        //     }
-        // });
-    } else {
-        console.log('one item in card')
-    }
+
 }
 $('body').on('click', '.modal_close', function() {
     $('body').find('.exit_popup_container').remove();
@@ -123,31 +108,29 @@ window.show_popup = function(){
     if(window.already_display_popup == 0){
         render_popup();
     }
-    console.log('dont_triger_popup',window.dont_triger_popup)
-    console.log('already_display_popup',window.already_display_popup)
     if(window.already_display_popup == 0 && window.dont_triger_popup == 0){
         console.log('show popup');
         $('.exit_popup_container').addClass('active');
         $('.exit_popup_overlay').addClass('active');
-
         $('body').addClass('stop_scroll');
-
         if( window.slide_items.length > 1 ){
             if(typeof window.popup_swiper != 'undefined'){
                 window.popup_swiper.destroy();
             }
-            window.popup_swiper = new window.Swiper('.modal_slider', {
-                speed: 400,
-                spaceBetween: 15,
-                slidesPerView: 2,
-                centeredSlides: true,
-                loop: false,
-                pagination: {
-                    el: '.swiper-pagination-modal',
-                    type: 'bullets',
-                    clickable: true
-                }
-            });
+            setTimeout(function(){
+                window.popup_swiper = new window.Swiper('.modal_slider', {
+                    speed: 400,
+                    spaceBetween: 15,
+                    slidesPerView: 2,
+                    centeredSlides: true,
+                    loop: false,
+                    pagination: {
+                        el: '.swiper-pagination-modal',
+                        type: 'bullets',
+                        clickable: true
+                    }
+                });
+            },10);
         } else {
             console.log('one item in card')
         }
