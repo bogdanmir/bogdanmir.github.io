@@ -1,7 +1,7 @@
 //added style for checkout page
 if (window.location.href.indexOf("checkouts") > -1) {
     console.log('added style')
-    $('head').append('<link type="text/css" rel="stylesheet" href="https://swiperjs.com/package/css/swiper.min.css" /><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700&display=swap" rel="stylesheet">');
+    $('head').append('<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700&display=swap" rel="stylesheet"><link type="text/css" rel="stylesheet" href="https://swiperjs.com/package/css/swiper.min.css" />');
 }
 
 // if( $('.cart-popup .cart-popup__list .cart-popup__item').length > 1 ){
