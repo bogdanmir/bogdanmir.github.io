@@ -89,11 +89,12 @@ if( window.slide_items.length > 1 ){
     }
 
 }
-$('body').on('click', '.modal_close', function() {
+$('body').on('click', '.modal_close, .exit_popup_overlay', function() {
     $('body').find('.exit_popup_container').remove();
     $('body').find('.exit_popup_overlay').remove();
     $('body').removeClass('stop_scroll');
 });
+
 window.already_display_popup = Number(localStorage.getItem('pod') || 0);
 window.dont_triger_popup     = 0;
 setInterval(function() {

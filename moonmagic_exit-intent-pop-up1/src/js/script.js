@@ -94,7 +94,7 @@ if( window.slide_items.length > 1 ){
         // $('body').find('.modal_slider .swiper-slide').prepend("<div class='slider_tooltip_box'>This is a popular choice,<br> we may run out of stock soon</div>");
     }
 }
-$('body').on('click', '.modal_close', function() {
+$('body').on('click', '.modal_close, .exit_popup_overlay', function() {
     $('body').find('.exit_popup_container').remove();
     $('body').find('.exit_popup_overlay').remove();
     $('body').removeClass('stop_scroll');
