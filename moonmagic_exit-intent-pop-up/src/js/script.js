@@ -94,7 +94,7 @@ $('body').on('click', '.modal_close', function() {
     $('body').find('.exit_popup_overlay').remove();
     $('body').removeClass('stop_scroll');
 });
-window.already_display_popup = 0;
+window.already_display_popup = Number(localStorage.getItem('pod') || 0);
 window.dont_triger_popup     = 0;
 setInterval(function() {
     if($('.cart-popup').hasClass('cart-popup--active') == true || window.slide_items.length < 1){
@@ -135,6 +135,7 @@ window.show_popup = function(){
             console.log('one item in card')
         }
         window.already_display_popup = 1;
+        localStorage.setItem( 'pod', 1 );
     }
 }
 var old_scroll,scrollTop = window.pageYOffset || document.documentElement.scrollTop;
