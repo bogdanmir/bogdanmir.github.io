@@ -1,14 +1,14 @@
 //added style for checkout page
 if (window.location.href.indexOf("checkouts") > -1) {
     console.log('added style')
-    $('head').append('<link type="text/css" rel="stylesheet" href="https://swiperjs.com/package/css/swiper.min.css" />');
+    $('head').append('<link type="text/css" rel="stylesheet" href="https://swiperjs.com/package/css/swiper.min.css" /><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700&display=swap" rel="stylesheet">');
 }
 
-if( $('.cart-popup .cart-popup__list .cart-popup__item').length > 1 ){
-    var item_content = "We can’t guarantee the availability<br> of all products in you cart<br> if you don’t complete the purchase now";
-} else {
-    var item_content = "We can’t guarantee its availability<br> if you don't complete the purchase now";
-}
+// if( $('.cart-popup .cart-popup__list .cart-popup__item').length > 1 ){
+//     var item_content = "We can’t guarantee the availability<br> of all products in you cart<br> if you don’t complete the purchase now";
+// } else {
+//     var item_content = "We can’t guarantee its availability<br> if you don't complete the purchase now";
+// }
 
 window.slide_items = new Array();
 if(typeof window.Swiper == 'undefined'){
@@ -74,10 +74,18 @@ function render_popup(){
     $exit_popup +=              '</div>';
     $exit_popup +=          '</div>';
     $exit_popup +=          '<div class="modal_content">';
+
+if( window.slide_items.length > 1 ){
+    var item_content = "We can’t guarantee the availability<br> of all products in you cart<br> if you don’t complete the purchase now";
+} else {
+    var item_content = "We can’t guarantee its availability<br> if you don't complete the purchase now";
+    console.log('one item in card')
+}
+
     $exit_popup +=              '<p>' + item_content + '</p>';
     $exit_popup +=          '</div>';
     $exit_popup +=     '</div>';
-    $exit_popup +=     '<a href="" class="modal_btn">complete my order now</a>';
+    $exit_popup +=     '<a href="/checkout" class="modal_btn">complete my order now</a>';
     $exit_popup +=   '</div>';
     $exit_popup += '</div>';
     if( window.slide_items.length > 0 ){
@@ -89,6 +97,7 @@ function render_popup(){
 $('body').on('click', '.modal_close', function() {
     $('body').find('.exit_popup_container').remove();
     $('body').find('.exit_popup_overlay').remove();
+    $('body').removeClass('stop_scroll');
 });
 window.already_display_popup = 0;
 window.dont_triger_popup     = 0;
@@ -109,6 +118,9 @@ window.show_popup = function(){
         console.log('show popup');
         $('.exit_popup_container').addClass('active');
         $('.exit_popup_overlay').addClass('active');
+
+        $('body').addClass('stop_scroll');
+        
         if( window.slide_items.length > 1 ){
             if(typeof window.popup_swiper != 'undefined'){
                 window.popup_swiper.destroy();
