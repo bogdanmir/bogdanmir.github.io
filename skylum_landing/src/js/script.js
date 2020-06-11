@@ -10,14 +10,14 @@
 
 // $('body').find('.common-hero .sk-subtitle').appendTo(".common-hero__content-wrap");
 // var langs_body = {
-//     'en': 'Standalone application for Mac & PC with full RAW support. Works also as Plugin for Adobe Photoshop, Lightroom & Apple products',
-//     'de': 'Standalone Anwendung für Mac & PC mit voller RAW-Unterstützung. Und Plugin für Adobe Photoshop, Lightroom und Apple-Produkte',
-//     'ko': 'RAW 풀 지원이 가능한 Mac 및 PC 전용 독립형 애플리케이션. Adobe Photoshop, Lightroom, Apple 제품을 위한 플러그인',
-//     'jp': 'MacやPCへのスタンドアロン写真編集ソフト。完全RAW ファイル対応. フォトショップ、ライトルームやApple製品にプラグイン対応',
-//     'fr': 'Application autonome pour Mac et PC avec prise en charge du format RAW complète. Et plug-in pour Adobe Photoshop, Lightroom et les produits Apple',
-//     'nl': 'Standalone applicatie voor Mac & PC met volledige RAW-ondersteuning. En plugin voor Adobe Photoshop, Lightroom en Apple producten',
-//     'it': 'Applicazione autonoma per Mac e PC con supporto RAW completo. E plugin per Adobe Photoshop, Lightroom e prodotti Apple',
-//     'es': 'Aplicación para Mac y PC con full soporte RAW. Agrega extensión para Adobe Photoshop, Lightroom y productos Apple',
+//     'en': 'Standalone application for Mac & PC with full RAW support. Works also as a plugin for Adobe and Apple products.',
+//     'de': 'Standalone Anwendung für Mac & PC mit voller RAW-Unterstützung. Funktioniert auch als Plugin für Adobe und Apple-Produkte.',
+//     'ko': 'RAW 풀 지원이 가능한 Mac 및 PC 전용 독립형 애플리케이션. Adobe 및 Apple 제품의 플러그인으로도 작동합니다.',
+//     'jp': 'MacやPCへのスタンドアロン写真編集ソフト。完全RAW ファイル対応. AdobeおよびApple製品のプラグインとしても機能です。',
+//     'fr': 'Application autonome pour Mac et PC avec prise en charge du format RAW complète. Fonctionne également comme un plugin pour les produits Adobe et Apple.',
+//     'nl': 'Standalone applicatie voor Mac & PC met volledige RAW-ondersteuning. Werkt ook als plug-in voor Adobe en Apple-producten.',
+//     'it': 'Applicazione autonoma per Mac e PC con supporto RAW completo. Funziona anche come plugin per i prodotti di Adobe e Apple.',
+//     'es': 'Aplicación para Mac y PC con full soporte RAW. Funciona también como plugin para los productos de Adobe y Apple.',
 // }
 // $.each(langs_body,function(index, el) {
 //     if( $('body.'+index).length > 0 ){
@@ -289,7 +289,7 @@
 //     scroll_activation();
 // });
 
-// все что выше в GO
+// // все что выше в GO
 
 
 

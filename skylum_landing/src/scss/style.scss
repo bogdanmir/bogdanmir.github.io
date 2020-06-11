@@ -612,7 +612,7 @@
 
 
 
-// // все что выше в GO
+// все что выше в GO
 
 
 
@@ -788,6 +788,28 @@
 		&:after {
 			left: 50px;
 			transform: rotate(180deg);
+		}
+	}
+}
+
+
+.nl {
+	.wrap-content {
+		.common-hero {
+			.common-hero__sub-title {
+				br {
+					@media (max-width: 1799px) {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}
+.de {
+	.common-hero__btns-wrap {
+		.sk-btn {
+			min-width: 280px;
 		}
 	}
 }
