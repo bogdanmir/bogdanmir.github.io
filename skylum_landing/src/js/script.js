@@ -10,7 +10,7 @@
 
 // $('body').find('.common-hero .sk-subtitle').appendTo(".common-hero__content-wrap");
 // var langs_body = {
-//     'en': 'Standalone application for Mac & PC with full RAW support. And Plugin for Adobe Photoshop, Lightroom & Apple products',
+//     'en': 'Standalone application for Mac & PC with full RAW support. Works also as Plugin for Adobe Photoshop, Lightroom & Apple products',
 //     'de': 'Standalone Anwendung für Mac & PC mit voller RAW-Unterstützung. Und Plugin für Adobe Photoshop, Lightroom und Apple-Produkte',
 //     'ko': 'RAW 풀 지원이 가능한 Mac 및 PC 전용 독립형 애플리케이션. Adobe Photoshop, Lightroom, Apple 제품을 위한 플러그인',
 //     'jp': 'MacやPCへのスタンドアロン写真編集ソフト。完全RAW ファイル対応. フォトショップ、ライトルームやApple製品にプラグイン対応',
@@ -277,7 +277,7 @@
 //     scroll_activation();
 // });
 
-//// все что выше в GO
+// // все что выше в GO
 
 
 

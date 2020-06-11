@@ -30,6 +30,9 @@
 // 		text-align: left;
 // 		padding-top: 93px;
 // 		height: 145vh;
+// 		@media (max-width: 1279px) {
+// 			height: 90vh;
+// 		}
 // 		@media (max-height: 800px) {
 // 			padding-top: 92px;
 // 		}
@@ -149,13 +152,17 @@
 // 			@media (max-width: 1680px) {
 // 				padding-left: calc(100% - 500px);
 // 			}
-// 			@media (max-width: 767px) {
-// 				.header__logo {
+// 			.header__logo {
+// 				height: 43px;
+// 				width: 155px;
+// 				// @media (max-width: 1279px) {
+// 				// 	height: 45px;
+// 				// 	width: 200px;
+// 				// }
+// 				@media (max-width: 767px) {
 // 					position: relative;
 // 					right: auto;
 // 					top: auto;
-// 					height: 45px;
-// 					width: 200px;
 // 					transform: none;
 // 					margin: 0 0 10px;
 // 				}
@@ -341,7 +348,6 @@
 // 			height: 50px;
 // 			position: absolute;
 // 			top: 0;
-
 // 			opacity: 0;
 // 			z-index: -9;
 // 		}
@@ -361,23 +367,6 @@
 // 		}
 // 		&:after {
 // 			right: 50px;
-// 		}
-// 	}
-// 	.prev-slide {
-// 		left: 0px;
-// 		opacity: 0;
-// 		z-index: -1;
-// 		&.visible {
-// 			opacity: 1;
-// 			z-index: 10;
-// 		}
-// 		&:before {
-// 			transform: rotate( 180deg );
-// 			left: 20px;
-// 		}
-// 		&:after {
-// 			left: 50px;
-// 			transform: rotate(180deg);
 // 		}
 // 	}
 // 	.sticky_nav_container {
@@ -554,7 +543,9 @@
 // 		@media (max-width: 959px) {
 // 			font-size: 11px;
 // 			font-weight: 400;
-// 			.figure {
+// 		}
+// 		figure {
+// 			@media only screen and (max-width: 959px) and (min-width: 768px) {	
 // 				display: none;
 // 			}
 // 		}
@@ -616,7 +607,7 @@
 
 
 
-//// все что выше в GO
+// // все что выше в GO
 
 
 
@@ -699,6 +690,10 @@
 	@media (max-width: 767px) {
 		top: calc(100vh - 47px - 15px);
 	}
+	@media (max-height: 750px) {
+		top: auto;
+		bottom: 25px;
+	}
 	// @media (max-width: 1400px) {
 		// bottom: 50px;
 	// }
@@ -767,5 +762,25 @@
 	100%{
 		opacity: 0;
 		transform: rotate(45deg) translate(20px,20px);
+	}
+}
+
+.sticky_nav_wrap {
+	.prev-slide {
+		left: 0px;
+		opacity: 0;
+		z-index: -1;
+		&.visible {
+			opacity: 1;
+			z-index: 10;
+		}
+		&:before {
+			transform: rotate( 180deg );
+			left: 20px;
+		}
+		&:after {
+			left: 50px;
+			transform: rotate(180deg);
+		}
 	}
 }
