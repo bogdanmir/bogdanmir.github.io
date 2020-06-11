@@ -2,7 +2,7 @@
 	position: fixed;
 	background: #fff;
 	z-index: 99999;
-	top: 40px;
+	top: 30px;
 	left: 0;
 	right: 0;
 	max-width: 351px;
@@ -58,6 +58,9 @@
 	}
 	.modal_slider_wrap {
 		margin: 20px 0 15px;
+		@media (max-width: 340px) {
+			margin: 15px 0 15px;
+		}
 	}
 	.modal_slider {
 		&.swiper-container-initialized {
@@ -188,6 +191,9 @@
 			color: #2F2F2F;
 			padding: 13px 0;
 			font-family: Montserrat,sans-serif;
+			@media (max-width: 340px) {
+				font-size: 12px;
+			}
 		}
 	}
 
