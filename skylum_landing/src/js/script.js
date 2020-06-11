@@ -3,10 +3,10 @@
 // $('body').find('.common-hero .row:nth-child(2) > div').addClass('col-md-6');
 
 // // logos
-// var outhtmlLogo  = '<figure class="plugins__logo"><img src="https://media.macphun.com/img/uploads/uploads/skylum/luminar-dam-launch/app-lg.png?w=140" data-preload-src="https://media.macphun.com/img/uploads/uploads/skylum/luminar-dam-launch/app-lg.png?w=140" data-preload-retina-src="https://media.macphun.com/img/uploads/uploads/skylum/luminar-dam-launch/app-lg.png?w=280" data-preload-mob-src="https://media.macphun.com/img/uploads/uploads/skylum/luminar-dam-launch/app-lg.png?w=180" alt=""></figure>';
-// outhtmlLogo  += '<figure class="plugins__logo"><img src="https://media.macphun.com/img/uploads/uploads/skylum/svg/adobe-elements-v2.svg" data-preload-src="https://media.macphun.com/img/uploads/uploads/skylum/svg/adobe-elements-v2.svg" data-preload-retina-src="https://media.macphun.com/img/uploads/uploads/skylum/svg/adobe-elements-v2.svg" alt=""></figure>';
-// outhtmlLogo  += '<figure class="plugins__logo"><img src="https://media.macphun.com/img/uploads/uploads/skylum/svg/photoshop.svg" data-preload-src="https://media.macphun.com/img/uploads/uploads/skylum/svg/photoshop.svg" data-preload-retina-src="https://media.macphun.com/img/uploads/uploads/skylum/svg/photoshop.svg" alt=""></figure>';
-// outhtmlLogo  += ' <figure class="plugins__logo"> <img src="https://media.macphun.com/img/uploads/uploads/skylum/svg/lightroom.svg" data-preload-src="https://media.macphun.com/img/uploads/uploads/skylum/svg/lightroom.svg" data-preload-retina-src="https://media.macphun.com/img/uploads/uploads/skylum/svg/lightroom.svg" alt=""></figure>';
+// var outhtmlLogo  = '<figure class="plugins__logo"><img src="https://media.macphun.com/img/uploads/uploads/skylum/luminar-dam-launch/app-lg.png?w=140" alt=""></figure>';
+// outhtmlLogo  += '<figure class="plugins__logo"><img src="https://media.macphun.com/img/uploads/uploads/skylum/svg/adobe-elements-v2.svg" alt=""></figure>';
+// outhtmlLogo  += '<figure class="plugins__logo"><img src="https://media.macphun.com/img/uploads/uploads/skylum/svg/photoshop.svg" alt=""></figure>';
+// outhtmlLogo  += '<figure class="plugins__logo"><img src="https://media.macphun.com/img/uploads/uploads/skylum/svg/lightroom.svg" alt=""></figure>';
 
 // $('body').find('.common-hero .sk-subtitle').appendTo(".common-hero__content-wrap");
 // var langs_body = {
@@ -141,8 +141,16 @@
 //         'popular' : true
 //     },
 //     {
-//         'item' : 'common-video-gallery',
-//         'popular' : false
+//         'name' : 'Landscape Enhancer',
+//         'name_de' : 'Landscape Enhancer',
+//         'name_ko' : '조경 인핸서',
+//         'name_ja' : '風景エンハンサー',
+//         'name_fr' : 'Améliorer le paysage',
+//         'name_nl' : 'Landscape Enhancer',
+//         'name_it' : 'Migliora paesaggi',
+//         'name_es' : 'Landscape Enhancer',
+//         'item' : 'tools-landscapes',
+//         'popular' : true
 //     },
 //     {
 //         'item' : 'tools-library',
@@ -161,16 +169,32 @@
 //         'popular' : true
 //     },
 //     {
-//         'name' : 'Landscape Enhancer',
-//         'name_de' : 'Landscape Enhancer',
-//         'name_ko' : '조경 인핸서',
-//         'name_ja' : '風景エンハンサー',
-//         'name_fr' : 'Améliorer le paysage',
-//         'name_nl' : 'Landscape Enhancer',
-//         'name_it' : 'Migliora paesaggi',
-//         'name_es' : 'Landscape Enhancer',
-//         'item' : 'tools-landscapes',
+//         'name' : 'Remove noise',
+//         'name_de' : 'Rauschen entfernen',
+//         'name_ko' : '노이즈 제거',
+//         'name_ja' : 'ノイズ除去',
+//         'name_fr' : 'Éliminer le bruit',
+//         'name_nl' : 'Verwijder ruis',
+//         'name_it' : 'Rimuovi rumore',
+//         'name_es' : 'Renueve el ruido',
+//         'item' : 'tools-denoise',
 //         'popular' : true
+//     },
+//     {
+//         'name' : 'Enhance details',
+//         'name_de' : 'Details verbessern',
+//         'name_ko' : '세부 사항 강화',
+//         'name_ja' : '詳細を強化する',
+//         'name_fr' : 'Améliorer les détails',
+//         'name_nl' : 'Verbeter details',
+//         'name_it' : 'Migliorare i dettagli',
+//         'name_es' : 'Mejorar detalles',
+//         'item' : 'tools-details-enhancer',
+//         'popular' : true
+//     },
+//     {
+//         'item' : 'common-to-pro',
+//         'popular' : false
 //     },
 //     {
 //         'name' : 'Creative tools',
@@ -185,26 +209,6 @@
 //         'popular' : true
 //     },
 //     {
-//         'name' : 'Remove noise',
-//         'name_de' : 'Rauschen entfernen',
-//         'name_ko' : '노이즈 제거',
-//         'name_ja' : 'ノイズ除去',
-//         'name_fr' : 'Éliminer le bruit',
-//         'name_nl' : 'Verwijder ruis',
-//         'name_it' : 'Rimuovi rumore',
-//         'name_es' : 'Renueve el ruido',
-//         'item' : 'tools-denoise',
-//         'popular' : true
-//     },
-//     {
-//         'item' : 'tools-details-enhancer',
-//         'popular' : false
-//     },
-//     {
-//         'item' : 'common-to-pro',
-//         'popular' : false
-//     },
-//     {
 //         'item' : 'global-works-as-plugin',
 //         'popular' : false
 //     },
@@ -217,13 +221,21 @@
 //         'popular' : false
 //     },
 //     {
+//         'item' : 'common-video-free-tutorials',
+//         'popular' : false
+//     },
+//     {
 //         'item' : 'common-trustpilot',
 //         'popular' : false
 //     },
 //     {
 //         'item' : 'global-bottom-buy',
 //         'popular' : false
-//     },
+//     }
+//     // {
+//     //     'item' : 'common-video-gallery',
+//     //     'popular' : false
+//     // },
 // ];
 
 // // top navigation
@@ -277,7 +289,7 @@
 //     scroll_activation();
 // });
 
-// // все что выше в GO
+// все что выше в GO
 
 
 

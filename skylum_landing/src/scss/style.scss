@@ -30,15 +30,19 @@
 // 		text-align: left;
 // 		padding-top: 93px;
 // 		height: 145vh;
-// 		@media (max-width: 1279px) {
-// 			height: 90vh;
-// 		}
+// 		// @media (max-width: 1279px) {
+// 		// 	height: 90vh;
+// 		// }
 // 		@media (max-height: 800px) {
 // 			padding-top: 92px;
 // 		}
 // 		@media (max-height: 900px) {
 // 			padding-top: 84px;
-// 		}		
+// 		}
+// 		@media (max-width: 767px) {
+// 			height: 100%;
+// 			padding-bottom: 80px;
+// 		}	
 // 		.row {
 // 			.col-md-6 {
 // 				&:first-child {
@@ -503,6 +507,7 @@
 // }
 // .btn-info-label__wr {
 // 	@media (max-width: 767px) {
+// 		margin-top: 30px;
 // 		width: calc(100% - 30px);
 // 	}
 // 	.info-label-tooltip {
@@ -553,7 +558,7 @@
 // 	.info-label-wr {
 // 		@media (max-width: 767px) {
 //     		position: absolute;
-//     		top: 15px;
+//     		top: 45px;
 //     		left: 0;
 // 			width: 100%;
 // 		}
@@ -688,12 +693,14 @@
 		width: 26px;
 	}
 	@media (max-width: 767px) {
-		top: calc(100vh - 47px - 15px);
-	}
-	@media (max-height: 750px) {
+		// top: calc(100vh - 47px - 15px);
+	// }
+	// @media (max-height: 750px) {
 		top: auto;
 		bottom: 25px;
 	}
+
+
 	// @media (max-width: 1400px) {
 		// bottom: 50px;
 	// }
