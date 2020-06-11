@@ -53,7 +53,7 @@ function render_popup(){
         $('.cart-popup .cart-popup__list .cart-popup__item').each(function() {
             var item_img = $(this).find('.cart-popup__item-image').html();
             var item_title = $(this).find('.cart-popup__item-info .cart-popup__item-title').text();
-            var item_size = $(this).find('.cart-popup__item-info .cart-popup__item-size').text();
+            var item_size = $(this).find('.cart-popup__item-info .cart-popup__item-size.cart-popup__item-size--mobile').text();
             var item_price = $(this).find('.cart-popup__item-info .cart-popup__item-price').text();
             var objdata = {
                 img: item_img,
