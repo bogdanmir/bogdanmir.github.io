@@ -4,6 +4,36 @@ if (window.location.href.indexOf("checkouts") > -1) {
     $('head').append('<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700&display=swap" rel="stylesheet"><link type="text/css" rel="stylesheet" href="https://swiperjs.com/package/css/swiper.min.css" />');
 }
 
+function Safe_productToStorage(product_id){
+    var storage = localStorage.getItem('expdps') || '[]';
+    storage = JSON.parse(storage);
+    if(!storage.includes(product_id)){
+        storage.push(product_id);
+    }
+    var safe_storage = JSON.stringify(storage);
+    localStorage.setItem('expdps',safe_storage);
+}
+function Is_productinStorage(product_id){
+    var storage = localStorage.getItem('expdps') || '[]';
+    storage = JSON.parse(storage);
+    return storage.includes(product_id);
+}
+$(document).on('click','[data-add-to-cart]',function (event) {
+    if($('body').find('[data-product-json]').length >0 ){
+        var toJson = $('body').find('[data-product-json]').html();
+        toJson = JSON.parse(toJson);
+        Safe_productToStorage(toJson.id);
+    }
+});
+var product_id = null;
+$(document).ready(function() {
+    if($('body').find('[data-product-json]').length >0 ){
+        var toJson = $('body').find('[data-product-json]').html();
+        toJson = JSON.parse(toJson);
+        product_id = toJson.id;
+        console.log('product_id',product_id);
+    }
+});
 // if( $('.cart-popup .cart-popup__list .cart-popup__item').length > 1 ){
 //     var item_content = "We can’t guarantee the availability<br> of all products in you cart<br> if you don’t complete the purchase now";
 // } else {
@@ -151,7 +181,7 @@ var regex = /moonmagic\.com/g;
 var str = document.referrer;
 var is_need_block_history = regex.exec(str) == null;
 window.onpopstate = function(event) {
-    if(is_need_block_history && window.already_display_popup === 0 && window.slide_items.length > 0 ){
+    if(is_need_block_history && window.already_display_popup === 0 && window.slide_items.length > 0  && !Is_productinStorage(product_id)){
         var state = event.state;
         window.show_popup();
         history.pushState({page: 4}, "Wait a minute", "?test=true");
