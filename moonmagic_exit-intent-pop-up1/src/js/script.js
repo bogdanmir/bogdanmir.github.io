@@ -63,13 +63,14 @@ function render_popup(){
     $exit_popup +=              '<div class="modal_slider_wrap">';
     // <!-- Slider main container -->
     $exit_popup +=                  '<div class="swiper-container modal_slider">';
+    $exit_popup +=                      '<div class="slider_tooltip_box">This is a popular choice,<br> we may run out of stock soon</div>';
     // <!-- Additional required wrapper -->
-    $exit_popup +=                  '<div class="swiper-wrapper">';
+    $exit_popup +=                      '<div class="swiper-wrapper">';
     // <!-- Slides -->
     $.each(window.slide_items,function(ind,el){
-        $exit_popup +='<div class="swiper-slide"><div class="slider_tooltip_box">This is a popular choice,<br> we may run out of stock soon</div>'+ el.img +'<p class="slide_title">'+ el.title +'</p> <p class="slide_size">'+ (el.size != null ? el.size : '') +'</p><p class="slide_price">'+ el.price +'</p></div>';
+        $exit_popup +='<div class="swiper-slide">'+ el.img +'<p class="slide_title">'+ el.title +'</p> <p class="slide_size">'+ (el.size != null ? el.size : '') +'</p><p class="slide_price">'+ el.price +'</p></div>';
     })
-    $exit_popup +=                  '</div>';
+    $exit_popup +=                      '</div>';
     $exit_popup +=                  '<div class="swiper-pagination-modal"></div>';
     $exit_popup +=              '</div>';
     $exit_popup +=          '</div>';
