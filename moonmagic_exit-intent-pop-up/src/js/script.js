@@ -3,7 +3,36 @@ if (window.location.href.indexOf("checkouts") > -1) {
     console.log('added style')
     $('head').append('<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700&display=swap" rel="stylesheet"><link type="text/css" rel="stylesheet" href="https://swiperjs.com/package/css/swiper.min.css" />');
 }
-
+function Safe_productToStorage(product_id){
+    var storage = localStorage.getItem('expdps') || '[]';
+    storage = JSON.parse(storage);
+    if(!storage.includes(product_id)){
+        storage.push(product_id);
+    }
+    var safe_storage = JSON.stringify(storage);
+    localStorage.setItem('expdps',safe_storage);
+}
+function Is_productinStorage(product_id){
+    var storage = localStorage.getItem('expdps') || '[]';
+    storage = JSON.parse(storage);
+    return storage.includes(product_id);
+}
+$(document).on('click','[data-add-to-cart]',function (event) {
+    if($('body').find('[data-product-json]').length >0 ){
+        var toJson = $('body').find('[data-product-json]').html();
+        toJson = JSON.parse(toJson);
+        Safe_productToStorage(toJson.id);
+    }
+});
+var product_id = null;
+$(document).ready(function() {
+    if($('body').find('[data-product-json]').length >0 ){
+        var toJson = $('body').find('[data-product-json]').html();
+        toJson = JSON.parse(toJson);
+        product_id = toJson.id;
+        console.log('product_id',product_id);
+    }
+});
 window.slide_items = new Array();
 if(typeof window.Swiper == 'undefined'){
     var o=document.createElement("script");o.type="text/javascript",o.readyState?o.onreadystatechange=function(){"loaded"!==o.readyState&&"complete"!==o.readyState||(o.onreadystatechange=null,e())}:o.onload=function(){render_popup()},o.src="//cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.2/js/swiper.min.js",document.getElementsByTagName("head")[0].appendChild(o)
@@ -109,7 +138,7 @@ window.show_popup = function(){
     if(window.already_display_popup == 0){
         render_popup();
     }
-    if(window.already_display_popup == 0 && window.dont_triger_popup == 0){
+    if(window.already_display_popup == 0 && window.dont_triger_popup == 0 && !Is_productinStorage(product_id)){
         console.log('show popup');
         $('.exit_popup_container').addClass('active');
         $('.exit_popup_overlay').addClass('active');
@@ -145,7 +174,7 @@ $(window).scroll(function(e){
 });
 setInterval(function() {
     if(old_scroll-50 > scrollTop){
-        if(typeof window.show_popup != 'undefined'){
+        if(typeof window.show_popup != 'undefined'  && !Is_productinStorage(product_id)){
             window.show_popup();
         }
     }
