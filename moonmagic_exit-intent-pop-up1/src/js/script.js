@@ -132,7 +132,7 @@ $('body').on('click', '.modal_close, .exit_popup_overlay', function() {
 window.already_display_popup = Number(localStorage.getItem('pod') || 0);
 window.dont_triger_popup     = 0;
 setInterval(function() {
-    if($('.cart-popup').hasClass('cart-popup--active') == true || window.slide_items.length < 1){
+    if($('.cart-popup').hasClass('cart-popup--active') == true || window.slide_items.length < 1 && Is_productsinStorage()){
         window.dont_triger_popup = 1;
     }else{
         window.dont_triger_popup = 0;
@@ -180,7 +180,7 @@ var regex = /moonmagic\.com/g;
 var str = document.referrer;
 var is_need_block_history = regex.exec(str) == null;
 window.onpopstate = function(event) {
-    if(is_need_block_history && window.already_display_popup === 0 && window.slide_items.length > 0){
+    if(is_need_block_history && window.already_display_popup === 0 && window.slide_items.length > 0 && Is_productsinStorage()){
         var state = event.state;
         window.show_popup();
         history.pushState({page: 4}, "Wait a minute", "?test=true");
