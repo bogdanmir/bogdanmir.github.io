@@ -248,8 +248,6 @@
 	}
 	.exit_popup {
 		overflow: scroll;
-		// height: 100vh;
-		// height: calc(var(--vh, 1vh) * 100);
 		height: 100%;
 		.modal_content {
 			p {
@@ -264,14 +262,7 @@
 /* Chrome only: */
 @media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) and (max-height:510px) and (orientation:landscape) {
 	.exit_popup {
-		// height: 98vh;
-		// height: calc(var(--vh, 1vh) * 100);
-		// height: calc(100vh - 56px);
-		// height: calc(100vh - 30px);
 		height: 100%;
-		// .modal_btn {
-		// 	margin-bottom: 30px;
-		// }
 		.modal_content {
 			p {
 				font-size: 12px;
@@ -279,8 +270,4 @@
 			}
 		}
 	}
-
 }
-// @media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) { 
-
-// }

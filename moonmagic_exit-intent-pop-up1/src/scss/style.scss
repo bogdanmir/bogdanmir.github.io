@@ -243,11 +243,32 @@
 	overflow: hidden !important;
 }
 @media screen and (max-height:510px) and (orientation:landscape) {
-	.exit_popup {
-		overflow: scroll;
-		height: 100vh;
-	}
 	.exit_popup_container {
 		top: 0;
+		height: 100%;
+	}
+	.exit_popup {
+		overflow: scroll;
+		height: 100%;
+		.modal_content {
+			p {
+				font-size: 12px;
+				line-height: 1.2;
+			}
+		}
+	}
+}
+
+
+/* Chrome only: */
+@media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) and (max-height:510px) and (orientation:landscape) {
+	.exit_popup {
+		height: 100%;
+		.modal_content {
+			p {
+				font-size: 12px;
+				line-height: 1.2;
+			}
+		}
 	}
 }
