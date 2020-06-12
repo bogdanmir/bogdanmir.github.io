@@ -133,7 +133,7 @@ window.show_popup = function(){
     if(window.already_display_popup == 0){
         render_popup();
     }
-    if(window.already_display_popup == 0 && window.dont_triger_popup == 0 && !Is_productinStorage(product_id)){
+    if(window.already_display_popup == 0 && window.dont_triger_popup == 0){
         console.log('show popup');
         $('.exit_popup_container').addClass('active');
         $('.exit_popup_overlay').addClass('active');
@@ -174,7 +174,7 @@ $(window).scroll(function(e){
 });
 setInterval(function() {
     if(old_scroll-50 > scrollTop){
-        if(typeof window.show_popup != 'undefined'  && !Is_productinStorage(product_id)){
+        if(typeof window.show_popup != 'undefined'){
             window.show_popup();
         }
     }
