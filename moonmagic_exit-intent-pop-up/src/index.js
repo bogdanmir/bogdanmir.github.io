@@ -1,4 +1,4 @@
-console.log('%cTest come scroll',"background:green;color: #ffffff");
+console.log('%cTest come scroll',"background:blue;color: #ffffff");
 function abjql(callback) {
 	var script = document.createElement( "script" )
 	script.type = "text/javascript";

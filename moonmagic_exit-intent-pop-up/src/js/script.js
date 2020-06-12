@@ -2,7 +2,16 @@
 if (window.location.href.indexOf("checkouts") > -1) {
     console.log('added style')
     $('head').append('<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700&display=swap" rel="stylesheet"><link type="text/css" rel="stylesheet" href="https://swiperjs.com/package/css/swiper.min.css" />');
+
+    $('body').find('.exit_popup .modal_btn').att('href','#');
+    $('body').on('click', '.exit_popup .modal_btn', function() {
+        $('body').find('.exit_popup_container').remove();
+        $('body').find('.exit_popup_overlay').remove();
+        $('body').removeClass('stop_scroll');
+    });
 }
+
+
 function Safe_productToStorage(product_id){
     var storage = localStorage.getItem('expdps') || '[]';
     storage = JSON.parse(storage);
