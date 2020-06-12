@@ -245,6 +245,7 @@
 	.exit_popup {
 		overflow: scroll;
 		height: 100vh;
+		height: calc(var(--vh, 1vh) * 100);
 	}
 	.exit_popup_container {
 		top: 0;
