@@ -184,7 +184,7 @@ setInterval(function() {
 
 //added style for checkout page
 if (window.location.href.indexOf("checkouts") > -1) {
-    console.log('checkout page 567')
+    console.log('checkout page 789')
     $('head').append('<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700&display=swap" rel="stylesheet"><link type="text/css" rel="stylesheet" href="https://swiperjs.com/package/css/swiper.min.css" />');
 
     $('body').on('click', '.exit_popup .modal_btn', function(event) {
@@ -194,3 +194,10 @@ if (window.location.href.indexOf("checkouts") > -1) {
         $('body').removeClass('stop_scroll');
     });
 }
+
+
+// var viewportHeight = $('.exit_popup').outerHeight();
+// $('.exit_popup').css({ height: viewportHeight });
+
+// let vh = window.innerHeight * 0.01;
+// document.documentElement.style.setProperty('--vh', ${vh}px);
