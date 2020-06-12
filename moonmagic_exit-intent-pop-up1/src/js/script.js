@@ -132,7 +132,7 @@ $('body').on('click', '.modal_close, .exit_popup_overlay', function() {
 window.already_display_popup = Number(localStorage.getItem('pod') || 0);
 window.dont_triger_popup     = 0;
 setInterval(function() {
-    if($('.cart-popup').hasClass('cart-popup--active') == true || window.slide_items.length < 1 && Is_productsinStorage()){
+    if($('.cart-popup').hasClass('cart-popup--active') == true || window.slide_items.length < 1){
         window.dont_triger_popup = 1;
     }else{
         window.dont_triger_popup = 0;
@@ -151,7 +151,7 @@ window.show_popup = function(){
 
         $('body').addClass('stop_scroll');
         
-        if( window.slide_items.length > 1 ){
+        if( window.slide_items.length > 1){
             if(typeof window.popup_swiper != 'undefined'){
                 window.popup_swiper.destroy();
             }
