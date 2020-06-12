@@ -198,6 +198,3 @@ if (window.location.href.indexOf("checkouts") > -1) {
 
 // var viewportHeight = $('.exit_popup').outerHeight();
 // $('.exit_popup').css({ height: viewportHeight });
-
-// let vh = window.innerHeight * 0.01;
-// document.documentElement.style.setProperty('--vh', ${vh}px);

@@ -260,9 +260,10 @@
 		// height: 98vh;
 		// height: calc(var(--vh, 1vh) * 100);
 		// height: calc(100vh - 56px);
-		.modal_btn {
-			margin-bottom: 30px;
-		}
+		height: calc(100vh - 30px);
+		// .modal_btn {
+		// 	margin-bottom: 30px;
+		// }
 	}
 
 }
