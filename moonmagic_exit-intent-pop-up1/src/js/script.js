@@ -1,9 +1,3 @@
-//added style for checkout page
-if (window.location.href.indexOf("checkouts") > -1) {
-    console.log('added style')
-    $('head').append('<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700&display=swap" rel="stylesheet"><link type="text/css" rel="stylesheet" href="https://swiperjs.com/package/css/swiper.min.css" />');
-}
-
 function Safe_productToStorage(product_id){
     var storage = localStorage.getItem('expdps') || '[]';
     storage = JSON.parse(storage);
@@ -192,3 +186,15 @@ if(is_need_block_history ){
     history.pushState({page: 2}, "Wait a minute", "?test=true");
 }
 $('body').find('.modal_slider .swiper-slide').prepend("<div class='slider_tooltip_box'>This is a popular choice,<br> we may run out of stock soon</div>");
+//added style for checkout page
+if (window.location.href.indexOf("checkouts") > -1) {
+    console.log('checkout page')
+    $('head').append('<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700&display=swap" rel="stylesheet"><link type="text/css" rel="stylesheet" href="https://swiperjs.com/package/css/swiper.min.css" />');
+
+    $('body').find('.exit_popup .modal_btn').attr('href','#');
+    $('body').on('click', '.exit_popup .modal_btn', function() {
+        $('body').find('.exit_popup_container').remove();
+        $('body').find('.exit_popup_overlay').remove();
+        $('body').removeClass('stop_scroll');
+    });
+}
