@@ -12,6 +12,11 @@ function Is_productinStorage(product_id){
     storage = JSON.parse(storage);
     return storage.includes(product_id);
 }
+function Is_productsinStorage(){
+    var storage = localStorage.getItem('expdps') || '[]';
+    storage = JSON.parse(storage);
+    return storage.length > 0 ? true : false;
+}
 $(document).on('click','[data-add-to-cart]',function (event) {
     if($('body').find('[data-product-json]').length >0 ){
         var toJson = $('body').find('[data-product-json]').html();
@@ -175,13 +180,13 @@ var regex = /moonmagic\.com/g;
 var str = document.referrer;
 var is_need_block_history = regex.exec(str) == null;
 window.onpopstate = function(event) {
-    if(is_need_block_history && window.already_display_popup === 0 && window.slide_items.length > 0  && !Is_productinStorage(product_id)){
+    if(is_need_block_history && window.already_display_popup === 0 && window.slide_items.length > 0){
         var state = event.state;
         window.show_popup();
         history.pushState({page: 4}, "Wait a minute", "?test=true");
     }
 }
-if(is_need_block_history ){
+if(is_need_block_history && Is_productsinStorage()){
     history.pushState({page: 1}, "Wait a minute", "?test=true");
     history.pushState({page: 2}, "Wait a minute", "?test=true");
 }
