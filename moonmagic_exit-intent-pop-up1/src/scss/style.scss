@@ -242,3 +242,12 @@
 .stop_scroll {
 	overflow: hidden !important;
 }
+@media screen and (max-height:510px) and (orientation:landscape) {
+	.exit_popup {
+		overflow: scroll;
+		height: 100vh;
+	}
+	.exit_popup_container {
+		top: 0;
+	}
+}
