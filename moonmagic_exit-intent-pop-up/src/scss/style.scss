@@ -259,8 +259,12 @@
 	.exit_popup {
 		// height: 98vh;
 		// height: calc(var(--vh, 1vh) * 100);
-		// height: calc(100vh - 60px);
+		// height: calc(100vh - 56px);
+		.modal_btn {
+			margin-bottom: 30px;
+		}
 	}
+
 }
 // @media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) { 
 
