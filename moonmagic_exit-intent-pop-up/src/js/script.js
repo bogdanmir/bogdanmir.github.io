@@ -161,6 +161,11 @@ window.show_popup = function(){
         }
         window.already_display_popup = 1;
         localStorage.setItem( 'pod', 1 );
+
+
+        $('input').each(function(){
+            $(this).trigger('blur');
+        });
     }
 }
 var old_scroll,scrollTop = window.pageYOffset || document.documentElement.scrollTop;
