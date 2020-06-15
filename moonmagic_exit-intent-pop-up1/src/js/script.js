@@ -106,7 +106,7 @@ function render_popup(){
     $exit_popup +=          '<div class="modal_content">';
 
 if( window.slide_items.length > 1 ){
-    var item_content = "We can’t guarantee the availability<br> of all products in you cart<br> if you don’t complete the purchase now";
+    var item_content = "We can’t guarantee the availability<br> of all products in your cart<br> if you don’t complete the purchase now";
 } else {
     var item_content = "We can’t guarantee its availability<br> if you don't complete the purchase now";
     console.log('one item in card')
