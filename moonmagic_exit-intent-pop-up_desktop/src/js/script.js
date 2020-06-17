@@ -1,3 +1,7 @@
+try{
+    hj('trigger', 'exp_exit-intent_cart_desktop');
+}catch (e) {}
+
 function Safe_productToStorage(product_id){
     var storage = localStorage.getItem('expdps') || '[]';
     storage = JSON.parse(storage);
@@ -196,7 +200,9 @@ if (window.location.href.indexOf("checkouts") > -1) {
     });
 }
 document.addEventListener("mouseleave", function( event ) {
-    if(typeof window.show_popup != 'undefined'  && !Is_productinStorage(product_id)){
-        window.show_popup();
+    if(event.target == document){
+        if(typeof window.show_popup != 'undefined'  && !Is_productinStorage(product_id)){
+            window.show_popup();
+        }
     }
 });
