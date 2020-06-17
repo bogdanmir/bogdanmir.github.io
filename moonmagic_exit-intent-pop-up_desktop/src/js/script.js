@@ -29,11 +29,11 @@ $(document).ready(function() {
     }
 });
 window.slide_items = new Array();
-if(typeof window.Swiper == 'undefined'){
-    var o=document.createElement("script");o.type="text/javascript",o.readyState?o.onreadystatechange=function(){"loaded"!==o.readyState&&"complete"!==o.readyState||(o.onreadystatechange=null,e())}:o.onload=function(){render_popup()},o.src="//cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.2/js/swiper.min.js",document.getElementsByTagName("head")[0].appendChild(o)
-}else{
-    render_popup();
-}
+// if(typeof window.Swiper == 'undefined'){
+//     var o=document.createElement("script");o.type="text/javascript",o.readyState?o.onreadystatechange=function(){"loaded"!==o.readyState&&"complete"!==o.readyState||(o.onreadystatechange=null,e())}:o.onload=function(){render_popup()},o.src="//cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.2/js/swiper.min.js",document.getElementsByTagName("head")[0].appendChild(o)
+// }else{
+//     render_popup();
+// }
 function render_popup(){
     if($('.cart-popup .cart-popup__list .cart-popup__item').length > 0){
         window.slide_items = new Array();
@@ -78,23 +78,22 @@ function render_popup(){
     $exit_popup +=              '<h3 class="modal_title">It’s almost yours!</h3>';
     $exit_popup +=              '<p class="modal_subtitle">Only one step left:</p>';
     $exit_popup +=              '<div class="modal_slider_wrap">';
-    // <!-- Slider main container -->
-    $exit_popup +=                  '<div class="swiper-container modal_slider">';
-    $exit_popup +=                      '<div class="slider_tooltip_box">This is a popular choice,<br> we may run out of stock soon</div>';
-    // <!-- Additional required wrapper -->
-    $exit_popup +=                      '<div class="swiper-wrapper">';
+
+    $exit_popup +=                  '<div class="modal_slider">';
+    $exit_popup +=                      '<div class="slider_tooltip_box">This is a popular choice, we may run out of stock soon</div>';
+
+    $exit_popup +=                      '<div class="modal-item-wrap">';
     // <!-- Slides -->
     $.each(window.slide_items,function(ind,el){
-        $exit_popup +='<div class="swiper-slide">'+ el.img +'<p class="slide_title">'+ el.title +'</p> <p class="slide_size">'+ (el.size != null ? el.size : '') +'</p><p class="slide_price">'+ el.price +'</p></div>';
+        $exit_popup +='<div class="modal-item"><div class="item-info-wrap">'+ el.img +'<div class="slide_title_wrap"><p class="slide_title">'+ el.title +'</p> <p class="slide_size">'+ (el.size != null ? el.size : '') +'</p></div></div><p class="slide_price">'+ el.price +'</p></div>';
     })
     $exit_popup +=                      '</div>';
-    $exit_popup +=                      '<div class="swiper-pagination-modal"></div>';
+    $exit_popup +=                  '</div>';
     $exit_popup +=              '</div>';
-    $exit_popup +=          '</div>';
     $exit_popup +=          '<div class="modal_content">';
 
 if( window.slide_items.length > 1 ){
-    var item_content = "We can’t guarantee the availability<br> of all products in your cart<br> if you don’t complete the purchase now";
+    var item_content = "We can’t guarantee the availability of all products in your cart<br> if you don’t complete the purchase now";
 } else {
     var item_content = "We can’t guarantee its availability<br> if you don't complete the purchase now";
     console.log('one item in card')
@@ -130,21 +129,6 @@ setInterval(function() {
 },0);
 
 window.show_popup = function(){
-
-
-    try{
-        hj('trigger', 'popup_unpaid_products');
-    }catch (e) {}
-
-    window.dataLayer = window.dataLayer || [];
-    dataLayer.push({
-        'event': 'event-to-ga',
-        'eventCategory': 'Exp - Exit intent popup for unpaid products',
-        'eventAction': 'popup loaded'
-    });
-    console.log('popup loaded')
-
-
     if(window.already_display_popup == 0){
         render_popup();
     }
@@ -154,24 +138,26 @@ window.show_popup = function(){
         $('.exit_popup_overlay').addClass('active');
         $('body').addClass('stop_scroll');
         if( window.slide_items.length > 1 ){
-            if(typeof window.popup_swiper != 'undefined'){
-                window.popup_swiper.destroy();
-            }
-            setTimeout(function(){
-                window.popup_swiper = new window.Swiper('.modal_slider', {
-                    speed: 400,
-                    spaceBetween: 15,
-                    slidesPerView: 2,
-                    centeredSlides: true,
-                    loop: false,
-                    pagination: {
-                        el: '.swiper-pagination-modal',
-                        type: 'bullets',
-                        clickable: true
-                    }
-                });
-            },10);
+            $('body').find('.exit_popup_container').addClass('few_items');
+        //     if(typeof window.popup_swiper != 'undefined'){
+        //         window.popup_swiper.destroy();
+        //     }
+        //     setTimeout(function(){
+        //         window.popup_swiper = new window.Swiper('.modal_slider', {
+        //             speed: 400,
+        //             spaceBetween: 15,
+        //             slidesPerView: 2,
+        //             centeredSlides: true,
+        //             loop: false,
+        //             pagination: {
+        //                 el: '.swiper-pagination-modal',
+        //                 type: 'bullets',
+        //                 clickable: true
+        //             }
+        //         });
+        //     },10);
         } else {
+            $('body').find('.exit_popup_container').removeClass('few_items');
             console.log('one item in card')
         }
         window.already_display_popup = 1;
@@ -183,53 +169,24 @@ window.show_popup = function(){
         });
     }
 }
-var old_scroll,scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-$(window).scroll(function(e){
-    scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-});
-setInterval(function() {
-    if(old_scroll-50 > scrollTop){
-        if(typeof window.show_popup != 'undefined'  && !Is_productinStorage(product_id)){
-            window.show_popup();
-        }
-    }
-    old_scroll = scrollTop;
-});
+// var old_scroll,scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+// $(window).scroll(function(e){
+//     scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+// });
+// setInterval(function() {
+//     if(old_scroll-50 > scrollTop){
+//         if(typeof window.show_popup != 'undefined'  && !Is_productinStorage(product_id)){
+//             window.show_popup();
+//         }
+//     }
+//     old_scroll = scrollTop;
+// });
 
-
-$('body').on('click', '.exit_popup .modal_btn', function() {
-    window.dataLayer = window.dataLayer || [];
-    dataLayer.push({
-        'event': 'event-to-ga',
-        'eventCategory': 'Exp - Exit intent popup for unpaid products',
-        'eventAction': 'Click on Complete your order'
-    });
-    console.log('Click on Complete your order')
-});
-
-$('body').on('click', '.modal_close', function() {
-    window.dataLayer = window.dataLayer || [];
-    dataLayer.push({
-        'event': 'event-to-ga',
-        'eventCategory': 'Exp - Exit intent popup for unpaid products',
-        'eventAction': 'Click on X to close popup'
-    });
-    console.log('Click on X to close popup')
-});
-
-$('body').on('click', '.exit_popup_overlay', function() {
-    window.dataLayer = window.dataLayer || [];
-    dataLayer.push({
-        'event': 'event-to-ga',
-        'eventCategory': 'Exp - Exit intent popup for unpaid products',
-        'eventAction': 'Click on the background to close popup'
-    });
-});
 
 //added style for checkout page
 if (window.location.href.indexOf("checkouts") > -1) {
     console.log('checkout page')
-    $('head').append('<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700&display=swap" rel="stylesheet"><link type="text/css" rel="stylesheet" href="https://swiperjs.com/package/css/swiper.min.css" />');
+    $('head').append('<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700&display=swap" rel="stylesheet">');
 
     $('body').on('click', '.exit_popup .modal_btn', function(event) {
         event.preventDefault();
@@ -238,3 +195,8 @@ if (window.location.href.indexOf("checkouts") > -1) {
         $('body').removeClass('stop_scroll');
     });
 }
+document.addEventListener("mouseleave", function( event ) {
+    if(typeof window.show_popup != 'undefined'  && !Is_productinStorage(product_id)){
+        window.show_popup();
+    }
+});
