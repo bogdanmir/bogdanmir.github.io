@@ -31,8 +31,9 @@ $(document).ready(function() {
     catch(e) {}
 
     if (hj_trigger = 1) {
-        
+        console.log('hotjar trigger run2');
     } else {
+        console.log('hotjar trigger failed');
         window.dataLayer = window.dataLayer || [];
         dataLayer.push({
             'event': 'event-to-ga',
