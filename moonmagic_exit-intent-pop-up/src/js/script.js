@@ -1,7 +1,3 @@
-try{
-    hj('trigger', 'popup_unpaid_products');
-}catch (e) {}
-
 function Safe_productToStorage(product_id){
     var storage = localStorage.getItem('expdps') || '[]';
     storage = JSON.parse(storage);
@@ -25,6 +21,28 @@ $(document).on('click','[data-add-to-cart]',function (event) {
 });
 var product_id = null;
 $(document).ready(function() {
+
+    // Start hotjar trigger
+    try {
+        hj('trigger', 'popup_unpaid_products');
+        console.log('hotjar trigger run');
+        var hj_trigger = 1;
+    }
+    catch(e) {}
+
+    if (hj_trigger = 1) {
+        
+    } else {
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+            'event': 'event-to-ga',
+            'eventCategory': 'Exp - Exit intent popup for unpaid products',
+            'eventAction': 'hotjar trigger failed'
+        });
+    }
+    // End hotjar trigger
+
+
     if($('body').find('[data-product-json]').length >0 ){
         var toJson = $('body').find('[data-product-json]').html();
         toJson = JSON.parse(toJson);
