@@ -1,3 +1,7 @@
+try{
+    hj('trigger', 'popup_unpaid_products');
+}catch (e) {}
+
 function Safe_productToStorage(product_id){
     var storage = localStorage.getItem('expdps') || '[]';
     storage = JSON.parse(storage);
@@ -130,11 +134,6 @@ setInterval(function() {
 },0);
 
 window.show_popup = function(){
-
-
-    try{
-        hj('trigger', 'popup_unpaid_products');
-    }catch (e) {}
 
     window.dataLayer = window.dataLayer || [];
     dataLayer.push({
