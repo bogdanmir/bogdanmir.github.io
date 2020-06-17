@@ -12,6 +12,9 @@ function Safe_productToStorage(product_id){
     localStorage.setItem('expdps',safe_storage);
 }
 function Is_productinStorage(product_id){
+    if(product_id == null){
+        return false;
+    }
     var storage = localStorage.getItem('expdps') || '[]';
     storage = JSON.parse(storage);
     return storage.includes(product_id);
@@ -24,7 +27,7 @@ $(document).on('click','[data-add-to-cart]',function (event) {
     }
 });
 var product_id = null;
-$(document).ready(function() {
+$(function() {
     if($('body').find('[data-product-json]').length >0 ){
         var toJson = $('body').find('[data-product-json]').html();
         toJson = JSON.parse(toJson);
@@ -124,11 +127,16 @@ $('body').on('click', '.modal_close, .exit_popup_overlay', function() {
 
 window.already_display_popup = Number(localStorage.getItem('pod') || 0);
 window.dont_triger_popup     = 0;
+window.is_change_status     = window.dont_triger_popup;
 setInterval(function() {
-    if($('.cart-popup').hasClass('cart-popup--active') == true || window.slide_items.length < 1){
+    if($('.cart-popup').hasClass('cart-popup--active') == true){
         window.dont_triger_popup = 1;
     }else{
         window.dont_triger_popup = 0;
+    }
+    if(window.is_change_status != window.dont_triger_popup){
+       window.is_change_status = window.dont_triger_popup;
+       console.log('is_change_status '+window.is_change_status);
     }
 },0);
 
@@ -136,7 +144,11 @@ window.show_popup = function(){
     if(window.already_display_popup == 0){
         render_popup();
     }
-    if(window.already_display_popup == 0 && window.dont_triger_popup == 0 && !Is_productinStorage(product_id)){
+    console.log((window.already_display_popup == 0),'already_display_popup');
+    console.log((window.dont_triger_popup == 0),'dont_triger_popup');
+    console.log(product_id,'product_id');
+    console.log(!Is_productinStorage(product_id));
+    if(window.already_display_popup == 0 && window.dont_triger_popup == 0 && !Is_productinStorage(product_id) && window.slide_items.length > 0){
         console.log('show popup');
         $('.exit_popup_container').addClass('active');
         $('.exit_popup_overlay').addClass('active');
@@ -166,11 +178,6 @@ window.show_popup = function(){
         }
         window.already_display_popup = 1;
         localStorage.setItem( 'pod', 1 );
-
-
-        $('input').each(function(){
-            $(this).trigger('blur');
-        });
     }
 }
 // var old_scroll,scrollTop = window.pageYOffset || document.documentElement.scrollTop;
