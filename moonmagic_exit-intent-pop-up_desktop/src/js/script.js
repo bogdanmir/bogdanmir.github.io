@@ -182,7 +182,7 @@ window.show_popup = function(){
 //added style for checkout page
 if (window.location.href.indexOf("checkouts") > -1) {
     console.log('checkout page')
-    $('head').append('<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700&display=swap" rel="stylesheet">');
+    // $('head').append('<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700&display=swap" rel="stylesheet">');
 
     $('body').on('click', '.exit_popup .modal_btn', function(event) {
         event.preventDefault();
