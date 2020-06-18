@@ -1,6 +1,25 @@
-try{
-    hj('trigger', 'exp_exit-intent_cart_desktop');
-}catch (e) {}
+$(document).ready(function() {
+    // Start hotjar trigger
+    try {
+        hj('trigger', 'popup_unpaid_products');
+        console.log('hotjar trigger run');
+        var hj_trigger = 1;
+    }
+    catch(e) {}
+
+    if (hj_trigger = 1) {
+        console.log('hotjar trigger run2');
+    } else {
+        console.log('hotjar trigger failed');
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+            'event': 'event-to-ga',
+            'eventCategory': 'Exp - Exit intent popup for unpaid products',
+            'eventAction': 'hotjar trigger failed'
+        });
+    }
+    // End hotjar trigger
+});
 
 function Safe_productToStorage(product_id){
     var storage = localStorage.getItem('expdps') || '[]';
@@ -36,11 +55,6 @@ $(function() {
     }
 });
 window.slide_items = new Array();
-// if(typeof window.Swiper == 'undefined'){
-//     var o=document.createElement("script");o.type="text/javascript",o.readyState?o.onreadystatechange=function(){"loaded"!==o.readyState&&"complete"!==o.readyState||(o.onreadystatechange=null,e())}:o.onload=function(){render_popup()},o.src="//cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.2/js/swiper.min.js",document.getElementsByTagName("head")[0].appendChild(o)
-// }else{
-//     render_popup();
-// }
 function render_popup(){
     if($('.cart-popup .cart-popup__list .cart-popup__item').length > 0){
         window.slide_items = new Array();
@@ -155,23 +169,6 @@ window.show_popup = function(){
         $('body').addClass('stop_scroll');
         if( window.slide_items.length > 1 ){
             $('body').find('.exit_popup_container').addClass('few_items');
-        //     if(typeof window.popup_swiper != 'undefined'){
-        //         window.popup_swiper.destroy();
-        //     }
-        //     setTimeout(function(){
-        //         window.popup_swiper = new window.Swiper('.modal_slider', {
-        //             speed: 400,
-        //             spaceBetween: 15,
-        //             slidesPerView: 2,
-        //             centeredSlides: true,
-        //             loop: false,
-        //             pagination: {
-        //                 el: '.swiper-pagination-modal',
-        //                 type: 'bullets',
-        //                 clickable: true
-        //             }
-        //         });
-        //     },10);
         } else {
             $('body').find('.exit_popup_container').removeClass('few_items');
             console.log('one item in card')
@@ -180,18 +177,6 @@ window.show_popup = function(){
         localStorage.setItem( 'pod', 1 );
     }
 }
-// var old_scroll,scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-// $(window).scroll(function(e){
-//     scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-// });
-// setInterval(function() {
-//     if(old_scroll-50 > scrollTop){
-//         if(typeof window.show_popup != 'undefined'  && !Is_productinStorage(product_id)){
-//             window.show_popup();
-//         }
-//     }
-//     old_scroll = scrollTop;
-// });
 
 
 //added style for checkout page
@@ -209,7 +194,47 @@ if (window.location.href.indexOf("checkouts") > -1) {
 document.addEventListener("mouseleave", function( event ) {
     if(event.target == document){
         if(typeof window.show_popup != 'undefined'  && !Is_productinStorage(product_id)){
+
+            window.dataLayer = window.dataLayer || [];
+            dataLayer.push({
+                'event': 'event-to-ga',
+                'eventCategory': 'Exp - Exit intent popup for unpaid products',
+                'eventAction': 'popup loaded'
+            });
+            console.log('popup loaded')
+
             window.show_popup();
         }
     }
+});
+
+
+
+$('body').on('click', '.exit_popup .modal_btn', function() {
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+        'event': 'event-to-ga',
+        'eventCategory': 'Exp - Exit intent popup for unpaid products',
+        'eventAction': 'Click on Complete your order'
+    });
+    console.log('Click on Complete your order')
+});
+
+$('body').on('click', '.modal_close', function() {
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+        'event': 'event-to-ga',
+        'eventCategory': 'Exp - Exit intent popup for unpaid products',
+        'eventAction': 'Click on X to close popup'
+    });
+    console.log('Click on X to close popup')
+});
+
+$('body').on('click', '.exit_popup_overlay', function() {
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+        'event': 'event-to-ga',
+        'eventCategory': 'Exp - Exit intent popup for unpaid products',
+        'eventAction': 'Click on the background to close popup'
+    });
 });
