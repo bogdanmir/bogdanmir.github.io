@@ -196,9 +196,9 @@
         });
     }
 
-    document.addEventListener("mouseleave", function( event ) {
-        console.log('mouseleave-1');
-        if(event.target == document){
+    $(document).mouseleave(function () {
+            console.log('mouseleave-1');
+            if (event.toElement == null) {
             console.log('mouseleave -2');
             if(typeof window.show_popup != 'undefined'  && !Is_productinStorage(product_id)){
                 console.log('mouseleave-3');
