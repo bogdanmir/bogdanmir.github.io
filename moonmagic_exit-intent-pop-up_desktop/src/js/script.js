@@ -196,7 +196,7 @@
         });
     }
 
-    document.addEventListener("mouseleave", function( event ) {
+    document.addEventListener("mouseout", function( event ) {
         console.log('mouseleave-1');
         if(event.target == document){
             console.log('mouseleave -2');
@@ -214,7 +214,6 @@
             }
         }
     });
-
 
 
     $('body').on('click', '.exit_popup .modal_btn', function() {
