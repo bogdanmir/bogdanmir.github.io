@@ -1,4 +1,4 @@
-$(document).ready(function() {
+// $(document).ready(function() {s
     // Start hotjar trigger
     try {
         hj('trigger', 'popup_unpaid_products');
@@ -195,10 +195,13 @@ $(document).ready(function() {
             $('body').removeClass('stop_scroll');
         });
     }
-    document.addEventListener("mouseleave", function( event ) {
-        if(event.target == document){
-            if(typeof window.show_popup != 'undefined'  && !Is_productinStorage(product_id)){
 
+    document.addEventListener("mouseleave", function( event ) {
+        console.log('mouseleave-1');
+        if(event.target == document){
+            console.log('mouseleave -2');
+            if(typeof window.show_popup != 'undefined'  && !Is_productinStorage(product_id)){
+                console.log('mouseleave-3');
                 window.dataLayer = window.dataLayer || [];
                 dataLayer.push({
                     'event': 'event-to-ga',
@@ -244,4 +247,4 @@ $(document).ready(function() {
     });
 
 
-});
+// });
