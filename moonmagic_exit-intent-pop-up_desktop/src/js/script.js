@@ -76,16 +76,17 @@ function render_popup(){
         window.slide_items = new Array();
         $('.order-summary__section--product-list .product').each(function() {
             var item_img = $(this).find('.product-thumbnail__wrapper').html();
-            // var item_title = $(this).find('.product__description__name.order-summary__emphasis:eq(0)').text();
+            var item_title = $(this).find('.product__description__name.order-summary__emphasis:eq(0)').text();
             // var item_size = $(this).find('.cart-popup__item-info .cart-popup__item-size').text();
+            var item_size = $(this).find('.product__description .product__description__variant').text();
             var item_price = $(this).find('.product__price .order-summary__emphasis').text();
 
-            var item_title = $(this).find('.product__description .product__description__variant').text();                
 
             var objdata = {
                 img: item_img,
                 title: item_title,
-                size: null,
+                // size: null,
+                size: item_size,
                 price: item_price,
             };
             window.slide_items.push(objdata);

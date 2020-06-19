@@ -10,6 +10,7 @@
 	overflow: hidden;
 	margin: auto;
 	&.few_items {
+		top: calc(50% - 314px);
 		.modal-item-wrap {
 			padding: 0 25px;
 			margin: 25px auto 28px;
