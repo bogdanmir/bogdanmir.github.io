@@ -59,7 +59,6 @@
 		font-size: 22px;
 		text-transform: uppercase;
 		color: #2F2F2F;
-		font-family: inherit;
 		padding: 0 18px 8px;
 		letter-spacing: 0.7px;
 		font-family: 'Montserrat', sans-serif;
@@ -125,7 +124,8 @@
 			letter-spacing: 0.055em;
 			text-transform: uppercase;
 			font-weight: 700;
-			margin-bottom: 10px;
+			// margin-bottom: 10px;
+			margin-bottom: 5px;
 			font-family: Playfair Display,serif;
 			line-height: 1.15;
 		}
@@ -142,7 +142,7 @@
 			font-family: Montserrat,sans-serif;
 			line-height: 1.15;
 			font-weight: 400;
-			padding: 18px 11px 0 0;
+			padding: 15px 11px 0 0;
 		}
 	}
 	.slider_tooltip_box {
@@ -225,6 +225,7 @@
 		display: block;
 		width: 100%;
 		letter-spacing: 0;
+		font-family: 'Montserrat', sans-serif;
 		margin: 0 auto 44px;
 		max-width: 470px;
 	}
