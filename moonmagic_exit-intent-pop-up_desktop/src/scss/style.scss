@@ -18,9 +18,13 @@
 		}
 		.modal-item {
 			height: 90px;
+			padding-left: 27px;
 			overflow: hidden;
 			&:first-child {
 				margin: -9px 0 0;
+			}
+			.slide_title_wrap {
+				padding: 0 0 0 29px;
 			}
 		}
 	}
@@ -142,7 +146,7 @@
 			font-family: Montserrat,sans-serif;
 			line-height: 1.15;
 			font-weight: 400;
-			padding: 15px 11px 0 0;
+			padding: 18px 11px 0 0;
 		}
 	}
 	.slider_tooltip_box {
