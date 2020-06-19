@@ -215,11 +215,6 @@
         }
     });
 
-
-// document.addEventListener("mouseout", function( event ) {
-//     console.log('mouseleave-1');
-// });
-
     $('body').on('click', '.exit_popup .modal_btn', function() {
         window.dataLayer = window.dataLayer || [];
         dataLayer.push({
