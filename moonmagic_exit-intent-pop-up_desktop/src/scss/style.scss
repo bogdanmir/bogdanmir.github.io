@@ -23,6 +23,9 @@
 			}
 		}
 	}
+	.product-thumbnail__image {
+		position: relative;
+	}
 }
 .exit_popup_container,
 .exit_popup_overlay{
@@ -322,3 +325,6 @@
 	}
 }
 
+.exit_popup_container {
+
+}
