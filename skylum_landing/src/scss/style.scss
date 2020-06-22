@@ -31,6 +31,7 @@
 // 		text-align: left;
 // 		padding-top: 93px;
 // 		height: 145vh;
+// 		height: 110vh;
 // 		// @media (max-width: 1279px) {
 // 		// 	height: 90vh;
 // 		// }
@@ -610,7 +611,11 @@
 // 		padding: 11px 30px;
 // 	}
 // }
-
+// .ko .common-hero__btns-wrap .sk-btn,
+// .fr .common-hero__btns-wrap .sk-btn,
+// .it .common-hero__btns-wrap .sk-btn {
+// 	min-width: 270px;
+// }
 
 
 // все что выше в GO
@@ -644,6 +649,11 @@
 	&.hidden {
 		opacity: 0;
 		z-index: -1;
+	}
+}
+.mainPopupWrapper {
+	&.active {
+		z-index: 9993;
 	}
 }
 
