@@ -455,6 +455,8 @@ $('.slide-wraper-js .prev-slide').click(function(){
     list.animate({
         'left' : 0
     },5)
+    $(this).removeClass('visible');
+    $('.slide-wraper-js .next-slide').removeClass('hidden');
 });
 
 $('.slide-wraper-js .next-slide').click(function(){
@@ -463,7 +465,8 @@ $('.slide-wraper-js .next-slide').click(function(){
     var position = Number($('.slide-wraper-js').outerWidth()) - Number($('.sticky_nav_container').outerWidth()) - 80;
     list.animate({
         'left' : position+'px'
-    },5)
+    },5);
+    $(this).addClass('hidden');
 });
 
 
