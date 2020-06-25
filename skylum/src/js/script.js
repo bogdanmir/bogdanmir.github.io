@@ -12,7 +12,7 @@ if (window.matchMedia("(min-width: 768px)").matches) {
 	    'it': 'Grazie per il tuo acquisto! Il link per il download è stato inviato alla tua email.',
 	    'es': 'Gracias por tu compra! El link para la descarga se ha enviado a tu correo.',
 	}
-	$.each(langs_body,function(index, el) {
+	$.each(langs_title,function(index, el) {
 	    if( $('body.'+index).length > 0 ) {
 	        $('.header .header__wrap').html('<h2 class="sk-h2">'+el+'</h2>');
 	    }
