@@ -1,6 +1,24 @@
+
 if (window.matchMedia("(min-width: 768px)").matches) {
 	//desktop
-	$('.header .header__wrap').html ('<h2 class="sk-h2">Thank you for your purchase! The link to download is sent to your email.</h2>');
+	// $('.header .header__wrap').html ('<h2 class="sk-h2">Thank you for your purchase! The link to download is sent to your email.</h2>');
+	var langs_title = {
+	    'en': 'Thank you for your purchase! The link to download is sent to your email.',
+	    'de': 'Vielen Dank für deinen Kauf! Der Link zum Herunterladen wird dir per E-Mail zugesandt.',
+	    'ko': '구매해주셔서 감사합니다! 이메일로 다운로드 링크를 보내드렸습니다.',
+	    'jp': 'ご購入ありがとうございます。ダウンロードリンクをあなたのメールに送信しました。',
+	    'fr': 'Merci pour votre achat ! Le lien de téléchargement a été envoyé par email dans votre boîte de réception.',
+	    'nl': 'Bedankt voor je aankoop! De te downloaden link wordt naar je e-mail verzonden.',
+	    'it': 'Grazie per il tuo acquisto! Il link per il download è stato inviato alla tua email.',
+	    'es': 'Gracias por tu compra! El link para la descarga se ha enviado a tu correo.',
+	}
+	$.each(langs_body,function(index, el) {
+	    if( $('body.'+index).length > 0 ) {
+	        $('.header .header__wrap').html('<h2 class="sk-h2">'+el+'</h2>');
+	    }
+	});
+
+	
 
 	$('body').find('.tone-mapping__slider-wrap').prependTo('.after-head__head .container');
 
