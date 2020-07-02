@@ -197,11 +197,11 @@
     }
 
     $(document).mouseleave(function () {
-            console.log('mouseleave-1');
+            // console.log('mouseleave-1');
             if (event.toElement == null) {
-            console.log('mouseleave -2');
+            // console.log('mouseleave-2');
             if(typeof window.show_popup != 'undefined'  && !Is_productinStorage(product_id)){
-                console.log('mouseleave-3');
+                // console.log('mouseleave-3');
                 window.dataLayer = window.dataLayer || [];
                 dataLayer.push({
                     'event': 'event-to-ga',
@@ -211,6 +211,7 @@
                 console.log('popup loaded')
 
                 window.show_popup();
+                $('body').find('#privy-container #privy-inner-container .privy').addClass('hidden-popup');
             }
         }
     });

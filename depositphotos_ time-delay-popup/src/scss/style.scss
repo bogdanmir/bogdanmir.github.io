@@ -137,10 +137,16 @@
 	.featured {
 		min-height: 100px;
 		position: static;
+		.featured__snippet-box {
+			&._snippet {
+				display: none;
+			}
+		}
 	}
 	.featured-signup {
 		padding-top: 0;
 		position: static;
+		width: calc(100% - 70px);
 		.signup-user__right {
 			.signup-user__sub-title {
 				display: none;
