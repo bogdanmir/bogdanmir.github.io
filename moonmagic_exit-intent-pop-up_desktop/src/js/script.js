@@ -234,6 +234,7 @@
             'eventAction': 'Click on X to close popup'
         });
         console.log('Click on X to close popup')
+        $('body').find('#privy-container #privy-inner-container .privy').removeClass('hidden-popup');
     });
 
     $('body').on('click', '.exit_popup_overlay', function() {
@@ -243,6 +244,7 @@
             'eventCategory': 'Exp - Exit intent popup for unpaid products',
             'eventAction': 'Click on the background to close popup'
         });
+        $('body').find('#privy-container #privy-inner-container .privy').removeClass('hidden-popup');
     });
 
 
