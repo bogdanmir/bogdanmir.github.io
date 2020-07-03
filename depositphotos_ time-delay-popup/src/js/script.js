@@ -2,11 +2,12 @@ var check_modal_show = localStorage.getItem('modal_show');
 if(check_modal_show == null){
 	localStorage.setItem('modal_show', false);
 }
+window.test_popup_timer = 25;
 var time_start = localStorage.getItem('_ts') || new Date().getTime();
 localStorage.setItem('_ts',time_start);
 // depositphotos.com/stock-photos
 if( $('.content_search').length > 0 || $('.folder-content').length > 0 && localStorage.getItem('modal_show') == 'false') {
-	function run_popup_text() {
+	function run_popup_text2() {
 	    $('.search-box__result .flex-files .file-container:nth-child(1) .file-container__link .button-add-to-favorites').click();
 	    $('._portal').addClass('modal_time_delay');
 		localStorage.setItem('_utap','true');
@@ -15,9 +16,10 @@ if( $('.content_search').length > 0 || $('.folder-content').length > 0 && localS
 			$('.modal_time_delay .modal__header').prepend('<div class="modal_text_holder"><h3 class="modal_title">Hard to find</h3><p class="sub_modal_title">an image in mobile?</p><p class="modal_body_title">Download 10 images for FREE</p><p class="modal_italic">on your computer</p><p class="modal_bold">in 7 days trial</p><ul class="modal_list"><li>Use advanced filtering</li><li>Add and compare images<br> in personal collections</li><li>Open and download images<br> in high-resolution</li></ul></div>');
 		}, 500);
 	}
-	setInterval(function(){
-		if( (time_start+(25*1000) )  < new Date().getTime() ){
-			run_popup_text();
+	window.interval_out = setInterval(function(){
+		if( (time_start+(window.test_popup_timer*1000) )  < new Date().getTime() ){
+			run_popup_text2();
+			clearInterval(window.interval_out);
 		}
 	},1000);
 }
@@ -52,17 +54,20 @@ $outhtml += '</div>';
 
 // home page
 
-
+// console.log($('.content-type-page__featured').length);
+// console.log(localStorage.getItem('modal_show') == 'false');
 if( $('.content-type-page__featured').length > 0 && localStorage.getItem('modal_show') == 'false' ) {
-	function run_popup_text(){
+	function run_popup_text1(){
 		$('html').append($outhtml);
 		localStorage.setItem('_utap','true');
+		console.log($('.featured-box .featured').length);
 		$('.featured-box .featured').detach().appendTo('.modal_time_delay .social_holder');
 		localStorage.setItem('modal_show','true');
 	}
-	setInterval(function(){
-		if( (time_start+(25*1000) )  < new Date().getTime() ){
-			run_popup_text();
+	window.interval_out = setInterval(function(){
+		if( (time_start+(window.test_popup_timer*1000) )  < new Date().getTime() ){
+			run_popup_text1();
+			clearInterval(window.interval_out);
 		}
 	},1000);
 	$(document).on('click','.modal_time_delay .modal__close-round', function(){
@@ -82,9 +87,10 @@ if( $('.file-view-page-upgrade').length > 0  && localStorage.getItem('modal_show
 		localStorage.setItem('modal_show','true');
 		console.log('modal_show');
 	}
-	setInterval(function(){
-		if( (time_start+(25*1000) )  < new Date().getTime() ){
+	window.interval_out = setInterval(function(){
+		if( (time_start+(window.test_popup_timer*1000) )  < new Date().getTime() ){
 			run_popup_text();
+			clearInterval(window.interval_out);
 		}
 	},1000);
 	$(document).on('click','.modal_time_delay .modal__close-round', function(){
