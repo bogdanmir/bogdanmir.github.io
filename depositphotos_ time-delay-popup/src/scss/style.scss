@@ -146,7 +146,9 @@
 	.featured-signup {
 		padding-top: 0;
 		position: static;
-		width: calc(100% - 70px);
+		// width: calc(100% - 70px);
+		width: calc(100% - 40px);
+		margin: 0 auto;
 		.signup-user__right {
 			.signup-user__sub-title {
 				display: none;

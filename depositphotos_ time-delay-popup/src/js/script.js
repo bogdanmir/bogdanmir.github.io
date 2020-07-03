@@ -1,12 +1,12 @@
-var check_modal_show = localStorage.getItem('modal_show');
-if(check_modal_show == null){
-	localStorage.setItem('modal_show', false);
-}
+var check_modal_show = localStorage.getItem('modal_show') || 'false';
+// if(check_modal_show == null){
+// 	localStorage.setItem('modal_show', false);
+// }
 window.test_popup_timer = 25;
 var time_start = localStorage.getItem('_ts') || new Date().getTime();
 localStorage.setItem('_ts',time_start);
 // depositphotos.com/stock-photos
-if( $('.content_search').length > 0 || $('.folder-content').length > 0 && localStorage.getItem('modal_show') == 'false') {
+if( $('.content_search').length > 0 || $('.folder-content').length > 0 && localStorage.getItem('modal_show') != 'true' && $('.signup-user__login').length < 1) {
 	function run_popup_text2() {
 	    $('.search-box__result .flex-files .file-container:nth-child(1) .file-container__link .button-add-to-favorites').click();
 	    $('._portal').addClass('modal_time_delay');
@@ -56,7 +56,7 @@ $outhtml += '</div>';
 
 // console.log($('.content-type-page__featured').length);
 // console.log(localStorage.getItem('modal_show') == 'false');
-if( $('.content-type-page__featured').length > 0 && localStorage.getItem('modal_show') == 'false' ) {
+if( $('.content-type-page__featured').length > 0 && localStorage.getItem('modal_show') != 'true' && $('.signup-user__login').length < 1) {
 	function run_popup_text1(){
 		$('html').append($outhtml);
 		localStorage.setItem('_utap','true');
@@ -78,8 +78,8 @@ if( $('.content-type-page__featured').length > 0 && localStorage.getItem('modal_
 	});
 }										
 
-// product page 1
-if( $('.file-view-page-upgrade').length > 0  && localStorage.getItem('modal_show') == 'false' ) {
+// product page
+if( $('.file-view-page-upgrade').length > 0  && localStorage.getItem('modal_show') != 'true' && $('.signup-user__login').length < 1) {
 	function run_popup_text() {
 		$('html').append($outhtml);
 		localStorage.setItem('_utap','true');
@@ -148,7 +148,7 @@ if( localStorage.getItem('modal_show') == 'true' ) {
 setInterval(function(){
 	var user_already_be_aouth = localStorage.getItem('_uaba') || 'false';
 	var user_click_on_modal   = localStorage.getItem('_utap') || 'false';
-	if($('.signup-user__login').length == 0 && user_click_on_modal == 'true' && user_already_be_aouth == 'false'){
+	if($('.signup-user__login').length == 0 && user_click_on_modal == 'true' && user_already_be_aouth == 'false' && localStorage.getItem('modal_show') == 'true'){
 		console.log('_uaba');
 		localStorage.setItem('_uaba','true');
 		location.href = 'https://depositphotos.com/subscribe/trial.html?id=10&product=membership&backURL%5Bpage%5D=%2Fsubscribe.html?test=true';
