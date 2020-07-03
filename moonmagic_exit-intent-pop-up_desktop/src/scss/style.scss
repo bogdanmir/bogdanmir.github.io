@@ -338,3 +338,25 @@
 .hidden-popup {
 	display: none !important;
 }
+
+
+@media screen and (max-height:640px) {
+	.exit_popup {
+		.modal__body {
+			padding: 25px 0 15px;
+		}
+		.modal_btn {
+			margin: 0 auto 24px;
+			padding: 20px 0;
+		}
+		.modal_slider_wrap {
+			margin: 15px 0 0;
+		}
+		.modal-item-wrap {
+			max-height: 190px;
+		}
+	}
+	.exit_popup_container.few_items {
+		top: calc(50% - 270px);
+	}
+}
