@@ -46,13 +46,20 @@ $outhtml += '</div>';
 
 
 // home page
+var time_start = localStorage.getItem('_ts') || Date.getTime();
+localStorage.setItem('_ts',time_start);
 if( $('.content-type-page__featured').length > 0 && localStorage.getItem('modal_show') == 'false' ) {
-	setTimeout(function() {
+	function run_popup_text(){
 		$('html').append($outhtml);
 		localStorage.setItem('_utap','true');
 		$('.featured-box .featured').detach().appendTo('.modal_time_delay .social_holder');
 		localStorage.setItem('modal_show','true');
-	}, 2000);
+	}
+	setInterval(function(){
+		if( (time_start+(25*1000) )  < Date().getTime() ){
+			run_popup_text();
+		}
+	},1000);
 	$(document).on('click','.modal_time_delay .modal__close-round', function(){
 		$('.modal_time_delay .social_holder .featured').detach().appendTo('.content-type-page__featured .featured-box');
 	});
