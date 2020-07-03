@@ -2,7 +2,7 @@ var check_modal_show = localStorage.getItem('modal_show');
 if(check_modal_show == null){
 	localStorage.setItem('modal_show', false);
 }
-var time_start = localStorage.getItem('_ts') || Date.getTime();
+var time_start = localStorage.getItem('_ts') || new Date().getTime();
 localStorage.setItem('_ts',time_start);
 // depositphotos.com/stock-photos
 if( $('.content_search').length > 0 || $('.folder-content').length > 0 && localStorage.getItem('modal_show') == 'false') {
@@ -16,7 +16,7 @@ if( $('.content_search').length > 0 || $('.folder-content').length > 0 && localS
 		}, 500);
 	}
 	setInterval(function(){
-		if( (time_start+(25*1000) )  < Date().getTime() ){
+		if( (time_start+(25*1000) )  < new Date().getTime() ){
 			run_popup_text();
 		}
 	},1000);
@@ -61,7 +61,7 @@ if( $('.content-type-page__featured').length > 0 && localStorage.getItem('modal_
 		localStorage.setItem('modal_show','true');
 	}
 	setInterval(function(){
-		if( (time_start+(25*1000) )  < Date().getTime() ){
+		if( (time_start+(25*1000) )  < new Date().getTime() ){
 			run_popup_text();
 		}
 	},1000);
@@ -83,7 +83,7 @@ if( $('.file-view-page-upgrade').length > 0  && localStorage.getItem('modal_show
 		console.log('modal_show');
 	}
 	setInterval(function(){
-		if( (time_start+(25*1000) )  < Date().getTime() ){
+		if( (time_start+(25*1000) )  < new Date().getTime() ){
 			run_popup_text();
 		}
 	},1000);
