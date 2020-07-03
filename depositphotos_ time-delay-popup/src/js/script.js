@@ -8,6 +8,7 @@ if( $('.content_search').length > 0 || $('.folder-content').length > 0 && localS
 	setTimeout(function() {
 	    $('.search-box__result .flex-files .file-container:nth-child(1) .file-container__link .button-add-to-favorites').click();
 	    $('._portal').addClass('modal_time_delay');
+		localStorage.setItem('_utap','true');
 	    localStorage.setItem('modal_show','true');
 	}, 2000);
 
@@ -48,6 +49,7 @@ $outhtml += '</div>';
 if( $('.content-type-page__featured').length > 0 && localStorage.getItem('modal_show') == 'false' ) {
 	setTimeout(function() {
 		$('html').append($outhtml);
+		localStorage.setItem('_utap','true');
 		$('.featured-box .featured').detach().appendTo('.modal_time_delay .social_holder');
 		localStorage.setItem('modal_show','true');
 	}, 2000);
@@ -63,6 +65,7 @@ if( $('.content-type-page__featured').length > 0 && localStorage.getItem('modal_
 if( $('.file-view-page-upgrade').length > 0  && localStorage.getItem('modal_show') == 'false' ) {
 	setTimeout(function() {
 		$('html').append($outhtml);
+		localStorage.setItem('_utap','true');
 		$('.file-view-page-upgrade .file-view-upgrade__auth-box').detach().appendTo('.modal_time_delay .social_holder');
 		localStorage.setItem('modal_show','true');
 		console.log('modal_show');
@@ -85,7 +88,8 @@ $(document).on('click','.modal_time_delay .modal__close-round', function(){
 	$(this).closest('.modal_time_delay_other').remove();
 	$('._portal').removeClass('modal_time_delay');
 	$('._portal').find('.modal-container._modal-container').remove();
-
+	localStorage.setItem('_utap','false');
+	console.log('close');
 	// window.dataLayer = window.dataLayer || [];
 	// window.dataLayer.push({
 	//  'event': 'gaEv',
@@ -98,7 +102,8 @@ $(document).on('click','.modal_time_delay .modal-overlay', function(){
 	$('.modal_time_delay_other').remove();
 	$('._portal').removeClass('modal_time_delay');
 	$('._portal').find('.modal-container._modal-container').remove();
-
+	localStorage.setItem('_utap','false');
+	console.log('close');
 	// window.dataLayer = window.dataLayer || [];
 	// window.dataLayer.push({
 	//  'event': 'gaEv',
@@ -123,10 +128,10 @@ setInterval(function(){
 	if($('.signup-user__login').length == 0 && user_click_on_modal == 'true' && user_already_be_aouth == 'false'){
 		console.log('_uaba');
 		localStorage.setItem('_uaba','true');
-		location.href = 'https://depositphotos.com/subscribe/trial.html?id=10&product=membership&backURL%5Bpage%5D=%2Fsubscribe.html';
+		location.href = 'https://depositphotos.com/subscribe/trial.html?id=10&product=membership&backURL%5Bpage%5D=%2Fsubscribe.html?test=true';
 	}
 })
-$(document).on('click','.modal_time_delay .signup-user-box__social-btn',function (event) {
-	localStorage.setItem('_utap','true');
-	console.log('_utap');
-});
+// $(document).on('click','.modal_time_delay .signup-user-box__social-btn',function (event) {
+// 	localStorage.setItem('_utap','true');
+// 	console.log('_utap');
+// });
