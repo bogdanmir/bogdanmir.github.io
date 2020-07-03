@@ -59,12 +59,13 @@ if( $('.content-type-page__featured').length > 0 && localStorage.getItem('modal_
 	});
 }										
 
-// product page
+// product page 1
 if( $('.file-view-page-upgrade').length > 0  && localStorage.getItem('modal_show') == 'false' ) {
 	setTimeout(function() {
 		$('html').append($outhtml);
 		$('.file-view-page-upgrade .file-view-upgrade__auth-box').detach().appendTo('.modal_time_delay .social_holder');
 		localStorage.setItem('modal_show','true');
+		console.log('modal_show');
 	}, 2000);
 	$(document).on('click','.modal_time_delay .modal__close-round', function(){
 		$('.modal_time_delay .social_holder .file-view-upgrade__auth-box').detach().appendTo('.file-view-page-upgrade .file-view-upgrade__purchase-box');
