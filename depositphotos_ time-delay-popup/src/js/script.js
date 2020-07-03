@@ -6,7 +6,7 @@ window.test_popup_timer = 25;
 var time_start = localStorage.getItem('_ts') || new Date().getTime();
 localStorage.setItem('_ts',time_start);
 // depositphotos.com/stock-photos
-if( $('.content_search').length > 0 || $('.folder-content').length > 0 && localStorage.getItem('modal_show') != 'true' && $('.signup-user__login').length < 1) {
+if( $('.content_search').length > 0 || $('.folder-content').length > 0 && localStorage.getItem('modal_show') != 'true' && $('.signup-user__login').length > 0) {
 	function run_popup_text2() {
 	    $('.search-box__result .flex-files .file-container:nth-child(1) .file-container__link .button-add-to-favorites').click();
 	    $('._portal').addClass('modal_time_delay');
@@ -56,7 +56,7 @@ $outhtml += '</div>';
 
 // console.log($('.content-type-page__featured').length);
 // console.log(localStorage.getItem('modal_show') == 'false');
-if( $('.content-type-page__featured').length > 0 && localStorage.getItem('modal_show') != 'true' && $('.signup-user__login').length < 1) {
+if( $('.content-type-page__featured').length > 0 && localStorage.getItem('modal_show') != 'true' && $('.signup-user__login').length > 0) {
 	function run_popup_text1(){
 		$('html').append($outhtml);
 		localStorage.setItem('_utap','true');
@@ -79,7 +79,7 @@ if( $('.content-type-page__featured').length > 0 && localStorage.getItem('modal_
 }										
 
 // product page
-if( $('.file-view-page-upgrade').length > 0  && localStorage.getItem('modal_show') != 'true' && $('.signup-user__login').length < 1) {
+if( $('.file-view-page-upgrade').length > 0  && localStorage.getItem('modal_show') != 'true' && $('.signup-user__login').length > 0) {
 	function run_popup_text() {
 		$('html').append($outhtml);
 		localStorage.setItem('_utap','true');
