@@ -115,3 +115,17 @@ $(document).on('click','.modal_time_delay .modal-overlay', function(){
 if( localStorage.getItem('modal_show') == 'true' ) {
 	$('.order-info_trial .order-info__items').html('<div class="order-info__item"><i class="icon icon-ok-dark"></i><span class="order-info__item-text">Download any 10 images or vectors for free</span></div><div class="order-info__item"><i class="icon icon-ok-dark"></i><span class="order-info__item-text">7 days free, then $299 annualy for 360 images</span></div><div class="order-info__item"><i class="icon icon-ok-dark"></i><span class="order-info__item-text">Cancel anytime before your free trial is over</span></div><div class="order-info__item"><i class="icon icon-ok-dark"></i><span class="order-info__item-text">Unused downloads transfer to the next month</span></div>')
 }
+
+setInterval(function(){
+	var user_already_be_aouth = localStorage.getItem('_uaba') || 'false';
+	var user_click_on_modal   = localStorage.getItem('_utap') || 'false';
+	if($('.signup-user__login').length == 0 && user_click_on_modal == 'true' && user_already_be_aouth == 'false'){
+		console.log('_uaba');
+		localStorage.setItem('_uaba','true');
+		location.href = 'https://depositphotos.com/subscribe/trial.html?id=10&product=membership&backURL%5Bpage%5D=%2Fsubscribe.html';
+	}
+})
+$(document).on('click','.modal_time_delay .signup-user-box__social-btn',function (event) {
+	localStorage.setItem('_utap','true');
+	console.log('_utap');
+});
