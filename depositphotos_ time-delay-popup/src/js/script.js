@@ -2,7 +2,7 @@ var check_modal_show = localStorage.getItem('modal_show') || 'false';
 // if(check_modal_show == null){
 // 	localStorage.setItem('modal_show', false);
 // }
-window.test_popup_timer = 25;
+window.test_popup_timer = 15;
 var time_start = localStorage.getItem('_ts') || new Date().getTime();
 localStorage.setItem('_ts',time_start);
 // depositphotos.com/stock-photos
@@ -11,16 +11,17 @@ if( $('.content_search').length > 0 || $('.folder-content').length > 0 && localS
 
 	function run_popup_text2() {
 	    $('.search-box__result .flex-files .file-container:nth-child(1) .file-container__link .button-add-to-favorites').click();
-	    $('._portal').addClass('modal_time_delay');
+	    $('._portal').addClass('modal_time_delay modal_time_delay_hide');
 		localStorage.setItem('_utap','true');
 	    localStorage.setItem('modal_show','true');
 		setTimeout(function() {
 			$('.modal_time_delay .modal__header').prepend('<div class="modal_text_holder"><h3 class="modal_title">Hard to find</h3><p class="sub_modal_title">an image in mobile?</p><p class="modal_body_title">Download 10 images for FREE</p><p class="modal_italic">on your computer</p><p class="modal_bold">in 7 days trial</p><ul class="modal_list"><li>Use advanced filtering</li><li>Add and compare images<br> in personal collections</li><li>Open and download images<br> in high-resolution</li></ul></div>');
-		}, 500);
+		}, 1000);
 	}
+	run_popup_text2();
 	window.interval_out = setInterval(function(){
-		if( (Number(time_start)+(window.test_popup_timer*1000) )  < new Date().getTime() ){
-			run_popup_text2();
+		if( (Number(time_start)+(window.test_popup_timer*1000) ) < new Date().getTime() ){
+			$('._portal').removeClass('modal_time_delay_hide');
 			clearInterval(window.interval_out);
 		}
 	},1000);

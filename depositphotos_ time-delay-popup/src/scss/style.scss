@@ -3,6 +3,9 @@
 }
 
 .modal_time_delay {
+	&.modal_time_delay_hide {
+		display: none;
+	}
 	.modal__dialog {
 		background: #fff;
 		border-radius: 16px;
