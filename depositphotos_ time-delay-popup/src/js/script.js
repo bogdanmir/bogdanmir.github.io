@@ -2,26 +2,44 @@ var check_modal_show = localStorage.getItem('modal_show') || 'false';
 // if(check_modal_show == null){
 // 	localStorage.setItem('modal_show', false);
 // }
-window.test_popup_timer = 25;
+window.test_popup_timer = 5;
 var time_start = localStorage.getItem('_ts') || new Date().getTime();
 localStorage.setItem('_ts',time_start);
 // depositphotos.com/stock-photos
 // if( $('.content_search').length > 0 || $('.folder-content').length > 0 && localStorage.getItem('modal_show') != 'true' && $('.signup-user__login').length > 0) {
+$('body').on('abtest_run', '.test_btn', function(event) {
+    $('._portal').addClass('modal_time_delay');
+	localStorage.setItem('_utap','true');
+    localStorage.setItem('modal_show','true');
+	// setTimeout(function() {
+	window.interval_popup_show = setInterval(function(){
+		if($('body').find('.modal_time_delay .modal__header').length > 0 && $('body').find('.modal_text_holder').length < 1){
+			$('.modal_time_delay .modal__header').prepend('<div class="modal_text_holder"><h3 class="modal_title">Hard to find</h3><p class="sub_modal_title">an image in mobile?</p><p class="modal_body_title">Download 10 images for FREE</p><p class="modal_italic">on your computer</p><p class="modal_bold">in 7 days trial</p><ul class="modal_list"><li>Use advanced filtering</li><li>Add and compare images<br> in personal collections</li><li>Open and download images<br> in high-resolution</li></ul></div>');
+			clearInterval(window.interval_popup_show);
+		}
+	});
+});
 if( $('.content_search').length > 0 || $('.folder-content').length > 0 && localStorage.getItem('modal_show') != 'true' && $('.sidebar-menu_no-auth').length > 0) {
 
 	function run_popup_text2() {
-	    $('.search-box__result .flex-files .file-container:nth-child(1) .file-container__link .button-add-to-favorites').click();
-	    $('._portal').addClass('modal_time_delay modal_time_delay_hide');
-		localStorage.setItem('_utap','true');
-	    localStorage.setItem('modal_show','true');
-		setTimeout(function() {
-			$('.modal_time_delay .modal__header').prepend('<div class="modal_text_holder"><h3 class="modal_title">Hard to find</h3><p class="sub_modal_title">an image in mobile?</p><p class="modal_body_title">Download 10 images for FREE</p><p class="modal_italic">on your computer</p><p class="modal_bold">in 7 days trial</p><ul class="modal_list"><li>Use advanced filtering</li><li>Add and compare images<br> in personal collections</li><li>Open and download images<br> in high-resolution</li></ul></div>');
-		}, 1000);
+	    $('.search-box__result .flex-files .file-container:nth-child(1) .file-container__link .button-add-to-favorites').addClass('test_btn');
+	    $('.test_btn').click();
+	    $( ".test_btn" ).trigger( "abtest_run" );
+	    // $('._portal').addClass('modal_time_delay modal_time_delay_hide');
 	}
-	run_popup_text2();
+
+
+	// setTimeout(function(){
+	// 	console.log('run_popup_text2 RUN')
+	// 	run_popup_text2();
+	// },24000);
+
+
 	window.interval_out = setInterval(function(){
 		if( (Number(time_start)+(window.test_popup_timer*1000) ) < new Date().getTime() ){
-			$('._portal').removeClass('modal_time_delay_hide');
+			// $('._portal').removeClass('modal_time_delay_hide');
+			run_popup_text2();
+
 			clearInterval(window.interval_out);
 		}
 	},1000);
@@ -149,17 +167,20 @@ $(document).on('click','.modal_time_delay .modal-overlay', function(){
 if( localStorage.getItem('modal_show') == 'true' ) {
 	$('.order-info_trial .order-info__items').html('<div class="order-info__item"><i class="icon icon-ok-dark"></i><span class="order-info__item-text">Download any 10 images or vectors for free</span></div><div class="order-info__item"><i class="icon icon-ok-dark"></i><span class="order-info__item-text">7 days free, then $299 annualy for 360 images</span></div><div class="order-info__item"><i class="icon icon-ok-dark"></i><span class="order-info__item-text">Cancel anytime before your free trial is over</span></div><div class="order-info__item"><i class="icon icon-ok-dark"></i><span class="order-info__item-text">Unused downloads transfer to the next month</span></div>')
 }
-
-setInterval(function(){
-	var user_already_be_aouth = localStorage.getItem('_uaba') || 'false';
-	var user_click_on_modal   = localStorage.getItem('_utap') || 'false';
-	// if($('.signup-user__login').length == 0 && user_click_on_modal == 'true' && user_already_be_aouth == 'false' && localStorage.getItem('modal_show') == 'true'){
-	if($('.sidebar-menu_no-auth').length == 0 && user_click_on_modal == 'true' && user_already_be_aouth == 'false' && localStorage.getItem('modal_show') == 'true'){
-		console.log('redirect');
-		localStorage.setItem('_uaba','true');
-		location.href = 'https://depositphotos.com/subscribe/trial.html?id=10&product=membership&backURL%5Bpage%5D=%2Fsubscribe.html?test=true';
-	}
-})
+jQuery(document).ready(function($) {
+	setTimeout(function(){
+		// setInterval(function(){
+			var user_already_be_aouth = localStorage.getItem('_uaba') || 'false';
+			var user_click_on_modal   = localStorage.getItem('_utap') || 'false';
+			// if($('.signup-user__login').length == 0 && user_click_on_modal == 'true' && user_already_be_aouth == 'false' && localStorage.getItem('modal_show') == 'true'){
+			if($('._user-logout').length > 0 && user_click_on_modal == 'true' && user_already_be_aouth == 'false' && localStorage.getItem('modal_show') == 'true'){
+				console.log('redirect');
+				localStorage.setItem('_uaba','true');
+				location.href = 'https://depositphotos.com/subscribe/trial.html?id=10&product=membership&backURL%5Bpage%5D=%2Fsubscribe.html?test=true';
+			}
+		// });
+	},1000);
+});
 // $(document).on('click','.modal_time_delay .signup-user-box__social-btn',function (event) {
 // 	localStorage.setItem('_utap','true');
 // 	console.log('_utap');

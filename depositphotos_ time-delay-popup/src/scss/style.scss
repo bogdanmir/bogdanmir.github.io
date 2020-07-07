@@ -3,6 +3,9 @@
 }
 
 .modal_time_delay {
+	.signup-user__login._login {
+		display: none;
+	}
 	&.modal_time_delay_hide {
 		display: none;
 	}
