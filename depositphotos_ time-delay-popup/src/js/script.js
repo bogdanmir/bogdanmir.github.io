@@ -4,6 +4,7 @@ var check_modal_show = localStorage.getItem('modal_show') || 'false';
 // }
 window.test_popup_timer = 25;
 var time_start = localStorage.getItem('_ts') || new Date().getTime();
+time_start = Number(time_start);
 localStorage.setItem('_ts',time_start);
 // depositphotos.com/stock-photos
 // if( $('.content_search').length > 0 || $('.folder-content').length > 0 && localStorage.getItem('modal_show') != 'true' && $('.signup-user__login').length > 0) {
@@ -20,19 +21,13 @@ $('body').on('abtest_run', '.test_btn', function(event) {
 	});
 });
 if( $('.content_search').length > 0 || $('.folder-content').length > 0 && localStorage.getItem('modal_show') != 'true' && $('.sidebar-menu_no-auth').length > 0) {
-
+		console.log(' depositphotos.com/stock-photos run');
 	function run_popup_text2() {
 	    $('.search-box__result .flex-files .file-container:nth-child(1) .file-container__link .button-add-to-favorites').addClass('test_btn');
 	    $('.test_btn').click();
 	    $( ".test_btn" ).trigger( "abtest_run" );
 	    // $('._portal').addClass('modal_time_delay modal_time_delay_hide');
 	}
-
-
-	// setTimeout(function(){
-	// 	console.log('run_popup_text2 RUN')
-	// 	run_popup_text2();
-	// },24000);
 
 
 	window.interval_out = setInterval(function(){
@@ -78,7 +73,8 @@ $outhtml += '</div>';
 // console.log($('.content-type-page__featured').length);
 // console.log(localStorage.getItem('modal_show') == 'false');
 // if( $('.content-type-page__featured').length > 0 && localStorage.getItem('modal_show') != 'true' && $('.signup-user__login').length > 0) {
-if( $('.content-type-page__featured').length > 0 && localStorage.getItem('modal_show') != 'true' && $('.sidebar-menu_no-auth').length > 0) {	
+if( $('.content-type-page__featured').length > 0 && localStorage.getItem('modal_show') != 'true' && $('.sidebar-menu_no-auth').length > 0) {
+	console.log('Home page run or like home page');
 	function run_popup_text1(){
 		$('html').append($outhtml);
 		localStorage.setItem('_utap','true');
@@ -103,6 +99,7 @@ if( $('.content-type-page__featured').length > 0 && localStorage.getItem('modal_
 // product page
 // if( $('.file-view-page-upgrade').length > 0  && localStorage.getItem('modal_show') != 'true' && $('.signup-user__login').length > 0) {
 if( $('.file-view-page-upgrade').length > 0  && localStorage.getItem('modal_show') != 'true' && $('.sidebar-menu_no-auth').length > 0) {
+	console.log('product page run');
 	function run_popup_text() {
 		$('html').append($outhtml);
 		localStorage.setItem('_utap','true');
@@ -176,7 +173,7 @@ jQuery(document).ready(function($) {
 			if($('._user-logout').length > 0 && user_click_on_modal == 'true' && user_already_be_aouth == 'false' && localStorage.getItem('modal_show') == 'true'){
 				console.log('redirect');
 				localStorage.setItem('_uaba','true');
-				location.href = 'https://depositphotos.com/subscribe/trial.html?id=10&product=membership&backURL%5Bpage%5D=%2Fsubscribe.html?test=true';
+				location.href = 'https://depositphotos.com/subscribe/trial.html?id=10&product=membership&backURL%5Bpage%5D=%2Fsubscribe.html';
 			}
 		// });
 	},1000);
