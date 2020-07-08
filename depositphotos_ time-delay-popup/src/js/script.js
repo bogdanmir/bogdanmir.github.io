@@ -8,6 +8,27 @@ time_start = Number(time_start);
 localStorage.setItem('_ts',time_start);
 // depositphotos.com/stock-photos
 // if( $('.content_search').length > 0 || $('.folder-content').length > 0 && localStorage.getItem('modal_show') != 'true' && $('.signup-user__login').length > 0) {
+function run_popup_text2() {
+    $('.search-box__result .flex-files .file-container:nth-child(1) .file-container__link .button-add-to-favorites').addClass('test_btn');
+    $('.test_btn').click();
+    $( ".test_btn" ).trigger( "abtest_run" );
+    // $('._portal').addClass('modal_time_delay modal_time_delay_hide');
+}
+
+function run_popup_text1(){
+	$('html').append($outhtml);
+	localStorage.setItem('_utap','true');
+	console.log($('.featured-box .featured').length);
+	$('.featured-box .featured').detach().appendTo('.modal_time_delay .social_holder');
+	localStorage.setItem('modal_show','true');
+}
+function run_popup_text() {
+	$('html').append($outhtml);
+	localStorage.setItem('_utap','true');
+	$('.file-view-page-upgrade .file-view-upgrade__auth-box').detach().appendTo('.modal_time_delay .social_holder');
+	localStorage.setItem('modal_show','true');
+	console.log('modal_show');
+}
 $('body').on('abtest_run', '.test_btn', function(event) {
     $('._portal').addClass('modal_time_delay');
 	localStorage.setItem('_utap','true');
@@ -20,25 +41,7 @@ $('body').on('abtest_run', '.test_btn', function(event) {
 		}
 	});
 });
-if( $('.content_search').length > 0 || $('.folder-content').length > 0 && localStorage.getItem('modal_show') != 'true' && $('.sidebar-menu_no-auth').length > 0) {
-		console.log(' depositphotos.com/stock-photos run');
-	function run_popup_text2() {
-	    $('.search-box__result .flex-files .file-container:nth-child(1) .file-container__link .button-add-to-favorites').addClass('test_btn');
-	    $('.test_btn').click();
-	    $( ".test_btn" ).trigger( "abtest_run" );
-	    // $('._portal').addClass('modal_time_delay modal_time_delay_hide');
-	}
 
-
-	window.interval_out = setInterval(function(){
-		if( (Number(time_start)+(window.test_popup_timer*1000) ) < new Date().getTime() ){
-			// $('._portal').removeClass('modal_time_delay_hide');
-			run_popup_text2();
-
-			clearInterval(window.interval_out);
-		}
-	},1000);
-}
 
 $outhtml  = '<div class="modal-container modal_time_delay modal_time_delay_other">';
 $outhtml += 	'<div class="modal">';
@@ -73,53 +76,11 @@ $outhtml += '</div>';
 // console.log($('.content-type-page__featured').length);
 // console.log(localStorage.getItem('modal_show') == 'false');
 // if( $('.content-type-page__featured').length > 0 && localStorage.getItem('modal_show') != 'true' && $('.signup-user__login').length > 0) {
-if( $('.content-type-page__featured').length > 0 && localStorage.getItem('modal_show') != 'true' && $('.sidebar-menu_no-auth').length > 0) {
-	console.log('Home page run or like home page');
-	function run_popup_text1(){
-		$('html').append($outhtml);
-		localStorage.setItem('_utap','true');
-		console.log($('.featured-box .featured').length);
-		$('.featured-box .featured').detach().appendTo('.modal_time_delay .social_holder');
-		localStorage.setItem('modal_show','true');
-	}
-	window.interval_out = setInterval(function(){
-		if( (Number(time_start)+(window.test_popup_timer*1000) )  < new Date().getTime() ){
-			run_popup_text1();
-			clearInterval(window.interval_out);
-		}
-	},1000);
-	$(document).on('click','.modal_time_delay .modal__close-round', function(){
-		$('.modal_time_delay .social_holder .featured').detach().appendTo('.content-type-page__featured .featured-box');
-	});
-	$(document).on('click','.modal_time_delay_overlay', function(){
-		$('.modal_time_delay .social_holder .featured').detach().appendTo('.content-type-page__featured .featured-box');
-	});
-}										
+
 
 // product page
 // if( $('.file-view-page-upgrade').length > 0  && localStorage.getItem('modal_show') != 'true' && $('.signup-user__login').length > 0) {
-if( $('.file-view-page-upgrade').length > 0  && localStorage.getItem('modal_show') != 'true' && $('.sidebar-menu_no-auth').length > 0) {
-	console.log('product page run');
-	function run_popup_text() {
-		$('html').append($outhtml);
-		localStorage.setItem('_utap','true');
-		$('.file-view-page-upgrade .file-view-upgrade__auth-box').detach().appendTo('.modal_time_delay .social_holder');
-		localStorage.setItem('modal_show','true');
-		console.log('modal_show');
-	}
-	window.interval_out = setInterval(function(){
-		if( (Number(time_start)+(window.test_popup_timer*1000) )  < new Date().getTime() ){
-			run_popup_text();
-			clearInterval(window.interval_out);
-		}
-	},1000);
-	$(document).on('click','.modal_time_delay .modal__close-round', function(){
-		$('.modal_time_delay .social_holder .file-view-upgrade__auth-box').detach().appendTo('.file-view-page-upgrade .file-view-upgrade__purchase-box');
-	});
-	$(document).on('click','.modal_time_delay_overlay', function(){
-		$('.modal_time_delay .social_holder .file-view-upgrade__auth-box').detach().appendTo('.file-view-page-upgrade .file-view-upgrade__purchase-box');
-	});
-}
+
 
 setInterval(function() {
 	if($(".modal_time_delay").html() == '') {
@@ -178,9 +139,39 @@ jQuery(document).ready(function($) {
 		// });
 	},1000);
 });
-// $(document).on('click','.modal_time_delay .signup-user-box__social-btn',function (event) {
-// 	localStorage.setItem('_utap','true');
-// 	console.log('_utap');
-// });
 
-// 
+
+function run_popup_checker(){
+	if( $('.file-view-page-upgrade').length > 0  && localStorage.getItem('modal_show') != 'true' && $('.sidebar-menu_no-auth').length > 0) {
+		console.log('product page run');
+		run_popup_text();
+		$(document).on('click','.modal_time_delay .modal__close-round', function(){
+			$('.modal_time_delay .social_holder .file-view-upgrade__auth-box').detach().appendTo('.file-view-page-upgrade .file-view-upgrade__purchase-box');
+		});
+		$(document).on('click','.modal_time_delay_overlay', function(){
+			$('.modal_time_delay .social_holder .file-view-upgrade__auth-box').detach().appendTo('.file-view-page-upgrade .file-view-upgrade__purchase-box');
+		});
+	}
+	if( $('.content_search').length > 0 || $('.folder-content').length > 0 && localStorage.getItem('modal_show') != 'true' && $('.sidebar-menu_no-auth').length > 0) {
+		console.log(' depositphotos.com/stock-photos run');
+				// $('._portal').removeClass('modal_time_delay_hide');
+		run_popup_text2();
+
+	}
+	if( $('.content-type-page__featured').length > 0 && localStorage.getItem('modal_show') != 'true' && $('.sidebar-menu_no-auth').length > 0) {
+		console.log('Home page run or like home page');
+		run_popup_text1();
+		$(document).on('click','.modal_time_delay .modal__close-round', function(){
+			$('.modal_time_delay .social_holder .featured').detach().appendTo('.content-type-page__featured .featured-box');
+		});
+		$(document).on('click','.modal_time_delay_overlay', function(){
+			$('.modal_time_delay .social_holder .featured').detach().appendTo('.content-type-page__featured .featured-box');
+		});
+	}
+}
+window.interval_out = setInterval(function(){
+	if( (Number(time_start)+(window.test_popup_timer*1000) ) < new Date().getTime() ){
+		run_popup_checker();
+		clearInterval(window.interval_out);
+	}
+},1000);
