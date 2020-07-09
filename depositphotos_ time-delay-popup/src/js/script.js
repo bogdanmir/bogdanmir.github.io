@@ -2,7 +2,7 @@ var check_modal_show = localStorage.getItem('modal_show') || 'false';
 // if(check_modal_show == null){
 // 	localStorage.setItem('modal_show', false);
 // }
-window.test_popup_timer = 5;
+window.test_popup_timer = 25;
 var time_start = localStorage.getItem('_ts') || new Date().getTime();
 time_start = Number(time_start);
 localStorage.setItem('_ts',time_start);
