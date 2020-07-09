@@ -50,7 +50,6 @@ $('body').on('abtest_run', '.test_btn', function(event) {
 	});
 });
 
-
 $outhtml  = '<div class="modal-container modal_time_delay modal_time_delay_other">';
 $outhtml += 	'<div class="modal">';
 $outhtml += 		'<div class="modal__dialog">';
@@ -78,9 +77,7 @@ $outhtml += 	'</div>';
 $outhtml += 	'<div class="_overlay modal-overlay modal_time_delay_overlay"></div>';
 $outhtml += '</div>';
 
-
 // home page
-
 // console.log($('.content-type-page__featured').length);
 // console.log(localStorage.getItem('modal_show') == 'false');
 // if( $('.content-type-page__featured').length > 0 && localStorage.getItem('modal_show') != 'true' && $('.signup-user__login').length > 0) {
