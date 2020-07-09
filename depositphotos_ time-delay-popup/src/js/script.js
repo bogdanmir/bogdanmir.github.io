@@ -2,7 +2,7 @@ var check_modal_show = localStorage.getItem('modal_show') || 'false';
 // if(check_modal_show == null){
 // 	localStorage.setItem('modal_show', false);
 // }
-window.test_popup_timer = 25;
+window.test_popup_timer = 5;
 var time_start = localStorage.getItem('_ts') || new Date().getTime();
 time_start = Number(time_start);
 localStorage.setItem('_ts',time_start);
@@ -12,9 +12,7 @@ function run_popup_text2() {
     $('.search-box__result .flex-files .file-container:nth-child(1) .file-container__link .button-add-to-favorites').addClass('test_btn');
     $('.test_btn').click();
     $( ".test_btn" ).trigger( "abtest_run" );
-    // $('._portal').addClass('modal_time_delay modal_time_delay_hide');
 }
-
 function run_popup_text1(){
 	$('html').append($outhtml);
 	localStorage.setItem('_utap','true');
@@ -29,14 +27,24 @@ function run_popup_text() {
 	localStorage.setItem('modal_show','true');
 	console.log('modal_show');
 }
+
+function run_popup_text3() {
+	$('html').append($outhtml);
+	localStorage.setItem('_utap','true');
+	$('.illustrations-content .illustrations-content__sign-up').detach().appendTo('.modal_time_delay .social_holder').addClass('illustrations-holder');
+	localStorage.setItem('modal_show','true');
+	console.log('modal_show');
+}
+
 $('body').on('abtest_run', '.test_btn', function(event) {
-    $('._portal').addClass('modal_time_delay');
+    $('._portal').addClass('modal_time_delay hide_modal');
 	localStorage.setItem('_utap','true');
     localStorage.setItem('modal_show','true');
 	// setTimeout(function() {
 	window.interval_popup_show = setInterval(function(){
 		if($('body').find('.modal_time_delay .modal__header').length > 0 && $('body').find('.modal_text_holder').length < 1){
 			$('.modal_time_delay .modal__header').prepend('<div class="modal_text_holder"><h3 class="modal_title">Hard to find</h3><p class="sub_modal_title">an image in mobile?</p><p class="modal_body_title">Download 10 images for FREE</p><p class="modal_italic">on your computer</p><p class="modal_bold">in 7 days trial</p><ul class="modal_list"><li>Use advanced filtering</li><li>Add and compare images<br> in personal collections</li><li>Open and download images<br> in high-resolution</li></ul></div>');
+			$('body').find('.modal_time_delay').removeClass('hide_modal');
 			clearInterval(window.interval_popup_show);
 		}
 	});
@@ -89,6 +97,25 @@ setInterval(function() {
 }, 2000);
 
 $(document).on('click','.modal_time_delay .modal__close-round', function(){
+
+	// Home page run or like home page
+	if( $('.content-type-page__featured').length > 0){
+		console.log('close__homepage-modal');
+		$('.modal_time_delay .social_holder .featured').detach().appendTo('.content-type-page__featured .featured-box');
+	}
+
+	// single product page
+	if( $('.file-view-page-upgrade').length > 0) {
+		console.log('close__single_product_page-modal');
+		$('.modal_time_delay .social_holder .file-view-upgrade__auth-box').detach().appendTo('.file-view-page-upgrade .file-view-upgrade__purchase-box');
+	}
+
+	//illustrations page
+	if($('.illustrations-content').length > 0){
+		console.log('close__illustrations-modal');
+		$('.modal_time_delay .social_holder .illustrations-content__sign-up').detach().appendTo('.illustrations-content');
+	}
+
 	$(this).closest('.modal_time_delay_other').remove();
 	$('._portal').removeClass('modal_time_delay');
 	$('._portal').find('.modal-container._modal-container').remove();
@@ -103,6 +130,25 @@ $(document).on('click','.modal_time_delay .modal__close-round', function(){
 	// });
 });
 $(document).on('click','.modal_time_delay .modal-overlay', function(){
+
+	// Home page run or like home page
+	if( $('.content-type-page__featured').length > 0){
+		console.log('close__homepage-modal');
+		$('.modal_time_delay .social_holder .featured').detach().appendTo('.content-type-page__featured .featured-box');
+	}
+
+	// single product page
+	if( $('.file-view-page-upgrade').length > 0) {
+		console.log('close__single_product_page-modal');
+		$('.modal_time_delay .social_holder .file-view-upgrade__auth-box').detach().appendTo('.file-view-page-upgrade .file-view-upgrade__purchase-box');
+	}
+
+	//illustrations page
+	if($('.illustrations-content').length > 0){
+		console.log('close-overlay__illustrations-modal');
+		$('.modal_time_delay .social_holder .illustrations-content__sign-up').detach().appendTo('.illustrations-content');
+	}
+
 	$('.modal_time_delay_other').remove();
 	$('._portal').removeClass('modal_time_delay');
 	$('._portal').find('.modal-container._modal-container').remove();
@@ -117,8 +163,6 @@ $(document).on('click','.modal_time_delay .modal-overlay', function(){
 	// });
 
 });
-
-
 
 
 // chekout
@@ -140,34 +184,32 @@ jQuery(document).ready(function($) {
 	},1000);
 });
 
-
 function run_popup_checker(){
+
+	// single product page
 	if( $('.file-view-page-upgrade').length > 0  && localStorage.getItem('modal_show') != 'true' && $('.sidebar-menu_no-auth').length > 0) {
 		console.log('product page run');
 		run_popup_text();
-		$(document).on('click','.modal_time_delay .modal__close-round', function(){
-			$('.modal_time_delay .social_holder .file-view-upgrade__auth-box').detach().appendTo('.file-view-page-upgrade .file-view-upgrade__purchase-box');
-		});
-		$(document).on('click','.modal_time_delay_overlay', function(){
-			$('.modal_time_delay .social_holder .file-view-upgrade__auth-box').detach().appendTo('.file-view-page-upgrade .file-view-upgrade__purchase-box');
-		});
 	}
+
+	// search page
 	if( $('.content_search').length > 0 || $('.folder-content').length > 0 && localStorage.getItem('modal_show') != 'true' && $('.sidebar-menu_no-auth').length > 0) {
 		console.log(' depositphotos.com/stock-photos run');
-				// $('._portal').removeClass('modal_time_delay_hide');
 		run_popup_text2();
+	}
 
-	}
+	// Home page run or like home page
 	if( $('.content-type-page__featured').length > 0 && localStorage.getItem('modal_show') != 'true' && $('.sidebar-menu_no-auth').length > 0) {
-		console.log('Home page run or like home page');
+		console.log('Home page run or like home page run');
 		run_popup_text1();
-		$(document).on('click','.modal_time_delay .modal__close-round', function(){
-			$('.modal_time_delay .social_holder .featured').detach().appendTo('.content-type-page__featured .featured-box');
-		});
-		$(document).on('click','.modal_time_delay_overlay', function(){
-			$('.modal_time_delay .social_holder .featured').detach().appendTo('.content-type-page__featured .featured-box');
-		});
 	}
+
+	//illustrations page
+	if( $('.illustrations-content').length > 0 && localStorage.getItem('modal_show') != 'true' && $('.sidebar-menu_no-auth').length > 0) {
+		console.log('illustrations page run');
+		run_popup_text3();
+	}
+
 }
 window.interval_out = setInterval(function(){
 	if( (Number(time_start)+(window.test_popup_timer*1000) ) < new Date().getTime() ){
