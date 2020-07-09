@@ -168,10 +168,10 @@ $(document).on('click','.modal_time_delay .modal-overlay', function(){
 window.interval_out2 = setInterval(function(){
 	if( $('.billing-trial__order-info').length > 0 && localStorage.getItem('modal_show') == 'true' ) {
 		console.log('redirect_checkout_2')
-		$('.order-info_trial .order-info__items').html('<div class="order-info__item"><i class="icon icon-ok-dark"></i><span class="order-info__item-text">Download any 10 images or vectors for free</span></div><div class="order-info__item"><i class="icon icon-ok-dark"></i><span class="order-info__item-text">7 days free, then $299 annualy for 360 images</span></div><div class="order-info__item"><i class="icon icon-ok-dark"></i><span class="order-info__item-text">Cancel anytime before your free trial is over</span></div><div class="order-info__item"><i class="icon icon-ok-dark"></i><span class="order-info__item-text">Unused downloads transfer to the next month</span></div>')
+		$('.order-info_trial .order-info__items').html('<div class="order-info__item"><i class="icon icon-ok-dark"></i><span class="order-info__item-text">Download any 10 images or vectors for free</span></div><div class="order-info__item"><i class="icon icon-ok-dark"></i><span class="order-info__item-text">7 days free, then $299 annualy for 360 images</span></div><div class="order-info__item"><i class="icon icon-ok-dark"></i><span class="order-info__item-text">Cancel anytime before your free trial is over</span></div><div class="order-info__item"><i class="icon icon-ok-dark"></i><span class="order-info__item-text">Unused downloads transfer to the next month</span></div>');
+		clearInterval(window.interval_out2);
 	}
-	clearInterval(window.interval_out2);
-},500);
+},800);
 
 jQuery(document).ready(function($) {
 	setTimeout(function(){
