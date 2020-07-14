@@ -1,3 +1,9 @@
+try {
+  hj('trigger', 'TimeDelayPopup');
+}
+catch(e) {}
+
+
 var check_modal_show = localStorage.getItem('modal_show') || 'false';
 // if(check_modal_show == null){
 // 	localStorage.setItem('modal_show', false);
@@ -119,13 +125,14 @@ $(document).on('click','.modal_time_delay .modal__close-round', function(){
 	$('._portal').removeClass('modal_time_delay');
 	$('._portal').find('.modal-container._modal-container').remove();
 
-	// window.dataLayer = window.dataLayer || [];
-	// window.dataLayer.push({
-	//  'event': 'gaEv',
-	//  'eventCategory': 'Exp - exit-intent popup',
-	//  'eventAction': 'Click X to close popup',
-	//  'eventLabel': ''
-	// });
+	window.dataLayer = window.dataLayer || [];
+	dataLayer.push({
+	'event': 'event-to-ga',
+	'eventCategory': 'Exp - Time-delay popup with CTA on trial',
+	'eventAction': 'Click on X to close popup'
+	});
+	console.log('eventAction - Click on X to close popup')
+
 });
 $(document).on('click','.modal_time_delay .modal-overlay', function(){
 	localStorage.setItem('_utap','false');
@@ -153,13 +160,13 @@ $(document).on('click','.modal_time_delay .modal-overlay', function(){
 	$('._portal').removeClass('modal_time_delay');
 	$('._portal').find('.modal-container._modal-container').remove();
 
-	// window.dataLayer = window.dataLayer || [];
-	// window.dataLayer.push({
-	//  'event': 'gaEv',
-	//  'eventCategory': 'Exp - exit-intent popup',
-	//  'eventAction': 'Click on background to close popup',
-	//  'eventLabel': ''
-	// });
+	window.dataLayer = window.dataLayer || [];
+	dataLayer.push({
+	'event': 'event-to-ga',
+	'eventCategory': 'Exp - Time-delay popup with CTA on trial',
+	'eventAction': 'Click on the background to close popup'
+	});
+	console.log('eventAction - Click on the background to close popup')
 
 });
 
@@ -220,7 +227,49 @@ function run_popup_checker(){
 }
 window.interval_out = setInterval(function(){
 	if( (Number(time_start)+(window.test_popup_timer*1000) ) < new Date().getTime() ){
+
+		window.dataLayer = window.dataLayer || [];
+			dataLayer.push({
+			'event': 'event-to-ga',
+			'eventCategory': 'Exp - Time-delay popup with CTA on trial',
+			'eventAction': 'popup loaded'
+		});
+		console.log('eventAction - popup loaded')
+
 		run_popup_checker();
 		clearInterval(window.interval_out);
 	}
 },1000);
+
+
+
+
+$(document).on('click','.modal_time_delay .signup-user-box__social-btn_google', function(){
+	window.dataLayer = window.dataLayer || [];
+		dataLayer.push({
+		'event': 'event-to-ga',
+		'eventCategory': 'Exp - Time-delay popup with CTA on trial',
+		'eventAction': 'Click on signup Google button'
+	});
+	console.log('Click on signup Google button');
+});
+
+$(document).on('click','.modal_time_delay .signup-user-box__social-btn_facebook', function(){
+	window.dataLayer = window.dataLayer || [];
+		dataLayer.push({
+		'event': 'event-to-ga',
+		'eventCategory': 'Exp - Time-delay popup with CTA on trial',
+		'eventAction': 'Click on signup Facebook button'
+	});
+	console.log('Click on signup Facebook button');
+});
+
+$(document).on('click','.modal_time_delay .signup-user__with-email', function(){
+	window.dataLayer = window.dataLayer || [];
+		dataLayer.push({
+		'event': 'event-to-ga',
+		'eventCategory': 'Exp - Time-delay popup with CTA on trial',
+		'eventAction': 'Click on signup user with Email'
+	});
+	console.log('Click on signup user with Email');
+});
