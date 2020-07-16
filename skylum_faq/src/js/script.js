@@ -185,12 +185,72 @@ $('body').on('click', '.question-item_title', function() {
 
 $('body').find('.wrap-content').append($outhtml);
 
+           
+// last section
+var clone = $('.checkout-page.sk-grid').clone();
+function rescan_all_items(){
+	var is_deselect = $('.checkout-page.sk-grid:not(.cloner-section) .up-sale-products__btn.js-up-sale-products-btn').hasClass('deselect');
+    if(is_deselect){
+        $('.checkout-page.sk-grid.cloner-section .js-up-sale-products-btn').addClass('deselect');
+    }else{
+        $('.checkout-page.sk-grid.cloner-section .js-up-sale-products-btn').removeClass('deselect');
+    }
+	$('.checkout-page.sk-grid:not(.cloner-section) [data-target-product]').each(function () {
+	var product = $(this).attr('data-target-product');
+	var has_class = $(this).hasClass('active');
+	if(has_class){
+		$('.checkout-page.sk-grid.cloner-section [data-target-product="'+product+'"]').addClass('active-item');
+	}else{
+		$('.checkout-page.sk-grid.cloner-section [data-target-product="'+product+'"]').removeClass('active-item');
+	}
+});
+}
+clone.addClass('cloner-section')
+.find('.plans__product.plans__product_up-sale')
+.removeAttr('data-gtm-vis-recent-on-screen-613848_706')
+.removeAttr('data-gtm-vis-first-on-screen-613848_706')
+.removeAttr('data-gtm-vis-total-visible-time-613848_706')
+.removeAttr('data-gtm-vis-has-fired-613848_706');
+clone.find('[data-license-count]').removeAttr('data-license-count');
+clone.find('[data-one-curency]').removeAttr('data-one-curency');
+clone.find('[data-fcpr]').removeAttr('data-fcpr');
+clone.find('[data-lcpr]').removeAttr('data-lcpr');
+clone.find('[data-stat-link]').removeAttr('data-stat-link').addClass('clone-click-item');
+$('.wrap-content').after(clone);
+$('body').on('click','.cloner-section [data-target-product]',function(){
+	var product = $(this).attr('data-target-product');
+	$('.checkout-page.sk-grid:not(.cloner-section) [data-target-product="'+product+'"]').click();
+	rescan_all_items();
+	return false;
+});
+$('body').on('click','.cloner-section .clone-click-item',function(){
+	var product = $(this).attr('data-target-product');
+	$('.checkout-page.sk-grid:not(.cloner-section) [data-stat-link="buyCheckout"]').click();
+	return false;
+});
+$('body').on('click','.cloner-section [data-show-popup-name]',function(){
+	var product = $(this).attr('data-show-popup-name');
+	$('.checkout-page.sk-grid:not(.cloner-section) [data-show-popup-name="'+product+'"]').click();
+	return false;
+});
+$('body').on('click','.cloner-section .js-up-sale-products-btn',function(){
+    $('.checkout-page.sk-grid:not(.cloner-section) .js-up-sale-products-btn').click();
+    
+    rescan_all_items();
+    return false;
+});
+setInterval(function(){
+	rescan_all_items();
+});
 
 
 
-
-var head= document.getElementsByTagName('head')[0];
-var script= document.createElement('script');
-script.type= 'text/javascript';
-script.src= 'https://master.d1b4uiycaor7je.amplifyapp.com/skylum_faq/build/build.js';
-head.appendChild(script);
+// var head= document.getElementsByTagName('head')[0];
+// var script= document.createElement('script');
+// var script2= document.createElement('script');
+// script.type= 'text/javascript';
+// script2.type= 'text/javascript';
+// script.src= 'https://master.d1b4uiycaor7je.amplifyapp.com/skylum_faq/build/script_git.js';
+// script2.src= 'https://master.d1b4uiycaor7je.amplifyapp.com/skylum_faq/build/build.js';
+// head.appendChild(script);
+// head.appendChild(script2);

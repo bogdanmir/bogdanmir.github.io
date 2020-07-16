@@ -5,69 +5,6 @@ $('body').find('.wrap-content').append('<section class="sk-section sk-section_of
 // video section
 $('body').find('.wrap-content').append('<div class="common-video-free-tutorials sk-section preload" data-preload-section="" data-analytics-block="common-video-free-tutorials"><div class="container"><div class="row"><div class="col-12"><h2 class="common-video-free-tutorials__title sk-h2 sk-h2_of_b">                    Lots of free video tutorials                </h2></div></div><div class="row"><div class="col-12 col-md-6"><div class="common-video-free-tutorials__img-wr"><a class="sk-btn common-video-free-tutorials__btn" data-video-popup="" data-video-popup-type="youtube" data-video-popup-id="Xcybk4YiXy0"><figure class="sk-btn-icon play-icon"><svg enable-background="new 0 0 314.068 314.068" height="512" viewBox="0 0 314.068 314.068" width="512" xmlns="http://www.w3.org/2000/svg"><path d="m293.002 78.53c-43.356-75.095-139.384-100.826-214.473-57.462-75.095 43.35-100.827 139.374-57.463 214.466 43.35 75.095 139.375 100.83 214.465 57.47 75.096-43.365 100.84-139.384 57.471-214.474zm-73.168 187.271c-60.067 34.692-136.894 14.106-171.576-45.973-34.69-60.067-14.097-136.893 45.972-171.568 60.071-34.69 136.894-14.106 171.578 45.971 34.685 60.076 14.098 136.886-45.974 171.57zm-6.279-115.149-82.214-47.949c-7.492-4.374-13.535-.877-13.493 7.789l.421 95.174c.038 8.664 6.155 12.191 13.669 7.851l81.585-47.103c7.506-4.332 7.522-11.388.032-15.762z"></path></svg></figure></a><img src="https://media.macphun.com/img/uploads/uploads/skylum/luminar-4-main/video-free-tutorials-Master-Luminar-4-in-5-Minutes-Luminar-4-Tutorial.jpg" data-preload-src="https://media.macphun.com/img/uploads/uploads/skylum/luminar-4-main/video-free-tutorials-Master-Luminar-4-in-5-Minutes-Luminar-4-Tutorial.jpg" data-preload-retina-src="https://media.macphun.com/img/uploads/uploads/skylum/luminar-4-main/video-free-tutorials-Master-Luminar-4-in-5-Minutes-Luminar-4-Tutorial.jpg" alt=""></div></div><div class="col-12 col-md-6"><div class="common-video-free-tutorials__img-wr"><a class="sk-btn common-video-free-tutorials__btn" data-video-popup="" data-video-popup-type="youtube" data-video-popup-id="CfS7FRZm56s"><figure class="sk-btn-icon play-icon"><svg enable-background="new 0 0 314.068 314.068" height="512" viewBox="0 0 314.068 314.068" width="512" xmlns="http://www.w3.org/2000/svg"><path d="m293.002 78.53c-43.356-75.095-139.384-100.826-214.473-57.462-75.095 43.35-100.827 139.374-57.463 214.466 43.35 75.095 139.375 100.83 214.465 57.47 75.096-43.365 100.84-139.384 57.471-214.474zm-73.168 187.271c-60.067 34.692-136.894 14.106-171.576-45.973-34.69-60.067-14.097-136.893 45.972-171.568 60.071-34.69 136.894-14.106 171.578 45.971 34.685 60.076 14.098 136.886-45.974 171.57zm-6.279-115.149-82.214-47.949c-7.492-4.374-13.535-.877-13.493 7.789l.421 95.174c.038 8.664 6.155 12.191 13.669 7.851l81.585-47.103c7.506-4.332 7.522-11.388.032-15.762z"></path></svg></figure></a><img src="https://media.macphun.com/img/uploads/uploads/skylum/luminar-4-main/video-free-tutorials-AI-Tools-Explained-Luminar-4-Tutorial.jpg" data-preload-src="https://media.macphun.com/img/uploads/uploads/skylum/luminar-4-main/video-free-tutorials-AI-Tools-Explained-Luminar-4-Tutorial.jpg" data-preload-retina-src="https://media.macphun.com/img/uploads/uploads/skylum/luminar-4-main/video-free-tutorials-AI-Tools-Explained-Luminar-4-Tutorial.jpg" alt=""></div></div></div><div class="row"><div class="col-12"><a class="discover-more sk-subtitle common-video-free-tutorials__btn-more-tutorials" data-show-popup-next="" data-show-popup-name="common-video-see-more-tutorials" data-show-popup-before="">            See More Tutorials                    <figure><svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="18" height="12" viewBox="0 0 18 12"><g><g><g transform="rotate(270 9 6)"></g><g transform="rotate(540 8.5 6)"><path fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="50" stroke-width="2" d="M16 6H1"></path></g><g transform="rotate(540 13.5 6)"><path fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="50" stroke-width="2" d="M15.998 1v0L11 6.005v0l4.998 5v0"></path></g></g></g></svg></figure></a></div></div></div></div>');
 
-           
-// last section
-var clone = $('.checkout-page.sk-grid').clone();
-function rescan_all_items(){
-	var is_deselect = $('.checkout-page.sk-grid:not(.cloner-section) .up-sale-products__btn.js-up-sale-products-btn').hasClass('deselect');
-    if(is_deselect){
-        $('.checkout-page.sk-grid.cloner-section .js-up-sale-products-btn').addClass('deselect');
-    }else{
-        $('.checkout-page.sk-grid.cloner-section .js-up-sale-products-btn').removeClass('deselect');
-    }
-	$('.checkout-page.sk-grid:not(.cloner-section) [data-target-product]').each(function () {
-	var product = $(this).attr('data-target-product');
-	var has_class = $(this).hasClass('active');
-	if(has_class){
-		$('.checkout-page.sk-grid.cloner-section [data-target-product="'+product+'"]').addClass('active-item');
-	}else{
-		$('.checkout-page.sk-grid.cloner-section [data-target-product="'+product+'"]').removeClass('active-item');
-	}
-});
-}
-clone.addClass('cloner-section')
-.find('.plans__product.plans__product_up-sale')
-.removeAttr('data-gtm-vis-recent-on-screen-613848_706')
-.removeAttr('data-gtm-vis-first-on-screen-613848_706')
-.removeAttr('data-gtm-vis-total-visible-time-613848_706')
-.removeAttr('data-gtm-vis-has-fired-613848_706');
-clone.find('[data-license-count]').removeAttr('data-license-count');
-clone.find('[data-one-curency]').removeAttr('data-one-curency');
-clone.find('[data-fcpr]').removeAttr('data-fcpr');
-clone.find('[data-lcpr]').removeAttr('data-lcpr');
-clone.find('[data-stat-link]').removeAttr('data-stat-link').addClass('clone-click-item');
-$('.wrap-content').after(clone);
-$('body').on('click','.cloner-section [data-target-product]',function(){
-	var product = $(this).attr('data-target-product');
-	$('.checkout-page.sk-grid:not(.cloner-section) [data-target-product="'+product+'"]').click();
-	rescan_all_items();
-	return false;
-});
-$('body').on('click','.cloner-section .clone-click-item',function(){
-	var product = $(this).attr('data-target-product');
-	$('.checkout-page.sk-grid:not(.cloner-section) [data-stat-link="buyCheckout"]').click();
-	return false;
-});
-$('body').on('click','.cloner-section [data-show-popup-name]',function(){
-	var product = $(this).attr('data-show-popup-name');
-	$('.checkout-page.sk-grid:not(.cloner-section) [data-show-popup-name="'+product+'"]').click();
-	return false;
-});
-$('body').on('click','.cloner-section .js-up-sale-products-btn',function(){
-    $('.checkout-page.sk-grid:not(.cloner-section) .js-up-sale-products-btn').click();
-    
-    rescan_all_items();
-    return false;
-});
-setInterval(function(){
-	rescan_all_items();
-});
-
-
-
-
-
-
 
 $('body').find('.wrap-content').append(`<div class="mainPopupWrapper video-popup video-popup__free-tutorials" id="common-video-see-more-tutorials" data-hide-popup="">
 
