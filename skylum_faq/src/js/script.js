@@ -242,15 +242,3 @@ $('body').on('click','.cloner-section .js-up-sale-products-btn',function(){
 setInterval(function(){
 	rescan_all_items();
 });
-
-
-
-// var head= document.getElementsByTagName('head')[0];
-// var script= document.createElement('script');
-// var script2= document.createElement('script');
-// script.type= 'text/javascript';
-// script2.type= 'text/javascript';
-// script.src= 'https://master.d1b4uiycaor7je.amplifyapp.com/skylum_faq/build/script_git.js';
-// script2.src= 'https://master.d1b4uiycaor7je.amplifyapp.com/skylum_faq/build/build.js';
-// head.appendChild(script);
-// head.appendChild(script2);
