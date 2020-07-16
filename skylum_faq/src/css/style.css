@@ -1,0 +1,267 @@
+.checkout-page {
+  min-height: 100%; }
+  .checkout-page.cloner-section {
+    padding: 58px 0; }
+    .checkout-page.cloner-section .plans__product_luminar .plans__product-prices-wrap_luminar {
+      display: none; }
+      .checkout-page.cloner-section .plans__product_luminar .plans__product-prices-wrap_luminar.active {
+        display: flex; }
+
+.checkout-page .plans__product.active-item .plans__product-indicator {
+  border-color: #0062fe;
+  background-color: #0062fe; }
+
+.checkout-page .plans__item.active-item::after,
+.checkout-page .plans__product.active-item .plans__product-indicator svg {
+  opacity: 1; }
+
+.faq-section {
+  background: #F1F1F1;
+  padding: 65px 0 50px;
+  margin: 50px 0 0; }
+  .faq-section .faq-title {
+    color: #000;
+    font-size: 30px;
+    font-family: "Graphik LCG",Helvetica,Arial,sans-serif;
+    text-align: center;
+    margin: 0 0 39px; }
+  .faq-section .question-item {
+    background: #fff;
+    border-radius: 4px;
+    margin: 0 0 8px;
+    position: relative;
+    border: 1px solid transparent; }
+    .faq-section .question-item:hover {
+      border-color: #000; }
+  .faq-section .question-item_title {
+    color: #000;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 13px 40px 13px 18px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s;
+    border-radius: 4px; }
+    .faq-section .question-item_title.faq__active .arrow-ico {
+      transform: rotate(180deg); }
+  .faq-section .question_desc {
+    color: #000;
+    font-size: 16px;
+    padding: 0 14px 18px;
+    display: none; }
+    .faq-section .question_desc a {
+      font-weight: 500; }
+  .faq-section .arrow-ico {
+    position: absolute;
+    right: 20px;
+    top: calc(50% - 5px);
+    height: 10px;
+    width: 10px;
+    transition: all 0.2s; }
+    .faq-section .arrow-ico:before, .faq-section .arrow-ico:after {
+      content: '';
+      background: #686868;
+      display: block;
+      height: 2px;
+      width: 7px;
+      border-radius: 4px;
+      position: absolute;
+      top: 4px; }
+    .faq-section .arrow-ico:before {
+      transform: rotate(45deg);
+      left: -1px; }
+    .faq-section .arrow-ico:after {
+      transform: rotate(-45deg);
+      left: 3px; }
+  .faq-section .circle-list {
+    list-style-type: disc;
+    padding: 0 0 0 18px; }
+    .faq-section .circle-list li {
+      margin: 0 0 10px; }
+
+.common-trustpilot {
+  padding-top: 60px; }
+  .common-trustpilot .common-trustpilot__title {
+    text-align: center; }
+
+.trustpilot-wrap {
+  overflow: hidden;
+  margin-top: 40px; }
+
+.common-video-free-tutorials {
+  background: #E5E5E5;
+  margin-top: 60px;
+  padding-top: 60px;
+  text-align: center; }
+
+.common-video-free-tutorials__img-wr {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  margin: 0 auto;
+  max-width: 750px;
+  position: relative; }
+  .common-video-free-tutorials__img-wr img {
+    width: 100%;
+    border-radius: 5px; }
+
+.common-video-free-tutorials__btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 2; }
+  .common-video-free-tutorials__btn .sk-btn-icon {
+    margin-right: 0;
+    width: 70px;
+    height: 70px; }
+
+.discover-more {
+  -webkit-transition: background-color .3s;
+  -o-transition: background-color .3s;
+  transition: background-color .3s;
+  color: #fff;
+  height: 50px;
+  font-size: 18px;
+  background-color: #009DFF;
+  padding: 14px 30px;
+  border-radius: 25px;
+  font-weight: 400;
+  min-width: 260px;
+  max-width: 260px;
+  line-height: 20px; }
+  .discover-more.active, .discover-more:hover {
+    background-color: #004EC8; }
+  .discover-more figure {
+    margin-left: 5px;
+    padding-top: 2px;
+    width: 14px; }
+    .discover-more figure svg {
+      width: 100%;
+      display: block;
+      -webkit-transition: -webkit-transform .25s ease-in-out;
+      -o-transition: transform .25s ease-in-out;
+      transition: transform .25s ease-in-out;
+      transition: transform .25s ease-in-out,-webkit-transform .25s ease-in-out;
+      -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      transform: rotate(90deg); }
+      .discover-more figure svg.arrow {
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg); }
+
+.common-video-free-tutorials .play-icon svg {
+  fill: #fff;
+  -webkit-transition: all .35s ease-in-out;
+  -o-transition: all .35s ease-in-out;
+  transition: all .35s ease-in-out; }
+
+.common-video-free-tutorials__btn:hover .play-icon svg {
+  fill: #c3c3c3; }
+
+.common-video-free-tutorials__btn-more-tutorials {
+  margin-top: 30px;
+  cursor: pointer;
+  line-height: 24px;
+  display: inline-block;
+  text-align: center; }
+
+.common-video-free-tutorials__btn-more-tutorials figure {
+  padding-top: 0;
+  padding-bottom: 2px;
+  display: inline-block;
+  vertical-align: middle; }
+
+.video-popup__container.mainPopupContainer {
+  max-width: 80%; }
+
+.video-popup__free-tutorials .video-popup__container.mainPopupContainer {
+  position: relative;
+  padding: 10px; }
+
+.video-popup__wrap-gallery {
+  position: relative;
+  height: 100%;
+  max-height: 620px;
+  overflow: visible;
+  padding: 30px 15px; }
+
+.gallery-video {
+  height: 560px;
+  overflow-y: auto; }
+
+.common-video-gallery__item-preview, .common-video-gallery__play span, .tile__top {
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.tile__top {
+  position: relative;
+  width: 100%;
+  height: 288px;
+  margin-bottom: 48px;
+  background-size: cover;
+  border-radius: 3px;
+  overflow: hidden; }
+
+.tile_gallery .tile__top {
+  height: 204px;
+  margin-bottom: 24px; }
+
+.tile__play,
+.tile__play span {
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.tile__top a {
+  cursor: pointer;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0; }
+
+.tile__play {
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: all .3s; }
+
+.tile__play span {
+  opacity: 0;
+  display: block;
+  width: 60px;
+  height: 60px;
+  background-image: url(https://media.macphun.com/img/uploads/uploads/macphun/video-galleries/play-button.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
