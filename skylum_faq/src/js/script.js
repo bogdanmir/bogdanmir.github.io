@@ -12,13 +12,13 @@ $outhtml +=					'<ul class="questions-list">'
 $outhtml +=						'<li class="question-item">'
 $outhtml += 						'<div class="question-item_title">What should I do if I have any payment issues? <span class="arrow-ico"></span></div>'
 $outhtml +=							'<div class="question_desc">'
-$outhtml +=								'<p>If you need help in resolving any payment issues, please contact our payment processing partner FastSpring <a href="https://fastspring.com/question-a-charge/">via this form</a> </p>'
+$outhtml +=								'<p>If you need help in resolving any payment issues, please contact our payment processing partner FastSpring <a href="https://fastspring.com/question-a-charge/" target="_blank">via this form</a> </p>'
 $outhtml +=							'</div>'
 $outhtml +=						'</li>'
 $outhtml +=						'<li class="question-item">'
 $outhtml += 						'<div class="question-item_title">How to install the application? <span class="arrow-ico"></span></div>'
 $outhtml +=							'<div class="question_desc">'
-$outhtml +=								'<p>Installation is simple and intuitive. In case you’ll have any issues with installation after purchase, please check out <b>installation guide for <a href="https://manual.skylum.com/4/en/topic/installing-activating-luminar-for-macos">Mac</a> or for <a href="https://manual.skylum.com/4/en/topic/installing-activating-luminar-for-win">Windows</a></b> and you can always contact our Support team via this <a href="https://skylum.com/support">form.</a></p>'
+$outhtml +=								'<p>Installation is simple and intuitive. In case you’ll have any issues with installation after purchase, please check out <b>installation guide for <a href="https://manual.skylum.com/4/en/topic/installing-activating-luminar-for-macos" target="_blank">Mac</a> or for <a href="https://manual.skylum.com/4/en/topic/installing-activating-luminar-for-win" target="_blank">Windows</a></b> and you can always contact our Support team via this <a href="https://skylum.com/support" target="_blank">form.</a></p>'
 $outhtml +=							'</div>'
 $outhtml +=						'</li>'
 
@@ -32,21 +32,21 @@ $outhtml +=						'</li>'
 $outhtml +=						'<li class="question-item">'
 $outhtml += 						'<div class="question-item_title">How to get started? Do you have any tutorials or step-by-step guides? <span class="arrow-ico"></span></div>'
 $outhtml +=							'<div class="question_desc">'
-$outhtml +=								'<p>We have 80+ tutorials and beginners’ guides at <a href="https://skylum.com/academy">Skylum Academy.</a></p>'
+$outhtml +=								'<p>We have 80+ tutorials and beginners’ guides at <a href="https://skylum.com/academy" target="_blank">Skylum Academy.</a></p>'
 $outhtml +=							'</div>'
 $outhtml +=						'</li>'
 
 $outhtml +=						'<li class="question-item">'
 $outhtml += 						'<div class="question-item_title">Where can I see videos on how Luminar 4 works? <span class="arrow-ico"></span></div>'
 $outhtml +=							'<div class="question_desc">'
-$outhtml +=								'<p>The video tutorials are available <a href="https://skylum.com/video-galleries/luminar-video-tutorials?page=2&per-page=100">here</a>. We also invite you to check out our official <a href="https://www.youtube.com/user/macphunsoftware/playlists">YouTube channel</a> which contains video tutorials for Luminar 4.</p>'
+$outhtml +=								'<p>The video tutorials are available <a href="https://skylum.com/video-galleries/luminar-video-tutorials?page=2&per-page=100" target="_blank">here</a>. We also invite you to check out our official <a href="https://www.youtube.com/user/macphunsoftware/playlists" target="_blank">YouTube channel</a> which contains video tutorials for Luminar 4.</p>'
 $outhtml +=							'</div>'
 $outhtml +=						'</li>'
 
 $outhtml +=						'<li class="question-item">'
 $outhtml += 						'<div class="question-item_title">Do I need to have any photo editing skills to use Luminar 4? <span class="arrow-ico"></span></div>'
 $outhtml +=							'<div class="question_desc">'
-$outhtml +=								'<p>Luminar is suitable for both beginners and pro photographers. You can either apply Luminar Looks to your photos (sets of adjustments created by professionals), or you can experiment with hundreds of tools and sliders by yourself.</p><p>With RAW files support, export to major file formats, layers, masks and much more,</p><p>Luminar suits all your photography needs.</p>'
+$outhtml +=								'<p>Luminar is suitable for both beginners and pro photographers. You can either apply Luminar Looks to your photos (sets of adjustments created by professionals), or you can experiment with hundreds of tools and sliders by yourself.</p><p>With RAW files support, export to major file formats, layers, masks and much more, Luminar suits all your photography needs.</p>'
 $outhtml +=							'</div>'
 $outhtml +=						'</li>'
 
@@ -60,7 +60,7 @@ $outhtml +=						'</li>'
 $outhtml +=						'<li class="question-item">'
 $outhtml += 						'<div class="question-item_title">How to get support and answers to my questions? <span class="arrow-ico"></span></div>'
 $outhtml +=							'<div class="question_desc">'
-$outhtml +=								'<p>You can contact our support team via this <a href="https://skylum.com/support">form</a> and they’ll be glad to reply within 24 hours.</p>'
+$outhtml +=								'<p>You can contact our support team via this <a href="https://skylum.com/support" target="_blank">form</a> and they’ll be glad to reply within 24 hours.</p>'
 $outhtml +=							'</div>'
 $outhtml +=						'</li>'
 
@@ -79,7 +79,7 @@ $outhtml +=							'</div>'
 $outhtml +=						'</li>'
 
 $outhtml +=						'<li class="question-item">'
-$outhtml += 						'<div class="question-item_title">Does Luminar4 come with everything in it? Is it fully functional without Luminar Looks, Sky Packs and LUTs that are offered in addition to the license? <span class="arrow-ico"></span></div>'
+$outhtml += 						'<div class="question-item_title">Does Luminar 4 come with everything in it? Is it fully functional without Luminar Looks, Sky Packs and LUTs that are offered in addition to the license? <span class="arrow-ico"></span></div>'
 $outhtml +=							'<div class="question_desc">'
 $outhtml +=								'<p>Sure, Luminar is fully functional as is. Luminar comes with a variety of embedded Looks, LUTs, Sky Samples, Objects, etc. Purchasing additional items is completely optional.</p>'
 $outhtml +=							'</div>'
@@ -101,7 +101,7 @@ $outhtml +=						'</li>'
 $outhtml +=						'<li class="question-item">'
 $outhtml += 						'<div class="question-item_title">How does 30-Day Money-Back Guarantee work? <span class="arrow-ico"></span></div>'
 $outhtml +=							'<div class="question_desc">'
-$outhtml +=								'<p>If you are not completely satisfied with the Software for any reason, you may return the Software, together with your receipt or any other proof of purchase of the Software, for a refund of the money you paid for the Software (less any applicable taxes or other fees) at any time during the thirty (30) day period following the date of purchase. Upon receiving a refund you shall cease any and all use and destroy all copies, full or partial, of the Software for which you no longer possess a paid-up license. All refund requests are processed by our Support team, you can contact them via this <a href="https://skylum.com/support">form.</a></p>'
+$outhtml +=								'<p>If you are not completely satisfied with the Software for any reason, you may return the Software, together with your receipt or any other proof of purchase of the Software, for a refund of the money you paid for the Software (less any applicable taxes or other fees) at any time during the thirty (30) day period following the date of purchase. Upon receiving a refund you shall cease any and all use and destroy all copies, full or partial, of the Software for which you no longer possess a paid-up license. All refund requests are processed by our Support team, you can contact them via this <a href="https://skylum.com/support" target="_blank">form.</a></p>'
 $outhtml +=							'</div>'
 $outhtml +=						'</li>'
 
@@ -115,7 +115,7 @@ $outhtml +=						'</li>'
 $outhtml +=						'<li class="question-item">'
 $outhtml += 						'<div class="question-item_title">How to use Luminar 4 as a plugin for Photoshop, Lightroom, Photos for Mac? <span class="arrow-ico"></span></div>'
 $outhtml +=							'<div class="question_desc">'
-$outhtml +=								'<p>Please check out <a href="https://manual.skylum.com/4/en/topic/using-luminar-with-other-software">this tutorial</a> on how to use Luminar with other software.</p>'
+$outhtml +=								'<p>Please check out <a href="https://manual.skylum.com/4/en/topic/using-luminar-with-other-software" target="_blank">this tutorial</a> on how to use Luminar with other software.</p>'
 $outhtml +=							'</div>'
 $outhtml +=						'</li>'
 
@@ -143,7 +143,7 @@ $outhtml +=						'</li>'
 $outhtml +=						'<li class="question-item">'
 $outhtml += 						'<div class="question-item_title">Do you have a trial version of Luminar 4 available for download? <span class="arrow-ico"></span></div>'
 $outhtml +=							'<div class="question_desc">'
-$outhtml +=								'<p>You can download a trial version of Luminar from <a href="https://skylum.com/download/luminar-4">our website</a> and check out all of the features by yourself.</p>'
+$outhtml +=								'<p>You can download a trial version of Luminar from <a href="https://skylum.com/download/luminar-4" target="_blank">our website</a> and check out all of the features by yourself.</p>'
 $outhtml +=							'</div>'
 $outhtml +=						'</li>'
 
@@ -156,7 +156,7 @@ $outhtml +=						'</li>'
 $outhtml +=						'<li class="question-item">'
 $outhtml += 						'<div class="question-item_title">Does Luminar 4 support RAW files? <span class="arrow-ico"></span></div>'
 $outhtml +=							'<div class="question_desc">'
-$outhtml +=								'<p>Yes, Luminar supports RAW files. You can see the list of supported cameras <a href="https://media.macphun.com/uploads/uploads/Luminar_4.1.0_Supported_Cameras.pdf">here</a>.</p>'
+$outhtml +=								'<p>Yes, Luminar supports RAW files. You can see the list of supported cameras <a href="https://media.macphun.com/uploads/uploads/Luminar_4.1.0_Supported_Cameras.pdf" target="_blank">here</a>.</p>'
 $outhtml +=							'</div>'
 $outhtml +=						'</li>'
 $outhtml +=						'<li class="question-item">'
@@ -241,4 +241,19 @@ $('body').on('click','.cloner-section .js-up-sale-products-btn',function(){
 });
 setInterval(function(){
 	rescan_all_items();
+});
+
+
+$('.cloner-section .plans__product .js-product-more').mouseover(function() {
+  $(this).find('.checkout-page__product-link-desc.js-product-more-desc').addClass('active')
+});
+$('.cloner-section .plans__product .js-product-more').mouseout(function() {
+  $(this).find('.checkout-page__product-link-desc.js-product-more-desc').removeClass('active')
+});
+
+$('body').on('click','.cloner-section .plans__product .checkout-page__product-link.js-product-more-click',function(){
+	$(this).find('.checkout-page__product-link-desc.js-product-more-desc').addClass('active')
+});
+$('body').on('mouseout','.cloner-section .plans__product .js-product-more-click', function(){
+	$(this).find('.checkout-page__product-link-desc.js-product-more-desc').removeClass('active')
 });
