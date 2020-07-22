@@ -1,5 +1,160 @@
-// language.some_slug
-// alert(language.some_slug);
+(function($){
+  $.fn.extend({
+    beforeAfter: function() {
+
+      $(this).each(function() {
+
+        var baContainer = $(this);
+        var percentage = 50;
+        var afterImage = $('img:last', baContainer);
+        var afterImageH = afterImage.height();
+        var afterImageW = afterImage.width();
+
+        $(baContainer).height(afterImageH);
+
+        $('img:first', baContainer).wrap('<div class="bs-ab-slider-before-image"/>').width(afterImageW);
+        $('.bs-ab-slider-before-image', baContainer).css({width: percNum(percentage)})
+        $('img', baContainer).addClass('bs-ab-slider-image');
+
+        var html = '<div class="ba-control"><div class="ba-control-area"><div class="ba-control-bar"><span class="ba-left-arrow" /><span class="ba-control-handle" /><span class="ba-right-arrow" /></div></div></div>';
+
+        baContainer.append(html);
+ 
+        var slider  = baContainer.find('.ba-control');
+        var baBar = slider.find('.ba-control-area');
+        var baHoverEl = baContainer.find('*');
+        var startOffset, holderOffset, sliderWidth, handleWidth;
+
+        baBar.css({left: percNum(percentage)});
+
+        // EVENTS
+
+        // Resize
+        $(window).on('resize', resizeHandler);
+
+        // Drag
+        // baBar.on('mousedown', function(e) {
+        baBar.on('mousemove', function(e) {
+          e.preventDefault(); 
+          holderOffset = slider.offset().left;
+          startOffset = baBar.offset().left - holderOffset;
+          sliderWidth = slider.width();
+          
+          $(document).on('mousemove', moveHandler).on('mouseup', stopHandler);
+        });
+
+        // Hover
+        baContainer.on('mouseover', function(e) {
+          // $('.ba-left-arrow, .ba-right-arrow, .ba-control-handle', baContainer).filter(':not(:animated)').fadeIn();
+        });
+        baContainer.on('mouseleave', function(e) {
+             // $('.ba-left-arrow, .ba-right-arrow, .ba-control-handle', baContainer).fadeOut();
+        });
+
+        // Click
+        baContainer.on('click', function(e) {
+          e.preventDefault(); 
+          var clickX = e.pageX - $(this).offset().left;
+          var posP = (clickX / slider.width())*100;
+
+          var posX = Math.round(Math.min(Math.max(0, posP), 100));
+
+          baBar.stop().animate({
+            left: percNum(posX)
+          });
+
+          $('.bs-ab-slider-before-image', baContainer).stop().animate({
+            width: percNum(posX)
+          });           
+        });
+
+        baContainer.on('touchmove', function(e) {
+          e.preventDefault(); 
+
+          var touchX = e.originalEvent.targetTouches[0].pageX;
+          var clickX = touchX - slider.offset().left;
+          var posP = (clickX / slider.width())*100;
+
+          var posX = Math.round(Math.min(Math.max(0, posP), 100));
+
+          baBar.css({
+            left: percNum(posX)
+          });
+
+          $('.bs-ab-slider-before-image', baContainer).width(percNum(posX));
+        });
+
+        // FUNCTIONS
+        function moveHandler(e) {
+          var posX = e.pageX - holderOffset;
+          var posP = (posX / sliderWidth)*100;
+
+          posX = Math.floor(Math.min(Math.max(0, posP), 100));
+          
+          baBar.css({
+            left: percNum(posX)
+          });
+
+          $('.bs-ab-slider-before-image', baContainer).width(percNum(posX));
+        }
+        function stopHandler() {
+          $(document).off('mousemove', moveHandler).off('mouseup', stopHandler);
+        }
+        function resizeHandler(){
+          afterImageH = afterImage.height();
+          afterImageW = afterImage.width();
+          $('.bs-ab-slider', baContainer).height(afterImageH);
+          $('.ba-control', baContainer).height(afterImageH);
+          $('.bs-ab-slider-before-image img', baContainer).width(afterImageW);
+          baContainer.height(afterImageH);
+        }
+        function percNum(num) {
+          return num + '%';
+        }
+
+        // Clean up of overflow issues
+        resizeHandler();
+
+      });
+    }
+  });
+})(jQuery);
+
+// $('head').append('<script type="text/javascript" src="https://mrygielski.github.io/jquery.baSlider/src/jquery.baSlider.js" async></script>');
+
+function reinit_ba_slider(){
+	setTimeout(function(){
+	$('.ba-slider').each(function(ind){
+		var img1 = $(this).find('img:eq(0)').clone();
+		var img2 = $(this).find('img:eq(1)').clone();
+		img1.attr('style','');
+		img1.addClass('before-img');
+		img2.attr('style','');
+		$(this).replaceWith('<div class="bs-ab-slider" data-ba-item="'+ind+'"></div>');
+		$('body').find('[data-ba-item="'+ind+'"]').append(img1);
+		$('body').find('[data-ba-item="'+ind+'"]').append(img2);
+	})
+	$('.bs-ab-slider').each(function(ind){
+		var img1 = $(this).find('img:eq(0)').clone();
+		var img2 = $(this).find('img:eq(1)').clone();
+		img1.attr('style','');
+		$(this).attr('style','');
+		img1.addClass('before-img');
+		img2.attr('style','');
+		$(this).replaceWith('<div class="bs-ab-slider" data-ba-item="'+ind+'"></div>');
+		$('body').find('[data-ba-item="'+ind+'"]').append(img1);
+		$('body').find('[data-ba-item="'+ind+'"]').append(img2);
+	});
+	setTimeout(function(){$('.bs-ab-slider').beforeAfter();$(window).trigger('resize')},100);
+},100);
+$(window).trigger('resize')
+}
+setInterval(function(){$(window).trigger('resize')},0);
+reinit_ba_slider();
+$('body').on('click', '.owl-dots .owl-dot', function(event) {
+	$(window).trigger('resize');
+	event.preventDefault();
+});
 
 $outhtml  = '<section class="faq-section">'
 $outhtml += 	'<div class="container">'
@@ -238,6 +393,7 @@ $('body').on('click','.cloner-section .clone-click-item',function(){
 $('body').on('click','.cloner-section [data-show-popup-name]',function(){
 	var product = $(this).attr('data-show-popup-name');
 	$('.checkout-page.sk-grid:not(.cloner-section) [data-show-popup-name="'+product+'"]').click();
+	reinit_ba_slider();
 	return false;
 });
 $('body').on('click','.cloner-section .js-up-sale-products-btn',function(){
@@ -284,5 +440,4 @@ $('body').find('.wrap-content').append('<section class="sk-section sk-section_of
 
 // video section
 $('body').find('.wrap-content').append('<div class="common-video-free-tutorials sk-section preload" data-preload-section="" data-analytics-block="common-video-free-tutorials"><div class="container"><div class="row"><div class="col-12"><h2 class="common-video-free-tutorials__title sk-h2 sk-h2_of_b">                    Lots of free video tutorials                </h2></div></div><div class="row"><div class="col-12 col-md-6"><div class="common-video-free-tutorials__img-wr"><a class="sk-btn common-video-free-tutorials__btn" data-video-popup="" data-video-popup-type="youtube" data-video-popup-id="Xcybk4YiXy0"><figure class="sk-btn-icon play-icon"><svg enable-background="new 0 0 314.068 314.068" height="512" viewBox="0 0 314.068 314.068" width="512" xmlns="http://www.w3.org/2000/svg"><path d="m293.002 78.53c-43.356-75.095-139.384-100.826-214.473-57.462-75.095 43.35-100.827 139.374-57.463 214.466 43.35 75.095 139.375 100.83 214.465 57.47 75.096-43.365 100.84-139.384 57.471-214.474zm-73.168 187.271c-60.067 34.692-136.894 14.106-171.576-45.973-34.69-60.067-14.097-136.893 45.972-171.568 60.071-34.69 136.894-14.106 171.578 45.971 34.685 60.076 14.098 136.886-45.974 171.57zm-6.279-115.149-82.214-47.949c-7.492-4.374-13.535-.877-13.493 7.789l.421 95.174c.038 8.664 6.155 12.191 13.669 7.851l81.585-47.103c7.506-4.332 7.522-11.388.032-15.762z"></path></svg></figure></a><img src="https://media.macphun.com/img/uploads/uploads/skylum/luminar-4-main/video-free-tutorials-Master-Luminar-4-in-5-Minutes-Luminar-4-Tutorial.jpg" data-preload-src="https://media.macphun.com/img/uploads/uploads/skylum/luminar-4-main/video-free-tutorials-Master-Luminar-4-in-5-Minutes-Luminar-4-Tutorial.jpg" data-preload-retina-src="https://media.macphun.com/img/uploads/uploads/skylum/luminar-4-main/video-free-tutorials-Master-Luminar-4-in-5-Minutes-Luminar-4-Tutorial.jpg" alt=""></div></div><div class="col-12 col-md-6"><div class="common-video-free-tutorials__img-wr"><a class="sk-btn common-video-free-tutorials__btn" data-video-popup="" data-video-popup-type="youtube" data-video-popup-id="CfS7FRZm56s"><figure class="sk-btn-icon play-icon"><svg enable-background="new 0 0 314.068 314.068" height="512" viewBox="0 0 314.068 314.068" width="512" xmlns="http://www.w3.org/2000/svg"><path d="m293.002 78.53c-43.356-75.095-139.384-100.826-214.473-57.462-75.095 43.35-100.827 139.374-57.463 214.466 43.35 75.095 139.375 100.83 214.465 57.47 75.096-43.365 100.84-139.384 57.471-214.474zm-73.168 187.271c-60.067 34.692-136.894 14.106-171.576-45.973-34.69-60.067-14.097-136.893 45.972-171.568 60.071-34.69 136.894-14.106 171.578 45.971 34.685 60.076 14.098 136.886-45.974 171.57zm-6.279-115.149-82.214-47.949c-7.492-4.374-13.535-.877-13.493 7.789l.421 95.174c.038 8.664 6.155 12.191 13.669 7.851l81.585-47.103c7.506-4.332 7.522-11.388.032-15.762z"></path></svg></figure></a><img src="https://media.macphun.com/img/uploads/uploads/skylum/luminar-4-main/video-free-tutorials-AI-Tools-Explained-Luminar-4-Tutorial.jpg" data-preload-src="https://media.macphun.com/img/uploads/uploads/skylum/luminar-4-main/video-free-tutorials-AI-Tools-Explained-Luminar-4-Tutorial.jpg" data-preload-retina-src="https://media.macphun.com/img/uploads/uploads/skylum/luminar-4-main/video-free-tutorials-AI-Tools-Explained-Luminar-4-Tutorial.jpg" alt=""></div></div></div><div class="row"><div class="col-12"><a class="discover-more sk-subtitle common-video-free-tutorials__btn-more-tutorials" data-show-popup-next="" data-show-popup-name="common-video-see-more-tutorials" data-show-popup-before="">            See More Tutorials                    <figure><svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="18" height="12" viewBox="0 0 18 12"><g><g><g transform="rotate(270 9 6)"></g><g transform="rotate(540 8.5 6)"><path fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="50" stroke-width="2" d="M16 6H1"></path></g><g transform="rotate(540 13.5 6)"><path fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="50" stroke-width="2" d="M15.998 1v0L11 6.005v0l4.998 5v0"></path></g></g></g></svg></figure></a></div></div></div></div>');
-
 
