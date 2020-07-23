@@ -50,6 +50,8 @@
     padding: 0 14px 18px;
     display: none; }
     .faq-section .question_desc a {
+      color: #0062fe;
+      cursor: pointer;
       font-weight: 500; }
   .faq-section .arrow-ico {
     position: absolute;
