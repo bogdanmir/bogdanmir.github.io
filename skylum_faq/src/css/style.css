@@ -1,3 +1,6 @@
+.wrapper, body, html {
+  background: #fff; }
+
 .checkout-page {
   min-height: 100%; }
   .checkout-page.cloner-section {
@@ -386,3 +389,6 @@
 
 .pdf-popup__wrap {
   padding: 30px 15px; }
+  .pdf-popup__wrap iframe {
+    width: 100%;
+    height: 620px; }
