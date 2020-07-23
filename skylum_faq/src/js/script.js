@@ -171,12 +171,6 @@ $outhtml += 			'<div class="col-12"><h2 class="faq-title">Frequently Asked Quest
 $outhtml +=				'<div class="col-12 col-md-6 col-lg-6 col-xl-6">'
 $outhtml +=					'<ul class="questions-list questions_l">'
 $outhtml +=						'<li class="question-item">'
-$outhtml += 						'<div class="question-item_title">What should I do if I have any payment issues? <span class="arrow-ico"></span></div>'
-$outhtml +=							'<div class="question_desc">'
-$outhtml +=								'<p>If you need help in resolving any payment issues, please contact our payment processing partner FastSpring <a href="https://fastspring.com/question-a-charge/" target="_blank">via this form</a> </p>'
-$outhtml +=							'</div>'
-$outhtml +=						'</li>'
-$outhtml +=						'<li class="question-item">'
 $outhtml += 						'<div class="question-item_title">How to install the application? <span class="arrow-ico"></span></div>'
 $outhtml +=							'<div class="question_desc">'
 $outhtml +=								'<p>Installation is simple and intuitive. In case you’ll have any issues with installation after purchase, please check out <b>installation guide for <a href="https://manual.skylum.com/4/en/topic/installing-activating-luminar-for-macos" target="_blank">Mac</a> or for <a href="https://manual.skylum.com/4/en/topic/installing-activating-luminar-for-win" target="_blank">Windows</a></b> and you can always contact our Support team via this <a href="https://skylum.com/support" target="_blank">form.</a></p>'
@@ -246,6 +240,13 @@ $outhtml +=								'<p>Sure, Luminar is fully functional as is. Luminar comes wi
 $outhtml +=							'</div>'
 $outhtml +=						'</li>'
 
+$outhtml +=           '<li class="question-item">'
+$outhtml +=             '<div class="question-item_title">What should I do if I have any payment issues? <span class="arrow-ico"></span></div>'
+$outhtml +=             '<div class="question_desc">'
+$outhtml +=               '<p>If you need help in resolving any payment issues, please contact our payment processing partner FastSpring <a href="https://fastspring.com/question-a-charge/" target="_blank">via this form</a> </p>'
+$outhtml +=             '</div>'
+$outhtml +=           '</li>'
+
 $outhtml +=					'</ul>'
 $outhtml +=				'</div>'
 
@@ -307,12 +308,16 @@ $outhtml +=							'<div class="question_desc">'
 $outhtml +=								'<p>There are several ways to open images into Luminar for editing.</p>  <ul class="circle-list"><li>You can <b>Add Folders</b> into Luminar Catalog and leave your photos exactly where they are on your hard drives.</li><li>If you want to import images from a memory card or external drive, then use the <b>Import Images</b> option that moves or copies your images to a new location.</li><li>You can also open your images from any location with the <b>Edit Single Image</b> command, which allows you to easily edit and export photos that you do not want to keep in your Luminar Catalog.</li></ul><p>You can also check this <a data-video-popup="" data-video-popup-type="youtube" data-video-popup-id="Xcybk4YiXy0">5 minutes video</a> with a quick demonstration of how easy it is to get started. </p>'
 $outhtml +=							'</div>'
 $outhtml +=						'</li>'
+
+
 $outhtml +=						'<li class="question-item">'
 $outhtml += 						'<div class="question-item_title">Does Luminar 4 support RAW files? <span class="arrow-ico"></span></div>'
 $outhtml +=							'<div class="question_desc">'
-$outhtml +=								'<p>Yes, Luminar supports RAW files. You can see the list of supported cameras <a href="https://media.macphun.com/uploads/uploads/Luminar_4.1.0_Supported_Cameras.pdf" target="_blank">here</a>.</p>'
+$outhtml +=								'<p>Yes, Luminar supports RAW files. You can see the list of supported cameras <a data-show-popup-next="" data-show-popup-name="common-pdf-tutorials" data-show-popup-before="" class="pdfBtnJs">here</a>.</p>'
 $outhtml +=							'</div>'
 $outhtml +=						'</li>'
+
+
 $outhtml +=						'<li class="question-item">'
 $outhtml += 						'<div class="question-item_title">Is Luminar 4 translated into my language? <span class="arrow-ico"></span></div>'
 $outhtml +=							'<div class="question_desc">'
@@ -669,3 +674,9 @@ $('body').find('.wrap-content').append('<section class="sk-section sk-section_of
 // video section
 $('body').find('.wrap-content').append('<div class="common-video-free-tutorials sk-section preload" data-preload-section="" data-analytics-block="common-video-free-tutorials"><div class="container"><div class="row"><div class="col-12"><h2 class="common-video-free-tutorials__title sk-h2 sk-h2_of_b">                    Lots of free video tutorials                </h2></div></div><div class="row"><div class="col-12 col-md-6"><div class="common-video-free-tutorials__img-wr"><a class="sk-btn common-video-free-tutorials__btn" data-video-popup="" data-video-popup-type="youtube" data-video-popup-id="Xcybk4YiXy0"><figure class="sk-btn-icon play-icon"><svg enable-background="new 0 0 314.068 314.068" height="512" viewBox="0 0 314.068 314.068" width="512" xmlns="http://www.w3.org/2000/svg"><path d="m293.002 78.53c-43.356-75.095-139.384-100.826-214.473-57.462-75.095 43.35-100.827 139.374-57.463 214.466 43.35 75.095 139.375 100.83 214.465 57.47 75.096-43.365 100.84-139.384 57.471-214.474zm-73.168 187.271c-60.067 34.692-136.894 14.106-171.576-45.973-34.69-60.067-14.097-136.893 45.972-171.568 60.071-34.69 136.894-14.106 171.578 45.971 34.685 60.076 14.098 136.886-45.974 171.57zm-6.279-115.149-82.214-47.949c-7.492-4.374-13.535-.877-13.493 7.789l.421 95.174c.038 8.664 6.155 12.191 13.669 7.851l81.585-47.103c7.506-4.332 7.522-11.388.032-15.762z"></path></svg></figure></a><img src="https://media.macphun.com/img/uploads/uploads/skylum/luminar-4-main/video-free-tutorials-Master-Luminar-4-in-5-Minutes-Luminar-4-Tutorial.jpg" data-preload-src="https://media.macphun.com/img/uploads/uploads/skylum/luminar-4-main/video-free-tutorials-Master-Luminar-4-in-5-Minutes-Luminar-4-Tutorial.jpg" data-preload-retina-src="https://media.macphun.com/img/uploads/uploads/skylum/luminar-4-main/video-free-tutorials-Master-Luminar-4-in-5-Minutes-Luminar-4-Tutorial.jpg" alt=""></div></div><div class="col-12 col-md-6"><div class="common-video-free-tutorials__img-wr"><a class="sk-btn common-video-free-tutorials__btn" data-video-popup="" data-video-popup-type="youtube" data-video-popup-id="CfS7FRZm56s"><figure class="sk-btn-icon play-icon"><svg enable-background="new 0 0 314.068 314.068" height="512" viewBox="0 0 314.068 314.068" width="512" xmlns="http://www.w3.org/2000/svg"><path d="m293.002 78.53c-43.356-75.095-139.384-100.826-214.473-57.462-75.095 43.35-100.827 139.374-57.463 214.466 43.35 75.095 139.375 100.83 214.465 57.47 75.096-43.365 100.84-139.384 57.471-214.474zm-73.168 187.271c-60.067 34.692-136.894 14.106-171.576-45.973-34.69-60.067-14.097-136.893 45.972-171.568 60.071-34.69 136.894-14.106 171.578 45.971 34.685 60.076 14.098 136.886-45.974 171.57zm-6.279-115.149-82.214-47.949c-7.492-4.374-13.535-.877-13.493 7.789l.421 95.174c.038 8.664 6.155 12.191 13.669 7.851l81.585-47.103c7.506-4.332 7.522-11.388.032-15.762z"></path></svg></figure></a><img src="https://media.macphun.com/img/uploads/uploads/skylum/luminar-4-main/video-free-tutorials-AI-Tools-Explained-Luminar-4-Tutorial.jpg" data-preload-src="https://media.macphun.com/img/uploads/uploads/skylum/luminar-4-main/video-free-tutorials-AI-Tools-Explained-Luminar-4-Tutorial.jpg" data-preload-retina-src="https://media.macphun.com/img/uploads/uploads/skylum/luminar-4-main/video-free-tutorials-AI-Tools-Explained-Luminar-4-Tutorial.jpg" alt=""></div></div></div><div class="row"><div class="col-12"><a class="discover-more sk-subtitle common-video-free-tutorials__btn-more-tutorials" data-show-popup-next="" data-show-popup-name="common-video-see-more-tutorials" data-show-popup-before="">            See More Tutorials                    <figure><svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="18" height="12" viewBox="0 0 18 12"><g><g><g transform="rotate(270 9 6)"></g><g transform="rotate(540 8.5 6)"><path fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="50" stroke-width="2" d="M16 6H1"></path></g><g transform="rotate(540 13.5 6)"><path fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="50" stroke-width="2" d="M15.998 1v0L11 6.005v0l4.998 5v0"></path></g></g></g></svg></figure></a></div></div></div></div>');
 
+
+$('body').find('.wrap-content').append('<div class="mainPopupWrapper pdf-popup" id="common-pdf-tutorials" data-hide-popup=""><div class="mainPopupContainer"><a title="Close" class="close" href="#" data-hide-popup="#common-pdf-tutorials"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path fill="#fff" d="M10.48 9.07l6.37-6.37a1 1 0 0 0 0-1.4 1 1 0 0 0-1.41 0L9.07 7.66 2.7 1.3a.99.99 0 0 0-1.4 0 .99.99 0 0 0 0 1.4l6.36 6.37-6.36 6.37a1 1 0 0 0 0 1.41 1 1 0 0 0 1.4 0l6.37-6.37 6.37 6.37a1 1 0 0 0 1.41-1.41z"></path></svg></a><div class="pdf-popup__wrap"><iframe id="frame_pdf"></iframe></div></div></div>');
+
+$('body').on('click', '.pdfBtnJs', function() {
+    $("#frame_pdf").attr("src", "https://media.macphun.com/uploads/uploads/Luminar_4.1.0_Supported_Cameras.pdf");
+});

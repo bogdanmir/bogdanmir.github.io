@@ -379,3 +379,10 @@
   left: 50%;
   background-color: #f90;
   cursor: move; }
+
+.pdf-popup .mainPopupContainer {
+  max-width: 80%;
+  padding: 10px; }
+
+.pdf-popup__wrap {
+  padding: 30px 15px; }
