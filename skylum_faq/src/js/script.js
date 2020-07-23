@@ -359,7 +359,7 @@ $('body').on('click', '.questions_l .question-item:nth-child(1)', function() {
 		'event': 'UA_event',
 		'eventCategory': 'Checkout',
 		'eventAction': 'click on FAQ',
-		'eventLabel': 'What should I do if I have any payment issues'
+		'eventLabel': 'How to install the application?'
 	});
 	console.log('faq_1')
 });
@@ -369,7 +369,7 @@ $('body').on('click', '.questions_l .question-item:nth-child(2)', function() {
 		'event': 'UA_event',
 		'eventCategory': 'Checkout',
 		'eventAction': 'click on FAQ',
-		'eventLabel': 'How to install the application'
+		'eventLabel': 'Will it work on my computer'
 	});
 	console.log('faq_2')
 });
@@ -379,7 +379,7 @@ $('body').on('click', '.questions_l .question-item:nth-child(3)', function() {
 		'event': 'UA_event',
 		'eventCategory': 'Checkout',
 		'eventAction': 'click on FAQ',
-		'eventLabel': 'Will it work on my computer'
+		'eventLabel': 'How to get started'
 	});
 	console.log('faq_3')
 });
@@ -389,7 +389,7 @@ $('body').on('click', '.questions_l .question-item:nth-child(4)', function() {
 		'event': 'UA_event',
 		'eventCategory': 'Checkout',
 		'eventAction': 'click on FAQ',
-		'eventLabel': 'How to get started'
+		'eventLabel': 'Where can I see videos on how Luminar 4 works'
 	});
 	console.log('faq_4')
 });
@@ -399,7 +399,7 @@ $('body').on('click', '.questions_l .question-item:nth-child(5)', function() {
 		'event': 'UA_event',
 		'eventCategory': 'Checkout',
 		'eventAction': 'click on FAQ',
-		'eventLabel': 'Where can I see videos on how Luminar 4 works'
+		'eventLabel': 'Do I need to have any photo editing skills to use Luminar 4'
 	});
 	console.log('faq_5')
 });
@@ -409,7 +409,7 @@ $('body').on('click', '.questions_l .question-item:nth-child(6)', function() {
 		'event': 'UA_event',
 		'eventCategory': 'Checkout',
 		'eventAction': 'click on FAQ',
-		'eventLabel': 'Do I need to have any photo editing skills to use Luminar 4'
+		'eventLabel': 'How do AI features work'
 	});
 	console.log('faq_6')
 });
@@ -419,7 +419,7 @@ $('body').on('click', '.questions_l .question-item:nth-child(7)', function() {
 		'event': 'UA_event',
 		'eventCategory': 'Checkout',
 		'eventAction': 'click on FAQ',
-		'eventLabel': 'How do AI features work'
+		'eventLabel': 'How to get support and answers to my questions'
 	});
 	console.log('faq_7')
 });
@@ -429,7 +429,7 @@ $('body').on('click', '.questions_l .question-item:nth-child(8)', function() {
 		'event': 'UA_event',
 		'eventCategory': 'Checkout',
 		'eventAction': 'click on FAQ',
-		'eventLabel': 'How to get support and answers to my questions'
+		'eventLabel': 'What are the terms of the payment'
 	});
 	console.log('faq_8')
 });
@@ -439,7 +439,7 @@ $('body').on('click', '.questions_l .question-item:nth-child(9)', function() {
 		'event': 'UA_event',
 		'eventCategory': 'Checkout',
 		'eventAction': 'click on FAQ',
-		'eventLabel': 'What are the terms of the payment'
+		'eventLabel': 'Do I need to pay for updates'
 	});
 	console.log('faq_9')
 });
@@ -449,27 +449,33 @@ $('body').on('click', '.questions_l .question-item:nth-child(10)', function() {
 		'event': 'UA_event',
 		'eventCategory': 'Checkout',
 		'eventAction': 'click on FAQ',
-		'eventLabel': 'Do I need to pay for updates'
+		'eventLabel': 'Does Luminar 4 come with everything in it'
 	});
 	console.log('faq_10')
 });
 $('body').on('click', '.questions_l .question-item:nth-child(11)', function() {
-	window.dataLayer = window.dataLayer || [];
-	dataLayer.push({
-		'event': 'UA_event',
-		'eventCategory': 'Checkout',
-		'eventAction': 'click on FAQ',
-		'eventLabel': 'Does Luminar4 come with everything in it'
-	});
-	console.log('faq_11')
+  window.dataLayer = window.dataLayer || [];
+  dataLayer.push({
+    'event': 'UA_event',
+    'eventCategory': 'Checkout',
+    'eventAction': 'click on FAQ',
+    'eventLabel': 'What should I do if I have any payment issues'
+  });
+  console.log('faq_11')
 });
+
+
+
+
+
+
 $('body').on('click', '.questions_r .question-item:nth-child(1)', function() {
 	window.dataLayer = window.dataLayer || [];
 	dataLayer.push({
 		'event': 'UA_event',
 		'eventCategory': 'Checkout',
 		'eventAction': 'click on FAQ',
-		'eventLabel': 'What is Aurora HDR'
+		'eventLabel': 'How does 30-Day Money-Back Guarantee work'
 	});
 	console.log('faq_12')
 });
@@ -479,7 +485,7 @@ $('body').on('click', '.questions_r .question-item:nth-child(2)', function() {
 		'event': 'UA_event',
 		'eventCategory': 'Checkout',
 		'eventAction': 'click on FAQ',
-		'eventLabel': 'How does 30-Day Money-Back Guarantee work'
+		'eventLabel': 'Do I need to have Photoshop or Lightroom installed to use Luminar 4'
 	});
 	console.log('faq_13')
 });
@@ -489,7 +495,7 @@ $('body').on('click', '.questions_r .question-item:nth-child(3)', function() {
 		'event': 'UA_event',
 		'eventCategory': 'Checkout',
 		'eventAction': 'click on FAQ',
-		'eventLabel': 'Do I need to have Photoshop or Lightroom installed to use Luminar 4'
+		'eventLabel': 'How to use Luminar 4 as a plugin for Photoshop, Lightroom, Photos for Mac'
 	});
 	console.log('faq_14')
 });
@@ -499,7 +505,7 @@ $('body').on('click', '.questions_r .question-item:nth-child(4)', function() {
 		'event': 'UA_event',
 		'eventCategory': 'Checkout',
 		'eventAction': 'click on FAQ',
-		'eventLabel': 'How to use Luminar 4 as a plugin for Photoshop, Lightroom, Photos for Mac'
+		'eventLabel': 'What versions of Photoshop, Lightroom, Photos for Mac are supported'
 	});
 	console.log('faq_15')
 });
@@ -509,7 +515,7 @@ $('body').on('click', '.questions_r .question-item:nth-child(5)', function() {
 		'event': 'UA_event',
 		'eventCategory': 'Checkout',
 		'eventAction': 'click on FAQ',
-		'eventLabel': 'What versions of Photoshop, Lightroom, Photos for Mac are supported'
+		'eventLabel': 'How to use Luminar 4 on multiple computers'
 	});
 	console.log('faq_16')
 });
@@ -519,17 +525,27 @@ $('body').on('click', '.questions_r .question-item:nth-child(6)', function() {
 		'event': 'UA_event',
 		'eventCategory': 'Checkout',
 		'eventAction': 'click on FAQ',
-		'eventLabel': 'How to use Luminar 4 on multiple computers'
+		'eventLabel': 'Can I use the application in a standalone mode and as a plugin with one license'
 	});
 	console.log('faq_17')
 });
+// $('body').on('click', '.questions_r .question-item:nth-child(8)', function() {
+// 	window.dataLayer = window.dataLayer || [];
+// 	dataLayer.push({
+// 		'event': 'UA_event',
+// 		'eventCategory': 'Checkout',
+// 		'eventAction': 'click on FAQ',
+// 		'eventLabel': 'Do you have a trial version of Luminar 4 available for download'
+// 	});
+// 	console.log('faq_19')
+// });
 $('body').on('click', '.questions_r .question-item:nth-child(7)', function() {
 	window.dataLayer = window.dataLayer || [];
 	dataLayer.push({
 		'event': 'UA_event',
 		'eventCategory': 'Checkout',
 		'eventAction': 'click on FAQ',
-		'eventLabel': 'Can I use the application in a standalone mode and as a plugin with one license'
+		'eventLabel': 'How to easily upload and browse photos in Luminar 4'
 	});
 	console.log('faq_18')
 });
@@ -539,7 +555,7 @@ $('body').on('click', '.questions_r .question-item:nth-child(8)', function() {
 		'event': 'UA_event',
 		'eventCategory': 'Checkout',
 		'eventAction': 'click on FAQ',
-		'eventLabel': 'Do you have a trial version of Luminar 4 available for download'
+		'eventLabel': 'Does Luminar 4 support RAW files'
 	});
 	console.log('faq_19')
 });
@@ -549,30 +565,21 @@ $('body').on('click', '.questions_r .question-item:nth-child(9)', function() {
 		'event': 'UA_event',
 		'eventCategory': 'Checkout',
 		'eventAction': 'click on FAQ',
-		'eventLabel': 'How to easily upload and browse photos in Luminar 4'
+		'eventLabel': 'Is Luminar 4 translated into my language'
 	});
 	console.log('faq_20')
 });
 $('body').on('click', '.questions_r .question-item:nth-child(10)', function() {
-	window.dataLayer = window.dataLayer || [];
-	dataLayer.push({
-		'event': 'UA_event',
-		'eventCategory': 'Checkout',
-		'eventAction': 'click on FAQ',
-		'eventLabel': 'Does Luminar 4 support RAW files'
-	});
-	console.log('faq_21')
+  window.dataLayer = window.dataLayer || [];
+  dataLayer.push({
+    'event': 'UA_event',
+    'eventCategory': 'Checkout',
+    'eventAction': 'click on FAQ',
+    'eventLabel': 'What is Aurora HDR'
+  });
+  console.log('faq_20')
 });
-$('body').on('click', '.questions_r .question-item:nth-child(11)', function() {
-	window.dataLayer = window.dataLayer || [];
-	dataLayer.push({
-		'event': 'UA_event',
-		'eventCategory': 'Checkout',
-		'eventAction': 'click on FAQ',
-		'eventLabel': 'Is Luminar 4 translated into my language'
-	});
-	console.log('faq_22')
-});
+
            
 // last section
 var clone = $('.checkout-page.sk-grid').clone();
