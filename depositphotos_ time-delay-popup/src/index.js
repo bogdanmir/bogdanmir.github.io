@@ -30,6 +30,12 @@ if (!window.jQuery) {
 } 
 function abjqlr($){
 	var user_Refer_come = localStorage.getItem('_user_Refer_come') || document.referrer;
+	var loc_re = location.search.split('=');
+	for (var i=0;i<loc_re.length; i++){
+		if(loc_re[i] == 'abtest_come'){
+			alert(document.referrer);
+		}
+	}
 	if(user_Refer_come == "https://dev.aim-it.com.ua"){
 		if(localStorage.getItem('_user_Refer_come') != document.referrer){
 			alert('User come from '+user_Refer_come);
