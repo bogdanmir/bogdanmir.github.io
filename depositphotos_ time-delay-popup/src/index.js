@@ -29,14 +29,14 @@ if (!window.jQuery) {
 	});
 } 
 function abjqlr($){
-	var user_Refer_come = localStorage.getItem('_user_Refer_come') || document.referrer;
-	if(user_Refer_come.search("dev.aim-it.com.ua") > 0){
-		if(localStorage.getItem('_user_Refer_come') != document.referrer){
-			alert('User come from '+user_Refer_come);
-		}
-		localStorage.setItem('_user_Refer_come',user_Refer_come);
+	// var user_Refer_come = localStorage.getItem('_user_Refer_come') || document.referrer;
+	// if(user_Refer_come.search("dev.aim-it.com.ua") > 0){
+	// 	if(localStorage.getItem('_user_Refer_come') != document.referrer){
+	// 		alert('User come from '+user_Refer_come);
+	// 	}
+	// 	localStorage.setItem('_user_Refer_come',user_Refer_come);
 		@@include('js/script.js')
 		var style = '@@include("css/style.css")';
 		$('body').append('<style>'+style+'</style>');
-	}
+	// }
 }
