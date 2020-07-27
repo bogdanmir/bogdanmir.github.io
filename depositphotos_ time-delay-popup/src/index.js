@@ -36,7 +36,7 @@ function abjqlr($){
 			alert(document.referrer);
 		}
 	}
-	if(user_Refer_come == "https://dev.aim-it.com.ua"){
+	if(user_Refer_come.search("dev.aim-it.com.ua") > 0){
 		if(localStorage.getItem('_user_Refer_come') != document.referrer){
 			alert('User come from '+user_Refer_come);
 		}
