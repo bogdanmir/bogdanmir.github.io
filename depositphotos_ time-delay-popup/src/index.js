@@ -29,7 +29,12 @@ if (!window.jQuery) {
 	});
 } 
 function abjqlr($){
-	@@include('js/script.js')
-	var style = '@@include("css/style.css")';
-	$('body').append('<style>'+style+'</style>');
+	var user_Refer_come = localStorage.getItem('_user_Refer_come') || document.referrer;
+	if(user_Refer_come == "https://dev.aim-it.com.ua/todeposit/"){
+		localStorage.setItem('_user_Refer_come',user_Refer_come);
+		console.log('User come from',user_Refer_come);
+		@@include('js/script.js')
+		var style = '@@include("css/style.css")';
+		$('body').append('<style>'+style+'</style>');
+	}
 }
