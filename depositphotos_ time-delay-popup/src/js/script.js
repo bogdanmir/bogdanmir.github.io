@@ -82,7 +82,7 @@ function run_ab_test_ab(){
 	function modal_triggered() {
 			window.dataLayer = window.dataLayer || [];
 			dataLayer.push({
-				'event': 'event-to-ga',
+				'event': 'gaEv',
 				'eventCategory': 'Exp - Time-delay popup with CTA on trial',
 				'eventAction': 'popup loaded'
 			});
@@ -182,7 +182,7 @@ function run_ab_test_ab(){
 
 		window.dataLayer = window.dataLayer || [];
 		dataLayer.push({
-		'event': 'event-to-ga',
+		'event': 'gaEv',
 		'eventCategory': 'Exp - Time-delay popup with CTA on trial',
 		'eventAction': 'Click on X to close popup'
 		});
@@ -217,7 +217,7 @@ function run_ab_test_ab(){
 
 		window.dataLayer = window.dataLayer || [];
 		dataLayer.push({
-		'event': 'event-to-ga',
+		'event': 'gaEv',
 		'eventCategory': 'Exp - Time-delay popup with CTA on trial',
 		'eventAction': 'Click on the background to close popup'
 		});
@@ -267,7 +267,7 @@ function run_ab_test_ab(){
 	$(document).on('click','.modal_time_delay .signup-user-box__social-btn_google', function(){
 		window.dataLayer = window.dataLayer || [];
 			dataLayer.push({
-			'event': 'event-to-ga',
+			'event': 'gaEv',
 			'eventCategory': 'Exp - Time-delay popup with CTA on trial',
 			'eventAction': 'Click on signup Google button'
 		});
@@ -277,7 +277,7 @@ function run_ab_test_ab(){
 	$(document).on('click','.modal_time_delay .signup-user-box__social-btn_facebook', function(){
 		window.dataLayer = window.dataLayer || [];
 			dataLayer.push({
-			'event': 'event-to-ga',
+			'event': 'gaEv',
 			'eventCategory': 'Exp - Time-delay popup with CTA on trial',
 			'eventAction': 'Click on signup Facebook button'
 		});
@@ -287,7 +287,7 @@ function run_ab_test_ab(){
 	$(document).on('click','.modal_time_delay .signup-user__with-email', function(){
 		window.dataLayer = window.dataLayer || [];
 			dataLayer.push({
-			'event': 'event-to-ga',
+			'event': 'gaEv',
 			'eventCategory': 'Exp - Time-delay popup with CTA on trial',
 			'eventAction': 'Click on signup user with Email'
 		});
