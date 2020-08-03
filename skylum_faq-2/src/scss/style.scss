@@ -16,13 +16,12 @@
 	}
 	.foot__payment-systems {
 		margin-left: 0;
+		padding-top: 13px;
 	}
 	.foot__upg-text {
 		font-size: 13px;
 		@media (max-width: 1279px) {
 			font-size: 12px;
-			// width: calc(100% + 100px);
-			// margin-left: -70px;
 		}
 		.checkout-page__upg-link {
 			font-size: 15px;
@@ -41,7 +40,7 @@
     opacity: 1;
 }
 .checkout-page__foot {
-	padding-bottom: 0;
+	padding-bottom: 20px;
 	.col-md-4 .foot__purchase-wrap .foot__upg-text:not(:last-child) {
 		display: none;
 	}

@@ -10,7 +10,8 @@
       .checkout-page.cloner-section .plans__product_luminar .plans__product-prices-wrap_luminar.active {
         display: flex; }
   .checkout-page .foot__payment-systems {
-    margin-left: 0; }
+    margin-left: 0;
+    padding-top: 13px; }
   .checkout-page .foot__upg-text {
     font-size: 13px; }
     @media (max-width: 1279px) {
@@ -31,7 +32,7 @@
   opacity: 1; }
 
 .checkout-page__foot {
-  padding-bottom: 0; }
+  padding-bottom: 20px; }
   .checkout-page__foot .col-md-4 .foot__purchase-wrap .foot__upg-text:not(:last-child) {
     display: none; }
   .checkout-page__foot .foot__purchase-discount {
