@@ -45,6 +45,16 @@
 	.col-md-4 .foot__purchase-wrap .foot__upg-text:not(:last-child) {
 		display: none;
 	}
+	.foot__purchase-discount {
+		position: absolute;
+		top: -28px;
+		right: 15px;
+		@media (max-width: 959px) {
+			font-size: 15px;
+			top: 21px;
+			right: -7px;
+		}
+	}
 }
 .faq-section {
 	background: #F1F1F1;
