@@ -9,6 +9,19 @@
       display: none; }
       .checkout-page.cloner-section .plans__product_luminar .plans__product-prices-wrap_luminar.active {
         display: flex; }
+    .checkout-page.cloner-section .plans__product_luminar .plans__product-prices-wrap .plans__product-price span:nth-child(2) {
+      font-size: .65em; }
+    .checkout-page.cloner-section .plans__product_luminar .plans__product-prices-wrap .plans__product-price .luminar-add-popup__prod-price strong {
+      display: flex;
+      align-items: baseline;
+      font-size: 24px;
+      font-family: "Graphik LCG",Helvetica,Arial,sans-serif; }
+      @media (max-width: 1799px) {
+        .checkout-page.cloner-section .plans__product_luminar .plans__product-prices-wrap .plans__product-price .luminar-add-popup__prod-price strong {
+          font-size: 20px; } }
+      @media (max-width: 1279px) {
+        .checkout-page.cloner-section .plans__product_luminar .plans__product-prices-wrap .plans__product-price .luminar-add-popup__prod-price strong {
+          font-size: 18px; } }
   .checkout-page .foot__payment-systems {
     margin-left: 0;
     padding-top: 13px; }

@@ -13,6 +13,31 @@
 				}
 			}
 		}
+		.plans__product_luminar {
+			.plans__product-prices-wrap {
+				.plans__product-price {
+					span {
+						&:nth-child(2) {
+							font-size: .65em;
+						}
+					}
+					.luminar-add-popup__prod-price {
+						strong {
+							display: flex;
+							align-items: baseline;
+							font-size: 24px;
+							font-family: "Graphik LCG",Helvetica,Arial,sans-serif;
+							@media (max-width: 1799px) {
+								font-size: 20px;
+							}
+							@media (max-width: 1279px) {
+								font-size: 18px;
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 	.foot__payment-systems {
 		margin-left: 0;

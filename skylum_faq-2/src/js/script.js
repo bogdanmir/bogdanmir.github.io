@@ -643,9 +643,20 @@ $('body').on('click','.cloner-section .js-up-sale-products-btn',function(){
     rescan_all_items();
     return false;
 });
+
+
+
+// 
+$('body').on('click','.luminar-add-popup .js-licenses-apply',function(){
+  var newPrice = $(this).closest('.luminar-add-popup').find('.luminar-add-popup__prod-price').clone();
+  $('.cloner-section .plans__product .plans__product-prices-wrap .plans__product-price').html(newPrice);
+});
+
+
 setInterval(function(){
 	rescan_all_items();
 });
+
 
 
 
