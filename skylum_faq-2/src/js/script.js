@@ -649,16 +649,13 @@ $('body').on('click','.cloner-section .js-up-sale-products-btn',function(){
 // 
 $('body').on('click','.luminar-add-popup .js-licenses-apply',function(){
   var newPrice = $(this).closest('.luminar-add-popup').find('.luminar-add-popup__prod-price').clone();
-  $('.cloner-section .plans__product .plans__product-prices-wrap .plans__product-price').html(newPrice);
+  $('.cloner-section>.main-product>.container>.row>.col-md-8>.plans__product.active>.plans__product-prices-wrap.active .plans__product-price.sk-subtitle.js-price').html(newPrice);
 });
 
 
 setInterval(function(){
 	rescan_all_items();
 });
-
-
-
 
 
 
