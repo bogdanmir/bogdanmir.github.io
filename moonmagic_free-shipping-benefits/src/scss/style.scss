@@ -1,0 +1,260 @@
+@media (max-width: 749px) {
+	.main {
+		padding: 4px 0 0;
+	}
+}
+
+.total-line--shipping {
+	.total-line__price {
+		font-size: 13px;
+		font-family: Montserrat;
+		text-transform: uppercase;
+		.order-summary__emphasis {
+			color: #E85E5E;
+			font-weight: 700;
+		}
+	}
+}
+.free-text {
+	border: 2px solid #FCBEC0;
+	color: #2F2F2F;
+	font-weight: 600;
+	font-size: 15px;
+	text-align: center;
+	font-family: Montserrat;
+	letter-spacing: 0.7px;
+	padding: 17px 10px;
+	position: relative;
+	svg {
+		position: absolute;
+		top: -10px;
+		right: 0;
+		left: 0;
+		margin: auto;
+		background: #fff;
+		display: block;
+		padding: 0 5px;
+	}
+}
+.shown-if-js {
+	background: #F5F5F5;
+	border-radius: 10px;
+	margin: 20px 0 10px;
+	.dynamic-checkout {
+		padding: 12px 0;
+	}
+	.dynamic-checkout__title {
+		color: #010101;
+		font-size: 16px;
+		&:before, &:after {
+			display: none;
+		}
+	}
+	.dynamic-checkout__content {
+		border: 0;
+		border-radius: 0;
+		padding: 8px 20px;
+	}
+	.alternative-payment-separator {
+		display: none;
+	}
+}
+.total-info-box {
+	background: rgba(84, 27, 78, 0.05);
+	border-radius: 10px;
+	padding: 13px 15px;
+	margin: 17px 0 0;
+	ul {
+		li {
+			color: #000;
+			font-size: 12px;
+			font-family: Montserrat;
+			display: flex;
+			align-items: center;
+			line-height: 1;
+			margin: 0 0 12px;
+			svg {
+				margin: 0 13px 0 0;
+			}
+			&:last-child {
+				margin: 0;
+			}
+		}
+	}
+	.active {
+		color: #E85E5E;
+		display: inline-block;
+		margin: 0 6px;
+	}
+}
+
+
+.breadcrumb {
+	background: #F5F5F5;
+	border: 1px solid #CACACA;
+	border-radius: 40px;
+	padding: 2px;
+	@media (max-width: 999px) {
+		margin: 39px 0 27px !important;
+	}
+	&:before {
+		display: none;
+	}
+	.breadcrumb__item {
+		width: 33.33%;
+		height: 18px;
+		&:nth-child(1) {
+			display: none;
+		}
+		&:nth-child(2) {
+			border-radius: 40px 0px 0px 40px;
+			&:after {
+				content: "1.";
+				color: #162319;
+				font-size: 12px;
+				position: absolute;
+				top: -40px;
+				left: 10px;
+				text-transform: none;
+				font-weight: 500;
+				line-height: 1.1;
+				font-family: Montserrat;
+			}
+			a,span {
+				&:before {
+					border-radius: 40px 0 0 40px;
+				}
+				&:after {
+					content: "Customer Information";
+					padding: 0 0 0 12px;
+				}
+			}
+		}
+		&:nth-child(3) {
+			a,span {
+				&:after {
+					content: "2. Shipping";
+				}
+			}
+		}
+		&:nth-child(4) {
+			border-radius: 0 40px 40px 0;
+			a,span {
+				&:before {
+					border-radius: 0 40px 40px 0;
+				}
+				&:after {
+					content: "3. Payment";
+				}
+			}
+		}
+		&:last-child {
+			a,span {
+				&:before {
+					border: 0;
+				}
+			}
+		}
+		a,span {
+			&:before {
+				content: "" !important;
+				border-radius: 0;
+				border: 0;
+				border-right: 1px solid #cacaca;
+				margin: 0;
+				height: 18px;
+				width: 100%;
+				background: transparent;
+				font-family: Montserrat;
+			}
+			&:after {
+				color: #162319;
+				font-size: 12px;
+				top: -38px;
+				left: 10px;
+				text-transform: none;
+				font-weight: 500;
+				line-height: 1.1;
+				font-family: Montserrat;
+				text-align: left;
+			}
+		}
+		&.breadcrumb__item--completed {
+			a,span {
+				&:before {
+					content: '' !important;
+					background-color: #A0CB5F;
+					border: 0;
+					width: 100%;
+				}
+			}
+		}
+		&.breadcrumb__item--current {
+			&:nth-child(2) {
+				a,span {
+					&:before {
+						content: "33% Done" !important;
+						text-align: right;
+						padding: 0 7px 0 0;
+					}
+				}
+			}
+			&:nth-child(3) {
+				a,span {
+					&:before {
+						content: "66% Done" !important;
+					}
+				}
+			}
+			&:nth-child(4) {
+				a,span {
+					&:before {
+						content: "100% Done" !important;
+					}
+				}
+			}
+			a,span {
+				&:before {
+					background-color: #A0CB5F;
+					border: 0;
+					color: #fff;
+					font-size: 11px;
+					line-height: 18px;
+					font-family: Montserrat;
+					width: 100%;
+					// height: 18px;
+				}
+			}
+		}
+		&.breadcrumb__item--current {
+			// &:after {
+			// 	content: "\f00c";
+			// 	font-family: "Font Awesome 5 Free";
+			// 	display: block;
+			// 	width: 50px;
+			// 	height: 50px;
+			// 	font-size: 20px;
+			// 	line-height: 40px;
+			// 	margin: 0 auto;
+			// 	color: #bfbebe;
+			// }
+			// span {
+			// 	&:before {
+			// 		background-color: #A0CB5F;
+			// 		border: 1px solid #CACACA;
+			// 		color: #fff;
+			// 	}
+			// }
+		}
+	}
+}
+// .paypal-button:not(.paypal-button-card) {
+//     height: 42px;
+//     min-height: 42px;
+//     max-height: 42px;
+// }
+// .paypal-button .paypal-button-label-container {
+//     height: 14px;
+//     max-height: 32px;
+//     min-height: 14px;
+// }
