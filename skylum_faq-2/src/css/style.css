@@ -19,7 +19,7 @@
       @media (max-width: 1799px) {
         .checkout-page.cloner-section .plans__product_luminar .plans__product-prices-wrap .plans__product-price .luminar-add-popup__prod-price strong {
           font-size: 20px; } }
-      @media (max-width: 1279px) {
+      @media (max-width: 1379px) {
         .checkout-page.cloner-section .plans__product_luminar .plans__product-prices-wrap .plans__product-price .luminar-add-popup__prod-price strong {
           font-size: 18px; } }
   .checkout-page .foot__payment-systems {
@@ -27,12 +27,12 @@
     padding-top: 13px; }
   .checkout-page .foot__upg-text {
     font-size: 13px; }
-    @media (max-width: 1279px) {
+    @media (max-width: 1379px) {
       .checkout-page .foot__upg-text {
         font-size: 12px; } }
     .checkout-page .foot__upg-text .checkout-page__upg-link {
       font-size: 15px; }
-      @media (max-width: 1279px) {
+      @media (max-width: 1379px) {
         .checkout-page .foot__upg-text .checkout-page__upg-link {
           font-size: 14px; } }
 
@@ -46,7 +46,7 @@
 
 .checkout-page__foot {
   padding-bottom: 20px; }
-  @media (max-width: 1279px) {
+  @media (max-width: 1379px) {
     .checkout-page__foot {
       padding-top: 7px; } }
   .checkout-page__foot .col-md-4 .foot__purchase-wrap .foot__upg-text:not(:last-child) {
@@ -457,7 +457,7 @@
   .wrapper .checkout-header {
     position: relative; } }
 
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) and (max-width: 1379px) {
   .checkout-page .checkout-page__main-product .after-head__title {
     font-size: 16px;
     padding-bottom: 0; }
