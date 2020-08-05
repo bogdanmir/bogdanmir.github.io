@@ -3,6 +3,12 @@ try {
 }
 catch(e) {}
 
+window.dataLayer = window.dataLayer || [];
+dataLayer.push({
+  'event': 'UA_event',
+  'eventCategory': 'Exp - FAQ on Checkout',
+  'eventAction': 'loaded'
+});
 
 (function($){
   $.fn.extend({
