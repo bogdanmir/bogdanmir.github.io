@@ -1,6 +1,5 @@
-@media (max-width: 749px) {
-  .main {
-    padding: 4px 0 0; } }
+body {
+  opacity: 1 !important; }
 
 .total-line--shipping .total-line__price .dangerous {
   font-size: 16px;
@@ -16,8 +15,9 @@
   font-size: 15px;
   text-align: center;
   font-family: Montserrat;
-  letter-spacing: 0.7px;
-  padding: 17px 10px;
+  letter-spacing: 1.2px;
+  padding: 20px 10px;
+  margin: 31px 0 12px;
   position: relative; }
   .free-text svg {
     position: absolute;
@@ -34,36 +34,61 @@
   border-radius: 10px;
   margin: 20px 0 10px; }
   .shown-if-js .dynamic-checkout {
-    padding: 12px 0; }
+    padding: 12px 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; }
   .shown-if-js .dynamic-checkout__title {
     color: #010101;
-    font-size: 16px; }
+    font-size: 18px;
+    padding: 0 0 0 28px;
+    width: auto; }
     .shown-if-js .dynamic-checkout__title:before, .shown-if-js .dynamic-checkout__title:after {
       display: none; }
   .shown-if-js .dynamic-checkout__content {
     border: 0;
     border-radius: 0;
-    padding: 8px 20px; }
+    padding: 16px 25px; }
   .shown-if-js .alternative-payment-separator {
     display: none; }
 
 .total-info-box {
   background: rgba(84, 27, 78, 0.05);
   border-radius: 10px;
-  padding: 13px 15px;
-  margin: 17px 0 0; }
-  .total-info-box ul li {
-    color: #000;
-    font-size: 12px;
-    font-family: Montserrat;
-    display: flex;
-    align-items: center;
-    line-height: 1;
-    margin: 0 0 12px; }
-    .total-info-box ul li svg {
-      margin: 0 13px 0 0; }
-    .total-info-box ul li:last-child {
-      margin: 0; }
+  padding: 16px 15px 20px;
+  margin: 35px 0 0; }
+  .total-info-box.half-box ul li {
+    width: 50%; }
+  .total-info-box ul {
+    display: flex; }
+    .total-info-box ul li {
+      color: #000;
+      font-size: 12px;
+      font-family: Montserrat;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      text-align: center;
+      line-height: 1.2;
+      margin: 0;
+      width: 33.33%; }
+      .total-info-box ul li .svg-wrap {
+        display: flex;
+        align-items: center;
+        min-height: 45px;
+        width: 100%; }
+      .total-info-box ul li svg {
+        margin: 0;
+        min-height: 22px;
+        width: 100%; }
+      .total-info-box ul li:nth-child(2) svg {
+        min-height: 28px; }
+      .total-info-box ul li:last-child {
+        margin: 0; }
+        .total-info-box ul li:last-child svg {
+          min-height: 25px; }
   .total-info-box .active {
     color: #E85E5E;
     display: inline-block;
@@ -73,10 +98,8 @@
   background: #F5F5F5;
   border: 1px solid #CACACA;
   border-radius: 40px;
-  padding: 2px; }
-  @media (max-width: 999px) {
-    .breadcrumb {
-      margin: 39px 0 27px !important; } }
+  padding: 2px;
+  margin: 67px 0 24px !important; }
   .breadcrumb:before {
     display: none; }
   .breadcrumb .breadcrumb__item {
@@ -89,10 +112,10 @@
       .breadcrumb .breadcrumb__item:nth-child(2):after {
         content: "1.";
         color: #162319;
-        font-size: 12px;
+        font-size: 16px;
         position: absolute;
-        top: -40px;
-        left: 10px;
+        top: -47px;
+        left: 5px;
         text-transform: none;
         font-weight: 500;
         line-height: 1.1;
@@ -101,7 +124,8 @@
         border-radius: 40px 0 0 40px; }
       .breadcrumb .breadcrumb__item:nth-child(2) a:after, .breadcrumb .breadcrumb__item:nth-child(2) span:after {
         content: "Customer Information";
-        padding: 0 0 0 12px; }
+        padding: 0 0 0 11px;
+        max-width: 115px; }
     .breadcrumb .breadcrumb__item:nth-child(3) a:after, .breadcrumb .breadcrumb__item:nth-child(3) span:after {
       content: "2. Shipping"; }
     .breadcrumb .breadcrumb__item:nth-child(4) {
@@ -124,8 +148,8 @@
       font-family: Montserrat; }
     .breadcrumb .breadcrumb__item a:after, .breadcrumb .breadcrumb__item span:after {
       color: #162319;
-      font-size: 12px;
-      top: -38px;
+      font-size: 16px;
+      top: -47px;
       left: 10px;
       text-transform: none;
       font-weight: 500;
@@ -137,19 +161,32 @@
       background-color: #A0CB5F;
       border: 0;
       width: 100%; }
+    .breadcrumb .breadcrumb__item.breadcrumb__item--current:before {
+      content: '';
+      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAOCAYAAAAi2ky3AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACbSURBVHgBpZNRDYAwDAUrAQlImAQk4AAk4IBJwAE4QAISJmESkFC6pAnN0sC6XdIvXm+k3QAaQMQOWiFJTxWozmohSyK+LGCFmlwm8WCFmgaqW0hmsEJNkxAkmdNC449kFZKYZqSFLg7s2vSLJBw8RDDIIMvlt+81p8lnpzrxp8iHld2VTCbZwAo1LZnEQy1pg7xe+21VZOa38wDa5BZckpFDoQAAAABJRU5ErkJggg==");
+      height: 12px;
+      width: 18px;
+      position: absolute;
+      top: 2px; }
+    .breadcrumb .breadcrumb__item.breadcrumb__item--current:nth-child(2):before {
+      left: 85px; }
     .breadcrumb .breadcrumb__item.breadcrumb__item--current:nth-child(2) a:before, .breadcrumb .breadcrumb__item.breadcrumb__item--current:nth-child(2) span:before {
       content: "33% Done" !important;
       text-align: right;
-      padding: 0 7px 0 0; }
+      padding: 0 4px 0 0; }
+    .breadcrumb .breadcrumb__item.breadcrumb__item--current:nth-child(3):before {
+      left: 33px; }
     .breadcrumb .breadcrumb__item.breadcrumb__item--current:nth-child(3) a:before, .breadcrumb .breadcrumb__item.breadcrumb__item--current:nth-child(3) span:before {
       content: "66% Done" !important; }
+    .breadcrumb .breadcrumb__item.breadcrumb__item--current:nth-child(4):before {
+      left: 28px; }
     .breadcrumb .breadcrumb__item.breadcrumb__item--current:nth-child(4) a:before, .breadcrumb .breadcrumb__item.breadcrumb__item--current:nth-child(4) span:before {
       content: "100% Done" !important; }
     .breadcrumb .breadcrumb__item.breadcrumb__item--current a:before, .breadcrumb .breadcrumb__item.breadcrumb__item--current span:before {
       background-color: #A0CB5F;
       border: 0;
       color: #fff;
-      font-size: 11px;
+      font-size: 15px;
       line-height: 18px;
       font-family: Montserrat;
       width: 100%; }
