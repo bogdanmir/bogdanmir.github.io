@@ -47,6 +47,21 @@
 
 .checkout-page__foot {
   padding-bottom: 20px; }
+  .checkout-page__foot .col-md-4 .foot__purchase-wrap .foot__upg-text:not(:last-child) {
+    display: none; }
+  .checkout-page__foot .foot__purchase-discount {
+    position: absolute;
+    top: -28px;
+    right: 15px; }
+    @media (max-width: 1379px) {
+      .checkout-page__foot .foot__purchase-discount {
+        top: -12px;
+        font-size: 15px; } }
+    @media (max-width: 959px) {
+      .checkout-page__foot .foot__purchase-discount {
+        font-size: 15px;
+        top: 21px;
+        right: -7px; } }
   @media (max-width: 1379px) {
     .checkout-page__foot {
       padding-top: 7px; }
@@ -54,21 +69,7 @@
         padding: 12px 39px;
         margin-top: 10px; }
       .checkout-page__foot .foot__purchase-info-wrap {
-        padding: 10px 0 0; }
-      .checkout-page__foot .foot__purchase-discount {
-        top: -12px;
-        font-size: 15px; } }
-  .checkout-page__foot .col-md-4 .foot__purchase-wrap .foot__upg-text:not(:last-child) {
-    display: none; }
-  .checkout-page__foot .foot__purchase-discount {
-    position: absolute;
-    top: -28px;
-    right: 15px; }
-    @media (max-width: 959px) {
-      .checkout-page__foot .foot__purchase-discount {
-        font-size: 15px;
-        top: 21px;
-        right: -7px; } }
+        padding: 10px 0 0; } }
 
 .faq-section {
   background: #F1F1F1;
