@@ -1,0 +1,7 @@
+.product-atc-bar--mobile {
+	transform: translateY(101%);
+    transition: transform .5s ease;
+    &.active {
+    	transform: translate(0);
+    }
+}
