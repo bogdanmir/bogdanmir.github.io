@@ -2,7 +2,6 @@ body{opacity: 1 !important;}
 .total-line--shipping {
 	.total-line__price {
 		.dangerous {
-		// .order-summary__small-text {
 			font-size: 16px;
 			font-family: Montserrat;
 			text-transform: uppercase;
@@ -251,7 +250,7 @@ body{opacity: 1 !important;}
 			}
 			&:nth-child(2) {
 				&:before {
-					left: 85px;
+					right: 86px;
 				}
 				a,span {
 					&:before {
@@ -263,7 +262,7 @@ body{opacity: 1 !important;}
 			}
 			&:nth-child(3) {
 				&:before {
-					left: 33px;
+					right: 137px;
 				}
 				a,span {
 					&:before {
@@ -273,7 +272,7 @@ body{opacity: 1 !important;}
 			}
 			&:nth-child(4) {
 				&:before {
-					left: 28px;
+					right: 140px;
 				}
 				a,span {
 					&:before {
@@ -292,34 +291,13 @@ body{opacity: 1 !important;}
 					width: 100%;
 				}
 			}
+			& + .breadcrumb__item--completed {
+				a,span {
+					&:before {
+						opacity: 0;
+					}
+				}
+			}
 		}
 	}
 }
-
-// .paypal-button:not(.paypal-button-card) {
-//     height: 42px;
-//     min-height: 42px;
-//     max-height: 42px;
-// }
-// .paypal-button .paypal-button-label-container {
-//     height: 14px;
-//     max-height: 32px;
-//     min-height: 14px;
-// }
-
-
-
-// @media (min-width: 1000px) {
-// 	.total-line--shipping {
-// 		.total-line__price {
-// 			.order-summary__small-text {
-// 				color: #E85E5E;
-// 				font-weight: 700;
-// 			}
-// 		}
-// 	}
-// }
-
-
-
-

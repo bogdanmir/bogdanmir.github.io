@@ -26,12 +26,16 @@ if (!window.jQuery) {
 	jQuery(function($) {
 		abjqlr($);
 	});
-} 
+}
+var style_tag = document.createElement('style');
+style = '@@style@@';
+style_tag.innerHTML = style;
+var ref = document.querySelector('body');
+ref.append(style_tag); 
 function abjqlr($){
 	// connect language configuration object
 	var language = window.language_abtest;
 	console.log('%cTest come','background:green;color:#fff;');
-	var style = '@@style@@';
 	@@scriptjs@@
-	$('body').append('<style>'+style+'</style>');
+	// $('body').append('<style>'+style+'</style>');
 }

@@ -1,18 +1,35 @@
 try {
-  hj('trigger', 'Free shipping');
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1651990,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+window.hj=window.hj||function(){(hj.q=hj.q||[]).push(arguments)};
+
+hj('trigger', 'free_shipping_benefit');
 }
 catch(e) {}
 
+window.dataLayer = window.dataLayer || [];
+dataLayer.push({
+	'event': 'event-to-ga',
+	'eventCategory': 'Exp - Free Shipping Benefits',
+	'eventAction': 'loaded'
+});
 
 $('.order-summary__section.order-summary__section--total-lines').append('<div class="total-info-box"><ul><li><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.7234 5.78613H4.96106V18.7572H18.7234V5.78613ZM10.8592 7.08324H12.8253V9.67747H10.8592V7.08324ZM17.4127 17.4601H6.27176V7.08324H9.54851V10.9746H14.136V7.08324H17.4127V17.4601Z" fill="#5C5C5C"/><path d="M7.5824 12.2717H11.5145V13.5688H7.5824V12.2717Z" fill="#5C5C5C"/><path d="M7.5824 14.866H9.74789V16.1631H7.5824V14.866Z" fill="#5C5C5C"/><path d="M18.5266 2.75952H2.09734L3.56458 0.762961L2.50462 0L0 3.40807L2.50457 6.81615L3.56458 6.05319L2.09734 4.05663H18.5266C19.7191 4.05663 20.6893 5.01675 20.6893 6.19686V18.5627C20.6893 19.7428 19.7191 20.7029 18.5266 20.7029H5.15751C3.96504 20.7029 2.99486 19.7428 2.99486 18.5627V12.9202H1.68416V18.5627C1.68416 20.458 3.24232 22 5.15751 22H18.5266C20.4418 22 22 20.458 22 18.5627V6.19686C22 4.30148 20.4418 2.75952 18.5266 2.75952Z" fill="#5C5C5C"/></svg>Hassle-free 30 Day Returns</li> <li><svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.7764 17.2651L16.7757 17.2646L16.7764 17.2651ZM10.5269 1.77982L10.5271 1.78034C10.527 1.78017 10.527 1.78 10.5269 1.77982L10.7606 1.69989L10.5269 1.77982ZM11.8516 1.32676C11.574 0.515099 10.426 0.515103 10.1484 1.32676L8.25446 6.86434H2.13128C1.2483 6.86434 0.893343 8.00346 1.62004 8.50504L6.53342 11.8963L4.65607 17.3853C4.37523 18.2064 5.30466 18.9102 6.01888 18.4173L11 14.9792L15.9811 18.4173C16.6953 18.9102 17.6248 18.2064 17.3439 17.3853L15.4666 11.8963L20.38 8.50504C21.1066 8.00346 20.7517 6.86434 19.8687 6.86434H13.7455L11.8516 1.32676Z" stroke="#5C5C5C" stroke-width="1.4"/></svg>More than 10,000 5-Star Reviews</li></ul></div>');
 
+var checkPrice = $('body').find('.total-line-table__tbody .order-summary__emphasis').attr('data-checkout-subtotal-price-target');
 
-var checkPrice = $('body').find('.payment-due__price').attr('data-checkout-payment-due-target');
 if(checkPrice > 4900) {
   $('body').find('nav[aria-label="Breadcrumb"]').after('<div class="free-text"><svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.375 4.33341H15.0834V2.50008C15.0834 1.49175 14.2584 0.666748 13.25 0.666748H2.25002C1.24169 0.666748 0.416687 1.49175 0.416687 2.50008V10.7501C0.416687 11.7584 1.24169 12.5834 2.25002 12.5834C2.25002 14.1051 3.47835 15.3334 5.00002 15.3334C6.52169 15.3334 7.75002 14.1051 7.75002 12.5834H13.25C13.25 14.1051 14.4784 15.3334 16 15.3334C17.5217 15.3334 18.75 14.1051 18.75 12.5834H19.6667C20.1709 12.5834 20.5834 12.1709 20.5834 11.6667V8.61425C20.5834 8.22008 20.455 7.83508 20.2167 7.51425L18.1084 4.70008C17.9342 4.47091 17.6592 4.33341 17.375 4.33341ZM5.00002 13.5001C4.49585 13.5001 4.08335 13.0876 4.08335 12.5834C4.08335 12.0792 4.49585 11.6667 5.00002 11.6667C5.50419 11.6667 5.91669 12.0792 5.91669 12.5834C5.91669 13.0876 5.50419 13.5001 5.00002 13.5001ZM17.375 5.70841L19.1717 8.00008H15.0834V5.70841H17.375ZM16 13.5001C15.4959 13.5001 15.0834 13.0876 15.0834 12.5834C15.0834 12.0792 15.4959 11.6667 16 11.6667C16.5042 11.6667 16.9167 12.0792 16.9167 12.5834C16.9167 13.0876 16.5042 13.5001 16 13.5001Z" fill="#2F2F2F"/></svg><p>Congratulations, you have earned Free US Shipping!</p></div>');
 
 
   $('.total-line__price .order-summary__small-text').addClass('dangerous');
+  $('.total-line__price .order-summary__emphasis').addClass('dangerous');
   $('.total-line__price .order-summary__small-text').text('Free');
 
 

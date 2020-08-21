@@ -169,17 +169,17 @@ body {
       position: absolute;
       top: 2px; }
     .breadcrumb .breadcrumb__item.breadcrumb__item--current:nth-child(2):before {
-      left: 85px; }
+      right: 86px; }
     .breadcrumb .breadcrumb__item.breadcrumb__item--current:nth-child(2) a:before, .breadcrumb .breadcrumb__item.breadcrumb__item--current:nth-child(2) span:before {
       content: "33% Done" !important;
       text-align: right;
       padding: 0 4px 0 0; }
     .breadcrumb .breadcrumb__item.breadcrumb__item--current:nth-child(3):before {
-      left: 33px; }
+      right: 137px; }
     .breadcrumb .breadcrumb__item.breadcrumb__item--current:nth-child(3) a:before, .breadcrumb .breadcrumb__item.breadcrumb__item--current:nth-child(3) span:before {
       content: "66% Done" !important; }
     .breadcrumb .breadcrumb__item.breadcrumb__item--current:nth-child(4):before {
-      left: 28px; }
+      right: 140px; }
     .breadcrumb .breadcrumb__item.breadcrumb__item--current:nth-child(4) a:before, .breadcrumb .breadcrumb__item.breadcrumb__item--current:nth-child(4) span:before {
       content: "100% Done" !important; }
     .breadcrumb .breadcrumb__item.breadcrumb__item--current a:before, .breadcrumb .breadcrumb__item.breadcrumb__item--current span:before {
@@ -190,3 +190,5 @@ body {
       line-height: 18px;
       font-family: Montserrat;
       width: 100%; }
+    .breadcrumb .breadcrumb__item.breadcrumb__item--current + .breadcrumb__item--completed a:before, .breadcrumb .breadcrumb__item.breadcrumb__item--current + .breadcrumb__item--completed span:before {
+      opacity: 0; }

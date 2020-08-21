@@ -9,8 +9,9 @@
 			font-size: 16px;
 			font-family: Montserrat;
 			text-transform: uppercase;
-			color: #E85E5E;
+			// color: #E85E5E;
 			font-weight: 700;
+			color: #a0cb5f;
 		}
 	}
 }
@@ -223,16 +224,13 @@
 					width: 100%;
 				}
 			}
+			& + .breadcrumb__item--completed {
+				a,span {
+					&:before {
+						opacity: 0;
+					}
+				}
+			}
 		}
 	}
 }
-// .paypal-button:not(.paypal-button-card) {
-//     height: 42px;
-//     min-height: 42px;
-//     max-height: 42px;
-// }
-// .paypal-button .paypal-button-label-container {
-//     height: 14px;
-//     max-height: 32px;
-//     min-height: 14px;
-// }
