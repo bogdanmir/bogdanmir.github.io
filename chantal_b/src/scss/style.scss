@@ -1,3 +1,46 @@
-body{
-	background: red;
+.lang-fr {
+	.page-home {
+		.display-block-info {
+			display: none;
+		}
+		.bn-slider {
+			.slider-text,
+			.btn-bnr {
+				display: none;
+			}
+		}
+		.bn-category {
+			display: none;
+		}
+	}
+}
+
+.top-category-slider {
+	background-color: #eb3a8e;
+	color: #fff;
+	margin: 0 0 60px;
+	.category-title {
+		font-size: 18px;
+		font-weight: 600;
+	}
+	.category-text {
+		font-size: 13px;
+	}
+	.slick-slide {
+		padding: 10px 0;
+	}
+}
+
+.bottom-category-slider {
+	// margin-left: -10px;
+	// margin-right: -10px;
+	.slick-slide {
+		padding: 0 10px;
+	}
+	a {
+		display: block;
+	}
+	.img-category {
+		max-width: 100%;
+	}
 }

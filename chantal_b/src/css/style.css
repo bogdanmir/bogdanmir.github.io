@@ -1,2 +1,30 @@
-body {
-  background: red; }
+.lang-fr .page-home .display-block-info {
+  display: none; }
+
+.lang-fr .page-home .bn-slider .slider-text,
+.lang-fr .page-home .bn-slider .btn-bnr {
+  display: none; }
+
+.lang-fr .page-home .bn-category {
+  display: none; }
+
+.top-category-slider {
+  background-color: #eb3a8e;
+  color: #fff;
+  margin: 0 0 60px; }
+  .top-category-slider .category-title {
+    font-size: 18px;
+    font-weight: 600; }
+  .top-category-slider .category-text {
+    font-size: 13px; }
+  .top-category-slider .slick-slide {
+    padding: 10px 0; }
+
+.bottom-category-slider .slick-slide {
+  padding: 0 10px; }
+
+.bottom-category-slider a {
+  display: block; }
+
+.bottom-category-slider .img-category {
+  max-width: 100%; }
