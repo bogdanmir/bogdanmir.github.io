@@ -26,22 +26,33 @@ dataLayer.push({
 // 	$('html').find('.checkout').addClass('checkout_new');
 // };
 
+// $('html').find('.checkout__form .step-one__btn-new').click().addClass('step-one__btn_ab');
+
 $(document).on('click', '.checkout__form .step-one__btn-new', function(){
 	$('.checkout__form .new-user__step-one .step-one__requested-fields').detach().appendTo('.checkout__form .new-user__step-one form');
 	$('.checkout__form').removeClass('old_user_form');
-	$('html').find('.checkout form .step-one__next').text('Выбрать способ доставки');
+	// $('html').find('.checkout form .step-one__next>span').text('Выбрать способ доставки');
+	// console.log('click on New customer')
+})
+
+
+$(document).on('click', '.checkout__form .step-one__btn-new.step-one__btn_ab', function(){
 	window.dataLayer = window.dataLayer || [];
 	dataLayer.push({
 		'event': 'autoEvent',
 		'gtmUaEventCategory': 'Exp - Checkout wo registration',
 		'gtmUaEventAction': 'click on New customer'
 	});
+
 	console.log('click on New customer')
 })
+
+
+
 $(document).on('click', '.checkout__form .step-one__btn-old', function(){
 	$('.checkout__form .login .login__requested-fields').detach().appendTo('.checkout__form .login form .checkbox__wrapper');
 	$('.checkout__form').addClass('old_user_form');
-	$('html').find('.checkout .login .login__next').text('Выбрать способ доставки');
+	// $('html').find('.checkout .login .login__next>span').text('Выбрать способ доставки');
 	window.dataLayer = window.dataLayer || [];
 	dataLayer.push({
 		'event': 'autoEvent',
@@ -68,8 +79,8 @@ function run_step_1(){
 	$('html').find('.social__login_buttons .button__inner--facebook .button__inner_text').text('facebook');
 	$('html').find('.social__login_buttons .button__inner--google .button__inner_text').text('google');
 
-	$('html').find('.checkout form .step-one__next').text('Выбрать способ доставки');
-	$('html').find('.checkout .login .login__next').text('Выбрать способ доставки');
+	// $('html').find('.checkout form .step-one__next>span').text('Выбрать способ доставки');
+	// $('html').find('.checkout .login .login__next>span').text('Выбрать способ доставки');
 	// console.log('step1')
 }
 
