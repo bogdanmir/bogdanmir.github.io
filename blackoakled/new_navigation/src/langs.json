@@ -1,0 +1,13 @@
+{
+  "languages" : {
+    "" : {
+        "boating" : "Boating",
+        "vehicle" : "Vehicle",
+        "rv_overlanding" : "RV/Overlanding",
+        "atv_utv" : "ATV/UTV",
+        "heavy_equipment" : "Heavy Equipment",
+        "emergency" : "Emergency",
+        "mounting" : "Mounting"
+    }
+  }
+}
