@@ -49,12 +49,12 @@ $('.navbar-right .dropdown-grid.no-open-arrow.extra_img').remove();
 var menu_html = '<ul>' +
     '<li class="has-sub"><a href="/pages/about-us">'+lang.AboutUs+'</a>' +
         '<ul class="submenu">' +
-            '<li><a href="/pages/how-black-oak-ranks-superior">lang.BuiltBetter</a></li>' +
-            '<li><a href="/pages/customer-testimonials">lang.Testimonials</a></li>' +
+            '<li><a href="/pages/how-black-oak-ranks-superior">BuiltBetter</a></li>' +
+            '<li><a href="/pages/customer-testimonials">Testimonials</a></li>' +
         '</ul>' +
     '</li>' +
-    '<li><a href="/pages/wholesale">lang.Dealers</a></li>' +
-    '<li><a href="/pages/contact-us">lang.ContactUs</a></li>' +
+    '<li><a href="/pages/wholesale">Dealers</a></li>' +
+    '<li><a href="/pages/contact-us">ContactUs</a></li>' +
     '</ul>';
 var linkProducts = $('#cssmenu .parent.has-sub:eq(0)').clone();
 var linkVehicle = $('#cssmenu .parent.has-sub:eq(1)').clone();

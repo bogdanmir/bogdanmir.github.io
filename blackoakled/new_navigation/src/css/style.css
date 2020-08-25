@@ -14,3 +14,54 @@
     align-items: center; }
     .ab-test-menu a img {
       margin-right: 6px; }
+
+.submenu {
+  display: none;
+  position: absolute; }
+
+.has-sub {
+  position: relative; }
+  .has-sub:after {
+    position: absolute;
+    top: 22px;
+    right: 0;
+    width: 8px;
+    height: 2px;
+    display: block;
+    background: 0 0;
+    content: '';
+    vertical-align: middle;
+    border-top: 4px solid #fff;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent; }
+  .has-sub > a:hover + .submenu {
+    display: block; }
+
+#main_navbar .col-md-9.col-sm-6 {
+  padding-top: 20px; }
+
+.parent.has-sub .submenu-main-link + ul {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.parent.has-sub:hover .submenu-main-link + ul {
+  display: block; }
+
+.search-and-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+.left-menu > ul,
+.right-menu > ul {
+  display: flex;
+  margin: 0; }
+  .left-menu > ul > li > a,
+  .right-menu > ul > li > a {
+    padding: 13px 17px 13px 17px;
+    display: block; }
+  .left-menu > ul > li.has-sub > a,
+  .right-menu > ul > li.has-sub > a {
+    padding-right: 30px; }
