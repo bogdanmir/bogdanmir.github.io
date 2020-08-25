@@ -1,0 +1,18 @@
+{
+  "languages" : {
+    "" : {
+        "AboutUs" : "About Us",
+        "BuiltBetter" : "Built Better",
+        "Testimonials" : "Testimonials",
+        "Dealers" : "Dealers",
+        "ContactUs" : "Contact Us",
+        "boating" : "Boating",
+        "vehicle" : "Vehicle",
+        "rv_overlanding" : "RV/Overlanding",
+        "atv_utv" : "ATV/UTV",
+        "heavy_equipment" : "Heavy Equipment",
+        "emergency" : "Emergency",
+        "mounting" : "Mounting"
+    }
+  }
+}
