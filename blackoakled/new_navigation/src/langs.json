@@ -1,6 +1,11 @@
 {
   "languages" : {
     "" : {
+        "AboutUs" : "About Us",
+        "BuiltBetter" : "Built Better",
+        "Testimonials" : "Testimonials",
+        "Dealers" : "Dealers",
+        "ContactUs" : "Contact Us",
         "boating" : "Boating",
         "vehicle" : "Vehicle",
         "rv_overlanding" : "RV/Overlanding",
