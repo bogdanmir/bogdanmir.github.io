@@ -85,7 +85,8 @@ span.test-menu-control.control-next {
   .search-and-menu ul li a {
     padding: 13px 17px 13px 17px;
     display: block;
-    color: #fff; }
+    color: #fff;
+    text-align: left; }
     .search-and-menu ul li a:hover {
       text-decoration: underline;
       color: #fff; }
@@ -105,7 +106,7 @@ span.test-menu-control.control-next {
       width: 195px; }
   .search-and-menu ul ul .has-sub:after {
     border-top: 4px solid #393939; }
-  .search-and-menu ul ul .has-sub:hover ul {
+  .search-and-menu ul ul .has-sub:hover > ul {
     display: block; }
   .search-and-menu ul ul ul {
     right: auto;
@@ -115,6 +116,17 @@ span.test-menu-control.control-next {
       background-color: #f3f3f3; }
     .search-and-menu ul ul ul li a {
       background-color: #f3f3f3; }
+
+.search-and-menu .right-menu ul > li:hover a {
+  display: block; }
+
+.search-and-menu .right-menu ul ul {
+  display: none;
+  flex-direction: column; }
+
+@media only screen and (max-width: 767px) {
+  #header #main_navbar #mobile-search {
+    display: none !important; } }
 
 .ab-test-header {
   padding: 0; }

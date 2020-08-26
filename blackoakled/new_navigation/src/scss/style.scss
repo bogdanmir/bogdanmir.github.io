@@ -116,6 +116,7 @@ span.test-menu-control.control-next{
 				padding: 13px 17px 13px 17px;
 				display: block;
 				color: #fff;
+				text-align: left;
 				&:hover {
 					text-decoration: underline;
 					color: #fff;
@@ -150,7 +151,7 @@ span.test-menu-control.control-next{
 					border-top: 4px solid #393939;
 				}
 				&:hover {
-					ul {
+					& > ul {
 						display: block;
 					}
 				}
@@ -172,8 +173,28 @@ span.test-menu-control.control-next{
 			}
 		}
 	}
+	.right-menu {
+		ul {
+			& > li {
+				&:hover {
+					a {
+						display: block;
+					}
+				}
+			}
+			ul {
+				display: none;
+				flex-direction: column;
+			}
+		}
+	}
 }
 
+#header #main_navbar #mobile-search {
+	@media only screen and (max-width: 767px) {
+		display: none!important;
+	}
+}
 
 .ab-test-header{
 	padding: 0;
