@@ -1,17 +1,26 @@
 .ab-test-header {
   width: 100% !important;
   background: linear-gradient(180deg, #E9E9E9 0%, #DEDEDE 100%), #D9D9D9; }
+  .ab-test-header .col-md-12 {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 0; }
 
 .ab-test-menu {
   max-width: 990px;
   margin: 0 auto;
-  padding: 5px 15px;
+  padding: 5px 0px;
   display: flex;
   justify-content: space-between; }
   .ab-test-menu a {
     color: #231F20;
     display: flex;
-    align-items: center; }
+    align-items: center;
+    flex: 0 0 auto;
+    justify-content: center;
+    padding-left: 17px;
+    padding-right: 17px; }
     .ab-test-menu a img {
       margin-right: 6px; }
 
