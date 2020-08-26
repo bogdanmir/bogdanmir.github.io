@@ -44,3 +44,27 @@
 		max-width: 100%;
 	}
 }
+@media (max-width: 767px){
+	.promoblocks-grid{
+		display: none;
+	}
+	.col-items-mob {
+		flex-wrap: nowrap;
+		max-width: unset;
+		margin: 0;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		overflow: auto;
+		background: #f5f5f5;
+		li{
+			padding: 0;
+			a{
+				white-space: nowrap;
+				padding-left: 10px;
+				padding-right: 10px;
+				color: #323232;
+				font-weight: bold;
+			}
+		}
+	}
+}

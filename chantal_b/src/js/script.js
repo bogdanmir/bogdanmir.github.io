@@ -14,7 +14,7 @@ $('.top-category-slider').slick({
       breakpoint: 768,
       settings: {
         centerMode: true,
-        slidesToShow: 1,
+        slidesToShow: 3,
         slidesToScroll: 3,
         autoplay: true,
     	autoplaySpeed: 3500
