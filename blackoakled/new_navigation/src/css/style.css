@@ -36,6 +36,15 @@ span.test-menu-control {
 span.test-menu-control.control-next {
   right: 0; }
 
+.search-toggle {
+  background: none;
+  border: none;
+  color: transparent;
+  width: 28px;
+  height: 28px;
+  float: right;
+  margin-top: 19px; }
+
 .submenu {
   display: none;
   position: absolute; }
@@ -124,8 +133,8 @@ span.test-menu-control.control-next {
   display: none;
   flex-direction: column; }
 
-@media only screen and (max-width: 767px) {
-  #header #main_navbar #mobile-search {
+@media (max-width: 767px) {
+  #header #main_navbar #mobile-search:not(.active) {
     display: none !important; } }
 
 .ab-test-header {

@@ -36,7 +36,11 @@ var list_menus = {
         'link' : '/collections/led-light-bar-mounts-2',
     }
 };
-var link_script = 'https://master.d1b4uiycaor7je.amplifyapp.com/blackoakled/new_navigation/';
+var link_script = 'https://bogdanmir.github.io/blackoakled/new_navigation/'
+var prod = false;
+if(prod == true){
+    link_script = 'https://master.d1b4uiycaor7je.amplifyapp.com/blackoakled/new_navigation/';
+}
 var html = '<span class="test-menu-control control-prev"></span><div class="ab-test-menu">';
 var counter = 1;
 for( item in list_menus ){
@@ -111,7 +115,10 @@ setTimeout(function(){
 $(window).resize(function() {
     on_resize();
 });
-
+$(document).on('click','.search-toggle',function (event) {
+    $('#header #main_navbar #mobile-search').toggleClass('active');
+});
+$('.navbar-cart').after('<button class="search-toggle"><img src="'+link_script+'img/search-ico.svg" alt=""></button>')
 $(document).on('click','.test-menu-control',function (event) {
     var current_pos = $('body').find('.ab-test-menu').data('current_pos');
     if($(this).hasClass('control-next')){
