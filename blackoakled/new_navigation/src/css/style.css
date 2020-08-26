@@ -12,7 +12,8 @@
   margin: 0 auto;
   padding: 5px 0px;
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  position: relative; }
   .ab-test-menu a {
     color: #231F20;
     display: flex;
@@ -22,7 +23,19 @@
     padding-left: 17px;
     padding-right: 17px; }
     .ab-test-menu a img {
-      margin-right: 6px; }
+      margin-right: 6px;
+      width: 28px;
+      height: 28px; }
+
+span.test-menu-control {
+  display: block;
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+  position: absolute; }
+
+span.test-menu-control.control-next {
+  right: 0; }
 
 .submenu {
   display: none;

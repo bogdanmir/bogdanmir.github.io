@@ -17,7 +17,7 @@ var list_menus = {
     },
     'rv_overlanding' : {
         'text' : lang.rv_overlanding,
-        'link' : '#',
+        'link' : '/collections/rv-overlanding',
     },
     'atv_utv' : {
         'text' : lang.atv_utv,
@@ -37,14 +37,15 @@ var list_menus = {
     }
 };
 var link_script = 'https://master.d1b4uiycaor7je.amplifyapp.com/blackoakled/new_navigation/';
-var html = '<div class="ab-test-menu">';
+var html = '<div class="ab-test-menu"><span class="test-menu-control control-prev"></span>';
 for( item in list_menus ){
     var data = list_menus[item];
     var img_link = link_script+'img/'+item+'.svg';
     html += '<a href="'+data.link+'"><img src="'+img_link+'"/><span>'+data.text+'</span></a>';
 }
-html += '</div>';
+html += '<span class="test-menu-control control-next"></span></div>';
 $('.header_nav .col-md-12').append(html);
+$('.header_nav .col-md-12').addClass('at-wraper');
 $('.navbar-right .dropdown-grid.no-open-arrow.extra_img').remove();
 var menu_html = '<ul>' +
     '<li class="has-sub"><a href="/pages/about-us">'+lang.AboutUs+'</a>' +
@@ -70,3 +71,38 @@ linkVehicle.appendTo('body .search-and-menu .left-menu ul');
 $('.search-and-menu .left-menu [href="/pages/search-by-vehicle"]').html(lang.vehicle);
 $('.header_nav .menu-outer-wrapper').remove();
 $('.header_nav').addClass('ab-test-header').removeClass('header_nav');
+$('body').find('.ab-test-menu').data('current_pos',1);
+function scroll_to_element(position){
+    $('body').find('.ab-test-menu').animate({
+        scrollLeft:$('body').find('.ab-test-menu a:eq('+position+')').data('firstposition')
+    })
+}
+function on_resize(){
+    $('body').find('.ab-test-menu').scrollLeft(0);
+    $('body').find('.ab-test-menu a').each(function (index, value) {
+        var left_position = $(this).offset().left - $('body').find('.ab-test-menu').offset().left;
+        console.log($(this));
+        console.log(left_position);
+        $(this).data('firstposition',left_position);
+    });
+}
+on_resize();
+$(window).resize(function() {
+    on_resize();
+});
+
+$(document).on('click','.test-menu-control',function (event) {
+    var current_pos = $('body').find('.ab-test-menu').data('current_pos');
+    if(current_pos < 0){
+        current_pos = 1;
+    }
+    if(current_pos > $('body').find('.ab-test-menu a').length){
+        current_pos = 1;
+    }
+    if($(this).hasClass('control-next')){
+        current_pos++;
+    }else{
+        current_pos--;
+    }
+    scroll_to_element(current_pos);
+});
