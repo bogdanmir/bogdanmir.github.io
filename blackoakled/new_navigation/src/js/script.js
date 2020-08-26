@@ -37,13 +37,15 @@ var list_menus = {
     }
 };
 var link_script = 'https://master.d1b4uiycaor7je.amplifyapp.com/blackoakled/new_navigation/';
-var html = '<div class="ab-test-menu"><span class="test-menu-control control-prev"></span>';
+var html = '<span class="test-menu-control control-prev"></span><div class="ab-test-menu">';
+var counter = 1;
 for( item in list_menus ){
     var data = list_menus[item];
     var img_link = link_script+'img/'+item+'.svg';
-    html += '<a href="'+data.link+'"><img src="'+img_link+'"/><span>'+data.text+'</span></a>';
+    html += '<a href="'+data.link+'" class="test-item-'+counter+'"><img src="'+img_link+'"/><span>'+data.text+'</span></a>';
+    counter++;
 }
-html += '<span class="test-menu-control control-next"></span></div>';
+html += '</div><span class="test-menu-control control-next"></span>';
 $('.header_nav .col-md-12').append(html);
 $('.header_nav .col-md-12').addClass('at-wraper');
 $('.navbar-right .dropdown-grid.no-open-arrow.extra_img').remove();
@@ -72,37 +74,58 @@ $('.search-and-menu .left-menu [href="/pages/search-by-vehicle"]').html(lang.veh
 $('.header_nav .menu-outer-wrapper').remove();
 $('.header_nav').addClass('ab-test-header').removeClass('header_nav');
 $('body').find('.ab-test-menu').data('current_pos',1);
-function scroll_to_element(position){
+function scroll_to_element( position ){
+    $('span.test-menu-control').attr('style','');
+    var data_left = $('body').find('.ab-test-menu a.test-item-'+position).data('firstposition');
+    $('body').find('.ab-test-menu a:eq('+position+')').data('firstposition');
+    console.log( position );
+    console.log( $('body').find('.ab-test-menu a.test-item-'+position) );
+    console.log( data_left );
+    var numb = -data_left;
+    if($('body').find('.ab-test-menu').outerWidth()+numb < $('.ab-test-header .at-wraper').width()){
+        numb = $('body').find('.ab-test-menu').outerWidth() - $('.ab-test-header .at-wraper').width();
+        numb = -numb;
+        $('span.test-menu-control.control-next').css('display','none');
+    }
+    if(numb == 0){
+        $('span.test-menu-control.control-prev').css('display','none');
+    }
     $('body').find('.ab-test-menu').animate({
-        scrollLeft:$('body').find('.ab-test-menu a:eq('+position+')').data('firstposition')
+        'left':numb
     })
 }
 function on_resize(){
-    $('body').find('.ab-test-menu').scrollLeft(0);
+    $('body').find('.ab-test-menu').attr('style','');
+    var calc_outher = 0;
     $('body').find('.ab-test-menu a').each(function (index, value) {
         var left_position = $(this).offset().left - $('body').find('.ab-test-menu').offset().left;
-        console.log($(this));
-        console.log(left_position);
         $(this).data('firstposition',left_position);
+        calc_outher = calc_outher+$(this).outerWidth();
     });
+    $('body').find('.ab-test-menu').css('min-width',calc_outher+'px');
+    scroll_to_element( 1 );
 }
-on_resize();
+setTimeout(function(){
+    on_resize();
+},10);
 $(window).resize(function() {
     on_resize();
 });
 
 $(document).on('click','.test-menu-control',function (event) {
     var current_pos = $('body').find('.ab-test-menu').data('current_pos');
-    if(current_pos < 0){
-        current_pos = 1;
-    }
-    if(current_pos > $('body').find('.ab-test-menu a').length){
-        current_pos = 1;
-    }
     if($(this).hasClass('control-next')){
         current_pos++;
     }else{
         current_pos--;
     }
+    if(current_pos <= 1){
+        current_pos = 1;
+    }
+    if(current_pos >= $('body').find('.ab-test-menu a').length){
+        current_pos = $('body').find('.ab-test-menu a').length;
+    }
+    $('body').find('.ab-test-menu').data('current_pos',current_pos);
+    console.log('Next post is '+current_pos);
     scroll_to_element(current_pos);
 });
