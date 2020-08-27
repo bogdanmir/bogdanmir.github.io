@@ -90,7 +90,9 @@
 .checkout .checkout__form .new-user__step-one form .step-one__requested-fields {
   order: 1;
   margin: 13px 0 49px;
-  font-weight: 500; }
+  font-weight: 500;
+  font-size: 12px;
+  width: 100%; }
 
 .checkout .checkout__form.old_user_form .social__login {
   margin-top: -193px; }
@@ -158,6 +160,11 @@
 
 .checkout .promo-title.is-hide {
   display: none; }
+
+.checkout .step-two__add-comment {
+  width: 100%; }
+  .checkout .step-two__add-comment:before {
+    width: 170px; }
 
 .checkout .checkout__form .new-user__step-one form .step-one__next {
   order: 2;

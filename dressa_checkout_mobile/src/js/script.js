@@ -13,7 +13,7 @@
 	a.appendChild(r);
 })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 window.hj=window.hj||function(){(hj.q=hj.q||[]).push(arguments)};
-hj('trigger', 'checkout_without registration');
+hj('trigger', 'checkout_without_registration');
 
 window.dataLayer = window.dataLayer || [];
 dataLayer.push({
