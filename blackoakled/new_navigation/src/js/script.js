@@ -5,12 +5,21 @@
 // Emergency - /collections/emergency-response-vehicles
 // Heavy Equipment: /collections/agriculture-led-light-bars
 //     ATV/UTV: /pages/search-by-vehicle
-hj('trigger', 'move_similar_images');
+(function(h,o,t,j,a,r){
+    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+    h._hjSettings={hjid:1831568,hjsv:6};
+    a=o.getElementsByTagName('head')[0];
+    r=o.createElement('script');r.async=1;
+    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+    a.appendChild(r);
+})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+window.hj=window.hj||function(){(hj.q=hj.q||[]).push(arguments)};
+try {hj('trigger', 'new_navigation_icons');}catch (e) {}
 window.dataLayer = window.dataLayer || [];
 dataLayer.push({
     'event': 'event-to-ga',
-    'eventCategory': 'Exp - Move block with Similar Images',
-    'eventAction': 'variation activated'
+    'eventCategory': 'Exp - New Navigation: icons and badges',
+    'eventAction': 'loaded'
 });
 var lang = language;
 var list_menus = {
@@ -53,7 +62,7 @@ var counter = 1;
 for( item in list_menus ){
     var data = list_menus[item];
     var img_link = link_script+'img/'+item+'.svg';
-    html += '<a href="'+data.link+'" class="test-item-'+counter+'"><img src="'+img_link+'"/><span>'+data.text+'</span></a>';
+    html += '<a href="'+data.link+'" class="test-item-event test-item-'+counter+'"><img src="'+img_link+'"/><span>'+data.text+'</span></a>';
     counter++;
 }
 html += '</div><span class="test-menu-control control-next"></span></div></div>';
@@ -125,6 +134,17 @@ $(window).resize(function() {
 });
 $(document).on('click','.search-toggle',function (event) {
     $('#header #main_navbar #mobile-search').toggleClass('active');
+});
+$(document).on('click','.test-item-event',function (event) {
+    var text = $(this).find('span').text();
+    window.dataLayer = window.dataLayer || [];
+    console.log('Click on'+text);
+    dataLayer.push({
+        'event': 'event-to-ga',
+        'eventCategory': 'Exp - New Navigation: icons and badges',
+        'eventAction': 'click on navigation',
+        'eventLabel': text
+    });
 });
 $('.navbar-cart').after('<button class="search-toggle"><img src="'+link_script+'img/search-ico.svg" alt=""></button>')
 $(document).on('click','.test-menu-control',function (event) {
