@@ -125,6 +125,7 @@ function on_resize(){
     });
     $('body').find('.ab-test-menu').css('min-width',calc_outher+'px');
     scroll_to_element( 1 );
+    $('body').find('.ab-test-menu').data('current_pos',1);
 }
 setTimeout(function(){
     on_resize();

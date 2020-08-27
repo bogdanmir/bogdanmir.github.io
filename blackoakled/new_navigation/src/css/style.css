@@ -49,24 +49,6 @@ span.test-menu-control.control-next {
   display: none;
   position: absolute; }
 
-.has-sub {
-  position: relative; }
-  .has-sub:after {
-    position: absolute;
-    top: 22px;
-    right: 11px;
-    width: 8px;
-    height: 2px;
-    display: block;
-    background: 0 0;
-    content: '';
-    vertical-align: middle;
-    border-top: 4px solid #fff;
-    border-right: 4px solid transparent;
-    border-left: 4px solid transparent; }
-  .has-sub > a:hover + .submenu {
-    display: block; }
-
 #main_navbar .col-md-9.col-sm-6 {
   padding-top: 20px; }
 
