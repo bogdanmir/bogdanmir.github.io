@@ -4,7 +4,7 @@
   .ab-test-header .col-md-12 {
     display: flex;
     justify-content: space-between;
-    overflow: hidden;
+    overflow: auto;
     padding: 0; }
 
 .ab-test-menu {
@@ -32,7 +32,8 @@ span.test-menu-control {
   cursor: pointer;
   width: 28px;
   height: 28px;
-  position: absolute; }
+  position: absolute;
+  top: 0; }
 
 span.test-menu-control.control-next {
   right: 0; }
@@ -121,9 +122,11 @@ span.test-menu-control.control-next {
     display: none !important; } }
 
 .ab-test-header {
-  padding: 0; }
+  padding: 0;
+  position: relative; }
   .ab-test-header .at-wraper {
-    padding: 0; }
+    padding: 0;
+    position: relative; }
 
 span.test-menu-control {
   display: block;

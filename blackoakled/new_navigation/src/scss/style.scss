@@ -4,7 +4,7 @@
 	.col-md-12{
 		display: flex;
 		justify-content: space-between;
-		overflow: hidden;
+		overflow: auto;
 		padding: 0;
 	}
 }
@@ -37,6 +37,7 @@ span.test-menu-control{
 	width: 28px;
 	height: 28px;
 	position: absolute;
+	top: 0;
 }
 span.test-menu-control.control-next{
 	right:0;
@@ -208,8 +209,10 @@ span.test-menu-control.control-next{
 
 .ab-test-header{
 	padding: 0;
+	position: relative;
 	.at-wraper{
 		padding: 0;
+		position: relative;
 	}
 }
 span.test-menu-control{
