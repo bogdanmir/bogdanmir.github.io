@@ -4,12 +4,13 @@
   .ab-test-header .col-md-12 {
     display: flex;
     justify-content: space-between;
-    overflow: hidden;
+    overflow: auto;
     padding: 0; }
 
 .ab-test-menu {
+  -webkit-overflow-scrolling: touch;
   margin: 0 auto;
-  padding: 5px 0px;
+  padding: 0px;
   display: flex;
   justify-content: space-between;
   position: relative; }
@@ -19,8 +20,9 @@
     align-items: center;
     flex: 0 0 auto;
     justify-content: center;
-    padding-left: 17px;
-    padding-right: 17px; }
+    padding: 5px 17px; }
+    .ab-test-menu a.active {
+      background: #b7b7b7; }
     .ab-test-menu a img {
       margin-right: 6px;
       width: 28px;
@@ -31,7 +33,8 @@ span.test-menu-control {
   cursor: pointer;
   width: 28px;
   height: 28px;
-  position: absolute; }
+  position: absolute;
+  top: 0; }
 
 span.test-menu-control.control-next {
   right: 0; }
@@ -48,24 +51,6 @@ span.test-menu-control.control-next {
 .submenu {
   display: none;
   position: absolute; }
-
-.has-sub {
-  position: relative; }
-  .has-sub:after {
-    position: absolute;
-    top: 22px;
-    right: 11px;
-    width: 8px;
-    height: 2px;
-    display: block;
-    background: 0 0;
-    content: '';
-    vertical-align: middle;
-    border-top: 4px solid #fff;
-    border-right: 4px solid transparent;
-    border-left: 4px solid transparent; }
-  .has-sub > a:hover + .submenu {
-    display: block; }
 
 #main_navbar .col-md-9.col-sm-6 {
   padding-top: 20px; }
@@ -138,9 +123,11 @@ span.test-menu-control.control-next {
     display: none !important; } }
 
 .ab-test-header {
-  padding: 0; }
+  padding: 0;
+  position: relative; }
   .ab-test-header .at-wraper {
-    padding: 0; }
+    padding: 0;
+    position: relative; }
 
 span.test-menu-control {
   display: block;
