@@ -62,7 +62,9 @@ var counter = 1;
 for( item in list_menus ){
     var data = list_menus[item];
     var img_link = link_script+'img/'+item+'.svg';
-    html += '<a href="'+data.link+'" class="test-item-event test-item-'+counter+'" data-scrolgoto="'+counter+'"><img src="'+img_link+'"/><span>'+data.text+'</span></a>';
+    html += '<a href="'+data.link+'" class="test-item-event ' +
+        ((location.href.search(new RegExp(data.link)) > -1) ? 'active ' : '')+
+        'test-item-'+counter+'" data-scrolgoto="'+counter+'"><img src="'+img_link+'"/><span>'+data.text+'</span></a>';
     counter++;
 }
 html += '</div></div><span class="test-menu-control control-next"></span></div>';

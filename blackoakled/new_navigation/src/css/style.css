@@ -10,7 +10,7 @@
 .ab-test-menu {
   -webkit-overflow-scrolling: touch;
   margin: 0 auto;
-  padding: 5px 0px;
+  padding: 0px;
   display: flex;
   justify-content: space-between;
   position: relative; }
@@ -20,8 +20,9 @@
     align-items: center;
     flex: 0 0 auto;
     justify-content: center;
-    padding-left: 17px;
-    padding-right: 17px; }
+    padding: 5px 17px; }
+    .ab-test-menu a.active {
+      background: #b7b7b7; }
     .ab-test-menu a img {
       margin-right: 6px;
       width: 28px;
