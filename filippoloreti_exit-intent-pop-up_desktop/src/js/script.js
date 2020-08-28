@@ -19,6 +19,8 @@
     //     });
     // }
     // End hotjar trigger
+
+
 (function(h,o,t,j,a,r){
         h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
         h._hjSettings={hjid:1885763,hjsv:6};
@@ -54,22 +56,24 @@ hj('trigger', 'exit_intent_popup');
         return storage.includes(product_id);
     }
     $(document).on('click','.add-to-cart',function (event) {
-        if(window.meta.product.length >0 ){
+        if(typeof window.meta.product != 'undefined' ){
             Safe_productToStorage(window.meta.product.id);
         }
+    });
+    $(document).on('click','.add-to-cart-related[data-id]',function (event) {
+        var id = $(this).attr('data-id');
+        Safe_productToStorage(Number(id));
     });
 
 
 
     var product_id = null;
-    $(function() {
-        try{
-            if(window.meta.product.length >0 ){
-                product_id = window.meta.product.id;
-                console.log('product_id',product_id);
-            }
-        }catch(e){}
-    });
+    try{
+        if(typeof window.meta.product != 'undefined' ){
+            product_id = window.meta.product.id;
+            console.log('product_id',product_id);
+        }
+    }catch(e){}
     window.slide_items = new Array();
     function render_popup(){
         if($('.drawer .ajaxcart__product').length > 0){
