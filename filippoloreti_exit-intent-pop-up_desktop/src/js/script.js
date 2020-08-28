@@ -60,11 +60,14 @@ hj('trigger', 'exit_intent_popup');
             Safe_productToStorage(window.meta.product.id);
         }
     });
+    // $(document).on('click','.add-to-cart-related[data-id]',function (event) {
+    //     var id = $(this).attr('data-id');
+    //     Safe_productToStorage(Number(id));
+    // });
     $(document).on('click','.add-to-cart-related[data-id]',function (event) {
-        var id = $(this).attr('data-id');
+        $(this).closest('.grid__item.grid-product').attr('data-id');
         Safe_productToStorage(Number(id));
     });
-
 
 
     var product_id = null;
