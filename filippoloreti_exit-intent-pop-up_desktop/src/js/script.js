@@ -64,9 +64,16 @@ hj('trigger', 'exit_intent_popup');
     //     var id = $(this).attr('data-id');
     //     Safe_productToStorage(Number(id));
     // });
-    $(document).on('click','.add-to-cart-related[data-id]',function (event) {
-        $(this).closest('.grid__item.grid-product').attr('data-id');
-        Safe_productToStorage(Number(id));
+
+    $(".add-to-cart-related[data-id]").each(function(index) {
+        $(this).on("click", function(event){
+
+    // $(document).on('click','.add-to-cart-related[data-id]',function (event) {
+            var id = $(this).closest('.grid__item.grid-product').attr('data-id');
+            Safe_productToStorage(Number(id));
+            console.log(id)
+            ("Test come" + id,"background:green;color:wite;")
+        });
     });
 
 
