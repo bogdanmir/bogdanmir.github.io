@@ -111,8 +111,9 @@
     letter-spacing: 0;
     font-family: Montserrat,sans-serif;
     line-height: 1.15;
-    font-weight: 400;
-    padding: 18px 11px 0 0; }
+    font-weight: 500;
+    padding: 5px 0 0;
+    margin: 0; }
   .exit_popup .slider_tooltip_box {
     margin: 0 0 15px;
     padding: 14px 10px 13px;
@@ -242,7 +243,7 @@
   max-height: 230px;
   overflow-y: auto;
   max-width: 470px;
-  padding: 5px 25px 0;
+  padding: 5px 25px 10px;
   margin: 0 auto; }
 
 .modal-item {

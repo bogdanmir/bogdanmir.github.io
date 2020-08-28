@@ -1,25 +1,34 @@
 // $(document).ready(function() {s
     // Start hotjar trigger
-    try {
-        hj('trigger', 'popup_unpaid_products');
-        console.log('hotjar trigger run');
-        var hj_trigger = 1;
-    }
-    catch(e) {}
+    // try {
+    //     hj('trigger', 'popup_unpaid_products');
+    //     console.log('hotjar trigger run');
+    //     var hj_trigger = 1;
+    // }
+    // catch(e) {}
 
-    if (hj_trigger = 1) {
-        console.log('hotjar trigger run2');
-    } else {
-        console.log('hotjar trigger failed');
-        window.dataLayer = window.dataLayer || [];
-        dataLayer.push({
-            'event': 'event-to-ga',
-            'eventCategory': 'Exp - Exit intent popup for unpaid products',
-            'eventAction': 'hotjar trigger failed'
-        });
-    }
+    // if (hj_trigger = 1) {
+    //     console.log('hotjar trigger run2');
+    // } else {
+    //     console.log('hotjar trigger failed');
+    //     window.dataLayer = window.dataLayer || [];
+    //     dataLayer.push({
+    //         'event': 'event-to-ga',
+    //         'eventCategory': 'Exp - Exit intent popup for unpaid products',
+    //         'eventAction': 'hotjar trigger failed'
+    //     });
+    // }
     // End hotjar trigger
-
+(function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1885763,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+window.hj=window.hj||function(){(hj.q=hj.q||[]).push(arguments)};
+hj('trigger', 'exit_intent_popup');
 
 
 
@@ -209,8 +218,8 @@
                 window.dataLayer = window.dataLayer || [];
                 dataLayer.push({
                     'event': 'event-to-ga',
-                    'eventCategory': 'Exp - Exit intent popup for unpaid products',
-                    'eventAction': 'popup loaded'
+                    'eventCategory': 'Exp - Exit-intent popup',
+                    'eventAction': 'loaded'
                 });
                 console.log('popup loaded')
 
@@ -224,8 +233,8 @@
         window.dataLayer = window.dataLayer || [];
         dataLayer.push({
             'event': 'event-to-ga',
-            'eventCategory': 'Exp - Exit intent popup for unpaid products',
-            'eventAction': 'Click on Complete your order'
+            'eventCategory': 'Exp - Exit-intent popup',
+            'eventAction': 'click on Complete your order'
         });
         console.log('Click on Complete your order')
     });
@@ -234,8 +243,8 @@
         window.dataLayer = window.dataLayer || [];
         dataLayer.push({
             'event': 'event-to-ga',
-            'eventCategory': 'Exp - Exit intent popup for unpaid products',
-            'eventAction': 'Click on X to close popup'
+            'eventCategory': 'Exp - Exit-intent popup',
+            'eventAction': 'click on X to close popup'
         });
         console.log('Click on X to close popup')
         // $('body').find('#privy-container #privy-inner-container .privy').removeClass('hidden-popup');
@@ -245,8 +254,8 @@
         window.dataLayer = window.dataLayer || [];
         dataLayer.push({
             'event': 'event-to-ga',
-            'eventCategory': 'Exp - Exit intent popup for unpaid products',
-            'eventAction': 'Click on the background to close popup'
+            'eventCategory': 'Exp - Exit-intent popup',
+            'eventAction': 'click on the background to close popup'
         });
         // $('body').find('#privy-container #privy-inner-container .privy').removeClass('hidden-popup');
     });
