@@ -131,7 +131,7 @@ hj('trigger', 'exit_intent_popup');
         $exit_popup +=              '<div class="modal_slider_wrap">';
 
         $exit_popup +=                  '<div class="modal_slider">';
-        $exit_popup +=                      '<div class="slider_tooltip_box">This is a popular choice, we may run out of stock soon</div>';
+        $exit_popup +=                      '<div class="slider_tooltip_box">It’s a popular choice. We are experiencing a<br> significant volume of orders for this watch.</div>';
 
         $exit_popup +=                      '<div class="modal-item-wrap">';
         // <!-- Slides -->
@@ -143,14 +143,17 @@ hj('trigger', 'exit_intent_popup');
         $exit_popup +=              '</div>';
         $exit_popup +=          '<div class="modal_content">';
 
-    if( window.slide_items.length > 1 ){
-        var item_content = "We can’t guarantee the availability of all products in your cart<br> if you don’t complete the purchase now";
-    } else {
-        var item_content = "We can’t guarantee its availability<br> if you don't complete the purchase now";
-        console.log('one item in card')
-    }
+    // if( window.slide_items.length > 1 ){
+    //     var item_content = "We can’t guarantee the availability of all products in your cart<br> if you don’t complete the purchase now";
+    // } else {
+    //     var item_content = "We can’t guarantee its availability<br> if you don't complete the purchase now";
+    //     console.log('one item in card')
+    // }
 
-        $exit_popup +=              '<p>' + item_content + '</p>';
+        // $exit_popup +=              '<p>' + item_content + '</p>';
+
+        
+        $exit_popup +=              '<p>Minimize the shipping time by completing your order now</p>';
         $exit_popup +=          '</div>';
         $exit_popup +=     '</div>';
         $exit_popup +=     '<a href="/checkout" class="modal_btn">complete my order now</a>';
