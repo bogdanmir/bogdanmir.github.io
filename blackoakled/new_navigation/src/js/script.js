@@ -5,16 +5,10 @@
 // Emergency - /collections/emergency-response-vehicles
 // Heavy Equipment: /collections/agriculture-led-light-bars
 //     ATV/UTV: /pages/search-by-vehicle
-(function(h,o,t,j,a,r){
-    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-    h._hjSettings={hjid:1831568,hjsv:6};
-    a=o.getElementsByTagName('head')[0];
-    r=o.createElement('script');r.async=1;
-    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-    a.appendChild(r);
-})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 window.hj=window.hj||function(){(hj.q=hj.q||[]).push(arguments)};
-try {hj('trigger', 'new_navigation_icons');}catch (e) {}
+try {
+    hj('trigger', 'new_navigation_icons');
+} catch (e) {}
 window.dataLayer = window.dataLayer || [];
 dataLayer.push({
     'event': 'event-to-ga',
@@ -63,7 +57,7 @@ var is_already_active = false;
 for( item in list_menus ){
     var data = list_menus[item];
     var img_link = link_script+'img/'+item+'.svg';
-    html += '<a href="'+data.link+'" class="test-item-event ' ;
+    html += '<a href="'+data.link+'" class="test-item-event ';
     if(location.href.search(new RegExp(data.link)) > -1 && is_already_active == false){
         html += 'active ';
         is_already_active = true;
