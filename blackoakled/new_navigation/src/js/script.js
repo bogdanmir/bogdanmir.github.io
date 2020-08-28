@@ -59,12 +59,16 @@ if(prod == true){
 }
 var html = '<div class="container ab-test-header"><span class="test-menu-control control-prev"></span><div class="col-md-12 at-wraper"><div class="ab-test-menu">';
 var counter = 1;
+var is_already_active = false;
 for( item in list_menus ){
     var data = list_menus[item];
     var img_link = link_script+'img/'+item+'.svg';
-    html += '<a href="'+data.link+'" class="test-item-event ' +
-        ((location.href.search(new RegExp(data.link)) > -1) ? 'active ' : '')+
-        'test-item-'+counter+'" data-scrolgoto="'+counter+'"><img src="'+img_link+'"/><span>'+data.text+'</span></a>';
+    html += '<a href="'+data.link+'" class="test-item-event ' ;
+    if(location.href.search(new RegExp(data.link)) > -1 && is_already_active == false){
+        html += 'active ';
+        is_already_active = true;
+    }
+        html += 'test-item-'+counter+'" data-scrolgoto="'+counter+'"><img src="'+img_link+'"/><span>'+data.text+'</span></a>';
     counter++;
 }
 html += '</div></div><span class="test-menu-control control-next"></span></div>';
