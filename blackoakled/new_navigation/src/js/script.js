@@ -19,31 +19,31 @@ var lang = language;
 var list_menus = {
     'boating' : {
         'text' : lang.boating,
-        'link' : '/collections/marine-led-light-bars',
+        'link' : 'https://www.blackoakled.com/collections/marine-led-light-bars',
     },
     'vehicle' : {
         'text' : lang.vehicle,
-        'link' : '/pages/search-by-vehicle',
+        'link' : 'https://www.blackoakled.com/pages/search-by-vehicle',
     },
     'rv_overlanding' : {
         'text' : lang.rv_overlanding,
-        'link' : '/collections/rv-overlanding',
+        'link' : 'https://www.blackoakled.com/collections/rv-overlanding',
     },
     'atv_utv' : {
         'text' : lang.atv_utv,
-        'link' : '/pages/search-by-vehicle?utv=true',
+        'link' : 'https://www.blackoakled.com/pages/search-by-vehicle?utv=true',
     },
     'heavy_equipment' : {
         'text' : lang.heavy_equipment,
-        'link' : '/collections/agriculture-led-light-bars',
+        'link' : 'https://www.blackoakled.com/collections/agriculture-led-light-bars',
     },
     'emergency' : {
         'text' : lang.emergency,
-        'link' : '/collections/emergency-response-vehicles',
+        'link' : 'https://www.blackoakled.com/collections/emergency-response-vehicles',
     },
     'mounting' : {
         'text' : lang.mounting,
-        'link' : '/collections/led-light-bar-mounts-2',
+        'link' : 'https://www.blackoakled.com/collections/led-light-bar-mounts-2',
     }
 };
 var link_script = 'https://bogdanmir.github.io/blackoakled/new_navigation/'
@@ -58,7 +58,7 @@ for( item in list_menus ){
     var data = list_menus[item];
     var img_link = link_script+'img/'+item+'.svg';
     html += '<a href="'+data.link+'" class="test-item-event ';
-    if(location.href.search(new RegExp(data.link)) > -1 && is_already_active == false){
+    if(location.href == data.link && is_already_active == false){
         html += 'active ';
         is_already_active = true;
     }
