@@ -31,7 +31,7 @@ var list_menus = {
     },
     'atv_utv' : {
         'text' : lang.atv_utv,
-        'link' : '/pages/search-by-vehicle',
+        'link' : '/pages/search-by-vehicle?utv=true',
     },
     'heavy_equipment' : {
         'text' : lang.heavy_equipment,
