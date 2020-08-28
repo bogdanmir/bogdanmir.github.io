@@ -152,8 +152,8 @@ hj('trigger', 'exit_intent_popup');
 
         // $exit_popup +=              '<p>' + item_content + '</p>';
 
-        
-        $exit_popup +=              '<p>Minimize the shipping time by completing your order now</p>';
+
+        $exit_popup +=              '<p>Minimize the shipping time by<br> completing your order now</p>';
         $exit_popup +=          '</div>';
         $exit_popup +=     '</div>';
         $exit_popup +=     '<a href="/checkout" class="modal_btn">complete my order now</a>';
