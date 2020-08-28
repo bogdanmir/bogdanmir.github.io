@@ -6,7 +6,15 @@
 		.bn-slider {
 			.slider-text,
 			.btn-bnr {
-				display: none;
+				@media (min-width: 768px){
+					display: none;
+				}
+			}
+			.btn-bnr {
+				@media (max-width: 767px){
+					// border-color: #eb3a8e;
+					font-size: 12px;
+				}
 			}
 		}
 		.bn-category {
@@ -19,6 +27,9 @@
 	background-color: #eb3a8e;
 	color: #fff;
 	margin: 0 0 60px;
+	@media (max-width: 767px){
+		margin: 0;
+	}
 	.category-title {
 		font-size: 18px;
 		font-weight: 600;
@@ -31,17 +42,37 @@
 	}
 }
 
+.category-slider-title {
+	color: #000;
+    font-weight: 700;
+    margin: 0 0 25px;
+    letter-spacing: 1px;
+    @media (max-width: 767px){
+    	font-size: 22px;
+    }
+}
 .bottom-category-slider {
-	// margin-left: -10px;
-	// margin-right: -10px;
+	@media (max-width: 767px){
+		padding-bottom: 25px;
+	}
 	.slick-slide {
-		padding: 0 10px;
+		padding: 0 20px;
+		outline: 0;
+		@media (max-width: 767px){
+			padding: 0 10px;
+		}
 	}
 	a {
 		display: block;
+		span {
+			@media (min-width: 768px){
+				display: none;
+			}
+		}
 	}
 	.img-category {
 		max-width: 100%;
+		outline: 0;
 	}
 }
 @media (max-width: 767px){
@@ -56,6 +87,9 @@
 		padding-bottom: 20px;
 		overflow: auto;
 		background: #f5f5f5;
+		&:after {
+			display: none;
+		}
 		li{
 			padding: 0;
 			a{

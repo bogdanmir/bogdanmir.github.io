@@ -26,7 +26,7 @@ dataLayer.push({
 // 	$('html').find('.checkout').addClass('checkout_new');
 // };
 
-// $('html').find('.checkout__form .step-one__btn-new').click().addClass('step-one__btn_ab');
+$('html').find('.checkout__form .step-one__btn-new').click().addClass('step-one__btn_ab');
 
 $(document).on('click', '.checkout__form .step-one__btn-new', function(){
 	$('.checkout__form .new-user__step-one .step-one__requested-fields').detach().appendTo('.checkout__form .new-user__step-one form');
