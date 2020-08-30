@@ -1,14 +1,15 @@
-.hero .hero-subscribe {
+.hero.hero-subscribe {
   padding: 10px 5px; }
-  .hero .hero-subscribe h1 {
+  .hero.hero-subscribe h1 {
     font-size: 15px !important;
+    letter-spacing: 1.2px;
     line-height: 1.7; }
 
 .subscribe-boxes {
   margin: 0; }
   .subscribe-boxes .subscribe-box {
     width: calc(100% - 20px) !important;
-    padding: 0 0 20px 0 !important; }
+    padding: 0 0 10px !important; }
     .subscribe-boxes .subscribe-box:not(.active) a.nomadik-button {
       color: #fff !important; }
   .subscribe-boxes .subscribe-box-row {
@@ -59,12 +60,76 @@
     display: flex;
     align-items: center;
     justify-content: center; }
-    .subscribe-boxes .ironclad-sub-page > img:first-child {
+    .subscribe-boxes .ironclad-sub-page .iron-logo {
       max-width: 25px; }
     .subscribe-boxes .ironclad-sub-page .iron-text {
-      width: 50px; }
+      max-width: 50px; }
 
 .subscribe-box.one-month {
-  border: 2px solid #D5D5D5 !important; }
+  border: 2px solid #D5D5D5 !important;
+  margin-bottom: 0 !important; }
   .subscribe-box.one-month .banner {
     height: 0; }
+
+.subscribe-box.six-months {
+  border: 2px solid #CF6966 !important;
+  margin: 10px 0 0 !important; }
+
+.subscribe-box.twelve-months {
+  border: 2px solid #6565A2 !important;
+  margin: 10px 0 1rem !important; }
+
+.subscribe-box .sub-border {
+  top: -4px;
+  left: -4px;
+  width: calc(100% + 8px);
+  height: calc(100% + 8px); }
+  .subscribe-box .sub-border.active {
+    z-index: 1 !important; }
+
+.subscribe-box .banner {
+  height: 23px; }
+
+.subscribe-box .star {
+  width: 60px;
+  height: 60px; }
+  .subscribe-box .star img {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    max-width: 100%;
+    top: -17px;
+    right: -14px; }
+  .subscribe-box .star .star-text {
+    font-size: 13px;
+    letter-spacing: 0;
+    width: 35px;
+    right: -2px;
+    top: -3px; }
+
+.twelve-months .banner,
+.six-months .banner {
+  letter-spacing: 0.5;
+  font-size: 10px;
+  padding: 6px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px; }
+
+.subscribe-list {
+  text-align: left; }
+  .subscribe-list ul {
+    margin: 5px 0; }
+  .subscribe-list li {
+    font-size: 11px;
+    margin: 0 0 12px;
+    padding: 0 15px 0 40px;
+    letter-spacing: .2px;
+    position: relative; }
+    .subscribe-list li:before {
+      content: '';
+      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAANCAYAAACgu+4kAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACtSURBVHgBnZFRCsIwDIaT7TC7Rp5lDEF88AwewnoGkR2hCPoi6KvzGLvMav+ySXUbbfe/JCH9fpKUaKFOuhREpgWqL9XBGFLMpDJK1AAj7zripAl82MbjfndX0QZTMHK3wnCQVNgZoJlz9kJMhZ0BDtE31b9JCIby561tVpuC7TnF1lJuC3pc23cMDH2PeNYV/rWfwDS2JSH4x2BsEobdCn7hrxMDz6rWa4l9+wGOMXLoy8jjOAAAAABJRU5ErkJggg==");
+      position: absolute;
+      left: 15px;
+      top: calc(50% - 7px);
+      height: 16px;
+      width: 16px; }
