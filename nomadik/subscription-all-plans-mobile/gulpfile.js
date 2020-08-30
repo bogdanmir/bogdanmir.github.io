@@ -87,7 +87,7 @@ function scss_task() {
 }
 function css_task() {
   return gulp.src(path_info.css+"*.css")
-      .pipe(cssnano())
+      .pipe(cssnano({zindex: false}))
       .pipe(gulp.dest(path_info.pre_build_css));
 }
 function js_task() {
