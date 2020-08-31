@@ -65,8 +65,8 @@ $(document).on("click", ".tooltip-ico .bg-inside,.tooltip-close", function() {
 });
 $(document).on("touchstart", function(e) {
     var elem = e.originalEvent.path[0];
-    console.log(elem);
-    console.log($(elem).hasClass('bg-inside'));
+    // console.log(elem);
+    // console.log($(elem).hasClass('bg-inside'));
     if($(elem).hasClass('bg-inside') ){
 	    $('body').find('.tooltip-ico').removeClass('active');
     }

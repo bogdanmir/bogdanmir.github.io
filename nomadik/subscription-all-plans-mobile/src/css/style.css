@@ -88,7 +88,9 @@
   width: calc(100% + 8px);
   height: calc(100% + 8px); }
   .subscribe-box .sub-border.active {
-    z-index: 1 !important; }
+    z-index: 1 !important;
+    border: none;
+    box-shadow: none; }
 
 .subscribe-box .banner {
   height: 23px; }
