@@ -47,12 +47,12 @@ $('body').find('.subscribe-box.twelve-months').append('<div class="subscribe-lis
 // tooltip
 var tooltipInner = '<div class="tooltip-inner"><span class="tooltip-close"></span><ul><li>Learn wilderness navigation mastery in only 4 hours</li><li>Experience an old-school navigation with maps and compass</li><li>How to guarantee arriving at your destination</li><li>Special orientation challenges in different conditions</li></ul></div>';
 
-$('body').find('.subscribe-box.six-months').append('<div class="tooltip-ico">'+tooltipInner+'</div>');
-$('body').find('.subscribe-box.twelve-months').append('<div class="tooltip-ico">'+tooltipInner+'</div>');
+$('body').find('.subscribe-box.six-months').append('<div class="tooltip-ico"><div class="tooltip-icon"></div>'+tooltipInner+'<div class="bg-inside"></div>');
+$('body').find('.subscribe-box.twelve-months').append('<div class="tooltip-ico"><div class="tooltip-icon"></div>'+tooltipInner+'<div class="bg-inside"></div>');
 
-$(document).on("click", ".tooltip-ico", function() {
+$(document).on("click", ".tooltip-ico .tooltip-icon", function() {
 	$('.tooltip-ico').removeClass('active');
-	$(this).addClass('active');
+	$(this).closest('.tooltip-ico').addClass('active');
 });
 $(document).on("click", function (e){
 	var tooltipTarget = $(".tooltip-ico");
@@ -60,6 +60,18 @@ $(document).on("click", function (e){
 		tooltipTarget.removeClass('active');
 	}
 });
-$(document).on("click", ".tooltip-close", function() {
+$(document).on("click", ".tooltip-ico .bg-inside,.tooltip-close", function() {
 	$(this).closest('.tooltip-ico').removeClass('active');
 });
+$(document).on("touchstart", function(e) {
+    var elem = e.originalEvent.path[0];
+    console.log(elem);
+    console.log($(elem).hasClass('bg-inside'));
+    if($(elem).hasClass('bg-inside') ){
+	    $('body').find('.tooltip-ico').removeClass('active');
+    }
+});
+// $(document).on("click",'.tooltip-ico.active .bg-inside', function (e){
+//     $('body').find(".tooltip-ico.active").removeClass('active');
+//     return false;
+// });
