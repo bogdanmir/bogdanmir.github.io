@@ -26,40 +26,55 @@ dataLayer.push({
 // 	$('html').find('.checkout').addClass('checkout_new');
 // };
 
-$('html').find('.checkout__form .step-one__btn-new').click().addClass('step-one__btn_ab');
+var intervalis_user_click_on_tab = setInterval(function(){
+	var is_user_click_on_tab = localStorage.getItem('_click_on_tab') || 'new';
+	var is_emul_click = $('html').find('.checkout__form .step-one__btn-new').data('script-trigger') || 'false';
+	if($('html').find('.checkout__form .step-one__btn-new').length && is_user_click_on_tab == 'new'){
+		if(is_emul_click != 'true'){
+			$('html').find('.checkout__form .step-one__btn-new').data('script-trigger','true');
+			$('html').find('.checkout__form .step-one__btn-new').click().addClass('step-one__btn_ab');
+		}
+		// clearInterval(intervalis_user_click_on_tab);
+	}
+},400);
+
 
 $(document).on('click', '.checkout__form .step-one__btn-new', function(){
-	$('.checkout__form .new-user__step-one .step-one__requested-fields').detach().appendTo('.checkout__form .new-user__step-one form');
-	$('.checkout__form').removeClass('old_user_form');
-	// $('html').find('.checkout form .step-one__next>span').text('Выбрать способ доставки');
-	// console.log('click on New customer')
+	// var is_emul_click = $('html').find('.checkout__form .step-one__btn-new').data('script-trigger') || 'false';
+	// if(is_emul_click == true){
+		localStorage.setItem('_click_on_tab','new');
+		$('.checkout__form .new-user__step-one .step-one__requested-fields').detach().appendTo('.checkout__form .new-user__step-one form');
+		$('.checkout__form').removeClass('old_user_form');
+		// $('html').find('.checkout form .step-one__next>span').text('Выбрать способ доставки');
+		console.log('click on New customer');
+	// }
 })
-
 
 $(document).on('click', '.checkout__form .step-one__btn-new.step-one__btn_ab', function(){
-	window.dataLayer = window.dataLayer || [];
-	dataLayer.push({
-		'event': 'autoEvent',
-		'gtmUaEventCategory': 'Exp - Checkout wo registration',
-		'gtmUaEventAction': 'click on New customer'
-	});
-
-	console.log('click on New customer')
+	localStorage.setItem('_click_on_tab','old');
+	var script_trigger = $('html').find('.checkout__form .step-one__btn-new').data('script-trigger');
+	if(script_trigger == 'true') {
+		window.dataLayer = window.dataLayer || [];
+		dataLayer.push({
+			'event': 'autoEvent',
+			'gtmUaEventCategory': 'Exp - Checkout wo registration',
+			'gtmUaEventAction': 'click on New customer'
+		});
+		console.log('click on New customer');
+	}
 })
 
-
-
 $(document).on('click', '.checkout__form .step-one__btn-old', function(){
-	$('.checkout__form .login .login__requested-fields').detach().appendTo('.checkout__form .login form .checkbox__wrapper');
-	$('.checkout__form').addClass('old_user_form');
-	// $('html').find('.checkout .login .login__next>span').text('Выбрать способ доставки');
-	window.dataLayer = window.dataLayer || [];
-	dataLayer.push({
-		'event': 'autoEvent',
-		'gtmUaEventCategory': 'Exp - Checkout wo registration',
-		'gtmUaEventAction': 'click on Existing customer'
-	});
-	console.log('click on Existing customer')
+		$('.checkout__form .login .login__requested-fields').detach().appendTo('.checkout__form .login form .checkbox__wrapper');
+		$('.checkout__form').addClass('old_user_form');
+		// $('html').find('.checkout .login .login__next>span').text('Выбрать способ доставки');
+		window.dataLayer = window.dataLayer || [];
+		dataLayer.push({
+			'event': 'autoEvent',
+			'gtmUaEventCategory': 'Exp - Checkout wo registration',
+			'gtmUaEventAction': 'click on Existing customer'
+		});
+		console.log('click on Existing customer');
 })
 function run_step_1(){
 	if($('.checkout .checkout__title-inner').length > 0){
