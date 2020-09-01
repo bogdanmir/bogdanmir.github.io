@@ -242,3 +242,7 @@
     transform: rotate(-45deg); }
   .tooltip-close:hover:before, .tooltip-close:hover:after {
     background-color: #000; }
+
+.checkout .checkout__form .checkout__title-inner {
+  font-size: 12px !important;
+  letter-spacing: 3.4px !important; }
