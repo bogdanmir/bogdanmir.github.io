@@ -13,7 +13,8 @@
     .subscribe-boxes .subscribe-box:not(.active) a.nomadik-button {
       color: #fff !important; }
     .subscribe-boxes .subscribe-box.active {
-      z-index: 9; }
+      z-index: 9;
+      box-shadow: none; }
   .subscribe-boxes .subscribe-box-row {
     display: flex;
     align-items: center; }
