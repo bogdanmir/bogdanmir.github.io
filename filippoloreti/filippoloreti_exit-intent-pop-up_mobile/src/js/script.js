@@ -236,23 +236,16 @@ setInterval(function() {
     old_scroll = scrollTop;
 });
 window.run_display_popup = function () {
-    // console.log('mouseleave-1');
-    // if (event.toElement == null) {
-        // console.log('mouseleave-2');
-        if(typeof window.show_popup != 'undefined'  && !Is_productinStorage(product_id)){
-            // console.log('mouseleave-3');
-            window.dataLayer = window.dataLayer || [];
-            dataLayer.push({
-                'event': 'event-to-ga',
-                'eventCategory': 'Exp - Exit-intent popup',
-                'eventAction': 'loaded'
-            });
-            console.log('popup loaded')
-
-            window.show_popup();
-            // $('body').find('#privy-container #privy-inner-container .privy').addClass('hidden-popup');
-        }
-    // }
+    if(typeof window.show_popup != 'undefined'  && !Is_productinStorage(product_id)){
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+        'event': 'event-to-ga',
+        'eventCategory': 'Exp - Exit-intent popup',
+        'eventAction': 'loaded'
+        });
+        console.log('popup loaded')
+        window.show_popup();
+    }
 }
 
     $('body').on('click', '.exit_popup .modal_btn', function() {
