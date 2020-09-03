@@ -276,3 +276,45 @@
     max-height: 190px; }
   .exit_popup_container.few_items {
     top: calc(50% - 270px); } }
+
+@media (max-width: 767px) {
+  .exit_popup_container {
+    margin: 0 25px; }
+  .exit_popup {
+    padding: 30px 14px 25px; }
+    .exit_popup .modal_close {
+      width: 30px;
+      height: 30px; }
+    .exit_popup .modal__body {
+      padding: 0 0 20px; }
+    .exit_popup .modal_content p {
+      font-weight: 600;
+      font-size: 11px;
+      padding: 19px 0; }
+    .exit_popup .modal_title {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 1px; }
+    .exit_popup .modal_subtitle {
+      font-size: 12px; }
+    .exit_popup .modal-item-wrap {
+      padding: 15px 0 17px 13px; }
+    .exit_popup .modal_slider_wrap {
+      margin: 20px 0 0; }
+    .exit_popup .modal_slider .slider_tooltip_box {
+      font-size: 11px;
+      padding: 14px 10px;
+      letter-spacing: 0;
+      line-height: 1.2; }
+    .exit_popup .modal_slider .item-info-wrap img {
+      max-width: 100px; }
+    .exit_popup .modal_slider .slide_text_holder {
+      padding-left: 27px; }
+    .exit_popup .modal_slider .slide_title {
+      font-size: 16px;
+      letter-spacing: 1px;
+      margin-bottom: 0; }
+    .exit_popup .modal_slider .slide_price {
+      font-size: 14px; }
+    .exit_popup .modal_btn {
+      margin: 0 auto; } }
