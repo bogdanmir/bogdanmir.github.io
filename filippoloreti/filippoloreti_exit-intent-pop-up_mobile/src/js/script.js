@@ -20,7 +20,6 @@
     // }
     // End hotjar trigger
 
-
 (function(h,o,t,j,a,r){
         h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
         h._hjSettings={hjid:1885763,hjsv:6};
@@ -224,26 +223,37 @@ hj('trigger', 'exit_intent_popup');
             $('body').removeClass('stop_scroll');
         });
     }
-
-    $(document).mouseleave(function () {
-            // console.log('mouseleave-1');
-            if (event.toElement == null) {
-            // console.log('mouseleave-2');
-            if(typeof window.show_popup != 'undefined'  && !Is_productinStorage(product_id)){
-                // console.log('mouseleave-3');
-                window.dataLayer = window.dataLayer || [];
-                dataLayer.push({
-                    'event': 'event-to-ga',
-                    'eventCategory': 'Exp - Exit-intent popup',
-                    'eventAction': 'loaded'
-                });
-                console.log('popup loaded')
-
-                window.show_popup();
-                // $('body').find('#privy-container #privy-inner-container .privy').addClass('hidden-popup');
-            }
+var old_scroll,scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+$(window).scroll(function(e){
+    scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+});
+setInterval(function() {
+    if(old_scroll-50 > scrollTop){
+        if(typeof window.run_display_popup != 'undefined'  && !Is_productinStorage(product_id)){
+            window.run_display_popup();
         }
-    });
+    }
+    old_scroll = scrollTop;
+});
+window.run_display_popup = function () {
+    // console.log('mouseleave-1');
+    // if (event.toElement == null) {
+        // console.log('mouseleave-2');
+        if(typeof window.show_popup != 'undefined'  && !Is_productinStorage(product_id)){
+            // console.log('mouseleave-3');
+            window.dataLayer = window.dataLayer || [];
+            dataLayer.push({
+                'event': 'event-to-ga',
+                'eventCategory': 'Exp - Exit-intent popup',
+                'eventAction': 'loaded'
+            });
+            console.log('popup loaded')
+
+            window.show_popup();
+            // $('body').find('#privy-container #privy-inner-container .privy').addClass('hidden-popup');
+        }
+    // }
+}
 
     $('body').on('click', '.exit_popup .modal_btn', function() {
         window.dataLayer = window.dataLayer || [];
