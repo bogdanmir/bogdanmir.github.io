@@ -57,6 +57,7 @@ hj('trigger', 'exit_intent_popup');
     $(document).on('click','.add-to-cart',function (event) {
         if(typeof window.meta.product != 'undefined' ){
             Safe_productToStorage(window.meta.product.id);
+            console.log('Safe productToStorage '+window.meta.product.id);
         }
     });
     // $(document).on('click','.add-to-cart-related[data-id]',function (event) {
@@ -135,7 +136,12 @@ hj('trigger', 'exit_intent_popup');
         $exit_popup +=                      '<div class="modal-item-wrap">';
         // <!-- Slides -->
         $.each(window.slide_items,function(ind,el){
-            $exit_popup +='<div class="modal-item"><div class="item-info-wrap">'+ el.img +'<div class="slide_text_holder"><div class="slide_title_wrap"><p class="slide_title">'+ el.title +'</p> </div><p class="slide_price">'+ el.price +'</p></div></div></div>';
+            if(ind > 1){
+                return;
+            }
+            var el_img = el.img;
+            el_img = el_img.replace(new RegExp('_small.','g'),'_180x.');
+            $exit_popup +='<div class="modal-item"><div class="item-info-wrap">'+ el_img +'<div class="slide_text_holder"><div class="slide_title_wrap"><p class="slide_title">'+ el.title +'</p> </div><p class="slide_price">'+ el.price +'</p></div></div></div>';
         })
         $exit_popup +=                      '</div>';
         $exit_popup +=                  '</div>';
