@@ -318,3 +318,6 @@
       font-size: 14px; }
     .exit_popup .modal_btn {
       margin: 0 auto; } }
+
+.ju_overlay, .ju_Con {
+  display: none !important; }

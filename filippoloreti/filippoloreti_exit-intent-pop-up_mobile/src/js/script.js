@@ -285,5 +285,4 @@ window.run_display_popup = function () {
         // $('body').find('#privy-container #privy-inner-container .privy').removeClass('hidden-popup');
     });
 
-
 // });
