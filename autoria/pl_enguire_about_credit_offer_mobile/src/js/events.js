@@ -40,7 +40,7 @@ $('body').on('click', '.ab_test_modal .react_modal__body .btn-border', function 
 $(document).on('keydown keyup input','.input_number',function (e) {
 	// console.log('1')
 	var key = e.charCode || e.keyCode || 0;
-	console.log(e);
+	// console.log(e);
 	$phone = $(this);
 
 	// Auto-format- do not expose the mask as the user begins to type
