@@ -15,7 +15,13 @@
   border: 1px solid #79BE00;
   border-radius: 5px;
   background: rgba(121, 190, 0, 0.07);
-  padding: 11px 9px; }
+  padding: 11px 2px;
+  text-align: center;
+  margin: 0 0 10px; }
+  @media (min-width: 360px) {
+    .proposition_button_credit {
+      width: calc(100% - 148px);
+      margin: 0; } }
 
 .ab_test_modal {
   background: rgba(65, 64, 66, 0.5); }
