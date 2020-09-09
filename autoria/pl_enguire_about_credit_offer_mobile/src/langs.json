@@ -1,7 +1,16 @@
 {
   "languages" : {
-    "" : {
-        "some_slug" : "Lorem Ipsum"
+    "v1" : {
+        "credit_text" : "Узнать о кредитах на это авто",
+        "credit_class": "v-1"
+    },
+    "v2" : {
+        "credit_text" : "Узнать об условиях кредитования",
+        "credit_class": "v-2"
+    },
+    "v3" : {
+        "credit_text" : "Узнать об условиях рассрочки",
+        "credit_class": "v-3"
     }
   }
 }
