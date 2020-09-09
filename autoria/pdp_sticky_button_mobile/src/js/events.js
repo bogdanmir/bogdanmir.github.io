@@ -3,8 +3,7 @@ $(document).on('click', '.proposition_button_credit', function () {
 	
 
 
-	window.customer_click  = $(this).closest('.proposition').find('.proposition_name a').attr('href');
-
+	window.customer_click  = location.href;
 
 
 	$('body').find('.mobile_call_wrap .seller-contact').addClass('ab_test_modal');
