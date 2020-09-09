@@ -1,4 +1,184 @@
-//body{
-//	background: red;
-//	z-index: 9999;
-//}
+.proposition_area {
+	.proposition_lead {
+		flex-wrap: wrap;
+	}
+	.proposition_price {
+		width: 100%;
+		position: relative;
+		margin-bottom: 15px;
+		padding: 10px 0 10px 0;
+		border-bottom: 1px solid #e0e3e4;
+	}
+}
+.proposition_button_credit {
+	color: #79BE00;
+	font-weight: 700;
+	font-size: 12px;
+	border: 1px solid #79BE00;
+	border-radius: 5px;
+	background: rgba(121, 190, 0, 0.07);
+	padding: 11px 9px;
+}
+.ab_test_modal {
+	background: rgba(65, 64, 66, 0.5);
+	.react_modal__container {
+		width: calc(100% - 28px)!important;
+		margin: 0 auto;
+		// top: calc(50% - 107px);
+		// top: 30vh;
+		top: 15px;
+	}
+	.react_modal__header {
+		font-size: 0;
+	}
+	.react_modal__close {
+		right: 0;
+		left: auto;
+		font-size: 46px;
+		padding: 10px 0;
+		color: #fff;
+		&:before {
+			display: none;
+		}
+	}
+	.react_modal__body {
+		background-color: #fff;
+		padding: 14px;
+	}
+	.phones_modal__item {
+		text-align: center;
+	}
+	.modal_title {
+		color: #414042;
+		font-size: 17px;
+		font-weight: 700;
+		margin-left: -10px;
+		margin-right: -10px;
+		padding: 24px 0 11px;
+		line-height: 1.2;
+		p {
+			margin: 0; 
+		}
+	}
+	.be_carefull {
+		display: none;
+	}
+	.text_devider {
+		color: #414042;
+		font-size: 16px;
+		position: relative;
+		padding: 10px 0 9px;
+		&:before,
+		&:after {
+			content: '';
+			background-color: #9B9B9B;
+			height: 1px;
+			width: 40px;
+			position: absolute;
+			top: 20px;
+		}
+		&:before {
+			left: 87px;
+		}
+		&:after {
+			right: 87px;
+		}
+		p {
+			margin: 0; 
+		}
+	}
+	.sub_title {
+		color: #414042;
+		font-size: 17px;
+		font-weight: 700;
+		p {
+			margin: 0; 
+		}
+	}
+	.info_text {
+		color: #9B9B9B;
+		font-size: 16px;
+		padding: 4px 0 10px;
+		line-height: 1.2;
+		p {
+			margin: 0; 
+		}
+	}
+	.modal_form {
+		border-bottom: 1px solid #9B9B9B;
+		display: flex;
+		padding: 0 0 12px;
+		margin: 0 0 12px;
+		position: relative;
+		&.error {
+			.input_number {
+				border: 1px solid #db5c4c;
+			}
+			.modal_btn {
+				pointer-events: none;
+				background-color: #79be0094;
+			}
+		}
+		svg {
+			position: absolute;
+			top: 11px;
+			left: 12px;
+		}
+	}
+	.input_number {
+		border-radius: 5px 0px 0px 5px;
+		border: 1px solid #9B9B9B;
+		color: #777777;
+		font-size: 13px;
+		width: calc(100% - 144px);
+		padding: 0 15px 0 38px;
+		outline: none;
+		&::-webkit-input-placeholder {
+		  color: #777777;
+		}
+		&:-moz-placeholder {
+		  color: #777777;
+		}
+		&::-moz-placeholder {
+		  color: #777777;
+		}
+		&:-ms-input-placeholder {
+		  color: #777777;
+		}
+	}
+	.modal_btn {
+		color: #fff;
+		border-radius: 0px 5px 5px 0px;
+		border: 0;
+		padding: 12px;
+		font-size: 13px;
+		font-weight: 700;
+		width: 144px;
+	}
+	.show-phone {
+		.btn-border {
+			margin: 0;
+			font-size: 13px;
+			padding: 8px 10px;
+			width: calc(50% - 5px);
+			& + .btn-border {
+				margin-left: 10px;
+			}
+		}
+	}
+}
+.thx_wrap {
+	padding: 0 0 17px;
+}
+.thx_holder {
+	text-align: center;
+	.modal_title {
+		padding: 16px 0 11px;
+	}
+	.info_text {
+		padding: 4px 0 28px;
+	}
+}
+.is-disabled {
+	display: none;
+}
