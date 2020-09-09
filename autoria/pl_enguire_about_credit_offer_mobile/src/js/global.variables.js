@@ -1,1 +1,1 @@
-// window.test = true;
+window.customer_click = false;

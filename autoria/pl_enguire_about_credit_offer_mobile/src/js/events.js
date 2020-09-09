@@ -1,6 +1,6 @@
 $('body').on('click', '.proposition_button_credit', function () {
 	$(this).closest('.proposition_lead').find('.proposition_button .button').trigger('click');
-
+	window.customer_click  = $(this).closest('.proposition').find('.proposition_name a').attr('href');
 	$('body').find('.react_modal').addClass('ab_test_modal');
 
 	// console.log('proposition_button emulate')
@@ -22,6 +22,9 @@ $('body').on('click', '.proposition_button_credit', function () {
 
 
 
+$('body').on('click', '.react_modal__close, .react_modal__backdrop', function () {
+	window.customer_click = false;
+});
 $('body').on('click', '.ab_test_modal .react_modal__body .btn-border', function () {
 	$('body').find('.react_modal').removeClass('ab_test_modal');
 	$('.react_modal__body .modal_photo-car').remove();
@@ -109,8 +112,10 @@ $(document).on('click','.modal_btn',function () {
 		$(this).closest('.modal_form').addClass('error');
 	} else {
 		$(this).closest('.modal_form').removeClass('error');
-		console.log($phone.val())
-
+		console.log($phone.val());
+		if(window.customer_click){
+			send_user_call(window.customer_click,$phone.val());
+		}
 
 		$('.react_modal__body .modal_photo-car').remove();
 		$('.phones_modal__item').addClass('is-disabled');
