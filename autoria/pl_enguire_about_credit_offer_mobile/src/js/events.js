@@ -37,9 +37,10 @@ $('body').on('click', '.ab_test_modal .react_modal__body .btn-border', function 
 
 
 
-$(document).on('keydown','.input_number',function (e) {
+$(document).on('keydown keyup input','.input_number',function (e) {
 	// console.log('1')
 	var key = e.charCode || e.keyCode || 0;
+	console.log(e);
 	$phone = $(this);
 
 	// Auto-format- do not expose the mask as the user begins to type
@@ -61,19 +62,18 @@ $(document).on('keydown','.input_number',function (e) {
 		}
 	}
 
-	// Allow numeric (and tab, backspace, delete) keys only
+	if($phone.val().length === 15){
+		$(this).closest('.modal_form').removeClass('error');
+	}
+	if(key == 8 || key == 9){
+		$phone.val('');
+	}
 	return (key == 8 || 
 			key == 9 ||
 			key == 46 ||
 			(key >= 48 && key <= 57) ||
 			(key >= 96 && key <= 105));
 
-})
-
-$(document).on('keyup','.input_number',function (e) {
-	if($phone.val().length === 15){
-		$(this).closest('.modal_form').removeClass('error');
-	}
 })
 	
 $(document).on('focus click','.input_number',function (e) {
