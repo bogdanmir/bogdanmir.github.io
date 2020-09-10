@@ -1,5 +1,7 @@
-.seller-contact_m.fixbar.seller-with-text:after {
-  display: none; }
+.seller-contact_m.fixbar.seller-with-text {
+  z-index: 4; }
+  .seller-contact_m.fixbar.seller-with-text:after {
+    display: none; }
 
 .seller-item-credit {
   padding: 0 15px;

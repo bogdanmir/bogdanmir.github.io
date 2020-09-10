@@ -1,19 +1,12 @@
 $(document).on('click', '.high-demand-wrap', function () {
 	$('#mobile-call > a.button').get(0).click();
-	
-	window.customer_click  = location.href;
-
 	$('body').find('.mobile_call_wrap .seller-contact').addClass('ab_test_modal');
 	var img_car = $('.image-gallery .image-gallery-slide:first-child .image-gallery-image picture').html();
-
 	if($('.ab_test_modal').length) {
-
 		$('.ab_test_modal').prepend('<a href="#" class="button-option mobile-cancel-call-2" data-button="cancel">×</a>');
 		// $('body').find('.ab_test_modal #mobile-cancel-call').detach().prependTo('.ab_test_modal').html('×');
 
 		$('.ab_test_modal').prepend('<div class="pdp_modal_backdrop"></div>')
-
-
 		$('.ab_test_modal .seller-overlay').prepend('<div class="modal_title"><p>Узнать о кредитных предложениях на этот автомобиль можно телефону:</p></div>');
 		$('.ab_test_modal .seller-overlay').prepend('<div class="modal_photo-car">'+ img_car +'</div>');
 		$('body').find('.ab_test_modal .rate-call .btn_success').html('Успешный звонок');
@@ -26,11 +19,6 @@ $(document).on('click', '.high-demand-wrap', function () {
 });
 
 
-
-
-$('body').on('click', '.mobile-cancel-call-2, .react_modal__backdrop', function () {
-	window.customer_click = false;
-});
 
 $('body').on('click', '.ab_test_modal .mobile-cancel-call-2, .pdp_modal_backdrop', function () {
 	$('#mobile-cancel-call').get(0).click();

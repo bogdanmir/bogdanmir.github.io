@@ -1,5 +1,6 @@
 .seller-contact_m {
 	&.fixbar.seller-with-text {
+		z-index: 4;
 		&:after {
 			display: none;
 		}
