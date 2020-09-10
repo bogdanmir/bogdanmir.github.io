@@ -1,0 +1,1 @@
+window.customer_click = false;

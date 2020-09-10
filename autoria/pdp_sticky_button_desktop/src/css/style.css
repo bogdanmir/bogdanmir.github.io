@@ -1,0 +1,217 @@
+.seller-contact_m.fixbar.seller-with-text:after {
+  display: none; }
+
+.seller-item-credit {
+  padding: 0 15px;
+  width: 100%; }
+
+.proposition_button_credit {
+  background-color: #fff;
+  color: #79BE00;
+  font-size: 16px;
+  line-height: 36px;
+  display: inline-block;
+  border: 1px solid #79be00 !important;
+  border-radius: 5px;
+  text-align: center;
+  width: 100%;
+  margin: 6px 0 10px; }
+
+.proposition_area .proposition_lead {
+  flex-wrap: wrap; }
+
+.proposition_area .proposition_price {
+  width: 100%;
+  position: relative;
+  margin-bottom: 15px;
+  padding: 10px 0 10px 0;
+  border-bottom: 1px solid #e0e3e4; }
+
+.ab_test_modal {
+  background: transparent; }
+  .ab_test_modal .seller-overlay {
+    background-color: #fff;
+    margin: 0 auto;
+    top: 45px;
+    bottom: auto;
+    max-height: calc(100vh - 60px);
+    width: calc(100% - 28px) !important;
+    left: 0;
+    right: 0;
+    padding: 14px;
+    overflow-y: auto;
+    z-index: 1001; }
+    .ab_test_modal .seller-overlay .modal_photo-car {
+      max-height: 228px;
+      overflow: hidden; }
+    .ab_test_modal .seller-overlay .phone_show_link {
+      color: #3C9806;
+      font-size: 30px;
+      font-weight: 700; }
+  .ab_test_modal.seller-contact .optionsset {
+    margin: 0; }
+  .ab_test_modal.seller-contact .rate-call label {
+    display: none; }
+  .ab_test_modal.seller-contact .rate-call .boxed {
+    width: calc(50% - 5px);
+    margin: 0; }
+    .ab_test_modal.seller-contact .rate-call .boxed .button-option {
+      background-color: #fff;
+      font-size: 13px;
+      line-height: 35px;
+      width: 100%; }
+      .ab_test_modal.seller-contact .rate-call .boxed .button-option.btn_success {
+        border: 1px solid #3c9806;
+        color: #3c9806; }
+      .ab_test_modal.seller-contact .rate-call .boxed .button-option.btn_reported {
+        border: 1px solid #db5c4c;
+        color: #db5c4c; }
+    .ab_test_modal.seller-contact .rate-call .boxed + .boxed {
+      margin-left: 10px; }
+  .ab_test_modal #mobile-cancel-call {
+    display: none; }
+  .ab_test_modal .mobile-cancel-call-2 {
+    position: absolute;
+    top: 7px;
+    z-index: 999;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    font-size: 46px;
+    background: transparent;
+    color: #fff; }
+  .ab_test_modal .modal_title {
+    color: #414042;
+    font-size: 17px;
+    font-weight: 700;
+    margin-left: -10px;
+    margin-right: -10px;
+    padding: 24px 0 11px;
+    line-height: 1.2; }
+    .ab_test_modal .modal_title p {
+      margin: 0; }
+  .ab_test_modal .text_devider {
+    color: #414042;
+    font-size: 16px;
+    position: relative;
+    padding: 10px 0 9px; }
+    .ab_test_modal .text_devider:before, .ab_test_modal .text_devider:after {
+      content: '';
+      background-color: #9B9B9B;
+      height: 1px;
+      width: 40px;
+      position: absolute;
+      top: 20px; }
+    .ab_test_modal .text_devider:before {
+      left: 87px; }
+    .ab_test_modal .text_devider:after {
+      right: 87px; }
+    .ab_test_modal .text_devider p {
+      margin: 0; }
+  .ab_test_modal .sub_title {
+    color: #414042;
+    font-size: 17px;
+    font-weight: 700; }
+    .ab_test_modal .sub_title p {
+      margin: 0; }
+  .ab_test_modal .info_text {
+    color: #9B9B9B;
+    font-size: 16px;
+    padding: 4px 0 10px;
+    line-height: 1.2; }
+    .ab_test_modal .info_text p {
+      margin: 0; }
+  .ab_test_modal .modal_form {
+    border-bottom: 1px solid #9B9B9B;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 0 12px;
+    margin: 0 0 12px;
+    position: relative; }
+    .ab_test_modal .modal_form.error .input_number {
+      border: 1px solid #db5c4c;
+      border-right: 0;
+      color: #db5c4c; }
+      @media (max-width: 359px) {
+        .ab_test_modal .modal_form.error .input_number {
+          border-right: 1px solid #db5c4c; } }
+      .ab_test_modal .modal_form.error .input_number::-webkit-input-placeholder {
+        color: #db5c4c; }
+      .ab_test_modal .modal_form.error .input_number:-moz-placeholder {
+        color: #db5c4c; }
+      .ab_test_modal .modal_form.error .input_number::-moz-placeholder {
+        color: #db5c4c; }
+      .ab_test_modal .modal_form.error .input_number:-ms-input-placeholder {
+        color: #db5c4c; }
+    .ab_test_modal .modal_form.error .modal_btn {
+      pointer-events: none; }
+    .ab_test_modal .modal_form.error svg path {
+      fill: #db5c4c; }
+    .ab_test_modal .modal_form svg {
+      position: absolute;
+      top: 11px;
+      left: 12px; }
+    .ab_test_modal .modal_form .error_msg {
+      color: #DB5C4C;
+      font-size: 12px;
+      text-align: left;
+      margin: 5px 0 0; }
+  .ab_test_modal .input_number {
+    border-radius: 5px 0px 0px 5px;
+    border: 1px solid #9B9B9B;
+    border-right: 0;
+    color: #777777;
+    font-size: 13px;
+    width: calc(100% - 144px);
+    padding: 0 15px 0 38px;
+    outline: none; }
+    .ab_test_modal .input_number::-webkit-input-placeholder {
+      color: #777777; }
+    .ab_test_modal .input_number:-moz-placeholder {
+      color: #777777; }
+    .ab_test_modal .input_number::-moz-placeholder {
+      color: #777777; }
+    .ab_test_modal .input_number:-ms-input-placeholder {
+      color: #777777; }
+    @media (max-width: 359px) {
+      .ab_test_modal .input_number {
+        border-radius: 5px;
+        border-right: 1px solid #9B9B9B;
+        padding: 10px 15px 10px 38px;
+        width: 100%; } }
+  .ab_test_modal .modal_btn {
+    color: #fff;
+    border-radius: 0px 5px 5px 0px;
+    border: 0;
+    padding: 12px;
+    font-size: 13px;
+    font-weight: 700;
+    width: 144px;
+    outline: none; }
+    @media (max-width: 359px) {
+      .ab_test_modal .modal_btn {
+        border-radius: 5px;
+        margin: 10px 0 0;
+        width: 100%; } }
+
+.thx_wrap {
+  padding: 0 0 17px; }
+
+.thx_holder {
+  text-align: center; }
+  .thx_holder .modal_title {
+    padding: 16px 0 11px; }
+  .thx_holder .info_text {
+    padding: 4px 0 28px; }
+
+.is-disabled {
+  display: none; }
+
+.pdp_modal_backdrop {
+  background: rgba(65, 64, 66, 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto; }

@@ -1,0 +1,276 @@
+.seller-contact_m {
+	&.fixbar.seller-with-text {
+		&:after {
+			display: none;
+		}
+	}
+}
+.seller-item-credit {
+	padding: 0 15px;
+	width: 100%;
+}
+.proposition_button_credit {
+	background-color: #fff;
+	color: #79BE00;
+	font-size: 16px;
+	line-height: 36px;
+	display: inline-block;
+	border: 1px solid #79be00 !important;
+	border-radius: 5px;
+	text-align: center;
+	width: 100%;
+	margin: 6px 0 10px;
+}
+.proposition_area {
+	.proposition_lead {
+		flex-wrap: wrap;
+	}
+	.proposition_price {
+		width: 100%;
+		position: relative;
+		margin-bottom: 15px;
+		padding: 10px 0 10px 0;
+		border-bottom: 1px solid #e0e3e4;
+	}
+}
+.ab_test_modal {
+	// background: rgba(65, 64, 66, 0.5);
+	background: transparent;
+	.seller-overlay {
+		background-color: #fff;
+		margin: 0 auto;
+		top: 45px;
+		bottom: auto;
+		max-height: calc(100vh - 60px);
+		width: calc(100% - 28px)!important;
+		left: 0;
+		right: 0;
+		padding: 14px;
+		overflow-y: auto;
+		z-index: 1001;
+		.modal_photo-car {
+			max-height: 228px;
+			overflow: hidden;
+		}
+		.phone_show_link {
+			color: #3C9806;
+			font-size: 30px;
+			font-weight: 700;
+		}
+	}
+	&.seller-contact {
+		.optionsset {
+			margin: 0;
+		}
+		.rate-call {
+			label {
+				display: none;
+			}
+			.boxed {
+				width: calc(50% - 5px);
+				margin: 0;
+				.button-option {
+					background-color: #fff;
+					font-size: 13px;
+					line-height: 35px;
+					width: 100%;
+					&.btn_success {
+						border: 1px solid #3c9806;
+						color: #3c9806;
+					}
+					&.btn_reported {
+						border: 1px solid #db5c4c;
+						color: #db5c4c;
+					}
+				}
+				& + .boxed {
+					margin-left: 10px;
+				}
+			}
+		}
+	}
+	#mobile-cancel-call {
+		display: none;
+	}
+	.mobile-cancel-call-2 {
+		position: absolute;
+		top: 7px;
+		z-index: 999;
+		right: 0;
+		width: 40px;
+		height: 40px;
+		font-size: 46px;
+		background: transparent;
+		color: #fff;
+	}
+	.modal_title {
+		color: #414042;
+		font-size: 17px;
+		font-weight: 700;
+		margin-left: -10px;
+		margin-right: -10px;
+		padding: 24px 0 11px;
+		line-height: 1.2;
+		p {
+			margin: 0; 
+		}
+	}
+	.text_devider {
+		color: #414042;
+		font-size: 16px;
+		position: relative;
+		padding: 10px 0 9px;
+		&:before,
+		&:after {
+			content: '';
+			background-color: #9B9B9B;
+			height: 1px;
+			width: 40px;
+			position: absolute;
+			top: 20px;
+		}
+		&:before {
+			left: 87px;
+		}
+		&:after {
+			right: 87px;
+		}
+		p {
+			margin: 0; 
+		}
+	}
+	.sub_title {
+		color: #414042;
+		font-size: 17px;
+		font-weight: 700;
+		p {
+			margin: 0; 
+		}
+	}
+	.info_text {
+		color: #9B9B9B;
+		font-size: 16px;
+		padding: 4px 0 10px;
+		line-height: 1.2;
+		p {
+			margin: 0; 
+		}
+	}
+	.modal_form {
+		border-bottom: 1px solid #9B9B9B;
+		display: flex;
+		flex-wrap: wrap;
+		padding: 0 0 12px;
+		margin: 0 0 12px;
+		position: relative;
+		&.error {
+			.input_number {
+				border: 1px solid #db5c4c;
+				border-right: 0;
+				color: #db5c4c;
+				@media (max-width: 359px){
+					border-right: 1px solid #db5c4c;
+				}
+				&::-webkit-input-placeholder {
+					color: #db5c4c;
+				}
+				&:-moz-placeholder {
+					color: #db5c4c;
+				}
+				&::-moz-placeholder {
+					color: #db5c4c;
+				}
+				&:-ms-input-placeholder {
+					color: #db5c4c;
+				}
+			}
+			.modal_btn {
+				pointer-events: none;
+			}
+			svg {
+				path {
+					fill: #db5c4c;
+				}
+			}
+		}
+		svg {
+			position: absolute;
+			top: 11px;
+			left: 12px;
+		}
+		.error_msg {
+			color: #DB5C4C;
+			font-size: 12px;
+			text-align: left;
+			margin: 5px 0 0;
+		}
+	}
+	.input_number {
+		border-radius: 5px 0px 0px 5px;
+		border: 1px solid #9B9B9B;
+		border-right: 0;
+		color: #777777;
+		font-size: 13px;
+		width: calc(100% - 144px);
+		padding: 0 15px 0 38px;
+		outline: none;
+		&::-webkit-input-placeholder {
+			color: #777777;
+		}
+		&:-moz-placeholder {
+			color: #777777;
+		}
+		&::-moz-placeholder {
+			color: #777777;
+		}
+		&:-ms-input-placeholder {
+			color: #777777;
+		}
+		@media (max-width: 359px){
+			border-radius: 5px;
+			border-right: 1px solid #9B9B9B;
+			padding: 10px 15px 10px 38px;
+			width: 100%;
+		}
+	}
+	.modal_btn {
+		color: #fff;
+		border-radius: 0px 5px 5px 0px;
+		border: 0;
+		padding: 12px;
+		font-size: 13px;
+		font-weight: 700;
+		width: 144px;
+		outline: none;
+		@media (max-width: 359px){
+			border-radius: 5px;
+			margin: 10px 0 0;
+			width: 100%;
+		}
+	}
+}
+.thx_wrap {
+	padding: 0 0 17px;
+}
+.thx_holder {
+	text-align: center;
+	.modal_title {
+		padding: 16px 0 11px;
+	}
+	.info_text {
+		padding: 4px 0 28px;
+	}
+}
+.is-disabled {
+	display: none;
+}
+.pdp_modal_backdrop {
+	background: rgba(65,64,66,.5);
+	position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: auto;
+    // z-index: 1000;
+}
