@@ -21,17 +21,23 @@
 	text-align: center;
 	margin: 0 0 10px;
 	@media (min-width: 360px){
-		width: calc(100% - 148px);
+		width: calc(100% - 128px);
 		margin: 0;
 	}
 }
+.proposition_lead {
+	.proposition_button {
+		@media (min-width: 360px){
+			width: 120px;
+		}
+	}
+}
+
 .ab_test_modal {
 	background: rgba(65, 64, 66, 0.5);
 	.react_modal__container {
 		width: calc(100% - 28px)!important;
 		margin: 0 auto;
-		// top: calc(50% - 107px);
-		// top: 30vh;
 		top: 15px;
 	}
 	.react_modal__header {
@@ -50,6 +56,7 @@
 	.react_modal__body {
 		background-color: #fff;
 		padding: 14px;
+		z-index: 999;
 	}
 	.phones_modal__item {
 		text-align: center;
@@ -84,10 +91,12 @@
 			top: 20px;
 		}
 		&:before {
-			left: 87px;
+			// left: 87px;
+			left: calc(50% - 73px);
 		}
 		&:after {
-			right: 87px;
+			// right: 87px;
+			right: calc(50% - 73px);
 		}
 		p {
 			margin: 0; 
@@ -112,17 +121,42 @@
 	}
 	.modal_form {
 		border-bottom: 1px solid #9B9B9B;
+		position: relative;
 		display: flex;
+		flex-wrap: wrap;
 		padding: 0 0 12px;
 		margin: 0 0 12px;
-		position: relative;
+		// @media (max-width: 359px){
+		// 	flex-wrap: wrap;
+		// }
 		&.error {
 			.input_number {
 				border: 1px solid #db5c4c;
+				border-right: 0;
+				color: #db5c4c;
+				@media (max-width: 359px){
+					border-right: 1px solid #db5c4c;
+				}
+				&::-webkit-input-placeholder {
+					color: #db5c4c;
+				}
+				&:-moz-placeholder {
+					color: #db5c4c;
+				}
+				&::-moz-placeholder {
+					color: #db5c4c;
+				}
+				&:-ms-input-placeholder {
+					color: #db5c4c;
+				}
 			}
 			.modal_btn {
 				pointer-events: none;
-				background-color: #79be0094;
+			}
+			svg {
+				path {
+					fill: #db5c4c;
+				}
 			}
 		}
 		svg {
@@ -130,10 +164,17 @@
 			top: 11px;
 			left: 12px;
 		}
+		.error_msg {
+			color: #DB5C4C;
+			font-size: 12px;
+			text-align: left;
+			margin: 5px 0 0;
+		}
 	}
 	.input_number {
 		border-radius: 5px 0px 0px 5px;
 		border: 1px solid #9B9B9B;
+		border-right: 0;
 		color: #777777;
 		font-size: 13px;
 		width: calc(100% - 144px);
@@ -151,6 +192,12 @@
 		&:-ms-input-placeholder {
 		  color: #777777;
 		}
+		@media (max-width: 359px){
+			border-radius: 5px;
+			border-right: 1px solid #9B9B9B;
+			padding: 10px 15px 10px 38px;
+			width: 100%;
+		}
 	}
 	.modal_btn {
 		color: #fff;
@@ -160,17 +207,36 @@
 		font-size: 13px;
 		font-weight: 700;
 		width: 144px;
+		@media (max-width: 359px){
+			border-radius: 5px;
+			margin: 10px 0 0;
+			width: 100%;
+		}
 	}
 	.show-phone {
 		.btn-border {
 			margin: 0;
 			font-size: 13px;
 			padding: 8px 10px;
-			width: calc(50% - 5px);
+			width: 100%;
+			@media (min-width: 360px){
+				width: calc(50% - 5px);
+			}
 			& + .btn-border {
-				margin-left: 10px;
+				margin: 10px 0 0;
+				@media (min-width: 360px){
+					margin: 0 0 0 10px;
+				}
 			}
 		}
+	}
+	.react_modal__backdrop {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 99;
 	}
 }
 .thx_wrap {

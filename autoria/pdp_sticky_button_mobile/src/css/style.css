@@ -132,6 +132,9 @@
       border: 1px solid #db5c4c;
       border-right: 0;
       color: #db5c4c; }
+      @media (max-width: 359px) {
+        .ab_test_modal .modal_form.error .input_number {
+          border-right: 1px solid #db5c4c; } }
       .ab_test_modal .modal_form.error .input_number::-webkit-input-placeholder {
         color: #db5c4c; }
       .ab_test_modal .modal_form.error .input_number:-moz-placeholder {
@@ -170,6 +173,12 @@
       color: #777777; }
     .ab_test_modal .input_number:-ms-input-placeholder {
       color: #777777; }
+    @media (max-width: 359px) {
+      .ab_test_modal .input_number {
+        border-radius: 5px;
+        border-right: 1px solid #9B9B9B;
+        padding: 10px 15px 10px 38px;
+        width: 100%; } }
   .ab_test_modal .modal_btn {
     color: #fff;
     border-radius: 0px 5px 5px 0px;
@@ -179,6 +188,11 @@
     font-weight: 700;
     width: 144px;
     outline: none; }
+    @media (max-width: 359px) {
+      .ab_test_modal .modal_btn {
+        border-radius: 5px;
+        margin: 10px 0 0;
+        width: 100%; } }
 
 .thx_wrap {
   padding: 0 0 17px; }

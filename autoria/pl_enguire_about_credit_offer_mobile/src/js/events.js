@@ -19,8 +19,9 @@ $('body').on('click', '.proposition_button_credit', function () {
 	}
 });
 
-
-
+// $('body').on('click', '.ab_test_modal .react_modal__backdrop', function () {
+// 	$('.ab_test_modal .react_modal__close').get(0).click();
+// });
 
 $('body').on('click', '.react_modal__close, .react_modal__backdrop', function () {
 	window.customer_click = false;
@@ -64,6 +65,7 @@ $(document).on('keydown keyup input','.input_number',function (e) {
 
 	if($phone.val().length === 15){
 		$(this).closest('.modal_form').removeClass('error');
+		$(this).closest('.modal_form').find('.error_msg').remove();
 	}
 	if(key == 8 || key == 9){
 		$phone.val('');
@@ -99,10 +101,14 @@ $(document).on('blur','.input_number',function (e) {
 
 	if($phone.val().length < 15){
 		$(this).closest('.modal_form').addClass('error');
+		if($('.error_msg').length < 1){
+			$(this).closest('.modal_form').append('<p class="error_msg">Мобильный телефон некорректен. Пример 0931234567</p>');
+		}
 	} else {
 		$(this).closest('.modal_form').removeClass('error');
+		$(this).closest('.modal_form').find('.error_msg').remove();
 	}
-	console.log($phone.val().length)
+	// console.log($phone.val().length)
 });
 
 
@@ -110,8 +116,12 @@ $(document).on('click','.modal_btn',function () {
 	$phone = $('.input_number');
 	if($phone.val().length < 15){
 		$(this).closest('.modal_form').addClass('error');
+		if($('.error_msg').length < 1){
+			$(this).closest('.modal_form').append('<p class="error_msg">Мобильный телефон некорректен. Пример 0931234567</p>');
+		}
 	} else {
 		$(this).closest('.modal_form').removeClass('error');
+		$(this).closest('.modal_form').find('.error_msg').remove();
 		console.log($phone.val());
 		if(window.customer_click){
 			send_user_call(window.customer_click,$phone.val());
