@@ -3,7 +3,7 @@
 var head= document.getElementsByTagName('head')[0];
 var script= document.createElement('script');
 script.type= 'text/javascript';
-script.src= 'https://master.d1b4uiycaor7je.amplifyapp.com/autoria/pdp_highly_demand_banner_mobile/build/build.js';
+script.src= 'https://master.d1b4uiycaor7je.amplifyapp.com/autoria/mobile/pdp_highly_demand_banner/build/build.js';
 head.appendChild(script);
 
 // PDP Sticky button text - Узнать о кредитах на это авто
@@ -11,7 +11,7 @@ head.appendChild(script);
 var head= document.getElementsByTagName('head')[0];
 var script= document.createElement('script');
 script.type= 'text/javascript';
-script.src= 'https://master.d1b4uiycaor7je.amplifyapp.com/autoria/pdp_sticky_button_mobile/build/v1-build.js';
+script.src= 'https://master.d1b4uiycaor7je.amplifyapp.com/autoria/mobile/pdp_sticky_button/build/v1-build.js';
 head.appendChild(script);
 
 // PDP Sticky button text - Узнать об условиях кредитования
@@ -19,7 +19,7 @@ head.appendChild(script);
 var head= document.getElementsByTagName('head')[0];
 var script= document.createElement('script');
 script.type= 'text/javascript';
-script.src= 'https://master.d1b4uiycaor7je.amplifyapp.com/autoria/pdp_sticky_button_mobile/build/v2-build.js';
+script.src= 'https://master.d1b4uiycaor7je.amplifyapp.com/autoria/mobile/pdp_sticky_button/build/v2-build.js';
 head.appendChild(script);
 
 // PDP Sticky button text - Узнать об условиях рассрочки
@@ -27,7 +27,7 @@ head.appendChild(script);
 var head= document.getElementsByTagName('head')[0];
 var script= document.createElement('script');
 script.type= 'text/javascript';
-script.src= 'https://master.d1b4uiycaor7je.amplifyapp.com/autoria/pdp_sticky_button_mobile/build/v3-build.js';
+script.src= 'https://master.d1b4uiycaor7je.amplifyapp.com/autoria/mobile/pdp_sticky_button/build/v3-build.js';
 head.appendChild(script);
 
 // PL button text - Узнать о кредитах на это авто
@@ -35,7 +35,7 @@ head.appendChild(script);
 var head= document.getElementsByTagName('head')[0];
 var script= document.createElement('script');
 script.type= 'text/javascript';
-script.src= 'https://master.d1b4uiycaor7je.amplifyapp.com/autoria/pl_enguire_about_credit_offer_mobile/build/v1-build.js';
+script.src= 'https://master.d1b4uiycaor7je.amplifyapp.com/autoria/mobile/pl_enguire_about_credit_offer/build/v1-build.js';
 head.appendChild(script);
 
 // PL button text - Узнать об условиях кредитования
@@ -43,7 +43,7 @@ head.appendChild(script);
 var head= document.getElementsByTagName('head')[0];
 var script= document.createElement('script');
 script.type= 'text/javascript';
-script.src= 'https://master.d1b4uiycaor7je.amplifyapp.com/autoria/pl_enguire_about_credit_offer_mobile/build/v2-build.js';
+script.src= 'https://master.d1b4uiycaor7je.amplifyapp.com/autoria/mobile/pl_enguire_about_credit_offer/build/v2-build.js';
 head.appendChild(script);
 
 // PL button text - Узнать об условиях рассрочки
@@ -51,5 +51,5 @@ head.appendChild(script);
 var head= document.getElementsByTagName('head')[0];
 var script= document.createElement('script');
 script.type= 'text/javascript';
-script.src= 'https://master.d1b4uiycaor7je.amplifyapp.com/autoria/pl_enguire_about_credit_offer_mobile/build/v3-build.js';
+script.src= 'https://master.d1b4uiycaor7je.amplifyapp.com/autoria/mobile/pl_enguire_about_credit_offer/build/v3-build.js';
 head.appendChild(script);
