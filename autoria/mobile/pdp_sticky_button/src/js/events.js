@@ -48,8 +48,8 @@ $(document).on('click', '.proposition_button_credit', function () {
 	dataLayer.push({
 		'event': 'event-to-ga',
 		'eventCategory': 'PDP sticky button credit',
-		'eventAction': 'click sticky button'
-		'eventLabel': 'Узнать о кредитах на это авто'
+		'eventAction': 'click sticky button',
+		'eventLabel': language.credit_text
 	});
 
 
@@ -77,10 +77,18 @@ $(document).on('click', '.proposition_button_credit', function () {
 
 $('body').on('click', '.ab_test_modal .mobile-cancel-call-2, .pdp_modal_backdrop', function () {
 	$('#mobile-cancel-call').get(0).click();
+	close_event_dataLayer();
 });
 
+$('body').on('click', '.ab_test_modal .mobile-cancel-call-2, .pdp_modal_backdrop', function () {
+	$('body').find('.ab_test_modal').removeClass('thankyou');
+	console.log('removeClass thankyou');
+});
+$('body').on('click', '.ab_test_modal .rate-call .btn_success, .ab_test_modal .rate-call .btn_reported', function () {
+	$('body').find('.ab_test_modal').addClass('thankyou');
+	console.log('add Class thankyou');
+});
 $('body').on('click', '.ab_test_modal .rate-call .btn_success, .ab_test_modal .rate-call .btn_reported, .ab_test_modal .mobile-cancel-call-2, .pdp_modal_backdrop', function () {
-	
 	$('body').find('.seller-contact').removeClass('ab_test_modal');
 	$('.seller-contact .modal_photo-car').remove();
 	$('.seller-contact .modal_title').remove();
@@ -94,6 +102,7 @@ $('body').on('click', '.ab_test_modal .rate-call .btn_success, .ab_test_modal .r
 
 	$('.mobile-cancel-call-2').remove();
 	$('.pdp_modal_backdrop').remove();
+	close_event_dataLayer();
 });
 
 
@@ -149,6 +158,13 @@ $(document).on('focus click','.input_number',function (e) {
 		var val = $phone.val();
 		$phone.val('').val(val); // Ensure cursor remains at the end
 	}
+	window.dataLayer = window.dataLayer || [];
+	dataLayer.push({
+		'event': 'event-to-ga',
+		'eventCategory': 'PDP sticky button credit',
+		'eventAction': 'click Pop up loan',
+		'eventLabel': 'number input'
+	});
 })
 
 $(document).on('blur','.input_number',function (e) {
@@ -173,6 +189,7 @@ $(document).on('blur','.input_number',function (e) {
 
 
 $(document).on('click','.modal_btn',function () {
+	$('body').find('.ab_test_modal').addClass('thankyou');
 	$phone = $('.input_number');
 	if($phone.val().length < 15){
 		$(this).closest('.modal_form').addClass('error');
@@ -198,4 +215,61 @@ $(document).on('click','.modal_btn',function () {
 
 		$('.ab_test_modal').find('.seller-overlay').addClass('thx_wrap').prepend('<div class="thx_holder"><div class="modal_title"><p>Спасибо за вашу заявку!</p></div><div class="info_text"><p>Мы с вами свяжемся в ближайшее время</p></div></div>');
 	}
+	window.dataLayer = window.dataLayer || [];
+	dataLayer.push({
+		'event': 'event-to-ga',
+		'eventCategory': 'PDP sticky button credit',
+		'eventAction': 'click Pop up loan',
+		'eventLabel': 'Позвонить мне'
+	});
+	console.log('Позвонить мне');
+});
+$('body').on('click','.thankyou .mobile-cancel-call-2',function(){
+	window.dataLayer = window.dataLayer || [];
+	dataLayer.push({
+		'event': 'event-to-ga',
+		'eventCategory': 'PDP sticky button credit',
+		'eventAction': 'click Pop up TY',
+		'eventLabel': 'close'
+	});
+});
+$('body').on('click','.seller-contact.thankyou .btn_success',function(){
+	window.dataLayer = window.dataLayer || [];
+	dataLayer.push({
+		'event': 'event-to-ga',
+		'eventCategory': 'PDP sticky button credit',
+		'eventAction': 'click Pop up TY',
+		'eventLabel': 'Успешный звонок'
+	});
+	console.log('Успешный звонок thank you');
+});
+$('body').on('click','.seller-contact.thankyou .btn_reported',function(){
+	window.dataLayer = window.dataLayer || [];
+	dataLayer.push({
+		'event': 'event-to-ga',
+		'eventCategory': 'PDP sticky button credit',
+		'eventAction': 'click Pop up TY',
+		'eventLabel': 'Пожаловаться'
+	});
+	console.log('Пожаловаться thank you');
+});
+$('body').on('click','.seller-contact.ab_test_modal:not(.thankyou) .btn_success',function(){
+	window.dataLayer = window.dataLayer || [];
+	dataLayer.push({
+		'event': 'event-to-ga',
+		'eventCategory': 'PDP sticky button credit',
+		'eventAction': 'click Pop up loan',
+		'eventLabel': 'Успешный звонок'
+	});
+	console.log('Успешный звонок');
+});
+$('body').on('click','.seller-contact.ab_test_modal:not(.thankyou) .btn_reported',function(){
+	window.dataLayer = window.dataLayer || [];
+	dataLayer.push({
+		'event': 'event-to-ga',
+		'eventCategory': 'PDP sticky button credit',
+		'eventAction': 'click Pop up loan',
+		'eventLabel': 'Пожаловаться'
+	});
+	console.log('Пожаловаться');
 });
