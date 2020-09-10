@@ -1,5 +1,57 @@
+// Hotjar trigger to record video sessions of the alternative variation of the experiment
+try {
+	(function(h,o,t,j,a,r){
+	    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+	    h._hjSettings={hjid:1953436,hjsv:6};
+	    a=o.getElementsByTagName('head')[0];
+	    r=o.createElement('script');r.async=1;
+	    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+	    a.appendChild(r);
+	})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+	window.hj = window.hj || function(){(hj.q = hj.q || []).push(arguments)};
+	hj('trigger', 'pdp_sticky_button_credit');
+}
+catch(e) {}
+
+// Page-hiding snippet
+(function(a, s, y, n, c, h, i, d, e) {
+    s.className += ' ' + y
+    h.start = 1 * new Date()
+    h.end = i = function() {
+      s.className = s.className.replace(RegExp(' ?' + y), '')
+    }
+    ;(a[n] = a[n] || []).hide = h
+    setTimeout(function() {
+      i()
+      h.end = null
+    }, c)
+    h.timeout = c
+})(window, document.documentElement, 'async-hide', 'dataLayer', 4000, {
+    'GTM-P46SHG8': true,
+})
+
+// Activation of the alt variation
+window.dataLayer = window.dataLayer || [];
+dataLayer.push({
+	'event': 'event-to-ga',
+	'eventCategory': 'PDP sticky button credit',
+	'eventAction': 'loaded'
+});
+
+
+
 $(document).on('click', '.proposition_button_credit', function () {
 	$('#mobile-call > a.button').get(0).click();
+
+	// Button inquire about the loan click Узнать о кредитах на это авто
+	window.dataLayer = window.dataLayer || [];
+	dataLayer.push({
+		'event': 'event-to-ga',
+		'eventCategory': 'PDP sticky button credit',
+		'eventAction': 'click sticky button'
+		'eventLabel': 'Узнать о кредитах на это авто'
+	});
+
 
 	$('body').find('.mobile_call_wrap .seller-contact').addClass('ab_test_modal');
 	var img_car = $('.image-gallery .image-gallery-slide:first-child .image-gallery-image picture').html();
