@@ -1,0 +1,87 @@
+.ab_exit_popup {
+  position: fixed;
+  background: #fff;
+  top: calc(50% - 260px);
+  left: 0;
+  right: 0;
+  width: calc(100% - 20px);
+  max-width: 500px;
+  overflow: hidden;
+  margin: auto;
+  border-radius: 8px;
+  text-align: center;
+  z-index: 99; }
+  .ab_exit_popup .ab__body {
+    padding: 25px 25px 20px; }
+  .ab_exit_popup .ab_title {
+    color: #2F2F2F;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 2.1px;
+    text-transform: uppercase;
+    max-width: 270px;
+    margin: 0 auto 10px; }
+  .ab_exit_popup .ab_subtitle {
+    color: #594FA4;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 0 20px; }
+  .ab_exit_popup .ab_item {
+    width: 164px;
+    margin: 0 auto; }
+  .ab_exit_popup .item__image {
+    max-width: 100%; }
+  .ab_exit_popup .product_title p {
+    color: #000;
+    font-size: 13px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; }
+  .ab_exit_popup .product_size {
+    font-size: 13px; }
+  .ab_exit_popup .ab_footer {
+    background: rgba(89, 79, 164, 0.1);
+    padding: 20px 25px 25px; }
+  .ab_exit_popup .ab_timer_wrap {
+    max-width: 127px;
+    margin: 0 auto 10px; }
+  .ab_exit_popup .ab_timer {
+    color: #594FA4;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 3px; }
+  .ab_exit_popup .timer_devider {
+    margin: 0 10px; }
+  .ab_exit_popup .sub_timer {
+    color: #6D6D6D;
+    padding: 0 15px 0 12px;
+    display: flex;
+    justify-content: space-between; }
+  .ab_exit_popup .ab_checkout_btn {
+    background-color: #594FA4;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 0 10px;
+    max-width: 305px;
+    min-width: 283px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; }
+
+.exit_popup_overlay {
+  position: fixed;
+  z-index: 98;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+  transition: all ease .4s; }
