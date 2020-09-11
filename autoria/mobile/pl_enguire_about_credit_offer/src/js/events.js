@@ -1,4 +1,55 @@
+try {
+	(function(h,o,t,j,a,r){
+		h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+		h._hjSettings={hjid:1953436,hjsv:6};
+		a=o.getElementsByTagName('head')[0];
+		r=o.createElement('script');r.async=1;
+		r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+		a.appendChild(r);
+	})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+	window.hj = window.hj || function(){(hj.q = hj.q || []).push(arguments)};
+	hj('trigger', 'pl_enguire_about_credit_offer');
+}
+catch(e) {}
+;(function(a, s, y, n, c, h, i, d, e) {
+	s.className += ' ' + y
+	h.start = 1 * new Date()
+	h.end = i = function() {
+		s.className = s.className.replace(RegExp(' ?' + y), '')
+	}
+	;(a[n] = a[n] || []).hide = h
+	setTimeout(function() {
+		i()
+		h.end = null
+	}, c)
+	h.timeout = c
+})(window, document.documentElement, 'async-hide', 'dataLayer', 4000, {
+	'GTM-P46SHG8': true,
+})
+window.dataLayer = window.dataLayer || [];
+dataLayer.push({
+	'event': 'event-to-ga',
+	'eventCategory': 'PL - enguire about credit offer',
+	'eventAction': 'loaded'
+});
 $('body').on('click', '.proposition_button_credit', function () {
+	window.dataLayer = window.dataLayer || [];
+	dataLayer.push({
+		'event': 'event-to-ga',
+		'eventCategory': 'PL - enguire about credit offer',
+		'eventAction': 'open popup',
+		'eventLabel': language.events_label
+	});
+	window.dataLayer = window.dataLayer || [];
+	dataLayer.push({
+		'event': 'event-to-ga',
+		'eventCategory': 'PL - enguire about credit offer',
+		'eventAction': 'view popup',
+		'eventLabel': language.events_label
+	});
+	console.log('open popup');
+	console.log('view popup');
+	console.log(language.events_label);
 	$(this).closest('.proposition_lead').find('.proposition_button .button').trigger('click');
 	window.customer_click  = $(this).closest('.proposition').find('.proposition_name a').attr('href');
 	$('body').find('.react_modal').addClass('ab_test_modal');
@@ -27,12 +78,61 @@ $('body').on('click', '.react_modal__close, .react_modal__backdrop', function ()
 	window.customer_click = false;
 });
 $('body').on('click', '.ab_test_modal .react_modal__body .btn-border', function () {
+	if(!$('body').find('.ab_test_modal').hasClass('thankyou')){
+		if($(this).hasClass('btn-border--red')){
+			window.dataLayer = window.dataLayer || [];
+			dataLayer.push({
+				'event': 'event-to-ga',
+				'eventCategory': 'PL - enguire about credit offer',
+				'eventAction': 'click on button Пожаловаться',
+				'eventLabel': language.events_label
+			});
+			console.log('click on button Пожаловаться');
+			console.log(language.events_label);
+		}
+		if($(this).hasClass('btn-border--green')){
+			window.dataLayer = window.dataLayer || [];
+			dataLayer.push({
+				'event': 'event-to-ga',
+				'eventCategory': 'PL - enguire about credit offer',
+				'eventAction': 'click on button Успешный звонок',
+				'eventLabel': language.events_label
+			});
+			console.log('click on button Успешный звонок');
+			console.log(language.events_label);
+		}
+	}else{
+		if($(this).hasClass('btn-border--red')){
+			// TY event
+			window.dataLayer = window.dataLayer || [];
+			dataLayer.push({
+				'event': 'event-to-ga',
+				'eventCategory': 'PL - enguire about credit offer',
+				'eventAction': 'TY - click on button Пожаловаться',
+				'eventLabel': language.events_label
+			});
+			console.log('click on button Пожаловаться thank you');
+			console.log(language.events_label);
+		}
+		if($(this).hasClass('btn-border--green')){
+			// TY event
+			window.dataLayer = window.dataLayer || [];
+			dataLayer.push({
+				'event': 'event-to-ga',
+				'eventCategory': 'PL - enguire about credit offer',
+				'eventAction': 'TY - click on button Успешный звонок',
+				'eventLabel': language.events_label
+			});
+			console.log('click on button Успешный звонок thank you');
+			console.log(language.events_label);
+		}
+	}
 	$('body').find('.react_modal').removeClass('ab_test_modal');
 	$('.react_modal__body .modal_photo-car').remove();
-
 	$('.phones_modal_wrap').removeClass('thx_wrap');
 	$('.react_modal__body .thx_holder').remove();
 });
+
 
 
 
@@ -126,10 +226,48 @@ $(document).on('click','.modal_btn',function () {
 		if(window.customer_click){
 			send_user_call(window.customer_click,$phone.val());
 		}
-
+		$('body').find('.react_modal').addClass('thankyou');
 		$('.react_modal__body .modal_photo-car').remove();
 		$('.phones_modal__item').addClass('is-disabled');
 
 		$(this).closest('.ab_test_modal').find('.phones_modal_wrap').addClass('thx_wrap').prepend('<div class="thx_holder"><div class="modal_title"><p>Спасибо за вашу заявку!</p></div><div class="info_text"><p>Мы с вами свяжемся в ближайшее время</p></div></div>');
 	}
+	window.dataLayer = window.dataLayer || [];
+	dataLayer.push({
+		'event': 'event-to-ga',
+		'eventCategory': 'PL - enguire about credit offer',
+		'eventAction': 'click on button Позвонить мне',
+		'eventLabel': language.events_label
+	});
+	console.log('click on button Позвонить мне');
+});
+$(document).on('click','.ab_test_modal:not(.thankyou) .react_modal__backdrop',function (event) {
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+        'event': 'event-to-ga',
+        'eventCategory': 'PL - enguire about credit offer',
+        'eventAction': 'close popup',
+        'eventLabel': language.events_label
+    });
+    console.log('not thankyou close popup');
+});
+$(document).on('click','.ab_test_modal:not(.thankyou) .react_modal__close',function (event) {
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+        'event': 'event-to-ga',
+        'eventCategory': 'PL - enguire about credit offer',
+        'eventAction': 'close popup',
+        'eventLabel': language.events_label
+    });
+	console.log('not thankyou close popup');
+});
+$(document).on('click','.thankyou .react_modal__backdrop,.thankyou .react_modal__close',function (event) {
+	window.dataLayer = window.dataLayer || [];
+	dataLayer.push({
+		'event': 'event-to-ga',
+		'eventCategory': 'PL - enguire about credit offer',
+		'eventAction': 'close TY popup',
+		'eventLabel': language.events_label
+	});
+    console.log('close popup thank you');
 });

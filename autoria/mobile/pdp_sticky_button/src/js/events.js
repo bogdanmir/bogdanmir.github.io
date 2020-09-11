@@ -189,7 +189,7 @@ $(document).on('blur','.input_number',function (e) {
 
 
 $(document).on('click','.modal_btn',function () {
-	$('body').find('.ab_test_modal').addClass('thankyou');
+
 	$phone = $('.input_number');
 	if($phone.val().length < 15){
 		$(this).closest('.modal_form').addClass('error');
@@ -197,6 +197,7 @@ $(document).on('click','.modal_btn',function () {
 			$(this).closest('.modal_form').append('<p class="error_msg">Мобильный телефон некорректен. Пример 0931234567</p>');
 		}
 	} else {
+		$('body').find('.ab_test_modal').addClass('thankyou');
 		$(this).closest('.modal_form').removeClass('error');
 		$(this).closest('.modal_form').find('.error_msg').remove();
 		console.log($phone.val());

@@ -1,4 +1,47 @@
+try {
+	(function(h,o,t,j,a,r){
+		h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+		h._hjSettings={hjid:1953436,hjsv:6};
+		a=o.getElementsByTagName('head')[0];
+		r=o.createElement('script');r.async=1;
+		r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+		a.appendChild(r);
+	})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+	window.hj = window.hj || function(){(hj.q = hj.q || []).push(arguments)};
+	hj('trigger', 'pdp_highly_demand_banner');
+}
+catch(e) {}
+;(function(a, s, y, n, c, h, i, d, e) {
+	s.className += ' ' + y
+	h.start = 1 * new Date()
+	h.end = i = function() {
+		s.className = s.className.replace(RegExp(' ?' + y), '')
+	}
+	;(a[n] = a[n] || []).hide = h
+	setTimeout(function() {
+		i()
+		h.end = null
+	}, c)
+	h.timeout = c
+})(window, document.documentElement, 'async-hide', 'dataLayer', 2000, {
+	'GTM-P46SHG8': true,
+})
+window.dataLayer = window.dataLayer || [];
+dataLayer.push({
+	'event': 'event-to-ga',
+	'eventCategory': 'pdp highly demand banner',
+	'eventAction': 'loaded'
+});
+
+console.log('loaded');
 $(document).on('click', '.high-demand-wrap', function () {
+	window.dataLayer = window.dataLayer || [];
+	dataLayer.push({
+		'event': 'event-to-ga',
+		'eventCategory': 'PDP highly demand banner',
+		'eventAction': 'Уточнить о наличии'
+	});
+	console.log('Уточнить о наличии');
 	$('#mobile-call > a.button').get(0).click();
 	$('body').find('.mobile_call_wrap .seller-contact').addClass('ab_test_modal');
 	var img_car = $('.image-gallery .image-gallery-slide:first-child .image-gallery-image picture').html();
@@ -84,7 +127,14 @@ $(document).on('keydown keyup input','.input_number',function (e) {
 })
 	
 $(document).on('focus click','.input_number',function (e) {
-	// console.log('2')
+	window.dataLayer = window.dataLayer || [];
+	dataLayer.push({
+		'event': 'event-to-ga',
+		'eventCategory': 'PDP highly demand banner',
+		'eventAction': 'click Pop up loan',
+		'eventLabel': 'number input'
+	});
+	console.log('number input');
 	$phone = $(this);
 	
 	if ($phone.val().length === 0) {
@@ -118,6 +168,14 @@ $(document).on('blur','.input_number',function (e) {
 
 
 $(document).on('click','.modal_btn',function () {
+	window.dataLayer = window.dataLayer || [];
+	dataLayer.push({
+		'event': 'event-to-ga',
+		'eventCategory': 'PDP highly demand banner',
+		'eventAction': 'click Pop up loan',
+		'eventLabel': 'phone number'
+	});
+	console.log('phone number');
 	$phone = $('.input_number');
 	if($phone.val().length < 15){
 		$(this).closest('.modal_form').addClass('error');
@@ -125,13 +183,13 @@ $(document).on('click','.modal_btn',function () {
 			$(this).closest('.modal_form').append('<p class="error_msg">Мобильный телефон некорректен. Пример 0931234567</p>');
 		}
 	} else {
+		$('body').find('.ab_test_modal').addClass('thankyou');
 		$(this).closest('.modal_form').removeClass('error');
 		$(this).closest('.modal_form').find('.error_msg').remove();
 		console.log($phone.val());
 		if(window.customer_click){
 			send_user_call(window.customer_click,$phone.val());
 		}
-
 		$('.seller-contact .modal_photo-car').remove();
 		$('.seller-contact .modal_title').remove();
 		$('.seller-contact .text_devider').remove();
@@ -142,5 +200,81 @@ $(document).on('click','.modal_btn',function () {
 
 
 		$('.ab_test_modal').find('.seller-overlay').addClass('thx_wrap').prepend('<div class="thx_holder"><div class="modal_title"><p>Спасибо за вашу заявку!</p></div><div class="info_text"><p>Мы с вами свяжемся в ближайшее время</p></div></div>');
+		window.dataLayer = window.dataLayer || [];
+		dataLayer.push({
+			'event': 'event-to-ga',
+			'eventCategory': 'PDP highly demand banner',
+			'eventAction': 'click Pop up loan',
+			'eventLabel': 'Позвонить мне'
+		});
+		console.log('Позвонить мне');
 	}
+});
+$('body').on('click','.thankyou .mobile-cancel-call-2,.thankyou .pdp_modal_backdrop',function(){
+	window.dataLayer = window.dataLayer || [];
+	dataLayer.push({
+		'event': 'event-to-ga',
+		'eventCategory': 'PDP highly demand banner',
+		'eventAction': 'click Pop up TY',
+		'eventLabel': 'close'
+	});
+	console.log('close thank you');
+});
+$('body').on('click', '.ab_test_modal:not(.thankyou) .mobile-cancel-call-2,.ab_test_modal:not(.thankyou) .pdp_modal_backdrop', function () {
+	window.dataLayer = window.dataLayer || [];
+	dataLayer.push({
+		'event': 'event-to-ga',
+		'eventCategory': 'PDP highly demand banner',
+		'eventAction': 'click Pop up loan',
+		'eventLabel': 'close'
+	});
+	console.log('close');
+});
+$('body').on('click','.seller-contact.thankyou .btn_success',function(){
+	window.dataLayer = window.dataLayer || [];
+	dataLayer.push({
+		'event': 'event-to-ga',
+		'eventCategory': 'PDP highly demand banner',
+		'eventAction': 'click Pop up TY',
+		'eventLabel': 'Успешный звонок'
+	});
+	console.log('Успешный звонок thank you');
+});
+$('body').on('click','.seller-contact.thankyou .btn_reported',function(){
+	window.dataLayer = window.dataLayer || [];
+	dataLayer.push({
+		'event': 'event-to-ga',
+		'eventCategory': 'PDP highly demand banner',
+		'eventAction': 'click Pop up TY',
+		'eventLabel': 'Пожаловаться'
+	});
+	console.log('Пожаловаться thank you');
+});
+$('body').on('click','.seller-contact.ab_test_modal:not(.thankyou) .btn_success',function(){
+	window.dataLayer = window.dataLayer || [];
+	dataLayer.push({
+		'event': 'event-to-ga',
+		'eventCategory': 'PDP highly demand banner',
+		'eventAction': 'click Pop up loan',
+		'eventLabel': 'Успешный звонок'
+	});
+	console.log('Успешный звонок');
+});
+$('body').on('click','.seller-contact.ab_test_modal:not(.thankyou) .btn_reported',function(){
+	window.dataLayer = window.dataLayer || [];
+	dataLayer.push({
+		'event': 'event-to-ga',
+		'eventCategory': 'PDP highly demand banner',
+		'eventAction': 'click Pop up loan',
+		'eventLabel': 'Пожаловаться'
+	});
+	console.log('Пожаловаться');
+});
+$('body').on('click', '.ab_test_modal .mobile-cancel-call-2, .pdp_modal_backdrop', function () {
+	$('body').find('.ab_test_modal').removeClass('thankyou');
+
+});
+$('body').on('click', '.ab_test_modal .rate-call .btn_success, .ab_test_modal .rate-call .btn_reported', function () {
+	$('body').find('.ab_test_modal').addClass('thankyou');
+	console.log('add Class thankyou');
 });
