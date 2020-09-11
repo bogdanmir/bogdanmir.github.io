@@ -14,8 +14,14 @@ $(document).on('is_on_top',function (event,data) {
     window.is_top = data;
 });
 $(document).on('click','.main__product .button__inner--buy',function (event) {
-    if(window.is_top != false){
-        save_top_product(location.pathname);
+    if($('body').find('.info__offers_sizes .size-select .item--selected').length){
+        if(window.is_top != false){
+            save_top_product(location.pathname);
+            console.log('save_top_product');
+        }
+    }else{
+        window.wait_select_size = location.pathname;
+        console.log('wait_select_size');
     }
 });
 $(document).on('click','.product-wrapper .product__hidden_purchase',function (event) {
@@ -23,4 +29,11 @@ $(document).on('click','.product-wrapper .product__hidden_purchase',function (ev
     console.log(href+' href');
     save_top_product(href);
     // return event.preventDefault();
+});
+$(document).on('click','.main__product .sizes__list_item',function (event) {
+    console.log('click wait_select_size');
+    if(typeof window.wait_select_size != 'undefined'){
+        save_top_product(window.wait_select_size);
+        console.log('save_top_product');
+    }
 });
