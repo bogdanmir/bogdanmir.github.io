@@ -115,7 +115,7 @@
 		width: calc(100% + 8px);
 		height: calc(100% + 8px);
 		&.active {
-			z-index: 1 !important;
+			// z-index: 1 !important;
 			border: none;
 			box-shadow: none;
 		}
