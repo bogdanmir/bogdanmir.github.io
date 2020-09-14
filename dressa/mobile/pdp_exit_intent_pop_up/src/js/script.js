@@ -17,7 +17,9 @@ $(document).trigger('url_change',location.pathname);
 function exitPopup() {
 	var product_img   = $('.basket-page .item .item__photo').html();
 	var product_title = $('.basket-page .item .item__info_title').html();
-	var product_size  = $('.basket-page .item .select__value').html();
+
+	var product_size_title  = $('.basket-page .item .select__value').html().substr(0, 8);
+	var product_size_value  = $('.basket-page .item .select__value').html().substr(8, 11);
 
 	$exit_popup  = '<div class="exit_popup_container">';
 	$exit_popup +=    '<div class="ab_exit_popup modal_dialog">';
@@ -29,7 +31,7 @@ function exitPopup() {
 	$exit_popup +=                  '<div class="ab_item">';
 	$exit_popup +=   					'<div class="product_img">'+product_img+'</div>';
 	$exit_popup +=   					'<div class="product_title"><p>'+product_title+'</p></div>';
-	$exit_popup +=   					'<div class="product_size">'+product_size+'</div>';
+	$exit_popup +=   					'<div class="product_size">'+product_size_title+'<span class="product_size_value">'+product_size_value+'</span></div>';
 	$exit_popup +=                  '</div>';
 	$exit_popup +=              '</div>';
 	$exit_popup +=           '</div>';
@@ -46,6 +48,14 @@ function exitPopup() {
 	$exit_popup +=    '</div>';
 	$exit_popup += '</div>';
 
+	var reg = /(\d{7})(\d{1})/;
+	$('.product_size').each(function() {
+	    var $this = $(this);
+	    var text = $this.text(); 
+	    text = text.replace(reg, "$1<span>$2</span>");
+	    $this.html(text);
+	});
+
 	$('body').append($exit_popup);
 	$('body').append('<div class="exit_popup_overlay"></div>');
 
@@ -57,7 +67,7 @@ function exitPopup() {
 			h = seconds/3600 ^ 0,
 			m = (seconds-h*3600)/60 ^ 0,
 			s = seconds-h*3600-m*60,
-			time = (m<10?"0"+m:m)+" : "+(s<10?"0"+s:s);
+			time = (m<10?"0"+m:m)+"  :  "+(s<10?"0"+s:s);
 
 			$("body").find('.ab_exit_popup .ab_timer').text(time);
 		} 
