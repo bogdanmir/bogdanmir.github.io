@@ -119,9 +119,11 @@
   letter-spacing: 0.5;
   font-size: 10px;
   padding: 6px;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  margin-top: -1px; }
+  border-top-left-radius: 13px;
+  border-top-right-radius: 13px;
+  margin-top: -1px;
+  margin-left: -1px;
+  width: calc(100% + 2px); }
 
 .subscribe-list {
   text-align: left; }
