@@ -37,3 +37,20 @@ $(document).on('click','.main__product .sizes__list_item',function (event) {
         console.log('save_top_product');
     }
 });
+
+// close modal
+$(document).on('click','.ab_exit_popup .modal_close',function (event) {
+    console.log('click close modal');
+    if($('body').find('.exit_popup_container').length){
+        $('body').find('.exit_popup_container').remove();
+        $('body').find('.exit_popup_overlay').remove();
+    }
+});
+
+// checkout modal button
+$(document).on('click','.ab_exit_popup .ab_checkout_btn ',function (event) {
+    console.log('click checkout');
+    $('body').find('.exit_popup_container').remove();
+    $('body').find('.exit_popup_overlay').remove();
+    $('body').find('.basket-page .buttons__checkout .button__inner--buy').trigger('click');
+});
