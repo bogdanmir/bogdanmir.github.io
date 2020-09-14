@@ -25,7 +25,7 @@ $(document).on('change_path',function (event,url) {
     }
 });
 
-$(document).on('click','.header__back,a.item__photo, .button__inner--white',function (event,data) {
+$(document).on('click','.header__back,a.item__photo, .button__inner--white,.header__logo,.basket__text a',function (event,data) {
     window.block_out_links = window.block_out_links || false;
    if(window.block_out_links == true){
         window.abtexitPopup();
@@ -35,10 +35,13 @@ $(document).on('click','.header__back,a.item__photo, .button__inner--white',func
 $(document).on('is_on_top',function (event,data) {
     window.is_top = data;
 });
-$(document).on('click','.main__product .button__inner--buy',function (event) {
+$(document).on('click','.button>.button__inner--buy',function (event) {
+    // alert('Hello');
+    console.log(window.is_top);
+    console.log($('body').find('.info__offers_sizes .size-select .item--selected').length);
     if($('body').find('.info__offers_sizes .size-select .item--selected').length){
         if(window.is_top != false){
-            save_top_product(location.pathname);
+            window.save_top_product(location.pathname);
             console.log('save_top_product');
         }
     }else{

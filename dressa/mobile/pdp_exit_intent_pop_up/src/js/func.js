@@ -8,10 +8,13 @@ function setCookie(name,value,days) {
     var expires = "";
     if (days) {
         var date = new Date();
-        date.setTime(date.getTime() + (days*24*60*60*1000));
+        if(days != 0){
+            date.setTime(date.getTime() + (days*24*60*60*1000));
+        }
         expires = "; expires=" + date.toUTCString();
     }
     document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+    console.log('set Cookie '+name + "=" + (value || ""));
 }
 function getCookie(name) {
     var nameEQ = name + "=";
@@ -21,13 +24,15 @@ function getCookie(name) {
         while (c.charAt(0)==' ') c = c.substring(1,c.length);
         if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
     }
+    console.log('get Cookie '+name);
     return null;
 }
 window.save_top_product = function(url){
+    console.log('save_top_product');
     var product_id  = $.inArray(url,window.top_items);
     var _pot        = getCookie('_pot') || '[]';
     var _pot_json   = JSON.parse(_pot);
-    var is_in_array = $.inArray(product_id,_pot_json);
+    var is_in_array = $.inArray(product_id,_pot_json);save_top_product
     if( product_id !== -1 ){
         if( is_in_array == -1 ){
             _pot_json.push(product_id);
@@ -66,7 +71,7 @@ window.abtipad = function(){
 }
 // popup_already_display
 window.abtpod = function (){
-    setCookie('_pod',true);
+    setCookie('_pod',true,1);
 }
 // exitPopup
 window.abtexitPopup = function () {
