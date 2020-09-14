@@ -1,4 +1,3 @@
-// window.test = true;
 window.is_top = false;
 window.url_is = location.pathname;
 window.top_items = [

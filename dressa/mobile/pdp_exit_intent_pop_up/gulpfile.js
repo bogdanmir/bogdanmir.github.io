@@ -105,7 +105,7 @@ function css_task() {
 }
 function js_task() {
   return gulp.src(path_info.js+"*.js")
-      .pipe(uglify())
+      // .pipe(uglify())
       .pipe(gulp.dest(path_info.pre_build_js));
 }
 function watch_tasks(){
