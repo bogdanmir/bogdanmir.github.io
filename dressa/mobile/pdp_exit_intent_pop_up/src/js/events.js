@@ -10,6 +10,7 @@ $(document).on('url_change',function (event,url) {
     }
     $(document).trigger('change_path',location.pathname);
     console.log('url is '+url);
+    window.abtard = false;
 });
 $(document).on('change_path',function (event,url) {
     console.log('change_path');
@@ -17,19 +18,30 @@ $(document).on('change_path',function (event,url) {
     var is_some_product_in_top = window.abtispit();
     console.log(is_some_product_in_top);
     var is_popup_already_display = window.abtipad();
-    if(url == '/cart' && is_some_product_in_top == true && is_popup_already_display == false){
-        console.log('display popup');
-        window.abtpod();
-        window.block_out_links = true;
-        // window.abtexitPopup();
+    var can_display_popup = false;
+    if(is_some_product_in_top == true && is_popup_already_display == false){
+        switch (url){
+            case '/cart':
+            case '/checkout/customer-information':
+                can_display_popup = true;
+                break;
+        }
     }
-});
+    if(can_display_popup == true){
+        console.log('display popup');
+        window.block_out_links = true;
+    }
 
-$(document).on('click','.header__back,a.item__photo, .button__inner--white,.header__logo,.basket__text a',function (event,data) {
+});
+$(document).on('click','.checkout__text a,.checkout__text--link,.header__back,a.item__photo, .button__inner--white,.header__logo,.basket__text a,.header .link',function (event,data) {
+    console.log('block_out_links')
+    console.log(window.block_out_links);
     window.block_out_links = window.block_out_links || false;
+    console.log(window.block_out_links == true);
    if(window.block_out_links == true){
-        window.abtexitPopup();
-        return false;
+       window.abtexitPopup();
+       console.log('run abtexitPopup');
+       window.abtpod();
    }
 });
 $(document).on('is_on_top',function (event,data) {
@@ -81,7 +93,7 @@ $(document).on('click','.icon__trash',function (event) {
 });
 
 // close modal
-$(document).on('click','.ab_exit_popup .modal_close',function (event) {
+$(document).on('click','.ab_exit_popup .modal_close,.exit_popup_overlay',function (event) {
     console.log('click close modal');
     if($('body').find('.exit_popup_container').length){
         $('body').find('.exit_popup_container').remove();

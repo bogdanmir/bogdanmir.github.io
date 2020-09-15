@@ -27,6 +27,7 @@ function getCookie(name) {
     console.log('get Cookie '+name);
     return null;
 }
+// Remove product from top
 window.abtrpft = function(remove_key){
     var _pot        = getCookie('_pot') || '[]';
     var _pot_json   = JSON.parse(_pot);
@@ -86,14 +87,38 @@ window.abtipad = function(){
 window.abtpod = function (){
     setCookie('_pod',true,1);
 }
+// Save product data
+window.abtspd = function(data){
+    var productdata = JSON.stringify(data);
+    // AB test product data
+    window.localStorage.setItem('_abtpd',productdata);
+    // console.log('Save data',data);
+}
+// Get product data
+window.abtgpd = function(){
+    // AB test product data
+    var productdata = window.localStorage.getItem('_abtpd') || '{}';
+    productdata = JSON.parse(productdata);
+    // console.log('Get data',productdata);
+    return productdata;
+
+}
 // exitPopup
 window.abtexitPopup = function () {
-    var product_img   = $('.basket-page .item .item__photo').html();
-    var product_title = $('.basket-page .item .item__info_title').html();
-
-    var product_size_title  = $('.basket-page .item .select__value').html().substr(0, 8);
-    var product_size_value  = $('.basket-page .item .select__value').html().substr(8, 11);
-
+    console.log('exitPopup');
+    var product_img   = '';
+    var product_title = '';
+    var product_size_title  = '';
+    var product_size_value  = '';
+    var exist_product_data = window.abtgpd();
+    console.log('exist_product_data');
+    var isEmptyObject = $.isEmptyObject(exist_product_data);
+    if(isEmptyObject != true){
+        product_img = exist_product_data.i;
+        product_title = exist_product_data.t;
+        product_size_title = exist_product_data.ts;
+        product_size_value = exist_product_data.tv;
+        window.abtspd(exist_product_data);
     $exit_popup  = '<div class="exit_popup_container">';
     $exit_popup +=    '<div class="ab_exit_popup modal_dialog">';
     $exit_popup +=        '<div class="ab_header"><i class="modal_close"></i></div>';
@@ -102,7 +127,7 @@ window.abtexitPopup = function () {
     $exit_popup +=              '<p class="ab_subtitle">Поспешите завершить покупку!</p>';
     $exit_popup +=              '<div class="ab_item_wrap">';
     $exit_popup +=                  '<div class="ab_item">';
-    $exit_popup +=   					'<div class="product_img">'+product_img+'</div>';
+    $exit_popup +=   					'<div class="product_img"><img class="item__image" src="'+product_img+'" alt="'+product_title+'"></div>';
     $exit_popup +=   					'<div class="product_title"><p>'+product_title+'</p></div>';
     $exit_popup +=   					'<div class="product_size">'+product_size_title+'<span class="product_size_value">'+product_size_value+'</span></div>';
     $exit_popup +=                  '</div>';
@@ -119,7 +144,7 @@ window.abtexitPopup = function () {
     $exit_popup +=           '</div>';
     $exit_popup +=        '</div>';
     $exit_popup +=    '</div>';
-    $exit_popup += '</div>';
+    $exit_popup += '</div><div class="exit_popup_overlay"></div>';
 
     var reg = /(\d{7})(\d{1})/;
     $('.product_size').each(function() {
@@ -130,7 +155,6 @@ window.abtexitPopup = function () {
     });
 
     $('body').append($exit_popup);
-    $('body').append('<div class="exit_popup_overlay"></div>');
 
     // timer
     var seconds = 15*60+1, h,m,s,t;
@@ -141,12 +165,20 @@ window.abtexitPopup = function () {
                 m = (seconds-h*3600)/60 ^ 0,
                 s = seconds-h*3600-m*60,
                 time = (m<10?"0"+m:m)+"  :  "+(s<10?"0"+s:s);
-
-            $("body").find('.ab_exit_popup .ab_timer').text(time);
+            if($("body").find('.ab_exit_popup .ab_timer').length > 0){
+                $("body").find('.ab_exit_popup .ab_timer').text(time);
+                setTimeout(function() {
+                    countDown();
+                }, 1000);
+            }
+        }else{
+            if($('body').find('.exit_popup_container').length){
+                $('body').find('.exit_popup_container').remove();
+                $('body').find('.exit_popup_overlay').remove();
+            }
         }
-        setTimeout(function() {
-            countDown();
-        }, 1000);
     }
-    countDown()
+    countDown();
+
+    }
 }
