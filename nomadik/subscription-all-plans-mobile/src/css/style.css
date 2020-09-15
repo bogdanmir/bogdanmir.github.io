@@ -251,3 +251,15 @@
 .checkout .checkout__form .checkout__title-inner {
   font-size: 12px !important;
   letter-spacing: 3.4px !important; }
+
+.access_checkbox {
+  display: flex;
+  margin: -8px 0 0; }
+  .access_checkbox label {
+    color: #6A6F72;
+    font-size: 15px;
+    line-height: 1.2;
+    margin-left: 6px;
+    margin-bottom: 0; }
+  .access_checkbox .field_access_check {
+    margin: 2px 0 0; }
