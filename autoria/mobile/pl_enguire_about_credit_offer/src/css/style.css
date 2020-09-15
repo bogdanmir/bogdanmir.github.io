@@ -196,3 +196,6 @@
 
 .is-disabled {
   display: none; }
+
+.async-hide {
+  opacity: 0 !important; }

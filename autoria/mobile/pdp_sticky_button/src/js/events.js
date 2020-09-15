@@ -63,7 +63,7 @@ $(document).on('click', '.proposition_button_credit', function () {
 
 		$('.ab_test_modal').prepend('<div class="pdp_modal_backdrop"></div>')
 
-		$('.ab_test_modal .seller-overlay').prepend('<div class="modal_title"><p>Узнать о кредитных предложениях на этот автомобиль можно телефону:</p></div>');
+		$('.ab_test_modal .seller-overlay').prepend('<div class="modal_title"><p>Узнать о кредитных предложениях на этот автомобиль можно по телефону:</p></div>');
 		$('.ab_test_modal .seller-overlay').prepend('<div class="modal_photo-car">'+ img_car +'</div>');
 		$('body').find('.ab_test_modal .rate-call .btn_success').html('Успешный звонок');
 		$('body').find('.ab_test_modal .rate-call .btn_reported').html('Пожаловаться');
