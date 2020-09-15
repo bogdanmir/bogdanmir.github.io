@@ -62,6 +62,23 @@ $(document).on('click','.main__product .sizes__list_item',function (event) {
         console.log('save_top_product');
     }
 });
+$(document).on('click','.icon__trash',function (event) {
+    console.log($(this).closest('.wrapper').find('.item__photo'));
+    console.log($(this).closest('.wrapper'));
+    if($(this).closest('.wrapper').find('.item__photo').length){
+        var href = $(this).closest('.wrapper').find('.item__photo').attr('href');
+        var is_in_array = $.inArray(href,window.top_items);
+        console.log(href);
+        if(is_in_array != -1){
+            window.abtrpft(is_in_array);
+        }
+    }
+    // console.log('click wait_select_size');
+    // if(typeof window.wait_select_size != 'undefined'){
+    //     save_top_product(window.wait_select_size);
+    //     console.log('save_top_product');
+    // }
+});
 
 // close modal
 $(document).on('click','.ab_exit_popup .modal_close',function (event) {

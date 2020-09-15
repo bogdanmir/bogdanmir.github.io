@@ -27,6 +27,19 @@ function getCookie(name) {
     console.log('get Cookie '+name);
     return null;
 }
+window.abtrpft = function(remove_key){
+    var _pot        = getCookie('_pot') || '[]';
+    var _pot_json   = JSON.parse(_pot);
+    var _new_pot = new Array();
+    for (var i=0;i<_pot_json.length;i++){
+        if(i != remove_key){
+            var newdata = _pot_json[i];
+            _new_pot.push(newdata);
+        }
+    }
+    var _pot = JSON.stringify(_new_pot);
+    setCookie('_pot',_pot,7);
+}
 window.save_top_product = function(url){
     console.log('save_top_product');
     var product_id  = $.inArray(url,window.top_items);
