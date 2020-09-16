@@ -86,6 +86,12 @@ $(document).on("click", ".subscribe-box.six-months .add-to-cart, .subscribe-box.
   localStorage.setItem('checkbox', 'true');
 });
 
+$(document).on("click", ".subscribe-box.one-month .add-to-cart", function() {
+  console.log('one-month');
+  localStorage.setItem('checkbox', 'false');
+});
+
+
 function access_checkbox(){
   $('body').find('.checkout_content .registration #registration-email .col-md-12').append('<div class="access_checkbox"><input id="access_check" class="field_access_check" name="access_check" type="checkbox" value="y"><label for="access_check">Send me the access to online-course "Navigation mastery" to this email.</label></div>')
 }
