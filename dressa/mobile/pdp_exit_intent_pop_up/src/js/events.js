@@ -19,13 +19,18 @@ $(document).on('change_path',function (event,url) {
     console.log(is_some_product_in_top);
     var is_popup_already_display = window.abtipad();
     var can_display_popup = false;
+    console.log('main__product',$('html').find('.main__product').length);
     if(is_some_product_in_top == true && is_popup_already_display == false){
-        switch (url){
-            case '/cart':
-            case '/checkout/customer-information':
-                can_display_popup = true;
-                break;
-        }
+        // switch (url){
+        //     case '/cart':
+        //     case '/checkout/customer-information':
+        console.log($('html').find('.main__product'));
+        //     if($('html').find('.main__product').length){
+        //
+        //     }
+                // can_display_popup = true;
+                // break;
+        // }
     }
     if(can_display_popup == true){
         console.log('display popup');
