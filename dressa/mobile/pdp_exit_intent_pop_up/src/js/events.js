@@ -172,8 +172,10 @@ $(document).on('click','.ab_exit_popup .ab_checkout_btn ',function (event) {
     console.log('click checkout');
     $('body').find('.exit_popup_container').remove();
     $('body').find('.exit_popup_overlay').remove();
-    $('body').find('.basket-page .buttons__checkout .button__inner--buy').trigger('click');
-    $('body').find('.main__product .button__confirm .button__inner').trigger('click');
+    // $('body').find('.basket-page .buttons__checkout .button__inner--buy').trigger('click');
+    // $('body').find('.main__product .button__confirm .button__inner').trigger('click');
+    // $('body').find('.main__product .button__buy .button__inner').trigger('click');
+    location.href = "https://dressa.com.ua/cart";
 
     // Click on button 'Оформить заказ' in pop-up
     window.dataLayer = window.dataLayer || [];
