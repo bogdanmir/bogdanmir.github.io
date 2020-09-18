@@ -56,11 +56,12 @@ window.save_top_product = function(url){
         }else{
             console.log('already added '+url);
         }
-    }else{
-        console.log('is not on top 25 '+url);
+    }
+    if(window.abtispstsd(url) == false){
+        window.abtsptsd(url);
     }
 }
-function is_product_in_top(url){
+window.is_product_in_top = function (url){
     console.log('url '+url);
     var product_id  = $.inArray(url,window.top_items);
     console.log('product_id '+product_id);
@@ -73,7 +74,7 @@ function is_product_in_top(url){
 window.abtispit = function(){
     var _pot        = getCookie('_pot') || '[]';
     var _pot_json   = JSON.parse(_pot);
-    if(_pot_json.length > 0){
+    if( _pot_json.length > 0 ){
         return true;
     }
     return false;
@@ -83,7 +84,7 @@ window.abtipad = function(){
     var _pod        = getCookie('_pod') || false;
     return _pod;
 }
-// popup_already_display
+// Set popup_already_display
 window.abtpod = function (){
     setCookie('_pod',true,1);
 }
@@ -101,21 +102,43 @@ window.abtgpd = function(){
     productdata = JSON.parse(productdata);
     // console.log('Get data',productdata);
     return productdata;
-
+}
+// Get products data
+window.abtgptsd = function(){
+    // AB test products data
+    var productdata = window.localStorage.getItem('_abtptsd') || '[]';
+    productdata = JSON.parse(productdata);
+    return productdata;
+}
+// is product in products data
+window.abtispstsd = function(url){
+    // AB test products data
+    var productdata = window.localStorage.getItem('_abtptsd') || '[]';
+    productdata = JSON.parse(productdata);
+    var product_id  = $.inArray(url,productdata);
+    return (product_id > -1);
+}
+// Save products data
+window.abtsptsd = function(data){
+    var productdata = window.localStorage.getItem('_abtptsd') || '[]';
+    productdata = JSON.parse(productdata);
+    productdata.push(data);
+    var save_productdata = JSON.stringify(productdata);
+    window.localStorage.setItem('_abtptsd',save_productdata);
 }
 // exitPopup
 window.abtexitPopup = function () {
     console.log('exitPopup');
-    var product_img   = '';
-    var product_title = '';
-    var product_size_title  = '';
-    var product_size_value  = '';
+    var product_img        = '';
+    var product_title      = '';
+    var product_size_title = '';
+    var product_size_value = '';
     var exist_product_data = window.abtgpd();
     console.log('exist_product_data');
     var isEmptyObject = $.isEmptyObject(exist_product_data);
     if(isEmptyObject != true){
-        product_img = exist_product_data.i;
-        product_title = exist_product_data.t;
+        product_img        = exist_product_data.i;
+        product_title      = exist_product_data.t;
         product_size_title = exist_product_data.ts;
         product_size_value = exist_product_data.tv;
         window.abtspd(exist_product_data);
@@ -129,7 +152,9 @@ window.abtexitPopup = function () {
     $exit_popup +=                  '<div class="ab_item">';
     $exit_popup +=   					'<div class="product_img"><img class="item__image" src="'+product_img+'" alt="'+product_title+'"></div>';
     $exit_popup +=   					'<div class="product_title"><p>'+product_title+'</p></div>';
-    $exit_popup +=   					'<div class="product_size">'+product_size_title+'<span class="product_size_value">'+product_size_value+'</span></div>';
+    if(product_size_title != ''){
+        $exit_popup +=   					'<div class="product_size">'+product_size_title+'<span class="product_size_value">'+product_size_value+'</span></div>';
+    }
     $exit_popup +=                  '</div>';
     $exit_popup +=              '</div>';
     $exit_popup +=           '</div>';
@@ -180,5 +205,27 @@ window.abtexitPopup = function () {
     }
     countDown();
 
+    }
+}
+
+// trigger display popup
+window.abttdp = function (event,data) {
+    window.abtexitPopup();
+    console.log('run abtexitPopup');
+    window.abtpod();
+}
+window.saveproduct_data = function(size){
+    console.log('saveproduct_data',size);
+    var image = $('body').find('.swiper-wrapper .swiper-slide:eq(0) img');
+    if(image.length){
+        var imagesrc = image.attr('src');
+        var title_text = $('.info__title_text').text();
+        var exist_product_data = {
+            'i'  : imagesrc,
+            't'  : title_text,
+            'ts' : 'Размер:',
+            'tv' : size,
+        }
+        window.abtspd(exist_product_data);
     }
 }
