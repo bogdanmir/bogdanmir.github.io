@@ -173,6 +173,7 @@ $(document).on('click','.ab_exit_popup .ab_checkout_btn ',function (event) {
     $('body').find('.exit_popup_container').remove();
     $('body').find('.exit_popup_overlay').remove();
     $('body').find('.basket-page .buttons__checkout .button__inner--buy').trigger('click');
+    $('body').find('.main__product .button__confirm .button__inner').trigger('click');
 
     // Click on button 'Оформить заказ' in pop-up
     window.dataLayer = window.dataLayer || [];
