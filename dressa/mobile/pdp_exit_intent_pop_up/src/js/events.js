@@ -3,6 +3,29 @@
 // });
 // https://dressa.com.ua/c/zhenskaia-odezhda-bolshikh-razmerov/platia-bolshikh-razmerov/f/tsvet/zhieltyi
 
+// Hotjar trigger to record video sessions
+(function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1914694,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+window.hj = window.hj || function(){(hj.q = hj.q || []).push(arguments)};
+try {
+        hj('trigger', 'PDP_exit_intent_pop_up');
+}
+catch(e) {}
+
+// Activation of the alt variation
+window.dataLayer = window.dataLayer || [];
+dataLayer.push({
+        'event': 'autoEvent',
+        'gtmUaEventCategory': 'PDP exit intent pop up',
+        'gtmUaEventAction': 'loaded'
+});
+
 $(document).on('url_change',function (event,url) {
     var product_id = $.inArray(url,window.top_items);
     if(product_id != -1){
@@ -104,13 +127,46 @@ $(document).on('click','.ab_exit_popup .modal_close,.exit_popup_overlay',functio
     }
 });
 
+
+// Close pop-up with click on X icon
+$(document).on('click','.ab_exit_popup .modal_close',function (event) {
+    console.log('Close pop-up with click on X icon');
+    window.dataLayer = window.dataLayer || [];
+	dataLayer.push({
+	        'event': 'autoEvent',
+	        'gtmUaEventCategory': 'PDP exit intent pop up',
+	        'gtmUaEventAction': 'close popup - X'
+	});
+});
+
+// Close pop-up with click on the background
+$(document).on('click','.exit_popup_overlay',function (event) {
+    console.log('Close pop-up with click on the background');
+    window.dataLayer = window.dataLayer || [];
+	dataLayer.push({
+	        'event': 'autoEvent',
+	        'gtmUaEventCategory': 'PDP exit intent pop up',
+	        'gtmUaEventAction': 'close popup - X'
+	});
+});
+
 // checkout modal button
 $(document).on('click','.ab_exit_popup .ab_checkout_btn ',function (event) {
     console.log('click checkout');
     $('body').find('.exit_popup_container').remove();
     $('body').find('.exit_popup_overlay').remove();
     $('body').find('.basket-page .buttons__checkout .button__inner--buy').trigger('click');
+
+    // Click on button 'Оформить заказ' in pop-up
+    window.dataLayer = window.dataLayer || [];
+	dataLayer.push({
+	        'event': 'autoEvent',
+	        'gtmUaEventCategory': 'PDP exit intent pop up',
+	        'gtmUaEventAction': 'click on Complete order'
+	});
 });
+
+
 var old_scroll,scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 $(window).scroll(function(e){
     scrollTop = window.pageYOffset || document.documentElement.scrollTop;

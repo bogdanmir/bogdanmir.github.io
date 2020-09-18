@@ -213,6 +213,14 @@ window.abttdp = function (event,data) {
     window.abtexitPopup();
     console.log('run abtexitPopup');
     window.abtpod();
+
+    // View pop-up
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+            'event': 'autoEvent',
+            'gtmUaEventCategory': 'PDP exit intent pop up',
+            'gtmUaEventAction': 'view popup'
+    });
 }
 window.saveproduct_data = function(size){
     console.log('saveproduct_data',size);
