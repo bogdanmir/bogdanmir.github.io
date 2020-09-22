@@ -199,3 +199,6 @@
 
 .async-hide {
   opacity: 0 !important; }
+
+.thankyou .modal_photo-car {
+  display: none; }
