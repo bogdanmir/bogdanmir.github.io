@@ -27,8 +27,12 @@
 }
 .proposition_lead {
 	.proposition_button {
+		&:first-child {
+			display: none;
+		}
 		@media (min-width: 360px){
 			width: 120px;
+			max-width: 120px;
 		}
 	}
 }
@@ -261,4 +265,7 @@
 	.modal_photo-car {
 		display: none;
 	}
+}
+.hide_modal {
+	display: none !important;
 }

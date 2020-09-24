@@ -40,7 +40,8 @@ $('body').on('click', '.proposition_area .button--green', function () {
 });
 $('body').on('click', '.proposition_button_credit', function () {
 
-	$(this).closest('.proposition_lead').find('.proposition_button .button').trigger('click');
+	$(this).closest('.proposition_lead').find('.button--credit').trigger('click');
+	// $(this).closest('.proposition_lead').find('.proposition_button .button').trigger('click');
 
 	window.dataLayer = window.dataLayer || [];
 	dataLayer.push({
@@ -68,17 +69,16 @@ $('body').on('click', '.proposition_button_credit', function () {
 		clearInterval(window.display_info);
 	}
 
+	
+	var img_car = window.element_in_popup.closest('.proposition').find('.proposition_photo .photo-car:first-child picture').html();
+	
 	window.display_info = setInterval(function() {
-
-		var img_car = window.element_in_popup.closest('.proposition').find('.proposition_photo .photo-car:first-child picture').html();
 
 		if( $('.ab_test_modal').length == 0 ) {
 			$('body').find('.react_modal').addClass('ab_test_modal');
 		}
 
-
 		if($('.ab_test_modal').length) {
-
 
 			if( $('.ab_test_modal .modal_title').length == 0 ) {
 				$('.ab_test_modal .phones_modal__item').prepend('<div class="modal_title"><p>Узнать о кредитных предложениях на этот автомобиль можно по телефону:</p></div>');
@@ -118,6 +118,7 @@ $('body').on('click', '.react_modal__close, .react_modal__backdrop', function ()
 	window.customer_click = false;
 
 	$('body').find('.react_modal').removeClass('ab_test_modal');
+	$('body').find('.react_modal').addClass('hide_modal');
 
 	$('.react_modal .modal_photo-car').remove();
 	$('.react_modal .modal_title').remove();
