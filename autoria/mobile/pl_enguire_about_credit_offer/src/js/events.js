@@ -23,7 +23,7 @@ catch(e) {}
 		h.end = null
 	}, c)
 	h.timeout = c
-})(window, document.documentElement, 'async-hide', 'dataLayer', 4000, {
+})(window, document.documentElement, 'async-hide', 'dataLayer', 0, {
 	'GTM-P46SHG8': true,
 })
 window.dataLayer = window.dataLayer || [];
