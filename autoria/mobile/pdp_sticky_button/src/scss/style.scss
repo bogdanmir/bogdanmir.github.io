@@ -35,75 +35,114 @@
 	}
 }
 .ab_test_modal {
-	// background: rgba(65, 64, 66, 0.5);
-	background: transparent;
-	.seller-overlay {
-		background-color: #fff;
-		margin: 0 auto;
-		top: 45px;
-		bottom: auto;
-		max-height: calc(100vh - 60px);
-		width: calc(100% - 28px)!important;
+	background: rgba(65,64,66,.5);
+	.react_modal__backdrop {
+		position: fixed;
+		top: 0;
 		left: 0;
 		right: 0;
+		bottom: 0;
+		z-index: 99;
+	}
+
+	.react_modal__container {
+		width: calc(100% - 28px)!important;
+		margin: 0 auto;
+		top: 15px;
+	}
+	.react_modal__header {
+		font-size: 0;
+		z-index: 999;
+	}
+	.react_modal__close {
+		right: 0;
+		left: auto;
+		font-size: 46px;
+		padding: 10px 0;
+		color: #fff;
+		&:before {
+			display: none;
+		}
+	}
+	.react_modal__body {
+		background-color: #fff;
 		padding: 14px;
-		overflow-y: auto;
-		z-index: 1001;
-		.modal_photo-car {
-			max-height: 228px;
-			overflow: hidden;
-		}
-		.phone_show_link {
-			color: #3C9806;
-			font-size: 30px;
-			font-weight: 700;
-		}
+		z-index: 999;
 	}
-	&.seller-contact {
-		.optionsset {
-			margin: 0;
-		}
-		.rate-call {
-			label {
-				display: none;
-			}
-			.boxed {
-				width: calc(50% - 5px);
-				margin: 0;
-				.button-option {
-					background-color: #fff;
-					font-size: 13px;
-					line-height: 35px;
-					width: 100%;
-					&.btn_success {
-						border: 1px solid #3c9806;
-						color: #3c9806;
-					}
-					&.btn_reported {
-						border: 1px solid #db5c4c;
-						color: #db5c4c;
-					}
-				}
-				& + .boxed {
-					margin-left: 10px;
-				}
-			}
-		}
+	.phones_modal__item {
+		text-align: center;
 	}
-	#mobile-cancel-call {
+	.be_carefull {
 		display: none;
 	}
-	.mobile-cancel-call-2 {
-		position: absolute;
-		top: 7px;
-		z-index: 999;
-		right: 0;
-		width: 40px;
-		height: 40px;
-		font-size: 46px;
-		background: transparent;
-		color: #fff;
-	}
+
+	// .seller-overlay {
+	// 	background-color: #fff;
+	// 	margin: 0 auto;
+	// 	top: 45px;
+	// 	bottom: auto;
+	// 	max-height: calc(100vh - 60px);
+	// 	width: calc(100% - 28px)!important;
+	// 	left: 0;
+	// 	right: 0;
+	// 	padding: 14px;
+	// 	overflow-y: auto;
+	// 	z-index: 1001;
+	// 	.modal_photo-car {
+	// 		max-height: 228px;
+	// 		overflow: hidden;
+	// 	}
+	// 	.phone_show_link {
+	// 		color: #3C9806;
+	// 		font-size: 30px;
+	// 		font-weight: 700;
+	// 	}
+	// }
+	// &.seller-contact {
+	// 	.optionsset {
+	// 		margin: 0;
+	// 	}
+	// 	.rate-call {
+	// 		label {
+	// 			display: none;
+	// 		}
+	// 		.boxed {
+	// 			width: calc(50% - 5px);
+	// 			margin: 0;
+	// 			.button-option {
+	// 				background-color: #fff;
+	// 				font-size: 13px;
+	// 				line-height: 35px;
+	// 				width: 100%;
+	// 				&.btn_success {
+	// 					border: 1px solid #3c9806;
+	// 					color: #3c9806;
+	// 				}
+	// 				&.btn_reported {
+	// 					border: 1px solid #db5c4c;
+	// 					color: #db5c4c;
+	// 				}
+	// 			}
+	// 			& + .boxed {
+	// 				margin-left: 10px;
+	// 			}
+	// 		}
+	// 	}
+	// }
+	// #mobile-cancel-call {
+	// 	display: none;
+	// }
+	// .mobile-cancel-call-2 {
+	// 	position: absolute;
+	// 	top: 7px;
+	// 	z-index: 999;
+	// 	right: 0;
+	// 	width: 40px;
+	// 	height: 40px;
+	// 	font-size: 46px;
+	// 	background: transparent;
+	// 	color: #fff;
+	// }
 	.modal_title {
 		color: #414042;
 		font-size: 17px;
@@ -131,10 +170,10 @@
 			top: 20px;
 		}
 		&:before {
-			left: 87px;
+			left: calc(50% - 73px);
 		}
 		&:after {
-			right: 87px;
+			right: calc(50% - 73px);
 		}
 		p {
 			margin: 0; 
@@ -249,7 +288,27 @@
 			width: 100%;
 		}
 	}
+
+	.show-phone {
+		.btn-border {
+			margin: 0;
+			font-size: 13px;
+			padding: 8px 10px;
+			width: 100%;
+			&+.btn-border {
+				margin: 10px 0 0;
+				@media (min-width: 360px) {
+					margin: 0 0 0 10px;
+				}
+			}
+			@media (min-width: 360px) {
+				width: calc(50% - 5px);
+			}
+		}
+	}
+
 }
+
 .thx_wrap {
 	padding: 0 0 17px;
 }
@@ -268,13 +327,16 @@
 .pdp_modal_backdrop {
 	background: rgba(65,64,66,.5);
 	position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    overflow: auto;
-    // z-index: 1000;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow: auto;
+	// z-index: 1000;
 }
 .async-hide {
 	opacity: 0 !important;
+}
+.hide_modal {
+	display: none;
 }

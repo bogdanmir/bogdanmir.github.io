@@ -30,58 +30,37 @@
   border-bottom: 1px solid #e0e3e4; }
 
 .ab_test_modal {
-  background: transparent; }
-  .ab_test_modal .seller-overlay {
-    background-color: #fff;
-    margin: 0 auto;
-    top: 45px;
-    bottom: auto;
-    max-height: calc(100vh - 60px);
-    width: calc(100% - 28px) !important;
+  background: rgba(65, 64, 66, 0.5); }
+  .ab_test_modal .react_modal__backdrop {
+    position: fixed;
+    top: 0;
     left: 0;
     right: 0;
-    padding: 14px;
-    overflow-y: auto;
-    z-index: 1001; }
-    .ab_test_modal .seller-overlay .modal_photo-car {
-      max-height: 228px;
-      overflow: hidden; }
-    .ab_test_modal .seller-overlay .phone_show_link {
-      color: #3C9806;
-      font-size: 30px;
-      font-weight: 700; }
-  .ab_test_modal.seller-contact .optionsset {
-    margin: 0; }
-  .ab_test_modal.seller-contact .rate-call label {
-    display: none; }
-  .ab_test_modal.seller-contact .rate-call .boxed {
-    width: calc(50% - 5px);
-    margin: 0; }
-    .ab_test_modal.seller-contact .rate-call .boxed .button-option {
-      background-color: #fff;
-      font-size: 13px;
-      line-height: 35px;
-      width: 100%; }
-      .ab_test_modal.seller-contact .rate-call .boxed .button-option.btn_success {
-        border: 1px solid #3c9806;
-        color: #3c9806; }
-      .ab_test_modal.seller-contact .rate-call .boxed .button-option.btn_reported {
-        border: 1px solid #db5c4c;
-        color: #db5c4c; }
-    .ab_test_modal.seller-contact .rate-call .boxed + .boxed {
-      margin-left: 10px; }
-  .ab_test_modal #mobile-cancel-call {
-    display: none; }
-  .ab_test_modal .mobile-cancel-call-2 {
-    position: absolute;
-    top: 7px;
-    z-index: 999;
+    bottom: 0;
+    z-index: 99; }
+  .ab_test_modal .react_modal__container {
+    width: calc(100% - 28px) !important;
+    margin: 0 auto;
+    top: 15px; }
+  .ab_test_modal .react_modal__header {
+    font-size: 0;
+    z-index: 999; }
+  .ab_test_modal .react_modal__close {
     right: 0;
-    width: 40px;
-    height: 40px;
+    left: auto;
     font-size: 46px;
-    background: transparent;
+    padding: 10px 0;
     color: #fff; }
+    .ab_test_modal .react_modal__close:before {
+      display: none; }
+  .ab_test_modal .react_modal__body {
+    background-color: #fff;
+    padding: 14px;
+    z-index: 999; }
+  .ab_test_modal .phones_modal__item {
+    text-align: center; }
+  .ab_test_modal .be_carefull {
+    display: none; }
   .ab_test_modal .modal_title {
     color: #414042;
     font-size: 17px;
@@ -105,9 +84,9 @@
       position: absolute;
       top: 20px; }
     .ab_test_modal .text_devider:before {
-      left: 87px; }
+      left: calc(50% - 73px); }
     .ab_test_modal .text_devider:after {
-      right: 87px; }
+      right: calc(50% - 73px); }
     .ab_test_modal .text_devider p {
       margin: 0; }
   .ab_test_modal .sub_title {
@@ -195,6 +174,19 @@
         border-radius: 5px;
         margin: 10px 0 0;
         width: 100%; } }
+  .ab_test_modal .show-phone .btn-border {
+    margin: 0;
+    font-size: 13px;
+    padding: 8px 10px;
+    width: 100%; }
+    .ab_test_modal .show-phone .btn-border + .btn-border {
+      margin: 10px 0 0; }
+      @media (min-width: 360px) {
+        .ab_test_modal .show-phone .btn-border + .btn-border {
+          margin: 0 0 0 10px; } }
+    @media (min-width: 360px) {
+      .ab_test_modal .show-phone .btn-border {
+        width: calc(50% - 5px); } }
 
 .thx_wrap {
   padding: 0 0 17px; }
@@ -220,3 +212,6 @@
 
 .async-hide {
   opacity: 0 !important; }
+
+.hide_modal {
+  display: none; }
