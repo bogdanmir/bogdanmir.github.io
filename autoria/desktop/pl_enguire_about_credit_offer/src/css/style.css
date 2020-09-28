@@ -31,6 +31,9 @@
   text-align: center;
   margin: 0 3px 0 0;
   width: 120px; }
+  .proposition_area .proposition_button_credit.v-2, .proposition_area .proposition_button_credit.v-3 {
+    font-size: 11px;
+    padding: 3px 2px; }
   .proposition_area .proposition_button_credit .size13 {
     font-size: 12px; }
 

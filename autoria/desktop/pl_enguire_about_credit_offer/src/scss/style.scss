@@ -42,6 +42,11 @@
 		text-align: center;
 		margin: 0 3px 0 0;
 		width: 120px;
+		&.v-2,
+		&.v-3 {
+			font-size: 11px;
+			padding: 3px 2px;
+		}
 		.size13 {
 			font-size: 12px;
 		}
