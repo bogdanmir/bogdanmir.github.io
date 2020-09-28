@@ -12,6 +12,9 @@
 			}
 			.button {
 				padding: 9px 0;
+				.size13 {
+					font-size: 12px;
+				}
 			}
 			.svg {
 				margin-right: 3px;
@@ -73,7 +76,7 @@
 		top: 23px;
  		right: 5px;
 		left: auto;
-		font-size: 30px;
+		font-size: 28px;
 		padding: 10px 0;
 		color: #A0A0A0;
 		text-shadow: none;
@@ -87,8 +90,8 @@
 		display: flex;
 	}
 	.modal_photo-car {
-		display: flex;
-		align-items: center;
+		// display: flex;
+		// align-items: center;
 		width: 432px;
 		img {
 			width: 100%;
@@ -121,7 +124,7 @@
 		color: #414042;
 		font-size: 16px;
 		position: relative;
-		padding: 10px 0 9px;
+		padding: 15px 0;
 		&:before,
 		&:after {
 			content: '';
@@ -129,7 +132,7 @@
 			height: 1px;
 			width: 40px;
 			position: absolute;
-			top: 20px;
+			top: 25px;
 		}
 		&:before {
 			left: calc(50% - 73px);
@@ -165,8 +168,8 @@
 		position: relative;
 		display: flex;
 		flex-wrap: wrap;
-		padding: 0 0 12px;
-		margin: 0 0 12px;
+		padding: 0 0 20px;
+		margin: 0 0 15px;
 		&.error {
 			.input_number {
 				border: 1px solid #db5c4c;

@@ -10,6 +10,8 @@
         max-width: 120px; } }
     .proposition_area .proposition_lead .proposition_button .button {
       padding: 9px 0; }
+      .proposition_area .proposition_lead .proposition_button .button .size13 {
+        font-size: 12px; }
     .proposition_area .proposition_lead .proposition_button .svg {
       margin-right: 3px;
       font-size: 11px; }
@@ -52,7 +54,7 @@
     top: 23px;
     right: 5px;
     left: auto;
-    font-size: 30px;
+    font-size: 28px;
     padding: 10px 0;
     color: #A0A0A0;
     text-shadow: none; }
@@ -63,8 +65,6 @@
     padding: 30px;
     display: flex; }
   .ab_test_modal .modal_photo-car {
-    display: flex;
-    align-items: center;
     width: 432px; }
     .ab_test_modal .modal_photo-car img {
       width: 100%; }
@@ -89,14 +89,14 @@
     color: #414042;
     font-size: 16px;
     position: relative;
-    padding: 10px 0 9px; }
+    padding: 15px 0; }
     .ab_test_modal .text_devider:before, .ab_test_modal .text_devider:after {
       content: '';
       background-color: #9B9B9B;
       height: 1px;
       width: 40px;
       position: absolute;
-      top: 20px; }
+      top: 25px; }
     .ab_test_modal .text_devider:before {
       left: calc(50% - 73px); }
     .ab_test_modal .text_devider:after {
@@ -123,8 +123,8 @@
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    padding: 0 0 12px;
-    margin: 0 0 12px; }
+    padding: 0 0 20px;
+    margin: 0 0 15px; }
     .ab_test_modal .modal_form.error .input_number {
       border: 1px solid #db5c4c;
       border-right: 0;
