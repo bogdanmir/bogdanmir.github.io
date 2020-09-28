@@ -2,15 +2,18 @@
   "languages" : {
     "v1" : {
         "credit_text" : "Узнать о кредитах на это авто",
-        "credit_class": "v-1"
+        "credit_class": "v-1",
+        "events_label": "Test B: Узнать о кредитах на это авто"
     },
     "v2" : {
         "credit_text" : "Узнать об условиях кредитования",
-        "credit_class": "v-2"
+        "credit_class": "v-2",
+        "events_label": "Test С: Узнать об условиях кредитования"
     },
     "v3" : {
         "credit_text" : "Узнать об условиях рассрочки",
-        "credit_class": "v-3"
+        "credit_class": "v-3",
+        "events_label": "Test D: Узнать об условиях рассрочки"
     }
   }
 }

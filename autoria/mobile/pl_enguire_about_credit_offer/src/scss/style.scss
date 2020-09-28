@@ -20,9 +20,11 @@
 	padding: 11px 2px;
 	text-align: center;
 	margin: 0 0 10px;
-	@media (min-width: 360px){
+	width: 100%;
+	@media (min-width: 370px){
 		width: calc(100% - 128px);
 		margin: 0;
+		font-size: 12px;
 	}
 }
 .proposition_lead {
@@ -30,9 +32,31 @@
 		&:first-child {
 			display: none;
 		}
-		@media (min-width: 360px){
+		width: 100%;
+		max-width: 100%;
+		@media (min-width: 370px){
 			width: 120px;
 			max-width: 120px;
+		}
+		.svg {
+			margin-right: 3px;
+			font-size: 14px;
+		}
+	}
+}
+
+.proposition_lead--buttons {
+	.proposition_button:last-of-type {
+		width: 100%;
+		max-width: 100%;
+		@media (min-width: 370px){
+			width: 120px;
+			max-width: 120px;
+		}
+		.size13 {
+			@media (min-width: 370px){
+				font-size: 12px;
+			}
 		}
 	}
 }
@@ -223,12 +247,12 @@
 			font-size: 13px;
 			padding: 8px 10px;
 			width: 100%;
-			@media (min-width: 360px){
+			@media (min-width: 370px){
 				width: calc(50% - 5px);
 			}
 			& + .btn-border {
 				margin: 10px 0 0;
-				@media (min-width: 360px){
+				@media (min-width: 370px){
 					margin: 0 0 0 10px;
 				}
 			}

@@ -1,34 +1,55 @@
 .proposition_area {
 	.proposition_lead {
-		flex-wrap: wrap;
+		flex-wrap: nowrap;
+		.proposition_button {
+			width: 90px;
+			&:first-child {
+				display: none;
+			}
+			@media (min-width: 360px){
+				width: 120px;
+				max-width: 120px;
+			}
+			.button {
+				padding: 9px 0;
+			}
+			.svg {
+				margin-right: 3px;
+				font-size: 11px;
+			}
+		}
 	}
 	.proposition_price {
-		width: 100%;
-		position: relative;
-		margin-bottom: 15px;
-		padding: 10px 0 10px 0;
-		border-bottom: 1px solid #e0e3e4;
+		width: calc(100% - 213px);
+	// 	width: 100%;
+	// 	position: relative;
+	// 	margin-bottom: 15px;
+	// 	padding: 10px 0 10px 0;
+	// 	border-bottom: 1px solid #e0e3e4;
+	}
+	.proposition_button_credit {
+		color: #79BE00;
+		cursor: pointer;
+		font-weight: 700;
+		font-size: 12px;
+		border: 1px solid #79BE00;
+		border-radius: 5px;
+		background: rgba(121, 190, 0, 0.07);
+		padding: 2px 2px;
+		text-align: center;
+		margin: 0 3px 0 0;
+		width: 120px;
+		.size13 {
+			font-size: 12px;
+		}
 	}
 }
-.proposition_button_credit {
-	color: #79BE00;
-	font-weight: 700;
-	font-size: 12px;
-	border: 1px solid #79BE00;
-	border-radius: 5px;
-	background: rgba(121, 190, 0, 0.07);
-	padding: 11px 2px;
-	text-align: center;
-	margin: 0 0 10px;
-	@media (min-width: 360px){
-		width: calc(100% - 128px);
-		margin: 0;
-	}
-}
-.proposition_lead {
+
+
+.proposition_lead--buttons {
 	.proposition_button {
-		@media (min-width: 360px){
-			width: 120px;
+		&+.proposition_button {
+			width: 90px;
 		}
 	}
 }
@@ -36,39 +57,59 @@
 .ab_test_modal {
 	background: rgba(65, 64, 66, 0.5);
 	.react_modal__container {
-		width: calc(100% - 28px)!important;
+		border: 0;
 		margin: 0 auto;
 		top: 15px;
+		background: transparent;
+		box-shadow: none;
+		width: calc(100% - 28px)!important;
+		max-width: 880px !important;
 	}
 	.react_modal__header {
 		font-size: 0;
+		z-index: 9;
 	}
 	.react_modal__close {
-		right: 0;
+		top: 23px;
+ 		right: 5px;
 		left: auto;
-		font-size: 46px;
+		font-size: 30px;
 		padding: 10px 0;
-		color: #fff;
+		color: #A0A0A0;
+		text-shadow: none;
 		&:before {
 			display: none;
 		}
 	}
 	.react_modal__body {
 		background-color: #fff;
-		padding: 14px;
-		z-index: 999;
+		padding: 30px;
+		display: flex;
 	}
+	.modal_photo-car {
+		display: flex;
+		align-items: center;
+		width: 432px;
+		img {
+			width: 100%;
+		}
+	}
+	.phones_modal_wrap {
+		padding: 0 0 0 25px;
+		width: calc(100% - 432px);
+	}
+
 	.phones_modal__item {
 		text-align: center;
 	}
 	.modal_title {
 		color: #414042;
-		font-size: 17px;
 		font-weight: 700;
+		padding: 0 0 15px;
+		line-height: 1.2;
+		font-size: 20px;
 		margin-left: -10px;
 		margin-right: -10px;
-		padding: 24px 0 11px;
-		line-height: 1.2;
 		p {
 			margin: 0; 
 		}
@@ -91,11 +132,9 @@
 			top: 20px;
 		}
 		&:before {
-			// left: 87px;
 			left: calc(50% - 73px);
 		}
 		&:after {
-			// right: 87px;
 			right: calc(50% - 73px);
 		}
 		p {
@@ -104,7 +143,7 @@
 	}
 	.sub_title {
 		color: #414042;
-		font-size: 17px;
+		font-size: 18px;
 		font-weight: 700;
 		p {
 			margin: 0; 
@@ -115,6 +154,8 @@
 		font-size: 16px;
 		padding: 4px 0 10px;
 		line-height: 1.2;
+		margin-left: -10px;
+		margin-right: -10px;
 		p {
 			margin: 0; 
 		}
@@ -126,9 +167,6 @@
 		flex-wrap: wrap;
 		padding: 0 0 12px;
 		margin: 0 0 12px;
-		// @media (max-width: 359px){
-		// 	flex-wrap: wrap;
-		// }
 		&.error {
 			.input_number {
 				border: 1px solid #db5c4c;
@@ -230,14 +268,14 @@
 			}
 		}
 	}
-	.react_modal__backdrop {
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		z-index: 99;
-	}
+	// .react_modal__backdrop {
+	// 	position: fixed;
+	// 	top: 0;
+	// 	left: 0;
+	// 	right: 0;
+	// 	bottom: 0;
+	// 	z-index: 99;
+	// }
 }
 .thx_wrap {
 	padding: 0 0 17px;
@@ -245,7 +283,8 @@
 .thx_holder {
 	text-align: center;
 	.modal_title {
-		padding: 16px 0 11px;
+		padding: 0;
+		font-size: 20px;
 	}
 	.info_text {
 		padding: 4px 0 28px;
@@ -253,4 +292,25 @@
 }
 .is-disabled {
 	display: none;
+}
+.async-hide {
+	opacity: 0 !important;
+}
+.thankyou {
+	.react_modal__container{
+		max-width: 418px!important;
+	}
+	.react_modal__body {
+		padding: 30px 30px 38px;
+	}
+	.phones_modal_wrap {
+		padding: 0;
+		width: 100%;
+	}
+	.modal_photo-car {
+		display: none;
+	}
+}
+.hide_modal {
+	display: none !important;
 }
