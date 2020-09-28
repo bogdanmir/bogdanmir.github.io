@@ -2,14 +2,16 @@
   background: #db5c4c14;
   border-radius: 3px;
   color: #414042;
-  padding: 10px 17px;
-  padding: 10px 17px 15px; }
+  padding: 10px 17px 15px;
+  margin: 0 0 22px;
+  display: flex;
+  align-items: center; }
   .high-demand-wrap .title-holder {
     display: flex; }
   .high-demand-wrap .high-demand-text {
-    font-size: 16px;
+    font-size: 22px;
     font-weight: 700;
-    margin: 4px 0 8px 11px;
+    margin: 4px 0 7px 11px;
     max-width: 250px;
     line-height: 1.2; }
   .high-demand-wrap .high-demand-link {
@@ -23,89 +25,74 @@
     text-align: center; }
 
 .ab_test_modal {
-  background: transparent; }
-  .ab_test_modal .seller-overlay {
-    background-color: #fff;
+  background: rgba(65, 64, 66, 0.5); }
+  .ab_test_modal .react_modal__container {
+    border: 0;
     margin: 0 auto;
-    top: 45px;
-    bottom: auto;
-    max-height: calc(100vh - 60px);
-    width: calc(100% - 28px) !important;
-    left: 0;
-    right: 0;
-    padding: 14px;
-    overflow-y: auto;
-    z-index: 1001; }
-    .ab_test_modal .seller-overlay .modal_photo-car {
-      max-height: 228px;
-      overflow: hidden; }
-    .ab_test_modal .seller-overlay .phone_show_link {
-      color: #3C9806;
-      font-size: 30px;
-      font-weight: 700; }
-  .ab_test_modal.seller-contact .optionsset {
-    margin: 0; }
-  .ab_test_modal.seller-contact .rate-call label {
-    display: none; }
-  .ab_test_modal.seller-contact .rate-call .boxed {
-    width: calc(50% - 5px);
-    margin: 0; }
-    .ab_test_modal.seller-contact .rate-call .boxed .button-option {
-      background-color: #fff;
-      font-size: 13px;
-      line-height: 35px;
-      width: 100%; }
-      .ab_test_modal.seller-contact .rate-call .boxed .button-option.btn_success {
-        border: 1px solid #3c9806;
-        color: #3c9806; }
-      .ab_test_modal.seller-contact .rate-call .boxed .button-option.btn_reported {
-        border: 1px solid #db5c4c;
-        color: #db5c4c; }
-    .ab_test_modal.seller-contact .rate-call .boxed + .boxed {
-      margin-left: 10px; }
-  .ab_test_modal #mobile-cancel-call {
-    display: none; }
-  .ab_test_modal .mobile-cancel-call-2 {
-    position: absolute;
-    top: 7px;
-    z-index: 999;
-    right: 0;
-    width: 40px;
-    height: 40px;
-    font-size: 46px;
+    top: 15px;
     background: transparent;
-    color: #fff; }
+    box-shadow: none;
+    width: calc(100% - 28px) !important;
+    max-width: 880px !important; }
+  .ab_test_modal .react_modal__header {
+    font-size: 0;
+    z-index: 9; }
+  .ab_test_modal .react_modal__close {
+    top: 23px;
+    right: 5px;
+    left: auto;
+    font-size: 28px;
+    padding: 10px 0;
+    color: #A0A0A0;
+    text-shadow: none; }
+    .ab_test_modal .react_modal__close:before {
+      display: none; }
+  .ab_test_modal .react_modal__body {
+    background-color: #fff;
+    padding: 30px;
+    display: flex; }
+  .ab_test_modal .modal_photo-car {
+    width: 432px; }
+    .ab_test_modal .modal_photo-car img {
+      width: 100%; }
+  .ab_test_modal .phones_modal_wrap {
+    padding: 0 0 0 25px;
+    width: calc(100% - 432px); }
+  .ab_test_modal .phones_modal__item {
+    text-align: center; }
+  .ab_test_modal .be_carefull {
+    display: none; }
   .ab_test_modal .modal_title {
     color: #414042;
-    font-size: 17px;
     font-weight: 700;
+    padding: 0 0 15px;
+    line-height: 1.2;
+    font-size: 20px;
     margin-left: -10px;
-    margin-right: -10px;
-    padding: 24px 0 11px;
-    line-height: 1.2; }
+    margin-right: -10px; }
     .ab_test_modal .modal_title p {
       margin: 0; }
   .ab_test_modal .text_devider {
     color: #414042;
     font-size: 16px;
     position: relative;
-    padding: 10px 0 9px; }
+    padding: 15px 0; }
     .ab_test_modal .text_devider:before, .ab_test_modal .text_devider:after {
       content: '';
       background-color: #9B9B9B;
       height: 1px;
       width: 40px;
       position: absolute;
-      top: 20px; }
+      top: 25px; }
     .ab_test_modal .text_devider:before {
-      left: 87px; }
+      left: calc(50% - 73px); }
     .ab_test_modal .text_devider:after {
-      right: 87px; }
+      right: calc(50% - 73px); }
     .ab_test_modal .text_devider p {
       margin: 0; }
   .ab_test_modal .sub_title {
     color: #414042;
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 700; }
     .ab_test_modal .sub_title p {
       margin: 0; }
@@ -113,16 +100,18 @@
     color: #9B9B9B;
     font-size: 16px;
     padding: 4px 0 10px;
-    line-height: 1.2; }
+    line-height: 1.2;
+    margin-left: -10px;
+    margin-right: -10px; }
     .ab_test_modal .info_text p {
       margin: 0; }
   .ab_test_modal .modal_form {
     border-bottom: 1px solid #9B9B9B;
+    position: relative;
     display: flex;
     flex-wrap: wrap;
-    padding: 0 0 12px;
-    margin: 0 0 12px;
-    position: relative; }
+    padding: 0 0 20px;
+    margin: 0 0 15px; }
     .ab_test_modal .modal_form.error .input_number {
       border: 1px solid #db5c4c;
       border-right: 0;
@@ -188,6 +177,19 @@
         border-radius: 5px;
         margin: 10px 0 0;
         width: 100%; } }
+  .ab_test_modal .show-phone .btn-border {
+    margin: 0;
+    font-size: 13px;
+    padding: 8px 10px;
+    width: 100%; }
+    .ab_test_modal .show-phone .btn-border + .btn-border {
+      margin: 10px 0 0; }
+      @media (min-width: 360px) {
+        .ab_test_modal .show-phone .btn-border + .btn-border {
+          margin: 0 0 0 10px; } }
+    @media (min-width: 360px) {
+      .ab_test_modal .show-phone .btn-border {
+        width: calc(50% - 5px); } }
 
 .thx_wrap {
   padding: 0 0 17px; }
@@ -195,7 +197,8 @@
 .thx_holder {
   text-align: center; }
   .thx_holder .modal_title {
-    padding: 16px 0 11px; }
+    padding: 0;
+    font-size: 20px; }
   .thx_holder .info_text {
     padding: 4px 0 28px; }
 
@@ -210,3 +213,22 @@
   left: 0;
   right: 0;
   overflow: auto; }
+
+.async-hide {
+  opacity: 0 !important; }
+
+.thankyou .react_modal__container {
+  max-width: 418px !important; }
+
+.thankyou .react_modal__body {
+  padding: 30px 30px 38px; }
+
+.thankyou .phones_modal_wrap {
+  padding: 0;
+  width: 100%; }
+
+.thankyou .modal_photo-car {
+  display: none; }
+
+.hide_modal {
+  display: none; }

@@ -2,15 +2,17 @@
 	background: #db5c4c14;
 	border-radius: 3px;
 	color: #414042;
-	padding: 10px 17px;
 	padding: 10px 17px 15px;
+	margin: 0 0 22px;
+	display: flex;
+    align-items: center;
 	.title-holder {
 		display: flex;
 	}
 	.high-demand-text {
-		font-size: 16px;
+		font-size: 22px;
 		font-weight: 700;
-		margin: 4px 0 8px 11px;
+		margin: 4px 0 7px 11px;
 		max-width: 250px;
 		line-height: 1.2;
 	}
@@ -26,128 +28,65 @@
 	}
 }
 
-
-
-
-
-
-
-
-
-
-// .seller-contact_m {
-// 	&.fixbar.seller-with-text {
-// 		&:after {
-// 			display: none;
-// 		}
-// 	}
-// }
-// .seller-item-credit {
-// 	padding: 0 15px;
-// 	width: 100%;
-// }
-// .proposition_button_credit {
-// 	background-color: #fff;
-// 	color: #79BE00;
-// 	font-size: 16px;
-// 	line-height: 36px;
-// 	display: inline-block;
-// 	border: 1px solid #79be00 !important;
-// 	border-radius: 5px;
-// 	text-align: center;
-// 	width: 100%;
-// 	margin: 6px 0 10px;
-// }
-// .proposition_area {
-// 	.proposition_lead {
-// 		flex-wrap: wrap;
-// 	}
-// 	.proposition_price {
-// 		width: 100%;
-// 		position: relative;
-// 		margin-bottom: 15px;
-// 		padding: 10px 0 10px 0;
-// 		border-bottom: 1px solid #e0e3e4;
-// 	}
-// }
 .ab_test_modal {
-	// background: rgba(65, 64, 66, 0.5);
-	background: transparent;
-	.seller-overlay {
-		background-color: #fff;
+	background: rgba(65,64,66,.5);
+	.react_modal__container {
+		border: 0;
 		margin: 0 auto;
-		top: 45px;
-		bottom: auto;
-		max-height: calc(100vh - 60px);
-		width: calc(100% - 28px)!important;
-		left: 0;
-		right: 0;
-		padding: 14px;
-		overflow-y: auto;
-		z-index: 1001;
-		.modal_photo-car {
-			max-height: 228px;
-			overflow: hidden;
-		}
-		.phone_show_link {
-			color: #3C9806;
-			font-size: 30px;
-			font-weight: 700;
-		}
-	}
-	&.seller-contact {
-		.optionsset {
-			margin: 0;
-		}
-		.rate-call {
-			label {
-				display: none;
-			}
-			.boxed {
-				width: calc(50% - 5px);
-				margin: 0;
-				.button-option {
-					background-color: #fff;
-					font-size: 13px;
-					line-height: 35px;
-					width: 100%;
-					&.btn_success {
-						border: 1px solid #3c9806;
-						color: #3c9806;
-					}
-					&.btn_reported {
-						border: 1px solid #db5c4c;
-						color: #db5c4c;
-					}
-				}
-				& + .boxed {
-					margin-left: 10px;
-				}
-			}
-		}
-	}
-	#mobile-cancel-call {
-		display: none;
-	}
-	.mobile-cancel-call-2 {
-		position: absolute;
-		top: 7px;
-		z-index: 999;
-		right: 0;
-		width: 40px;
-		height: 40px;
-		font-size: 46px;
+		top: 15px;
 		background: transparent;
-		color: #fff;
+		box-shadow: none;
+		width: calc(100% - 28px)!important;
+		max-width: 880px !important;
+	}
+	.react_modal__header {
+		font-size: 0;
+		z-index: 9;
+	}
+	.react_modal__close {
+		top: 23px;
+ 		right: 5px;
+		left: auto;
+		font-size: 28px;
+		padding: 10px 0;
+		color: #A0A0A0;
+		text-shadow: none;
+		&:before {
+			display: none;
+		}
+	}
+	.react_modal__body {
+		background-color: #fff;
+		padding: 30px;
+		display: flex;
+	}
+	.modal_photo-car {
+		// display: flex;
+		// align-items: center;
+		width: 432px;
+		img {
+			width: 100%;
+		}
+	}
+	.phones_modal_wrap {
+		padding: 0 0 0 25px;
+		width: calc(100% - 432px);
+	}
+
+	.phones_modal__item {
+		text-align: center;
+	}
+	.be_carefull {
+		display: none;
 	}
 	.modal_title {
 		color: #414042;
-		font-size: 17px;
 		font-weight: 700;
+		padding: 0 0 15px;
+		line-height: 1.2;
+		font-size: 20px;
 		margin-left: -10px;
 		margin-right: -10px;
-		padding: 24px 0 11px;
-		line-height: 1.2;
 		p {
 			margin: 0; 
 		}
@@ -156,7 +95,7 @@
 		color: #414042;
 		font-size: 16px;
 		position: relative;
-		padding: 10px 0 9px;
+		padding: 15px 0;
 		&:before,
 		&:after {
 			content: '';
@@ -164,13 +103,13 @@
 			height: 1px;
 			width: 40px;
 			position: absolute;
-			top: 20px;
+			top: 25px;
 		}
 		&:before {
-			left: 87px;
+			left: calc(50% - 73px);
 		}
 		&:after {
-			right: 87px;
+			right: calc(50% - 73px);
 		}
 		p {
 			margin: 0; 
@@ -178,7 +117,7 @@
 	}
 	.sub_title {
 		color: #414042;
-		font-size: 17px;
+		font-size: 18px;
 		font-weight: 700;
 		p {
 			margin: 0; 
@@ -189,17 +128,19 @@
 		font-size: 16px;
 		padding: 4px 0 10px;
 		line-height: 1.2;
+		margin-left: -10px;
+		margin-right: -10px;
 		p {
 			margin: 0; 
 		}
 	}
 	.modal_form {
 		border-bottom: 1px solid #9B9B9B;
+		position: relative;
 		display: flex;
 		flex-wrap: wrap;
-		padding: 0 0 12px;
-		margin: 0 0 12px;
-		position: relative;
+		padding: 0 0 20px;
+		margin: 0 0 15px;
 		&.error {
 			.input_number {
 				border: 1px solid #db5c4c;
@@ -252,16 +193,16 @@
 		padding: 0 15px 0 38px;
 		outline: none;
 		&::-webkit-input-placeholder {
-			color: #777777;
+		  color: #777777;
 		}
 		&:-moz-placeholder {
-			color: #777777;
+		  color: #777777;
 		}
 		&::-moz-placeholder {
-			color: #777777;
+		  color: #777777;
 		}
 		&:-ms-input-placeholder {
-			color: #777777;
+		  color: #777777;
 		}
 		@media (max-width: 359px){
 			border-radius: 5px;
@@ -285,6 +226,23 @@
 			width: 100%;
 		}
 	}
+	.show-phone {
+		.btn-border {
+			margin: 0;
+			font-size: 13px;
+			padding: 8px 10px;
+			width: 100%;
+			&+.btn-border {
+				margin: 10px 0 0;
+				@media (min-width: 360px) {
+					margin: 0 0 0 10px;
+				}
+			}
+			@media (min-width: 360px) {
+				width: calc(50% - 5px);
+			}
+		}
+	}
 }
 .thx_wrap {
 	padding: 0 0 17px;
@@ -292,7 +250,8 @@
 .thx_holder {
 	text-align: center;
 	.modal_title {
-		padding: 16px 0 11px;
+		padding: 0;
+		font-size: 20px;
 	}
 	.info_text {
 		padding: 4px 0 28px;
@@ -304,10 +263,31 @@
 .pdp_modal_backdrop {
 	background: rgba(65,64,66,.5);
 	position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    overflow: auto;
-    // z-index: 1000;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow: auto;
+	// z-index: 1000;
+}
+.async-hide {
+	opacity: 0 !important;
+}
+.thankyou {
+	.react_modal__container{
+		max-width: 418px!important;
+	}
+	.react_modal__body {
+		padding: 30px 30px 38px;
+	}
+	.phones_modal_wrap {
+		padding: 0;
+		width: 100%;
+	}
+	.modal_photo-car {
+		display: none;
+	}
+}
+.hide_modal {
+	display: none;
 }
