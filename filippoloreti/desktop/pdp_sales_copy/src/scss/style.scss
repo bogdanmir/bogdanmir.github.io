@@ -1,0 +1,72 @@
+.ab_test_holder {
+	.sales_holder {
+		background: #F5F5F5;
+		padding: 18px 20px 20px 25px;
+	}
+	.sales_title {
+		font-weight: bold;
+		font-size: 14px;
+		letter-spacing: 2px;
+		font-family: DM Sans;
+		text-transform: uppercase;
+		color: #000;
+		margin: 0 0 2px;
+	}
+	.sales_text {
+		color: #4B4B4B;
+		font-size: 13px;
+		line-height: 1.5;
+		margin: 0;
+		letter-spacing: 0px;
+		font-family: DM Sans;
+		// max-height: 58px;
+		// overflow: hidden;
+		.text_hidden {
+			display: none;
+		}
+		// &.show {
+		// 	max-height: 100%;
+		// }
+	}
+	.sales_btn_holder {
+		display: flex;
+		justify-content: flex-end;
+		position: relative;
+	}
+	.sales_toggle_btn {
+		font-weight: bold;
+		font-size: 11px;
+		text-transform: uppercase;
+		color: #000;
+		cursor: pointer;
+		letter-spacing: 1px;
+		&.read_more {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			padding: 0 0 0 25px;
+			&:before {
+				content: '';
+				background: linear-gradient(270deg,#f5f5f5 80%,hsla(0,0%,96%,0));
+				position: absolute;
+				top: 0;
+				right: 0;
+				height: 100%;
+				width: 100%;
+				z-index: 1;
+			}
+			&:after {
+				content: 'read more...';
+				position: relative;
+				z-index: 2;
+			}
+		}
+		&.read_less {
+			position: relative;
+			padding: 7px 2px;
+			&:after {
+				content: 'read less';
+			}
+		}
+	}
+}
