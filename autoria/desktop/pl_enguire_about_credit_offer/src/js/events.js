@@ -70,8 +70,10 @@ $('body').on('click', '.proposition_button_credit', function () {
 	dataLayer.push({
 	        'event': 'event-to-ga',
 	        'eventCategory': 'PL - enquire about credit offer',
-	        'eventAction': language.events_label
+	        'eventAction': 'click on ' + language.events_label
 	});
+	console.log('click on ' + language.events_label);
+
 	window.dataLayer = window.dataLayer || [];
 	dataLayer.push({
 	        'event': 'event-to-ga',
@@ -80,9 +82,9 @@ $('body').on('click', '.proposition_button_credit', function () {
 	        'eventLabel': 'loan popup'
 	});
 
-	console.log('open popup');
+	// console.log('open popup');
+	// console.log(language.events_label);
 	console.log('view popup');
-	console.log(language.events_label);
 	
 	window.customer_click  = $(this).closest('.proposition').find('.proposition_name a').attr('href');
 	
@@ -126,6 +128,15 @@ $('body').on('click', '.proposition_button_credit', function () {
 // });
 
 $('body').on('click', '.react_modal__close, .react_modal__backdrop', function () {
+	window.dataLayer = window.dataLayer || [];
+	dataLayer.push({
+	        'event': 'event-to-ga',
+	        'eventCategory': 'PL - enquire about credit offer',
+	        'eventAction': 'close popup',
+	        'eventLabel': 'loan popup'
+	});
+
+    console.log('close popup');
 	
 	if(typeof window.display_info != 'undefined'){
 		clearInterval(window.display_info);
@@ -141,8 +152,6 @@ $('body').on('click', '.react_modal__close, .react_modal__backdrop', function ()
 	$('.react_modal .sub_title').remove();
 	$('.react_modal .info_text').remove();
 	$('.react_modal .modal_form').remove();
-
-
 });
 $('body').on('click', '.ab_test_modal .react_modal__body .btn-border', function () {
 	if(typeof window.display_info != 'undefined'){
@@ -344,41 +353,42 @@ $(document).on('click','.modal_btn',function () {
 	console.log('click on button Позвонить мне');
 });
 
-$(document).on('click','.ab_test_modal:not(.thankyou) .react_modal__backdrop',function (event) {
-    // window.dataLayer = window.dataLayer || [];
-    // dataLayer.push({
-    //     'event': 'event-to-ga',
-    //     'eventCategory': 'PL - enguire about credit offer',
-    //     'eventAction': 'close popup',
-    //     'eventLabel': language.events_label
-    // });
-    window.dataLayer = window.dataLayer || [];
-	dataLayer.push({
-	        'event': 'event-to-ga',
-	        'eventCategory': 'PL - enquire about credit offer',
-	        'eventAction': 'close popup',
-	        'eventLabel': 'loan popup'
-	});
 
-    console.log('not thankyou close popup');
-});
-$(document).on('click','.ab_test_modal:not(.thankyou) .react_modal__close',function (event) {
-    // window.dataLayer = window.dataLayer || [];
-    // dataLayer.push({
-    //     'event': 'event-to-ga',
-    //     'eventCategory': 'PL - enguire about credit offer',
-    //     'eventAction': 'close popup',
-    //     'eventLabel': language.events_label
-    // });
-    window.dataLayer = window.dataLayer || [];
-	dataLayer.push({
-	        'event': 'event-to-ga',
-	        'eventCategory': 'PL - enquire about credit offer',
-	        'eventAction': 'close popup',
-	        'eventLabel': 'loan popup'
-	});
-	console.log('not thankyou close popup');
-});
+// $(document).on('click','.ab_test_modal:not(.thankyou) .react_modal__backdrop',function (event) {
+//     // window.dataLayer = window.dataLayer || [];
+//     // dataLayer.push({
+//     //     'event': 'event-to-ga',
+//     //     'eventCategory': 'PL - enguire about credit offer',
+//     //     'eventAction': 'close popup',
+//     //     'eventLabel': language.events_label
+//     // });
+//     window.dataLayer = window.dataLayer || [];
+// 	dataLayer.push({
+// 	        'event': 'event-to-ga',
+// 	        'eventCategory': 'PL - enquire about credit offer',
+// 	        'eventAction': 'close popup',
+// 	        'eventLabel': 'loan popup'
+// 	});
+
+//     console.log('not thankyou close popup');
+// });
+// $(document).on('click','.ab_test_modal:not(.thankyou) .react_modal__close',function (event) {
+//     // window.dataLayer = window.dataLayer || [];
+//     // dataLayer.push({
+//     //     'event': 'event-to-ga',
+//     //     'eventCategory': 'PL - enguire about credit offer',
+//     //     'eventAction': 'close popup',
+//     //     'eventLabel': language.events_label
+//     // });
+//     window.dataLayer = window.dataLayer || [];
+// 	dataLayer.push({
+// 	        'event': 'event-to-ga',
+// 	        'eventCategory': 'PL - enquire about credit offer',
+// 	        'eventAction': 'close popup',
+// 	        'eventLabel': 'loan popup'
+// 	});
+// 	console.log('not thankyou close popup');
+// });
 
 
 
