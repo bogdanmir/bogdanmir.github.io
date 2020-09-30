@@ -343,6 +343,11 @@ $(document).on('focus click','.input_number',function (e) {
 		var val = $phone.val();
 		$phone.val('').val(val); // Ensure cursor remains at the end
 	}
+	console.log('focus, click - on number input')
+})
+
+
+$(document).on('click','.input_number',function (e) {
 	window.dataLayer = window.dataLayer || [];
 	dataLayer.push({
 		'event': 'event-to-ga',
@@ -351,7 +356,7 @@ $(document).on('focus click','.input_number',function (e) {
 		'eventLabel': 'number input'
 	});
 	console.log('click on number input')
-})
+});
 
 $(document).on('blur','.input_number',function (e) {
 	// console.log('3')
