@@ -4,24 +4,27 @@
     display: none; }
 
 .seller-item-credit {
-  width: 140px;
+  width: 220px;
   position: fixed;
-  right: 25px;
+  right: calc(50% - 720px);
   bottom: 80px;
   z-index: 9; }
 
 .proposition_button_credit {
   background-color: #79BE00;
   color: #fff;
-  font-size: 13px;
-  line-height: 15px;
   display: inline-block;
   border: 1px solid #79be00 !important;
   border-radius: 5px;
   text-align: center;
   padding: 4px 10px;
   width: 100%;
-  transition: all .2s linear; }
+  transition: all .2s linear;
+  font-size: 18px;
+  padding: 0 15px;
+  height: 48px;
+  display: flex;
+  align-items: center; }
   .proposition_button_credit:hover {
     background-color: #84ca08; }
 
