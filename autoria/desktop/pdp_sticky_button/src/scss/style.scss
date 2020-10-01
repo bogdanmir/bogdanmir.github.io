@@ -16,14 +16,14 @@
 .proposition_button_credit {
 	background-color: #79BE00;
 	color: #fff;
-	display: inline-block;
 	border: 1px solid #79be00 !important;
 	border-radius: 5px;
 	text-align: center;
-	padding: 4px 10px;
+	// padding: 4px 10px;
 	width: 100%;
 	transition: all .2s linear;
 	font-size: 18px;
+	line-height: 1;
     padding: 0 15px;
     height: 48px;
     display: flex;
