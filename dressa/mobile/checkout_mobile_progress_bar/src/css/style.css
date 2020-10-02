@@ -115,7 +115,8 @@
   position: relative;
   padding: 0 0 0 30px;
   letter-spacing: 4px;
-  margin: 0 0 0; }
+  margin: 0 0 0;
+  height: auto; }
 
 .checkout .step-two__title_main .step-two__text span {
   position: absolute;
@@ -303,7 +304,7 @@
   border-radius: 4px;
   position: absolute;
   bottom: 35px;
-  right: 0;
+  right: -4px;
   width: 280px;
   padding: 17px 18px;
   font-size: 12px;
