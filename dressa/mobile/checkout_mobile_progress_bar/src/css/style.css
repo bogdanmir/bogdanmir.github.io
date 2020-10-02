@@ -124,7 +124,8 @@
   left: 0; }
 
 .checkout .form__bordered .step-two__title {
-  height: unset; }
+  height: unset;
+  margin-top: 0; }
 
 .checkout .form__bordered .step-two__text {
   position: relative;
@@ -474,3 +475,6 @@
   margin-top: 0; }
   .checkout .form__bordered + .step-two__title {
     display: none; }
+
+.checkout .error_ab {
+  border-color: #d0021b; }

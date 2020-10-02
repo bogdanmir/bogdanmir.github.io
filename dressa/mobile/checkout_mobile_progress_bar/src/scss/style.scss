@@ -27,7 +27,7 @@
 .checkout .cart__payment{box-shadow:none;padding:0}
 .checkout .step-two__title_main .step-two__text{position:relative;padding:0 0 0 30px;letter-spacing:4px;margin:0 0 0;height:auto;}
 .checkout .step-two__title_main .step-two__text span{position:absolute;top:0;left:0}
-.checkout .form__bordered .step-two__title{height:unset}
+.checkout .form__bordered .step-two__title{height:unset; margin-top: 0;}
 .checkout .form__bordered .step-two__text{position:relative;padding:0 10px 0 30px;letter-spacing:4px;height:unset}
 .checkout .form__bordered .step-two__text span{position:absolute;top:0;left:0}
 .checkout .step-rel{padding:0 10px 0 0}
@@ -426,5 +426,7 @@
 		}
 	}
 
-
+	.error_ab {
+		border-color: #d0021b;
+	}
 }
