@@ -158,7 +158,7 @@ function run_step_2(){
 	}
 	
 
-	$('html').find('.step-two__title_main + form.ng-pristine').append('<div><div _ngcontent-c31 class="btn step-two_a__next"><span>далее</span></div></div>');
+	$('html').find('.step-two__title_main + form').append('<div><div _ngcontent-c31 class="btn step-two_a__next"><span>далее</span></div></div>');
 
 
 	console.log('step2')
@@ -173,23 +173,40 @@ $(document).on('click', '.checkout__form .promo-title', function(){
 // step 2a button
 $(document).on('click', '.step-two_a__next', function(){
 
-	if($('.step-two__title_main + form.ng-pristine .input__field[name="city"]').val() == ""){
-		$('.step-two__title_main + form.ng-pristine .input__field[name="city"]').addClass('error')
-	} else {
-		$('.step-two__title_main + form.ng-pristine .input__field[name="city"]').removeClass('error')
-	}
+	console.log('STEP 2 A')
 
-	if($('.step-two__title_main + form.ng-pristine .input__field[name="office"]').val() == ""){
-		$('.step-two__title_main + form.ng-pristine .input__field[name="office"]').addClass('error')
+	if($('.step-two__title_main + form #city').val() == ""){
+		$('.step-two__title_main + form #city').addClass('error')
 	} else {
-		$('.step-two__title_main + form.ng-pristine .input__field[name="office"]').removeClass('error')
+		$('.step-two__title_main + form #city').removeClass('error')
 	}
 
 
-	if( !$('.step-two__title_main + form.ng-pristine .input__field[name="office"]').val() == "" && !$('.step-two__title_main + form.ng-pristine .input__field[name="city"]').val() == ""){
+	// office
+	if($('.step-two__title_main + form #office').length) {
+		if($('.step-two__title_main + form #office').val() == ""){
+			$('.step-two__title_main + form #office').addClass('error')
+		} else {
+			$('.step-two__title_main + form #office').removeClass('error')
+		}
+	}
+
+	// street
+	if($('.step-two__title_main + form #street').length) {
+		if($('.step-two__title_main + form #street').val() == ""){
+			$('.step-two__title_main + form #street').addClass('error')
+		} else {
+			$('.step-two__title_main + form #street').removeClass('error')
+		}
+	}
+
+
+	if( !$('.step-two__title_main + form #street').val() == "" || 
+		!$('.step-two__title_main + form #office').val() == "" && 
+		!$('.step-two__title_main + form #city').val() == ""){
 		
 		$('.recipient-info').addClass('show_step_2b');
-		$('.recipient-info + form.ng-pristine').addClass('show_step_2b');
+		$('.recipient-info + form').addClass('show_step_2b');
 		$('.step-two__add-comment').addClass('show_step_2b');
 		$('.checkbox__wrapper').addClass('show_step_2b');
 		// $('.checkbox__wrapper + .submit').addClass('show_step_2b');
@@ -226,16 +243,33 @@ var pattern_email = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w
 
 $(document).on('click', '.step-two_b__next', function(){
 
-	if($('.step-two__title_main + form.ng-pristine .input__field[name="city"]').val() == ""){
-		$('.step-two__title_main + form.ng-pristine .input__field[name="city"]').addClass('error')
+	console.log('STEP 2 B')
+
+	if($('.step-two__title_main + form #city').val() == ""){
+		$('.step-two__title_main + form #city').addClass('error')
 	} else {
-		$('.step-two__title_main + form.ng-pristine .input__field[name="city"]').removeClass('error')
+		$('.step-two__title_main + form #city').removeClass('error')
 	}
 
-	if($('.step-two__title_main + form.ng-pristine .input__field[name="office"]').val() == ""){
-		$('.step-two__title_main + form.ng-pristine .input__field[name="office"]').addClass('error')
-	} else {
-		$('.step-two__title_main + form.ng-pristine .input__field[name="office"]').removeClass('error')
+	// office
+	if($('.step-two__title_main + form #office').length) {
+		if($('.step-two__title_main + form #office').val() == ""){
+			$('.step-two__title_main + form #office').addClass('error')
+		} else {
+			$('.step-two__title_main + form #office').removeClass('error')
+		}
+	}
+
+	// street
+	if($('.step-two__title_main + form #street').length) {
+
+		console.log('курьерная доставка - street')
+
+		if($('.step-two__title_main + form #street').val() == ""){
+			$('.step-two__title_main + form #street').addClass('error')
+		} else {
+			$('.step-two__title_main + form #street').removeClass('error')
+		}
 	}
 
 
@@ -319,28 +353,28 @@ $(document).on('click', '.step-two_b__next', function(){
 		
 
 
-
-		if($(this).attr('name') == 'patronymic') {
-			// $(this).removeClass('error required_field')
-			$(this).removeClass('error');
-			$(this).removeClass('ng-invalid');
-			// console.log('patronymic removeClass error - 4 ');
+		if($('.step-two__title_main + form #office').length) {
+			console.log('доставка в отделение - отмена отчества')
+			if($(this).attr('name') == 'patronymic') {
+				// $(this).removeClass('error required_field')
+				$(this).removeClass('error');
+				$(this).removeClass('ng-invalid');
+				// console.log('patronymic removeClass error - 4 ');
+			}
 		}
+
+
 	});
 
 
 
-
-
-
-
-
-	if(!$('.step-two__title_main + form.ng-pristine .input__field[name="office"]').val() == "" 
-		&& !$('.step-two__title_main + form.ng-pristine .input__field[name="city"]').val() == "" 
-		&& !firstName.val() == "" 
-		&& !lastName.val() == ""
-		&& !phone.val() == "" && phone.val().length == 18 && !phone.hasClass('error')
-		&& !email.val() == "" && !email.hasClass('error') && !email.hasClass('error_ab')
+	if( !$('.step-two__title_main + form #street').val() == "" ||
+		!$('.step-two__title_main + form #office').val() == "" && 
+		!$('.step-two__title_main + form #city').val() == "" &&
+		!firstName.val() == "" &&
+		!lastName.val() == "" &&
+		!phone.val() == "" && phone.val().length == 18 && !phone.hasClass('error') &&
+		!email.val() == "" && !email.hasClass('error') && !email.hasClass('error_ab')
 		// && $('.recipient-info + form.ng-invalid').length == 0 
 	){
 
@@ -349,7 +383,9 @@ $(document).on('click', '.step-two_b__next', function(){
 		$(this).addClass('is-hide');
 		$('.form__bordered').addClass('is_show');
 		$('.step-two__title_main').addClass('is-hide');
-		$('.step-two__title_main + form.ng-pristine.ng-valid').addClass('is-hide');
+
+		$('.step-two__title_main + form').addClass('is-hide');
+
 		$('.recipient-info').removeClass('show_step_2b');
 
 		// $('.recipient-info + form.ng-pristine').removeClass('show_step_2b');
