@@ -221,14 +221,10 @@ $(document).on('click', '.step-two_a__next', function(){
 // step 2b button
 var pattern_symbol = /[^а-яА-ЯёЁ ]/g;
 var pattern_phone = /[^0-9'".]/;
-// var pattern_email = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-// var pattern_email = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,6}\.)?[a-z]{2,6}$/i
 var pattern_email = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
 
 
 $(document).on('click', '.step-two_b__next', function(){
-
-	// console.log('00000');
 
 	if($('.step-two__title_main + form.ng-pristine .input__field[name="city"]').val() == ""){
 		$('.step-two__title_main + form.ng-pristine .input__field[name="city"]').addClass('error')
@@ -251,7 +247,6 @@ $(document).on('click', '.step-two_b__next', function(){
 	
 	// Имя
 	if( firstName.val().search(pattern_symbol) == 0 ) {
-		// console.log('7777777777')
 		firstName.addClass('error_ab')
 		firstName.closest('.input-placeholder').next('.error-text_ab').remove();
 		firstName.closest('.input-placeholder').after('<p _ngcontent-c31 class="error-text error-text_ab"> Имя должно состоять только из букв кириллицы </p>');
@@ -262,7 +257,6 @@ $(document).on('click', '.step-two_b__next', function(){
 
 	// Фамилия
 	if( lastName.val().search(pattern_symbol) == 0 ) {
-		// console.log('88888888')
 		lastName.addClass('error_ab')
 		lastName.closest('.input-placeholder').next('.error-text_ab').remove();
 		lastName.closest('.input-placeholder').after('<p _ngcontent-c31 class="error-text error-text_ab"> Фамилия должна состоять только из букв кириллицы </p>');
@@ -274,7 +268,6 @@ $(document).on('click', '.step-two_b__next', function(){
 
 	// Телефон
 	// if( phone.val().search(pattern_phone) == 0 && phone.val().length !== 18) {
-	// 	console.log('9999999999')
 	// 	phone.addClass('error_ab')
 	// }else {
 	// 	phone.removeClass('error_ab')
@@ -294,16 +287,13 @@ $(document).on('click', '.step-two_b__next', function(){
 		email.removeClass('error_ab')
 	}
 
-
 	// проверка обязательных полей на пустоту
 	$('.recipient-info + form .form__input[required]').each(function (){
 		// $(this).addClass('required_field
 		if( $(this).val() == "" || $(this).hasClass('ng-invalid') ){
 			$(this).addClass('error')
-			// console.log('addClass error - 1');
 		} else {
 			$(this).removeClass('error')
-			// console.log('removeClass error - 2 ');
 		}
 
 
@@ -354,8 +344,6 @@ $(document).on('click', '.step-two_b__next', function(){
 		// && $('.recipient-info + form.ng-invalid').length == 0 
 	){
 
-
-
 		console.log('all fields correct');
 
 		$(this).addClass('is-hide');
@@ -380,7 +368,7 @@ $(document).on('click', '.step-two_b__next', function(){
 		$('.submit .step-two__next > span').text('Оплатить');
 
 	} else {
-		console.log('что-то не так');
+		console.log('somethink wrong');
 	}
 
 	
