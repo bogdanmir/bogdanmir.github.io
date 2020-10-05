@@ -366,11 +366,9 @@ $(document).on('click', '.step-two_b__next', function(){
 
 	});
 
-
-
-	if( !$('.step-two__title_main + form #street').val() == "" ||
-		!$('.step-two__title_main + form #office').val() == "" && 
-		!$('.step-two__title_main + form #city').val() == "" &&
+// !$('.step-two__title_main + form #street').val() == "" ||
+// !$('.step-two__title_main + form #office').val() == "" && 
+	if( !$('.step-two__title_main + form #city').val() == "" &&
 		!firstName.val() == "" &&
 		!lastName.val() == "" &&
 		!phone.val() == "" && phone.val().length == 18 && !phone.hasClass('error') &&
