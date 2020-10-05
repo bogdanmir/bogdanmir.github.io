@@ -384,6 +384,12 @@
 	}
 	.checkbox__wrapper_ab {
 		margin-top: 8px;
+		position: relative;
+		.info_size_holder {
+			position: absolute;
+			right: 15px;
+			top: calc(50% - 10px);
+		}
 	}
 	// .step-two_b__next {
 	// 	background-color: #6458b7;

@@ -220,12 +220,15 @@ $(document).on('click', '.step-two_a__next', function(){
 
 // step 2b button
 var pattern_symbol = /[^а-яА-ЯёЁ ]/g;
-// var pattern_phone = /^\d{12}$/;
+var pattern_phone = /[^0-9'".]/;
+// var pattern_email = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+// var pattern_email = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,6}\.)?[a-z]{2,6}$/i
+var pattern_email = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
 
 
 $(document).on('click', '.step-two_b__next', function(){
 
-	console.log('00000');
+	// console.log('00000');
 
 	if($('.step-two__title_main + form.ng-pristine .input__field[name="city"]').val() == ""){
 		$('.step-two__title_main + form.ng-pristine .input__field[name="city"]').addClass('error')
@@ -244,10 +247,11 @@ $(document).on('click', '.step-two_b__next', function(){
 	var firstName = $('.recipient-info + form #firstName');
 	var lastName = $('.recipient-info + form #lastName');
 	var phone = $('.recipient-info + form #phone');
+	var email = $('.recipient-info + form #newUserEmail');
 	
 	// Имя
 	if( firstName.val().search(pattern_symbol) == 0 ) {
-		console.log('7777777777')
+		// console.log('7777777777')
 		firstName.addClass('error_ab')
 		firstName.closest('.input-placeholder').next('.error-text_ab').remove();
 		firstName.closest('.input-placeholder').after('<p _ngcontent-c31 class="error-text error-text_ab"> Имя должно состоять только из букв кириллицы </p>');
@@ -258,7 +262,7 @@ $(document).on('click', '.step-two_b__next', function(){
 
 	// Фамилия
 	if( lastName.val().search(pattern_symbol) == 0 ) {
-		console.log('88888888')
+		// console.log('88888888')
 		lastName.addClass('error_ab')
 		lastName.closest('.input-placeholder').next('.error-text_ab').remove();
 		lastName.closest('.input-placeholder').after('<p _ngcontent-c31 class="error-text error-text_ab"> Фамилия должна состоять только из букв кириллицы </p>');
@@ -269,17 +273,26 @@ $(document).on('click', '.step-two_b__next', function(){
 
 
 	// Телефон
-	// if( phone.val().search(pattern_phone) == 0 ) {
+	// if( phone.val().search(pattern_phone) == 0 && phone.val().length !== 18) {
 	// 	console.log('9999999999')
 	// 	phone.addClass('error_ab')
-	// 	phone.closest('.input-placeholder').next('.error-text_ab').remove();
-	// 	phone.closest('.input-placeholder').after('<p _ngcontent-c31 class="error-text error-text_ab"> phone phone phone </p>');
 	// }else {
 	// 	phone.removeClass('error_ab')
-	// 	phone.closest('.input-placeholder').next('.error-text_ab').remove();
 	// }
 
-	// Email
+	// if( email.val().search(pattern_email) == 0 ){
+	// 	console.log('mail NOT correct')
+	// 	email.addClass('error_ab')
+	// } else {
+	// 	email.removeClass('error_ab')
+	// }
+
+	if(!pattern_email.test( email.val() )) {
+		console.log('mail NOT correct')
+		email.addClass('error_ab')
+	} else {
+		email.removeClass('error_ab')
+	}
 
 
 	// проверка обязательных полей на пустоту
@@ -287,51 +300,45 @@ $(document).on('click', '.step-two_b__next', function(){
 		// $(this).addClass('required_field
 		if( $(this).val() == "" || $(this).hasClass('ng-invalid') ){
 			$(this).addClass('error')
-			console.log('addClass error - 1');
+			// console.log('addClass error - 1');
 		} else {
 			$(this).removeClass('error')
-			console.log('removeClass error - 2 ');
+			// console.log('removeClass error - 2 ');
 		}
+
+
+
 
 		// if( $(this).hasClass('ng-valid') ) {
 		// 	$(this).removeClass('error')
 		// }
+		if( $(this).filter("[name='phone']") && phone.val().search(pattern_phone) == 0 && phone.val().length != 18 ){
+			console.log('phone NOT correct')
+			phone.addClass('error_ab')
+		} else {
+			phone.removeClass('error_ab')
+		}
+
+		// email
+		// if( $(this).filter("[name='newUserEmail']") && email.val().search(pattern_email) == 0 ){
+		// 	console.log('not correct mail')
+		// 	email.addClass('error_ab')
+		// } else {
+		// 	email.removeClass('error_ab')
+		// }
+		
+
+
 
 		if($(this).attr('name') == 'patronymic') {
 			// $(this).removeClass('error required_field')
 			$(this).removeClass('error');
+			$(this).removeClass('ng-invalid');
 			// console.log('patronymic removeClass error - 4 ');
 		}
 	});
 
 
-	
-
-
-
-
-	// // проверка на кириллицу
-	// // $('.recipient-info + form .form__input[required]:not(#newUserEmail)').each(function (){
-	// // 	console.log('7777777777')
-
-	// // 	if( $(this).val().search(pattern) == 0 ){
-	// // 		$(this).addClass('error')
-	// // 		$(this).closest('.input-placeholder').next('.error-text_ab').remove();
-	// // 		$(this).closest('.input-placeholder').after('<p _ngcontent-c31 class="error-text error-text_ab"> Поле должно состоять только из букв кириллицы </p>');
-
-	// // 		// console.log('addClass error - 1');
-	// // 	} else {
-	// // 		$(this).removeClass('error')
-	// // 		$(this).closest('.input-placeholder').next('.error-text_ab').remove();
-	// // 		// console.log('removeClass error - 2 ');
-	// // 	}
-
-	// // })
-
-	// // $('.recipient-info + form.ng-valid')
-
-	// // &&  !$('.recipient-info + form.ng-pristine .input__field[name="firstName"]').val() == "" 
-	// // && !$('.recipient-info + form.ng-pristine .input__field[name="lastName"]').val() == ""
 
 
 
@@ -340,16 +347,16 @@ $(document).on('click', '.step-two_b__next', function(){
 
 	if(!$('.step-two__title_main + form.ng-pristine .input__field[name="office"]').val() == "" 
 		&& !$('.step-two__title_main + form.ng-pristine .input__field[name="city"]').val() == "" 
-		&& !$('.recipient-info + form .form__input[id="firstName"]').val() == "" 
-		&& !$('.recipient-info + form .form__input[id="lastName"]').val() == ""
-		&& !$('.recipient-info + form .form__input[id="phone"]').val() == ""
-		&& !$('.recipient-info + form .form__input[id="newUserEmail"]').val() == "" 
+		&& !firstName.val() == "" 
+		&& !lastName.val() == ""
+		&& !phone.val() == "" && phone.val().length == 18 && !phone.hasClass('error')
+		&& !email.val() == "" && !email.hasClass('error') && !email.hasClass('error_ab')
 		// && $('.recipient-info + form.ng-invalid').length == 0 
 	){
 
 
 
-		console.log('99999999999');
+		console.log('all fields correct');
 
 		$(this).addClass('is-hide');
 		$('.form__bordered').addClass('is_show');
@@ -372,6 +379,8 @@ $(document).on('click', '.step-two_b__next', function(){
 
 		$('.submit .step-two__next > span').text('Оплатить');
 
+	} else {
+		console.log('что-то не так');
 	}
 
 	

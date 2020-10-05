@@ -460,7 +460,12 @@
     display: none; }
 
 .checkout .checkbox__wrapper_ab {
-  margin-top: 8px; }
+  margin-top: 8px;
+  position: relative; }
+  .checkout .checkbox__wrapper_ab .info_size_holder {
+    position: absolute;
+    right: 15px;
+    top: calc(50% - 10px); }
 
 .checkout .step-two__requested-fields {
   margin: 25px 0 20px; }
