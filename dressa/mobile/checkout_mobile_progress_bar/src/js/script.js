@@ -161,6 +161,11 @@ function run_step_2(){
 	$('html').find('.step-two__title_main + form').append('<div><div _ngcontent-c31 class="btn step-two_a__next"><span>далее</span></div></div>');
 
 
+	// set phon in input step 2-b
+	$('.recipient-info + form #phone').val(localStorage.getItem('newUserPhone'));
+	$('.recipient-info + form #phone').removeClass('ng-invalid').addClass('ng-valid');
+	$('.recipient-info + form #phone + .placeholder').addClass('active-input');
+
 	console.log('step2')
 }
 $(document).on('click', '.checkout__form .promo-title', function(){
@@ -232,6 +237,15 @@ $(document).on('click', '.step-two_a__next', function(){
 
 
 
+	if($('.step-two__title_main + form #street').length > 0) {
+		console.log('курьерная доставка - street')
+		$('.step-two_b__next').removeClass('no_patronymic_btn').addClass('patronymic_btn')
+	} else {
+		console.log('не курьерная доставка (3 других)')
+		$('.step-two_b__next').removeClass('patronymic_btn').addClass('no_patronymic_btn')
+	}
+
+
 });
 
 
@@ -241,17 +255,22 @@ var pattern_phone = /[^0-9'".]/;
 var pattern_email = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
 
 
-$(document).on('click', '.step-two_b__next', function(){
-
-	console.log('STEP 2 B')
-
-	var firstName = $('.recipient-info + form #firstName');
-	var lastName = $('.recipient-info + form #lastName');
-	var phone = $('.recipient-info + form #phone');
-	var email = $('.recipient-info + form #newUserEmail');
-	var patronymicName = $('.recipient-info + form.patronymic_check #patronymic');
+var firstName = $('.recipient-info + form #firstName');
+var lastName = $('.recipient-info + form #lastName');
+var phone = $('.recipient-info + form #phone');
+var email = $('.recipient-info + form #newUserEmail');
+var patronymicName = $('.recipient-info + form.patronymic_check #patronymic');
 
 
+
+
+
+
+
+// остальные доставки без обязательного отчества
+$(document).on('click', '.step-two_b__next.no_patronymic_btn', function(){
+
+	console.log('___STEP 2-B without requared patronymic___')
 
 	if($('.step-two__title_main + form #city').val() == ""){
 		$('.step-two__title_main + form #city').addClass('error')
@@ -260,39 +279,227 @@ $(document).on('click', '.step-two_b__next', function(){
 	}
 
 	// office
-	if($('.step-two__title_main + form #office').length) {
+	// if($('.step-two__title_main + form #office').length) {
 
 		// $('.recipient-info + form').removeClass('patronymic_check')
 
-		if($('.step-two__title_main + form #office').val() == ""){
-			$('.step-two__title_main + form #office').addClass('error')
-		} else {
-			$('.step-two__title_main + form #office').removeClass('error')
-		}
+	if($('.step-two__title_main + form #office').val() == ""){
+		$('.step-two__title_main + form #office').addClass('error')
+	} else {
+		$('.step-two__title_main + form #office').removeClass('error')
+	}
+	// }
+
+
+	// street
+	// if($('.step-two__title_main + form #street').length) {
+
+	// 	// console.log('курьерная доставка - street')
+
+	// 	// $('.recipient-info + form').addClass('patronymic_check')
+
+	// 	if($('.step-two__title_main + form #street').val() == ""){
+	// 		$('.step-two__title_main + form #street').addClass('error')
+	// 	} else {
+	// 		$('.step-two__title_main + form #street').removeClass('error')
+	// 	}
+	// } 
+	// else {
+	// 	$('.recipient-info + form').removeClass('patronymic_check')
+	// }
+
+
+// проверка обязательных полей на кириллицу
+
+	
+	// Имя
+	if( firstName.val().search(pattern_symbol) == 0 ) {
+		firstName.addClass('error_ab')
+		firstName.closest('.input-placeholder').next('.error-text_ab').remove();
+		firstName.closest('.input-placeholder').after('<p _ngcontent-c31 class="error-text error-text_ab"> Имя должно состоять только из букв кириллицы </p>');
+	}else {
+		firstName.removeClass('error_ab')
+		firstName.closest('.input-placeholder').next('.error-text_ab').remove();
+	}
+
+	// Фамилия
+	if( lastName.val().search(pattern_symbol) == 0 ) {
+		lastName.addClass('error_ab')
+		lastName.closest('.input-placeholder').next('.error-text_ab').remove();
+		lastName.closest('.input-placeholder').after('<p _ngcontent-c31 class="error-text error-text_ab"> Фамилия должна состоять только из букв кириллицы </p>');
+	}else {
+		lastName.removeClass('error_ab')
+		lastName.closest('.input-placeholder').next('.error-text_ab').remove();
 	}
 
 
 
+	// Отчество
+	// if( patronymicName.length > 0 && patronymicName.val().search(pattern_symbol) == 0 ) {
+	// 	patronymicName.addClass('error_ab')
+	// 	patronymicName.closest('.input-placeholder').next('.error-text_ab').remove();
+	// 	patronymicName.closest('.input-placeholder').after('<p _ngcontent-c31 class="error-text error-text_ab"> Отчество должно состоять только из букв кириллицы </p>');
+	// }else {
+	// 	patronymicName.removeClass('error_ab')
+	// 	patronymicName.closest('.input-placeholder').next('.error-text_ab').remove();
+	// }
+
+
+	// Телефон
+	// if( phone.val().search(pattern_phone) == 0 && phone.val().length !== 18) {
+	// 	phone.addClass('error_ab')
+	// }else {
+	// 	phone.removeClass('error_ab')
+	// }
+
+	// if( email.val().search(pattern_email) == 0 ){
+	// 	console.log('mail NOT correct')
+	// 	email.addClass('error_ab')
+	// } else {
+	// 	email.removeClass('error_ab')
+	// }
+
+	if(!pattern_email.test( email.val() )) {
+		console.log('mail NOT correct')
+		email.addClass('error_ab')
+	} else {
+		email.removeClass('error_ab')
+	}
+
+	// проверка обязательных полей на пустоту
+	$('.recipient-info + form .form__input[required]').each(function (){
+		// $(this).addClass('required_field
+		if( $(this).val() == "" || $(this).hasClass('ng-invalid') ){
+			$(this).addClass('error')
+		} else {
+			$(this).removeClass('error')
+		}
 
 
 
+
+		// if( $(this).hasClass('ng-valid') ) {
+		// 	$(this).removeClass('error')
+		// }
+		if( $(this).filter("[name='phone']") && phone.val().search(pattern_phone) == 0 && phone.val().length != 18 ){
+			console.log('phone NOT correct')
+			phone.addClass('error_ab')
+		} else {
+			phone.removeClass('error_ab')
+		}
+
+		// email
+		// if( $(this).filter("[name='newUserEmail']") && email.val().search(pattern_email) == 0 ){
+		// 	console.log('not correct mail')
+		// 	email.addClass('error_ab')
+		// } else {
+		// 	email.removeClass('error_ab')
+		// }
+		
+
+
+		// if($('.step-two__title_main + form #office').length > 0) {
+			// console.log('доставка в отделение - отмена отчества')
+			if($(this).attr('name') == 'patronymic') {
+				// $(this).removeClass('error required_field')
+				$(this).removeClass('error');
+				$(this).removeClass('ng-invalid');
+			}
+		// }
+
+
+	});
+
+// !$('.step-two__title_main + form #street').val() == "" ||
+// !$('.step-two__title_main + form #office').val() == "" && 
+// !$('.step-two__title_main + form #city').val() == "" &&
+		// ($('.step-two__title_main + form #street').length > 0 && !$('.step-two__title_main + form #patronymic').val() == "") &&
+		// !patronymicName.val() == "" && !patronymicName.hasClass('error') && !patronymicName.hasClass('error_ab') || patronymicName.length < 1 &&
+	if( !firstName.val() == "" && !firstName.hasClass('error_ab') &&
+		!lastName.val() == "" && !lastName.hasClass('error_ab') &&
+		!phone.val() == "" && phone.val().length == 18 && !phone.hasClass('error') &&
+		!email.val() == "" && !email.hasClass('error') && !email.hasClass('error_ab')
+		// && $('.recipient-info + form.ng-invalid').length == 0 
+	){
+
+		console.log('all fields correct');
+
+		$(this).addClass('is-hide');
+		$('.form__bordered').addClass('is_show');
+		$('.step-two__title_main').addClass('is-hide');
+
+		$('.step-two__title_main + form').addClass('is-hide');
+
+		$('.recipient-info').removeClass('show_step_2b');
+
+		// $('.recipient-info + form.ng-pristine').removeClass('show_step_2b');
+		$('.recipient-info + form').removeClass('show_step_2b').addClass('is-hide');
+		$('.checkout .checkbox__wrapper+.submit .hint').addClass('is-hide');
+
+		$('.step-two__add-comment').removeClass('show_step_2b');
+		$('.checkbox__wrapper').removeClass('show_step_2b');
+		$('.step-two__requested-fields').removeClass('show_step_2b');
+
+		$('.checkout .checkbox__wrapper+.submit').addClass('is_show');
+
+		$('.progress_item.active').removeClass('active').addClass('selected');
+		$('.progress_item').next().addClass('active');
+
+		$('.submit .step-two__next > span').text('Оплатить');
+
+	} else {
+		console.log('somethink wrong');
+	}
+});
+
+
+
+
+
+
+
+
+
+
+// курьерская доставка с обезательнным отчеством
+$(document).on('click', '.step-two_b__next.patronymic_btn', function(){
+	console.log('STEP 2-B with REQUARED patronymic')
+
+	if($('.step-two__title_main + form #city').val() == ""){
+		$('.step-two__title_main + form #city').addClass('error')
+	} else {
+		$('.step-two__title_main + form #city').removeClass('error')
+	}
+
+	// office
+	// if($('.step-two__title_main + form #office').length) {
+
+	// 	// $('.recipient-info + form').removeClass('patronymic_check')
+
+	// 	if($('.step-two__title_main + form #office').val() == ""){
+	// 		$('.step-two__title_main + form #office').addClass('error')
+	// 	} else {
+	// 		$('.step-two__title_main + form #office').removeClass('error')
+	// 	}
+	// }
 
 
 	// street
-	if($('.step-two__title_main + form #street').length) {
+	// if($('.step-two__title_main + form #street').length) {
 
-		console.log('курьерная доставка - street')
+		// console.log('курьерная доставка - street')
 
-		$('.recipient-info + form').addClass('patronymic_check')
+		// $('.recipient-info + form').addClass('patronymic_check')
 
 		if($('.step-two__title_main + form #street').val() == ""){
 			$('.step-two__title_main + form #street').addClass('error')
 		} else {
 			$('.step-two__title_main + form #street').removeClass('error')
 		}
-	} else {
-		$('.recipient-info + form').removeClass('patronymic_check')
-	}
+	// } 
+	// else {
+	// 	$('.recipient-info + form').removeClass('patronymic_check')
+	// }
 
 
 // проверка обязательных полей на кириллицу
@@ -384,26 +591,28 @@ $(document).on('click', '.step-two_b__next', function(){
 		
 
 
-		if($('.step-two__title_main + form #office').length > 0) {
-			console.log('доставка в отделение - отмена отчества')
-			if($(this).attr('name') == 'patronymic') {
-				// $(this).removeClass('error required_field')
-				$(this).removeClass('error');
-				$(this).removeClass('ng-invalid');
-				// console.log('patronymic removeClass error - 4 ');
-			}
-		}
+		// if($('.step-two__title_main + form #office').length > 0) {
+		// 	console.log('доставка в отделение - отмена отчества')
+		// 	if($(this).attr('name') == 'patronymic') {
+		// 		// $(this).removeClass('error required_field')
+		// 		$(this).removeClass('error');
+		// 		$(this).removeClass('ng-invalid');
+		// 		// console.log('patronymic removeClass error - 4 ');
+		// 	}
+		// }
 
 
 	});
 
+
+
 // !$('.step-two__title_main + form #street').val() == "" ||
 // !$('.step-two__title_main + form #office').val() == "" && 
-	if( !$('.step-two__title_main + form #city').val() == "" &&
-		!firstName.val() == "" &&
-		!lastName.val() == "" &&
 		// ($('.step-two__title_main + form #street').length > 0 && !$('.step-two__title_main + form #patronymic').val() == "") &&
-		(!patronymicName.val() == "" && !patronymicName.hasClass('error') && !patronymicName.hasClass('error_ab') || patronymicName.length < 1) &&
+	if( !$('.step-two__title_main + form #city').val() == "" &&
+		!firstName.val() == "" && !firstName.hasClass('error_ab') &&
+		!lastName.val() == "" && !lastName.hasClass('error_ab') &&
+		!patronymicName.val() == "" && !patronymicName.hasClass('error') && !patronymicName.hasClass('error_ab') &&
 		!phone.val() == "" && phone.val().length == 18 && !phone.hasClass('error') &&
 		!email.val() == "" && !email.hasClass('error') && !email.hasClass('error_ab')
 		// && $('.recipient-info + form.ng-invalid').length == 0 
@@ -437,9 +646,19 @@ $(document).on('click', '.step-two_b__next', function(){
 	} else {
 		console.log('somethink wrong');
 	}
-
-	
 });
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -501,6 +720,9 @@ $(document).on('click', '.new-user__step-one form .step-one__next', function(){
 	});
 	console.log('click on Select shipping method (new user)')
 	// localStorage.setItem('new_checkout','true');
+
+	localStorage.setItem('newUserPhone', $('#newUserPhone').val());
+	// console.log($('#newUserPhone').val())
 })
 $(document).on('click', '.new-user__step-two .select', function(){
 	window.dataLayer = window.dataLayer || [];
