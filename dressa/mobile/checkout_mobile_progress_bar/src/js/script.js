@@ -219,7 +219,7 @@ $(document).on('click', '.step-two_a__next', function(){
 
 		$('.step-two_a__next').addClass('is-hide');
 
-		$('.checkbox__wrapper + .submit').after('<div><div class="btn step-two_b__next"><span> Перейти к оплате </span></div></div>');
+		// $('.checkbox__wrapper + .submit').after('<div><div class="btn step-two_b__next"><span> Перейти к оплате </span></div></div>');
 
 		if($('.checkbox__wrapper_ab').length == 0) {
 			$('.checkout__form .checkbox__wrapper').after('<div class="checkbox__wrapper checkbox__wrapper_ab show_step_2b"><label class="call-denied"><input autocomplete="new-password" class="checkbox ng-untouched ng-valid ng-dirty" name="callDeniedCheckbox2" type="checkbox"><span class="checkbox-custom"></span></label><span class="label form__checkbox-label"><span class="label__title">  Требуется консультация по поводу размера  </span>      <span class="info_size_holder"><span class="info-icon_size"></span><div class="info_tooltip"><p>Вы можете померять товар дома и вернуть в течении 14 дней, если размер не подойдет. И мы поможем выбрать товар правильного размера по телефону.</p></div></span>    </span></div>');
@@ -239,10 +239,17 @@ $(document).on('click', '.step-two_a__next', function(){
 
 	if($('.step-two__title_main + form #street').length > 0) {
 		console.log('курьерная доставка - street')
-		$('.step-two_b__next').removeClass('no_patronymic_btn').addClass('patronymic_btn')
-	} else {
+		// $('.step-two_b__next').removeClass('no_patronymic_btn').addClass('patronymic_btn').text('Перейти к оплате - 1');
+		
+		$('.no_patronymic_btn').remove();
+		$('.checkbox__wrapper + .submit').after('<div><div class="btn step-two_b__next patronymic_btn"><span> Перейти к оплате - 1 </span></div></div>');
+	}
+	if($('.step-two__title_main + form #office').length > 0) {
 		console.log('не курьерная доставка (3 других)')
-		$('.step-two_b__next').removeClass('patronymic_btn').addClass('no_patronymic_btn')
+		// $('.step-two_b__next').removeClass('patronymic_btn').addClass('no_patronymic_btn').text('Перейти к оплате - 2');
+
+		$('.patronymic_btn').remove();
+		$('.checkbox__wrapper + .submit').after('<div><div class="btn step-two_b__next no_patronymic_btn"><span> Перейти к оплате -2 </span></div></div>');
 	}
 
 
