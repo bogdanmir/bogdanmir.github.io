@@ -240,16 +240,22 @@ $(document).on('click', '.step-two_a__next', function(){
 	if($('.step-two__title_main + form #street').length > 0) {
 		console.log('курьерная доставка - street')
 		// $('.step-two_b__next').removeClass('no_patronymic_btn').addClass('patronymic_btn').text('Перейти к оплате - 1');
-		
+
 		$('.no_patronymic_btn').remove();
-		$('.checkbox__wrapper + .submit').after('<div><div class="btn step-two_b__next patronymic_btn"><span> Перейти к оплате - 1 </span></div></div>');
+		if($('.patronymic_btn').length == 0) {
+			$('.checkbox__wrapper + .submit').after('<div><div class="btn step-two_b__next patronymic_btn"><span> Перейти к оплате - 1 </span></div></div>');
+		}
+		
 	}
+
 	if($('.step-two__title_main + form #office').length > 0) {
 		console.log('не курьерная доставка (3 других)')
 		// $('.step-two_b__next').removeClass('patronymic_btn').addClass('no_patronymic_btn').text('Перейти к оплате - 2');
 
 		$('.patronymic_btn').remove();
-		$('.checkbox__wrapper + .submit').after('<div><div class="btn step-two_b__next no_patronymic_btn"><span> Перейти к оплате -2 </span></div></div>');
+		if($('.no_patronymic_btn').length == 0) {
+			$('.checkbox__wrapper + .submit').after('<div><div class="btn step-two_b__next no_patronymic_btn"><span> Перейти к оплате -2 </span></div></div>');
+		}
 	}
 
 
@@ -426,12 +432,18 @@ $(document).on('click', '.step-two_b__next.no_patronymic_btn', function(){
 // !$('.step-two__title_main + form #city').val() == "" &&
 		// ($('.step-two__title_main + form #street').length > 0 && !$('.step-two__title_main + form #patronymic').val() == "") &&
 		// !patronymicName.val() == "" && !patronymicName.hasClass('error') && !patronymicName.hasClass('error_ab') || patronymicName.length < 1 &&
-	if( !firstName.val() == "" && !firstName.hasClass('error_ab') &&
-		!lastName.val() == "" && !lastName.hasClass('error_ab') &&
+
+		// !firstName.val() == "" && !firstName.hasClass('error_ab') &&
+		// !lastName.val() == "" && !lastName.hasClass('error_ab') &&
+
+	if( !firstName.val() == "" &&
+		!lastName.val() == "" &&
 		!phone.val() == "" && phone.val().length == 18 && !phone.hasClass('error') &&
 		!email.val() == "" && !email.hasClass('error') && !email.hasClass('error_ab')
 		// && $('.recipient-info + form.ng-invalid').length == 0 
 	){
+
+		alert('all fields correct on NO_Patronymic_btn');
 
 		console.log('all fields correct');
 
@@ -625,14 +637,21 @@ $(document).on('click', '.step-two_b__next.patronymic_btn', function(){
 // !$('.step-two__title_main + form #street').val() == "" ||
 // !$('.step-two__title_main + form #office').val() == "" && 
 		// ($('.step-two__title_main + form #street').length > 0 && !$('.step-two__title_main + form #patronymic').val() == "") &&
-	if( !$('.step-two__title_main + form #city').val() == "" &&
-		!firstName.val() == "" && !firstName.hasClass('error_ab') &&
-		!lastName.val() == "" && !lastName.hasClass('error_ab') &&
+
+
+		// !$('.step-two__title_main + form #city').val() == "" &&
+		// !firstName.val() == "" && !firstName.hasClass('error_ab') &&
+		// !lastName.val() == "" && !lastName.hasClass('error_ab') &&
+
+	if( !firstName.val() == "" &&
+		!lastName.val() == "" &&
 		!patronymicName.val() == "" && !patronymicName.hasClass('error') && !patronymicName.hasClass('error_ab') &&
 		!phone.val() == "" && phone.val().length == 18 && !phone.hasClass('error') &&
 		!email.val() == "" && !email.hasClass('error') && !email.hasClass('error_ab')
 		// && $('.recipient-info + form.ng-invalid').length == 0 
 	){
+
+		alert('all fields correct on Patronymic_btn');
 
 		console.log('all fields correct');
 
