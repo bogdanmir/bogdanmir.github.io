@@ -273,15 +273,11 @@ var pattern_phone = /[^0-9'".]/;
 var pattern_email = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
 
 
-var firstName = $('.recipient-info + form #firstName');
-var lastName = $('.recipient-info + form #lastName');
-var phone = $('.recipient-info + form #phone');
-var email = $('.recipient-info + form #newUserEmail');
-var patronymicName = $('.recipient-info + form.patronymic_check #patronymic');
-
-
-
-
+// var firstName = $('.recipient-info + form #firstName');
+// var lastName = $('.recipient-info + form #lastName');
+// var phone = $('.recipient-info + form #phone');
+// var email = $('.recipient-info + form #newUserEmail');
+// var patronymicName = $('.recipient-info + form.patronymic_check #patronymic');
 
 
 
@@ -293,6 +289,12 @@ $(document).on('click', '.step-two_b__next.no_patronymic_btn', function(){
 
 
 	console.log('___STEP 2-B without requared patronymic___')
+
+	var firstName = $('.recipient-info + form #firstName');
+	var lastName = $('.recipient-info + form #lastName');
+	var phone = $('.recipient-info + form #phone');
+	var email = $('.recipient-info + form #newUserEmail');
+	var patronymicName = $('.recipient-info + form.patronymic_check #patronymic');
 
 	if($('.step-two__title_main + form #city').val() == ""){
 		$('.step-two__title_main + form #city').addClass('error')
@@ -496,6 +498,12 @@ $(document).on('click', '.step-two_b__next.patronymic_btn', function(){
 
 
 	console.log('STEP 2-B with REQUARED patronymic')
+
+	var firstName = $('.recipient-info + form #firstName');
+	var lastName = $('.recipient-info + form #lastName');
+	var phone = $('.recipient-info + form #phone');
+	var email = $('.recipient-info + form #newUserEmail');
+	var patronymicName = $('.recipient-info + form.patronymic_check #patronymic');
 
 
 	if($('.step-two__title_main + form #city').val() == ""){
