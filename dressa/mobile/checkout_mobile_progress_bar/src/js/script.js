@@ -230,7 +230,7 @@ $(document).on('click', '.step-two_a__next', function(){
 			// $('.step-two_b__next').removeClass('no_patronymic_btn').addClass('patronymic_btn').text('Перейти к оплате - 1');
 			$('.no_patronymic_btn').remove();
 			if($('.patronymic_btn').length == 0) {
-				$('.checkbox__wrapper + .submit').after('<div><div class="btn step-two_b__next patronymic_btn"><span> Перейти к оплате - 1 </span></div></div>');
+				$('.checkbox__wrapper + .submit').after('<div><div class="btn step-two_b__next patronymic_btn"><span> Перейти к оплате </span></div></div>');
 			}
 		}
 
@@ -239,7 +239,7 @@ $(document).on('click', '.step-two_a__next', function(){
 			// $('.step-two_b__next').removeClass('patronymic_btn').addClass('no_patronymic_btn').text('Перейти к оплате - 2');
 			$('.patronymic_btn').remove();
 			if($('.no_patronymic_btn').length == 0) {
-				$('.checkbox__wrapper + .submit').after('<div><div class="btn step-two_b__next no_patronymic_btn"><span> Перейти к оплате -2 </span></div></div>');
+				$('.checkbox__wrapper + .submit').after('<div><div class="btn step-two_b__next no_patronymic_btn"><span> Перейти к оплате </span></div></div>');
 			}
 		}
 
