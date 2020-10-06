@@ -285,7 +285,7 @@ var pattern_email = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w
 $(document).on('click', '.step-two_b__next.no_patronymic_btn', function(){
 
 
-	alert('click on NO_Patronymic_btn');
+	// alert('click on NO_Patronymic_btn');
 
 
 	console.log('___STEP 2-B without requared patronymic___')
@@ -450,7 +450,7 @@ $(document).on('click', '.step-two_b__next.no_patronymic_btn', function(){
 		// && $('.recipient-info + form.ng-invalid').length == 0 
 	){
 
-		alert('all fields correct on NO_Patronymic_btn');
+		// alert('all fields correct on NO_Patronymic_btn');
 
 		console.log('all fields correct');
 
@@ -494,7 +494,7 @@ $(document).on('click', '.step-two_b__next.no_patronymic_btn', function(){
 // курьерская доставка с обезательнным отчеством
 $(document).on('click', '.step-two_b__next.patronymic_btn', function(){
 
-	alert('click on Patronymic_btn');
+	// alert('click on Patronymic_btn');
 
 
 	console.log('STEP 2-B with REQUARED patronymic')
@@ -656,6 +656,8 @@ $(document).on('click', '.step-two_b__next.patronymic_btn', function(){
 		// !firstName.val() == "" && !firstName.hasClass('error_ab') &&
 		// !lastName.val() == "" && !lastName.hasClass('error_ab') &&
 
+// $('body').find('.error_ab').length == 0
+
 	if( !firstName.val() == "" && !firstName.hasClass('error_ab') &&
 		!lastName.val() == "" && !lastName.hasClass('error_ab') &&
 		!patronymicName.val() == "" && !patronymicName.hasClass('error') && !patronymicName.hasClass('error_ab') &&
@@ -664,7 +666,7 @@ $(document).on('click', '.step-two_b__next.patronymic_btn', function(){
 		// && $('.recipient-info + form.ng-invalid').length == 0 
 	){
 
-		alert('all fields correct on Patronymic_btn');
+		// alert('all fields correct on Patronymic_btn');
 
 		console.log('all fields correct');
 
