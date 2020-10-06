@@ -483,3 +483,9 @@
 
 .checkout .error_ab {
   border-color: #d0021b; }
+
+.checkout .error-text_ab {
+  padding: 10px 0 0;
+  color: #d0021b;
+  font-size: 13px;
+  line-height: 1.23; }

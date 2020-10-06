@@ -245,6 +245,14 @@ $(document).on('click', '.step-two_b__next', function(){
 
 	console.log('STEP 2 B')
 
+	var firstName = $('.recipient-info + form #firstName');
+	var lastName = $('.recipient-info + form #lastName');
+	var phone = $('.recipient-info + form #phone');
+	var email = $('.recipient-info + form #newUserEmail');
+	var patronymicName = $('.recipient-info + form.patronymic_check #patronymic');
+
+
+
 	if($('.step-two__title_main + form #city').val() == ""){
 		$('.step-two__title_main + form #city').addClass('error')
 	} else {
@@ -253,6 +261,9 @@ $(document).on('click', '.step-two_b__next', function(){
 
 	// office
 	if($('.step-two__title_main + form #office').length) {
+
+		// $('.recipient-info + form').removeClass('patronymic_check')
+
 		if($('.step-two__title_main + form #office').val() == ""){
 			$('.step-two__title_main + form #office').addClass('error')
 		} else {
@@ -260,24 +271,32 @@ $(document).on('click', '.step-two_b__next', function(){
 		}
 	}
 
+
+
+
+
+
+
+
 	// street
 	if($('.step-two__title_main + form #street').length) {
 
 		console.log('курьерная доставка - street')
+
+		$('.recipient-info + form').addClass('patronymic_check')
 
 		if($('.step-two__title_main + form #street').val() == ""){
 			$('.step-two__title_main + form #street').addClass('error')
 		} else {
 			$('.step-two__title_main + form #street').removeClass('error')
 		}
+	} else {
+		$('.recipient-info + form').removeClass('patronymic_check')
 	}
 
 
 // проверка обязательных полей на кириллицу
-	var firstName = $('.recipient-info + form #firstName');
-	var lastName = $('.recipient-info + form #lastName');
-	var phone = $('.recipient-info + form #phone');
-	var email = $('.recipient-info + form #newUserEmail');
+
 	
 	// Имя
 	if( firstName.val().search(pattern_symbol) == 0 ) {
@@ -297,6 +316,18 @@ $(document).on('click', '.step-two_b__next', function(){
 	}else {
 		lastName.removeClass('error_ab')
 		lastName.closest('.input-placeholder').next('.error-text_ab').remove();
+	}
+
+
+
+	// Отчество
+	if( patronymicName.length > 0 && patronymicName.val().search(pattern_symbol) == 0 ) {
+		patronymicName.addClass('error_ab')
+		patronymicName.closest('.input-placeholder').next('.error-text_ab').remove();
+		patronymicName.closest('.input-placeholder').after('<p _ngcontent-c31 class="error-text error-text_ab"> Отчество должно состоять только из букв кириллицы </p>');
+	}else {
+		patronymicName.removeClass('error_ab')
+		patronymicName.closest('.input-placeholder').next('.error-text_ab').remove();
 	}
 
 
@@ -353,7 +384,7 @@ $(document).on('click', '.step-two_b__next', function(){
 		
 
 
-		if($('.step-two__title_main + form #office').length) {
+		if($('.step-two__title_main + form #office').length > 0) {
 			console.log('доставка в отделение - отмена отчества')
 			if($(this).attr('name') == 'patronymic') {
 				// $(this).removeClass('error required_field')
@@ -371,6 +402,8 @@ $(document).on('click', '.step-two_b__next', function(){
 	if( !$('.step-two__title_main + form #city').val() == "" &&
 		!firstName.val() == "" &&
 		!lastName.val() == "" &&
+		// ($('.step-two__title_main + form #street').length > 0 && !$('.step-two__title_main + form #patronymic').val() == "") &&
+		(!patronymicName.val() == "" && !patronymicName.hasClass('error') && !patronymicName.hasClass('error_ab') || patronymicName.length < 1) &&
 		!phone.val() == "" && phone.val().length == 18 && !phone.hasClass('error') &&
 		!email.val() == "" && !email.hasClass('error') && !email.hasClass('error_ab')
 		// && $('.recipient-info + form.ng-invalid').length == 0 
