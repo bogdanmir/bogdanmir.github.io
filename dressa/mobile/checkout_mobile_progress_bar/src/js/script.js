@@ -162,9 +162,9 @@ function run_step_2(){
 
 
 	// set phon in input step 2-b
-	$('.recipient-info + form #phone').val(localStorage.getItem('newUserPhone'));
-	$('.recipient-info + form #phone').removeClass('ng-invalid').addClass('ng-valid');
-	$('.recipient-info + form #phone + .placeholder').addClass('active-input');
+	// $('.recipient-info + form #phone').val(localStorage.getItem('newUserPhone'));
+	// $('.recipient-info + form #phone').removeClass('ng-invalid').addClass('ng-valid');
+	// $('.recipient-info + form #phone + .placeholder').addClass('active-input');
 
 	console.log('step2')
 }
@@ -501,9 +501,9 @@ $(document).on('click', '.step-two_b__next.patronymic_btn', function(){
 
 	var firstName = $('.recipient-info + form #firstName');
 	var lastName = $('.recipient-info + form #lastName');
+	var patronymicName = $('.recipient-info + form.patronymic_check #patronymic');
 	var phone = $('.recipient-info + form #phone');
 	var email = $('.recipient-info + form #newUserEmail');
-	var patronymicName = $('.recipient-info + form.patronymic_check #patronymic');
 
 
 	if($('.step-two__title_main + form #city').val() == ""){
@@ -569,7 +569,8 @@ $(document).on('click', '.step-two_b__next.patronymic_btn', function(){
 
 
 	// Отчество
-	if( patronymicName.length > 0 && patronymicName.val().search(pattern_symbol) == 0 ) {
+	// if( patronymicName.length > 0 && patronymicName.val().search(pattern_symbol) == 0 ) {
+	if( patronymicName.val().search(pattern_symbol) == 0 ) {
 		patronymicName.addClass('error_ab')
 		patronymicName.closest('.input-placeholder').next('.error-text_ab').remove();
 		patronymicName.closest('.input-placeholder').after('<p _ngcontent-c31 class="error-text error-text_ab"> Отчество должно состоять только из букв кириллицы </p>');
@@ -604,9 +605,9 @@ $(document).on('click', '.step-two_b__next.patronymic_btn', function(){
 	$('.recipient-info + form .form__input[required]').each(function (){
 		// $(this).addClass('required_field
 		if( $(this).val() == "" || $(this).hasClass('ng-invalid') ){
-			$(this).addClass('error')
+			$(this).addClass('error_ab')
 		} else {
-			$(this).removeClass('error')
+			$(this).removeClass('error_ab')
 		}
 
 
@@ -658,8 +659,9 @@ $(document).on('click', '.step-two_b__next.patronymic_btn', function(){
 
 // $('body').find('.error_ab').length == 0
 
-	if( !firstName.val() == "" && !firstName.hasClass('error_ab') &&
-		!lastName.val() == "" && !lastName.hasClass('error_ab') &&
+	if( $('body').find('.error_ab').length == 0 &&
+		!firstName.val() == "" &&
+		!lastName.val() == "" &&
 		!patronymicName.val() == "" && !patronymicName.hasClass('error') && !patronymicName.hasClass('error_ab') &&
 		!phone.val() == "" && phone.val().length == 18 && !phone.hasClass('error') &&
 		!email.val() == "" && !email.hasClass('error') && !email.hasClass('error_ab')
