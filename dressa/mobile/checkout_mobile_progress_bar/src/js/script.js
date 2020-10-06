@@ -443,8 +443,8 @@ $(document).on('click', '.step-two_b__next.no_patronymic_btn', function(){
 		// !firstName.val() == "" && !firstName.hasClass('error_ab') &&
 		// !lastName.val() == "" && !lastName.hasClass('error_ab') &&
 
-	if( !firstName.val() == "" &&
-		!lastName.val() == "" &&
+	if( !firstName.val() == "" && !firstName.hasClass('error_ab') &&
+		!lastName.val() == "" && !lastName.hasClass('error_ab') &&
 		!phone.val() == "" && phone.val().length == 18 && !phone.hasClass('error') &&
 		!email.val() == "" && !email.hasClass('error') && !email.hasClass('error_ab')
 		// && $('.recipient-info + form.ng-invalid').length == 0 
@@ -656,8 +656,8 @@ $(document).on('click', '.step-two_b__next.patronymic_btn', function(){
 		// !firstName.val() == "" && !firstName.hasClass('error_ab') &&
 		// !lastName.val() == "" && !lastName.hasClass('error_ab') &&
 
-	if( !firstName.val() == "" &&
-		!lastName.val() == "" &&
+	if( !firstName.val() == "" && !firstName.hasClass('error_ab') &&
+		!lastName.val() == "" && !lastName.hasClass('error_ab') &&
 		!patronymicName.val() == "" && !patronymicName.hasClass('error') && !patronymicName.hasClass('error_ab') &&
 		!phone.val() == "" && phone.val().length == 18 && !phone.hasClass('error') &&
 		!email.val() == "" && !email.hasClass('error') && !email.hasClass('error_ab')
