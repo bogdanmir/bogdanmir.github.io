@@ -220,7 +220,7 @@ $(document).on('click', '.step-two_a__next', function(){
 		$('.step-two_a__next').addClass('is-hide');
 
 
-
+		$('body').addClass('ab_checker');
 
 		// $('.checkbox__wrapper + .submit').after('<div><div class="btn step-two_b__next"><span> Перейти к оплате </span></div></div>');
 
@@ -259,198 +259,34 @@ $(document).on('click', '.step-two_a__next', function(){
 	}
 
 
-
-
-	
-
-
 });
 
 
 // step 2b button
-var pattern_symbol = /[^а-яА-ЯёЁ ]/g;
-var pattern_phone = /[^0-9'".]/;
-var pattern_email = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+// var pattern_symbol = /[^а-яА-ЯёЁ]/g;
+// var pattern_phone = /[^0-9'".]/;
+// var pattern_email = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
 
-
-// var firstName = $('.recipient-info + form #firstName');
-// var lastName = $('.recipient-info + form #lastName');
-// var phone = $('.recipient-info + form #phone');
-// var email = $('.recipient-info + form #newUserEmail');
-// var patronymicName = $('.recipient-info + form.patronymic_check #patronymic');
-
+var firstName = $('.recipient-info + form #firstName');
+var lastName = $('.recipient-info + form #lastName');
+var patronymicName = $('.recipient-info + form #patronymic');
+var phone = $('.recipient-info + form #phone');
+var email = $('.recipient-info + form #newUserEmail');
 
 
 // остальные доставки без обязательного отчества
 $(document).on('click', '.step-two_b__next.no_patronymic_btn', function(){
 
+	console.log('no_patronymic_btn');
 
-	// alert('click on NO_Patronymic_btn');
-
-
-	console.log('___STEP 2-B without requared patronymic___')
-
-	var firstName = $('.recipient-info + form #firstName');
-	var lastName = $('.recipient-info + form #lastName');
-	var phone = $('.recipient-info + form #phone');
-	var email = $('.recipient-info + form #newUserEmail');
-	var patronymicName = $('.recipient-info + form.patronymic_check #patronymic');
-
-	if($('.step-two__title_main + form #city').val() == ""){
-		$('.step-two__title_main + form #city').addClass('error')
-	} else {
-		$('.step-two__title_main + form #city').removeClass('error')
-	}
-
-	// office
-	// if($('.step-two__title_main + form #office').length) {
-
-		// $('.recipient-info + form').removeClass('patronymic_check')
-
-	if($('.step-two__title_main + form #office').val() == ""){
-		$('.step-two__title_main + form #office').addClass('error')
-	} else {
-		$('.step-two__title_main + form #office').removeClass('error')
-	}
-	// }
-
-
-	// street
-	// if($('.step-two__title_main + form #street').length) {
-
-	// 	// console.log('курьерная доставка - street')
-
-	// 	// $('.recipient-info + form').addClass('patronymic_check')
-
-	// 	if($('.step-two__title_main + form #street').val() == ""){
-	// 		$('.step-two__title_main + form #street').addClass('error')
-	// 	} else {
-	// 		$('.step-two__title_main + form #street').removeClass('error')
-	// 	}
-	// } 
-	// else {
-	// 	$('.recipient-info + form').removeClass('patronymic_check')
-	// }
-
-
-// проверка обязательных полей на кириллицу
-
-	
-	// Имя
-	if( firstName.val().search(pattern_symbol) == 0 ) {
-		firstName.addClass('error_ab')
-		firstName.closest('.input-placeholder').next('.error-text_ab').remove();
-		firstName.closest('.input-placeholder').after('<p _ngcontent-c31 class="error-text error-text_ab"> Имя должно состоять только из букв кириллицы </p>');
-	}else {
-		firstName.removeClass('error_ab')
-		firstName.closest('.input-placeholder').next('.error-text_ab').remove();
-	}
-
-	// Фамилия
-	if( lastName.val().search(pattern_symbol) == 0 ) {
-		lastName.addClass('error_ab')
-		lastName.closest('.input-placeholder').next('.error-text_ab').remove();
-		lastName.closest('.input-placeholder').after('<p _ngcontent-c31 class="error-text error-text_ab"> Фамилия должна состоять только из букв кириллицы </p>');
-	}else {
-		lastName.removeClass('error_ab')
-		lastName.closest('.input-placeholder').next('.error-text_ab').remove();
-	}
-
-
-
-	// Отчество
-	// if( patronymicName.length > 0 && patronymicName.val().search(pattern_symbol) == 0 ) {
-	// 	patronymicName.addClass('error_ab')
-	// 	patronymicName.closest('.input-placeholder').next('.error-text_ab').remove();
-	// 	patronymicName.closest('.input-placeholder').after('<p _ngcontent-c31 class="error-text error-text_ab"> Отчество должно состоять только из букв кириллицы </p>');
-	// }else {
-	// 	patronymicName.removeClass('error_ab')
-	// 	patronymicName.closest('.input-placeholder').next('.error-text_ab').remove();
-	// }
-
-
-	// Телефон
-	// if( phone.val().search(pattern_phone) == 0 && phone.val().length !== 18) {
-	// 	phone.addClass('error_ab')
-	// }else {
-	// 	phone.removeClass('error_ab')
-	// }
-
-	// if( email.val().search(pattern_email) == 0 ){
-	// 	console.log('mail NOT correct')
-	// 	email.addClass('error_ab')
-	// } else {
-	// 	email.removeClass('error_ab')
-	// }
-
-	if(!pattern_email.test( email.val() )) {
-		console.log('mail NOT correct')
-		email.addClass('error_ab')
-	} else {
-		email.removeClass('error_ab')
-	}
-
-	// проверка обязательных полей на пустоту
-	$('.recipient-info + form .form__input[required]').each(function (){
-		// $(this).addClass('required_field
-		if( $(this).val() == "" || $(this).hasClass('ng-invalid') ){
-			$(this).addClass('error')
-		} else {
-			$(this).removeClass('error')
-		}
-
-
-
-
-		// if( $(this).hasClass('ng-valid') ) {
-		// 	$(this).removeClass('error')
-		// }
-		if( $(this).filter("[name='phone']") && phone.val().search(pattern_phone) == 0 && phone.val().length != 18 ){
-			console.log('phone NOT correct')
-			phone.addClass('error_ab')
-		} else {
-			phone.removeClass('error_ab')
-		}
-
-		// email
-		// if( $(this).filter("[name='newUserEmail']") && email.val().search(pattern_email) == 0 ){
-		// 	console.log('not correct mail')
-		// 	email.addClass('error_ab')
-		// } else {
-		// 	email.removeClass('error_ab')
-		// }
+	if( $('body').find('form .error').length == 0 && 
+			!firstName.val() == "" &&
+			!lastName.val() == "" &&
+			// !patronymicName.val() == "" &&
+			!phone.val() == "" &&
+			!email.val() == "" ){
 		
-
-
-		// if($('.step-two__title_main + form #office').length > 0) {
-			// console.log('доставка в отделение - отмена отчества')
-			if($(this).attr('name') == 'patronymic') {
-				// $(this).removeClass('error required_field')
-				$(this).removeClass('error');
-				$(this).removeClass('ng-invalid');
-			}
-		// }
-
-
-	});
-
-// !$('.step-two__title_main + form #street').val() == "" ||
-// !$('.step-two__title_main + form #office').val() == "" && 
-// !$('.step-two__title_main + form #city').val() == "" &&
-		// ($('.step-two__title_main + form #street').length > 0 && !$('.step-two__title_main + form #patronymic').val() == "") &&
-		// !patronymicName.val() == "" && !patronymicName.hasClass('error') && !patronymicName.hasClass('error_ab') || patronymicName.length < 1 &&
-
-		// !firstName.val() == "" && !firstName.hasClass('error_ab') &&
-		// !lastName.val() == "" && !lastName.hasClass('error_ab') &&
-
-	if( !firstName.val() == "" && !firstName.hasClass('error_ab') &&
-		!lastName.val() == "" && !lastName.hasClass('error_ab') &&
-		!phone.val() == "" && phone.val().length == 18 && !phone.hasClass('error') &&
-		!email.val() == "" && !email.hasClass('error') && !email.hasClass('error_ab')
-		// && $('.recipient-info + form.ng-invalid').length == 0 
-	){
-
-		// alert('all fields correct on NO_Patronymic_btn');
+		$('body').removeClass('ab_checker');
 
 		console.log('all fields correct');
 
@@ -476,199 +312,38 @@ $(document).on('click', '.step-two_b__next.no_patronymic_btn', function(){
 		$('.progress_item').next().addClass('active');
 
 		$('.submit .step-two__next > span').text('Оплатить');
-
-	} else {
-		console.log('somethink wrong');
 	}
-});
+
+	if( $('body.ab_checker').length > 0 ){
+
+		if($('body').find('form .error').length > 0 || 
+			firstName.val() == "" ||
+			lastName.val() == "" ||
+			// patronymicName.val() == "" ||
+			phone.val() == "" ||
+			email.val() == "" ){
+
+			$('.checkout .checkbox__wrapper+.submit .btn').get(0).click();
+		}
+	}	
+})
 
 
 
-
-
-
-
-
-
-
+// -------------------------------------------------------
 // курьерская доставка с обезательнным отчеством
 $(document).on('click', '.step-two_b__next.patronymic_btn', function(){
 
-	// alert('click on Patronymic_btn');
+	console.log('patronymic_btn');
 
-
-	console.log('STEP 2-B with REQUARED patronymic')
-
-	var firstName = $('.recipient-info + form #firstName');
-	var lastName = $('.recipient-info + form #lastName');
-	var patronymicName = $('.recipient-info + form.patronymic_check #patronymic');
-	var phone = $('.recipient-info + form #phone');
-	var email = $('.recipient-info + form #newUserEmail');
-
-
-	if($('.step-two__title_main + form #city').val() == ""){
-		$('.step-two__title_main + form #city').addClass('error')
-	} else {
-		$('.step-two__title_main + form #city').removeClass('error')
-	}
-
-	// office
-	// if($('.step-two__title_main + form #office').length) {
-
-	// 	// $('.recipient-info + form').removeClass('patronymic_check')
-
-	// 	if($('.step-two__title_main + form #office').val() == ""){
-	// 		$('.step-two__title_main + form #office').addClass('error')
-	// 	} else {
-	// 		$('.step-two__title_main + form #office').removeClass('error')
-	// 	}
-	// }
-
-
-	// street
-	// if($('.step-two__title_main + form #street').length) {
-
-		// console.log('курьерная доставка - street')
-
-		// $('.recipient-info + form').addClass('patronymic_check')
-
-		if($('.step-two__title_main + form #street').val() == ""){
-			$('.step-two__title_main + form #street').addClass('error')
-		} else {
-			$('.step-two__title_main + form #street').removeClass('error')
-		}
-	// } 
-	// else {
-	// 	$('.recipient-info + form').removeClass('patronymic_check')
-	// }
-
-
-// проверка обязательных полей на кириллицу
-
-	
-	// Имя
-	if( firstName.val().search(pattern_symbol) == 0 ) {
-		firstName.addClass('error_ab')
-		firstName.closest('.input-placeholder').next('.error-text_ab').remove();
-		firstName.closest('.input-placeholder').after('<p _ngcontent-c31 class="error-text error-text_ab"> Имя должно состоять только из букв кириллицы </p>');
-	}else {
-		firstName.removeClass('error_ab')
-		firstName.closest('.input-placeholder').next('.error-text_ab').remove();
-	}
-
-	// Фамилия
-	if( lastName.val().search(pattern_symbol) == 0 ) {
-		lastName.addClass('error_ab')
-		lastName.closest('.input-placeholder').next('.error-text_ab').remove();
-		lastName.closest('.input-placeholder').after('<p _ngcontent-c31 class="error-text error-text_ab"> Фамилия должна состоять только из букв кириллицы </p>');
-	}else {
-		lastName.removeClass('error_ab')
-		lastName.closest('.input-placeholder').next('.error-text_ab').remove();
-	}
-
-
-
-	// Отчество
-	// if( patronymicName.length > 0 && patronymicName.val().search(pattern_symbol) == 0 ) {
-	if( patronymicName.val().search(pattern_symbol) == 0 ) {
-		patronymicName.addClass('error_ab')
-		patronymicName.closest('.input-placeholder').next('.error-text_ab').remove();
-		patronymicName.closest('.input-placeholder').after('<p _ngcontent-c31 class="error-text error-text_ab"> Отчество должно состоять только из букв кириллицы </p>');
-	}else {
-		patronymicName.removeClass('error_ab')
-		patronymicName.closest('.input-placeholder').next('.error-text_ab').remove();
-	}
-
-
-	// Телефон
-	// if( phone.val().search(pattern_phone) == 0 && phone.val().length !== 18) {
-	// 	phone.addClass('error_ab')
-	// }else {
-	// 	phone.removeClass('error_ab')
-	// }
-
-	// if( email.val().search(pattern_email) == 0 ){
-	// 	console.log('mail NOT correct')
-	// 	email.addClass('error_ab')
-	// } else {
-	// 	email.removeClass('error_ab')
-	// }
-
-	if(!pattern_email.test( email.val() )) {
-		console.log('mail NOT correct')
-		email.addClass('error_ab')
-	} else {
-		email.removeClass('error_ab')
-	}
-
-	// проверка обязательных полей на пустоту
-	$('.recipient-info + form .form__input[required]').each(function (){
-		// $(this).addClass('required_field
-		if( $(this).val() == "" || $(this).hasClass('ng-invalid') ){
-			$(this).addClass('error_ab')
-		} else {
-			$(this).removeClass('error_ab')
-		}
-
-
-
-
-		// if( $(this).hasClass('ng-valid') ) {
-		// 	$(this).removeClass('error')
-		// }
-		if( $(this).filter("[name='phone']") && phone.val().search(pattern_phone) == 0 && phone.val().length != 18 ){
-			console.log('phone NOT correct')
-			phone.addClass('error_ab')
-		} else {
-			phone.removeClass('error_ab')
-		}
-
-		// email
-		// if( $(this).filter("[name='newUserEmail']") && email.val().search(pattern_email) == 0 ){
-		// 	console.log('not correct mail')
-		// 	email.addClass('error_ab')
-		// } else {
-		// 	email.removeClass('error_ab')
-		// }
+	if( $('body').find('form .error').length == 0 && 
+			!firstName.val() == "" &&
+			!lastName.val() == "" &&
+			!patronymicName.val() == "" &&
+			!phone.val() == "" &&
+			!email.val() == "" ){
 		
-
-
-		// if($('.step-two__title_main + form #office').length > 0) {
-		// 	console.log('доставка в отделение - отмена отчества')
-		// 	if($(this).attr('name') == 'patronymic') {
-		// 		// $(this).removeClass('error required_field')
-		// 		$(this).removeClass('error');
-		// 		$(this).removeClass('ng-invalid');
-		// 		// console.log('patronymic removeClass error - 4 ');
-		// 	}
-		// }
-
-
-	});
-
-
-
-// !$('.step-two__title_main + form #street').val() == "" ||
-// !$('.step-two__title_main + form #office').val() == "" && 
-		// ($('.step-two__title_main + form #street').length > 0 && !$('.step-two__title_main + form #patronymic').val() == "") &&
-
-
-		// !$('.step-two__title_main + form #city').val() == "" &&
-		// !firstName.val() == "" && !firstName.hasClass('error_ab') &&
-		// !lastName.val() == "" && !lastName.hasClass('error_ab') &&
-
-// $('body').find('.error_ab').length == 0
-
-	if( $('body').find('.error_ab').length == 0 &&
-		!firstName.val() == "" &&
-		!lastName.val() == "" &&
-		!patronymicName.val() == "" && !patronymicName.hasClass('error') && !patronymicName.hasClass('error_ab') &&
-		!phone.val() == "" && phone.val().length == 18 && !phone.hasClass('error') &&
-		!email.val() == "" && !email.hasClass('error') && !email.hasClass('error_ab')
-		// && $('.recipient-info + form.ng-invalid').length == 0 
-	){
-
-		// alert('all fields correct on Patronymic_btn');
+		$('body').removeClass('ab_checker');
 
 		console.log('all fields correct');
 
@@ -694,24 +369,22 @@ $(document).on('click', '.step-two_b__next.patronymic_btn', function(){
 		$('.progress_item').next().addClass('active');
 
 		$('.submit .step-two__next > span').text('Оплатить');
-
-	} else {
-		console.log('somethink wrong');
 	}
-});
 
+	if( $('body.ab_checker').length > 0 ){
 
+		if($('body').find('form .error').length > 0 || 
+			firstName.val() == "" ||
+			lastName.val() == "" ||
+			patronymicName.val() == "" ||
+			phone.val() == "" ||
+			email.val() == "" ){
 
-
-
-
-
-
-
-
-
-
-
+			$('.checkout .checkbox__wrapper+.submit .btn').get(0).click();
+		}
+	}	
+})
+// -------------------------------------------------------------------
 
 
 
