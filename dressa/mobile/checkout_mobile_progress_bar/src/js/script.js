@@ -270,6 +270,10 @@ var patronymicName = $('.recipient-info + form.patronymic_check #patronymic');
 // остальные доставки без обязательного отчества
 $(document).on('click', '.step-two_b__next.no_patronymic_btn', function(){
 
+
+	alert('click on NO_Patronymic_btn');
+
+
 	console.log('___STEP 2-B without requared patronymic___')
 
 	if($('.step-two__title_main + form #city').val() == ""){
@@ -463,7 +467,12 @@ $(document).on('click', '.step-two_b__next.no_patronymic_btn', function(){
 
 // курьерская доставка с обезательнным отчеством
 $(document).on('click', '.step-two_b__next.patronymic_btn', function(){
+
+	alert('click on Patronymic_btn');
+
+
 	console.log('STEP 2-B with REQUARED patronymic')
+
 
 	if($('.step-two__title_main + form #city').val() == ""){
 		$('.step-two__title_main + form #city').addClass('error')
