@@ -267,17 +267,26 @@ $(document).on('click', '.step-two_a__next', function(){
 // var pattern_phone = /[^0-9'".]/;
 // var pattern_email = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
 
-var firstName = $('.recipient-info + form #firstName');
-var lastName = $('.recipient-info + form #lastName');
-var patronymicName = $('.recipient-info + form #patronymic');
-var phone = $('.recipient-info + form #phone');
-var email = $('.recipient-info + form #newUserEmail');
+
 
 
 // остальные доставки без обязательного отчества
 $(document).on('click', '.step-two_b__next.no_patronymic_btn', function(){
-
+var firstName = $('body').find('.recipient-info + form #firstName');
+var lastName = $('body').find('.recipient-info + form #lastName');
+var patronymicName = $('body').find('.recipient-info + form #patronymic');
+var phone = $('body').find('.recipient-info + form #phone');
+var email = $('body').find('.recipient-info + form #newUserEmail');
 	console.log('no_patronymic_btn');
+console.log(firstName);
+console.log(firstName.val());
+console.log(lastName);
+console.log(lastName.val());
+console.log(phone);
+console.log(phone.val());
+console.log(email);
+console.log(email.val());
+console.log($('body').find('form .error').length == 0);
 
 	if( $('body').find('form .error').length == 0 && 
 		firstName.val() != "" &&
@@ -339,7 +348,11 @@ $(document).on('click', '.step-two_b__next.no_patronymic_btn', function(){
 // -------------------------------------------------------
 // курьерская доставка с обезательнным отчеством
 $(document).on('click', '.step-two_b__next.patronymic_btn', function(){
-
+var firstName = $('body').find('.recipient-info + form #firstName');
+var lastName = $('body').find('.recipient-info + form #lastName');
+var patronymicName = $('body').find('.recipient-info + form #patronymic');
+var phone = $('body').find('.recipient-info + form #phone');
+var email = $('body').find('.recipient-info + form #newUserEmail');
 	console.log('patronymic_btn');
 
 
