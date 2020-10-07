@@ -325,12 +325,18 @@ $(document).on('click', '.step-two_b__next.no_patronymic_btn', function(){
 			phone.val() == "" ||
 			email.val() == "" ){
 
-			$('.checkout .checkbox__wrapper+.submit .btn').get(0).click();
-			$('.checkout .checkbox__wrapper+.submit .btn').trigger('click');
-			$('.checkout .checkbox__wrapper+.submit .btn').click();
+			// $('.checkout .checkbox__wrapper+.submit .btn').get(0).click();
+			// $('.checkout .checkbox__wrapper+.submit .btn').trigger('click');
+			// $('.checkout .checkbox__wrapper+.submit .btn').click();
 
 
 			alert('emulation click on last btn')
+
+			setTimeout(function(){ 
+				$('.checkout .checkbox__wrapper+.submit .btn').trigger('click');
+				console.log('111111111111');
+			}, 100);
+
 		}
 	}	
 })
@@ -389,14 +395,21 @@ $(document).on('click', '.step-two_b__next.patronymic_btn', function(){
 			phone.val() == "" ||
 			email.val() == "" ){
 
-			$('.checkout .checkbox__wrapper+.submit .btn').get(0).click();
-			$('.checkout .checkbox__wrapper+.submit .btn').trigger('click');
-			$('.checkout .checkbox__wrapper+.submit .btn').click();
+			// $('.checkout .checkbox__wrapper+.submit .btn').get(0).click();
+			
+			// $('.checkout .checkbox__wrapper+.submit .btn').click();
 
 			alert('emulation click on last btn')
+
+			setTimeout(function(){ 
+				$('.checkout .checkbox__wrapper+.submit .btn').trigger('click');
+				console.log('111111111111');
+			}, 100);
+
 		}
 	}	
 })
+
 // -------------------------------------------------------------------
 
 
