@@ -312,6 +312,8 @@ $(document).on('click', '.step-two_b__next.no_patronymic_btn', function(){
 		$('.progress_item').next().addClass('active');
 
 		$('.submit .step-two__next > span').text('Оплатить');
+
+		alert('click no_patronymic_btn')
 	}
 
 	if( $('body.ab_checker').length > 0 ){
@@ -324,6 +326,11 @@ $(document).on('click', '.step-two_b__next.no_patronymic_btn', function(){
 			email.val() == "" ){
 
 			$('.checkout .checkbox__wrapper+.submit .btn').get(0).click();
+			$('.checkout .checkbox__wrapper+.submit .btn').trigger('click');
+			$('.checkout .checkbox__wrapper+.submit .btn').click();
+
+
+			alert('emulation click on last btn')
 		}
 	}	
 })
@@ -369,6 +376,8 @@ $(document).on('click', '.step-two_b__next.patronymic_btn', function(){
 		$('.progress_item').next().addClass('active');
 
 		$('.submit .step-two__next > span').text('Оплатить');
+
+		alert('click patronymic_btn')
 	}
 
 	if( $('body.ab_checker').length > 0 ){
@@ -381,6 +390,10 @@ $(document).on('click', '.step-two_b__next.patronymic_btn', function(){
 			email.val() == "" ){
 
 			$('.checkout .checkbox__wrapper+.submit .btn').get(0).click();
+			$('.checkout .checkbox__wrapper+.submit .btn').trigger('click');
+			$('.checkout .checkbox__wrapper+.submit .btn').click();
+
+			alert('emulation click on last btn')
 		}
 	}	
 })
