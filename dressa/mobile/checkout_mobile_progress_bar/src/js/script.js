@@ -280,11 +280,10 @@ $(document).on('click', '.step-two_b__next.no_patronymic_btn', function(){
 	console.log('no_patronymic_btn');
 
 	if( $('body').find('form .error').length == 0 && 
-		!firstName.val() == "" &&
-		!lastName.val() == "" &&
-		// !patronymicName.val() == "" &&
-		!phone.val() == "" &&
-		!email.val() == "" ){
+		firstName.val() != "" &&
+		lastName.val() != "" &&
+		phone.val() != "" &&
+		email.val() != "" ){
 		
 			$('body').removeClass('ab_checker');
 
@@ -321,7 +320,6 @@ $(document).on('click', '.step-two_b__next.no_patronymic_btn', function(){
 		if($('body').find('form .error').length > 0 || 
 			firstName.val() == "" ||
 			lastName.val() == "" ||
-			// patronymicName.val() == "" ||
 			phone.val() == "" ||
 			email.val() == "" ){
 
@@ -346,11 +344,11 @@ $(document).on('click', '.step-two_b__next.patronymic_btn', function(){
 
 
 	if( $('body').find('form .error').length == 0 && 
-		!firstName.val() == "" &&
-		!lastName.val() == "" &&
-		!patronymicName.val() == "" &&
-		!phone.val() == "" &&
-		!email.val() == "" ){
+		firstName.val() != "" &&
+		lastName.val() != "" &&
+		patronymicName.val() != "" &&
+		phone.val() != "" &&
+		email.val() != "" ){
 		
 			$('body').removeClass('ab_checker');
 
