@@ -272,21 +272,24 @@ $(document).on('click', '.step-two_a__next', function(){
 
 // остальные доставки без обязательного отчества
 $(document).on('click', '.step-two_b__next.no_patronymic_btn', function(){
-var firstName = $('body').find('.recipient-info + form #firstName');
-var lastName = $('body').find('.recipient-info + form #lastName');
-var patronymicName = $('body').find('.recipient-info + form #patronymic');
-var phone = $('body').find('.recipient-info + form #phone');
-var email = $('body').find('.recipient-info + form #newUserEmail');
+
+	var firstName = $('body').find('.recipient-info + form #firstName');
+	var lastName = $('body').find('.recipient-info + form #lastName');
+	var patronymicName = $('body').find('.recipient-info + form #patronymic');
+	var phone = $('body').find('.recipient-info + form #phone');
+	var email = $('body').find('.recipient-info + form #newUserEmail');
+
 	console.log('no_patronymic_btn');
-console.log(firstName);
-console.log(firstName.val());
-console.log(lastName);
-console.log(lastName.val());
-console.log(phone);
-console.log(phone.val());
-console.log(email);
-console.log(email.val());
-console.log($('body').find('form .error').length == 0);
+
+	console.log(firstName);
+	console.log(firstName.val());
+	console.log(lastName);
+	console.log(lastName.val());
+	console.log(phone);
+	console.log(phone.val());
+	console.log(email);
+	console.log(email.val());
+	console.log($('body').find('form .error').length == 0);
 
 	if( $('body').find('form .error').length == 0 && 
 		firstName.val() != "" &&
@@ -320,8 +323,6 @@ console.log($('body').find('form .error').length == 0);
 			$('.progress_item').next().addClass('active');
 
 			$('.submit .step-two__next > span').text('Оплатить');
-
-			// alert('click no_patronymic_btn')
 	}
 
 	if( $('body.ab_checker').length > 0 ){
@@ -332,8 +333,7 @@ console.log($('body').find('form .error').length == 0);
 			phone.val() == "" ||
 			email.val() == "" ){
 
-			console.log('simulate click');
-
+			// console.log('simulate click');
 			// $('.checkout .checkbox__wrapper+.submit .btn').get(0).click();
 			// $('.checkout .checkbox__wrapper+.submit .btn').click();
 			$('.checkout .checkbox__wrapper+.submit .btn').trigger('click');
@@ -348,11 +348,13 @@ console.log($('body').find('form .error').length == 0);
 // -------------------------------------------------------
 // курьерская доставка с обезательнным отчеством
 $(document).on('click', '.step-two_b__next.patronymic_btn', function(){
-var firstName = $('body').find('.recipient-info + form #firstName');
-var lastName = $('body').find('.recipient-info + form #lastName');
-var patronymicName = $('body').find('.recipient-info + form #patronymic');
-var phone = $('body').find('.recipient-info + form #phone');
-var email = $('body').find('.recipient-info + form #newUserEmail');
+
+	var firstName = $('body').find('.recipient-info + form #firstName');
+	var lastName = $('body').find('.recipient-info + form #lastName');
+	var patronymicName = $('body').find('.recipient-info + form #patronymic');
+	var phone = $('body').find('.recipient-info + form #phone');
+	var email = $('body').find('.recipient-info + form #newUserEmail');
+
 	console.log('patronymic_btn');
 
 
@@ -389,8 +391,6 @@ var email = $('body').find('.recipient-info + form #newUserEmail');
 			$('.progress_item').next().addClass('active');
 
 			$('.submit .step-two__next > span').text('Оплатить');
-
-			// alert('click patronymic_btn')
 	}
 
 	if( $('body.ab_checker').length > 0 ){
@@ -401,10 +401,7 @@ var email = $('body').find('.recipient-info + form #newUserEmail');
 			patronymicName.val() == "" ||
 			phone.val() == "" ||
 			email.val() == "" ){
-
-
-			console.log('simulate click');
-
+			// console.log('simulate click');
 			// $('.checkout .checkbox__wrapper+.submit .btn').get(0).click();
 			// $('.checkout .checkbox__wrapper+.submit .btn').click();
 			$('.checkout .checkbox__wrapper+.submit .btn').trigger('click');
@@ -415,6 +412,33 @@ var email = $('body').find('.recipient-info + form #newUserEmail');
 })
 
 // -------------------------------------------------------------------
+
+
+
+
+// если есть ошибка на последнем шаге - открывать всю форму
+$(document).on('click', '.step-two__next', function(){
+	if( $('body').find('form .error').length > 0 && $('body.ab_checker').length < 1 && $('.step-two__title_main').hasClass('is-hide') ){
+		console.log('all fields correct - 2');
+			
+		$('body').find('.new-user__step-two').addClass('back_step');
+
+		// $(this).addClass('is-hide');
+		// $('.form__bordered').addClass('is_show');
+		// $('.recipient-info').removeClass('show_step_2b');
+
+		$('.step-two__title_main').removeClass('is-hide');
+		$('.step-two__title_main + form').removeClass('is-hide');
+
+		$('.recipient-info').addClass('show_step_2b');
+		$('.recipient-info + form').removeClass('is-hide').addClass('show_step_2b');
+		// $('.checkout .checkbox__wrapper+.submit .hint').addClass('is-hide');
+		$('.step-two__add-comment').addClass('show_step_2b');
+		$('.checkbox__wrapper').addClass('show_step_2b');
+
+	}
+})
+
 
 
 

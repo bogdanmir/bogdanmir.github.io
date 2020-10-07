@@ -489,3 +489,13 @@
   color: #d0021b;
   font-size: 13px;
   line-height: 1.23; }
+
+.checkout .new-user__step-two.back_step {
+  display: flex;
+  flex-wrap: wrap; }
+  .checkout .new-user__step-two.back_step .form__bordered {
+    order: 3; }
+  .checkout .new-user__step-two.back_step .checkbox__wrapper + .submit {
+    order: 4; }
+  .checkout .new-user__step-two.back_step form {
+    width: 100%; }

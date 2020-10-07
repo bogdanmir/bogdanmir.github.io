@@ -440,4 +440,24 @@
 		font-size: 13px;
 		line-height: 1.23;
 	}
+
+
+
+// 
+	.new-user__step-two {
+		&.back_step {
+			display: flex;
+			flex-wrap: wrap;
+			.form__bordered {
+				order: 3;
+			}
+			.checkbox__wrapper+.submit {
+				order: 4;
+			}
+			form {
+				width: 100%;
+			}
+		}
+		
+	}
 }
