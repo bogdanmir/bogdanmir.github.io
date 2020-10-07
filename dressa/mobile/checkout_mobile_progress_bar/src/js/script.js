@@ -280,40 +280,40 @@ $(document).on('click', '.step-two_b__next.no_patronymic_btn', function(){
 	console.log('no_patronymic_btn');
 
 	if( $('body').find('form .error').length == 0 && 
-			!firstName.val() == "" &&
-			!lastName.val() == "" &&
-			// !patronymicName.val() == "" &&
-			!phone.val() == "" &&
-			!email.val() == "" ){
+		!firstName.val() == "" &&
+		!lastName.val() == "" &&
+		// !patronymicName.val() == "" &&
+		!phone.val() == "" &&
+		!email.val() == "" ){
 		
-		$('body').removeClass('ab_checker');
+			$('body').removeClass('ab_checker');
 
-		console.log('all fields correct');
+			console.log('all fields correct');
 
-		$(this).addClass('is-hide');
-		$('.form__bordered').addClass('is_show');
-		$('.step-two__title_main').addClass('is-hide');
+			$(this).addClass('is-hide');
+			$('.form__bordered').addClass('is_show');
+			$('.step-two__title_main').addClass('is-hide');
 
-		$('.step-two__title_main + form').addClass('is-hide');
+			$('.step-two__title_main + form').addClass('is-hide');
 
-		$('.recipient-info').removeClass('show_step_2b');
+			$('.recipient-info').removeClass('show_step_2b');
 
-		// $('.recipient-info + form.ng-pristine').removeClass('show_step_2b');
-		$('.recipient-info + form').removeClass('show_step_2b').addClass('is-hide');
-		$('.checkout .checkbox__wrapper+.submit .hint').addClass('is-hide');
+			// $('.recipient-info + form.ng-pristine').removeClass('show_step_2b');
+			$('.recipient-info + form').removeClass('show_step_2b').addClass('is-hide');
+			$('.checkout .checkbox__wrapper+.submit .hint').addClass('is-hide');
 
-		$('.step-two__add-comment').removeClass('show_step_2b');
-		$('.checkbox__wrapper').removeClass('show_step_2b');
-		$('.step-two__requested-fields').removeClass('show_step_2b');
+			$('.step-two__add-comment').removeClass('show_step_2b');
+			$('.checkbox__wrapper').removeClass('show_step_2b');
+			$('.step-two__requested-fields').removeClass('show_step_2b');
 
-		$('.checkout .checkbox__wrapper+.submit').addClass('is_show');
+			$('.checkout .checkbox__wrapper+.submit').addClass('is_show');
 
-		$('.progress_item.active').removeClass('active').addClass('selected');
-		$('.progress_item').next().addClass('active');
+			$('.progress_item.active').removeClass('active').addClass('selected');
+			$('.progress_item').next().addClass('active');
 
-		$('.submit .step-two__next > span').text('Оплатить');
+			$('.submit .step-two__next > span').text('Оплатить');
 
-		alert('click no_patronymic_btn')
+			// alert('click no_patronymic_btn')
 	}
 
 	if( $('body.ab_checker').length > 0 ){
@@ -325,17 +325,12 @@ $(document).on('click', '.step-two_b__next.no_patronymic_btn', function(){
 			phone.val() == "" ||
 			email.val() == "" ){
 
+			console.log('simulate click');
+
 			// $('.checkout .checkbox__wrapper+.submit .btn').get(0).click();
-			// $('.checkout .checkbox__wrapper+.submit .btn').trigger('click');
 			// $('.checkout .checkbox__wrapper+.submit .btn').click();
-
-
-			alert('emulation click on last btn')
-
-			setTimeout(function(){ 
-				$('.checkout .checkbox__wrapper+.submit .btn').trigger('click');
-				console.log('111111111111');
-			}, 100);
+			$('.checkout .checkbox__wrapper+.submit .btn').trigger('click');
+			$('.checkout .checkbox__wrapper+.submit .btn').mousedown();
 
 		}
 	}	
@@ -349,41 +344,42 @@ $(document).on('click', '.step-two_b__next.patronymic_btn', function(){
 
 	console.log('patronymic_btn');
 
+
 	if( $('body').find('form .error').length == 0 && 
-			!firstName.val() == "" &&
-			!lastName.val() == "" &&
-			!patronymicName.val() == "" &&
-			!phone.val() == "" &&
-			!email.val() == "" ){
+		!firstName.val() == "" &&
+		!lastName.val() == "" &&
+		!patronymicName.val() == "" &&
+		!phone.val() == "" &&
+		!email.val() == "" ){
 		
-		$('body').removeClass('ab_checker');
+			$('body').removeClass('ab_checker');
 
-		console.log('all fields correct');
+			console.log('all fields correct');
 
-		$(this).addClass('is-hide');
-		$('.form__bordered').addClass('is_show');
-		$('.step-two__title_main').addClass('is-hide');
+			$(this).addClass('is-hide');
+			$('.form__bordered').addClass('is_show');
+			$('.step-two__title_main').addClass('is-hide');
 
-		$('.step-two__title_main + form').addClass('is-hide');
+			$('.step-two__title_main + form').addClass('is-hide');
 
-		$('.recipient-info').removeClass('show_step_2b');
+			$('.recipient-info').removeClass('show_step_2b');
 
-		// $('.recipient-info + form.ng-pristine').removeClass('show_step_2b');
-		$('.recipient-info + form').removeClass('show_step_2b').addClass('is-hide');
-		$('.checkout .checkbox__wrapper+.submit .hint').addClass('is-hide');
+			// $('.recipient-info + form.ng-pristine').removeClass('show_step_2b');
+			$('.recipient-info + form').removeClass('show_step_2b').addClass('is-hide');
+			$('.checkout .checkbox__wrapper+.submit .hint').addClass('is-hide');
 
-		$('.step-two__add-comment').removeClass('show_step_2b');
-		$('.checkbox__wrapper').removeClass('show_step_2b');
-		$('.step-two__requested-fields').removeClass('show_step_2b');
+			$('.step-two__add-comment').removeClass('show_step_2b');
+			$('.checkbox__wrapper').removeClass('show_step_2b');
+			$('.step-two__requested-fields').removeClass('show_step_2b');
 
-		$('.checkout .checkbox__wrapper+.submit').addClass('is_show');
+			$('.checkout .checkbox__wrapper+.submit').addClass('is_show');
 
-		$('.progress_item.active').removeClass('active').addClass('selected');
-		$('.progress_item').next().addClass('active');
+			$('.progress_item.active').removeClass('active').addClass('selected');
+			$('.progress_item').next().addClass('active');
 
-		$('.submit .step-two__next > span').text('Оплатить');
+			$('.submit .step-two__next > span').text('Оплатить');
 
-		alert('click patronymic_btn')
+			// alert('click patronymic_btn')
 	}
 
 	if( $('body.ab_checker').length > 0 ){
@@ -395,19 +391,16 @@ $(document).on('click', '.step-two_b__next.patronymic_btn', function(){
 			phone.val() == "" ||
 			email.val() == "" ){
 
+
+			console.log('simulate click');
+
 			// $('.checkout .checkbox__wrapper+.submit .btn').get(0).click();
-			
 			// $('.checkout .checkbox__wrapper+.submit .btn').click();
-
-			alert('emulation click on last btn')
-
-			setTimeout(function(){ 
-				$('.checkout .checkbox__wrapper+.submit .btn').trigger('click');
-				console.log('111111111111');
-			}, 100);
+			$('.checkout .checkbox__wrapper+.submit .btn').trigger('click');
+			$('.checkout .checkbox__wrapper+.submit .btn').mousedown();
 
 		}
-	}	
+	}
 })
 
 // -------------------------------------------------------------------
