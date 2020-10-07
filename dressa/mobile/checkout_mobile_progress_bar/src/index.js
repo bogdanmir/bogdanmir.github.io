@@ -35,7 +35,7 @@ ref.append(style_tag);
 function abjqlr($){
 	// connect language configuration object
 	var language = window.language_abtest;
-	console.log('%cTest come','background:green;color:#fff;');
+	console.log('%cTest come','background:blue;color:#fff;');
 	@@scriptjs@@
 	// $('body').append('<style>'+style+'</style>');
 }
