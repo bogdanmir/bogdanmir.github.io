@@ -5,6 +5,30 @@
 // Emergency - /collections/emergency-response-vehicles
 // Heavy Equipment: /collections/agriculture-led-light-bars
 //     ATV/UTV: /pages/search-by-vehicle
+
+// Hotjar trigger to record video sessions
+try {
+    (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:1831568,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    window.hj=window.hj||function(){(hj.q=hj.q||[]).push(arguments)};
+    hj('trigger', 'new_navigation_icons');
+}
+catch(e) {}
+
+// Activation of the alt variation
+window.dataLayer = window.dataLayer || [];
+dataLayer.push({
+    'event': 'event-to-ga',
+    'eventCategory': 'Exp - New Navigation: icons and badges',
+    'eventAction': 'loaded'
+});
+
 var lang = language;
 var list_menus = {
     'boating' : {
@@ -105,4 +129,19 @@ $(document).on('click','.test-menu-control',function (event) {
         current_pos--;
     }
     scroll_to_element(current_pos);
+});
+
+
+// Click on the navigation icons
+$(document).on('click','.ab-test-menu a',function () {
+    var icon_label = $(this).find('span').text();
+    console.log(icon_label)
+
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+        'event': 'event-to-ga',
+        'eventCategory': 'Exp - New Navigation: icons and badges',
+        'eventAction': 'click on navigation',
+        'eventLabel': icon_label
+    });
 });
