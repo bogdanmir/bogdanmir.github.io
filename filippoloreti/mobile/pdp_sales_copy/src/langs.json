@@ -1,8 +1,7 @@
 {
   "languages" : {
     "" : {
-        "credit_text" : "Уточнить о наличии этой комплектации",
-        "credit_class": ""
+        "some_slug" : "Lorem Ipsum"
     }
   }
 }
