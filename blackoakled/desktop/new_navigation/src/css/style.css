@@ -1,0 +1,130 @@
+.ab-test-header {
+  width: 100% !important;
+  background: linear-gradient(180deg, #E9E9E9 0%, #DEDEDE 100%), #D9D9D9; }
+  .ab-test-header .col-md-12 {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 0; }
+
+.ab-test-menu {
+  max-width: 990px;
+  margin: 0 auto;
+  padding: 5px 0px;
+  display: flex;
+  justify-content: space-between;
+  position: relative; }
+  .ab-test-menu a {
+    color: #231F20;
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    justify-content: center;
+    padding-left: 17px;
+    padding-right: 17px; }
+    .ab-test-menu a img {
+      margin-right: 6px;
+      width: 28px;
+      height: 28px; }
+
+span.test-menu-control {
+  display: block;
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+  position: absolute; }
+
+span.test-menu-control.control-next {
+  right: 0; }
+
+.submenu {
+  display: none;
+  position: absolute; }
+
+.has-sub {
+  position: relative; }
+  .has-sub:after {
+    position: absolute;
+    top: 22px;
+    right: 11px;
+    width: 8px;
+    height: 2px;
+    display: block;
+    background: 0 0;
+    content: '';
+    vertical-align: middle;
+    border-top: 4px solid #fff;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent; }
+  .has-sub > a:hover + .submenu {
+    display: block; }
+
+#main_navbar .col-md-9.col-sm-6 {
+  padding-top: 20px;
+  padding-left: 0; }
+
+.parent.has-sub .submenu-main-link + ul {
+  display: none;
+  position: absolute;
+  top: auto;
+  left: 0; }
+
+.parent.has-sub .submenu-main-link:hover + ul {
+  display: block; }
+
+.parent.has-sub:hover > .submenu-main-link + ul {
+  display: block; }
+
+.search-and-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0; }
+
+#header .search-and-menu form[role="search"] {
+  width: 297px;
+  margin: 0 10px; }
+  #header .search-and-menu form[role="search"] .menu_c {
+    border-radius: 2px;
+    overflow: hidden; }
+  #header .search-and-menu form[role="search"] .search_menu .search_box button {
+    right: 0; }
+
+.search-and-menu ul {
+  display: flex;
+  margin: 0;
+  z-index: 99;
+  flex-wrap: wrap; }
+  .search-and-menu ul li a {
+    padding: 13px 17px 13px 10px;
+    display: block;
+    color: #fff; }
+    .search-and-menu ul li a:hover {
+      text-decoration: underline;
+      color: #fff; }
+  .search-and-menu ul li.has-sub a {
+    padding-right: 25px; }
+  .search-and-menu ul ul li {
+    border: 1px solid #676767; }
+    .search-and-menu ul ul li:hover a {
+      color: #393939;
+      background: #ddd !important;
+      border-bottom: 1px solid rgba(150, 150, 150, 0.15) !important; }
+    .search-and-menu ul ul li a {
+      color: #393939;
+      background: #ddd;
+      border-bottom: 1px solid rgba(150, 150, 150, 0.15);
+      padding: 11px 15px;
+      width: 195px; }
+  .search-and-menu ul ul .has-sub:after {
+    border-top: 4px solid #393939; }
+  .search-and-menu ul ul .has-sub:hover > ul {
+    display: block; }
+  .search-and-menu ul ul ul {
+    right: auto;
+    left: 100% !important;
+    top: 0 !important; }
+    .search-and-menu ul ul ul li:hover a {
+      background-color: #f3f3f3; }
+    .search-and-menu ul ul ul li a {
+      background-color: #f3f3f3; }
