@@ -26,13 +26,17 @@
 		padding-top: 5px;
 		padding-bottom: 5px;
 		transition: background-color 0.2s ease-in-out;
-		&:hover {
+		&:hover,
+		&:active {
 			background-color: #a9a9a9;
 		}
 		img {
 			margin-right: 6px;
 			width: 28px;
 			height: 28px;
+		}
+		&.active  {
+			background-color: #a9a9a9;
 		}
 	}
 }
