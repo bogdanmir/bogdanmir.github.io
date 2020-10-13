@@ -10,7 +10,6 @@
 .ab-test-menu {
   max-width: 990px;
   margin: 0 auto;
-  padding: 5px 0px;
   display: flex;
   justify-content: space-between;
   position: relative; }
@@ -21,7 +20,12 @@
     flex: 0 0 auto;
     justify-content: center;
     padding-left: 17px;
-    padding-right: 17px; }
+    padding-right: 17px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    transition: background-color 0.2s ease-in-out; }
+    .ab-test-menu a:hover {
+      background-color: #a9a9a9; }
     .ab-test-menu a img {
       margin-right: 6px;
       width: 28px;
