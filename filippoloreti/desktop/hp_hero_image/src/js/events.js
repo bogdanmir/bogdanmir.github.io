@@ -8,45 +8,35 @@ try {
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
         window.hj=window.hj||function(){(hj.q=hj.q||[]).push(arguments)};
-        hj('trigger', 'Sales_copy_on_pdp');
+        hj('trigger', 'hero_image_hp');
 }
 catch(e) {}
 
 window.dataLayer = window.dataLayer || [];
 dataLayer.push({
     'event': 'event-to-ga',
-    'eventCategory': 'Exp - Sales copy on PDP',
+    'eventCategory': 'Exp - Hero image on HP',
     'eventAction': 'loaded'
 });
 
-$(document).on('click', '.read_more', function (event) {
-	event.preventDefault();
-
-	$(this).removeClass('read_more').addClass('read_less');
-	// $('.sales_text').addClass('show');
-	$('.sales_text .text_hidden').slideDown();
+$(document).on('click', '.hero-banner .btn-groups-links > .btn-url:nth-child(1)', function () {
+	console.log('SHOP MEN');
 
 	window.dataLayer = window.dataLayer || [];
 	dataLayer.push({
 	    'event': 'event-to-ga',
-	    'eventCategory': 'Exp - Sales copy on PDP',
-	    'eventAction': 'click on button Read more'
+	    'eventCategory': 'Exp - Hero image on HP',
+	    'eventAction': 'click on button Shop men'
 	});
-	console.log('Read more')
 });
 
-$(document).on('click', '.read_less', function (event) {
-	event.preventDefault();
-
-	$(this).removeClass('read_less').addClass('read_more');
-	// $('.sales_text').removeClass('show');
-	$('.sales_text .text_hidden').slideUp();
+$(document).on('click', '.hero-banner .btn-groups-links > .btn-url:nth-child(2)', function () {
+	console.log('SHOP WOMEN');
 
 	window.dataLayer = window.dataLayer || [];
 	dataLayer.push({
 	    'event': 'event-to-ga',
-	    'eventCategory': 'Exp - Sales copy on PDP',
-	    'eventAction': 'click on button Read less'
+	    'eventCategory': 'Exp - Hero image on HP',
+	    'eventAction': 'click on button Shop women'
 	});
-	console.log('Read less')
 });
