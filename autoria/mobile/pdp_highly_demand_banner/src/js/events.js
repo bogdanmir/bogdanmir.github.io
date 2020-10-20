@@ -61,7 +61,7 @@ $(document).on('click', '.high-demand-wrap', function () {
 		if($('.ab_test_modal').length) {
 
 			if( $('.ab_test_modal .modal_title').length == 0 ) {
-				$('.ab_test_modal .phones_modal__item').prepend('<div class="modal_title"><p>Узнать о кредитных предложениях на этот автомобиль можно по телефону:</p></div>');
+				$('.ab_test_modal .phones_modal__item').prepend('<div class="modal_title"><p>Уточнить о наличии выбранного автомобиля можно по телефону:</p></div>');
 				if($('.ab_test_modal .phones_modal__item').length > 0){
 					$('.ab_test_modal .react_modal__body').prepend('<div class="modal_photo-car">'+ img_car +'</div>');
 				}
