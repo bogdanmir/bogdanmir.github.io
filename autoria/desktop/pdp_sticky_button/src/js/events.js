@@ -410,18 +410,16 @@ $(document).on('click','.modal_btn',function () {
 	console.log('Позвонить мне');
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
+$('body').on('click','.ab_test_modal .phones_modal__item .phone',function(){
+	console.log('clickToCall');
+	window.dataLayer = window.dataLayer || [];
+	dataLayer.push({
+	        'event': 'event-to-ga',
+	        'eventCategory': 'PDP sticky button credit',
+	        'eventAction': 'click Pop up loan',
+	        'eventLabel': 'clickToCall'
+	});
+});
 
 
 // $('body').on('click','.thankyou .react_modal__close',function(){

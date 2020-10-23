@@ -59,9 +59,11 @@
     max-width: 880px !important; }
   .ab_test_modal .react_modal__header {
     font-size: 0;
-    z-index: 9; }
+    z-index: 9 !important;
+    line-height: 0;
+    padding: 0 !important; }
   .ab_test_modal .react_modal__close {
-    top: 23px;
+    top: 0;
     right: 5px;
     left: auto;
     font-size: 28px;
@@ -83,6 +85,8 @@
     width: calc(100% - 432px); }
   .ab_test_modal .phones_modal__item {
     text-align: center; }
+    .ab_test_modal .phones_modal__item > .mt-10 {
+      display: none; }
   .ab_test_modal .be_carefull {
     display: none; }
   .ab_test_modal .modal_title {
