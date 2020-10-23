@@ -291,3 +291,21 @@
 .hide_modal {
 	display: none;
 }
+
+// evening_modal
+.ab_test_modal {
+	&.evening_modal {
+		.react_modal__container {
+			max-width: 350px !important;
+			margin: auto;
+		}
+		.react_modal__header {
+			font-size: 18px;
+			line-height: 26px;
+			padding: 8px 35px 0 15px !important;
+		}
+		.react_modal__body {
+			padding: 15px;
+		}
+	}
+} 
