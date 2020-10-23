@@ -12,7 +12,8 @@
   @media (max-width: 1499px) {
     .seller-item-credit {
       width: 130px;
-      right: 15px; } }
+      right: 15px;
+      bottom: 40px; } }
 
 .proposition_button_credit {
   background-color: #79BE00;
