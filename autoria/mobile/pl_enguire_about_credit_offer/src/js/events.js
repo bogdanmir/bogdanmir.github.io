@@ -327,3 +327,14 @@ $(document).on('click','.thankyou .react_modal__backdrop,.thankyou .react_modal_
     console.log('close popup thank you');
 
 });
+
+
+$('body').on('click','.ab_test_modal .phones_modal__item .phone',function(){
+	console.log('clickToCall');
+	window.dataLayer = window.dataLayer || [];
+	dataLayer.push({
+	        'event': 'event-to-ga',
+	        'eventCategory': 'PL - enguire about credit offer',
+	        'eventAction': 'clickToCall'
+	});
+});
