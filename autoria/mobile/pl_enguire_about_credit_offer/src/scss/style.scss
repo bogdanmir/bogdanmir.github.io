@@ -12,6 +12,7 @@
 }
 .proposition_button_credit {
 	color: #79BE00;
+	cursor: pointer;
 	font-weight: 700;
 	font-size: 12px;
 	border: 1px solid #79BE00;
@@ -66,28 +67,45 @@
 	.react_modal__container {
 		width: calc(100% - 28px)!important;
 		margin: 0 auto;
-		top: 15px;
+		top: 0;
+		z-index: 101;
+		justify-content: center !important;
 	}
 	.react_modal__header {
 		font-size: 0;
+		z-index: 999;
+		background-color: transparent !important;
 	}
 	.react_modal__close {
 		right: 0;
 		left: auto;
-		font-size: 46px;
-		padding: 10px 0;
-		color: #fff;
+		font-size: 40px !important;
+	    padding: 0 !important;
+	    color: #fff !important;
+	    line-height: 0.8 !important;
 		&:before {
 			display: none;
 		}
 	}
 	.react_modal__body {
 		background-color: #fff;
+		border-radius: 10px;
 		padding: 14px;
 		z-index: 999;
+		.modal_photo-car {
+			text-align: center;
+		}
+		.phones_modal_wrap {
+			& > .mt-20.text-c {
+				display: none;
+			}
+		}
 	}
 	.phones_modal__item {
 		text-align: center;
+		& > .mt-10 {
+			display: none;
+		}
 	}
 	.modal_title {
 		color: #414042;
@@ -148,12 +166,12 @@
 		}
 	}
 	.modal_form {
-		border-bottom: 1px solid #9B9B9B;
+		// border-bottom: 1px solid #9B9B9B;
 		position: relative;
 		display: flex;
 		flex-wrap: wrap;
-		padding: 0 0 12px;
-		margin: 0 0 12px;
+		// padding: 0 0 12px;
+		// margin: 0 0 12px;
 		// @media (max-width: 359px){
 		// 	flex-wrap: wrap;
 		// }
