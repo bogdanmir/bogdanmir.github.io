@@ -37,7 +37,8 @@
     justify-content: flex-start !important;
     margin: 0 auto;
     top: 15px;
-    z-index: 101; }
+    z-index: 101;
+    padding-bottom: 20px; }
   .ab_test_modal .react_modal__header {
     font-size: 0;
     z-index: 999;
