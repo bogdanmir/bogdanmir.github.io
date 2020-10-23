@@ -44,7 +44,7 @@
     top: 0;
     padding-bottom: 20px;
     z-index: 101;
-    justify-content: center !important; }
+    justify-content: flex-start !important; }
   .ab_test_modal .react_modal__header {
     font-size: 0;
     z-index: 999;
