@@ -410,6 +410,16 @@ $(document).on('click','.modal_btn',function () {
 
 
 
+$('body').on('click','.ab_test_modal .phones_modal__item .phone',function(){
+	console.log('clickToCall');
+	window.dataLayer = window.dataLayer || [];
+	dataLayer.push({
+	        'event': 'event-to-ga',
+	        'eventCategory': 'PDP sticky button credit',
+	        'eventAction': 'click Pop up loan',
+	        'eventLabel': 'clickToCall'
+	});
+});
 
 
 
