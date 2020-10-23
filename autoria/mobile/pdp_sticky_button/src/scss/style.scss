@@ -49,28 +49,36 @@
 		width: calc(100% - 28px)!important;
 		margin: 0 auto;
 		top: 15px;
+		padding-bottom: 20px;
+		z-index: 101;
 	}
 	.react_modal__header {
 		font-size: 0;
 		z-index: 999;
+		background-color: transparent !important;
 	}
 	.react_modal__close {
 		right: 0;
 		left: auto;
-		font-size: 46px;
-		padding: 10px 0;
-		color: #fff;
+		font-size: 40px !important;
+		padding: 0 !important;
+		color: #fff !important;
+		line-height: 0.8 !important;
 		&:before {
 			display: none;
 		}
 	}
 	.react_modal__body {
 		background-color: #fff;
-		padding: 14px;
+		border-radius: 10px;
+		padding: 14px 14px 20px;
 		z-index: 999;
 	}
 	.phones_modal__item {
 		text-align: center;
+		& > .mt-10 {
+			display: none;
+		}
 	}
 	.be_carefull {
 		display: none;
