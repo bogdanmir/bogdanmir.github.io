@@ -80,10 +80,12 @@
 	}
 	.react_modal__header {
 		font-size: 0;
-		z-index: 9;
+		z-index: 9 !important;
+	    line-height: 0;
+	    padding: 0 !important;
 	}
 	.react_modal__close {
-		top: 23px;
+		top: 0;
  		right: 5px;
 		left: auto;
 		font-size: 28px;
@@ -110,10 +112,16 @@
 	.phones_modal_wrap {
 		padding: 0 0 0 25px;
 		width: calc(100% - 432px);
+		& > .mt-20.text-c {
+			display: none;
+		}
 	}
 
 	.phones_modal__item {
 		text-align: center;
+		& > .mt-10 {
+			display: none;
+		}
 	}
 	.modal_title {
 		color: #414042;
@@ -174,12 +182,12 @@
 		}
 	}
 	.modal_form {
-		border-bottom: 1px solid #9B9B9B;
+		// border-bottom: 1px solid #9B9B9B;
 		position: relative;
 		display: flex;
 		flex-wrap: wrap;
-		padding: 0 0 20px;
-		margin: 0 0 15px;
+		// padding: 0 0 20px;
+		// margin: 0 0 15px;
 		&.error {
 			.input_number {
 				border: 1px solid #db5c4c;

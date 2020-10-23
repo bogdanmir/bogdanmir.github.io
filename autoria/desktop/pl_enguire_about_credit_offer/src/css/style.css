@@ -54,9 +54,11 @@
     max-width: 880px !important; }
   .ab_test_modal .react_modal__header {
     font-size: 0;
-    z-index: 9; }
+    z-index: 9 !important;
+    line-height: 0;
+    padding: 0 !important; }
   .ab_test_modal .react_modal__close {
-    top: 23px;
+    top: 0;
     right: 5px;
     left: auto;
     font-size: 28px;
@@ -76,8 +78,12 @@
   .ab_test_modal .phones_modal_wrap {
     padding: 0 0 0 25px;
     width: calc(100% - 432px); }
+    .ab_test_modal .phones_modal_wrap > .mt-20.text-c {
+      display: none; }
   .ab_test_modal .phones_modal__item {
     text-align: center; }
+    .ab_test_modal .phones_modal__item > .mt-10 {
+      display: none; }
   .ab_test_modal .modal_title {
     color: #414042;
     font-weight: 700;
@@ -124,12 +130,9 @@
     .ab_test_modal .info_text p {
       margin: 0; }
   .ab_test_modal .modal_form {
-    border-bottom: 1px solid #9B9B9B;
     position: relative;
     display: flex;
-    flex-wrap: wrap;
-    padding: 0 0 20px;
-    margin: 0 0 15px; }
+    flex-wrap: wrap; }
     .ab_test_modal .modal_form.error .input_number {
       border: 1px solid #db5c4c;
       border-right: 0;
