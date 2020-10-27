@@ -24,6 +24,8 @@ dataLayer.push({
 
 $(document).on('click','.product-section .btn.add-to-cart',function() {
 
+	$('body').addClass('ab_test');
+
 	window.dataLayer = window.dataLayer || [];
 	dataLayer.push({
 		'event': 'event-to-ga',

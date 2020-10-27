@@ -1,7 +1,7 @@
-.template-product .main-content:after {
+.ab_test .main-content:after {
   display: none; }
 
-.template-product .drawer {
+.ab_test .drawer {
   opacity: 0;
   visibility: hidden;
   overflow: hidden;
