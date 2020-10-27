@@ -1,0 +1,8 @@
+.template-product .main-content:after {
+  display: none; }
+
+.template-product .drawer {
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  z-index: -1; }
