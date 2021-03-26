@@ -1251,7 +1251,6 @@ function drawCheckout () {
         __after(plust,elem);
     }
 }
-
 let mut = new MutationObserver((ms) => {
     let h = window.location.href
     if(h.includes('/oasis-labs-partnership/') || h.includes('/george-church/')) {
@@ -1260,7 +1259,6 @@ let mut = new MutationObserver((ms) => {
         drawHomepage()
     }
 })
-
 function onload_func() {
     if (!href.includes('cart')) {
         if (href.includes('/oasis-labs-partnership/') || href.includes('/george-church/')) {
