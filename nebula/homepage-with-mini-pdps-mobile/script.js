@@ -1266,12 +1266,10 @@ function onload_func() {
         } else {
             drawHomepage()
         }
-
         mut.observe(document.body, {
             childList: true,
             subtree: true
         })
-
     } else {
         window.timerIntervvval = setInterval(function () {
                 if (document.querySelectorAll('.cart-page-component').length > 0) {
