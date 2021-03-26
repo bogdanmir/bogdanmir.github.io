@@ -1232,6 +1232,14 @@ function drawCheckout () {
         elem.parentNode.classList.add('active');
         addSubscriptionTo(elem);
     }
+    if(__get('.special-sale').length > 0){
+        var item = __get('.special-sale')[0].cloneNode(true);
+        item.classList.add('special-sale-price');
+        // item.classList.remove('special-sale');
+        var title = __get('.plan-selection-mobile .lifetime .plan-name')[0];
+        __append(item,title);
+        __get('.plan-selection-mobile .special-sale:not(.special-sale-price)')[0].remove();
+    }
 }
 
 let mut = new MutationObserver((ms) => {
@@ -1624,14 +1632,7 @@ __get('.product-descriptions .product-description').forEach(function(el,index){
         __get('.fa-check',el)[0].remove();
     }
 })
-if(__get('.special-sale').length > 0){
-  var item = __get('.special-sale')[0].cloneNode(true);
-  item.classList.add('special-sale-price');
-  // item.classList.remove('special-sale');
-  var title = __get('.plan-selection-mobile .lifetime .plan-name')[0];
-  __append(item,title);
-  __get('.plan-selection-mobile .special-sale:not(.special-sale-price)')[0].remove();
-}
+
 
 if(document.querySelectorAll('.customers').length > 0){
   var link = document.createElement('link');link.rel = "stylesheet";link.href = "https://unpkg.com/swiper@6.5.0/swiper-bundle.min.css";document.querySelector('body').appendChild(link);
