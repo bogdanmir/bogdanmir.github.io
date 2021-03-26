@@ -1535,10 +1535,10 @@ __addev('.plan-selection .form-check-input, .plan-selection .form-check-input','
         elem.parentNode.classList.remove('active');
         elem.parentNode.removeChild(elem);
     })
-    this.parentNode.classList.add('active');
     document.querySelectorAll('.plan-selection .form-check-input').forEach(function(ele,ind){
         ele.closest('.checkbox').classList.remove('active');
     });
+    this.closest('.checkbox').add('active');
     console.log('addSubscriptionTo');
     setTimeout(function(_this){
         addSubscriptionTo(_this);
