@@ -1265,11 +1265,11 @@ function onload_func() {
         })
 
     } else {
-        window.timer = setInterval(function () {
+        window.timerIntervvval = setInterval(function () {
                 if (document.querySelectorAll('.cart-page-component').length > 0) {
                     drawCheckout();
                     console.log('end');
-                    clearInterval(window.timer);
+                    clearInterval(window.timerIntervvval);
                 }
         }, 100)
 
@@ -1477,7 +1477,7 @@ console.log('loaded');
 window.onload = function(){
     onload_func();
 }
-onload_func();
+// onload_func();
 
 function __addev(elem,eventName,handler){
     document.addEventListener(eventName, function(e) {
@@ -1529,7 +1529,7 @@ function addSubscriptionTo(_this){
     clone.classList.add('subscription-details-item');
     _this.parentNode.appendChild(clone);
 }
-__addev('.plan-selection .form-check-input','change',function(e){
+__addev('.plan-selection .form-check-input, .plan-selection .form-check-input','change',function(e){
     var value = this.value;
     _this = document.querySelectorAll('.plan-selection-mobile .form-check-input[value="'+value+'"]')[0];
     document.querySelectorAll('.plan-selection-mobile .subscription-details-bottom').forEach(function(elem,index){
