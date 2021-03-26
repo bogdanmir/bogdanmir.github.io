@@ -1478,7 +1478,6 @@ window.onload = function(){
     onload_func();
 }
 // onload_func();
-
 function __addev(elem,eventName,handler){
     document.addEventListener(eventName, function(e) {
         // loop parent nodes from the target to the delegation node
