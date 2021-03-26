@@ -358,6 +358,16 @@ let homepageStyle = `
         border-radius: 5px;
       }
 
+      .mini_pdp ul li.yellow {
+        padding: 3px 5px 3px 20px;
+        margin-left: -15px;
+      }
+
+      .mini_pdp ul li.yellow::before {
+        left: 5px;
+        top: 8px;    
+      }
+
       .checkout_info ul li.yellow {
         padding: 2px 8px;
       }
@@ -596,6 +606,10 @@ let styleCheckout = `
         font-weight: 500;
         line-height: 1.4;
         margin: 0;
+      }
+
+      .cart-page[data-v-f514eb88] {
+        padding: 13px 0 5vh;
       }
 
       .cart-page .cart-page-component[data-v-f514eb88] {
@@ -937,6 +951,7 @@ let styleCheckout = `
         position: relative;
         border: 0;
         padding-bottom: 34px;
+        margin-bottom: 30px;
       }
 
       .order-summary-page .total-label {
