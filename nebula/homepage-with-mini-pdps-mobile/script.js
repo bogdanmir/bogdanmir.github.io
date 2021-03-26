@@ -1251,7 +1251,6 @@ let mut = new MutationObserver((ms) => {
     }
 })
 
-
 function onload_func() {
     if (!href.includes('cart')) {
         if (href.includes('/oasis-labs-partnership/') || href.includes('/george-church/')) {
