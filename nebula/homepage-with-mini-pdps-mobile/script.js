@@ -1255,13 +1255,11 @@ function onload_func() {
 
     } else {
         window.timer = setInterval(function () {
-            // try{
                 if (document.querySelectorAll('.cart-page-component').length > 0) {
                     drawCheckout();
                     console.log('end');
                     clearInterval(window.timer);
                 }
-            // }catch(E){}
         }, 100)
 
     }
