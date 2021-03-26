@@ -832,7 +832,7 @@ let styleCheckout = `
 
       .plan-selection-desktop[data-v-6cc7eacc] {
         display: block;
-        padding: 62px 0 15px;
+        padding: 20px 0 15px;
       }
 
       .plan-selection-desktop[data-v-6cc7eacc] .checkout_sign h3 {
