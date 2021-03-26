@@ -1528,7 +1528,7 @@ function addSubscriptionTo(_this){
     clone.classList.add('subscription-details-item');
     _this.parentNode.appendChild(clone);
 }
-__addev('.plan-selection .form-check-input, .plan-selection .form-check-input','change',function(e){
+__addev('.plan-selection .form-check-input','change',function(e){
     var value = this.value;
     _this = document.querySelectorAll('.plan-selection-mobile .form-check-input[value="'+value+'"]')[0];
     document.querySelectorAll('.plan-selection-mobile .subscription-details-bottom').forEach(function(elem,index){
@@ -1538,7 +1538,7 @@ __addev('.plan-selection .form-check-input, .plan-selection .form-check-input','
     document.querySelectorAll('.plan-selection .form-check-input').forEach(function(ele,ind){
         ele.closest('.checkbox').classList.remove('active');
     });
-    this.closest('.checkbox').add('active');
+    document.querySelectorAll('.plan-selection-mobile .form-check-input:checked')[0].closest('.checkbox').classList.add('active');
     console.log('addSubscriptionTo');
     setTimeout(function(_this){
         addSubscriptionTo(_this);
@@ -1583,23 +1583,23 @@ __addev('.nuttons-wraper .gpay-button-fill.gpay-buttonin-wraper','click',functio
 __addev('.nuttons-wraper button[data-v-f514eb88]','click',function(){
     __get('button[data-v-f514eb88]:not(.gpay-buttonin-wraper)')[0].click();
 })
-if(__get('.paypal-buttons').length > 0){
-    var buttonswraper = __new('div');
-    __addclass(buttonswraper,'nuttons-wraper');
-    var clonePaypalButton = __get('.paypal-buttons')[0].cloneNode(true);
-    __append(clonePaypalButton,buttonswraper);
-
-    if(__get('.gpay-button-fill').length > 0){
-        var clonegoogle = __get('.gpay-button-fill')[0].cloneNode(true);
-        __addclass(clonegoogle,'gpay-buttonin-wraper');
-        __append(clonegoogle,buttonswraper);
-    }
-    var cloneButton = __get('button[data-v-f514eb88]')[0].cloneNode(true);
-    __addclass(cloneButton,'gpay-buttonin-wraper');
-    __append(cloneButton,buttonswraper);
-
-    __after(buttonswraper,document.querySelectorAll('.quantity-subtotal')[0]);
-}
+// if(__get('.paypal-buttons').length > 0){
+//     var buttonswraper = __new('div');
+//     __addclass(buttonswraper,'nuttons-wraper');
+//     var clonePaypalButton = __get('.paypal-buttons')[0].cloneNode(true);
+//     __append(clonePaypalButton,buttonswraper);
+//
+//     if(__get('.gpay-button-fill').length > 0){
+//         var clonegoogle = __get('.gpay-button-fill')[0].cloneNode(true);
+//         __addclass(clonegoogle,'gpay-buttonin-wraper');
+//         __append(clonegoogle,buttonswraper);
+//     }
+//     var cloneButton = __get('button[data-v-f514eb88]')[0].cloneNode(true);
+//     __addclass(cloneButton,'gpay-buttonin-wraper');
+//     __append(cloneButton,buttonswraper);
+//
+//     __after(buttonswraper,document.querySelectorAll('.quantity-subtotal')[0]);
+// }
 __addev('.product-descriptions .product-description .titleEl-product','click',function(){
     el = this.closest('.product-description');
     if(el.classList.value.indexOf('active') < 0) {
