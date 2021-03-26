@@ -149,14 +149,6 @@ let homepageStyle = `
         overflow: visible;
       }
 
-
-
-
-
-
-
-
-
       .flx {
         display:flex;
         justify-content: center;
@@ -483,6 +475,46 @@ let homepageStyle = `
         padding: 12px !important;
         text-decoration:none;
         font-size: 20px !important;
+      }
+
+      .user-testimonials-component[data-v-00b19e15] {
+        padding: 30px 18px 30px;
+      }
+
+      .user-testimonials-component .label {
+        font-size: 20px;
+        text-transform: uppercase;
+        color: #505985;
+        width: 65%;
+      }
+
+      .user-testimonials-component .swiper-container {
+        width: 100%;
+        padding: 0 0 40px;
+      }
+
+      .user-testimonials-component .testimonial .header {
+        color: #1A1B20;
+        font-size: 14px;
+        line-height: 1.4;
+        font-style: italic;
+        margin-top: 20px;
+      }
+
+      .user-testimonials-component .testimonial .header div {
+        margin-top: 20px;
+        font-style: normal;
+        text-align: right;
+      }
+
+      .user-testimonials-component .swiper-container-horizontal>.swiper-pagination-bullets, 
+      .user-testimonials-component .swiper-pagination-custom, .swiper-pagination-fraction {
+        bottom: 0;
+      }
+
+      .user-testimonials-component .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+        color: transparent;
+        outline: none;
       }
     </style>
 `
@@ -1600,4 +1632,40 @@ if(__get('.special-sale').length > 0){
   var title = __get('.plan-selection-mobile .lifetime .plan-name')[0];
   __append(item,title);
   __get('.plan-selection-mobile .special-sale:not(.special-sale-price)')[0].remove();
+}
+
+if(document.querySelectorAll('.customers').length > 0){
+  var link = document.createElement('link');link.rel = "stylesheet";link.href = "https://unpkg.com/swiper@6.5.0/swiper-bundle.min.css";document.querySelector('body').appendChild(link);
+  var element = document.querySelector('.customers').cloneNode(true);
+  element.classList.remove('customers');
+  element.classList.add('customers-slider');
+  var newwraper = document.createElement('div');
+  newwraper.classList.add('swiper-container');
+  newwraper.appendChild(element);
+  var pagination = document.createElement('div');
+  pagination.classList.add('swiper-pagination');
+  newwraper.appendChild(pagination);
+  document.querySelector('.customers').insertAdjacentElement('afterend',newwraper);
+  document.querySelector('.customers').remove();
+  document.querySelectorAll('.customers-slider')[0].classList.add('swiper-wrapper')
+  document.querySelectorAll('.customers-slider')[0].classList.remove('customers-slider')
+  document.querySelectorAll('.swiper-container .customer').forEach(function(ele,ind){
+      ele.classList.add('swiper-slide')
+      ele.classList.remove('customer')
+  })
+  var jsscript = document.createElement('script');
+  jsscript.src = "https://unpkg.com/swiper/swiper-bundle.min.js";
+  jsscript.onload = function(){
+      var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 1,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            renderBullet: function (index, className) {
+                return '<span class="' + className + '">' + (index + 1) + '</span>';
+            },
+        },
+      });
+  }
+  document.querySelector('body').appendChild(jsscript);
 }
