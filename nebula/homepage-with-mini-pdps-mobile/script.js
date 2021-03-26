@@ -1540,7 +1540,7 @@ __addev('.plan-selection .form-check-input','change',function(e){
     document.querySelectorAll('.plan-selection .form-check-input').forEach(function(ele,ind){
         ele.closest('.checkbox').classList.remove('active');
     });
-
+    console.log('addSubscriptionTo');
     setTimeout(function(_this){
         addSubscriptionTo(_this);
     },10,_this);
