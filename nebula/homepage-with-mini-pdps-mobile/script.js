@@ -1186,7 +1186,9 @@ function links() {
 }
 
 function drawCheckout () {
-
+if(document.querySelectorAll('.checkout_steps').length > 0){
+    return;
+}
     document.body.insertAdjacentHTML('afterbegin', styleCheckout)
     document.querySelector('.cart-page-component').insertAdjacentHTML('beforebegin', topCheckoutBlock)
     document.querySelector('.toggle-product-container').remove()
