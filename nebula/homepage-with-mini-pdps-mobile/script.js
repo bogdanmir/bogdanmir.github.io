@@ -1545,7 +1545,6 @@ __addev('.plan-selection .form-check-input','change',function(e){
         addSubscriptionTo(_this);
     },10,_this);
 });
-
 var plust = __new('div');
 var minust = __new('div');
 __addclass(plust,'plust-qty');
