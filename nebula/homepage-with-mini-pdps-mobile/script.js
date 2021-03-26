@@ -1227,8 +1227,11 @@ function drawCheckout () {
         item.removeEventListener('click', returnPolicy)
         item.addEventListener('click', returnPolicy)
     })
-
-
+    if(document.querySelectorAll('.plan-selection-mobile .form-check-input:checked').length > 0){
+        var elem = document.querySelector('.plan-selection-mobile .form-check-input:checked');
+        elem.parentNode.classList.add('active');
+        addSubscriptionTo(elem);
+    }
 }
 let mut = new MutationObserver((ms) => {
     let h = window.location.href
@@ -1534,11 +1537,7 @@ __addev('.plan-selection .form-check-input','change',function(e){
         addSubscriptionTo(_this);
     },10,_this);
 });
-if(document.querySelectorAll('.plan-selection-mobile .form-check-input:checked').length > 0){
-    var elem = document.querySelector('.plan-selection-mobile .form-check-input:checked');
-    elem.parentNode.classList.add('active');
-    addSubscriptionTo(elem);
-}
+
 var plust = __new('div');
 var minust = __new('div');
 __addclass(plust,'plust-qty');
@@ -1667,8 +1666,4 @@ if(document.querySelectorAll('.customers').length > 0){
       });
   }
   document.querySelector('body').appendChild(jsscript);
-}
-var elem = document.querySelectorAll('.plan-selection-mobile .form-check-input:checked');
-if(elem.length > 0){
-    elem[0].closest('.checkbox').classList.add('active');
 }
