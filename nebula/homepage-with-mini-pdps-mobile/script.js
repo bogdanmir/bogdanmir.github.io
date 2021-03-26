@@ -1252,12 +1252,12 @@ function onload_func() {
         })
 
     } else {
-        let timer = setInterval(function () {
+        window.timer = setInterval(function () {
             try{
                 if (document.querySelectorAll('.cart-page-component').length > 0) {
                     drawCheckout()
                     console.log('end')
-                    clearInterval(timer)
+                    clearInterval(window.timer);
                 }
             }catch(E){}
         }, 100)
