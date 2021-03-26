@@ -1255,13 +1255,13 @@ function onload_func() {
 
     } else {
         window.timer = setInterval(function () {
-            try{
+            // try{
                 if (document.querySelectorAll('.cart-page-component').length > 0) {
-                    drawCheckout()
-                    console.log('end')
+                    drawCheckout();
+                    console.log('end');
                     clearInterval(window.timer);
                 }
-            }catch(E){}
+            // }catch(E){}
         }, 100)
 
     }
@@ -1531,8 +1531,7 @@ __addev('.plan-selection .form-check-input','change',function(e){
     document.querySelectorAll('.plan-selection .form-check-input').forEach(function(ele,ind){
         ele.closest('.checkbox').classList.remove('active');
     });
-    var elem = document.querySelector('.plan-selection-mobile .form-check-input:checked');
-    elem.closest('.checkbox').classList.add('active');
+
     setTimeout(function(_this){
         addSubscriptionTo(_this);
     },10,_this);
@@ -1670,4 +1669,8 @@ if(document.querySelectorAll('.customers').length > 0){
       });
   }
   document.querySelector('body').appendChild(jsscript);
+}
+var elem = document.querySelectorAll('.plan-selection-mobile .form-check-input:checked');
+if(elem.length > 0){
+    elem[0].closest('.checkbox').classList.add('active');
 }
