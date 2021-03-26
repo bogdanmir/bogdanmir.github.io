@@ -1233,6 +1233,7 @@ function drawCheckout () {
         addSubscriptionTo(elem);
     }
 }
+
 let mut = new MutationObserver((ms) => {
     let h = window.location.href
     if(h.includes('/oasis-labs-partnership/') || h.includes('/george-church/')) {
