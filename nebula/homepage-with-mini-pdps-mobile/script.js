@@ -1544,6 +1544,7 @@ __addev('.plan-selection .form-check-input, .plan-selection .form-check-input','
         addSubscriptionTo(_this);
     },10,_this);
 });
+
 var plust = __new('div');
 var minust = __new('div');
 __addclass(plust,'plust-qty');
