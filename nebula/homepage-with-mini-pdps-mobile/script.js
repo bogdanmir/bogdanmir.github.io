@@ -1240,6 +1240,16 @@ function drawCheckout () {
         __append(item,title);
         __get('.plan-selection-mobile .special-sale:not(.special-sale-price)')[0].remove();
     }
+    var plust = __new('div');
+    var minust = __new('div');
+    __addclass(plust,'plust-qty');
+    __addclass(minust,'minust-qty');
+    if(__get('.quantity .quantity-select').length > 0){
+        const elem = __get('.quantity .quantity-select')[0];
+        var prev = __parent(elem);
+        __before(minust,elem);
+        __after(plust,elem);
+    }
 }
 
 let mut = new MutationObserver((ms) => {
@@ -1545,16 +1555,7 @@ __addev('.plan-selection .form-check-input','change',function(e){
     },10,_this);
 });
 
-var plust = __new('div');
-var minust = __new('div');
-__addclass(plust,'plust-qty');
-__addclass(minust,'minust-qty');
-if(__get('.quantity .quantity-select').length > 0){
-    const elem = __get('.quantity .quantity-select')[0];
-    var prev = __parent(elem);
-    __before(minust,elem);
-    __after(plust,elem);
-}
+
 __addev('.plust-qty','click',function(){
    var parent  = __parent(this);
     var Select = __get('select',parent)[0];
