@@ -1210,6 +1210,7 @@ function drawHomepage() {
         }
     }
 }
+
 __addev('a.button-div','click',clickBD);
 __addev('a.link-tag','click',clickLT);
 function links() {
