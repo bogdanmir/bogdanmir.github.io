@@ -1216,24 +1216,12 @@ function links() {
             })
         }
         __addev('a.link-tag','click',clickLT);
-        // if(document.querySelectorAll('a.link-tag').length > 0) {
-        //     document.querySelectorAll('a.link-tag').forEach((item) => {
-        //         item.removeEventListener('click', clickLT)
-        //         item.addEventListener('click', clickLT)
-        //     })
-        // }
         if(document.querySelectorAll('.button-div button').length > 0) {
             document.querySelectorAll('.button-div button').forEach((item) => {
                 item.innerHTML = 'Choose your plan'
             })
         }
         __addev('a.button-div','click',clickBD);
-        // if(document.querySelectorAll('a.button-div').length > 0){
-        //     document.querySelectorAll('a.button-div').forEach((item) => {
-        //         item.removeEventListener('click', clickBD)
-        //         item.addEventListener('click', clickBD)
-        //     })
-        // }
         if(document.querySelectorAll('.get-started-button a').length > 0) {
             document.querySelectorAll('.get-started-button a')[0].innerHTML = 'Choose your plan'
             document.querySelectorAll('.get-started-button a')[0].removeEventListener('click', clickAboutlink1)
