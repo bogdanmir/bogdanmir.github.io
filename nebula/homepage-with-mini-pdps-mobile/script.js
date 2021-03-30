@@ -1209,7 +1209,7 @@ function drawHomepage() {
 
 function links() {
     mut.disconnect()
-    if (document.querySelectorAll('.get-started-button a').length > 0 && (document.querySelector('.get-started-button a').innerText !== 'Choose your plan') || (document.querySelectorAll('a.link-tag') && document.querySelector('a.link-tag').innerHTML !== 'Choose your plan')) {
+    if (document.querySelectorAll('.get-started-button a').length > 0 && (document.querySelector('.get-started-button a').innerText !== 'Choose your plan') || (document.querySelectorAll('a.link-tag').length > 0 && document.querySelector('a.link-tag').innerHTML !== 'Choose your plan')) {
         if(document.querySelectorAll('.purchase-button').length > 0) {
             document.querySelectorAll('.purchase-button').forEach((item) => {
                 item.innerHTML = 'Choose your plan'
