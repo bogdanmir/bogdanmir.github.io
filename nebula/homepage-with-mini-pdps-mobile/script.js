@@ -1013,6 +1013,51 @@ let infoBlockCheckout = `
     </div>
 `
 
+function __addev(elem,eventName,handler){
+    document.addEventListener(eventName, function(e) {
+        // loop parent nodes from the target to the delegation node
+        for (var target = e.target; target && target != this; target = target.parentNode) {
+            if (target.matches(elem)) {
+                handler.call(target, e);
+                break;
+            }
+        }
+    }, false);
+}
+function __new(elementname){
+    return document.createElement(elementname);
+}
+function __get(elementname,parent = document){
+    return parent.querySelectorAll(elementname);
+}
+function __parent(element){
+    return element.parentNode;
+}
+function __addclass(element,classname){
+    return element.classList.add(classname);
+}
+function __removeclass(element,classname){
+    return element.classList.remove(classname);
+}
+function __before(element,elem){
+    var prev = __parent(elem);
+    prev.insertBefore(element,elem);
+}
+function __after(elem,element){
+    element.insertAdjacentElement('afterend',elem);
+}
+function __attr(element,attrName,attrValue){
+    element.setAttribute(attrName,attrValue);
+}
+function __html(element,html){
+    element.innerHTML = html;
+}
+function __append(el,parent){
+    parent.appendChild(el);
+}
+function __remove(el,parent){
+    parent.appendChild(el);
+}
 if (href.includes('-100x')) {
     infoBlockCheckout = `
     <div class="checkout_info">
@@ -1181,12 +1226,13 @@ function links() {
                 item.innerHTML = 'Choose your plan'
             })
         }
-        if(document.querySelectorAll('a.button-div').length > 0){
-            document.querySelectorAll('a.button-div').forEach((item) => {
-                item.removeEventListener('click', clickBD)
-                item.addEventListener('click', clickBD)
-            })
-        }
+        // if(document.querySelectorAll('a.button-div').length > 0){
+
+            // document.querySelectorAll('a.button-div').forEach((item) => {
+            //     item.removeEventListener('click', clickBD)
+            //     item.addEventListener('click', clickBD)
+            // })
+        // }
         if(document.querySelectorAll('.get-started-button a').length > 0) {
             document.querySelectorAll('.get-started-button a')[0].innerHTML = 'Choose your plan'
             document.querySelectorAll('.get-started-button a')[0].removeEventListener('click', clickAboutlink1)
@@ -1312,8 +1358,7 @@ function scrollTOPdp() {
         })
     }, 1500)
 }
-
-function clickBD(e) {
+__addev('a.button-div','click',function (e) {
     e.preventDefault()
     window.dataLayer = window.dataLayer || [];
     dataLayer.push({
@@ -1324,9 +1369,8 @@ function clickBD(e) {
     console.log('click on Choose your plan-1 Oasis Labs');
     document.querySelector('.navbar-links>:first-child a').click()
     scrollTOPdp()
-}
-
-function clickLT(e) {
+});
+__addev('a.link-tag','click', function (e) {
     e.preventDefault()
     window.dataLayer = window.dataLayer || [];
     dataLayer.push({
@@ -1337,7 +1381,7 @@ function clickLT(e) {
     console.log('click on Choose your plan-2 Oasis Labs');
     document.querySelector('.navbar-links>:first-child a').click()
     scrollTOPdp()
-}
+})
 
 function clickAboutlink1 (e) {
     e.preventDefault()
@@ -1503,51 +1547,6 @@ window.onload = function(){
     onload_func();
 }
 // onload_func();
-function __addev(elem,eventName,handler){
-    document.addEventListener(eventName, function(e) {
-        // loop parent nodes from the target to the delegation node
-        for (var target = e.target; target && target != this; target = target.parentNode) {
-            if (target.matches(elem)) {
-                handler.call(target, e);
-                break;
-            }
-        }
-    }, false);
-}
-function __new(elementname){
-    return document.createElement(elementname);
-}
-function __get(elementname,parent = document){
-    return parent.querySelectorAll(elementname);
-}
-function __parent(element){
-    return element.parentNode;
-}
-function __addclass(element,classname){
-    return element.classList.add(classname);
-}
-function __removeclass(element,classname){
-    return element.classList.remove(classname);
-}
-function __before(element,elem){
-    var prev = __parent(elem);
-    prev.insertBefore(element,elem);
-}
-function __after(elem,element){
-    element.insertAdjacentElement('afterend',elem);
-}
-function __attr(element,attrName,attrValue){
-    element.setAttribute(attrName,attrValue);
-}
-function __html(element,html){
-    element.innerHTML = html;
-}
-function __append(el,parent){
-    parent.appendChild(el);
-}
-function __remove(el,parent){
-    parent.appendChild(el);
-}
 function addSubscriptionTo(_this){
     var clone = document.querySelectorAll('.subscription-details-bottom')[0].cloneNode(true);
     clone.classList.add('subscription-details-item');
