@@ -1146,11 +1146,12 @@ function drawHomepage() {
                 document.querySelector('.comparison-chart-component').insertAdjacentHTML('beforeend', `<a href="#choose" class="btn_choose" data-number="2">Choose your plan</a>`)
             }
 
-            document.querySelector('.test299').removeEventListener('click', buyTest299)
-            document.querySelector('.test299').addEventListener('click', buyTest299)
-            document.querySelector('.test999').removeEventListener('click', buyTest999)
-            document.querySelector('.test999').addEventListener('click', buyTest999)
-
+            if(document.querySelectorAll('.test299').length > 0){
+                document.querySelector('.test299').removeEventListener('click', buyTest299)
+                document.querySelector('.test299').addEventListener('click', buyTest299)
+                document.querySelector('.test999').removeEventListener('click', buyTest999)
+                document.querySelector('.test999').addEventListener('click', buyTest999)
+            }
             const anchors = document.querySelectorAll('a[href*="#"]')
 
             for (let i=0; i<anchors.length; i++) {
@@ -1163,27 +1164,30 @@ function drawHomepage() {
 
 function links() {
     mut.disconnect()
-    if (document.querySelector('.get-started-button a') && (document.querySelector('.get-started-button a').innerText !== 'Choose your plan') || (document.querySelector('a.link-tag') && document.querySelector('a.link-tag').innerHTML !== 'Choose your plan')) {
-
-        document.querySelectorAll('.purchase-button').forEach((item) => {
-            item.innerHTML = 'Choose your plan'
-        })
-
-        document.querySelectorAll('a.link-tag').forEach((item) => {
-            item.removeEventListener('click', clickLT)
-            item.addEventListener('click', clickLT)
-        })
-
-        document.querySelectorAll('.button-div button').forEach((item) => {
-            item.innerHTML = 'Choose your plan'
-        })
-
-        document.querySelectorAll('a.button-div').forEach((item) => {
-            item.removeEventListener('click', clickBD)
-            item.addEventListener('click', clickBD)
-        })
-
-        if(document.querySelector('.get-started-button a')) {
+    if (document.querySelectorAll('.get-started-button a').length > 0 && (document.querySelector('.get-started-button a').innerText !== 'Choose your plan') || (document.querySelectorAll('a.link-tag') && document.querySelector('a.link-tag').innerHTML !== 'Choose your plan')) {
+        if(document.querySelectorAll('.purchase-button').length > 0) {
+            document.querySelectorAll('.purchase-button').forEach((item) => {
+                item.innerHTML = 'Choose your plan'
+            })
+        }
+        if(document.querySelectorAll('a.link-tag').length > 0) {
+            document.querySelectorAll('a.link-tag').forEach((item) => {
+                item.removeEventListener('click', clickLT)
+                item.addEventListener('click', clickLT)
+            })
+        }
+        if(document.querySelectorAll('.button-div button').length > 0) {
+            document.querySelectorAll('.button-div button').forEach((item) => {
+                item.innerHTML = 'Choose your plan'
+            })
+        }
+        if(document.querySelectorAll('a.button-div').length > 0){
+            document.querySelectorAll('a.button-div').forEach((item) => {
+                item.removeEventListener('click', clickBD)
+                item.addEventListener('click', clickBD)
+            })
+        }
+        if(document.querySelectorAll('.get-started-button a').length > 0) {
             document.querySelectorAll('.get-started-button a')[0].innerHTML = 'Choose your plan'
             document.querySelectorAll('.get-started-button a')[0].removeEventListener('click', clickAboutlink1)
             document.querySelectorAll('.get-started-button a')[0].addEventListener('click', clickAboutlink1)
@@ -1579,6 +1583,8 @@ __addev('.plust-qty','click',function(){
         __append(newOption,Select);
     }
     Select.value = next_val;
+    const event = new Event('change');
+    Select.dispatchEvent(event);
 });
 __addev('.minust-qty','click',function(){
    var parent  = __parent(this);
@@ -1588,6 +1594,8 @@ __addev('.minust-qty','click',function(){
     if( next_val >=1 ){
         Select.value = next_val;
     }
+    const event = new Event('change');
+    Select.dispatchEvent(event);
 });
 __addev('.nuttons-wraper .gpay-button-fill.gpay-buttonin-wraper','click',function(){
     __get('.gpay-button-fill:not(.gpay-buttonin-wraper) button')[0].click();
