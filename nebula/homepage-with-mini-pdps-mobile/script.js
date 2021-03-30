@@ -1206,7 +1206,8 @@ function drawHomepage() {
         }
     }
 }
-
+__addev('a.button-div','click',clickBD);
+__addev('a.link-tag','click',clickLT);
 function links() {
     mut.disconnect()
     if (document.querySelectorAll('.get-started-button a').length > 0 && (document.querySelector('.get-started-button a').innerText !== 'Choose your plan') || (document.querySelectorAll('a.link-tag').length > 0 && document.querySelector('a.link-tag').innerHTML !== 'Choose your plan')) {
@@ -1215,13 +1216,11 @@ function links() {
                 item.innerHTML = 'Choose your plan'
             })
         }
-        __addev('a.link-tag','click',clickLT);
         if(document.querySelectorAll('.button-div button').length > 0) {
             document.querySelectorAll('.button-div button').forEach((item) => {
                 item.innerHTML = 'Choose your plan'
             })
         }
-        __addev('a.button-div','click',clickBD);
         if(document.querySelectorAll('.get-started-button a').length > 0) {
             document.querySelectorAll('.get-started-button a')[0].innerHTML = 'Choose your plan'
             document.querySelectorAll('.get-started-button a')[0].removeEventListener('click', clickAboutlink1)
