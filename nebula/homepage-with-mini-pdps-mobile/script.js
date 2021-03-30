@@ -1190,13 +1190,13 @@ function drawHomepage() {
                 document.querySelector('.mini-faqs').insertAdjacentHTML('afterend', btn)
                 document.querySelector('.comparison-chart-component').insertAdjacentHTML('beforeend', `<a href="#choose" class="btn_choose" data-number="2">Choose your plan</a>`)
             }
-
-            if(document.querySelectorAll('.test299').length > 0){
-                document.querySelector('.test299').removeEventListener('click', buyTest299)
-                document.querySelector('.test299').addEventListener('click', buyTest299)
-                document.querySelector('.test999').removeEventListener('click', buyTest999)
-                document.querySelector('.test999').addEventListener('click', buyTest999)
-            }
+            __addev('.test299','click',buyTest299);
+            // if(document.querySelectorAll('.test299').length > 0){
+            //     document.querySelector('.test299').removeEventListener('click', buyTest299)
+            //     document.querySelector('.test299').addEventListener('click', buyTest299)
+            //     document.querySelector('.test999').removeEventListener('click', buyTest999)
+            //     document.querySelector('.test999').addEventListener('click', buyTest999)
+            // }
             const anchors = document.querySelectorAll('a[href*="#"]')
 
             for (let i=0; i<anchors.length; i++) {
@@ -1215,23 +1215,24 @@ function links() {
                 item.innerHTML = 'Choose your plan'
             })
         }
-        if(document.querySelectorAll('a.link-tag').length > 0) {
-            document.querySelectorAll('a.link-tag').forEach((item) => {
-                item.removeEventListener('click', clickLT)
-                item.addEventListener('click', clickLT)
-            })
-        }
+        __addev('a.link-tag','click',clickLT);
+        // if(document.querySelectorAll('a.link-tag').length > 0) {
+        //     document.querySelectorAll('a.link-tag').forEach((item) => {
+        //         item.removeEventListener('click', clickLT)
+        //         item.addEventListener('click', clickLT)
+        //     })
+        // }
         if(document.querySelectorAll('.button-div button').length > 0) {
             document.querySelectorAll('.button-div button').forEach((item) => {
                 item.innerHTML = 'Choose your plan'
             })
         }
+        __addev('a.button-div','click',clickBD);
         // if(document.querySelectorAll('a.button-div').length > 0){
-
-            // document.querySelectorAll('a.button-div').forEach((item) => {
-            //     item.removeEventListener('click', clickBD)
-            //     item.addEventListener('click', clickBD)
-            // })
+        //     document.querySelectorAll('a.button-div').forEach((item) => {
+        //         item.removeEventListener('click', clickBD)
+        //         item.addEventListener('click', clickBD)
+        //     })
         // }
         if(document.querySelectorAll('.get-started-button a').length > 0) {
             document.querySelectorAll('.get-started-button a')[0].innerHTML = 'Choose your plan'
@@ -1358,7 +1359,8 @@ function scrollTOPdp() {
         })
     }, 1500)
 }
-__addev('a.button-div','click',function (e) {
+
+function clickBD(e) {
     e.preventDefault()
     window.dataLayer = window.dataLayer || [];
     dataLayer.push({
@@ -1369,8 +1371,9 @@ __addev('a.button-div','click',function (e) {
     console.log('click on Choose your plan-1 Oasis Labs');
     document.querySelector('.navbar-links>:first-child a').click()
     scrollTOPdp()
-});
-__addev('a.link-tag','click', function (e) {
+}
+
+function clickLT(e) {
     e.preventDefault()
     window.dataLayer = window.dataLayer || [];
     dataLayer.push({
@@ -1381,7 +1384,7 @@ __addev('a.link-tag','click', function (e) {
     console.log('click on Choose your plan-2 Oasis Labs');
     document.querySelector('.navbar-links>:first-child a').click()
     scrollTOPdp()
-})
+}
 
 function clickAboutlink1 (e) {
     e.preventDefault()
@@ -1649,6 +1652,8 @@ __get('.product-descriptions .product-description').forEach(function(el,index){
         __get('.fa-check',el)[0].remove();
     }
 })
+
+
 if(document.querySelectorAll('.customers').length > 0){
   var link = document.createElement('link');link.rel = "stylesheet";link.href = "https://unpkg.com/swiper@6.5.0/swiper-bundle.min.css";document.querySelector('body').appendChild(link);
   var element = document.querySelector('.customers').cloneNode(true);
