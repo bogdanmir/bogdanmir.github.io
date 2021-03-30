@@ -720,7 +720,7 @@ let styleCheckout = `
       .product-image-order-summary .order-summary .quantity-subtotal .quantity[data-v-6cc7eacc] {
         width: 140px;
         border: 1px solid #E0E0E0;
-        margin: 0 auto 15px;
+        margin: 0 calc(50% - 70px) 15px;
         position: relative;
       }
 
@@ -750,12 +750,16 @@ let styleCheckout = `
       }
 
       .product-image-order-summary .order-summary .quantity-subtotal[data-v-6cc7eacc] .economy {
-        width: 65%;
+        width: 50%;
       }
 
       .product-image-order-summary .order-summary .quantity-subtotal[data-v-6cc7eacc] .economy span {
         display: block;
         font-size: 14px;
+      }
+
+      .product-image-order-summary .order-summary .quantity-subtotal .subtotal[data-v-6cc7eacc] {
+        width: 50% !important;
       }
 
       .product-image-order-summary .order-summary .quantity-subtotal .subtotal .current[data-v-6cc7eacc] {
