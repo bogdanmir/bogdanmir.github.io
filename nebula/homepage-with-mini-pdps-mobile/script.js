@@ -1638,6 +1638,7 @@ __addev('.product-descriptions .product-description .titleEl-product','click',fu
         __removeclass(this.closest('.product-description'), 'active');
     }
 });
+
 function chanfge_page(){
     if(__get('.product-descriptions .product-description').length > 0 && __get('.product-descriptions .product-description .textEl-product').length == 0){
         __get('.product-descriptions .product-description').forEach(function(el,index){
