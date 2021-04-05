@@ -1,6 +1,7 @@
 let navbar = 'data-v-4d3f649e',
     mainpage = 'data-v-693ebc60',
     choose = 'data-v-f11e6bdc',
+    choose2 = 'data-v-609c338a',
     component = 'data-v-62e38f43'
 let href = window.location.href
 
@@ -81,16 +82,19 @@ let homepageStyle = `
         display: none;
       }
 
-      .choose-plan-1[${choose}] {
+      .choose-plan-1[${choose}],
+      .choose-plan-1[${choose2}] {
         background-color: #fff;
         padding-bottom: 0;
       }
 
-      .choose-plan-1[${choose}] .choose-plan-component[${component}] .right {
+      .choose-plan-1[${choose}] .choose-plan-component[${component}] .right,
+      .choose-plan-1[${choose2}] .choose-plan-component[data-v-3871e4bd] .right {
         display: none;
       }
 
-      .choose-plan-1[${choose}] h2 {
+      .choose-plan-1[${choose}] h2,
+      .choose-plan-1[${choose2}] h2 {
         font-size: 20px;
         text-align: left;
         margin: 0;
@@ -101,31 +105,33 @@ let homepageStyle = `
         width: 100%;
       }
 
-      .choose-plan-1[${choose}] .choose-plan-component .left[${component}] {
+      .choose-plan-1[${choose}] .choose-plan-component .left[${component}],
+      .choose-plan-1[${choose2}] .choose-plan-component .left[data-v-3871e4bd] {
         width: 100%;
+        color: #000;
       }
 
-      .choose-plan-1[${choose}] .choose-plan-component .left .product-text-div .product-descriptions .product-description[data-v-3871e4bd],
+      .choose-plan-1[${choose2}] .choose-plan-component .left .product-text-div .product-descriptions .product-description[data-v-3871e4bd],
       .choose-plan-1[${choose}] .choose-plan-component .left .product-text-div .product-descriptions .product-description[${component}] {
         flex-wrap: wrap;
         margin: 0;
         position: relative;
       }
 
-      .choose-plan-1[${choose}] .choose-plan-component .left .product-text-div .product-descriptions .product-description[data-v-3871e4bd].active .titleEl-product:after,
+      .choose-plan-1[${choose2}] .choose-plan-component .left .product-text-div .product-descriptions .product-description[data-v-3871e4bd].active .titleEl-product:after,
       .choose-plan-1[${choose}] .choose-plan-component .left .product-text-div .product-descriptions .product-description[${component}].active .titleEl-product:after {
         display: none;
       }
 
-      .choose-plan-1[${choose}] .choose-plan-component .left .product-text-div .product-descriptions .product-description[data-v-3871e4bd] .titleEl-product ,
+      .choose-plan-1[${choose2}] .choose-plan-component .left .product-text-div .product-descriptions .product-description[data-v-3871e4bd] .titleEl-product ,
       .choose-plan-1[${choose}] .choose-plan-component .left .product-text-div .product-descriptions .product-description[${component}] .titleEl-product {
         font-size: 16px;
         font-weight: bold;
         width: 100%;
       }
 
-      .choose-plan-1[${choose}] .choose-plan-component .left .product-text-div .product-descriptions .product-description[data-v-3871e4bd] .titleEl-product:before,
-      .choose-plan-1[${choose}] .choose-plan-component .left .product-text-div .product-descriptions .product-description[data-v-3871e4bd] .titleEl-product:after ,
+      .choose-plan-1[${choose2}] .choose-plan-component .left .product-text-div .product-descriptions .product-description[data-v-3871e4bd] .titleEl-product:before,
+      .choose-plan-1[${choose2}] .choose-plan-component .left .product-text-div .product-descriptions .product-description[data-v-3871e4bd] .titleEl-product:after ,
       .choose-plan-1[${choose}] .choose-plan-component .left .product-text-div .product-descriptions .product-description[${component}] .titleEl-product:before,
       .choose-plan-1[${choose}] .choose-plan-component .left .product-text-div .product-descriptions .product-description[${component}] .titleEl-product:after {
         content: '';
@@ -137,12 +143,12 @@ let homepageStyle = `
         right: 4px;
       }
 
-      .choose-plan-1[${choose}] .choose-plan-component .left .product-text-div .product-descriptions .product-description[data-v-3871e4bd] .titleEl-product:after ,
+      .choose-plan-1[${choose2}] .choose-plan-component .left .product-text-div .product-descriptions .product-description[data-v-3871e4bd] .titleEl-product:after ,
       .choose-plan-1[${choose}] .choose-plan-component .left .product-text-div .product-descriptions .product-description[${component}] .titleEl-product:after {
         transform: rotate( 90deg );
       }
 
-      .choose-plan-1[${choose}] .choose-plan-component .left .product-text-div .product-descriptions .product-description[data-v-3871e4bd] .textEl-product ,
+      .choose-plan-1[${choose2}] .choose-plan-component .left .product-text-div .product-descriptions .product-description[data-v-3871e4bd] .textEl-product ,
       .choose-plan-1[${choose}] .choose-plan-component .left .product-text-div .product-descriptions .product-description[${component}] .textEl-product {
         font-size: 14px;
         line-height: 1.45;
@@ -151,11 +157,12 @@ let homepageStyle = `
         overflow: hidden;
       }
 
-      .choose-plan-1[${choose}] .choose-plan-component .left .product-text-div .product-descriptions .product-description[data-v-3871e4bd].active .textEl-product ,
+      .choose-plan-1[${choose2}] .choose-plan-component .left .product-text-div .product-descriptions .product-description[data-v-3871e4bd].active .textEl-product ,
       .choose-plan-1[${choose}] .choose-plan-component .left .product-text-div .product-descriptions .product-description[${component}].active .textEl-product {
         padding: 19px 10px 25px 17px;
         height: 100%;
         overflow: visible;
+      background: #F9F9F9;
       }
 
       .flx {
