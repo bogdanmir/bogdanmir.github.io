@@ -1331,6 +1331,7 @@ let mut = new MutationObserver((ms) => {
     } else {
         drawHomepage()
     }
+    chanfge_page();
 })
 function onload_func() {
     if (!href.includes('cart')) {
@@ -1637,29 +1638,32 @@ __addev('.product-descriptions .product-description .titleEl-product','click',fu
         __removeclass(this.closest('.product-description'), 'active');
     }
 });
-__get('.product-descriptions .product-description').forEach(function(el,index){
-    var main__text = __get('.main-bold',el)[0];
-    main_Text = main__text.innerHTML;
-    var descWrap = main__text.closest('.product-description');
-    var text_desc = __get('div',descWrap)[0].innerHTML;
-    var description_el = __get('div',descWrap)[0];
-    description_el.remove();
-    var wraperEl       = __new('div');
-    var titleEl        = __new('div');
-    var textEl         = __new('div');
-    __addclass(textEl,'textEl-product');
-    __addclass(titleEl,'titleEl-product');
-    __addclass(wraperEl,'wraperEl-product');
-    titleEl.innerHTML  = main_Text;
-    textEl.innerHTML   = text_desc;
-    __append(titleEl,descWrap);
-    __append(textEl,descWrap);
-    textEl.querySelector('.main-bold').remove();
-    if(__get('.fa-check',el).length > 0){
-        __get('.fa-check',el)[0].remove();
+function chanfge_page(){
+    if(__get('.product-descriptions .product-description').length > 0 && __get('.product-descriptions .product-description .textEl-product').length == 0){
+        __get('.product-descriptions .product-description').forEach(function(el,index){
+            var main__text = __get('.main-bold',el)[0];
+            main_Text = main__text.innerHTML;
+            var descWrap = main__text.closest('.product-description');
+            var text_desc = __get('div',descWrap)[0].innerHTML;
+            var description_el = __get('div',descWrap)[0];
+            description_el.remove();
+            var wraperEl       = __new('div');
+            var titleEl        = __new('div');
+            var textEl         = __new('div');
+            __addclass(textEl,'textEl-product');
+            __addclass(titleEl,'titleEl-product');
+            __addclass(wraperEl,'wraperEl-product');
+            titleEl.innerHTML  = main_Text;
+            textEl.innerHTML   = text_desc;
+            __append(titleEl,descWrap);
+            __append(textEl,descWrap);
+            textEl.querySelector('.main-bold').remove();
+            if(__get('.fa-check',el).length > 0){
+                __get('.fa-check',el)[0].remove();
+            }
+        })
     }
-})
-
+}
 
 if(document.querySelectorAll('.customers').length > 0){
     var link = document.createElement('link');link.rel = "stylesheet";link.href = "https://unpkg.com/swiper@6.5.0/swiper-bundle.min.css";document.querySelector('body').appendChild(link);
