@@ -1,6 +1,7 @@
 let navbar = 'data-v-4d3f649e',
-    mainpage = 'data-v-693ebc60'
-
+    mainpage = 'data-v-693ebc60',
+    choose = 'data-v-f11e6bdc',
+    component = 'data-v-62e38f43'
 let href = window.location.href
 
 let homepageStyle = `
@@ -80,16 +81,16 @@ let homepageStyle = `
         display: none;
       }
 
-      .choose-plan-1[data-v-65739f6e] {
+      .choose-plan-1[${choose}] {
         background-color: #fff;
         padding-bottom: 0;
       }
 
-      .choose-plan-1[data-v-65739f6e] .choose-plan-component[data-v-3871e4bd] .right {
+      .choose-plan-1[${choose}] .choose-plan-component[${component}] .right {
         display: none;
       }
 
-      .choose-plan-1[data-v-65739f6e] h2 {
+      .choose-plan-1[${choose}] h2 {
         font-size: 20px;
         text-align: left;
         margin: 0;
@@ -100,28 +101,33 @@ let homepageStyle = `
         width: 100%;
       }
 
-      .choose-plan-1[data-v-65739f6e] .choose-plan-component .left[data-v-3871e4bd] {
+      .choose-plan-1[${choose}] .choose-plan-component .left[${component}] {
         width: 100%;
       }
 
-      .choose-plan-1[data-v-65739f6e] .choose-plan-component .left .product-text-div .product-descriptions .product-description[data-v-3871e4bd] {
+      .choose-plan-1[${choose}] .choose-plan-component .left .product-text-div .product-descriptions .product-description[data-v-3871e4bd],
+      .choose-plan-1[${choose}] .choose-plan-component .left .product-text-div .product-descriptions .product-description[${component}] {
         flex-wrap: wrap;
         margin: 0;
         position: relative;
       }
 
-      .choose-plan-1[data-v-65739f6e] .choose-plan-component .left .product-text-div .product-descriptions .product-description[data-v-3871e4bd].active .titleEl-product:after {
+      .choose-plan-1[${choose}] .choose-plan-component .left .product-text-div .product-descriptions .product-description[data-v-3871e4bd].active .titleEl-product:after,
+      .choose-plan-1[${choose}] .choose-plan-component .left .product-text-div .product-descriptions .product-description[${component}].active .titleEl-product:after {
         display: none;
       }
 
-      .choose-plan-1[data-v-65739f6e] .choose-plan-component .left .product-text-div .product-descriptions .product-description[data-v-3871e4bd] .titleEl-product {
+      .choose-plan-1[${choose}] .choose-plan-component .left .product-text-div .product-descriptions .product-description[data-v-3871e4bd] .titleEl-product ,
+      .choose-plan-1[${choose}] .choose-plan-component .left .product-text-div .product-descriptions .product-description[${component}] .titleEl-product {
         font-size: 16px;
         font-weight: bold;
         width: 100%;
       }
 
-      .choose-plan-1[data-v-65739f6e] .choose-plan-component .left .product-text-div .product-descriptions .product-description[data-v-3871e4bd] .titleEl-product:before,
-      .choose-plan-1[data-v-65739f6e] .choose-plan-component .left .product-text-div .product-descriptions .product-description[data-v-3871e4bd] .titleEl-product:after {
+      .choose-plan-1[${choose}] .choose-plan-component .left .product-text-div .product-descriptions .product-description[data-v-3871e4bd] .titleEl-product:before,
+      .choose-plan-1[${choose}] .choose-plan-component .left .product-text-div .product-descriptions .product-description[data-v-3871e4bd] .titleEl-product:after ,
+      .choose-plan-1[${choose}] .choose-plan-component .left .product-text-div .product-descriptions .product-description[${component}] .titleEl-product:before,
+      .choose-plan-1[${choose}] .choose-plan-component .left .product-text-div .product-descriptions .product-description[${component}] .titleEl-product:after {
         content: '';
         background: rgba(0, 0, 0, 0.54);
         width: 10.5px;
@@ -131,11 +137,13 @@ let homepageStyle = `
         right: 4px;
       }
 
-      .choose-plan-1[data-v-65739f6e] .choose-plan-component .left .product-text-div .product-descriptions .product-description[data-v-3871e4bd] .titleEl-product:after {
+      .choose-plan-1[${choose}] .choose-plan-component .left .product-text-div .product-descriptions .product-description[data-v-3871e4bd] .titleEl-product:after ,
+      .choose-plan-1[${choose}] .choose-plan-component .left .product-text-div .product-descriptions .product-description[${component}] .titleEl-product:after {
         transform: rotate( 90deg );
       }
 
-      .choose-plan-1[data-v-65739f6e] .choose-plan-component .left .product-text-div .product-descriptions .product-description[data-v-3871e4bd] .textEl-product {
+      .choose-plan-1[${choose}] .choose-plan-component .left .product-text-div .product-descriptions .product-description[data-v-3871e4bd] .textEl-product ,
+      .choose-plan-1[${choose}] .choose-plan-component .left .product-text-div .product-descriptions .product-description[${component}] .textEl-product {
         font-size: 14px;
         line-height: 1.45;
         padding: 10px 0 0 0;
@@ -143,7 +151,8 @@ let homepageStyle = `
         overflow: hidden;
       }
 
-      .choose-plan-1[data-v-65739f6e] .choose-plan-component .left .product-text-div .product-descriptions .product-description[data-v-3871e4bd].active .textEl-product {
+      .choose-plan-1[${choose}] .choose-plan-component .left .product-text-div .product-descriptions .product-description[data-v-3871e4bd].active .textEl-product ,
+      .choose-plan-1[${choose}] .choose-plan-component .left .product-text-div .product-descriptions .product-description[${component}].active .textEl-product {
         padding: 19px 10px 25px 17px;
         height: 100%;
         overflow: visible;
@@ -155,7 +164,7 @@ let homepageStyle = `
         align-items: center;
       }
       
-      .navbar-image img[data-v-4d3f649e] {
+      .navbar-image img[${navbar}] {
         width: 140px;
       }
     
@@ -214,18 +223,18 @@ let homepageStyle = `
         text-align: center;
       }
       
-      .choose-plan-component .left .product-text-div .product-descriptions .product-description .fa-check[data-v-3871e4bd],
-      .choose-plan-component .left[data-v-3871e4bd] {
+      .choose-plan-component .left .product-text-div .product-descriptions .product-description .fa-check[${component}],
+      .choose-plan-component .left[${component}] {
         color: black;
         font-size: 18px;
       }
       
-      .choose-plan-component .right[data-v-3871e4bd] {
+      .choose-plan-component .right[${component}] {
         background: none;
         width: 40%;
       }
       
-      .choose-plan-component .right[data-v-3871e4bd] img {
+      .choose-plan-component .right[${component}] img {
         width: 100%;
       }
       
@@ -233,7 +242,7 @@ let homepageStyle = `
         display:none;
       }
       
-      .choose-plan-component .left[data-v-3871e4bd] {
+      .choose-plan-component .left[${component}] {
         width: 60%;
         padding: 0;
       }
@@ -242,7 +251,7 @@ let homepageStyle = `
         display: none !important;
       }
       
-      .choose-plan-component[data-v-3871e4bd] {
+      .choose-plan-component[${component}] {
         align-items: center;
       }
       
@@ -1330,11 +1339,11 @@ function onload_func() {
         })
     } else {
         window.timerIntervvval = setInterval(function () {
-                if (document.querySelectorAll('.cart-page-component').length > 0) {
-                    drawCheckout();
-                    console.log('end');
-                    clearInterval(window.timerIntervvval);
-                }
+            if (document.querySelectorAll('.cart-page-component').length > 0) {
+                drawCheckout();
+                console.log('end');
+                clearInterval(window.timerIntervvval);
+            }
         }, 100)
 
     }
@@ -1566,7 +1575,7 @@ __addev('.plan-selection .form-check-input','change',function(e){
 
 
 __addev('.plust-qty','click',function(){
-   var parent  = __parent(this);
+    var parent  = __parent(this);
     var Select = __get('select',parent)[0];
     var current_val = Number(Select.value);
     next_val = current_val+1;
@@ -1581,7 +1590,7 @@ __addev('.plust-qty','click',function(){
     Select.dispatchEvent(event);
 });
 __addev('.minust-qty','click',function(){
-   var parent  = __parent(this);
+    var parent  = __parent(this);
     var Select = __get('select',parent)[0];
     var current_val = Number(Select.value);
     next_val = current_val-1;
@@ -1647,37 +1656,37 @@ __get('.product-descriptions .product-description').forEach(function(el,index){
 
 
 if(document.querySelectorAll('.customers').length > 0){
-  var link = document.createElement('link');link.rel = "stylesheet";link.href = "https://unpkg.com/swiper@6.5.0/swiper-bundle.min.css";document.querySelector('body').appendChild(link);
-  var element = document.querySelector('.customers').cloneNode(true);
-  element.classList.remove('customers');
-  element.classList.add('customers-slider');
-  var newwraper = document.createElement('div');
-  newwraper.classList.add('swiper-container');
-  newwraper.appendChild(element);
-  var pagination = document.createElement('div');
-  pagination.classList.add('swiper-pagination');
-  newwraper.appendChild(pagination);
-  document.querySelector('.customers').insertAdjacentElement('afterend',newwraper);
-  document.querySelector('.customers').remove();
-  document.querySelectorAll('.customers-slider')[0].classList.add('swiper-wrapper')
-  document.querySelectorAll('.customers-slider')[0].classList.remove('customers-slider')
-  document.querySelectorAll('.swiper-container .customer').forEach(function(ele,ind){
-      ele.classList.add('swiper-slide')
-      ele.classList.remove('customer')
-  })
-  var jsscript = document.createElement('script');
-  jsscript.src = "https://unpkg.com/swiper/swiper-bundle.min.js";
-  jsscript.onload = function(){
-      var swiper = new Swiper('.swiper-container', {
-        slidesPerView: 1,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-            renderBullet: function (index, className) {
-                return '<span class="' + className + '">' + (index + 1) + '</span>';
+    var link = document.createElement('link');link.rel = "stylesheet";link.href = "https://unpkg.com/swiper@6.5.0/swiper-bundle.min.css";document.querySelector('body').appendChild(link);
+    var element = document.querySelector('.customers').cloneNode(true);
+    element.classList.remove('customers');
+    element.classList.add('customers-slider');
+    var newwraper = document.createElement('div');
+    newwraper.classList.add('swiper-container');
+    newwraper.appendChild(element);
+    var pagination = document.createElement('div');
+    pagination.classList.add('swiper-pagination');
+    newwraper.appendChild(pagination);
+    document.querySelector('.customers').insertAdjacentElement('afterend',newwraper);
+    document.querySelector('.customers').remove();
+    document.querySelectorAll('.customers-slider')[0].classList.add('swiper-wrapper')
+    document.querySelectorAll('.customers-slider')[0].classList.remove('customers-slider')
+    document.querySelectorAll('.swiper-container .customer').forEach(function(ele,ind){
+        ele.classList.add('swiper-slide')
+        ele.classList.remove('customer')
+    })
+    var jsscript = document.createElement('script');
+    jsscript.src = "https://unpkg.com/swiper/swiper-bundle.min.js";
+    jsscript.onload = function(){
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 1,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                renderBullet: function (index, className) {
+                    return '<span class="' + className + '">' + (index + 1) + '</span>';
+                },
             },
-        },
-      });
-  }
-  document.querySelector('body').appendChild(jsscript);
+        });
+    }
+    document.querySelector('body').appendChild(jsscript);
 }
