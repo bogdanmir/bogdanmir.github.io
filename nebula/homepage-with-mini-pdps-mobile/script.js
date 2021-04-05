@@ -1665,6 +1665,7 @@ function chanfge_page(){
         })
     }
 }
+chanfge_page();
 
 if(document.querySelectorAll('.customers').length > 0){
     var link = document.createElement('link');link.rel = "stylesheet";link.href = "https://unpkg.com/swiper@6.5.0/swiper-bundle.min.css";document.querySelector('body').appendChild(link);
