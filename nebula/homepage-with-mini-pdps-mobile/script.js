@@ -15,7 +15,6 @@ let homepageStyle = `
       .navbar-logo-links-button .navbar-image img[${navbar}] {
         width: 120px;
       }
-
       .navbar-logo-links-button[${navbar}] .mobile-menu-button-div[${navbar}] {
         flex: 0;
         align-items: center;
