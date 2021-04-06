@@ -1143,7 +1143,7 @@ let miniPdp = `
 
           <div class="mini_best">
             <span>Best</span>
-            <p>value for maney</p>
+            <p>value for money</p>
           </div>
 
           <div class="flx-save">
