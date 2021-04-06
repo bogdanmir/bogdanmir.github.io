@@ -425,6 +425,7 @@ let homepageStyle = `
       .checkout_info .checkout_img_holder {
         display: flex;
         justify-content: center;
+        align-items: center;
         padding: 14px 0 0;
       }
 
@@ -1142,7 +1143,7 @@ let miniPdp = `
 
           <div class="mini_best">
             <span>Best</span>
-            <p>value for mahey</p>
+            <p>value for maney</p>
           </div>
 
           <div class="flx-save">
