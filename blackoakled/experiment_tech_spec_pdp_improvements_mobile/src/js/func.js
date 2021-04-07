@@ -1,5 +1,29 @@
 var url = window.location.href;
 var wrap = $('.form-add-to-cart ').parent().parent();
+
+function totalPrice(btn = null){
+    var sumStr = $('#productPrice-manual').find('.money').html();
+    var price = sumStr.replace('$','');
+    var wrap = $('.form-add-to-cart').find('.quantity').find('.qty');
+    var qVal = $('#quantity').val();
+
+    if(btn !== null){
+        if(btn.hasClass('minus_btn')){
+            qVal = ++qVal;
+        }
+        if(btn.hasClass('minus_btn')){
+            qVal = --qVal;
+        }
+    }
+
+    var sum = +(price)*+(qVal);
+    if($('.test-total').length > 0){
+        $('.test-total').remove();
+    }
+    var totalPriceText = "<div class='test-total'><span>Total price :</span><span class='total-sum'>$"+ sum +"</span></div>";
+    wrap.append(totalPriceText);
+}
+
 function test_function(){
     if($('#productPrice-manual').length && $('#productPrice-manual').text().indexOf('Free Shipping') > -1){
         var html = $('#productPrice-manual').html();
@@ -68,6 +92,9 @@ function ajax_add_to_cart(url){
     });
 }
 
+$('.qty').find('a').on('click', function (){
+    totalPrice($(this));
+})
 $(document).on('click', '.info-window .close', function(){
     $('body').find('.t-overlay').remove();
     $(this).closest('.info-window').remove();
@@ -118,7 +145,7 @@ $('.open-info').on('click', function (){
 })
 
 function addMaxPerformance(){
-    if($('option').text().indexOf('3 Watt') > -1 || $('option').text().indexOf('5 Watt') > -1 ){
+    if($('.selector-wrapper option').text().indexOf('3') > -1 || $('.selector-wrapper option').text().indexOf('5') > -1 ){
     var html = '<div class="info-performance info-wrap">'+
                     '<h3 class="per-title">Max performance with  Combo optics and 5W</h3>'+
                     '<div class="info-cont">'+
@@ -139,7 +166,7 @@ function addMaxPerformance(){
                                 '<li>- Heavy Machinery</li>'+
                                 '<li>- Military</li>'+
                             '</ul>'+
-                            '<button class="zoom">Click to zoom</button>'
+                            '<button class="zoom">Click to zoom</button>'+
                         '</div>'+
                     '</div>'+
                '</div>';
@@ -150,9 +177,16 @@ function addMaxPerformance(){
 
 function addFeatures(){
     var features =  '<div class="features-wrap">'+
+                        '<div class="compatibility-section">'+
+                            '<h3 class="com-title">Compatibility</h3>'+
+                            '<a href="tel:8003481287" class="link">Call us 800-348-1287 to assist'+
+                            '<svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.0388 3.15029L11.4287 2.70596C12.7333 2.29004 14.1244 2.963 14.6837 4.27792L15.7932 6.89742C16.2763 8.03796 16.0089 9.38 15.1293 10.2144L12.6829 12.5368C12.8327 13.9267 13.3003 15.2945 14.0831 16.6405C14.8268 17.9427 15.8243 19.0825 17.0164 19.9923L19.955 19.0107C21.0697 18.64 22.2826 19.0675 22.9646 20.0711L24.5572 22.409C25.3516 23.5767 25.2095 25.1861 24.2239 26.1755L23.1674 27.236C22.1159 28.2913 20.6137 28.6749 19.2252 28.2409C15.9456 27.2179 12.9309 24.1812 10.1796 19.1308C7.42452 14.0726 6.45189 9.77913 7.26306 6.25546C7.60406 4.77263 8.65935 3.59075 10.0388 3.15029Z" fill="#096DD9"/></svg>'+
+                            '</a>'+
+                        '</div>'+
+                        '<h3 class="features-title">Key Features</h3>'+
                         '<div class="features-section">'+
                             '<div class="feature">'+
-                                '<div class="icon"></div>'+
+                                '<div class="icon"><img src="/img/features-1.svg" alt="features" /></div>'+
                                 '<div class="desc">50,000+ Hour Lifespan</div>'+
                             '</div>'+
                             '<div class="feature">'+
@@ -312,7 +346,7 @@ function includedInThePackage(){
 
 function updOverviewTab(){
     var overviewTab = $('#tabs-2');
-    overviewTab.siblings('ul').remove();
+    // overviewTab.siblings('ul').remove();
     overviewTab.siblings('.tabs-3').remove();
     overviewTab.siblings('.tabs-4').remove();
     overviewTab.siblings('.tabs-5').remove();
@@ -361,3 +395,33 @@ function updOverviewTab(){
                     '</div>';
     overviewTab.append(tabCont);
 }
+
+
+
+function zoomModal(){
+    var srcZoom = $('body').find('.info-performance .info-cont img').attr('src');
+    $(document).on('click', '.info-performance .info-cont .zoom', function(){
+        $('body').find('.zoomModal').addClass('is-active');
+    })
+    $(document).on('click', '.zoomModal .close', function(){
+      $('body').find('.zoomModal').removeClass('is-active');
+    })
+    var zoomModal =  '<div id="zoomModal" class="modal zoomModal">'+
+                          '<span class="close">&times;</span>'+
+                          '<img src="'+ srcZoom +'" class="modal-content" id="img01">'+
+                      '</div>'
+    wrap.append(zoomModal);
+}
+
+
+
+// function
+totalPrice();
+addMaxPerformance();
+zoomModal();
+addFeatures();
+addSpecifications();
+addOtherOptions();
+addQuestionForm();
+includedInThePackage();
+updOverviewTab();

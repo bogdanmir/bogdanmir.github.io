@@ -208,7 +208,7 @@
 		text-align: center;
 		color: #333;
 		padding: 1px 6px;
-		margin-left: 8px;
+		margin-left: 3px;
 	}
 	.ready-to {
 		font-weight: bold;
@@ -246,6 +246,11 @@
 		.col {
 			width: 50%;
 			position: relative;
+			&:first-child {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
 			.sub-title {
 				font-weight: bold;
 				font-size: 16px;
@@ -283,7 +288,7 @@
 			}
 		}
 		img {
-			transform: rotate(-90deg) translateX(-75px) translateY(-45px);
+			transform: rotate(-90deg) translateX(0) translateY(0);
 			width: 284px;
 		}
 		.t-combo {
@@ -292,7 +297,7 @@
 			line-height: 16px;
 			color: #fff;
 			position: absolute;
-			top: 31%;
+			top: 36%;
 			left: 0;
 			right: 0;
 			margin: 0 auto;
@@ -330,4 +335,87 @@
 }
 .text-center.two-pic {
 	display: none;
+}
+.zoomModal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	padding-top: 100px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0,0.9);
+	&.is-active {
+		display: block;
+	}
+	img {
+		height: 300px;
+		object-fit: contain;
+		transform: rotate(-90deg) translateX(-75px) translateY(0);
+		width: 100%;
+	}
+	.close {
+		position: absolute;
+		top: 70px;
+		right: 35px;
+		color: #f1f1f1;
+		font-size: 40px;
+		font-weight: bold;
+		transition: 0.3s;
+		opacity: 1;
+	}
+}
+
+.compatibility-section {
+	border: 1px solid #DFDFDF;
+	border-radius: 6px;
+	padding: 22px 17px 25px;
+	margin: 28px 0 33px;
+	.com-title {
+		font-weight: bold;
+		font-size: 22px;
+		color: #000;
+		margin-bottom: 27px;
+		text-align: center;
+	}
+	.link {
+		border: 1px solid #096dd9;
+		border-radius: 6px;
+		color: #096dd9;
+		font-weight: 700;
+		font-size: 16px;
+		padding: 9px 17px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+}
+.features-wrap {
+	.features-title {
+		text-align: center;
+		margin-bottom: 30px;
+	}
+	.features-section {
+		display: flex;
+		flex-wrap: wrap;
+		padding-bottom: 50px;
+		border-bottom: 1px solid #DFDFDF;
+		.feature {
+			width: 33.33%;
+			text-align: center;
+			margin-bottom: 27px;
+			padding: 0 10px;
+		}
+		.icon {
+			margin-bottom: 9px;
+		}
+		.desc {
+			color: #5F6262;
+			font-size: 15px;
+			line-height: 18px;
+		}
+	}
 }
