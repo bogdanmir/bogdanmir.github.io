@@ -130,11 +130,12 @@ var annotations = {
     'e_mark': '<span class="green">E-mark</span>The e-mark is an EU mark for approved vehicles and vehicle components sold into the EU.',
 }
 
-$('.opIn').on('click', function (){
+$(document).on('click','.opIn', function (){
     var q = $(this).parents('tr').data('text');
     var text = annotations[q];
     var message = "<span class='test-message'>"+text+"<span class='close'></span></span>";
 
+    $('.test-message').remove();
     $(this).append(message)
 })
 
@@ -377,39 +378,39 @@ function updOverviewTab(){
                         'This light has been upgraded to the New Pro Series 2.0, see below for all the new features.'+
                     '</div>' +
                     '<div class="slogan">' +
-                        '<span style="font-weight: bold;">From Alaska to the Equator - </span>' +
-                        '<span style="font-weight: bold; color: darkgreen;">It just works!</span>' +
+                        '<span>From Alaska to the Equator - </span>' +
+                        '<span class="green">It just works!</span>' +
                     '</div>'+
                     '<div class="pre-galery">' +
                         'Very Impressed'+
-                        '<div class="author-comment" style="color: darkgreen;">Patti H. on Feb 15, 2021</div>'+
+                        '<div class="author-comment">Patti H. on Feb 15, 2021</div>'+
                     '</div>'+
-                    '<div class="imgs-wrap">'+
+                    '<div class="imgs-wrap"><div class="item_wrap">'+
                         '<img src="//cdn.shopify.com/s/files/1/0761/3599/files/LightbarResized.png?8312169795570906311" alt="">'+
-                    '</div>'+
+                    '</div></div>'+
                     '<div class="comment-txt">' +
                         'We were like, “wow!” We could not believe how bright the light is. We have the light on our defender which we use to plow snow and also to hunt with.'+
                     '</div>'+
                     '<div class="text">' +
                         'Versatility and compact power is what we strived for when constructing the 10" LED light bar, letting you mount this baby right out of the box with sturdy mounting brackets, stainless hardware and wiring harness included! Made only with materials at the forefront of the market, the 10" LED light bar showcases an IP69K rating allowing you to completely pound it with water, ice, saltwater, and especially sheer brute force. With a total height of 3.3 inches, this dual row off-road flood light fits just about anywhere while putting out a crazy amount of luminous light!'+
                     '</div>'+
-                    '<div class="imgs-wrap">'+
-                        '<img src="https://cdn.shopify.com/s/files/1/0761/3599/files/Screen_Shot_2019-11-04_at_11.13.35_AM_b405a04d-5d33-4787-9e94-55712a75c201_480x480.png?v=1572884351" alt="Baricoat Ceramc Coating">'+
-                        '<img src="https://cdn.shopify.com/s/files/1/0761/3599/files/Screen_Shot_2019-11-04_at_11.14.31_AM_6a2f5677-8d95-4642-bdef-b7803aa9d079_480x480.png?v=1572885960" alt="Water Proof">'+
+                    '<div class="imgs-wrap2">'+
+                        '<div class="col"><img src="https://cdn.shopify.com/s/files/1/0761/3599/files/Screen_Shot_2019-11-04_at_11.13.35_AM_b405a04d-5d33-4787-9e94-55712a75c201_480x480.png?v=1572884351" alt="Baricoat Ceramc Coating"></div>'+
+                        '<div class="col"><img src="https://cdn.shopify.com/s/files/1/0761/3599/files/Screen_Shot_2019-11-04_at_11.14.31_AM_6a2f5677-8d95-4642-bdef-b7803aa9d079_480x480.png?v=1572885960" alt="Water Proof"></div>'+
                     '</div>'+
-                    '<div class="sub-tile small">4x Stronger with Dynamax</div>'+
+                    '<div class="sub-title">4x Stronger with Dynamax</div>'+
                     '<div class="text">' +
                         '“With our heavy duty Dynamax housing, each light is built to withstand the harshest beating possible. We made sure to do extensive testing before releasing our lights to the public. Our testing included; multiple hits with a baseball bat, throwing the light into the air, and using the light bar as a ramp for our truck. Whether you’re in rough seas offshore or battling some tough terrain off-road, we wanted to make sure our lights could withstand anything you put them through.”'+
                     '</div>'+
                     '<h3>Multi-Mount 316 Brackets</h3>'+
-                    '<div class="imgs-wrap">'+
-                        '<img src="https://cdn.shopify.com/s/files/1/0761/3599/files/Outter-mount_480x480.jpg?v=1572887360" alt="Led">'+
-                        '<img src="https://cdn.shopify.com/s/files/1/0761/3599/files/Undermount_480x480.jpg?v=1572887236" alt="Lights">'+
+                    '<div class="imgs-wrap2">'+
+                        '<div class="col"><img src="https://cdn.shopify.com/s/files/1/0761/3599/files/Outter-mount_480x480.jpg?v=1572887360" alt="Led"></div>'+
+                        '<div class="col"><img src="https://cdn.shopify.com/s/files/1/0761/3599/files/Undermount_480x480.jpg?v=1572887236" alt="Lights"></div>'+
                     '</div>'+
-                    '<div class="sub-tile">More Security</div>'+
+                    '<div class="sub-tile2">More Security</div>'+
                     '<div class="text">' +
-                        '“New upgraded bolts with <span style="color: darkgreen;">stronger threads for extra protection.</span>' +
-                        'We wanted to make sure our lights were as durable as possible down to each and every bolt. You never want to have a piece of equipment fail when you are out in the field, so we have increased the strength of <span style="color: darkgreen;">even our smallest components to take this fear away.</span>”'+
+                        '“New upgraded bolts with <span class="green">stronger threads for extra protection.</span>' +
+                        'We wanted to make sure our lights were as durable as possible down to each and every bolt. You never want to have a piece of equipment fail when you are out in the field, so we have increased the strength of <span class="green">even our smallest components to take this fear away.</span>”'+
                     '</div>';
     overviewTab.append(tabCont);
 }
