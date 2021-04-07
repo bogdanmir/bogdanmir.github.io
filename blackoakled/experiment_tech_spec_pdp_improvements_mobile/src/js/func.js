@@ -120,6 +120,23 @@ var list_difference = {
     'flood' : '<span>Flood</span> - Wide-spread light to illuminate the side and front of your rig. Perfect for those who want a wider cone of light than a spot.',
     'led'   : 'Our <span>5W</span> LEDs produce over 75% better light output than our <span>3W</span> and are way more efficient, keeping the power draw very low.'
 }
+var annotations = {
+    'total_wattage': '<span class="green">Total Wattage</span>Is the power produced or used per second',
+    'amp_draw': '<span class="green">Amp Draw</span>Amp Draw Correlates to the amount of amperage drawn from a 12V, 24V or 36V system.',
+    'weight': '<span class="green">Weight</span>Total weight of the product.',
+    'raw_lumens': '<span class="green">Raw Lumens</span>This is a measure of the theoretical output of a light.',
+    'guarantee': '<span class="green">Guarantee</span>Provide a formal assurance, especially that certain conditions will be fulfilled relating to a product, service, or transaction.',
+    'ip_rating': '<span class="green">IP Rating</span>s the measurement of protection that LED light will have against liquid (water) and solid (dirt, dust etc.) objects.',
+    'e_mark': '<span class="green">E-mark</span>The e-mark is an EU mark for approved vehicles and vehicle components sold into the EU.',
+}
+
+$('.opIn').on('click', function (){
+    var q = $(this).parents('tr').data('text');
+    var text = annotations[q];
+    var message = "<span class='test-message'>"+text+"<span class='close'></span></span>";
+
+    $(this).append(message)
+})
 
 var option = $('.single-option-selector');
 if(option.length > 0){
@@ -186,45 +203,45 @@ function addFeatures(){
                         '<h3 class="features-title">Key Features</h3>'+
                         '<div class="features-section">'+
                             '<div class="feature">'+
-                                '<div class="icon"><img src="/img/features-1.svg" alt="features" /></div>'+
+                                '<div class="icon"><img src="https://master.d1b4uiycaor7je.amplifyapp.com/blackoakled/experiment_tech_spec_pdp_improvements_mobile/src/img/features-1.svg" alt="features" /></div>'+
                                 '<div class="desc">50,000+ Hour Lifespan</div>'+
                             '</div>'+
                             '<div class="feature">'+
-                                '<div class="icon"></div>'+
+                                '<div class="icon"><img src="https://master.d1b4uiycaor7je.amplifyapp.com/blackoakled/experiment_tech_spec_pdp_improvements_mobile/src/img/features-2.svg" alt="features" /></div>'+
                                 '<div class="desc">9-36  V DC Voltage Range</div>'+
                             '</div>'+
                             '<div class="feature">'+
-                                '<div class="icon"></div>'+
+                                '<div class="icon"><img src="https://master.d1b4uiycaor7je.amplifyapp.com/blackoakled/experiment_tech_spec_pdp_improvements_mobile/src/img/features-3.png" alt="features" /></div>'+
                                 '<div class="desc">Durable UV Polyester Poweder Coat</div>'+
                             '</div>'+
                             '<div class="feature">'+
-                                '<div class="icon"></div>'+
+                                '<div class="icon"><img src="https://master.d1b4uiycaor7je.amplifyapp.com/blackoakled/experiment_tech_spec_pdp_improvements_mobile/src/img/features-4.svg" alt="features" /></div>'+
                                 '<div class="desc">Integrated Thermal Mgmt. System</div>'+
                             '</div>'+
                             '<div class="feature">'+
-                                '<div class="icon"></div>'+
+                                '<div class="icon"><img src="https://master.d1b4uiycaor7je.amplifyapp.com/blackoakled/experiment_tech_spec_pdp_improvements_mobile/src/img/features-5.svg" alt="features" /></div>'+
                                 '<div class="desc">Impact Resistant Polycarbonate Lens</div>'+
                             '</div>'+
                             '<div class="feature">'+
-                                '<div class="icon"></div>'+
+                                '<div class="icon"><img src="https://master.d1b4uiycaor7je.amplifyapp.com/blackoakled/experiment_tech_spec_pdp_improvements_mobile/src/img/features-6.svg" alt="features" /></div>'+
                                 '<div class="desc">IP68 & IP69 Compliant Dust / Water Ingress</div>'+
                             '</div>'+
                         '</div>'+
-                        '<div class="features-section">'+
+                        '<div class="features-section-2">'+
                             '<div class="feature">'+
-                                '<div class="icon"></div>'+
+                                '<div class="icon"><img src="https://master.d1b4uiycaor7je.amplifyapp.com/blackoakled/experiment_tech_spec_pdp_improvements_mobile/src/img/production-1.svg" alt="features" /></div>'+
                                 '<div class="desc">Owned and operated in Sarasota FL</div>'+
                             '</div>'+
                             '<div class="feature">'+
-                                '<div class="icon"></div>'+
+                                '<div class="icon"><img src="https://master.d1b4uiycaor7je.amplifyapp.com/blackoakled/experiment_tech_spec_pdp_improvements_mobile/src/img/production-2.svg" alt="features" /></div>'+
                                 '<div class="desc">Limited Lifetime Warranty</div>'+
                             '</div>'+
                             '<div class="feature">'+
-                                '<div class="icon"></div>'+
+                                '<div class="icon"><img src="https://master.d1b4uiycaor7je.amplifyapp.com/blackoakled/experiment_tech_spec_pdp_improvements_mobile/src/img/production-3.svg" alt="features" /></div>'+
                                 '<div class="desc">Fast and Free Shipping</div>'+
                             '</div>'+
                             '<div class="feature">'+
-                                '<div class="icon"></div>'+
+                                '<div class="icon"><img src="https://master.d1b4uiycaor7je.amplifyapp.com/blackoakled/experiment_tech_spec_pdp_improvements_mobile/src/img/production-4.svg" alt="features" /></div>'+
                                 '<div class="desc">In Stock and Ready to Ship</div>'+
                             '</div>'+
                         '</div>'+
@@ -233,80 +250,80 @@ function addFeatures(){
 }
 
 function addSpecifications(){
-    var table = '<div class="info-wrap">'+
-                        '<h3>Specifications</h3>'+
-                        '<div class="img-wrap">'+
-                            '<img src="https://cdn.shopify.com/s/files/1/0761/3599/files/Heyrex-Seal-on-Black-Oak-Pro-Series-2.0_600x600.jpg?v=1572883692" alt="Premium Hardware" style="float: none; display: inline-block; width: 100%; height: auto !important; max-width: 258px;" width="258" height="258">'+
+    var table = '<div class="info-wrap specifications-wrap">'+
+        '<h3 class="t-title">Specifications</h3>'+
+        '<div class="img-wrap">'+
+        '<img src="https://cdn.shopify.com/s/files/1/0761/3599/files/Heyrex-Seal-on-Black-Oak-Pro-Series-2.0_600x600.jpg?v=1572883692" alt="Premium Hardware">'+
 
-                            '<img src="https://cdn.shopify.com/s/files/1/0761/3599/files/Heyrex-Seal-on-Black-Oak-Pro-Series-2.0_600x600.jpg?v=1572883692" alt="Premium Hardware" style="float: none; display: inline-block; width: 100%; height: auto !important; max-width: 258px;" width="258" height="258">'+
-                        '</div>'+
-                        '<div class="tbl-wrap">'+
-                            '<table width="100%" border="0" cellpadding="4">'+
-                                '<tr>'+
-                                    '<th></th>'+
-                                    '<th>5 Watt / Osram</th>'+
-                                    '<th>3 Watt / Osram</th>'+
-                                '</tr>'+
-                                '<tr data-text="total_wattage">'+
-                                    '<td>Total Wattage</td>'+
-                                    '<td>100w</td>'+
-                                    '<td>50w</td>'+
-                                '</tr>'+
-                                '<tr data-text="amp_draw">'+
-                                    '<td>Amp Draw</td>'+
-                                    '<td>4.1</td>'+
-                                    '<td>4</td>'+
-                                '</tr>'+
-                                '<tr data-text="led_quantity">'+
-                                    '<td>Led Quantity</td>'+
-                                    '<td>20</td>'+
-                                    '<td>20</td>'+
-                                '</tr>'+
-                                '<tr data-text="weight">'+
-                                    '<td>Weight</td>'+
-                                    '<td>6.6</td>'+
-                                    '<td>6.6</td>'+
-                                '</tr>'+
-                                '<tr data-text="raw_lumens">'+
-                                    '<td>Raw Lumens</td>'+
-                                    '<td>Lifetime</td>'+
-                                    '<td>Lifetime</td>'+
-                                '</tr>'+
-                                '<tr data-text="guarantee">'+
-                                    '<td>Guarantee</td>'+
-                                    '<td>30 Day Money Back</td>'+
-                                    '<td>30 Day Money Back</td>'+
-                                '</tr>'+
-                                '<tr data-text="ip_rating">'+
-                                    '<td>IP Rating</td>'+
-                                    '<td>IP69K</td>'+
-                                    '<td>IP69K</td>'+
-                                '</tr>'+
-                                '<tr data-text="e_mark">'+
-                                    '<td>E-mark</td>'+
-                                    '<td>E9</td>'+
-                                    '<td>E9</td>'+
-                                '</tr>'+
-                            '</table>'+
-                        '</div>'+
-                        '<div>Our lights are built to run off of 9-36V DC, but we offer power converters for 110V AC</div>'+
-                        '<div class="buttons">'+
-                            '<a href="">Download manual and guide</a>'+
-                            '<a href="">QnA on specs, mount, wiring</a>'+
-                        '</div>'+
-                    '</div>';
+        '<img src="https://cdn.shopify.com/s/files/1/0761/3599/files/Heyrex-Seal-on-Black-Oak-Pro-Series-2.0_600x600.jpg?v=1572883692" alt="Premium Hardware">'+
+        '</div>'+
+        '<div class="tbl-wrap">'+
+        '<table width="100%" cellpadding="4">'+
+        '<tr class="t-head">'+
+        '<th></th>'+
+        '<th>5 Watt / Osram</th>'+
+        '<th>3 Watt / Osram</th>'+
+        '</tr>'+
+        '<tr data-text="total_wattage">'+
+        '<td class="bolt">Total Wattage<div class="opIn">!</div></td>'+
+        '<td>100w</td>'+
+        '<td>50w</td>'+
+        '</tr>'+
+        '<tr data-text="amp_draw">'+
+        '<td class="bolt">Amp Draw <div class="opIn">!</div></td>'+
+        '<td>4.1</td>'+
+        '<td>4</td>'+
+        '</tr>'+
+        '<tr data-text="led_quantity">'+
+        '<td class="bolt">Led Quantity <div class="opIn">!</div></td>'+
+        '<td>20</td>'+
+        '<td>20</td>'+
+        '</tr>'+
+        '<tr data-text="weight">'+
+        '<td class="bolt">Weight <div class="opIn">!</div></td>'+
+        '<td>6.6</td>'+
+        '<td>6.6</td>'+
+        '</tr>'+
+        '<tr data-text="raw_lumens">'+
+        '<td class="bolt">Raw Lumens <div class="opIn">!</div></td>'+
+        '<td>Lifetime</td>'+
+        '<td>Lifetime</td>'+
+        '</tr>'+
+        '<tr data-text="guarantee">'+
+        '<td class="bolt">Guarantee <div class="opIn">!</div></td>'+
+        '<td>30 Day Money Back</td>'+
+        '<td>30 Day Money Back</td>'+
+        '</tr>'+
+        '<tr data-text="ip_rating">'+
+        '<td class="bolt">IP Rating <div class="opIn">!</div></td>'+
+        '<td>IP69K</td>'+
+        '<td>IP69K</td>'+
+        '</tr>'+
+        '<tr data-text="e_mark">'+
+        '<td class="bolt">E-mark <div class="opIn">!</div></td>'+
+        '<td>E9</td>'+
+        '<td>E9</td>'+
+        '</tr>'+
+        '</table>'+
+        '</div>'+
+        '<div>Our lights are built to run off of 9-36V DC, but we offer power converters for 110V AC</div>'+
+        '<div class="buttons">'+
+        '<a href="">Download manual and guide <img src="https://master.d1b4uiycaor7je.amplifyapp.com/blackoakled/experiment_tech_spec_pdp_improvements_mobile/src/img/ico-1.svg" alt="ico"></a>'+
+        '<a href="">QnA on specs, mount, wiring <img src="https://master.d1b4uiycaor7je.amplifyapp.com/blackoakled/experiment_tech_spec_pdp_improvements_mobile/src/img/ico-2.svg" alt="ico"></a>'+
+        '</div>'+
+        '</div>';
     wrap.append(table);
 }
 
 function addOtherOptions(){
-    var oser_options =  '<div class="oser_options"></div>'+
-                            '<h3>See other options</h3>'+
-                            '<div class="item_wrap">'+
+    var oser_options =  '<div class="other_options">'+
+                            '<h3 class="t-title">See other options</h3>'+
+                            '<div class="other_holder"><div class="item_wrap">'+
                                 '<a class="item" href="https://www.blackoakled.com/collections/20-inch-led-light-bars/20-Inch">20 inch double row</a>'+
                                 '<a class="item" href="https://www.blackoakled.com/collections/30-inch-led-light-bars/30-Inch">30 inch double row</a>'+
                                 '<a class="item" href="https://www.blackoakled.com/collections/40-inch-led-light-bars/40-Inch">40 inch double row</a>'+
-                            '</div>'+
-                        '</div>';
+                            '</div></div>'+
+                        '</div></div>';
     wrap.append(oser_options);                    
 }
 
