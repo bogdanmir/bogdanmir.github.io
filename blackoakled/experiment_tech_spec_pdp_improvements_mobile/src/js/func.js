@@ -329,16 +329,16 @@ function addOtherOptions(){
 
 function addQuestionForm(){
     var form =  '<div class="form_wrap">'+
-                    '<h4 clas"t-title">We are here to assist in choosing the best fit </h4>'
+                    '<h4 class="t-title">We are here to assist in choosing the best fit </h4>'+
                     '<div class="call-us">'+
-                        '<a href="tel:8003481287">Call us <span>800.348.1287</span> to assist <img src="https://master.d1b4uiycaor7je.amplifyapp.com/blackoakled/experiment_tech_spec_pdp_improvements_mobile/src/img/ico-3.svg" alt="ico"></a>'+
+                        '<a href="tel:8003481287"><span>Call us <b>800.348.1287</b> to assist </span><img src="https://master.d1b4uiycaor7je.amplifyapp.com/blackoakled/experiment_tech_spec_pdp_improvements_mobile/src/img/ico-3.svg" alt="ico"></a>'+
                     '</div>'+
 
                     '<div class="form-title">Have a question?</div>'+
                     '<form class="question-form">'+
                         '<textarea name="question-body" placeholder="Type here and we’ll contact you the same day" required></textarea>'+
                         '<input type="email" name="question-email" placeholder="Email to respond" required>'+
-                        '<button class="btn btn-success" type="submit" value="Submit">'+
+                        '<button class="btn btn-success" type="submit" value="Submit">Submit</button>'+
                     '</form>'+
                 '</div>';
     wrap.append(form);            
