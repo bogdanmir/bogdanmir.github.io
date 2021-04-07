@@ -328,9 +328,10 @@ function addOtherOptions(){
 }
 
 function addQuestionForm(){
-    var form =  '<div class="form-wrap">'+
+    var form =  '<div class="form_wrap">'+
+                    '<h4 clas"t-title">We are here to assist in choosing the best fit </h4>'
                     '<div class="call-us">'+
-                        '<a href="tel:8003481287">Call us <span style="color: #231f20; font-weight: bold;">800.348.1287</span> to assist</a>'+
+                        '<a href="tel:8003481287">Call us <span>800.348.1287</span> to assist <img src="https://master.d1b4uiycaor7je.amplifyapp.com/blackoakled/experiment_tech_spec_pdp_improvements_mobile/src/img/ico-3.svg" alt="ico"></a>'+
                     '</div>'+
 
                     '<div class="form-title">Have a question?</div>'+
