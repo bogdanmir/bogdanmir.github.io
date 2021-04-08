@@ -12,9 +12,6 @@ wrap.append(zoomModal2);
 $(document).on('click', '#main-product-image .iz', function(){
     $('body').find('#zoomModal2').addClass('is-active');
 });
-$(document).on('click', '.zoomModal .close', function(){
-    $('body').find('#zoomModal2').removeClass('is-active');
-});
 
 
 function totalPrice(btn = null){
@@ -329,8 +326,8 @@ function addSpecifications(){
         '</div>'+
         '<div class="our-l">Our lights are built to run off of 9-36V DC, but we offer power converters for 110V AC</div>'+
         '<div class="buttons">'+
-        '<a href="">Download manual and guide <img src="https://master.d1b4uiycaor7je.amplifyapp.com/blackoakled/experiment_tech_spec_pdp_improvements_mobile/src/img/ico-1.svg" alt="ico"></a>'+
-        '<a href="">QnA on specs, mount, wiring <img src="https://master.d1b4uiycaor7je.amplifyapp.com/blackoakled/experiment_tech_spec_pdp_improvements_mobile/src/img/ico-2.svg" alt="ico"></a>'+
+        '<a href="#" class="manual_btn">Download manual and guide <img src="https://master.d1b4uiycaor7je.amplifyapp.com/blackoakled/experiment_tech_spec_pdp_improvements_mobile/src/img/ico-1.svg" alt="ico"></a>'+
+        '<a href="#" class="qna_btn">QnA on specs, mount, wiring <img src="https://master.d1b4uiycaor7je.amplifyapp.com/blackoakled/experiment_tech_spec_pdp_improvements_mobile/src/img/ico-2.svg" alt="ico"></a>'+
         '</div>'+
         '</div>';
     wrap.append(table);
@@ -428,8 +425,8 @@ function updOverviewTab(){
                         '<div class="col"><img src="https://cdn.shopify.com/s/files/1/0761/3599/files/Undermount_480x480.jpg?v=1572887236" alt="Lights"></div>'+
                     '</div>'+
                     '<div class="sub-tile2">More Security</div>'+
-                    '<div class="text">' +
-                        '“New upgraded bolts with <span class="green">stronger threads for extra protection.</span>' +
+                    '<div class="text text2">' +
+                        '“New upgraded bolts with <span class="green bold">stronger threads for extra protection.</span><br>' +
                         'We wanted to make sure our lights were as durable as possible down to each and every bolt. You never want to have a piece of equipment fail when you are out in the field, so we have increased the strength of <span class="green">even our smallest components to take this fear away.</span>”'+
                     '</div>';
     overviewTab.append(tabCont);
@@ -447,8 +444,49 @@ $(document).on('click', '.info-performance .info-cont .zoom', function(){
     $('body').find('#zoomModal1').addClass('is-active');
 })
 $(document).on('click', '.zoomModal .close', function(){
-  $('body').find('#zoomModal1').removeClass('is-active');
+  $('body').find('.zoomModal').removeClass('is-active');
 })
+
+
+// Manual Modal
+var zoomModalManual =  '<div id="#zoomModalManual" class="modal zoomModal">'+
+                          '<span class="close">&times;</span>'+
+                          '<div>'+
+                            '<p>Manual will be added later./p>'+
+                          '</div>'+
+                        '</div>'
+wrap.append(zoomModalManual);
+$(document).on('click', '.manual_btn', function(e){
+    e.preventDefault();
+    $('body').find('#zoomModalManual').addClass('is-active');
+})
+
+// QnA Modal
+var zoomModalQnA =  '<div id="#zoomModalQnA" class="modal zoomModal">'+
+                      '<span class="close">&times;</span>'+
+                      '<div class="QnA">'+
+                        '<p><b>How do I know your lights are of the highest quality?</b></p>'+
+                        '<p>With IP68, IP69, IP69K ratings, the research has already been done for you! These standards give you clear cut pass/fail scenarios to ensure only the toughest of the tough get passed these guys, Including water, temperature, pressure, and sheer brute force.</p>'+
+                        '<p>&nbsp;</p>'+
+                        '<p><b>What exactly does your warranty cover?</b></p>'+
+                        '<p>We are human, and thus make mistakes. If you believe your light was one of these rare occurrences due to workmanship or material failure, send it back and we will verify. Once confirmed, Black Oak LED will repair, or otherwise replace, your light free of charge.</p>'+
+                        '<p>&nbsp;</p>'+
+                        '<p><b>I see 3w, 5w, and 10w LED options, what’s the difference?</b></p>'+
+                        '<p>You have the option between 3w Osram, 5w Osram, or 10w Cree LEDs. These are some of the brightest LEDs on the market! Don’t be misled, the 3 watts still put out an unbelievable amount of light! You choose just how bright you need it.</p>'+
+                        '<p>&nbsp;</p>'+
+                        '<p><b>What is light beam spread pattern, and what is best for me?</b></p>'+
+                        '<p><b>Flood</b>- Wide-spread light to illuminate the side and front of your rig. Perfect for those who want a wider cone of light than a spot.</p>'+
+                        '<p><b>Spot</b>- Great for those who need those piercing beams of light that seem to travel forever.</p>'+
+                        '<p><b>Combo</b>- Best of both worlds, the floods sit on the outside giving you the side blow-out of light while still shooting far with the Spots piercing far ahead.</p>'+
+                      '</div>'+
+                    '</div>'
+wrap.append(zoomModalQnA);
+$(document).on('click', '.qna_btn', function(e){
+    e.preventDefault();
+    $('body').find('#zoomModalQnA').addClass('is-active');
+})
+
+
 
 // function
 totalPrice();

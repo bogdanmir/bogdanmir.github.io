@@ -760,7 +760,11 @@
     font-size: 28px;
     line-height: 20px;
     color: #333;
-    margin-bottom: 20px; }
+    margin: 43px 0 20px; }
+  .prod_desc .description#tabs > div .text2 {
+    line-height: 2; }
+  .prod_desc .description#tabs > div .bold {
+    font-weight: 700; }
   .prod_desc .description#tabs > div .green {
     color: #5b9400; }
 
