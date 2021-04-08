@@ -437,19 +437,18 @@ function updOverviewTab(){
 
 function zoomModal(){
     var srcZoom = $('body').find('.info-performance .info-cont img').attr('src');
-    $(document).on('click', '.info-performance .info-cont .zoom', function(){
-        $('body').find('.zoomModal').addClass('is-active');
-    })
-    $(document).on('click', '.zoomModal .close', function(){
-      $('body').find('.zoomModal').removeClass('is-active');
-    })
-    var zoomModal =  '<div id="zoomModal" class="modal zoomModal">'+
+    var zoomModal =  '<div id="zoomModal1" class="modal zoomModal">'+
                           '<span class="close">&times;</span>'+
                           '<img src="'+ srcZoom +'" class="modal-content" id="img01">'+
                       '</div>'
     wrap.append(zoomModal);
 }
-
+$(document).on('click', '.info-performance .info-cont .zoom', function(){
+    $('body').find('#zoomModal1').addClass('is-active');
+})
+$(document).on('click', '.zoomModal .close', function(){
+  $('body').find('#zoomModal1').removeClass('is-active');
+})
 
 // function
 totalPrice();
