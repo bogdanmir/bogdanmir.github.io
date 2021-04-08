@@ -343,7 +343,7 @@
     .zoomModal .inner-wrap .f-20 {
       font-size: 20px !important; }
   .zoomModal#zoomModalQnA {
-    padding-top: 40px; }
+    padding: 40px 0; }
     .zoomModal#zoomModalQnA .close {
       top: 0; }
 
