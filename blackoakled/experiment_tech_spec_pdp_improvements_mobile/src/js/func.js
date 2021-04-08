@@ -33,7 +33,7 @@ function totalPrice(btn = null){
     if($('.test-total').length > 0){
         $('.test-total').remove();
     }
-    var totalPriceText = "<div class='test-total'><span>Total price :</span><span class='total-sum'>$"+ sum +"</span></div>";
+    var totalPriceText = "<div class='test-total'><span>Total price :</span><span class='total-sum'>$"+ Math.floor(sum * 100) / 100 +"</span></div>";
     wrap.append(totalPriceText);
 }
 
