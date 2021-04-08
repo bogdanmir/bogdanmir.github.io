@@ -427,7 +427,7 @@ function updOverviewTab(){
                     '<div class="sub-tile2">More Security</div>'+
                     '<div class="text text2">' +
                         '“New upgraded bolts with <span class="green bold">stronger threads for extra protection.</span><br>' +
-                        'We wanted to make sure our lights were as durable as possible down to each and every bolt. You never want to have a piece of equipment fail when you are out in the field, so we have increased the strength of <span class="green">even our smallest components to take this fear away.</span>”'+
+                        'We wanted to make sure our lights were as durable as possible down to each and every bolt. You never want to have a piece of equipment fail when you are out in the field, so we have increased the strength of <span class="green bold">even our smallest components to take this fear away.</span>”'+
                     '</div>';
     overviewTab.append(tabCont);
 }
@@ -449,10 +449,10 @@ $(document).on('click', '.zoomModal .close', function(){
 
 
 // Manual Modal
-var zoomModalManual =  '<div id="#zoomModalManual" class="modal zoomModal">'+
+var zoomModalManual =  '<div id="#zoomModalManual" class="modal zoomModal ">'+
                           '<span class="close">&times;</span>'+
-                          '<div>'+
-                            '<p>Manual will be added later./p>'+
+                          '<div class="inner-wrap">'+
+                            '<p>Manual will be added later.</p>'+
                           '</div>'+
                         '</div>'
 wrap.append(zoomModalManual);
@@ -464,7 +464,7 @@ $(document).on('click', '.manual_btn', function(e){
 // QnA Modal
 var zoomModalQnA =  '<div id="#zoomModalQnA" class="modal zoomModal">'+
                       '<span class="close">&times;</span>'+
-                      '<div class="QnA">'+
+                      '<div class="inner-wrap">'+
                         '<p><b>How do I know your lights are of the highest quality?</b></p>'+
                         '<p>With IP68, IP69, IP69K ratings, the research has already been done for you! These standards give you clear cut pass/fail scenarios to ensure only the toughest of the tough get passed these guys, Including water, temperature, pressure, and sheer brute force.</p>'+
                         '<p>&nbsp;</p>'+

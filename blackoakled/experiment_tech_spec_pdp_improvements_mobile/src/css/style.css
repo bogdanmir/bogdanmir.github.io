@@ -306,7 +306,7 @@
   display: none;
   position: fixed;
   z-index: 9999;
-  padding-top: 100px;
+  padding-top: 20vh;
   left: 0;
   top: 0;
   width: 100%;
@@ -322,22 +322,30 @@
     width: 100%; }
   .zoomModal .close {
     position: absolute;
-    top: 70px;
+    top: 15vh;
     right: 35px;
     color: #f1f1f1;
     font-size: 40px;
     font-weight: bold;
     transition: 0.3s;
     opacity: 1; }
+  .zoomModal .inner-wrap {
+    background: #fff;
+    max-width: 90%;
+    margin: 0 auto;
+    border-radius: 6px;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .zoomModal .inner-wrap p {
+      font-size: 20px; }
 
 #zoomModal2 {
-  padding-top: 20vh;
   text-align: center; }
   #zoomModal2 img {
     transform: rotate(0) translateX(0) translateY(0);
     max-width: 90%; }
-  #zoomModal2 .close {
-    top: 15vh; }
 
 .iz {
   position: absolute;
