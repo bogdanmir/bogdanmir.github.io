@@ -461,6 +461,7 @@ var zoomModalManual =  '<div id="#zoomModalManual" class="modal zoomModal ">'+
 wrap.append(zoomModalManual);
 $(document).on('click', '.manual_btn', function(e){
     e.preventDefault();
+    console.log('zoomModalManual open');
     $('body').find('#zoomModalManual').addClass('is-active');
 })
 
@@ -486,6 +487,7 @@ var zoomModalQnA =  '<div id="#zoomModalQnA" class="modal zoomModal">'+
 wrap.append(zoomModalQnA);
 $(document).on('click', '.qna_btn', function(e){
     e.preventDefault();
+    console.log('zoomModalQnA open');
     $('body').find('#zoomModalQnA').addClass('is-active');
 })
 
