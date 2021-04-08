@@ -1,6 +1,22 @@
 var url = window.location.href;
 var wrap = $('.form-add-to-cart ').parent().parent();
 
+var zoomProduct = "<span class='iz'><img src='https://master.d1b4uiycaor7je.amplifyapp.com/blackoakled/experiment_tech_spec_pdp_improvements_mobile/src/img/ico-4.svg' alt='ico'></span>"
+$('body').find('#main-product-image').append(zoomProduct);
+var srcZoom2 = $('body').find('#main-product-image .zoomImg').attr('src');
+var zoomModal2 =  '<div id="zoomModal2" class="modal zoomModal">'+
+                      '<span class="close">&times;</span>'+
+                      '<img src="'+ srcZoom2 +'" class="modal-content" id="img01">'+
+                  '</div>'
+wrap.append(zoomModal2);
+$(document).on('click', '#main-product-image .iz', function(){
+    $('body').find('#zoomModal2').addClass('is-active');
+});
+$(document).on('click', '.zoomModal .close', function(){
+    $('body').find('#zoomModal2').removeClass('is-active');
+});
+
+
 function totalPrice(btn = null){
     var sumStr = $('#productPrice-manual').find('.money').html();
     var price = sumStr.replace('$','');
@@ -130,14 +146,19 @@ var annotations = {
     'e_mark': '<span class="green">E-mark</span>The e-mark is an EU mark for approved vehicles and vehicle components sold into the EU.',
 }
 
-$(document).on('click','.opIn', function (){
+$(document).on('click','.opIn span', function (){
     var q = $(this).parents('tr').data('text');
     var text = annotations[q];
-    var message = "<span class='test-message'>"+text+"<span class='close'></span></span>";
+    var message = "<span class='test-message'>"+text+"<span class='close'>&times;</span></span>";
 
     $('.test-message').remove();
-    $(this).append(message)
-})
+    $(this).closest('.opIn').append(message)
+});
+$(document).on('click','.opIn .close', function (){
+    $('.test-message').remove();
+});
+
+
 
 var option = $('.single-option-selector');
 if(option.length > 0){
@@ -254,9 +275,8 @@ function addSpecifications(){
     var table = '<div class="info-wrap specifications-wrap">'+
         '<h3 class="t-title">Specifications</h3>'+
         '<div class="img-wrap">'+
-        '<img src="https://cdn.shopify.com/s/files/1/0761/3599/files/Heyrex-Seal-on-Black-Oak-Pro-Series-2.0_600x600.jpg?v=1572883692" alt="Premium Hardware">'+
-
-        '<img src="https://cdn.shopify.com/s/files/1/0761/3599/files/Heyrex-Seal-on-Black-Oak-Pro-Series-2.0_600x600.jpg?v=1572883692" alt="Premium Hardware">'+
+        '<img src="https://master.d1b4uiycaor7je.amplifyapp.com/blackoakled/experiment_tech_spec_pdp_improvements_mobile/src/img/scr-1.png" alt="Premium Hardware">'+
+        '<img src="https://master.d1b4uiycaor7je.amplifyapp.com/blackoakled/experiment_tech_spec_pdp_improvements_mobile/src/img/scr-2.png" alt="Premium Hardware">'+
         '</div>'+
         '<div class="tbl-wrap">'+
         '<table width="100%" cellpadding="4">'+
@@ -266,48 +286,48 @@ function addSpecifications(){
         '<th>3 Watt / Osram</th>'+
         '</tr>'+
         '<tr data-text="total_wattage">'+
-        '<td class="bolt">Total Wattage<div class="opIn">!</div></td>'+
+        '<td class="bolt">Total Wattage<div class="opIn"><span class="d-ico">!</span></div></td>'+
         '<td>100w</td>'+
         '<td>50w</td>'+
         '</tr>'+
         '<tr data-text="amp_draw">'+
-        '<td class="bolt">Amp Draw <div class="opIn">!</div></td>'+
+        '<td class="bolt">Amp Draw <div class="opIn"><span class="d-ico">!</span></div></td>'+
         '<td>4.1</td>'+
         '<td>4</td>'+
         '</tr>'+
         '<tr data-text="led_quantity">'+
-        '<td class="bolt">Led Quantity <div class="opIn">!</div></td>'+
+        '<td class="bolt">Led Quantity <div class="opIn"><span class="d-ico">!</span></div></td>'+
         '<td>20</td>'+
         '<td>20</td>'+
         '</tr>'+
         '<tr data-text="weight">'+
-        '<td class="bolt">Weight <div class="opIn">!</div></td>'+
+        '<td class="bolt">Weight <div class="opIn"><span class="d-ico">!</span></div></td>'+
         '<td>6.6</td>'+
         '<td>6.6</td>'+
         '</tr>'+
         '<tr data-text="raw_lumens">'+
-        '<td class="bolt">Raw Lumens <div class="opIn">!</div></td>'+
+        '<td class="bolt">Raw Lumens <div class="opIn"><span class="d-ico">!</span></div></td>'+
         '<td>Lifetime</td>'+
         '<td>Lifetime</td>'+
         '</tr>'+
         '<tr data-text="guarantee">'+
-        '<td class="bolt">Guarantee <div class="opIn">!</div></td>'+
+        '<td class="bolt">Guarantee <div class="opIn"><span class="d-ico">!</span></div></td>'+
         '<td>30 Day Money Back</td>'+
         '<td>30 Day Money Back</td>'+
         '</tr>'+
         '<tr data-text="ip_rating">'+
-        '<td class="bolt">IP Rating <div class="opIn">!</div></td>'+
+        '<td class="bolt">IP Rating <div class="opIn"><span class="d-ico">!</span></div></td>'+
         '<td>IP69K</td>'+
         '<td>IP69K</td>'+
         '</tr>'+
         '<tr data-text="e_mark">'+
-        '<td class="bolt">E-mark <div class="opIn">!</div></td>'+
+        '<td class="bolt">E-mark <div class="opIn"><span class="d-ico">!</span></div></td>'+
         '<td>E9</td>'+
         '<td>E9</td>'+
         '</tr>'+
         '</table>'+
         '</div>'+
-        '<div>Our lights are built to run off of 9-36V DC, but we offer power converters for 110V AC</div>'+
+        '<div class="our-l">Our lights are built to run off of 9-36V DC, but we offer power converters for 110V AC</div>'+
         '<div class="buttons">'+
         '<a href="">Download manual and guide <img src="https://master.d1b4uiycaor7je.amplifyapp.com/blackoakled/experiment_tech_spec_pdp_improvements_mobile/src/img/ico-1.svg" alt="ico"></a>'+
         '<a href="">QnA on specs, mount, wiring <img src="https://master.d1b4uiycaor7je.amplifyapp.com/blackoakled/experiment_tech_spec_pdp_improvements_mobile/src/img/ico-2.svg" alt="ico"></a>'+
@@ -415,8 +435,6 @@ function updOverviewTab(){
     overviewTab.append(tabCont);
 }
 
-
-
 function zoomModal(){
     var srcZoom = $('body').find('.info-performance .info-cont img').attr('src');
     $(document).on('click', '.info-performance .info-cont .zoom', function(){
@@ -431,7 +449,6 @@ function zoomModal(){
                       '</div>'
     wrap.append(zoomModal);
 }
-
 
 
 // function

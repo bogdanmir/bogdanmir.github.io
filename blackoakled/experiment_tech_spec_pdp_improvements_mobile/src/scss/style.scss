@@ -1,3 +1,13 @@
+.zoom {
+	&.featured-image-div {
+		.main_img {
+			zoom: 1.1;
+			max-width: 140%;
+			left: -20%;
+		}
+	}
+}
+
 .variations {
 	.selector-wrapper {
 		& > .selector-wrapper {
@@ -224,6 +234,35 @@
 	}
 }
 
+.template-product {
+	#main-product-image {
+		img {
+			max-width: 150%;
+			left: -15%;
+		}
+	}
+	.quantity {
+		.qty {
+			display: flex;
+			align-items: center;
+		}
+		.test-total {
+			width: calc(100% - 90px);
+			text-align: right;
+			font-weight: bold;
+			font-size: 14px;
+			line-height: 16px;
+			color: #5F6262;
+			.total-sum {
+				font-size: 24px;
+				line-height: 28px;
+				color: #AB2216;
+				margin-left: 10px;
+			}
+		}
+	}
+}
+
 #content .pro_main_c .desc_blk .price .review_row {
 	padding-top: 20px;
 	padding-bottom: 0;
@@ -339,7 +378,7 @@
 .zoomModal {
 	display: none;
 	position: fixed;
-	z-index: 1;
+	z-index: 9999;
 	padding-top: 100px;
 	left: 0;
 	top: 0;
@@ -367,6 +406,17 @@
 		opacity: 1;
 	}
 }
+#zoomModal2 {
+	padding-top: 20vh;
+	text-align: center;
+	img {
+		transform: rotate(0) translateX(0) translateY(0);
+		max-width: 90%;
+	}
+	.close {
+		top: 15vh;
+	}
+}
 .iz {
 	position: absolute;
 	right: 16px;
@@ -374,6 +424,7 @@
 	bottom: 16px;
 	box-sizing: border-box;
 	cursor: pointer;
+	z-index: 99;
 }
 .compatibility-section {
 	border: 1px solid #DFDFDF;
@@ -458,45 +509,68 @@
 .tbl-wrap {
 	padding-left: 10%;
 	table, th, td {
-		border: 1px solid black;
 		border-collapse: collapse;
 	}
 	th, td {
 		text-align: center;
 		padding: 10px;
 	}
+	td {
+		border: 1px solid #C4C4C4;
+	}
 	.t-head {
-		background: #000;
+		background: #333;
 		color: white;
-		border: 1px solid white;
 		border-collapse: collapse;
+		border-radius: 6px 6px 0 0;
 		th {
-			border: 1px solid white;
+			border: 0;
 			border-collapse: collapse;
+			&:first-child {
+				border-radius: 6px 0 0 0;
+			}
+			&:last-child {
+				border-radius: 0 6px 0 0;
+			}
 		}
 	}
 	.bolt {
 		position: relative;
 		font-weight: bold;
+		font-size: 14px;
+		line-height: 16px;
+		text-align: center;
+		color: #333333;
 
 		.opIn {
 			position: absolute;
 			top: 50%;
 			left: -33%;
-			display: block;
-			width: 18px;
-			height: 18px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 19px;
+			height: 19px;
 			box-sizing: border-box;
 			border-radius: 50%;
-			background: #029402;
+			background: #5B9400;
 			transform: translate(0, -50%);
-			color: white;
+			color: #fff;
+			z-index: 9;
+			.d-ico {
+				width: 19px;
+				height: 19px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
 
 			.test-message {
-				box-sizing: border-box;
-				border: 1px solid green;
+				border: 1px solid #7CB305;
+				box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.11);
+				border-radius: 6px;
 				position: absolute;
-				left: 40px;
+				left: 35px;
 				top: 50%;
 				color: black;
 				background: white;
@@ -505,11 +579,38 @@
 				transform: translate(0, -50%);
 				text-align: left;
 				font-size: 16px;
+				font-weight: 400;
 				line-height: 19px;
-
+				&:before, &:after {
+					content: ''; 
+					position: absolute;
+					left: -20px; 
+					top: 39%;
+					border: 10px solid transparent;
+					border-top: 10px solid #7CB305;
+					transform: rotate(90deg);
+				}
+				&:after {
+					border-top: 10px solid white;
+					left: -19px;
+				}
+				.close {
+					color: #7CB305;
+					position: absolute;
+					top: 2px;
+					right: 8px;
+					opacity: 1;
+					display: block;
+					z-index: 9;
+					cursor: pointer;
+				}
 				.green {
 					display: block;
-					color: #029402;
+					font-weight: bold;
+					font-size: 14px;
+					line-height: 16px;
+					color: #5B9400;
+					margin: 0 0 9px;
 				}
 			}
 		}
@@ -528,7 +629,7 @@
 			display: inline-block;
 			width: 100%;
 			height: auto !important;
-			max-width: 258px;
+			max-width: 306px;
 			border: 1px solid #DFDFDF;
 			border-radius: 6px;
 			padding: 15px;
@@ -551,6 +652,12 @@
 			justify-content: space-between;
 			width: 100%;
 		}
+	}
+	.our-l {
+		font-size: 16px;
+		line-height: 24px;
+		color: #333;
+		margin: 30px 0 0;
 	}
 }
 .other_options {
@@ -817,6 +924,14 @@
 		}
 		.ui-tabs-panel {
 
+		}
+	}
+}
+
+#footer {
+	.a_plus {
+		img {
+			max-width: 100%;
 		}
 	}
 }
