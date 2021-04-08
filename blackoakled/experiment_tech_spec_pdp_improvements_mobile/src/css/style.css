@@ -708,6 +708,10 @@
 .prod_desc .description#tabs > div {
   border: 0 !important;
   padding: 0 !important; }
+  .prod_desc .description#tabs > div #tabs-3,
+  .prod_desc .description#tabs > div #tabs-4,
+  .prod_desc .description#tabs > div #tabs-5 {
+    display: none !important; }
   .prod_desc .description#tabs > div > h3 {
     text-align: center;
     color: #333;

@@ -383,9 +383,9 @@ function includedInThePackage(){
 function updOverviewTab(){
     var overviewTab = $('#tabs-2');
     // overviewTab.siblings('ul').remove();
-    overviewTab.siblings('.tabs-3').remove();
-    overviewTab.siblings('.tabs-4').remove();
-    overviewTab.siblings('.tabs-5').remove();
+    // overviewTab.siblings('.tabs-3').remove();
+    // overviewTab.siblings('.tabs-4').remove();
+    // overviewTab.siblings('.tabs-5').remove();
     $('.prod_review').remove();
     $('.related_prod').parents('.product_c').parent().parent().remove();
 
