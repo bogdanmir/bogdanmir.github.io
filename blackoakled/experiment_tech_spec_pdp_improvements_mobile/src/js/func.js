@@ -400,7 +400,7 @@ $(document).on('click', '.zoomModal .close', function(){
 var zoomModalManual =  '<div id="zoomModalManual" class="modal zoomModal ">'+
                           '<span class="close">&times;</span>'+
                           '<div class="inner-wrap">'+
-                            '<p>Manual will be added later.</p>'+
+                            '<p class="f-20">Manual will be added later.</p>'+
                           '</div>'+
                         '</div>'
 wrap.append(zoomModalManual);
@@ -415,14 +415,11 @@ var zoomModalQnA =  '<div id="zoomModalQnA" class="modal zoomModal">'+
                       '<span class="close">&times;</span>'+
                       '<div class="inner-wrap">'+
                         '<p><b>How do I know your lights are of the highest quality?</b></p>'+
-                        '<p>With IP68, IP69, IP69K ratings, the research has already been done for you! These standards give you clear cut pass/fail scenarios to ensure only the toughest of the tough get passed these guys, Including water, temperature, pressure, and sheer brute force.</p>'+
-                        '<p>&nbsp;</p>'+
+                        '<p class="mb-17">With IP68, IP69, IP69K ratings, the research has already been done for you! These standards give you clear cut pass/fail scenarios to ensure only the toughest of the tough get passed these guys, Including water, temperature, pressure, and sheer brute force.</p>'+
                         '<p><b>What exactly does your warranty cover?</b></p>'+
-                        '<p>We are human, and thus make mistakes. If you believe your light was one of these rare occurrences due to workmanship or material failure, send it back and we will verify. Once confirmed, Black Oak LED will repair, or otherwise replace, your light free of charge.</p>'+
-                        '<p>&nbsp;</p>'+
+                        '<p class="mb-17">We are human, and thus make mistakes. If you believe your light was one of these rare occurrences due to workmanship or material failure, send it back and we will verify. Once confirmed, Black Oak LED will repair, or otherwise replace, your light free of charge.</p>'+
                         '<p><b>I see 3w, 5w, and 10w LED options, what’s the difference?</b></p>'+
-                        '<p>You have the option between 3w Osram, 5w Osram, or 10w Cree LEDs. These are some of the brightest LEDs on the market! Don’t be misled, the 3 watts still put out an unbelievable amount of light! You choose just how bright you need it.</p>'+
-                        '<p>&nbsp;</p>'+
+                        '<p class="mb-17">You have the option between 3w Osram, 5w Osram, or 10w Cree LEDs. These are some of the brightest LEDs on the market! Don’t be misled, the 3 watts still put out an unbelievable amount of light! You choose just how bright you need it.</p>'+
                         '<p><b>What is light beam spread pattern, and what is best for me?</b></p>'+
                         '<p><b>Flood</b>- Wide-spread light to illuminate the side and front of your rig. Perfect for those who want a wider cone of light than a spot.</p>'+
                         '<p><b>Spot</b>- Great for those who need those piercing beams of light that seem to travel forever.</p>'+

@@ -337,9 +337,15 @@
     min-height: 200px;
     display: flex;
     align-items: center;
-    justify-content: center; }
-    .zoomModal .inner-wrap p {
-      font-size: 20px; }
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px; }
+    .zoomModal .inner-wrap .f-20 {
+      font-size: 20px !important; }
+  .zoomModal#zoomModalQnA {
+    padding-top: 40px; }
+    .zoomModal#zoomModalQnA .close {
+      top: 0; }
 
 #zoomModal2 {
   text-align: center; }
@@ -784,3 +790,6 @@
 
 #footer .a_plus img {
   max-width: 100%; }
+
+.mb-17 {
+  margin-bottom: 17px; }

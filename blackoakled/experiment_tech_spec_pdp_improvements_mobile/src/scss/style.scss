@@ -414,8 +414,16 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		p {
-			font-size: 20px;
+		flex-wrap: wrap;
+		padding: 20px;
+		.f-20 {
+			font-size: 20px !important;
+		}
+	}
+	&#zoomModalQnA {
+		padding-top: 40px;
+		.close {
+			top: 0;
 		}
 	}
 }
@@ -958,4 +966,7 @@
 			max-width: 100%;
 		}
 	}
+}
+.mb-17 {
+	margin-bottom: 17px;
 }
