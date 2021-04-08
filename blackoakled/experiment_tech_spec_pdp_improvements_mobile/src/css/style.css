@@ -547,7 +547,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%; }
+    width: 100%;
+    cursor: pointer; }
 
 .specifications-wrap .our-l {
   font-size: 16px;
@@ -708,9 +709,7 @@
 .prod_desc .description#tabs > div {
   border: 0 !important;
   padding: 0 !important; }
-  .prod_desc .description#tabs > div #tabs-3,
-  .prod_desc .description#tabs > div #tabs-4,
-  .prod_desc .description#tabs > div #tabs-5 {
+  .prod_desc .description#tabs > div#tabs-3, .prod_desc .description#tabs > div#tabs-4, .prod_desc .description#tabs > div#tabs-5 {
     display: none !important; }
   .prod_desc .description#tabs > div > h3 {
     text-align: center;

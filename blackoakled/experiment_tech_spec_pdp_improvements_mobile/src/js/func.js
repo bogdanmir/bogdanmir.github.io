@@ -386,9 +386,12 @@ function updOverviewTab(){
     // overviewTab.siblings('.tabs-3').remove();
     // overviewTab.siblings('.tabs-4').remove();
     // overviewTab.siblings('.tabs-5').remove();
-    $('.prod_review').remove();
-    $('.related_prod').parents('.product_c').parent().parent().remove();
-
+    if($('.prod_review').length > 0){
+        $('.prod_review').remove();
+    }
+    if($('.related_prod').length > 0){
+        $('.related_prod').parents('.product_c').parent().parent().remove();
+    }
     overviewTab.html('');
     var tabCont =  '<h3>Overview</h3>'+
                     '<div class="text">' +
