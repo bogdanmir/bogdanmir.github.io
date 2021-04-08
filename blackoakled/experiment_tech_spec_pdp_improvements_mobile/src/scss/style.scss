@@ -836,6 +836,9 @@
 .prod_desc {
 	.description  {
 		&#tabs {
+			& > ul {
+				display: none;
+			}
 			& > div {
 				border: 0 !important;
 				padding: 0 !important;

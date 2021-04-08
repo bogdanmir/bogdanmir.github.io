@@ -694,6 +694,9 @@
 .no-right-gap.items-info {
   display: none; }
 
+.prod_desc .description#tabs > ul {
+  display: none; }
+
 .prod_desc .description#tabs > div {
   border: 0 !important;
   padding: 0 !important; }
