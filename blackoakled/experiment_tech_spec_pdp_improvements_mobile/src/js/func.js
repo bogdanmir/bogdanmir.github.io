@@ -100,7 +100,7 @@ function ajax_add_to_cart(url){
             data: sendData,
             dataType: 'html',
         }).done(function(data) {
-            alert("Psoduct in cart!!!!!");
+            console.log("Psoduct in cart!!!!!");
         });
     });
 }
@@ -361,6 +361,21 @@ function addQuestionForm(){
                 '</div>';
     wrap.append(form);            
 }
+
+$(document).on('click', '.question-form .btn-success', function (event){
+    event.preventDefault();
+    console.log("SEND FORM OK")
+    var sendData = $(document).find('.question-form').serialize();
+    $.ajax({
+        url: 'https://a.klaviyo.com/ajax/subscriptions/subscribe',
+        type: 'POST',
+        data: sendData,
+        dataType: 'json',
+    }).done(function(data) {
+        console.log("SEND FORM OK");
+    });
+})
+
 
 function includedInThePackage(){
     var includedPackage =   '<div class="package-wrap">'+

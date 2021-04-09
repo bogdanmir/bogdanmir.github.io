@@ -59,6 +59,13 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center; }
+    .variations .selector-wrapper .selector-wrapper .dropdown .dropdown__item > div:nth-child(1) {
+      width: 62%;
+      display: flex;
+      align-items: center; }
+    .variations .selector-wrapper .selector-wrapper .dropdown .dropdown__item > div:nth-child(2) {
+      width: 38%;
+      text-align: right; }
     .variations .selector-wrapper .selector-wrapper .dropdown .dropdown__item.active {
       background: rgba(9, 109, 217, 0.09); }
       .variations .selector-wrapper .selector-wrapper .dropdown .dropdown__item.active .add-to-cart {
@@ -84,8 +91,7 @@
     font-weight: bold;
     font-size: 15px;
     line-height: 18px;
-    margin-right: 20px;
-    margin-left: 30px; }
+    margin-right: 15px; }
   .variations .selector-wrapper .selector-wrapper .dropdown .add-to-cart {
     font-weight: bold;
     font-size: 15px;
