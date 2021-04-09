@@ -6,15 +6,19 @@
 .variations .selector-wrapper > .selector-wrapper {
   display: flex;
   flex-wrap: wrap;
-  align-items: center; }
+  align-items: center;
+  position: relative; }
   .variations .selector-wrapper > .selector-wrapper label {
     order: 1;
-    width: calc(40% - 5px); }
+    width: calc(40% - 5px);
+    position: absolute;
+    top: 0;
+    left: 0; }
   .variations .selector-wrapper > .selector-wrapper .open-info {
     order: 2;
     color: #096DD9;
     font-size: 15px;
-    width: 60%;
+    width: 100%;
     text-align: right;
     cursor: pointer; }
   .variations .selector-wrapper > .selector-wrapper .single-option-selector {

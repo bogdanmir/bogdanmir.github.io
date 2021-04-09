@@ -171,10 +171,32 @@ $('.open-info').on('click', function (){
         '<div class="w-body">';
 
     if(op_v === 'Combo'){
+        $(this).addClass('optictInfo');
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+            'event': 'event-to-ga',
+            'eventCategory': 'Exp: Box Builder Improvement',
+            'eventAction': "What's difference/Optics"
+        });
+        console.log('Click on Whats the difference link on Optics');
+
+
         html += '<div class="w-item">'+list_difference['combo']+'</div>' +
                 '<div class="w-item">'+list_difference['spot']+'</div>' +
                 '<div class="w-item">'+list_difference['flood']+'</div>'
     }else{
+        $(this).addClass('ledInfo');
+        $(document).on('click', '.selector-wrapper .selector-wrapper:nth-child(2) .open-info' , function (){
+            window.dataLayer = window.dataLayer || [];
+            dataLayer.push({
+                'event': 'event-to-ga',
+                'eventCategory': 'Exp: Box Builder Improvement',
+                'eventAction': "What's difference/LED"
+            });
+            console.log("Click on What's the difference link on LED")
+        });
+        
+
         html += '<div class="w-item single-item">'+list_difference['led']+'</div>'
     }
     html += '</div></div>';

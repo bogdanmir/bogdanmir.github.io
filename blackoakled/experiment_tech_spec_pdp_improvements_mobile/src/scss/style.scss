@@ -14,15 +14,19 @@
 			display: flex;
 			flex-wrap: wrap;
 			align-items: center;
+			position: relative;
 			label {
 				order: 1;
 				width: calc(40% - 5px);
+				position: absolute;
+				top: 0;
+				left: 0;
 			}
 			.open-info {
 				order: 2;
 				color: #096DD9;
 				font-size: 15px;
-				width: 60%;
+				width: 100%;
 				text-align: right;
 				cursor: pointer;
 			}

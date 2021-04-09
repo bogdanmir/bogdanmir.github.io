@@ -52,26 +52,26 @@ $(document).on('click', '.template-product .owl-carousel .owl-next', function(){
 });
 
 // Click on What's the difference link on Optics
-$(document).on('click', '.selector-wrapper .selector-wrapper:nth-child(1) .open-info' , function (){
-	window.dataLayer = window.dataLayer || [];
-	dataLayer.push({
-	    'event': 'event-to-ga',
-	    'eventCategory': 'Exp: Box Builder Improvement',
-	    'eventAction': "What's difference/Optics"
-	});
-	console.log('Click on Whats the difference link on Optics')
-});
+// $(document).on('click', '.selector-wrapper .selector-wrapper:nth-child(1) .open-info' , function (){
+// 	window.dataLayer = window.dataLayer || [];
+// 	dataLayer.push({
+// 	    'event': 'event-to-ga',
+// 	    'eventCategory': 'Exp: Box Builder Improvement',
+// 	    'eventAction': "What's difference/Optics"
+// 	});
+// 	console.log('Click on Whats the difference link on Optics')
+// });
 
 // Click on What's the difference link on LED
-$(document).on('click', '.selector-wrapper .selector-wrapper:nth-child(1) .open-info' , function (){
-	window.dataLayer = window.dataLayer || [];
-	dataLayer.push({
-	    'event': 'event-to-ga',
-	    'eventCategory': 'Exp: Box Builder Improvement',
-	    'eventAction': "What's difference/LED"
-	});
-	console.log("Click on What's the difference link on LED")
-});
+// $(document).on('click', '.selector-wrapper .selector-wrapper:nth-child(2) .open-info' , function (){
+// 	window.dataLayer = window.dataLayer || [];
+// 	dataLayer.push({
+// 	    'event': 'event-to-ga',
+// 	    'eventCategory': 'Exp: Box Builder Improvement',
+// 	    'eventAction': "What's difference/LED"
+// 	});
+// 	console.log("Click on What's the difference link on LED")
+// });
 
 // Click on close What's the difference tolltip (both Optics/LED)
 $(document).on('click', '.info-window .close' , function (){
