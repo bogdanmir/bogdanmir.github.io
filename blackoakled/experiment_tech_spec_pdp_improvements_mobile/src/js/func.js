@@ -14,7 +14,7 @@ $(document).on('click', '#main-product-image .iz', function(){
 });
 
 function totalPrice(btn = null){
-    var sumStr = $('#productPrice-manual').find('.money').html();
+    var sumStr = $('#productPrice-manual').find('.money').last().text();
     var price = sumStr.replace('$','');
     var wrap = $('.form-add-to-cart').find('.quantity').find('.qty');
     var qVal = $('#quantity').val();
@@ -27,10 +27,10 @@ function totalPrice(btn = null){
 
     if(btn !== null){
         if(btn.hasClass('minus_btn')){
-            qVal = ++qVal;
+            qVal = rounded(++qVal);
         }
         if(btn.hasClass('minus_btn')){
-            qVal = --qVal;
+            qVal = rounded(--qVal);
         }
         sum = rounded(+(price)*+(qVal));
     }
