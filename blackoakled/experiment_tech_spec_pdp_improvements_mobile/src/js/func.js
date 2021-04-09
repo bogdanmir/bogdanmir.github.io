@@ -21,6 +21,10 @@ function totalPrice(btn = null){
 
     var sum = price;
 
+    var rounded = function(number){
+        return +number.toFixed(2);
+    }
+
     if(btn !== null){
         if(btn.hasClass('minus_btn')){
             qVal = ++qVal;
@@ -28,7 +32,7 @@ function totalPrice(btn = null){
         if(btn.hasClass('minus_btn')){
             qVal = --qVal;
         }
-        sum = Math.floor(+(price)*+(qVal));
+        sum = rounded(+(price)*+(qVal));
     }
 
     // var sum = +(price)*+(qVal);
