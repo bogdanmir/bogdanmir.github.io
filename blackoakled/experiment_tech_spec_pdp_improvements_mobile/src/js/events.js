@@ -1,7 +1,3 @@
-// $(document).on('click','body',function (event) {
-//         console.log('body click');
-// });
-
 // Hotjar trigger to record video sessions
  (function(h,o,t,j,a,r){
         h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
@@ -144,7 +140,7 @@ $(document).on('click', '.compatibility-section .link', function(){
 });
 
 // Click on (i) icon on tech spec table
-$(document).on('click', '.tbl-wrap .opIn', function(){
+$(document).on('click', '.tbl-wrap .opIn span', function(){
 	window.dataLayer = window.dataLayer || [];
 	dataLayer.push({
 	    'event': 'event-to-ga',

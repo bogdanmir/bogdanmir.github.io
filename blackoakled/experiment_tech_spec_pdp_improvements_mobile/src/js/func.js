@@ -13,12 +13,13 @@ $(document).on('click', '#main-product-image .iz', function(){
     $('body').find('#zoomModal2').addClass('is-active');
 });
 
-
 function totalPrice(btn = null){
     var sumStr = $('#productPrice-manual').find('.money').html();
     var price = sumStr.replace('$','');
     var wrap = $('.form-add-to-cart').find('.quantity').find('.qty');
     var qVal = $('#quantity').val();
+
+    var sum = price;
 
     if(btn !== null){
         if(btn.hasClass('minus_btn')){
@@ -27,9 +28,10 @@ function totalPrice(btn = null){
         if(btn.hasClass('minus_btn')){
             qVal = --qVal;
         }
+        sum = +(price)*+(qVal);
     }
 
-    var sum = +(price)*+(qVal);
+    // var sum = +(price)*+(qVal);
     if($('.test-total').length > 0){
         $('.test-total').remove();
     }
