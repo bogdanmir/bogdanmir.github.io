@@ -28,14 +28,14 @@ function totalPrice(btn = null){
         if(btn.hasClass('minus_btn')){
             qVal = --qVal;
         }
-        sum = +(price)*+(qVal);
+        sum = Math.floor(+(price)*+(qVal))/100;
     }
 
     // var sum = +(price)*+(qVal);
     if($('.test-total').length > 0){
         $('.test-total').remove();
     }
-    var totalPriceText = "<div class='test-total'><span>Total price :</span><span class='total-sum'>$"+ Math.floor(sum * 100) / 100 +"</span></div>";
+    var totalPriceText = "<div class='test-total'><span>Total price :</span><span class='total-sum'>$"+ sum +"</span></div>";
     wrap.append(totalPriceText);
 }
 
@@ -186,16 +186,14 @@ $('.open-info').on('click', function (){
                 '<div class="w-item">'+list_difference['flood']+'</div>'
     }else{
         $(this).addClass('ledInfo');
-        $(document).on('click', '.selector-wrapper .selector-wrapper:nth-child(2) .open-info' , function (){
-            window.dataLayer = window.dataLayer || [];
-            dataLayer.push({
-                'event': 'event-to-ga',
-                'eventCategory': 'Exp: Box Builder Improvement',
-                'eventAction': "What's difference/LED"
-            });
-            console.log("Click on What's the difference link on LED")
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+            'event': 'event-to-ga',
+            'eventCategory': 'Exp: Box Builder Improvement',
+            'eventAction': "What's difference/LED"
         });
-        
+        console.log("Click on What's the difference link on LED")
+
 
         html += '<div class="w-item single-item">'+list_difference['led']+'</div>'
     }
