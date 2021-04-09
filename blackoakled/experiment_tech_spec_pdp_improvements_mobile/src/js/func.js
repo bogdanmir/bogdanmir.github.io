@@ -28,7 +28,7 @@ function totalPrice(btn = null){
         if(btn.hasClass('minus_btn')){
             qVal = --qVal;
         }
-        sum = Math.floor(+(price)*+(qVal))/100;
+        sum = Math.floor(+(price)*+(qVal));
     }
 
     // var sum = +(price)*+(qVal);
