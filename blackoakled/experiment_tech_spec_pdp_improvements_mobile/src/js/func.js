@@ -172,6 +172,7 @@ $('.open-info').on('click', function (){
 
     if(op_v === 'Combo'){
         $(this).addClass('optictInfo');
+        // Click on What's the difference link on Optics
         window.dataLayer = window.dataLayer || [];
         dataLayer.push({
             'event': 'event-to-ga',
@@ -186,6 +187,7 @@ $('.open-info').on('click', function (){
                 '<div class="w-item">'+list_difference['flood']+'</div>'
     }else{
         $(this).addClass('ledInfo');
+        // Click on What's the difference link on LED
         window.dataLayer = window.dataLayer || [];
         dataLayer.push({
             'event': 'event-to-ga',

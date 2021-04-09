@@ -140,7 +140,7 @@ $(document).on('click', '.compatibility-section .link', function(){
 });
 
 // Click on (i) icon on tech spec table
-$(document).on('click', '.tbl-wrap .opIn span', function(){
+$(document).on('click', '.tbl-wrap .opIn .d-ico', function(){
 	window.dataLayer = window.dataLayer || [];
 	dataLayer.push({
 	    'event': 'event-to-ga',
