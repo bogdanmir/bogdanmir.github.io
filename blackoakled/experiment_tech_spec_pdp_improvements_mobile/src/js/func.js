@@ -565,3 +565,4 @@ addOtherOptions();
 addQuestionForm();
 includedInThePackage();
 updOverviewTab();
+test_accessory();
