@@ -132,7 +132,7 @@ $('.qty').find('a').on('click', function (){
 $('.variations .single-option-selector').on('change', function() {
     setTimeout(function() { 
         totalPrice($(this));
-    }, 1000);
+    }, 500);
 });
 
 
