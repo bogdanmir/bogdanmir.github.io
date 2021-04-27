@@ -502,7 +502,8 @@ function updOverviewTab(){
     // overviewTab.siblings('.tabs-4').remove();
     // overviewTab.siblings('.tabs-5').remove();
     if($('.prod_review').length > 0){
-        $('.prod_review').remove();
+        // $('.prod_review').remove();
+        $('.prod_review').css('display','none');
     }
     if($('.related_prod').length > 0){
         // $('.related_prod').parents('.product_c').parent().parent().remove();
