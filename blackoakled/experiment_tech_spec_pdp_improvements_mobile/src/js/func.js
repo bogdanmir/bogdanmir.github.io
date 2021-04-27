@@ -130,7 +130,9 @@ $('.qty').find('a').on('click', function (){
 })
 
 $('.variations .single-option-selector').on('change', function() {
-    totalPrice($(this));
+    setTimeout(function() { 
+        totalPrice($(this));
+    }, 1000);
 });
 
 
