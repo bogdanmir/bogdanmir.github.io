@@ -118,6 +118,9 @@
 					line-height: 18px;
 					width: auto;
 					order: unset;
+					&.label-text {
+						position: relative;
+					}
 				}
 				.money {
 					display: inline-block;

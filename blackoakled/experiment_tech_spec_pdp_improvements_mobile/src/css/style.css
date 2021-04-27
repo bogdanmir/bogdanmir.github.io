@@ -89,6 +89,8 @@
     line-height: 18px;
     width: auto;
     order: unset; }
+    .variations .selector-wrapper .selector-wrapper .dropdown label.label-text {
+      position: relative; }
   .variations .selector-wrapper .selector-wrapper .dropdown .money {
     display: inline-block;
     color: #BB0000;

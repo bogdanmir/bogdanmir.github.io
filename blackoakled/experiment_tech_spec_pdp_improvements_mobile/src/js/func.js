@@ -81,7 +81,7 @@ function additional_prod_html_generate(additionalProdObj){
     $.each(additionalProdObj, function (key, value){
         html += '<div class="dropdown__item">'
         html += '<div><img src="'+ value['img'] +'" alt="" />';
-        html += '<label>'+ value['name'] +'</label></div>';
+        html += '<label class="label-text">'+ value['name'] +'</label></div>';
         html += '<div><span class="money">&#36;'+ value['price'] +'</span><input data-url="'+value['url']+'" type="button" class="add-to-cart" value="+Add"></div>';
         html += '</div>'
     })
