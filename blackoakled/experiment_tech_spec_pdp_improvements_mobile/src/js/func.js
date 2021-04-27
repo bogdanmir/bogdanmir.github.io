@@ -89,9 +89,9 @@ function additional_prod_html_generate(additionalProdObj){
     $('#addToCartForm .selector-wrapper').first().append(html);
 }
 
-if(accentLightsProdsUrls.indexOf(window.location.pathname) > -1){
-    additional_prod_html_generate(additionalProducts['rbg_controller'])
-}
+// if(accentLightsProdsUrls.indexOf(window.location.pathname) > -1){
+//     additional_prod_html_generate(additionalProducts['rbg_controller'])
+// }
 
 function test_accessory(){
     if(url.indexOf('double-row-led/products') > -1){
