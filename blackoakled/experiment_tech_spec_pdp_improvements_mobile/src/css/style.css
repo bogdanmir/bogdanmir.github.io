@@ -197,10 +197,6 @@
 .price .save {
   display: none; }
 
-.template-product #main-product-image img {
-  max-width: 150%;
-  left: -15%; }
-
 .template-product .quantity .qty {
   display: flex;
   align-items: center; }
@@ -363,7 +359,7 @@
     transform: rotate(0) translateX(0) translateY(0);
     max-width: 90%; }
 
-.iz {
+.iz-zoom-custom {
   position: absolute;
   right: 16px;
   display: block;
@@ -371,6 +367,8 @@
   box-sizing: border-box;
   cursor: pointer;
   z-index: 99; }
+  .iz-zoom-custom.is-hide {
+    display: none; }
 
 .compatibility-section {
   border: 1px solid #DFDFDF;

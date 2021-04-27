@@ -251,8 +251,8 @@
 .template-product {
 	#main-product-image {
 		img {
-			max-width: 150%;
-			left: -15%;
+			// max-width: 150%;
+			// left: -15%;
 		}
 	}
 	.quantity {
@@ -448,7 +448,7 @@
 		max-width: 90%;
 	}
 }
-.iz {
+.iz-zoom-custom {
 	position: absolute;
 	right: 16px;
 	display: block;
@@ -456,6 +456,9 @@
 	box-sizing: border-box;
 	cursor: pointer;
 	z-index: 99;
+	&.is-hide {
+		display: none;
+	}
 }
 .compatibility-section {
 	border: 1px solid #DFDFDF;

@@ -1,16 +1,21 @@
 var url = window.location.href;
 var wrap = $('.form-add-to-cart ').parent().parent();
 
-var zoomProduct = "<span class='iz'><img src='https://master.d1b4uiycaor7je.amplifyapp.com/blackoakled/experiment_tech_spec_pdp_improvements_mobile/src/img/ico-4.svg' alt='ico'></span>"
+var zoomProduct = "<span class='iz-zoom-custom'><img src='https://master.d1b4uiycaor7je.amplifyapp.com/blackoakled/experiment_tech_spec_pdp_improvements_mobile/src/img/ico-4.svg' alt='ico'></span>"
 $('body').find('#main-product-image').append(zoomProduct);
-var srcZoom2 = $('body').find('#main-product-image .zoomImg').attr('src');
-var zoomModal2 =  '<div id="zoomModal2" class="modal zoomModal">'+
-                      '<span class="close">&times;</span>'+
-                      '<img src="'+ srcZoom2 +'" class="modal-content" id="img01">'+
-                  '</div>'
-wrap.append(zoomModal2);
-$(document).on('click', '#main-product-image .iz', function(){
+
+$(document).on('click', '#main-product-image .iz-zoom-custom', function(){
+    var srcZoom2 = $('body').find('#main-product-image .zoomImg').attr('src');
+    var zoomModal2 =  '<div id="zoomModal2" class="modal zoomModal">'+
+                          '<span class="close">&times;</span>'+
+                          '<img src="'+ srcZoom2 +'" class="modal-content" id="img01">'+
+                      '</div>'
+    wrap.append(zoomModal2);
     $('body').find('#zoomModal2').addClass('is-active');
+});
+
+$(document).on('click', '.template-product #thumbnails', function(){
+    $('body').find('#main-product-image .iz-zoom-custom').addClass('is-hide');
 });
 
 function totalPrice(btn = null){
@@ -114,6 +119,13 @@ function ajax_add_to_cart(url){
 $('.qty').find('a').on('click', function (){
     totalPrice($(this));
 })
+
+$('.variations .single-option-selector').on('change', function() {
+    totalPrice($(this));
+});
+
+
+
 $(document).on('click', '.info-window .close', function(){
     $('body').find('.t-overlay').remove();
     $(this).closest('.info-window').remove();
