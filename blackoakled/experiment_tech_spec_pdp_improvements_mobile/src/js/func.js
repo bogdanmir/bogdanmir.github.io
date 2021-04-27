@@ -4,13 +4,14 @@ var wrap = $('.form-add-to-cart ').parent().parent();
 var zoomProduct = "<span class='iz-zoom-custom'><img src='https://master.d1b4uiycaor7je.amplifyapp.com/blackoakled/experiment_tech_spec_pdp_improvements_mobile/src/img/ico-4.svg' alt='ico'></span>"
 $('body').find('#main-product-image').append(zoomProduct);
 
-$(document).on('click', '#main-product-image .iz-zoom-custom', function(){
-    var srcZoom2 = $('body').find('#main-product-image .zoomImg').attr('src');
+
+var srcZoom2 = $('body').find('#main-product-image .zoomImg').attr('src');
     var zoomModal2 =  '<div id="zoomModal2" class="modal zoomModal">'+
                           '<span class="close">&times;</span>'+
                           '<img src="'+ srcZoom2 +'" class="modal-content" id="img01">'+
                       '</div>'
-    wrap.append(zoomModal2);
+wrap.append(zoomModal2);
+$(document).on('click', '#main-product-image .iz-zoom-custom', function(){
     $('body').find('#zoomModal2').addClass('is-active');
 });
 
@@ -496,7 +497,8 @@ function updOverviewTab(){
         $('.prod_review').remove();
     }
     if($('.related_prod').length > 0){
-        $('.related_prod').parents('.product_c').parent().parent().remove();
+        // $('.related_prod').parents('.product_c').parent().parent().remove();
+        $('.related_prod').parents('.product_c').parent().parent().css('display','none');
     }
     overviewTab.html('');
     var tabCont =  '<h3>Overview</h3>'+
