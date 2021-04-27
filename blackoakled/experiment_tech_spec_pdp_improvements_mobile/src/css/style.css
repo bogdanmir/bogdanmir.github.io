@@ -366,10 +366,11 @@
   bottom: 0;
   box-sizing: border-box;
   cursor: pointer;
-  z-index: 99;
-  margin: 0 16px 16px 0; }
+  z-index: 99; }
   .iz-zoom-custom.is-hide {
     display: none; }
+  .iz-zoom-custom img {
+    padding: 5px; }
 
 .compatibility-section {
   border: 1px solid #DFDFDF;

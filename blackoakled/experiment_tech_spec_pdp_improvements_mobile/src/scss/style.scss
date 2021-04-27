@@ -456,9 +456,11 @@
 	box-sizing: border-box;
 	cursor: pointer;
 	z-index: 99;
-	margin: 0 16px 16px 0;
 	&.is-hide {
 		display: none;
+	}
+	img {
+		padding: 5px;
 	}
 }
 .compatibility-section {

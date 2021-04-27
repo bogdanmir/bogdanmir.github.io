@@ -22,6 +22,7 @@ $(document).on('click', '.template-product #thumbnails', function(){
 
 
 $(document).on('click', '.template-product #thumbnails.owl-carousel .item', function(){
+    console.log('_click_')
     $('body').find('#main-product-image .iz-zoom-custom').remove();
     $('body').find('#main-product-image').append(zoomProduct);
 });
