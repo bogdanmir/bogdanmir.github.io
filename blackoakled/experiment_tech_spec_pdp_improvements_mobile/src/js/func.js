@@ -19,6 +19,14 @@ $(document).on('click', '.template-product #thumbnails', function(){
     $('body').find('#main-product-image .iz-zoom-custom').addClass('is-hide');
 });
 
+
+
+$(document).on('click', '.template-product #thumbnails.owl-carousel .item', function(){
+    $('body').find('#main-product-image .iz-zoom-custom').remove();
+    $('body').find('#main-product-image').append(zoomProduct);
+});
+
+
 function totalPrice(btn = null){
     var sumStr = $('#productPrice-manual').find('.money').last().text();
     var price = sumStr.replace('$','');

@@ -361,12 +361,13 @@
 
 .iz-zoom-custom {
   position: absolute;
-  right: 16px;
+  right: 0;
   display: block;
-  bottom: 16px;
+  bottom: 0;
   box-sizing: border-box;
   cursor: pointer;
-  z-index: 99; }
+  z-index: 99;
+  margin: 0 16px 16px 0; }
   .iz-zoom-custom.is-hide {
     display: none; }
 
