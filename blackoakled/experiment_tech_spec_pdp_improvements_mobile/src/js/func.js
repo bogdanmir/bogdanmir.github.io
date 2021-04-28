@@ -22,11 +22,10 @@ $(document).on('click', '.template-product #thumbnails', function(){
 
 
 $(document).on('click', '.template-product #thumbnails.owl-carousel .item', function(){
-    console.log('_click_')
+    // console.log('_click_')
     $('body').find('#main-product-image .iz-zoom-custom').remove();
     $('body').find('#main-product-image').append(zoomProduct);
 });
-
 
 function totalPrice(btn = null){
     var sumStr = $('#productPrice-manual').find('.money').last().text();
@@ -55,10 +54,12 @@ function totalPrice(btn = null){
         $('.test-total').remove();
     }
 
+
     if( $('body').find('.dropdown__item_wrap .dropdown__item').hasClass('active') ) {
-        var d_item = parseFloat($('body').find('.dropdown__item_wrap .dropdown__item').find('.money').text().replace('$',''));
-        sum += d_item;
-        // console.log(typeof sum)
+        $('body').find('.dropdown__item_wrap .dropdown__item.active').each(function() {
+            var d_item = parseFloat($(this).find('.money').text().replace('$',''));
+            sum += d_item;
+        })
     }
 
 
@@ -129,7 +130,7 @@ function ajax_add_to_cart(url){
             data: sendData,
             dataType: 'html',
         }).done(function(data) {
-            console.log("Psoduct in cart!!!!!");
+            // console.log("Psoduct in cart!!!!!");
         });
     });
 }
@@ -145,25 +146,23 @@ $('.variations .single-option-selector').on('change', function() {
     }, 500);
 });
 
-
-
-function test_plustotal(){
-    if(!$('body').find('.dropdown__item_wrap .dropdown__item').hasClass('active')) {
-        var d_item = parseFloat($('body').find('.dropdown__item_wrap .dropdown__item').find('.money').text().replace('$',''));
-        // console.log(d_item)
-
-        var totalPriceText = parseFloat($('body').find('.total-sum').text().replace('$',''));
-        // console.log(totalPriceText)
-
-        $('.template-product .quantity .test-total .total-sum').text('$' + (totalPriceText + d_item));
-        // console.log(totalPriceText + d_item)
+function test_plustotal(el=null){
+    var totalAccessories = 0;
+    if( el.closest('.dropdown__item').hasClass('active') ) {
+        var itemAccessories = parseFloat(el.closest('.dropdown__item').find('.money').text().replace('$',''));
+        totalAccessories += itemAccessories;
     }
+
+    var totalPriceText = parseFloat($('body').find('.total-sum').text().replace('$',''));
+    var totalResult = totalPriceText + totalAccessories;
+    $('.template-product .quantity .test-total .total-sum').text('$' + totalResult);
 }
 
 $(document).on('click', '.dropdown__item_wrap .dropdown__item .add-to-cart', function(){
-    test_plustotal();
-
-    $(this).closest('.dropdown__item').addClass('active');
+    if(!$(this).closest('.dropdown__item').hasClass('active')) {
+        $(this).closest('.dropdown__item').addClass('active');
+        test_plustotal($(this));
+    }
 });
 
 
@@ -237,7 +236,7 @@ $('.open-info').on('click', function (){
             'eventCategory': 'Exp: Box Builder Improvement',
             'eventAction': "What's difference/Optics"
         });
-        console.log('Click on Whats the difference link on Optics');
+        // console.log('Click on Whats the difference link on Optics');
 
 
         html += '<div class="w-item">'+list_difference['combo']+'</div>' +
@@ -252,7 +251,7 @@ $('.open-info').on('click', function (){
             'eventCategory': 'Exp: Box Builder Improvement',
             'eventAction': "What's difference/LED"
         });
-        console.log("Click on What's the difference link on LED")
+        // console.log("Click on What's the difference link on LED")
 
 
         html += '<div class="w-item single-item">'+list_difference['led']+'</div>'
@@ -446,7 +445,7 @@ function addQuestionForm(){
 
 $(document).on('click', '.question-form .btn-success', function (event){
     event.preventDefault();
-    console.log("SEND FORM OK")
+    // console.log("SEND FORM OK")
     var sendData = $(document).find('.question-form').serialize();
     $.ajax({
         url: 'https://a.klaviyo.com/ajax/subscriptions/subscribe',
@@ -454,7 +453,7 @@ $(document).on('click', '.question-form .btn-success', function (event){
         data: sendData,
         dataType: 'json',
     }).done(function(data) {
-        console.log("SEND FORM OK");
+        // console.log("SEND FORM OK");
     });
 })
 
