@@ -186,6 +186,7 @@ $('.dropdown__item').find('.add-to-cart').on('click', function (){
     ajax_add_to_cart(prod_url)
 })
 
+
 var list_difference = {
     'combo' : '<span>Combo</span> - Best of both worlds, the floods sit on the outside giving you the side blow-out of light while still shooting far with the Spots piercing far ahead.',
     'spot'  : '<span>Spot</span> - Great for those who need those piercing beams of light that seem to travel forever.',
