@@ -149,9 +149,25 @@ $(document).on('click', '.t-overlay', function(){
 $(document).on('click', '.selector-wrapper .dropdown__head', function(){
     $(this).closest('.dropdown').toggleClass('is-show');
 });
+
 $(document).on('click', '.dropdown__item_wrap .dropdown__item .add-to-cart', function(){
+    
+    if(!$(this).closest('.dropdown__item').hasClass('active')) {
+        var d_item = parseFloat($(this).closest('.dropdown__item').find('.money').text().replace('$',''));
+        // console.log(+d_item)
+
+        var totalPriceText = parseFloat($('body').find('.total-sum').text().replace('$',''));
+        // console.log(+totalPriceText)
+
+        $('.template-product .quantity .test-total .total-sum').text('$' + (totalPriceText + d_item));
+        // console.log(totalPriceText + d_item)
+    }
+
     $(this).closest('.dropdown__item').addClass('active');
 });
+
+
+
 $('.dropdown__item').find('add-to-cart').on('click', function (){
     var prod_url = window.location.origin + $(this).data("url")
     ajax_add_to_cart(prod_url)
