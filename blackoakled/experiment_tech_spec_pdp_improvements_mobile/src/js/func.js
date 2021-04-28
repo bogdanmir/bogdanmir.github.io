@@ -54,6 +54,20 @@ function totalPrice(btn = null){
     if($('.test-total').length > 0){
         $('.test-total').remove();
     }
+
+
+
+    
+
+    if( $('body').find('.dropdown__item_wrap .dropdown__item').hasClass('active') ) {
+        var d_item = parseFloat($('body').find('.dropdown__item_wrap .dropdown__item').find('.money').text().replace('$',''));
+        sum += d_item;
+        // console.log(typeof sum)
+    }
+
+
+
+
     var totalPriceText = "<div class='test-total'><span>Total price :</span><span class='total-sum'>$"+ sum +"</span></div>";
     wrap.append(totalPriceText);
 }
@@ -128,6 +142,7 @@ function ajax_add_to_cart(url){
 
 $('.qty').find('a').on('click', function (){
     totalPrice($(this));
+    // test_plustotal();
 })
 
 $('.variations .single-option-selector').on('change', function() {
@@ -138,22 +153,21 @@ $('.variations .single-option-selector').on('change', function() {
 
 
 
+function test_plustotal(){
+    if(!$('body').find('.dropdown__item_wrap .dropdown__item').hasClass('active')) {
+        var d_item = parseFloat($('body').find('.dropdown__item_wrap .dropdown__item').find('.money').text().replace('$',''));
+        // console.log(d_item)
+
+        var totalPriceText = parseFloat($('body').find('.total-sum').text().replace('$',''));
+        // console.log(totalPriceText)
+
+        $('.template-product .quantity .test-total .total-sum').text('$' + (totalPriceText + d_item));
+        // console.log(totalPriceText + d_item)
+    }
+}
 
 $(document).on('click', '.dropdown__item_wrap .dropdown__item .add-to-cart', function(){
-    
-    if(!$(this).closest('.dropdown__item').hasClass('active')) {
-        var d_item = parseFloat($(this).closest('.dropdown__item').find('.money').text().replace('$',''));
-        // console.log(+d_item)
-
-        // var totalPriceText = parseFloat($('body').find('.total-sum').text().replace('$',''));
-        // console.log(+totalPriceText)
-
-        // $('.template-product .quantity .test-total .total-sum').text('$' + (totalPriceText + d_item));
-        // console.log(totalPriceText + d_item)
-
-
-        totalPrice($(this)+d_item);
-    }
+    test_plustotal();
 
     $(this).closest('.dropdown__item').addClass('active');
 });
