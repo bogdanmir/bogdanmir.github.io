@@ -55,17 +55,11 @@ function totalPrice(btn = null){
         $('.test-total').remove();
     }
 
-
-
-    
-
     if( $('body').find('.dropdown__item_wrap .dropdown__item').hasClass('active') ) {
         var d_item = parseFloat($('body').find('.dropdown__item_wrap .dropdown__item').find('.money').text().replace('$',''));
         sum += d_item;
         // console.log(typeof sum)
     }
-
-
 
 
     var totalPriceText = "<div class='test-total'><span>Total price :</span><span class='total-sum'>$"+ sum +"</span></div>";
@@ -187,7 +181,7 @@ $(document).on('click', '.selector-wrapper .dropdown__head', function(){
 });
 
 
-$('.dropdown__item').find('add-to-cart').on('click', function (){
+$('.dropdown__item').find('.add-to-cart').on('click', function (){
     var prod_url = window.location.origin + $(this).data("url")
     ajax_add_to_cart(prod_url)
 })
