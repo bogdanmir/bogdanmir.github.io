@@ -195,10 +195,11 @@ var list_difference = {
 var annotations = {
     'total_wattage': '<span class="green">Total Wattage</span>Is the power produced or used per second',
     'amp_draw': '<span class="green">Amp Draw</span>Amp Draw Correlates to the amount of amperage drawn from a 12V, 24V or 36V system.',
+    'led_quantity': '',
     'weight': '<span class="green">Weight</span>Total weight of the product.',
     'raw_lumens': '<span class="green">Raw Lumens</span>This is a measure of the theoretical output of a light.',
     'guarantee': '<span class="green">Guarantee</span>Provide a formal assurance, especially that certain conditions will be fulfilled relating to a product, service, or transaction.',
-    'ip_rating': '<span class="green">IP Rating</span>s the measurement of protection that LED light will have against liquid (water) and solid (dirt, dust etc.) objects.',
+    'ip_rating': '<span class="green">IP Rating</span>Is the measurement of protection that LED light will have against liquid (water) and solid (dirt, dust etc.) objects. ',
     'e_mark': '<span class="green">E-mark</span>The e-mark is an EU mark for approved vehicles and vehicle components sold into the EU.',
 }
 
