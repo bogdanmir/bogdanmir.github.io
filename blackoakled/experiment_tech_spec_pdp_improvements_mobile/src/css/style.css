@@ -534,7 +534,7 @@
           line-height: 16px;
           color: #5B9400;
           margin: 0 0 9px; }
-  .tbl-wrap .led_quantity .opIn {
+  .tbl-wrap [data-text="led_quantity"] .opIn {
     display: none; }
 
 .specifications-wrap .t-title {
