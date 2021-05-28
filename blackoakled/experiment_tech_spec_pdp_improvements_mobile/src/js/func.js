@@ -57,8 +57,12 @@ function totalPrice(btn = null){
 
     if( $('body').find('.dropdown__item_wrap .dropdown__item').hasClass('active') ) {
         $('body').find('.dropdown__item_wrap .dropdown__item.active').each(function() {
-            var d_item = parseFloat($(this).find('.money').text().replace('$','').replace(',',''));
+
+            // var d_item = parseFloat($(this).find('.money').text().replace('$','').replace(',',''));
+            var d_item = parseFloat($('body').find('.price .money .money.si-auto').text().replace('$','').replace(',',''));
             sum += d_item;
+
+            console.log(d_item)
         })
     }
 
