@@ -3,62 +3,60 @@
 window.additionalProducts = {
     'double-row-led'    : {
         '1': {
-            'name'   : 'Lens covers',
-            'price'  : '55.25',
+            'name'   : 'O Type Bracket (Pair)',
+            'price'  : '52.00',
             'url'    : '/collections/led-light-bar-mounts-2/products/o-type-bracket-in-pair',
-            'img'    : '//cdn.shopify.com/s/files/1/0761/3599/products/accessories-o-type-bracket-in-pair-1_medium.jpg?v=1467206343',
+            'img'    : 'https:////cdn.shopify.com/s/files/1/0761/3599/products/accessories-o-type-bracket-in-pair-1_1024x1024.jpg?v=1467206343',
         },
 
         '2': {
-            'name'   : 'Sound Dampeners',
-            'price'  : '25.00',
+            'name'   : 'Lens covers',
+            'price'  : '55.25',
             'url'    : '/collections/covers-hardware/products/lens-cover-for-10-dual-row-light',
-            'img'    : 'https://cdn.shopify.com/s/files/1/0761/3599/products/accessories-new-lens-cover-for-10-dual-row-light-1_medium.jpg?v=1449621325',   
+            'img'    : 'https://cdn.shopify.com/s/files/1/0761/3599/products/accessories-new-lens-cover-for-10-dual-row-light-1_1024x1024.jpg?v=1449621325',
         },
 
         '3': {
             'name'  : 'Security Hardware',
-            'price' : '21.25',
+            'price' : '20.00',
             'id'    : '/collections/covers-hardware/products/security-hardware',
-            'img'   : 'https://cdn.shopify.com/s/files/1/0761/3599/products/Screen_Shot_2016-08-24_at_10.39.28_AM_medium.png?v=1472053578',
+            'img'   : 'https://cdn.shopify.com/s/files/1/0761/3599/products/Screen_Shot_2016-08-24_at_10.39.28_AM_1024x1024.png?v=1472053578',
         },
 
         '4': {
             'name'   : 'Sound Dampeners',
             'price'  : '25.50',
             'url'    : '/collections/covers-hardware/products/sound-dampers',
-            'img'    : 'https://cdn.shopify.com/s/files/1/0761/3599/products/IMG_1975_medium.jpg?v=1472584246',
+            'img'    : 'https://cdn.shopify.com/s/files/1/0761/3599/products/IMG_1975_1024x1024.jpg?v=1472584246',
         },
     },
     'single_rows'       : {
         '1': {
-            'name'   : 'Lens covers',
-            'price'  : '55.25',
+            'name'   : 'O Type Bracket (Pair)',
+            'price'  : '52.00',
             'url'    : '/collections/led-light-bar-mounts-2/products/o-type-bracket-in-pair',
-            'img'    : '//cdn.shopify.com/s/files/1/0761/3599/products/accessories-o-type-bracket-in-pair-1_medium.jpg?v=1467206343',
-
+            'img'    : 'https:////cdn.shopify.com/s/files/1/0761/3599/products/accessories-o-type-bracket-in-pair-1_1024x1024.jpg?v=1467206343',
         },
 
         '2': {
-            'name'   : 'Single Row Cover',
-            'price'  : '17.00',
+            'name'   : 'Lens covers',
+            'price'  : '16.00',
             'url'    : '/collections/covers-hardware/products/single-row-cover',
-            'img'    : 'https://cdn.shopify.com/s/files/1/0761/3599/products/Screen_Shot_2016-10-25_at_9.36.27_AM_medium.png?v=1507580376',
+            'img'    : 'https://cdn.shopify.com/s/files/1/0761/3599/products/Screen_Shot_2016-10-25_at_9.36.27_AM_1024x1024.png?v=1507580376',
         },
 
         '3': {
-            'name'   : 'Security Hardware',
-            'price'  : '21.25',
-            'url'    : '/collections/covers-hardware/products/security-hardware',
-            'img'   : 'https://cdn.shopify.com/s/files/1/0761/3599/products/Screen_Shot_2016-08-24_at_10.39.28_AM_medium.png?v=1472053578',
+            'name'  : 'Security Hardware',
+            'price' : '20.00',
+            'url'   : '/collections/covers-hardware/products/security-hardware',
+            'img'   : 'https://cdn.shopify.com/s/files/1/0761/3599/products/Screen_Shot_2016-08-24_at_10.39.28_AM_1024x1024.png?v=1472053578',
         },
 
         '4': {
             'name'   : 'Sound Dampeners',
             'price'  : '25.50',
             'url'    : '/collections/covers-hardware/products/sound-dampers',
-            'img'    : 'https://cdn.shopify.com/s/files/1/0761/3599/products/IMG_1975_medium.jpg?v=1472584246',
-
+            'img'    : 'https://cdn.shopify.com/s/files/1/0761/3599/products/IMG_1975_1024x1024.jpg?v=1472584246',
         },
     },
     'led_light_pods'    : {
