@@ -29,22 +29,22 @@ $(document).on('click', '.template-product #thumbnails.owl-carousel .item', func
 
 function totalPrice(btn = null){
     var sumStr = $('#productPrice-manual').find('.money').last().text();
-    var price = sumStr.replace('$','');
+    var price = sumStr.replace('$', '').replace(',', '');
     var wrap = $('.form-add-to-cart').find('.quantity').find('.qty');
     var qVal = $('#quantity').val();
 
-    var sum = price;
-
     var rounded = function(number){
-        return +number.toFixed(2);
+        return parseFloat(number).toFixed(2);
     }
+
+    var sum = rounded(price);
 
     if(btn !== null){
         if(btn.hasClass('minus_btn')){
-            qVal = rounded(++qVal);
+            qVal = ++qVal;
         }
         if(btn.hasClass('minus_btn')){
-            qVal = rounded(--qVal);
+            qVal = --qVal;
         }
         sum = rounded(+(price)*+(qVal));
     }
@@ -61,11 +61,8 @@ function totalPrice(btn = null){
             // var d_item = parseFloat($(this).find('.money').text().replace('$','').replace(',',''));
             var d_item = parseFloat($('body').find('.price .money .money.si-auto').text().replace('$','').replace(',',''));
             sum += d_item;
-
-            console.log(d_item)
         })
     }
-
 
     var totalPriceText = "<div class='test-total'><span>Total price :</span><span class='total-sum'>$"+ sum +"</span></div>";
     wrap.append(totalPriceText);
@@ -101,10 +98,6 @@ function additional_prod_html_generate(additionalProdObj){
     html += '</div></div></div>'
     $('#addToCartForm .selector-wrapper').first().append(html);
 }
-
-// if(accentLightsProdsUrls.indexOf(window.location.pathname) > -1){
-//     additional_prod_html_generate(additionalProducts['rbg_controller'])
-// }
 
 function test_accessory(){
     if(url.indexOf('double-row-led/products') > -1){
@@ -153,11 +146,11 @@ $('.variations .single-option-selector').on('change', function() {
 function test_plustotal(el=null){
     var totalAccessories = 0;
     if( el.closest('.dropdown__item').hasClass('active') ) {
-        var itemAccessories = parseFloat(el.closest('.dropdown__item').find('.money').text().replace('$',''));
+        var itemAccessories = parseFloat(el.closest('.dropdown__item').find('.money').text().replace('$','').replace(',', ''));
         totalAccessories += itemAccessories;
     }
 
-    var totalPriceText = parseFloat($('body').find('.total-sum').text().replace('$',''));
+    var totalPriceText = parseFloat($('body').find('.total-sum').text().replace('$','').replace(',', ''));
     var totalResult = totalPriceText + totalAccessories;
     $('.template-product .quantity .test-total .total-sum').text('$' + totalResult);
 }
@@ -598,5 +591,105 @@ addSpecifications();
 addOtherOptions();
 addQuestionForm();
 includedInThePackage();
-updOverviewTab();
+// updOverviewTab();
+
+// document.addEventListener("DOMContentLoaded", function(event) {
+    if (document.querySelector(".minus_btn")) {
+        document.querySelector(".minus_btn").addEventListener('click', function(e){
+            console.log('click quantity');
+            if (document.querySelector('#quantity') && document.querySelector('#quantity').value == "1") {
+                console.log(1);
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                e.stopPropagation();
+                console.log(2);
+                return false;
+            }
+        })
+    }
+
+    var intervalNewTableIncr = 0;
+    var intervalNewTable = setInterval(function(){
+        intervalNewTableIncr++;
+        if (document.querySelector('.prod_desc .product-spec') && document.querySelector('.tbl-wrap table')) {
+            initNewTable();
+            clearInterval(intervalNewTable);
+        }
+        if (intervalNewTableIncr > 12) {
+            console.log('not find table');
+            clearInterval(intervalNewTable);
+            if (document.querySelector('.tbl-wrap')) {
+                document.querySelector('.tbl-wrap').remove();
+            }
+        }
+        console.log('try init table', intervalNewTableIncr);
+
+    }, 500)
+
+    function initNewTable(){
+        var newSpecTable;
+        if (document.querySelector('.prod_desc .product-spec').querySelector('tr')) {
+            newSpecTable = document.querySelector('.prod_desc .product-spec').cloneNode(true);
+        } else if (document.querySelector('.prod_desc .product-spec + table tr') ) {
+            newSpecTable = document.querySelector('.prod_desc .product-spec + table').cloneNode(true);
+        } else {
+            console.log('no table');
+            return false;
+        }
+
+        newSpecTable.classList.remove('product-spec');
+        newSpecTable.setAttribute('width', '100%');
+        newSpecTable.setAttribute('cellpadding', '4');
+        newSpecTable.removeAttribute('border');
+        newSpecTable.removeAttribute('style');
+        newSpecTable.removeAttribute('cellspacing');
+        var tableHeadLine = newSpecTable.querySelector('tr');
+        var tableHeadEl = document.createElement('tr');
+        tableHeadEl.classList.add('t-head');
+        tableHeadLine.querySelectorAll('td').forEach(function(el) {
+            tableHeadEl.insertAdjacentHTML('beforeend', '<th>'+el.innerHTML+'</th>');
+        })
+        tableHeadLine.remove();
+        newSpecTable.querySelector('tbody').insertAdjacentElement('afterbegin', tableHeadEl);
+
+        newSpecTable.querySelectorAll('tr:not(.t-head)').forEach(function(rowEl){
+            setRowType(rowEl);
+        })
+
+        document.querySelector('.tbl-wrap table').style.display = 'none';
+        document.querySelector('.tbl-wrap').insertAdjacentElement('afterbegin', newSpecTable);
+    }
+
+    function setRowType(row) {
+        var toolTipFlag = true;
+        var rowFirstCell = row.querySelector('td');
+        var rowCellTitle = rowFirstCell.innerText.toLowerCase();
+        rowFirstCell.classList.add('bolt');
+
+        if (rowCellTitle.includes('total wattage')) {
+            row.dataset.text = 'total_wattage';
+        } else if (rowCellTitle.includes('amp draw')) {
+            row.dataset.text = 'amp_draw';
+        } else if (rowCellTitle.includes("led quantity")) {
+            row.dataset.text = 'led_quantity';
+        } else if (rowCellTitle.includes('weight')) {
+            row.dataset.text = 'weight';
+        } else if (rowCellTitle.includes('raw lumens')) {
+            row.dataset.text = 'raw_lumens';
+        } else if (rowCellTitle.includes('guarantee')) {
+            row.dataset.text = 'guarantee';
+        } else if (rowCellTitle.includes('ip rating')) {
+            row.dataset.text = 'ip_rating';
+        } else if (rowCellTitle.includes('e-mark')) {
+            row.dataset.text = 'e_mark';
+        } else {
+            toolTipFlag = false;
+        }
+
+        if (toolTipFlag) {
+            rowFirstCell.insertAdjacentHTML('beforeend', '<div class="opIn"><span class="d-ico">!</span></div>');
+        }
+    }
+// })
+
 test_accessory();
