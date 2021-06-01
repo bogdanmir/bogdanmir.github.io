@@ -58,9 +58,10 @@ function totalPrice(btn = null){
     if( $('body').find('.dropdown__item_wrap .dropdown__item').hasClass('active') ) {
         $('body').find('.dropdown__item_wrap .dropdown__item.active').each(function() {
 
-            // var d_item = parseFloat($(this).find('.money').text().replace('$','').replace(',',''));
-            var d_item = parseFloat($('body').find('.price .money .money.si-auto').text().replace('$','').replace(',',''));
-            sum += d_item;
+            var d_item = parseFloat($(this).find('.money').text().replace('$','').replace(',',''));
+            // var d_item = parseFloat($('body').find('.price .money .money.si-auto').text().replace('$','').replace(',',''));
+            // console.log(d_item);
+            sum = (parseFloat(sum) + d_item).toFixed(2);
         })
     }
 
@@ -151,8 +152,8 @@ function test_plustotal(el=null){
     }
 
     var totalPriceText = parseFloat($('body').find('.total-sum').text().replace('$','').replace(',', ''));
-    var totalResult = totalPriceText + totalAccessories;
-    $('.template-product .quantity .test-total .total-sum').text('$' + totalResult);
+    var totalResult = +(totalPriceText+totalAccessories);
+    $('.template-product .quantity .test-total .total-sum').text('$' + parseFloat(totalResult).toFixed(2));
 }
 
 $(document).on('click', '.dropdown__item_wrap .dropdown__item .add-to-cart', function(){
@@ -454,7 +455,6 @@ $(document).on('click', '.question-form .btn-success', function (event){
         // console.log("SEND FORM OK");
     });
 })
-
 
 function includedInThePackage(){
     var includedPackage =   '<div class="package-wrap">'+
