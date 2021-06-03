@@ -14,10 +14,10 @@ function abjql(callback) {
 		};
 	}
 	<!-- script.src = '//code.jquery.com/jquery-3.3.1.min.js'; -->
-	<!-- script.src = '//code.jquery.com/jquery-2.1.0.min.js'; -->
+	script.src = '//code.jquery.com/jquery-2.1.0.min.js';
 	document.getElementsByTagName( "head" )[0].appendChild( script );
 }
-if (!window.jQuery || parseFloat(window.jQuery.fn.jquery) > 1.10) {
+if (!window.jQuery || parseFloat(window.jQuery.fn.jquery) >= 1.10) {
 	abjql(function() {
 		jQuery(function($) {
 			abjqlr($);
