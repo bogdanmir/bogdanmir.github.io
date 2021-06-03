@@ -135,14 +135,13 @@ function ajax_add_to_cart(url){
 }
 
 $('.qty').find('a').on('click', function (){
-    totalPrice($(this));
+    setTimeout(totalPrice, 500, $(this));
+    // totalPrice($(this));
     // test_plustotal();
 })
 
 $('.variations .single-option-selector').on('change', function() {
-    setTimeout(function() { 
-        totalPrice($(this));
-    }, 500);
+    setTimeout(totalPrice, 500, $(this));
 });
 
 function test_plustotal(el=null){
