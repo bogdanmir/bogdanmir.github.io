@@ -134,6 +134,8 @@ function ajax_add_to_cart(url){
     });
 }
 
+$('.quantity #quantity').attr('readonly', true);
+
 $('.qty').find('a').on('click', function (){
     // setTimeout(totalPrice, 500, $(this));
     setTimeout(function() {
