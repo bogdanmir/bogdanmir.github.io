@@ -47,6 +47,7 @@ function totalPrice(btn = null){
             qVal = --qVal;
         }
         sum = rounded(+(price)*+(qVal));
+        console.log(qVal);
     }
 
     // var sum = +(price)*+(qVal);
