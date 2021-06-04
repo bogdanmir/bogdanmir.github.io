@@ -136,15 +136,28 @@ function ajax_add_to_cart(url){
 
 $('.quantity #quantity').attr('readonly', true);
 
+// $('.qty').find('a').on('click', function (){
+//     // setTimeout(totalPrice, 500, $(this));
+//     setTimeout(function() {
+//         totalPrice($(this));
+//     }, 500);
+
+//     // totalPrice($(this));
+//     // test_plustotal();
+// })
 $('.qty').find('a').on('click', function (){
-    // setTimeout(totalPrice, 500, $(this));
+    if($(this).hasClass('minus_btn')){
+        var inputVal = $(this).siblings('#quantity').val();
+            if(inputVal === "0"){
+                $(this).siblings('#quantity').val("1");
+                return false;
+            }
+    }
     setTimeout(function() {
         totalPrice($(this));
     }, 500);
+});
 
-    // totalPrice($(this));
-    // test_plustotal();
-})
 
 $('.variations .single-option-selector').on('change', function() {
     setTimeout(function() {
