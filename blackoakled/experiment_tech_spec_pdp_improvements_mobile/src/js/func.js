@@ -1,3 +1,5 @@
+jQuery(document).ready(function () {
+
 var url = window.location.href;
 var wrap = $('.form-add-to-cart ').parent().parent();
 
@@ -714,3 +716,5 @@ includedInThePackage();
 // })
 
 test_accessory();
+
+});
