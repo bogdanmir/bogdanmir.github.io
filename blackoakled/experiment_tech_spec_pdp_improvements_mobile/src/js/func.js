@@ -49,7 +49,7 @@ function totalPrice(btn = null){
             qVal = --qVal;
         }
         sum = rounded(+(price)*+(qVal));
-        console.log(qVal);
+        // console.log(qVal);
     }
 
     // var sum = +(price)*+(qVal);
@@ -201,8 +201,10 @@ $(document).on('click', '.selector-wrapper .dropdown__head', function(){
 });
 
 
-$('.dropdown__item').find('.add-to-cart').on('click', function (){
+
+$(document).on('click',  '.dropdown__item .add-to-cart',function (){
     var prod_url = window.location.origin + $(this).data("url")
+    // console.log(prod_url);
     ajax_add_to_cart(prod_url)
 })
 
@@ -619,13 +621,13 @@ includedInThePackage();
 // document.addEventListener("DOMContentLoaded", function(event) {
     if (document.querySelector(".minus_btn")) {
         document.querySelector(".minus_btn").addEventListener('click', function(e){
-            console.log('click quantity');
+            // console.log('click quantity');
             if (document.querySelector('#quantity') && document.querySelector('#quantity').value == "1") {
-                console.log(1);
+                // console.log(1);
                 e.preventDefault();
                 e.stopImmediatePropagation();
                 e.stopPropagation();
-                console.log(2);
+                // console.log(2);
                 return false;
             }
         })
