@@ -1,0 +1,106 @@
+tr.grand-totals>th {
+    color: rgb(68, 144, 55);
+    font-weight: 700;
+    font-size: 18px;
+}
+tr.grand-totals>td {
+    color: rgb(68, 144, 55);
+    font-weight: 700;
+    font-size: 18px;
+}
+tr.grand-totals {
+    border-top: 1px solid rgb(0, 0, 0);
+    width: 100%;
+    padding: 10px 0;
+    margin: 0;
+}
+
+.t_subtext {
+    margin-top: 18px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+}
+.t_subtext p{
+    margin-left: 10px;
+    margin-bottom: 0;
+}
+.t_cart-title {
+    font-size: 18px;
+    margin: 27px 0 10px;
+}
+
+#checkout-step-title form .continue-div {
+    width: 100% !important;
+}
+#checkout-step-title form .continue-div button{
+    width: 100% !important;
+}
+.continue-button-container {
+    margin-right : 0;
+    background : rgb(68, 144, 55) !important;
+    border : 0;
+    cursor : pointer;
+    color : rgb(255, 255, 255);
+    font-weight : 700;
+    font-size : 14px;
+    padding : 12px;
+    text-align : center;
+    width : 100% !important;
+}
+.cart.item .item-info{
+    background: #F4F4F4;
+}
+.cart-container {
+    width : calc(70% - 27px);
+    margin-right : 27px;
+}
+.cart-container .cart.table-wrapper .col.qty .input-text{
+    background: #FFF;
+}
+#block-discount .content.wraper{
+    background: #F4F4F4;
+    padding: 20px;
+}
+#block-discount .content.wraper input{
+    background: #FFF;
+}
+#block-discount .content.wraper button{
+    background-color: transparent !important;
+    color: #586e85 !important;
+    border: 0;
+    text-decoration: underline;
+    padding: 0;
+}
+#block-discount-heading{
+    font-weight: 300;
+}
+
+#gift-options-cart .gift-item-block .title{
+    font-weight: 300;
+}
+#gift-options-cart .gift-item-block .content{
+    background: #F4F4F4;
+    margin-left: 10px;
+    padding: 20px;
+}
+#gift-options-cart .gift-item-block .content input{
+    background: #FFF;
+}
+#gift-options-cart .gift-item-block .content textarea{
+    background: #FFF;
+}
+.button-container.update-shopping-container.action{
+    margin-right: 0 !important;
+    width: 150px;
+}
+#checkout-shopping-cart-items {
+    display : flex !important;
+    justify-content : center;
+    align-items: flex-start;
+}
+#cart-totals {
+    background : rgb(255, 255, 255);
+    padding : 21px 25px;
+    margin-right : 0;
+}
